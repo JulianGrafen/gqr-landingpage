@@ -463,7 +463,124 @@
         el.addEventListener('click', closeMenu);
       });
     })();
+
+    /* ── Signup Modal ───────────────────────────────────────── */
+    (function () {
+      var overlay    = document.getElementById('signupModal');
+      var closeBtn   = document.getElementById('modalClose');
+      var form       = document.getElementById('signupForm');
+      var submitBtn  = document.getElementById('modalSubmitBtn');
+      var errorBox   = document.getElementById('modalError');
+      var successBox = document.getElementById('modalSuccess');
+      var formWrap   = document.getElementById('modalForm');
+      var firstInput = document.getElementById('fieldName');
+
+      function openModal() {
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        setTimeout(function () { firstInput.focus(); }, 50);
+      }
+
+      function closeModal() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      // Intercept all /register links
+      document.querySelectorAll('a[href^="/register"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          openModal();
+        });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+      });
+
+      // Form submission → Formspree
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = document.getElementById('fieldEmail').value.trim();
+        var name  = document.getElementById('fieldName').value.trim();
+
+        if (!name || !email) return;
+
+        document.getElementById('fieldReplyTo').value = email;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Wird gesendet…';
+        errorBox.style.display = 'none';
+
+        var data = new FormData(form);
+
+        fetch('https://formspree.io/f/info@gefahrstoff-qr.de', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function (res) {
+          if (res.ok) {
+            document.getElementById('successEmail').textContent = email;
+            formWrap.style.display = 'none';
+            successBox.style.display = 'block';
+          } else {
+            throw new Error('server');
+          }
+        })
+        .catch(function () {
+          errorBox.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Testphase starten →';
+        });
+      });
+    })();
   </script>
+
+<!-- ── SIGNUP MODAL ─────────────────────────────────────────── -->
+  <div class="modal-overlay" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Schließen">&#x2715;</button>
+
+      <div id="modalForm">
+        <span class="modal-badge">Kostenlose Testphase</span>
+        <h2 class="modal-title" id="modalTitle">Jetzt kostenlos testen</h2>
+        <p class="modal-sub">Erste 5 Gefahrstoffe dauerhaft kostenlos &mdash; kein Abo, keine Kreditkarte. Wir melden uns direkt bei Ihnen.</p>
+
+        <form id="signupForm" novalidate>
+          <div class="form-group">
+            <label for="fieldName">Ihr Name <span aria-hidden="true">*</span></label>
+            <input class="form-input" type="text" id="fieldName" name="name" placeholder="Max Mustermann" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="fieldEmail">E-Mail-Adresse <span aria-hidden="true">*</span></label>
+            <input class="form-input" type="email" id="fieldEmail" name="email" placeholder="max@muster-gmbh.de" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="fieldCompany">Unternehmen <span style="font-weight:400">(optional)</span></label>
+            <input class="form-input" type="text" id="fieldCompany" name="company" placeholder="Muster GmbH" autocomplete="organization">
+          </div>
+          <input type="hidden" name="_subject" value="Neue Testphase-Anfrage — Gefahrstoff-QR">
+          <input type="hidden" name="_replyto" id="fieldReplyTo">
+          <button class="btn btn-primary btn-large modal-submit" type="submit" id="modalSubmitBtn">
+            Testphase starten &#x2192;
+          </button>
+          <div class="modal-error" id="modalError">Es ist ein Fehler aufgetreten. Bitte schreiben Sie uns direkt an <a href="mailto:info@gefahrstoff-qr.de">info@gefahrstoff-qr.de</a>.</div>
+        </form>
+
+        <p class="modal-note">Ihre Daten werden ausschließlich zur Kontaktaufnahme genutzt und nicht weitergegeben.</p>
+      </div>
+
+      <div class="modal-success" id="modalSuccess">
+        <div class="success-icon">&#x2705;</div>
+        <h3>Anfrage erhalten!</h3>
+        <p>Wir melden uns innerhalb von 24 Stunden unter <strong id="successEmail"></strong> bei Ihnen. Schauen Sie auch in Ihren Spam-Ordner.</p>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
