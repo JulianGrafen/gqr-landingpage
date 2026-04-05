@@ -434,6 +434,45 @@
     </div>
   </footer>
 
+  <!-- ── SIGNUP MODAL ───────────────────────────────────────── -->
+  <div class="modal-overlay" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Schließen">&#x2715;</button>
+
+      <div id="modalForm">
+        <span class="modal-badge">Kostenlose Testphase</span>
+        <h2 class="modal-title" id="modalTitle">Jetzt kostenlos testen</h2>
+        <p class="modal-sub">Erste 5 Gefahrstoffe dauerhaft kostenlos &mdash; kein Abo, keine Kreditkarte. Wir melden uns direkt bei Ihnen.</p>
+
+        <form id="signupForm" novalidate>
+          <div class="form-group">
+            <label for="fieldName">Ihr Name <span aria-hidden="true">*</span></label>
+            <input class="form-input" type="text" id="fieldName" name="name" placeholder="Max Mustermann" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="fieldEmail">E-Mail-Adresse <span aria-hidden="true">*</span></label>
+            <input class="form-input" type="email" id="fieldEmail" name="email" placeholder="max@muster-gmbh.de" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="fieldCompany">Unternehmen <span style="font-weight:400">(optional)</span></label>
+            <input class="form-input" type="text" id="fieldCompany" name="company" placeholder="Muster GmbH" autocomplete="organization">
+          </div>
+          <button class="btn btn-primary btn-large modal-submit" type="submit" id="modalSubmitBtn">
+            Testphase starten &#x2192;
+          </button>
+        </form>
+
+        <p class="modal-note">Ihre Daten werden ausschließlich zur Kontaktaufnahme genutzt und nicht weitergegeben.</p>
+      </div>
+
+      <div class="modal-success" id="modalSuccess">
+        <div class="success-icon">&#x2705;</div>
+        <h3>Anfrage erhalten!</h3>
+        <p>Wir melden uns zeitnah unter <strong id="successEmail"></strong>. Ihr E-Mail-Programm öffnet sich gleich.</p>
+      </div>
+    </div>
+  </div>
+
   <script>
     (function () {
       var openBtn  = document.getElementById('navOpenBtn');
@@ -528,45 +567,6 @@
       });
     })();
   </script>
-
-<!-- ── SIGNUP MODAL ─────────────────────────────────────────── -->
-  <div class="modal-overlay" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-card">
-      <button class="modal-close" id="modalClose" aria-label="Schließen">&#x2715;</button>
-
-      <div id="modalForm">
-        <span class="modal-badge">Kostenlose Testphase</span>
-        <h2 class="modal-title" id="modalTitle">Jetzt kostenlos testen</h2>
-        <p class="modal-sub">Erste 5 Gefahrstoffe dauerhaft kostenlos &mdash; kein Abo, keine Kreditkarte. Wir melden uns direkt bei Ihnen.</p>
-
-        <form id="signupForm" novalidate>
-          <div class="form-group">
-            <label for="fieldName">Ihr Name <span aria-hidden="true">*</span></label>
-            <input class="form-input" type="text" id="fieldName" name="name" placeholder="Max Mustermann" required autocomplete="name">
-          </div>
-          <div class="form-group">
-            <label for="fieldEmail">E-Mail-Adresse <span aria-hidden="true">*</span></label>
-            <input class="form-input" type="email" id="fieldEmail" name="email" placeholder="max@muster-gmbh.de" required autocomplete="email">
-          </div>
-          <div class="form-group">
-            <label for="fieldCompany">Unternehmen <span style="font-weight:400">(optional)</span></label>
-            <input class="form-input" type="text" id="fieldCompany" name="company" placeholder="Muster GmbH" autocomplete="organization">
-          </div>
-          <button class="btn btn-primary btn-large modal-submit" type="submit" id="modalSubmitBtn">
-            Testphase starten &#x2192;
-          </button>
-        </form>
-
-        <p class="modal-note">Ihre Daten werden ausschließlich zur Kontaktaufnahme genutzt und nicht weitergegeben.</p>
-      </div>
-
-      <div class="modal-success" id="modalSuccess">
-        <div class="success-icon">&#x2705;</div>
-        <h3>Anfrage erhalten!</h3>
-        <p>Wir melden uns innerhalb von 24 Stunden unter <strong id="successEmail"></strong> bei Ihnen. Schauen Sie auch in Ihren Spam-Ordner.</p>
-      </div>
-    </div>
-  </div>
 
 </body>
 </html>
