@@ -783,29 +783,53 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 }
 
 .screenshots-secondary-row {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
+  display: flex;
+  flex-direction: row;
   gap: 1.5rem;
-  align-items: start;
+  align-items: flex-start;
 }
 
-/* Portrait mobile card: center image without stretching to column width */
+/* Form screenshot grows to fill available space */
+.screenshots-secondary-row .screenshot-card:not(.screenshot-card--mobile) {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Mobile portrait: fixed 220px, never stretches to row height */
 .screenshot-card--mobile {
-  text-align: center;
+  flex: 0 0 220px;
+  width: 220px;
 }
 
 .screenshot-card--mobile picture {
-  display: inline-block;
-  max-width: 240px;
+  display: block;
+  width: 220px;
 }
 
 .screenshot-card--mobile img {
-  width: auto;
-  max-width: 240px;
+  width: 220px;
+  height: auto;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(255, 255, 255, 0.07);
 }
 
 @media (max-width: 900px) {
   .screenshots-secondary-row {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .screenshot-card--mobile {
+    flex: none;
+    width: auto;
+    max-width: 280px;
+    margin-inline: auto;
+  }
+
+  .screenshot-card--mobile picture {
+    width: auto;
+  }
+
+  .screenshot-card--mobile img {
+    width: 100%;
   }
 }
