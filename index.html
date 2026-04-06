@@ -445,6 +445,10 @@
         <p class="modal-sub">Erste 5 Gefahrstoffe dauerhaft kostenlos &mdash; kein Abo, keine Kreditkarte. Wir melden uns direkt bei Ihnen.</p>
 
         <form id="signupForm" novalidate>
+          <!-- Web3Forms access key — replace YOUR_ACCESS_KEY with key from web3forms.com -->
+          <input type="hidden" name="access_key" value="8d6802e2-02f6-48fd-80c6-baeb34b1202b">
+          <input type="hidden" name="subject" value="Neue Testphase-Anfrage — Gefahrstoff-QR">
+          <input type="hidden" name="from_name" value="Gefahrstoff-QR Website">
           <div class="form-group">
             <label for="fieldName">Ihr Name <span aria-hidden="true">*</span></label>
             <input class="form-input" type="text" id="fieldName" name="name" placeholder="Max Mustermann" required autocomplete="name">
@@ -460,6 +464,7 @@
           <button class="btn btn-primary btn-large modal-submit" type="submit" id="modalSubmitBtn">
             Testphase starten &#x2192;
           </button>
+          <div class="modal-error" id="modalError" style="display:none;">Fehler beim Senden. Bitte schreib uns direkt: <a href="mailto:info@gefahrstoff-qr.de">info@gefahrstoff-qr.de</a></div>
         </form>
 
         <p class="modal-note">Ihre Daten werden ausschließlich zur Kontaktaufnahme genutzt und nicht weitergegeben.</p>
@@ -468,7 +473,7 @@
       <div class="modal-success" id="modalSuccess">
         <div class="success-icon">&#x2705;</div>
         <h3>Anfrage erhalten!</h3>
-        <p>Wir melden uns zeitnah unter <strong id="successEmail"></strong>. Ihr E-Mail-Programm öffnet sich gleich.</p>
+        <p>Wir melden uns zeitnah unter <strong id="successEmail"></strong> bei Ihnen.</p>
       </div>
     </div>
   </div>
@@ -541,29 +546,40 @@
         if (e.key === 'Escape') closeModal();
       });
 
-      // Form submission → mailto (funktioniert ohne externen Dienst)
+      // Form submission → Web3Forms
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         var email   = document.getElementById('fieldEmail').value.trim();
         var name    = document.getElementById('fieldName').value.trim();
-        var company = document.getElementById('fieldCompany').value.trim();
+        var errorBox = document.getElementById('modalError');
 
         if (!name || !email) return;
 
-        var subject = encodeURIComponent('Testphase-Anfrage: ' + name + (company ? ' — ' + company : ''));
-        var body    = encodeURIComponent(
-          'Hallo,\n\nich möchte Gefahrstoff-QR kostenlos testen.\n\n' +
-          'Name: ' + name + '\n' +
-          'E-Mail: ' + email + '\n' +
-          (company ? 'Unternehmen: ' + company + '\n' : '') +
-          '\nBitte meldet euch bei mir. Danke!'
-        );
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Wird gesendet…';
+        errorBox.style.display = 'none';
 
-        document.getElementById('successEmail').textContent = email;
-        formWrap.style.display = 'none';
-        successBox.style.display = 'block';
+        var data = new FormData(form);
 
-        window.location.href = 'mailto:info@gefahrstoff-qr.de?subject=' + subject + '&body=' + body;
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data
+        })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          if (json.success) {
+            document.getElementById('successEmail').textContent = email;
+            formWrap.style.display = 'none';
+            successBox.style.display = 'block';
+          } else {
+            throw new Error(json.message || 'error');
+          }
+        })
+        .catch(function () {
+          errorBox.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Testphase starten →';
+        });
       });
     })();
   </script>
