@@ -789,7 +789,24 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 1.5rem;
-  align-items: start;
+  align-items: center;
+}
+
+/* Phone screenshot: keep natural portrait width, don't stretch to column */
+.screenshot-card--mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screenshot-card--mobile picture {
+  width: auto;
+  max-width: 260px;
+}
+
+.screenshot-card--mobile img {
+  width: auto;
+  max-width: 260px;
 }
 
 @media (max-width: 900px) {
@@ -797,8 +814,8 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
     grid-template-columns: 1fr;
   }
 
-  .screenshot-card--mobile {
-    max-width: 300px;
-    margin-inline: auto;
+  .screenshot-card--mobile picture,
+  .screenshot-card--mobile img {
+    max-width: 280px;
   }
 }
