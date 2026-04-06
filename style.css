@@ -789,18 +789,23 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   align-items: start;
 }
 
-/* Phone portrait: center in column, don't stretch to full column width */
+/* Portrait mobile card: center image without stretching to column width */
+.screenshot-card--mobile {
+  text-align: center;
+}
+
 .screenshot-card--mobile picture {
-  max-width: 260px;
-  margin: 0 auto;
+  display: inline-block;
+  max-width: 240px;
+}
+
+.screenshot-card--mobile img {
+  width: auto;
+  max-width: 240px;
 }
 
 @media (max-width: 900px) {
   .screenshots-secondary-row {
     grid-template-columns: 1fr;
-  }
-
-  .screenshot-card--mobile picture {
-    max-width: 300px;
   }
 }
