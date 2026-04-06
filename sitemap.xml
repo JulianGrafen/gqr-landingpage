@@ -25,6 +25,12 @@
 
   <!-- Blog posts -->
   <url>
+    <loc>https://gefahrstoff-qr.de/blog/gefahrstoffverzeichnis-digital-software/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gefahrstoff-qr.de/blog/haftungsfalle-papier-ordner-bg-pruefung/</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
