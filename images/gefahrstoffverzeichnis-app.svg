@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 480" width="320" height="480" role="img" aria-label="Digitales Gefahrstoffverzeichnis App auf dem Smartphone">
+  <title>Digitales Gefahrstoffverzeichnis App</title>
+  <!-- Phone shell -->
+  <rect x="15" y="8" width="290" height="464" rx="32" fill="#0f172a"/>
+  <!-- Notch -->
+  <rect x="110" y="18" width="100" height="16" rx="8" fill="#1e293b"/>
+  <!-- Screen background -->
+  <rect x="24" y="44" width="272" height="400" rx="8" fill="#f1f5f9"/>
+  <!-- App header bar -->
+  <rect x="24" y="44" width="272" height="56" rx="8" fill="#2563eb"/>
+  <rect x="24" y="80" width="272" height="20" fill="#2563eb"/>
+  <!-- Header: app title + subtitle placeholders -->
+  <rect x="44" y="57" width="140" height="11" rx="4" fill="rgba(255,255,255,0.85)"/>
+  <rect x="44" y="74" width="85" height="8" rx="3" fill="rgba(255,255,255,0.4)"/>
+  <!-- Search bar -->
+  <rect x="34" y="112" width="252" height="28" rx="6" fill="white"/>
+  <circle cx="50" cy="126" r="7" fill="#e2e8f0"/>
+  <rect x="63" y="122" width="100" height="8" rx="3" fill="#cbd5e1"/>
+  <!-- List item 1 – KMR warning (red indicator) -->
+  <rect x="34" y="152" width="252" height="42" rx="6" fill="white"/>
+  <circle cx="51" cy="173" r="7" fill="#ef4444"/>
+  <rect x="66" y="163" width="125" height="9" rx="3" fill="#1e293b"/>
+  <rect x="66" y="178" width="78" height="7" rx="3" fill="#94a3b8"/>
+  <rect x="258" y="165" width="20" height="18" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <!-- List item 2 – OK (teal indicator) -->
+  <rect x="34" y="204" width="252" height="42" rx="6" fill="white"/>
+  <circle cx="51" cy="225" r="7" fill="#2dd4bf"/>
+  <rect x="66" y="215" width="145" height="9" rx="3" fill="#1e293b"/>
+  <rect x="66" y="230" width="92" height="7" rx="3" fill="#94a3b8"/>
+  <!-- List item 3 – expiry warning (amber indicator) -->
+  <rect x="34" y="256" width="252" height="42" rx="6" fill="white"/>
+  <circle cx="51" cy="277" r="7" fill="#f59e0b"/>
+  <rect x="66" y="267" width="108" height="9" rx="3" fill="#1e293b"/>
+  <rect x="66" y="282" width="68" height="7" rx="3" fill="#94a3b8"/>
+  <rect x="251" y="267" width="28" height="14" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="1.5"/>
+  <!-- List item 4 – OK (blue indicator) -->
+  <rect x="34" y="308" width="252" height="42" rx="6" fill="white"/>
+  <circle cx="51" cy="329" r="7" fill="#2563eb"/>
+  <rect x="66" y="319" width="120" height="9" rx="3" fill="#1e293b"/>
+  <rect x="66" y="334" width="82" height="7" rx="3" fill="#94a3b8"/>
+  <!-- FAB add button -->
+  <circle cx="268" cy="393" r="24" fill="#2563eb"/>
+  <rect x="260" y="392" width="16" height="2.5" rx="1.25" fill="white"/>
+  <rect x="266.75" y="385" width="2.5" height="16" rx="1.25" fill="white"/>
+  <!-- Bottom home indicator -->
+  <rect x="120" y="460" width="80" height="4" rx="2" fill="#334155"/>
+</svg>

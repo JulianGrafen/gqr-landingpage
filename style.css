@@ -714,3 +714,32 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   margin-top: .75rem;
   display: none;
 }
+/* ── Hero screenshot image ───────────────────────────────────── */
+.hero-screenshot-wrap {
+  margin: 0;
+  padding: 0;
+}
+.hero-screenshot-wrap img {
+  display: block;
+  margin: 0 auto;
+  max-height: 260px;
+  width: auto;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .28),
+              0 4px 16px rgba(37, 99, 235, .18);
+}
+
+/* ── Feature card images ─────────────────────────────────────── */
+.feature-img-wrap {
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.feature-img-wrap img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}

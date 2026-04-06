@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="240" height="160" role="img" aria-label="Digitales Sicherheitsdatenblatt automatisch gespeichert und versioniert">
+  <title>Digitales Sicherheitsdatenblatt</title>
+  <rect width="240" height="160" fill="#f8faff" rx="10"/>
+  <!-- Document body -->
+  <rect x="16" y="12" width="120" height="136" rx="7" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <!-- Folded corner dog-ear -->
+  <polygon points="116,12 136,12 136,32 116,32" fill="#e8edf5"/>
+  <line x1="116" y1="12" x2="136" y2="32" stroke="#e2e8f0" stroke-width="1.5"/>
+  <!-- SDB header (blue title bar) -->
+  <rect x="24" y="22" width="80" height="10" rx="3" fill="#2563eb"/>
+  <rect x="24" y="36" width="55" height="7" rx="3" fill="#cbd5e1"/>
+  <!-- Divider -->
+  <line x1="24" y1="51" x2="128" y2="51" stroke="#e2e8f0" stroke-width="1"/>
+  <!-- Section 1 label -->
+  <rect x="24" y="57" width="46" height="7" rx="3" fill="#2dd4bf" opacity="0.9"/>
+  <!-- Content lines section 1 -->
+  <rect x="24" y="69" width="92" height="5.5" rx="2.5" fill="#e2e8f0"/>
+  <rect x="24" y="79" width="72" height="5.5" rx="2.5" fill="#e2e8f0"/>
+  <!-- Section 2 label -->
+  <rect x="24" y="91" width="54" height="7" rx="3" fill="#2563eb" opacity="0.45"/>
+  <!-- Content lines section 2 -->
+  <rect x="24" y="103" width="88" height="5.5" rx="2.5" fill="#e2e8f0"/>
+  <rect x="24" y="113" width="60" height="5.5" rx="2.5" fill="#e2e8f0"/>
+  <rect x="24" y="123" width="76" height="5.5" rx="2.5" fill="#e2e8f0"/>
+  <!-- Checkmark badge (right panel) -->
+  <circle cx="186" cy="52" r="26" fill="#2563eb"/>
+  <polyline points="174,52 182,62 200,36" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- "Aktuell" label under badge -->
+  <text x="186" y="90" font-family="sans-serif" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">Aktuell</text>
+  <!-- Version chip -->
+  <rect x="164" y="96" width="44" height="16" rx="5" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="186" y="108" font-family="sans-serif" font-size="8" fill="#16a34a" text-anchor="middle" font-weight="700">v2.4 ✓</text>
+  <!-- Update badge -->
+  <circle cx="186" cy="132" r="16" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+  <path d="M183,135 L186,126 L189,135" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="186" y="145" font-family="sans-serif" font-size="7.5" fill="#92400e" text-anchor="middle" font-weight="600">Update</text>
+</svg>
