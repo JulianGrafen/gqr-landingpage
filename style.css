@@ -756,18 +756,26 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 }
 
 .screenshot-card {
-  position: relative;
+  /* Reset default <figure> browser margin (1em 40px) */
+  margin: 0;
+  padding: 0;
 }
 
-.screenshot-card img {
+.screenshot-card picture {
+  display: block;
   width: 100%;
-  height: auto;
   border-radius: var(--radius-lg);
+  overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
     0 8px 48px rgba(0, 0, 0, 0.55),
     0 0 0 1px rgba(255, 107, 53, 0.06);
+}
+
+.screenshot-card img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 .screenshot-card figcaption {
@@ -784,13 +792,13 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   align-items: start;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .screenshots-secondary-row {
     grid-template-columns: 1fr;
   }
 
   .screenshot-card--mobile {
-    max-width: 280px;
+    max-width: 300px;
     margin-inline: auto;
   }
 }
