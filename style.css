@@ -306,7 +306,7 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 
 @media (min-width: 1024px) {
   .hero-inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
   }
 
   .hero-copy {
@@ -321,6 +321,51 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   .hero-cta-group {
     justify-content: flex-start;
   }
+}
+
+.hero-demo-card {
+  color: #0f172a;
+}
+
+.hero-demo-card .section-header {
+  max-width: none;
+  margin-bottom: clamp(18px, 3vw, 28px);
+  text-align: left;
+}
+
+.hero-demo-card .section-label {
+  color: #60a5fa;
+}
+
+.hero-demo-card .section-header h2 {
+  color: #f8fafc;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+}
+
+.hero-demo-card .section-intro {
+  color: rgba(226, 232, 240, .82);
+  font-size: var(--text-base);
+}
+
+.hero-demo-card .sdb-demo-shell {
+  gap: 18px;
+  padding: clamp(16px, 3vw, 24px);
+  border-color: rgba(219, 228, 240, .92);
+}
+
+.hero-demo-card .sdb-demo-file,
+.hero-demo-card .sdb-demo-dropzone {
+  min-height: 138px;
+}
+
+.hero-demo-card .sdb-result,
+.hero-demo-card .sdb-data-grid {
+  grid-template-columns: 1fr;
+}
+
+.hero-demo-card .sdb-qr-card__image {
+  width: 180px;
+  height: 180px;
 }
 
 .hero-badge {
@@ -746,6 +791,15 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   display: none;
 }
 /* ── ROI Calculator Card ────────────────────────────────────── */
+.roi-section {
+  background: rgba(255,255,255,.015);
+}
+
+.roi-section .roi-card {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
 .roi-card {
   background: var(--color-bg-raised);
   border: 1px solid var(--color-border);

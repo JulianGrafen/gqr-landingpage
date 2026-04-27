@@ -220,9 +220,95 @@
           <p class="hero-note">Keine Kreditkarte erforderlich &middot; Sofort einsatzbereit &middot; Fragen? <a href="mailto:info@gefahrstoff-qr.de">info@gefahrstoff-qr.de</a></p>
         </div>
 
-        <!-- Right: Interactive ROI Calculator -->
+        <!-- Right: Interactive SDB Demo -->
+        <aside id="demo" class="hero-demo-card" aria-labelledby="sdbDemoHeadline" data-sdb-demo>
+          <div class="section-header sdb-demo-heading">
+            <p class="section-label">Interaktive Demo</p>
+            <h2 id="sdbDemoHeadline">Vom Sicherheitsdatenblatt zum QR-Code.</h2>
+            <p class="section-intro">
+              Ziehen Sie das Beispiel-PDF in die Scan-Zone und sehen Sie, welche Daten Gefahrstoff-QR
+              nach &sect;&nbsp;6&nbsp;GefStoffV strukturiert bereitstellt.
+            </p>
+          </div>
+
+          <div class="sdb-demo-shell">
+            <div class="sdb-demo-workflow" aria-label="Sicherheitsdatenblatt scannen">
+              <div
+                class="sdb-demo-file"
+                draggable="true"
+                role="button"
+                tabindex="0"
+                aria-describedby="sdbDemoFileHint"
+                data-sdb-file
+              >
+                <span class="sdb-demo-file__icon" aria-hidden="true">PDF</span>
+                <span>
+                  <strong>Sicherheitsdatenblatt.pdf</strong>
+                  <small id="sdbDemoFileHint">Ziehen oder per Enter starten</small>
+                </span>
+              </div>
+
+              <div
+                class="sdb-demo-dropzone"
+                role="button"
+                tabindex="0"
+                aria-live="polite"
+                data-sdb-dropzone
+              >
+                <span class="sdb-demo-dropzone__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M12 3v10m0-10 4 4m-4-4-4 4M4 14v4a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <strong>Jetzt scannen</strong>
+                <span>SDB hier ablegen oder klicken</span>
+              </div>
+            </div>
+
+            <div class="sdb-demo-output" data-sdb-output hidden aria-hidden="true">
+              <div class="sdb-processing" data-sdb-processing hidden aria-hidden="true">
+                <span class="sdb-processing__spinner" aria-hidden="true"></span>
+                <span>Azure Document Intelligence extrahiert Daten...</span>
+              </div>
+
+              <div class="sdb-result" data-sdb-result hidden aria-hidden="true">
+                <div class="sdb-result__data">
+                  <div class="sdb-result__header">
+                    <span class="sdb-result__status">Extraktion erfolgreich</span>
+                    <h3 data-sdb-product-name>Industriereiniger RX-90</h3>
+                  </div>
+                  <div class="sdb-data-grid" data-sdb-data-grid></div>
+                </div>
+
+                <aside class="sdb-qr-card" aria-labelledby="sdbQrHeadline">
+                  <span class="sdb-qr-card__eyebrow">Notfall-QR</span>
+                  <h3 id="sdbQrHeadline">Am Gefahrstoffschrank scannen</h3>
+                  <img class="sdb-qr-card__image" alt="QR-Code zur mobilen Notfallansicht" data-sdb-qr-code>
+                  <a class="sdb-qr-card__link" data-sdb-emergency-link href="/notfall/mock-123/">
+                    Mobile Notfallansicht öffnen
+                  </a>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ROI CALCULATOR -->
+    <section id="roi" class="section roi-section" aria-labelledby="roiHeadline">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Zeitersparnis berechnen</p>
+          <h2 id="roiHeadline">ROI-Rechner: Wie viel Zeit sparen Sie?</h2>
+          <p class="section-intro">
+            Vergleichen Sie die manuelle Pflege per Excel oder Papier mit dem digitalen Gefahrstoff-QR-Workflow.
+          </p>
+        </div>
+
         <aside class="roi-card" aria-label="ROI-Rechner: Zeitersparnis berechnen">
-          <h2 class="roi-card__title">ROI-Rechner: Wie viel Zeit sparen Sie?</h2>
+          <h3 class="roi-card__title">Gefahrstoffe im Betrieb auswählen</h3>
 
           <div class="roi-slider-wrap">
             <div class="roi-slider-header">
@@ -276,82 +362,6 @@
             </p>
           </div>
         </aside>
-
-      </div>
-    </section>
-
-    <!-- SDB DEMO -->
-    <section id="demo" class="section sdb-demo-section" aria-labelledby="sdbDemoHeadline">
-      <div class="container">
-        <div class="section-header sdb-demo-heading">
-          <p class="section-label">Interaktive Demo</p>
-          <h2 id="sdbDemoHeadline">Vom Sicherheitsdatenblatt zum QR-Code in Sekunden.</h2>
-          <p class="section-intro">
-            Ziehen Sie das Beispiel-PDF in die Scan-Zone und sehen Sie, welche Daten Gefahrstoff-QR
-            nach &sect;&nbsp;6&nbsp;GefStoffV strukturiert bereitstellt.
-          </p>
-        </div>
-
-        <div class="sdb-demo-shell" data-sdb-demo>
-          <div class="sdb-demo-workflow" aria-label="Sicherheitsdatenblatt scannen">
-            <div
-              class="sdb-demo-file"
-              draggable="true"
-              role="button"
-              tabindex="0"
-              aria-describedby="sdbDemoFileHint"
-              data-sdb-file
-            >
-              <span class="sdb-demo-file__icon" aria-hidden="true">PDF</span>
-              <span>
-                <strong>Sicherheitsdatenblatt.pdf</strong>
-                <small id="sdbDemoFileHint">Ziehen oder per Enter starten</small>
-              </span>
-            </div>
-
-            <div
-              class="sdb-demo-dropzone"
-              role="button"
-              tabindex="0"
-              aria-live="polite"
-              data-sdb-dropzone
-            >
-              <span class="sdb-demo-dropzone__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false">
-                  <path d="M12 3v10m0-10 4 4m-4-4-4 4M4 14v4a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <strong>Jetzt scannen</strong>
-              <span>SDB hier ablegen oder klicken</span>
-            </div>
-          </div>
-
-          <div class="sdb-demo-output" data-sdb-output hidden aria-hidden="true">
-            <div class="sdb-processing" data-sdb-processing hidden aria-hidden="true">
-              <span class="sdb-processing__spinner" aria-hidden="true"></span>
-              <span>Azure Document Intelligence extrahiert Daten...</span>
-            </div>
-
-            <div class="sdb-result" data-sdb-result hidden aria-hidden="true">
-              <div class="sdb-result__data">
-                <div class="sdb-result__header">
-                  <span class="sdb-result__status">Extraktion erfolgreich</span>
-                  <h3 data-sdb-product-name>Industriereiniger RX-90</h3>
-                </div>
-                <div class="sdb-data-grid" data-sdb-data-grid></div>
-              </div>
-
-              <aside class="sdb-qr-card" aria-labelledby="sdbQrHeadline">
-                <span class="sdb-qr-card__eyebrow">Notfall-QR</span>
-                <h3 id="sdbQrHeadline">Am Gefahrstoffschrank scannen</h3>
-                <img class="sdb-qr-card__image" alt="QR-Code zur mobilen Notfallansicht" data-sdb-qr-code>
-                <a class="sdb-qr-card__link" data-sdb-emergency-link href="/notfall/mock-123/">
-                  Mobile Notfallansicht öffnen
-                </a>
-              </aside>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
