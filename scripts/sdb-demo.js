@@ -4,6 +4,7 @@ import {
   formatFieldValue,
   getEmergencyPath,
 } from "./hazard-demo-data.js";
+import { createGhsPictogramCard } from "./ghs-pictograms.js";
 
 const PROCESSING_DELAY_MS = 2000;
 const QR_CODE_SIZE = 220;
@@ -27,9 +28,24 @@ function buildQrCodeUrl(targetUrl) {
   return `https://api.qrserver.com/v1/create-qr-code/?size=${QR_CODE_SIZE}x${QR_CODE_SIZE}&margin=12&data=${encodedTarget}`;
 }
 
+function createPictogramGrid(pictograms) {
+  const grid = document.createElement("div");
+  grid.className = "sdb-pictogram-grid";
+
+  pictograms.forEach((pictogram) => {
+    grid.append(createGhsPictogramCard(pictogram, "sdb-pictogram"));
+  });
+
+  return grid;
+}
+
 function createDataField(field) {
   const fieldElement = document.createElement("article");
   fieldElement.className = "sdb-data-field";
+
+  if (field.key === "pictograms") {
+    fieldElement.classList.add("sdb-data-field--pictograms");
+  }
 
   if (field.variant === "danger") {
     fieldElement.classList.add("sdb-data-field--danger");
@@ -39,9 +55,14 @@ function createDataField(field) {
   labelElement.className = "sdb-data-field__label";
   labelElement.textContent = field.label;
 
-  const valueElement = document.createElement("strong");
-  valueElement.className = "sdb-data-field__value";
-  valueElement.textContent = formatFieldValue(DEMO_SUBSTANCE[field.key]);
+  const valueElement = field.key === "pictograms"
+    ? createPictogramGrid(DEMO_SUBSTANCE.pictograms)
+    : document.createElement("strong");
+
+  if (field.key !== "pictograms") {
+    valueElement.className = "sdb-data-field__value";
+    valueElement.textContent = formatFieldValue(DEMO_SUBSTANCE[field.key]);
+  }
 
   fieldElement.append(labelElement, valueElement);
   return fieldElement;

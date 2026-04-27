@@ -1239,6 +1239,10 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   background: #fef2f2;
 }
 
+.sdb-data-field--pictograms {
+  grid-column: 1 / -1;
+}
+
 .sdb-data-field__label {
   color: #64748b;
   font-size: .78rem;
@@ -1255,6 +1259,52 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 
 .sdb-data-field--danger .sdb-data-field__value {
   color: #991b1b;
+}
+
+.sdb-pictogram-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.sdb-pictogram {
+  display: flex;
+  min-height: 126px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.sdb-pictogram .ghs-pictogram-card__svg {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+}
+
+.sdb-pictogram .ghs-pictogram-svg {
+  width: 72px;
+  height: 72px;
+}
+
+.sdb-pictogram .ghs-pictogram-card__label {
+  display: grid;
+  gap: 3px;
+  color: #475569;
+  font-size: .8rem;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.sdb-pictogram .ghs-pictogram-card__code {
+  color: #64748b;
+  font-size: .72rem;
+  font-weight: 950;
 }
 
 .sdb-qr-card {

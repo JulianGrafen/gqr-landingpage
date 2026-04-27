@@ -1,9 +1,5 @@
 import { DEMO_SUBSTANCE, formatFieldValue } from "./hazard-demo-data.js";
-
-const PICTOGRAM_LABELS = Object.freeze({
-  GHS05: "Ätzwirkung",
-  GHS07: "Ausrufezeichen",
-});
+import { createGhsPictogramCard } from "./ghs-pictograms.js";
 
 function getRequiredElement(root, selector) {
   const element = root.querySelector(selector);
@@ -15,33 +11,11 @@ function getRequiredElement(root, selector) {
   return element;
 }
 
-function extractGhsCode(pictogram) {
-  const match = pictogram.match(/GHS\d{2}/);
-  return match ? match[0] : pictogram;
-}
-
-function createPictogramCard(pictogram) {
-  const code = extractGhsCode(pictogram);
-  const card = document.createElement("article");
-  card.className = "qr-pictogram";
-
-  const diamond = document.createElement("span");
-  diamond.className = "qr-pictogram__diamond";
-
-  const codeElement = document.createElement("span");
-  codeElement.textContent = code;
-  diamond.append(codeElement);
-
-  const label = document.createElement("strong");
-  label.textContent = PICTOGRAM_LABELS[code] ?? pictogram.replace(/\s*\(.+\)/, "");
-
-  card.append(diamond, label);
-  return card;
-}
-
 function renderPictograms(container, pictograms) {
   const fragment = document.createDocumentFragment();
-  pictograms.forEach((pictogram) => fragment.append(createPictogramCard(pictogram)));
+  pictograms.forEach((pictogram) => {
+    fragment.append(createGhsPictogramCard(pictogram, "qr-pictogram"));
+  });
   container.replaceChildren(fragment);
 }
 

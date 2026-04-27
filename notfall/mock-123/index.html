@@ -11,29 +11,30 @@
 </head>
 <body>
   <main class="qr-page" data-emergency-view>
-    <header class="qr-legal-header">
-      <nav aria-label="Rechtliche Links">
-        <a href="/impressum">Impressum</a>
-        <a href="/datenschutz">Datenschutz</a>
-        <a href="/agb">AGB</a>
-      </nav>
+    <header class="qr-app-header">
+      <span class="qr-app-header__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false">
+          <path d="M12 3 22 20H2L12 3Z" fill="currentColor"/>
+          <path d="M12 8v6m0 3h.01" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span>Gefahrstoff-QR · Sicherheitsinformation</span>
     </header>
 
-    <section class="qr-call-actions" aria-label="Notfallkontakte">
-      <a class="qr-call-button qr-call-button--danger" href="tel:112">
-        <span>Notruf 112</span>
-        <small>anrufen</small>
-      </a>
-      <a class="qr-call-button" href="tel:+493019240">
-        <span>Giftnotruf 030 19240</span>
-        <small>anrufen</small>
-      </a>
+    <section class="qr-signal-card" aria-label="GHS-Signalwort">
+      <span class="qr-signal-card__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false">
+          <path d="M12 3 22 20H2L12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M12 8v6m0 3h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <div>
+        <div class="qr-signal-word" data-emergency-signal-word>GEFAHR</div>
+        <span class="qr-signal-label">GHS-Signalwort</span>
+      </div>
     </section>
 
-    <section class="qr-signal-card" aria-labelledby="emergencyProductName">
-      <div class="qr-signal-word" data-emergency-signal-word>GEFAHR</div>
-      <span class="qr-signal-label">GHS-Signalwort</span>
-
+    <section class="qr-product" aria-labelledby="emergencyProductName">
       <h1 id="emergencyProductName" data-emergency-product-name>Industriereiniger RX-90</h1>
       <p class="qr-supplier" data-emergency-supplier>Mock Chemie GmbH, 53925 Kall</p>
 
@@ -43,27 +44,27 @@
       </div>
     </section>
 
-    <section class="qr-card" aria-labelledby="pictogramHeadline">
+    <section class="qr-section" aria-labelledby="pictogramHeadline">
       <h2 id="pictogramHeadline">GHS-Piktogramme</h2>
       <div class="qr-pictogram-grid" data-emergency-pictograms></div>
     </section>
 
-    <section class="qr-card" aria-labelledby="hazardHeadline">
+    <section class="qr-info-card qr-info-card--danger" aria-labelledby="hazardHeadline">
       <h2 id="hazardHeadline">Gefahrenhinweise (H-Sätze)</h2>
       <p class="qr-statement qr-statement--danger" data-emergency-hazard-statements></p>
     </section>
 
-    <section class="qr-card" aria-labelledby="precautionHeadline">
+    <section class="qr-info-card qr-info-card--blue" aria-labelledby="precautionHeadline">
       <h2 id="precautionHeadline">Sicherheitshinweise (P-Sätze)</h2>
       <p class="qr-statement" data-emergency-precautionary-statements></p>
     </section>
 
-    <section class="qr-card" aria-labelledby="firstAidHeadline">
+    <section class="qr-info-card qr-info-card--green" aria-labelledby="firstAidHeadline">
       <h2 id="firstAidHeadline">Erste-Hilfe-Maßnahmen (Abschnitt 4 SDB)</h2>
       <p class="qr-statement" data-emergency-first-aid></p>
     </section>
 
-    <section class="qr-card" aria-labelledby="documentHeadline">
+    <section class="qr-section" aria-labelledby="documentHeadline">
       <h2 id="documentHeadline">Dokumente</h2>
       <p class="qr-empty-state">Kein Sicherheitsdatenblatt hinterlegt</p>
     </section>
@@ -73,7 +74,31 @@
       Dieser digitale Auszug dient der schnellen Erstinformation am Arbeitsplatz. Er ersetzt weder die vollständige Gefährdungsbeurteilung nach TRGS 400 noch die ärztliche Konsultation im Notfall. Im Zweifelsfall ist stets das vollständige Sicherheitsdatenblatt heranzuziehen.
     </section>
 
-    <footer class="qr-footer">
+    <nav class="qr-legal-links" aria-label="Rechtliche Links">
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+      <a href="/agb">AGB</a>
+    </nav>
+
+    <footer class="qr-footer" aria-label="Notfallkontakte">
+      <div class="qr-call-actions">
+        <a class="qr-call-button qr-call-button--danger" href="tel:112" aria-label="Notruf 112 anrufen">
+          <span class="qr-call-button__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.66 2.81a2 2 0 0 1-.45 2.11L8.05 9.91a16 16 0 0 0 6.04 6.04l1.27-1.27a2 2 0 0 1 2.11-.45c.91.31 1.85.53 2.81.66A2 2 0 0 1 22 16.92Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span>Notruf 112</span>
+        </a>
+        <a class="qr-call-button qr-call-button--poison" href="tel:+493019240" aria-label="Giftnotruf 030 19240 anrufen">
+          <span class="qr-call-button__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.66 2.81a2 2 0 0 1-.45 2.11L8.05 9.91a16 16 0 0 0 6.04 6.04l1.27-1.27a2 2 0 0 1 2.11-.45c.91.31 1.85.53 2.81.66A2 2 0 0 1 22 16.92Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span>Giftnotruf</span>
+        </a>
+      </div>
       <p>§ 6 GefStoffV · Giftnotruf 030 19240</p>
     </footer>
   </main>
