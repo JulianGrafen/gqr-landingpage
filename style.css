@@ -70,6 +70,7 @@ body {
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; }
 ul { list-style: none; }
+[hidden] { display: none !important; }
 
 /* ── Layout helpers ─────────────────────────────────────────── */
 .container {
@@ -1002,5 +1003,312 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 
   .screenshot-card--mobile img {
     width: 100%;
+  }
+}
+
+/* ── SDB Interactive Demo ───────────────────────────────────── */
+.sdb-demo-section {
+  background: #f8fafc;
+  color: #0f172a;
+  border-top: 1px solid rgba(148, 163, 184, .22);
+  border-bottom: 1px solid rgba(148, 163, 184, .22);
+}
+
+.sdb-demo-section .section-label { color: #2563eb; }
+.sdb-demo-section .section-header h2 { color: #0f172a; }
+.sdb-demo-section .section-intro { color: #475569; }
+
+.sdb-demo-heading {
+  margin-bottom: clamp(28px, 5vw, 48px);
+}
+
+.sdb-demo-shell {
+  display: grid;
+  gap: clamp(20px, 4vw, 32px);
+  padding: clamp(18px, 4vw, 32px);
+  border: 1px solid #dbe4f0;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, .12);
+}
+
+.sdb-demo-workflow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.sdb-demo-file,
+.sdb-demo-dropzone {
+  min-height: 164px;
+  border-radius: 22px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.sdb-demo-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border: 1px solid #dbe4f0;
+  background: #ffffff;
+  color: #0f172a;
+  cursor: grab;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+}
+
+.sdb-demo-file:active { cursor: grabbing; }
+.sdb-demo-file:hover,
+.sdb-demo-file:focus-visible {
+  transform: translateY(-3px);
+  border-color: #93c5fd;
+  box-shadow: 0 18px 40px rgba(37, 99, 235, .16);
+}
+
+.sdb-demo-file__icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 72px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fee2e2 0%, #fff1f2 100%);
+  color: #b91c1c;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  border: 1px solid #fecaca;
+}
+
+.sdb-demo-file strong,
+.sdb-demo-file small {
+  display: block;
+}
+
+.sdb-demo-file small {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: .86rem;
+}
+
+.sdb-demo-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 2px dashed #93c5fd;
+  background: #eff6ff;
+  color: #1e3a8a;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sdb-demo-dropzone__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.sdb-demo-dropzone__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.sdb-demo-dropzone span:last-child {
+  color: #475569;
+  font-size: .92rem;
+}
+
+.sdb-demo-dropzone.is-drag-over,
+.sdb-demo-dropzone:focus-visible {
+  transform: translateY(-3px);
+  border-color: #2563eb;
+  background: #dbeafe;
+  box-shadow: 0 18px 44px rgba(37, 99, 235, .18);
+}
+
+.sdb-demo-dropzone.is-processing {
+  border-color: #14b8a6;
+  background: #ecfdf5;
+  color: #0f766e;
+}
+
+.sdb-demo-dropzone.is-ready {
+  border-color: #10b981;
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.sdb-demo-output {
+  min-height: 120px;
+}
+
+.sdb-processing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 156px;
+  border: 1px solid #ccfbf1;
+  border-radius: 20px;
+  background: #f0fdfa;
+  color: #0f766e;
+  font-weight: 800;
+  text-align: center;
+}
+
+.sdb-processing__spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #99f6e4;
+  border-top-color: #0d9488;
+  border-radius: 999px;
+  animation: sdb-spin .8s linear infinite;
+}
+
+@keyframes sdb-spin {
+  to { transform: rotate(360deg); }
+}
+
+.sdb-result {
+  display: grid;
+  gap: 22px;
+  align-items: start;
+}
+
+.sdb-result__data,
+.sdb-qr-card {
+  border: 1px solid #dbe4f0;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, .08);
+}
+
+.sdb-result__data {
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.sdb-result__header {
+  margin-bottom: 18px;
+}
+
+.sdb-result__status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.sdb-result__header h3 {
+  color: #0f172a;
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  line-height: 1.15;
+}
+
+.sdb-data-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.sdb-data-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.sdb-data-field--danger {
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+.sdb-data-field__label {
+  color: #64748b;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+.sdb-data-field__value {
+  color: #0f172a;
+  font-size: .96rem;
+  line-height: 1.45;
+}
+
+.sdb-data-field--danger .sdb-data-field__value {
+  color: #991b1b;
+}
+
+.sdb-qr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: clamp(18px, 3vw, 28px);
+  text-align: center;
+}
+
+.sdb-qr-card__eyebrow {
+  color: #2563eb;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.sdb-qr-card h3 {
+  color: #0f172a;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.sdb-qr-card__image {
+  width: 220px;
+  height: 220px;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.sdb-qr-card__link {
+  color: #1d4ed8;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.sdb-qr-card__link:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 760px) {
+  .sdb-demo-workflow {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  }
+
+  .sdb-result {
+    grid-template-columns: minmax(0, 1fr) 300px;
+  }
+
+  .sdb-data-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

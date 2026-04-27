@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex, follow">
+  <title>Notfallansicht | Industriereiniger RX-90</title>
+  <meta name="description" content="Mobile Notfallansicht für Industriereiniger RX-90 mit Signalwort, GHS-Hinweisen, Erste-Hilfe-Maßnahmen und Lieferantendaten.">
+  <link rel="icon" type="image/png" href="/favico.png">
+  <link rel="stylesheet" href="/notfall/emergency.css">
+</head>
+<body>
+  <main class="qr-page" data-emergency-view>
+    <header class="qr-legal-header">
+      <nav aria-label="Rechtliche Links">
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="/agb">AGB</a>
+      </nav>
+    </header>
+
+    <section class="qr-call-actions" aria-label="Notfallkontakte">
+      <a class="qr-call-button qr-call-button--danger" href="tel:112">
+        <span>Notruf 112</span>
+        <small>anrufen</small>
+      </a>
+      <a class="qr-call-button" href="tel:+493019240">
+        <span>Giftnotruf 030 19240</span>
+        <small>anrufen</small>
+      </a>
+    </section>
+
+    <section class="qr-signal-card" aria-labelledby="emergencyProductName">
+      <div class="qr-signal-word" data-emergency-signal-word>GEFAHR</div>
+      <span class="qr-signal-label">GHS-Signalwort</span>
+
+      <h1 id="emergencyProductName" data-emergency-product-name>Industriereiniger RX-90</h1>
+      <p class="qr-supplier" data-emergency-supplier>Mock Chemie GmbH, 53925 Kall</p>
+
+      <div class="qr-meta-pills" aria-label="Stoffdaten">
+        <span data-emergency-ufi>A1B2-C3D4-E5F6-G7H8</span>
+        <span data-emergency-wgk>WGK 2</span>
+      </div>
+    </section>
+
+    <section class="qr-card" aria-labelledby="pictogramHeadline">
+      <h2 id="pictogramHeadline">GHS-Piktogramme</h2>
+      <div class="qr-pictogram-grid" data-emergency-pictograms></div>
+    </section>
+
+    <section class="qr-card" aria-labelledby="hazardHeadline">
+      <h2 id="hazardHeadline">Gefahrenhinweise (H-Sätze)</h2>
+      <p class="qr-statement qr-statement--danger" data-emergency-hazard-statements></p>
+    </section>
+
+    <section class="qr-card" aria-labelledby="precautionHeadline">
+      <h2 id="precautionHeadline">Sicherheitshinweise (P-Sätze)</h2>
+      <p class="qr-statement" data-emergency-precautionary-statements></p>
+    </section>
+
+    <section class="qr-card" aria-labelledby="firstAidHeadline">
+      <h2 id="firstAidHeadline">Erste-Hilfe-Maßnahmen (Abschnitt 4 SDB)</h2>
+      <p class="qr-statement" data-emergency-first-aid></p>
+    </section>
+
+    <section class="qr-card" aria-labelledby="documentHeadline">
+      <h2 id="documentHeadline">Dokumente</h2>
+      <p class="qr-empty-state">Kein Sicherheitsdatenblatt hinterlegt</p>
+    </section>
+
+    <section class="qr-note" aria-label="Wichtiger Hinweis">
+      <strong>Wichtiger Hinweis:</strong>
+      Dieser digitale Auszug dient der schnellen Erstinformation am Arbeitsplatz. Er ersetzt weder die vollständige Gefährdungsbeurteilung nach TRGS 400 noch die ärztliche Konsultation im Notfall. Im Zweifelsfall ist stets das vollständige Sicherheitsdatenblatt heranzuziehen.
+    </section>
+
+    <footer class="qr-footer">
+      <p>§ 6 GefStoffV · Giftnotruf 030 19240</p>
+    </footer>
+  </main>
+
+  <script type="module" src="/scripts/emergency-view.js"></script>
+</body>
+</html>
