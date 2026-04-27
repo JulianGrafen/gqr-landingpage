@@ -8,6 +8,13 @@ import { createGhsPictogramCard } from "./ghs-pictograms.js";
 
 const PROCESSING_DELAY_MS = 2000;
 const QR_CODE_SIZE = 220;
+const COMPACT_FIELD_KEYS = new Set([
+  "productName",
+  "signalWord",
+  "pictograms",
+  "ufiCode",
+  "storageClass",
+]);
 
 function getRequiredElement(root, selector) {
   const element = root.querySelector(selector);
@@ -68,9 +75,17 @@ function createDataField(field) {
   return fieldElement;
 }
 
-function renderExtractedData(dataGrid) {
+function getExtractionFields(root) {
+  if (root.dataset.sdbVariant !== "compact") {
+    return SDB_EXTRACTION_FIELDS;
+  }
+
+  return SDB_EXTRACTION_FIELDS.filter((field) => COMPACT_FIELD_KEYS.has(field.key));
+}
+
+function renderExtractedData(dataGrid, fields) {
   const fragment = document.createDocumentFragment();
-  SDB_EXTRACTION_FIELDS.forEach((field) => fragment.append(createDataField(field)));
+  fields.forEach((field) => fragment.append(createDataField(field)));
   dataGrid.replaceChildren(fragment);
 }
 
@@ -89,6 +104,7 @@ function initializeSdbDemo(root) {
   const productName = getRequiredElement(root, "[data-sdb-product-name]");
   const qrCode = getRequiredElement(root, "[data-sdb-qr-code]");
   const emergencyLink = getRequiredElement(root, "[data-sdb-emergency-link]");
+  const extractionFields = getExtractionFields(root);
 
   let isProcessing = false;
   const emergencyUrl = buildEmergencyUrl(DEMO_SUBSTANCE.id);
@@ -106,7 +122,7 @@ function initializeSdbDemo(root) {
   }
 
   function showSuccessState() {
-    renderExtractedData(dataGrid);
+    renderExtractedData(dataGrid, extractionFields);
     setVisibility(processing, false);
     setVisibility(result, true);
     dropzone.classList.remove("is-processing", "is-drag-over");
