@@ -4,22 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Gefahrstoffverzeichnis Software – Digital in 30 Sekunden| Jetzt testen</title>
-  <meta name="description" content="Erstellen Sie Ihr Gefahrstoffverzeichnis in 30 Sekunden. Digital & rechtssicher nach § 6 GefStoffV. Für Maler, Werkstätten & KMU. Jetzt kostenlos testen & BG-konform bleiben!">
+  <title>Gefahrstoffverzeichnis Software | § 6 GefStoffV digital</title>
+  <meta name="description" content="Gefahrstoffverzeichnis aus Sicherheitsdatenblättern automatisch erstellen: § 6 GefStoffV, TRGS 510, QR-Notfallansicht statt Excel Vorlage.">
   <link rel="canonical" href="https://gefahrstoff-qr.de/" />
 
-  <meta property="og:title" content="Gefahrstoffverzeichnis Software — § 6 GefStoffV BG-konform | Gefahrstoff-QR">
-  <meta property="og:description" content="Digitales Gefahrstoffverzeichnis nach § 6 GefStoffV erstellen und verwalten. Für Maler, Werkstätten und KMU. QR-Code am Einsatzort, Sicherheitsdatenblatt verwalten, automatische KMR-Warnungen.">
+  <meta property="og:title" content="Gefahrstoffverzeichnis Software | § 6 GefStoffV digital">
+  <meta property="og:description" content="SDB hochladen, Gefahrstoffdaten automatisch extrahieren, QR-Code für die Notfallansicht erzeugen.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gefahrstoff-qr.de/">
   <meta property="og:image" content="https://gefahrstoff-qr.de/og-image.png">
+  <meta property="og:image:alt" content="Gefahrstoff-QR Software mit extrahierten Gefahrstoffdaten nach § 6 GefStoffV">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Gefahrstoff-QR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gefahrstoffverzeichnis Software | § 6 GefStoffV digital">
+  <meta name="twitter:description" content="Gefahrstoffverzeichnis automatisch aus Sicherheitsdatenblättern erstellen — mit QR-Code am Einsatzort.">
+  <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png">
 
 
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
 
     <!-- Favicon -->
@@ -34,17 +40,25 @@
     "url": "https://gefahrstoff-qr.de/",
     "applicationCategory": "BusinessApplication",
     "applicationSubCategory": "Compliance Software",
+    "applicationSuite": "Gefahrstoff-QR",
     "operatingSystem": "Web, iOS, Android",
-    "description": "Digitales Gefahrstoffverzeichnis erstellen und verwalten nach § 6 GefStoffV. Sicherheitsdatenblätter verwalten, TRGS 600 Substitutionsprüfung dokumentieren, QR-Code am Einsatzort. Rechtssicher für Maler, Werkstätten und KMU.",
+    "description": "Digitales Gefahrstoffverzeichnis aus Sicherheitsdatenblättern erstellen und verwalten nach § 6 GefStoffV. Mit TRGS 510 Lagerdaten, QR-Code-Notfallansicht und Alternative zur Excel Vorlage.",
     "featureList": [
       "Gefahrstoffverzeichnis nach § 6 GefStoffV",
-      "Sicherheitsdatenblatt verwalten mit automatischer Versionskontrolle",
+      "Sicherheitsdatenblatt per Azure AI auslesen",
+      "TRGS 510 Lagerklasse strukturiert erfassen",
       "TRGS 600 Substitutionsprüfung dokumentieren",
       "QR-Code am Gefahrstoffbehälter",
       "KMR-Warnungen und Aktualitätscheck",
+      "Excel Vorlage durch validierte Gefahrstoffdaten ersetzen",
       "Revisionssicheres Änderungsprotokoll",
       "BG-konform exportierbares PDF-Verzeichnis"
     ],
+    "provider": {
+      "@type": "Organization",
+      "name": "Gefahrstoff-QR",
+      "url": "https://gefahrstoff-qr.de/"
+    },
     "audience": {
       "@type": "BusinessAudience",
       "audienceType": "Handwerksbetriebe, Werkstätten, KMU, Sicherheitsfachkräfte"
@@ -337,6 +351,46 @@
               </aside>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXCEL ALTERNATIVE / SEARCH INTENT -->
+    <section id="excel-alternative" class="section excel-alternative-section" aria-labelledby="excelAlternativeHeadline">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Excel Vorlage ersetzen</p>
+          <h2 id="excelAlternativeHeadline">Gefahrstoffverzeichnis statt Excel-Falle.</h2>
+          <p class="section-intro">
+            Viele Betriebe starten mit einer Gefahrstoffverzeichnis Excel Vorlage. Das ist verständlich,
+            aber für Sicherheitsdatenblatt-Pflege, TRGS&nbsp;510 Lagerdaten und GefStoffV-Nachweise zu fehleranfällig.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3 class="feature-title">Sicherheitsdatenblatt automatisch auslesen</h3>
+            <p class="feature-desc">
+              Gefahrstoff-QR extrahiert Produktname, Signalwort, GHS-Piktogramme, H-Sätze, P-Sätze,
+              UFI-Code und Erste-Hilfe-Maßnahmen direkt aus dem PDF-Sicherheitsdatenblatt.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3 class="feature-title">TRGS 510 und § 6 GefStoffV strukturiert dokumentieren</h3>
+            <p class="feature-desc">
+              Lagerklasse, Wassergefährdungsklasse und Pflichtangaben werden als strukturierte Felder
+              gepflegt, statt als freie Excel-Zellen ohne Validierung.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3 class="feature-title">QR-Code statt Ordnerjagd im Notfall</h3>
+            <p class="feature-desc">
+              Jeder Gefahrstoff erhält eine mobile Notfallansicht per QR-Code. Mitarbeiter sehen die
+              relevanten Gefahrstoffdaten direkt am Regal, Kanister oder Fahrzeug.
+            </p>
+          </article>
         </div>
       </div>
     </section>

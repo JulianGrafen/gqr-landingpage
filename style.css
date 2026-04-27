@@ -385,6 +385,12 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 /* ── Pain-Points ─────────────────────────────────────────────── */
 .pain-section { background: rgba(255,255,255,.015); }
 
+.excel-alternative-section {
+  background: rgba(255,255,255,.025);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
 .pain-grid {
   display: grid;
   grid-template-columns: 1fr;
