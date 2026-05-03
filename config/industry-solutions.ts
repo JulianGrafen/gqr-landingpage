@@ -26,6 +26,8 @@ export interface IndustrySolution {
   handwerkAbsatz: string;
   /** Branchenbegriff für Überschrift „Wie GQR Ihr … erleichtert“ */
   brancheGenitiv: string;
+  /** Blog-Artikel unter /blog/ (vorhandene statische URL) */
+  blogPostHref: string;
 }
 
 export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
@@ -51,6 +53,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     handwerkAbsatz:
       'Werkstätten arbeiten oft mit vielen Herstellern und schnellen Produktwechseln. Wenn Sicherheitsdatenblätter nicht zeitnah in Verzeichnis und betriebliche Unterweisung einfließen, entstehen Lücken bei Prüfungen. KI-gestützte Extraktion aus dem PDF reduziert den manuellen Aufwand bei H- und P-Sätzen sowie Schutzmaßnahmen.',
     brancheGenitiv: 'Werkstatt',
+    blogPostHref: '/blog/kfz-gefahrstoff-excel/',
   },
   schreinerei: {
     slug: 'schreinerei',
@@ -74,6 +77,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     handwerkAbsatz:
       'In der Holzverarbeitung überlagern sich Stäube, organische Lösemittel und reaktive Harze. Ein digitales Verzeichnis hilft, die richtige PSA und Lagerlogik (z. B. nach TRGS 510) konsistent zu dokumentieren und bei neuen Lacklinien schnell nachzuziehen.',
     brancheGenitiv: 'Schreinerhandwerk',
+    blogPostHref: '/blog/schreinerei-gefahrstoff-blog.html',
   },
   malerbetrieb: {
     slug: 'malerbetrieb',
@@ -97,6 +101,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     handwerkAbsatz:
       'Malerbetriebe wechseln zwischen Werkstatt, Objekt und unterschiedlichen Materialien. Wenn Verzeichnis und Baustellenlogik auseinanderlaufen, leidet die Nachweisbarkeit. Digitale Erfassung mit KI beschleunigt die Übernahme neuer Produktdaten aus dem Lieferanten-SDB.',
     brancheGenitiv: 'Malerhandwerk',
+    blogPostHref: '/blog/maler-gefahrstoffverzeichnis-excel/',
   },
   laborbetrieb: {
     slug: 'laborbetrieb',
@@ -120,6 +125,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     handwerkAbsatz:
       'Labore arbeiten mit vielen Stoffen geringer Menge aber hoher Einstufungsvielfalt. Revisionssicheres Führen des Gefahrstoffverzeichnisses und schnelle Synchronisierung bei Lieferantenupdates sind entscheidend, ohne den Fachkräfte-Alltag zu blockieren.',
     brancheGenitiv: 'Labor',
+    blogPostHref: '/blog/laborbetrieb-gefahrstoff-blog.html',
   },
   reinigungsunternehmen: {
     slug: 'reinigungsunternehmen',
@@ -143,6 +149,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     handwerkAbsatz:
       'Reinigungskräfte wechseln Objekte und Produktlinien. Wenn SDB-Updates oder neue Konzentrate nicht schnell im Verzeichnis landen, bestehen Lücken bei Unterweisung und Hautschutz. Digitale Erfassung verkürzt die Zeit vom Lieferanten-PDF bis zur freigegebenen Information am Einsatzort.',
     brancheGenitiv: 'Reinigungsbetrieb',
+    blogPostHref: '/blog/reinigung-gefahrstoffkataster-vorlage/',
   },
 };
 

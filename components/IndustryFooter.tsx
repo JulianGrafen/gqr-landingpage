@@ -18,7 +18,7 @@ const ICONS: Record<IndustrySlug, LucideIcon> = {
 };
 
 /**
- * Branchen-Grid vor dem Seitenfooter — interne Verlinkung für SEO & Orientierung.
+ * Branchen-Grid — Branchenname + Link zum jeweiligen Blog-Artikel.
  */
 export function IndustryFooter() {
   const industries = getAllIndustries();
@@ -36,8 +36,8 @@ export function IndustryFooter() {
           Maßgeschneiderte Lösungen für Ihre Branche
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-sm leading-relaxed text-slate-600 sm:text-base">
-          Wählen Sie Ihr Gewerk — jedes Profil mit eigenem Fokus auf typische
-          Stoffe, PSA und Nachweise nach GefStoffV.
+          Lesen Sie im Blog, wie Gefahrstoff-QR in Ihrer Branche bei
+          GefStoffV, SDB und Betriebsanweisungen hilft.
         </p>
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5" role="list">
@@ -45,23 +45,23 @@ export function IndustryFooter() {
             const Icon = ICONS[item.slug];
             return (
               <li key={item.slug}>
-                <Link
-                  href={`/loesungen/${item.slug}/`}
-                  className="group flex h-full flex-col rounded-2xl border border-slate-300/80 bg-white p-5 shadow-sm no-underline transition hover:border-slate-400 hover:shadow-md"
-                >
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-slate-800 transition group-hover:bg-[#ff6b35]/15 group-hover:text-[#c2410c]">
-                    <Icon className="h-6 w-6" strokeWidth={1.75} aria-hidden />
+                <div className="flex h-full flex-col rounded-2xl border border-slate-300/80 bg-white p-5 shadow-sm">
+                  <span
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-slate-800"
+                    aria-hidden
+                  >
+                    <Icon className="h-6 w-6" strokeWidth={1.75} />
                   </span>
                   <span className="mt-4 text-base font-bold text-slate-900">
                     {item.label}
                   </span>
-                  <span className="mt-2 text-sm leading-snug text-slate-600">
-                    Gefahrstoffverzeichnis &amp; Betriebsanweisungen
-                  </span>
-                  <span className="mt-3 text-sm font-semibold text-[#ff6b35]">
-                    Mehr erfahren →
-                  </span>
-                </Link>
+                  <Link
+                    href={item.blogPostHref}
+                    className="mt-4 text-sm font-semibold text-[#ff6b35] no-underline transition hover:underline"
+                  >
+                    Branchen-Blog
+                  </Link>
+                </div>
               </li>
             );
           })}
