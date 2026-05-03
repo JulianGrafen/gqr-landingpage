@@ -196,6 +196,27 @@ ul { list-style: none; }
   width: 100%;
 }
 
+/* Preise: „Empfohlen“-Badge — gleicher Orange-Verlauf wie Primär-CTA */
+.pricing-badge-recommended {
+  position: absolute;
+  top: -0.75rem;
+  right: 1.5rem;
+  z-index: 1;
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  color: #051018;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  background: linear-gradient(135deg, #ff9a6b 0%, #ff6b35 42%, #ffb88c 100%);
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 140, 100, 0.4),
+    0 0 28px rgba(255, 115, 70, 0.3);
+}
+
 .btn-ghost {
   background: transparent;
   color: var(--color-text);
