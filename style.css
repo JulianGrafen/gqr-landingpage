@@ -138,13 +138,21 @@ ul { list-style: none; }
 }
 
 .btn-primary {
-  background: var(--gradient-accent);
-  color: #fff;
-  box-shadow: 0 4px 20px rgba(255, 107, 53, .3);
+  background: linear-gradient(135deg, #ff9a6b 0%, #ff6b35 42%, #ffb88c 100%);
+  color: #051018;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 140, 100, 0.45),
+    0 0 42px rgba(255, 115, 70, 0.35);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(255, 107, 53, .45);
+  filter: brightness(1.04);
+  box-shadow:
+    0 10px 32px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 200, 170, 0.55),
+    0 0 52px rgba(255, 130, 85, 0.45);
 }
 
 .btn-ghost {
