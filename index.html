@@ -517,14 +517,19 @@
             QR-Code am Behälter scannen &mdash; Sicherheitsinfos und Handlungshilfen sofort auf dem Smartphone.
           </p>
         </div>
-        <figure class="mx-auto mt-10 max-w-[280px] sm:max-w-[300px]">
-          <img
+        <figure class="mx-auto mt-10 w-full max-w-[280px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[473px]">
+          <picture>
+            <source srcset="/images/notfall-qr-scan-demo.gif" media="(min-width: 1024px)" />
+            <source srcset="/images/notfall-qr-scan-demo.gif" media="(min-width: 640px)" />
+            <img
               src="/images/notfall-qr-scan-demo.gif"
               alt="Smartphone scannt den Gefahrstoff-QR-Code; Verknüpfung zur Notfallansicht in der App"
               width="473"
               height="1024"
-              class="mx-auto w-full rounded-2xl border border-white/10 shadow-xl shadow-black/40"
+              class="mx-auto w-full rounded-2xl border border-white/10 shadow-xl shadow-black/40 object-contain"
+              style="max-height:70vh"
             />
+          </picture>
         </figure>
       </div>
     </section>
