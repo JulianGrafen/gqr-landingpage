@@ -4,34 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Gefahrstoffverzeichnis Software | § 6 GefStoffV digital</title>
-  <meta name="description" content="Gefahrstoffverzeichnis aus Sicherheitsdatenblättern automatisch erstellen: § 6 GefStoffV, TRGS 510, QR-Notfallansicht statt Excel Vorlage.">
+  <title>Digitales Gefahrstoffverzeichnis per KI | Gefahrstoff-QR — GefStoffV &amp; CLP</title>
+  <meta name="description" content="Gefahrstoffmanagement nach GefStoffV, CLP und REACH — vollautomatisch. KI liest Sicherheitsdatenblätter aus, statt Excel-Chaos und Abtippen. DSGVO-konform, Made in Germany.">
   <link rel="canonical" href="https://gefahrstoff-qr.de/" />
 
-  <meta property="og:title" content="Gefahrstoffverzeichnis Software | § 6 GefStoffV digital">
-  <meta property="og:description" content="SDB hochladen, Gefahrstoffdaten automatisch extrahieren, QR-Code für die Notfallansicht erzeugen.">
+  <meta property="og:title" content="Digitales Gefahrstoffverzeichnis per KI | Gefahrstoff-QR">
+  <meta property="og:description" content="In 30 Sekunden pro Stoff: KI-Extraktion aus SDB statt manuellem Excel. GefStoffV, CLP, REACH — Betriebsanweisungen &amp; Verzeichnis aus einer Quelle.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gefahrstoff-qr.de/">
   <meta property="og:image" content="https://gefahrstoff-qr.de/og-image.png">
-  <meta property="og:image:alt" content="Gefahrstoff-QR Software mit extrahierten Gefahrstoffdaten nach § 6 GefStoffV">
+  <meta property="og:image:alt" content="Gefahrstoff-QR — KI-gestütztes digitales Gefahrstoffverzeichnis">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Gefahrstoff-QR">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gefahrstoffverzeichnis Software | § 6 GefStoffV digital">
-  <meta name="twitter:description" content="Gefahrstoffverzeichnis automatisch aus Sicherheitsdatenblättern erstellen — mit QR-Code am Einsatzort.">
+  <meta name="twitter:title" content="Digitales Gefahrstoffverzeichnis per KI | Gefahrstoff-QR">
+  <meta name="twitter:description" content="KI-Extraktion aus Sicherheitsdatenblättern — rechtssicheres Verzeichnis ohne Excel-Fallen.">
   <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png">
-
 
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="tw.css" as="style">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tw.css">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favico.png">
+  <link rel="icon" type="image/png" href="/favico.png">
 
-  <!-- SoftwareApplication: Gefahrstoff-QR -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,17 +41,16 @@
     "applicationSubCategory": "Compliance Software",
     "applicationSuite": "Gefahrstoff-QR",
     "operatingSystem": "Web, iOS, Android",
-    "description": "Digitales Gefahrstoffverzeichnis aus Sicherheitsdatenblättern erstellen und verwalten nach § 6 GefStoffV. Mit TRGS 510 Lagerdaten, QR-Code-Notfallansicht und Alternative zur Excel Vorlage.",
+    "description": "Digitales Gefahrstoffverzeichnis: KI extrahiert Daten aus Sicherheitsdatenblättern in Sekunden — statt manueller Excel-Pflege. Unterstützung für GefStoffV, CLP, REACH, TRGS 510/600, Betriebsanweisungen und QR-Notfallansicht.",
     "featureList": [
-      "Gefahrstoffverzeichnis nach § 6 GefStoffV",
-      "Sicherheitsdatenblatt per Azure AI auslesen",
-      "TRGS 510 Lagerklasse strukturiert erfassen",
-      "TRGS 600 Substitutionsprüfung dokumentieren",
-      "QR-Code am Gefahrstoffbehälter",
-      "KMR-Warnungen und Aktualitätscheck",
-      "Excel Vorlage durch validierte Gefahrstoffdaten ersetzen",
-      "Revisionssicheres Änderungsprotokoll",
-      "BG-konform exportierbares PDF-Verzeichnis"
+      "Automatisches Gefahrstoffverzeichnis nach § 6 GefStoffV",
+      "KI-Extraktion aus Sicherheitsdatenblättern (GHS, H/P-Sätze, Schutzmaßnahmen)",
+      "Rechtssichere Betriebsanweisungen (BA)",
+      "Digitales GHS-Piktogramm-Management",
+      "Zusammenlagerungs-Check",
+      "Mengenüberwachung und Alerts",
+      "QR-Notfallansicht am Einsatzort",
+      "TRGS 510 Lagerklasse und TRGS 600 Substitutionshinweise"
     ],
     "provider": {
       "@type": "Organization",
@@ -61,26 +59,13 @@
     },
     "audience": {
       "@type": "BusinessAudience",
-      "audienceType": "Handwerksbetriebe, Werkstätten, KMU, Sicherheitsfachkräfte"
+      "audienceType": "Handwerksbetriebe, Werkstätten, KMU, Sicherheitsfachkräfte, Labore"
     },
     "offers": [
       {
         "@type": "Offer",
-        "name": "Starter",
-        "description": "Bis 25 Gefahrstoffe, 1 Standort",
-        "price": "29",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "29",
-          "priceCurrency": "EUR",
-          "unitText": "MONTH"
-        }
-      },
-      {
-        "@type": "Offer",
-        "name": "Pro",
-        "description": "Unbegrenzte Gefahrstoffe, 3 Standorte, automatische SDB-Updates",
+        "name": "Basis",
+        "description": "50 Gefahrstoffe, SDB-Upload, Support",
         "price": "49",
         "priceCurrency": "EUR",
         "priceSpecification": {
@@ -92,8 +77,8 @@
       },
       {
         "@type": "Offer",
-        "name": "Premium",
-        "description": "Unbegrenzte Standorte, Multi-User, SiFa-Mandantenzugang, API",
+        "name": "Pro",
+        "description": "Unbegrenzt Stoffe, KI-Betriebsanweisungen, Zusammenlagerungs-Check",
         "price": "99",
         "priceCurrency": "EUR",
         "priceSpecification": {
@@ -102,12 +87,19 @@
           "priceCurrency": "EUR",
           "unitText": "MONTH"
         }
+      },
+      {
+        "@type": "Offer",
+        "name": "Enterprise",
+        "description": "Multi-User, API, Schulungen — Preis auf Anfrage",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/OnlineOnly",
+        "url": "mailto:info@gefahrstoff-qr.de?subject=Enterprise%20Gefahrstoff-QR"
       }
     ]
   }
   </script>
 
-  <!-- Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -120,12 +112,11 @@
       "width": 200,
       "height": 60
     },
-    "description": "GefStoffV-konforme Software zum Erstellen und Verwalten von Gefahrstoffverzeichnissen für KMU und Handwerksbetriebe.",
+    "description": "GefStoffV-konforme Software mit KI-gestützter Erfassung aus Sicherheitsdatenblättern für KMU und Industrie.",
     "sameAs": []
   }
   </script>
 
-  <!-- WebSite (Sitelinks Searchbox) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -142,18 +133,74 @@
     }
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Erfüllt ein digitales Gefahrstoffverzeichnis die Pflichten aus § 6 GefStoffV?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Nach GefStoffV müssen Arbeitgeber ein Verzeichnis führen, das alle verwendeten Gefahrstoffe mit den geforderten Informationen abbildet — unabhängig davon, ob Sie Papier, Excel oder Software nutzen. Entscheidend sind Vollständigkeit, Aktualität und Nachvollziehbarkeit. Gefahrstoff-QR strukturiert die Inhalte aus dem Sicherheitsdatenblatt digital, damit Prüfungen und interne Audits effizienter werden und Lücken seltener werden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Worin liegt der Vorteil von KI-Extraktion gegenüber manueller Eingabe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bei manueller Pflege kopieren Teams Signalwörter, GHS-Symbole, H- und P-Sätze sowie Schutzmaßnahmen oft zeilenweise aus PDFs — das ist fehleranfällig und skaliert schlecht. Unsere Extraktion liest das Sicherheitsdatenblatt strukturiert aus und übernimmt die wiederkehrenden Felder in Sekunden. Sie behalten die fachliche Verantwortung für Freigabe und Dokumentation, sparen aber den Großteil des Abtipp-Aufwands."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist die Nutzung DSGVO-konform?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wir gestalten die Verarbeitung personenbezogener Daten entlang gängiger Auftragsverarbeitungs-Modelle und dokumentieren Zweckbindung, Zugriff und Löschfristen. Welche Daten konkret anfallen, hängt von Ihrer Organisation und Ihren Prozessen ab — bei der Einführung sollten Sie mit Ihrer Datenschutzverantwortung die Rollen klären. Auf Wunsch erhalten Sie die für Sie passenden Vereinbarungen und Unterlagen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wo werden meine Sicherheitsdatenblätter verarbeitet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sicherheitsdatenblätter enthalten in der Regel keine personenbezogenen Daten, dennoch behandeln wir Uploads wie geschäftskritische Dokumente. Die technische Verarbeitung erfolgt in gesicherten Umgebungen; Details zu Regionen und Subprozessoren regeln unsere Vertragsdokumente. Sprechen Sie uns an, wenn Sie Hosting- oder Residency-Vorgaben aus Ihrer IT haben."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich Betriebsanweisungen (BA) mit Gefahrstoff-QR erzeugen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Im Pro- und Enterprise-Umfeld unterstützen wir Sie bei der KI-gestützten Erstellung rechtssicherer Betriebsanweisungen auf Basis der extrahierten Schutzmaßnahmen — inklusive relevanter GHS- und SDB-Informationen, die Sie vor der Freigabe prüfen. Die BA ersetzt keine individuelle Gefährdungsbeurteilung, dokumentiert aber konsistent, was Ihre Mitarbeitenden vor Ort wissen müssen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Deckt die Lösung CLP, REACH und technische Regeln wie TRGS ab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Einstufung und Kennzeichnung erfolgt im Alltag nach CLP (GHS-Piktogramme, H- und P-Sätze). REACH-relevante Aspekte wie UFI können — je nach SDB — strukturiert mitgeführt werden. Ergänzend helfen Module zu Lagerung und Substitution (z. B. TRGS 510 / TRGS 600), damit nicht nur das Etikett stimmt, sondern auch Lagerlogik und Substitutionspflichten dokumentierbar bleiben."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
-  <!-- HEADER / NAV -->
   <header class="site-header" id="siteHeader">
     <a class="logo" href="/" aria-label="Gefahrstoff-QR Startseite">Gefahrstoff-QR</a>
 
     <nav class="nav-desktop" aria-label="Hauptnavigation">
-      <a class="nav-link" href="#probleme">Probleme</a>
-      <a class="nav-link" href="#features">Features</a>
+      <a class="nav-link" href="#produkt">Produkt</a>
+      <a class="nav-link" href="#funktionen">Funktionen</a>
       <a class="nav-link" href="#preise">Preise</a>
-      <a class="nav-link" href="/blog/">Blog</a>
+      <a class="nav-link" href="/blog/">Wissen</a>
       <a class="btn btn-primary nav-cta" href="https://app.gefahrstoff-qr.de/register">Kostenlos starten</a>
     </nav>
 
@@ -166,10 +213,10 @@
     <div class="nav-mobile-inner">
       <button id="navCloseBtn" class="nav-close" aria-label="Schließen">&#x2715; Schließen</button>
       <nav class="mobile-links">
-        <a class="nav-link" href="#probleme">Probleme</a>
-        <a class="nav-link" href="#features">Features</a>
+        <a class="nav-link" href="#produkt">Produkt</a>
+        <a class="nav-link" href="#funktionen">Funktionen</a>
         <a class="nav-link" href="#preise">Preise</a>
-        <a class="nav-link" href="/blog/">Blog</a>
+        <a class="nav-link" href="/blog/">Wissen</a>
         <a class="btn btn-primary" href="https://app.gefahrstoff-qr.de/register">Kostenlos starten</a>
       </nav>
     </div>
@@ -178,49 +225,40 @@
   <main>
 
     <!-- HERO -->
-    <section id="hero" class="hero section" aria-labelledby="heroHeadline">
-      <div class="container hero-inner">
+    <section id="hero" class="relative flex min-h-0 items-center overflow-hidden py-12 lg:min-h-[560px] lg:py-20" aria-labelledby="heroHeadline">
+      <div class="mx-auto grid w-full max-w-[1160px] gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-start lg:gap-16 lg:px-10">
 
-        <!-- Left: Copy & CTA -->
-        <div class="hero-copy">
-          <div class="hero-badge">&#167;&nbsp;6 GefStoffV &mdash; Rechtssicher &amp; BG-konform</div>
+        <div class="flex flex-col gap-6 text-center lg:items-start lg:text-left">
+          <span class="mx-auto inline-flex items-center rounded-full border border-teal-400/40 bg-teal-400/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-teal-300 lg:mx-0 sm:text-sm">
+            KI-gestützte SDB-Extraktion
+          </span>
 
-          <h1 id="heroHeadline" class="hero-title">
-            Digitales Gefahrstoffverzeichnis,<br>
-            <span class="text-gradient">in 30 Sekunden.</span>
+          <h1 id="heroHeadline" class="text-[1.65rem] font-black leading-tight text-[#f0f6ff] sm:text-3xl lg:text-[2.65rem] lg:leading-[1.08]">
+            Digitales Gefahrstoffverzeichnis – In 30 Sekunden per KI statt Excel-Chaos
           </h1>
 
-          <p class="hero-subtitle">
-            Rechtssicher nach&nbsp;&#167;&nbsp;6&nbsp;GefStoffV. Für Maler, Werkstätten und den Mittelstand.
-            Komplett digital &mdash; kein Papier, kein Haftungsrisiko.
+          <p class="mx-auto max-w-xl text-base text-[#8fa4c0] sm:text-lg lg:mx-0 lg:text-xl lg:leading-relaxed">
+            Gefahrstoffmanagement nach GefStoffV, CLP und REACH – vollautomatisch.
           </p>
 
-          <ul class="hero-checkmarks" aria-label="Vorteile auf einen Blick">
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z" fill="currentColor"/></svg>
-              Prüffertig für BG-Revision
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z" fill="currentColor"/></svg>
-              QR-Code am Einsatzort
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z" fill="currentColor"/></svg>
-              Automatische SDB-Warnungen
-            </li>
-          </ul>
-
-          <div class="hero-cta-group">
-            <a class="btn btn-primary btn-large" href="https://app.gefahrstoff-qr.de/register" title="Gefahrstoffverzeichnis kostenlos testen — jetzt starten">
-              Kostenlos testen
+          <div class="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+            <a class="inline-flex min-h-[48px] items-center justify-center rounded-2xl bg-gradient-to-br from-[#ff6b35] to-[#ff9a5c] px-6 py-3 text-sm font-bold text-[#0a1628] shadow-lg shadow-orange-900/30 transition hover:brightness-110 sm:text-base" href="https://app.gefahrstoff-qr.de/register" title="Jetzt kostenlos testen">
+              Jetzt kostenlos testen
             </a>
-            <a class="btn btn-ghost" href="#features">Wie es funktioniert &#x2192;</a>
+            <a class="inline-flex min-h-[48px] items-center justify-center rounded-2xl border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-[#f0f6ff] transition hover:border-white/25 hover:bg-white/[0.06] sm:text-base" href="#funktionen">
+              Funktionen ansehen
+            </a>
           </div>
 
-          <p class="hero-note">Keine Kreditkarte erforderlich &middot; Sofort einsatzbereit &middot; Fragen? <a href="mailto:info@gefahrstoff-qr.de">info@gefahrstoff-qr.de</a></p>
+          <ul class="flex flex-wrap justify-center gap-2 lg:justify-start" aria-label="Vertrauensmerkmale">
+            <li class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-[#c5d0e2]">DSGVO-konform</li>
+            <li class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-[#c5d0e2]">Made in Germany</li>
+            <li class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-[#c5d0e2]">Keine Kreditkarte nötig</li>
+          </ul>
+
+          <p class="text-xs text-[#8fa4c0]">Fragen? <a href="mailto:info@gefahrstoff-qr.de" class="font-semibold text-teal-300 underline-offset-2 hover:underline">info@gefahrstoff-qr.de</a></p>
         </div>
 
-        <!-- Right: Interactive ROI Calculator -->
         <aside class="roi-card" aria-label="ROI-Rechner: Zeitersparnis berechnen">
           <h2 class="roi-card__title">ROI-Rechner: Wie viel Zeit sparen Sie?</h2>
 
@@ -277,6 +315,119 @@
           </div>
         </aside>
 
+      </div>
+    </section>
+
+    <!-- KENNEN SIE DAS? -->
+    <section id="kennen-sie-das" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="kennenHeadline">
+      <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
+        <div class="mx-auto mb-12 max-w-3xl text-center">
+          <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Kennen Sie das?</p>
+          <h2 id="kennenHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Vier typische Bremsen im Gefahrstoff-Alltag</h2>
+          <p class="mt-4 text-base text-[#8fa4c0] sm:text-lg">Wenn Pflege und Nachweise aus dem Ruder laufen, kostet das zuerst Zeit — und im Zweifel sehr viel mehr.</p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/80 p-6 shadow-lg shadow-black/20 backdrop-blur-sm">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-orange-500/15 text-xl" aria-hidden="true">&#x1F4C3;</div>
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Veraltete Excel-Listen</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Manuelle Pflege verteilt Versionen über Abteilungen. Ein vergessenes Update reicht, damit Ihr Kataster bei einer Kontrolle nicht mehr zur Realität passt.</p>
+          </article>
+          <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/80 p-6 shadow-lg shadow-black/20 backdrop-blur-sm">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-orange-500/15 text-xl" aria-hidden="true">&#x23F3;</div>
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Zeitfresser SDB-Extraktion</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">H-Sätze, P-Sätze und Schutzmaßnahmen aus PDFs abzutippen bindet Fachkräfte und frustiert Teams — ohne fachlich Mehrwert zu schaffen.</p>
+          </article>
+          <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/80 p-6 shadow-lg shadow-black/20 backdrop-blur-sm">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-orange-500/15 text-xl" aria-hidden="true">&#x26A0;&#xFE0F;</div>
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Fehlende Betriebsanweisungen</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Ein ordentliches Verzeichnis ist Pflicht — Betriebsanweisungen machen Vorgaben am Arbeitsplatz greifbar. Fehlen sie, steigen rechtliche und organisatorische Risiken bei Prüfungen.</p>
+          </article>
+          <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/80 p-6 shadow-lg shadow-black/20 backdrop-blur-sm">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-orange-500/15 text-xl" aria-hidden="true">&#x1F4CA;</div>
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Mengen-Blindflug</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Ohne belastbare Mengenerfassung verlieren Sie den Überblick über Lagergrenzen und Schwellenwerte — und über rechtzeitige Gegenmaßnahmen.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNKTIONEN: Prozess + Grid -->
+    <section id="funktionen" class="py-14 lg:py-24" aria-labelledby="funktionenHeadline">
+      <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
+        <div class="mx-auto mb-14 max-w-3xl text-center">
+          <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">So arbeiten Sie mit Gefahrstoff-QR</p>
+          <h2 id="funktionenHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Vom PDF zum rechtssicheren Kataster — ohne Abtipp-Marathon</h2>
+          <p class="mt-4 text-base text-[#8fa4c0] sm:text-lg">KI übernimmt das Schwere aus dem Sicherheitsdatenblatt, Sie behalten die fachliche Freigabe. <a href="#demo" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Interaktive Demo ausprobieren</a></p>
+        </div>
+
+        <ol class="relative mb-20 grid gap-10 lg:grid-cols-3 lg:gap-8">
+          <li class="relative flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6 pt-10 lg:pt-12">
+            <span class="absolute -top-4 left-6 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#ff6b35] to-[#ff9a5c] text-sm font-black text-[#0a1628]">1</span>
+            <h3 class="text-lg font-bold text-[#f0f6ff]">SDB hochladen</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Ziehen Sie das PDF in die Scan-Zone oder nutzen Sie Upload aus der Werkstatt — ein Vorgang pro Stoff, ohne Doppelpflege.</p>
+          </li>
+          <li class="relative flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6 pt-10 lg:pt-12">
+            <span class="absolute -top-4 left-6 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#ff6b35] to-[#ff9a5c] text-sm font-black text-[#0a1628]">2</span>
+            <h3 class="text-lg font-bold text-[#f0f6ff]">KI-Analyse</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Unser Modell extrahiert GHS-Piktogramme, H- und P-Sätze sowie Schutzmaßnahmen in Sekunden — strukturiert statt „Copy &amp; Paste“.</p>
+          </li>
+          <li class="relative flex flex-col rounded-2xl border border-teal-400/30 bg-teal-400/[0.06] p-6 pt-10 ring-1 ring-teal-400/20 lg:pt-12">
+            <span class="absolute -top-4 left-6 flex h-9 w-9 items-center justify-center rounded-full bg-teal-400 text-sm font-black text-[#0a1628]">3</span>
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Fertig</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Sie erhalten ein revisionssicheres Gefahrstoffverzeichnis und können Betriebsanweisungen auf Knopfdruck erzeugen — abgestimmt auf den jeweiligen Arbeitsplatz.</p>
+          </li>
+        </ol>
+
+        <div class="mx-auto mb-4 max-w-3xl text-center">
+          <h3 class="text-xl font-black text-[#f0f6ff] sm:text-2xl">Leistungsumfang für Suchanfragen &amp; Anbietervergleiche</h3>
+          <p class="mt-2 text-sm text-[#8fa4c0] sm:text-base">Diese Begriffe beschreiben, was Gefahrstoff-QR im Kern abdeckt — von der klassischen Pflichtdokumentation bis zur operativen Sicherheit am Regal.</p>
+        </div>
+
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
+            <div class="mb-4 text-teal-300" aria-hidden="true">
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" stroke-linecap="round"/><rect x="2" y="4" width="3" height="16" rx="1"/></svg>
+            </div>
+            <h4 class="font-bold text-[#f0f6ff]">Automatisches Gefahrstoffverzeichnis</h4>
+            <p class="mt-2 text-sm text-[#8fa4c0]">Strukturierte Erfassung nach § 6 GefStoffV mit klaren Feldern statt Tabellenchaos — durchsuchbar und exportierbar.</p>
+          </article>
+          <article class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
+            <div class="mb-4 text-teal-300" aria-hidden="true">
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+            </div>
+            <h4 class="font-bold text-[#f0f6ff]">KI-Extraktion aus Sicherheitsdatenblättern</h4>
+            <p class="mt-2 text-sm text-[#8fa4c0]">Schneller als manuelle Übertragung: relevante Abschnitte aus dem SDB landen dort, wo Sie sie für Nachweise brauchen.</p>
+          </article>
+          <article class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
+            <div class="mb-4 text-teal-300" aria-hidden="true">
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8M8 11h6"/></svg>
+            </div>
+            <h4 class="font-bold text-[#f0f6ff]">Rechtssichere Betriebsanweisungen (BA)</h4>
+            <p class="mt-2 text-sm text-[#8fa4c0]">Vorlagen, die auf extrahierten Schutzmaßnahmen basieren — Sie prüfen und geben frei, was vor Ort gilt.</p>
+          </article>
+          <article class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
+            <div class="mb-4 text-teal-300" aria-hidden="true">
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h4 class="font-bold text-[#f0f6ff]">Digitales GHS-Piktogramm-Management</h4>
+            <p class="mt-2 text-sm text-[#8fa4c0]">Signalwort, Piktogramme und CLP-Texte bleiben konsistent mit dem zugrunde liegenden SDB — Revisionen sind nachvollziehbar.</p>
+          </article>
+          <article class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
+            <div class="mb-4 text-teal-300" aria-hidden="true">
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M3 14h7v7H3z"/><path d="M10 6h4M10 17h4" stroke-linecap="round"/></svg>
+            </div>
+            <h4 class="font-bold text-[#f0f6ff]">Zusammenlagerungs-Check</h4>
+            <p class="mt-2 text-sm text-[#8fa4c0]">Unverträglichkeiten früh erkennen, bevor sie im Lager oder in der Fahrzeugflotte passieren — abgestimmt auf TRGS 510.</p>
+          </article>
+          <article class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
+            <div class="mb-4 text-teal-300" aria-hidden="true">
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+            </div>
+            <h4 class="font-bold text-[#f0f6ff]">Mengenüberwachung &amp; Alerts</h4>
+            <p class="mt-2 text-sm text-[#8fa4c0]">Warnungen, wenn Schwellen oder Grenzwerte kritisch werden — damit Sie handeln können, bevor es teuer wird.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -355,175 +506,49 @@
       </div>
     </section>
 
-    <!-- EXCEL ALTERNATIVE / SEARCH INTENT -->
-    <section id="excel-alternative" class="section excel-alternative-section" aria-labelledby="excelAlternativeHeadline">
+    <!-- SEO Kataster -->
+    <section id="gefahrstoffkataster" class="section kataster-section" aria-labelledby="katasterHeadline">
       <div class="container">
         <div class="section-header">
-          <p class="section-label">Excel Vorlage ersetzen</p>
-          <h2 id="excelAlternativeHeadline">Gefahrstoffverzeichnis statt Excel-Falle.</h2>
-          <p class="section-intro">
-            Viele Betriebe starten mit einer Gefahrstoffverzeichnis Excel Vorlage. Das ist verständlich,
-            aber für Sicherheitsdatenblatt-Pflege, TRGS&nbsp;510 Lagerdaten und GefStoffV-Nachweise zu fehleranfällig.
+          <p class="section-label">Gefahrstoffkataster digital</p>
+          <h2 id="katasterHeadline">Digitales Gefahrstoffkataster für rechtssichere Unternehmen</h2>
+        </div>
+
+        <article class="kataster-prose">
+          <p>
+            Die <strong>Gefahrstoffverordnung (GefStoffV)</strong> verpflichtet Arbeitgeber, die mit Gefahrstoffen umgehen,
+            ein vollständiges <strong>Gefahrstoffverzeichnis</strong> zu führen. In Betrieben heißt diese Pflichtdokumentation oft
+            schlicht <strong>Gefahrstoffkataster</strong>. Wer sie noch in veralteten Excel-Listen oder aus losen PDF-Ordnern
+            zusammensucht, verliert nicht nur Zeit, sondern riskiert Lücken bei BG- oder Behördenkontrollen.
           </p>
-        </div>
 
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3 class="feature-title">Sicherheitsdatenblatt automatisch auslesen</h3>
-            <p class="feature-desc">
-              Gefahrstoff-QR extrahiert Produktname, Signalwort, GHS-Piktogramme, H-Sätze, P-Sätze,
-              UFI-Code und Erste-Hilfe-Maßnahmen direkt aus dem PDF-Sicherheitsdatenblatt.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <h3 class="feature-title">TRGS 510 und § 6 GefStoffV strukturiert dokumentieren</h3>
-            <p class="feature-desc">
-              Lagerklasse, Wassergefährdungsklasse und Pflichtangaben werden als strukturierte Felder
-              gepflegt, statt als freie Excel-Zellen ohne Validierung.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <h3 class="feature-title">QR-Code statt Ordnerjagd im Notfall</h3>
-            <p class="feature-desc">
-              Jeder Gefahrstoff erhält eine mobile Notfallansicht per QR-Code. Mitarbeiter sehen die
-              relevanten Gefahrstoffdaten direkt am Regal, Kanister oder Fahrzeug.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAIN-POINTS -->
-    <section id="probleme" class="section pain-section" aria-labelledby="painHeadline">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-label">Das kennen Sie bestimmt</p>
-          <h2 id="painHeadline">Zettelwirtschaft kostet Zeit &mdash; und im Ernstfall Geld.</h2>
-          <p class="section-intro">
-            Viele Betriebe führen ihr Gefahrstoffverzeichnis noch auf Papier oder in Excel-Tabellen.
-            Das reicht bei einer BG-Prüfung nicht &mdash; und schafft echte Haftungsrisiken für Geschäftsführer.
+          <h3>Strukturierte Erfassung statt Tabellenchaos</h3>
+          <p>
+            Mit <strong>Gefahrstoff-QR</strong> führen Sie Ihr <strong>digitales Gefahrstoffkataster</strong> zentral und
+            professionell: Sie erfassen Stoffe mit den relevanten Informationen aus dem
+            <strong>Sicherheitsdatenblatt</strong>, inklusive Kennzeichnung nach <strong>CLP</strong>
+            (GHS-Piktogramme, H- und P-Sätze) und nachvollziehbar dokumentierter Lageraspekte wie der
+            <strong>Lagerklasse nach TRGS&nbsp;510</strong>. So bleibt Ihre Dokumentation konsistent,
+            ohne manuelles Copy&nbsp;&amp;&nbsp;Paste aus Mustervorlagen.
           </p>
-        </div>
 
-        <div class="pain-grid">
-          <article class="pain-card">
-            <div class="pain-icon" aria-hidden="true">&#x1F4CB;</div>
-            <h3>Zettelwirtschaft</h3>
-            <p>
-              Ausgedruckte Sicherheitsdatenblätter, handschriftliche Listen, veraltete Excel-Tabellen &mdash;
-              im Notfall findet niemand das richtige Dokument.
-            </p>
-          </article>
+          <h3>Aktualität und Risikohinweise im Blick</h3>
+          <p>
+            Wer im Ernstfall oder bei einer Prüfung „von oben bis unten“ erklären muss, warum sein Kataster stimmt,
+            braucht keine Dekoration, sondern belastbare Daten. Gefahrstoff-QR unterstützt Sie etwa mit Hinweisen zu
+            <strong>abgelaufenen Sicherheitsdatenblättern</strong> und
+            <strong>KMR-Warnungen</strong> in Verbindung mit <strong>Substitutionsprüfung nach TRGS&nbsp;600</strong> &mdash;
+            statt dass Warnsignale in einer Excel-Zeile untergehen.
+          </p>
 
-          <article class="pain-card">
-            <div class="pain-icon" aria-hidden="true">&#x2696;&#xFE0F;</div>
-            <h3>Fehlendes Gefahrstoffverzeichnis: persönliche Haftung</h3>
-            <p>
-              Als Geschäftsführer haften Sie persönlich, wenn das Gefahrstoffverzeichnis
-              bei der BG-Prüfung fehlt oder unvollständig ist. Bußgelder bis zu 25.000&nbsp;&#x20AC;.
-            </p>
-          </article>
-
-          <article class="pain-card">
-            <div class="pain-icon" aria-hidden="true">&#x23F0;</div>
-            <h3>Abgelaufene Sicherheitsdatenblätter</h3>
-            <p>
-              Sicherheitsdatenblätter müssen regelmäßig aktualisiert werden. Wer den Überblick verliert,
-              verstößt unwissentlich gegen <a href="https://www.baua.de/DE/Themen/Arbeitsgestaltung-im-Betrieb/Gefahrstoffe/Gefahrstoffe_node.html" target="_blank" rel="noopener noreferrer">&#167;&nbsp;6&nbsp;GefStoffV (BAuA)</a>.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section id="features" class="section features-section" aria-labelledby="featuresHeadline">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-label">Die Lösung</p>
-          <h2 id="featuresHeadline">Alles, was ein rechtssicheres Gefahrstoffverzeichnis braucht.</h2>
-        </div>
-
-        <div class="feature-grid">
-
-          <article class="feature-card feature-card--accent">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="4" width="18" height="18" rx="2" fill="currentColor" opacity=".9"/>
-                <rect x="4" y="26" width="18" height="18" rx="2" fill="currentColor" opacity=".6"/>
-                <rect x="26" y="4" width="18" height="18" rx="2" fill="currentColor" opacity=".6"/>
-                <rect x="30" y="30" width="10" height="2" fill="currentColor" opacity=".9"/>
-                <rect x="30" y="36" width="10" height="2" fill="currentColor" opacity=".9"/>
-                <rect x="30" y="42" width="10" height="2" fill="currentColor" opacity=".9"/>
-              </svg>
-            </div>
-            <h3 class="feature-title">QR-Code am Einsatzort</h3>
-            <figure class="feature-img-wrap">
-              <img src="/images/qr-gefahrstoff-einsatzort.svg"
-                   alt="QR-Code am Gefahrstoffbehälter mit Sicherheitsdatenblatt aus dem Gefahrstoffverzeichnis"
-                   width="240" height="160" loading="lazy" decoding="async">
-            </figure>
-            <p class="feature-desc">
-              Jeder Gefahrstoff im Gefahrstoffverzeichnis bekommt einen individuellen QR-Code. Mitarbeiter scannen ihn
-              vor Ort und sehen in Sekunden die vollständige Notfall-Ansicht mit
-              Erste-Hilfe-Maßnahmen und aktuellem Sicherheitsdatenblatt (SDB).
-            </p>
-            <ul class="feature-list">
-              <li>Notfall-Ansicht in unter 3 Sekunden</li>
-              <li>Offline-fähig auf dem Smartphone</li>
-              <li>Für jeden Lagerort individuell</li>
-            </ul>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                <path d="M24 4L44 14V34L24 44L4 34V14L24 4Z" stroke="currentColor" stroke-width="2" fill="none" opacity=".4"/>
-                <path d="M14 22l6 6 14-14" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3 class="feature-title">Automatisches Revisions-Backup</h3>
-            <figure class="feature-img-wrap">
-              <img src="/images/sicherheitsdatenblatt-digital.svg"
-                   alt="Digitales Sicherheitsdatenblatt automatisch versioniert und per Mail gesichert"
-                   width="240" height="160" loading="lazy" decoding="async">
-            </figure>
-            <p class="feature-desc">
-              Bei jeder Änderung im Gefahrstoffverzeichnis erstellt Gefahrstoff-QR automatisch ein
-              rechtssicheres, signiertes PDF mit dem aktuellen Sicherheitsdatenblatt
-              und sendet es per E-Mail an die verantwortliche Führungskraft.
-            </p>
-            <ul class="feature-list">
-              <li>Unveränderlicher Zeitstempel</li>
-              <li>PDF per Mail &mdash; ohne Klicken</li>
-              <li>Revisionsverlauf auf Knopfdruck</li>
-            </ul>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" opacity=".4"/>
-                <path d="M24 14v10l6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                <circle cx="24" cy="10" r="3" fill="currentColor" opacity=".8"/>
-              </svg>
-            </div>
-            <h3 class="feature-title">Substitutionsprüfung &amp; KMR-Warnungen</h3>
-            <p class="feature-desc">
-              Gefahrstoff-QR prüft automatisch, ob ein Stoff als karzinogen, mutagen
-              oder reproduktionstoxisch (KMR) eingestuft ist &mdash; und meldet, wenn eine
-              sicherere Alternative verfügbar ist.
-            </p>
-            <ul class="feature-list">
-              <li>KMR-Kategorie 1A/1B automatisch erkannt</li>
-              <li>Substitutionshinweise nach <a href="https://www.baua.de/DE/Angebote/Rechtstexte-und-Technische-Regeln/Regelwerk/TRGS/TRGS-600.html" target="_blank" rel="noopener noreferrer">TRGS&nbsp;600 (BAuA)</a></li>
-              <li>Sofort-Alert bei neuer Einstufung</li>
-            </ul>
-          </article>
-
-        </div>
+          <h3>Für Betriebe, in denen Chemie Alltag ist</h3>
+          <p>
+            Ob <strong>Kfz-Werkstatt</strong>, Handwerk oder Labor: Gefahrstoff-QR passt sich dem an, was KMU wirklich brauchen
+            &mdash; ein durchgängiger Workflow von der Stofferfassung bis zur <strong>QR-Notfallansicht am Einsatzort</strong>.
+            <a href="https://app.gefahrstoff-qr.de/register">Jetzt kostenlos testen</a>
+            und prüfen, ob Ihr Gefahrstoffkataster den Anspruch von Praxis und Aufsicht erfüllt.
+          </p>
+        </article>
       </div>
     </section>
 
@@ -577,108 +602,164 @@
     </section>
 
     <!-- PRICING -->
-    <section id="preise" class="section pricing-section" aria-labelledby="pricingHeadline">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-label">Transparente Preise</p>
-          <h2 id="pricingHeadline">Einfach. Fair. Skalierbar.</h2>
-          <p class="section-intro">Kündigung monatlich möglich. Keine versteckten Kosten.</p>
+    <section id="preise" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="pricingHeadline">
+      <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
+        <div class="mx-auto mb-12 max-w-2xl text-center">
+          <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Preise</p>
+          <h2 id="pricingHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Skalieren Sie ohne Überraschungen</h2>
+          <p class="mt-4 text-base text-[#8fa4c0]">Monatlich kündbar, klare Pakete — Steuern Sie den Umfang über Stoffe und Enterprise-Funktionen.</p>
         </div>
 
-        <div class="pricing-grid">
-
-          <article class="pricing-card">
-            <header class="pricing-card-header">
-              <h3 class="plan-name">Starter</h3>
-              <div class="plan-price">
-                <span class="price-amount">29&nbsp;&#x20AC;</span>
-                <span class="price-period">/ Monat</span>
-              </div>
-              <p class="plan-tagline">Für kleine Betriebe im Einstieg.</p>
-            </header>
-            <ul class="plan-features" aria-label="Starter-Features">
-              <li>Bis zu 20 Gefahrstoffe</li>
-              <li>Basis-Verzeichnis nach &#167;&nbsp;6 GefStoffV</li>
-              <li>QR-Code pro Stoff</li>
-              <li>E-Mail-Support</li>
+        <div class="grid gap-6 lg:grid-cols-3 lg:gap-8 lg:items-stretch">
+          <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-8 shadow-lg shadow-black/10">
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Basis</h3>
+            <p class="mt-1 text-sm text-[#8fa4c0]">Solides Digital-Kataster für Teams, die Excel endlich ablösen möchten.</p>
+            <p class="mt-6 text-3xl font-black text-[#f0f6ff]">49&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]">/Monat</span></p>
+            <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> 50 Stoffe inklusive</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> SDB-Upload &amp; Verzeichnis</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> E-Mail-Support</li>
             </ul>
-            <a class="btn btn-ghost plan-cta" href="https://app.gefahrstoff-qr.de/register">Starter wählen</a>
+            <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="https://app.gefahrstoff-qr.de/register">Basis wählen</a>
           </article>
 
-          <article class="pricing-card pricing-card--highlight" aria-label="Empfohlener Plan">
-            <div class="plan-badge">Bestseller</div>
-            <header class="pricing-card-header">
-              <h3 class="plan-name">Pro</h3>
-              <div class="plan-price">
-                <span class="price-amount">49&nbsp;&#x20AC;</span>
-                <span class="price-period">/ Monat</span>
-              </div>
-              <p class="plan-tagline">Der Standard für professionelle Betriebe.</p>
-            </header>
-            <ul class="plan-features" aria-label="Pro-Features">
-              <li>Unbegrenzte Gefahrstoffe</li>
-              <li>Automatische PDF-Backups per Mail</li>
-              <li>SDB-Ablauf-Warnungen</li>
-              <li>KMR-Warnungen &amp; Substitutionshinweise</li>
-              <li>Mehrere Lagerorte / QR-Codes</li>
-              <li>Prioritäts-E-Mail-Support</li>
+          <article class="relative flex flex-col rounded-2xl border-2 border-[#ff6b35]/60 bg-[#162340] p-8 shadow-xl shadow-orange-900/20 ring-1 ring-orange-400/30 lg:-mt-2 lg:mb-2" aria-label="Empfohlenes Paket">
+            <span class="absolute -top-3 right-6 rounded-full bg-gradient-to-r from-[#ff6b35] to-[#ff9a5c] px-3 py-1 text-xs font-black text-[#0a1628]">Empfohlen</span>
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Pro</h3>
+            <p class="mt-1 text-sm text-[#8fa4c0]">Für Betriebe mit wachsendem Portfolio und hohem Änderungsaufkommen.</p>
+            <p class="mt-6 text-3xl font-black text-[#f0f6ff]">99&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]">/Monat</span></p>
+            <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Unbegrenzt Stoffe</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> KI-BA-Erstellung</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Zusammenlagerungs-Check</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Priorisierter Support</li>
             </ul>
-            <a class="btn btn-primary plan-cta" href="https://app.gefahrstoff-qr.de/register" title="Gefahrstoffverzeichnis Pro-Plan — unbegrenzte Stoffe, automatische SDB-Updates">Pro wählen</a>
+            <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl bg-gradient-to-br from-[#ff6b35] to-[#ff9a5c] font-bold text-[#0a1628] transition hover:brightness-110" href="https://app.gefahrstoff-qr.de/register">Pro wählen</a>
           </article>
 
-          <article class="pricing-card">
-            <header class="pricing-card-header">
-              <h3 class="plan-name">Premium</h3>
-              <div class="plan-price">
-                <span class="price-amount">99&nbsp;&#x20AC;</span>
-                <span class="price-period">/ Monat</span>
-              </div>
-              <p class="plan-tagline">Für den Mittelstand mit voller Absicherung.</p>
-            </header>
-            <ul class="plan-features" aria-label="Premium-Features">
-              <li>Alles aus Pro</li>
-              <li>Integrierte Betriebsanweisungen (DGUV R 113-001)</li>
-              <li>Telefon-Support (Mo&ndash;Fr 9&ndash;17 Uhr)</li>
-              <li>Onboarding durch Fachberater</li>
-              <li>Mandantenfähigkeit / Filialen</li>
+          <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-8 shadow-lg shadow-black/10">
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Enterprise</h3>
+            <p class="mt-1 text-sm text-[#8fa4c0]">Mandanten, Schnittstellen und Begleitung bei der organisationsweiten Einführung.</p>
+            <p class="mt-6 text-3xl font-black text-[#f0f6ff]">Auf Anfrage</p>
+            <p class="text-sm text-[#8fa4c0]">&nbsp;</p>
+            <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Multi-User &amp; Rechte</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> API &amp; Integrationen</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Schulungen &amp; Rollout</li>
             </ul>
-            <a class="btn btn-ghost plan-cta" href="https://app.gefahrstoff-qr.de/register">Premium wählen</a>
+            <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="mailto:info@gefahrstoff-qr.de?subject=Enterprise%20Gefahrstoff-QR">Angebot einholen</a>
           </article>
-
         </div>
 
-        <p class="pricing-note">
+        <p class="mt-10 text-center text-sm text-[#8fa4c0]">
           Alle Preise zzgl. MwSt. &middot;
-          <a href="https://app.gefahrstoff-qr.de/register">Erste 5 Stoffe dauerhaft kostenlos</a> &mdash; ohne Kreditkarte.
+          <a href="https://app.gefahrstoff-qr.de/register" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Kostenlos starten</a>
+          &mdash; ohne Kreditkarte.
         </p>
       </div>
     </section>
 
-    <!-- CTA-BANNER -->
-    <section class="section cta-banner" aria-label="Abschließender Handlungsaufruf">
+    <!-- FAQ -->
+    <section id="faq" class="py-14 lg:py-24" aria-labelledby="faqHeadline">
+      <div class="mx-auto max-w-[800px] px-4 sm:px-6 lg:px-10">
+        <div class="mb-10 text-center">
+          <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">FAQ</p>
+          <h2 id="faqHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl">Häufige Fragen zu GefStoffV, Compliance &amp; Daten</h2>
+          <p class="mt-3 text-sm text-[#8fa4c0] sm:text-base">Kurz und praxisnah — für SiFa, Geschäftsführung und IT.</p>
+        </div>
+
+        <div class="divide-y divide-white/10 rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 px-4 sm:px-6">
+          <details class="gqr-faq group py-5">
+            <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">Erfüllt ein digitales Gefahrstoffverzeichnis die Pflichten aus § 6 GefStoffV?</summary>
+            <p class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">Ja. Nach GefStoffV müssen Arbeitgeber ein Verzeichnis führen, das alle verwendeten Gefahrstoffe mit den geforderten Informationen abbildet — unabhängig davon, ob Sie Papier, Excel oder Software nutzen. Entscheidend sind Vollständigkeit, Aktualität und Nachvollziehbarkeit. Gefahrstoff-QR strukturiert die Inhalte aus dem Sicherheitsdatenblatt digital, damit Prüfungen und interne Audits effizienter werden und Lücken seltener werden.</p>
+          </details>
+          <details class="gqr-faq group py-5">
+            <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">Worin liegt der Vorteil von KI-Extraktion gegenüber manueller Eingabe?</summary>
+            <p class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">Bei manueller Pflege kopieren Teams Signalwörter, GHS-Symbole, H- und P-Sätze sowie Schutzmaßnahmen oft zeilenweise aus PDFs — das ist fehleranfällig und skaliert schlecht. Unsere Extraktion liest das Sicherheitsdatenblatt strukturiert aus und übernimmt die wiederkehrenden Felder in Sekunden. Sie behalten die fachliche Verantwortung für Freigabe und Dokumentation, sparen aber den Großteil des Abtipp-Aufwands.</p>
+          </details>
+          <details class="gqr-faq group py-5">
+            <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">Ist die Nutzung DSGVO-konform?</summary>
+            <p class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">Wir gestalten die Verarbeitung personenbezogener Daten entlang gängiger Auftragsverarbeitungs-Modelle und dokumentieren Zweckbindung, Zugriff und Löschfristen. Welche Daten konkret anfallen, hängt von Ihrer Organisation und Ihren Prozessen ab — bei der Einführung sollten Sie mit Ihrer Datenschutzverantwortung die Rollen klären. Auf Wunsch erhalten Sie die für Sie passenden Vereinbarungen und Unterlagen.</p>
+          </details>
+          <details class="gqr-faq group py-5">
+            <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">Wo werden meine Sicherheitsdatenblätter verarbeitet?</summary>
+            <p class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">Sicherheitsdatenblätter enthalten in der Regel keine personenbezogenen Daten, dennoch behandeln wir Uploads wie geschäftskritische Dokumente. Die technische Verarbeitung erfolgt in gesicherten Umgebungen; Details zu Regionen und Subprozessoren regeln unsere Vertragsdokumente. Sprechen Sie uns an, wenn Sie Hosting- oder Residency-Vorgaben aus Ihrer IT haben.</p>
+          </details>
+          <details class="gqr-faq group py-5">
+            <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">Kann ich Betriebsanweisungen (BA) mit Gefahrstoff-QR erzeugen?</summary>
+            <p class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">Im Pro- und Enterprise-Umfeld unterstützen wir Sie bei der KI-gestützten Erstellung rechtssicherer Betriebsanweisungen auf Basis der extrahierten Schutzmaßnahmen — inklusive relevanter GHS- und SDB-Informationen, die Sie vor der Freigabe prüfen. Die BA ersetzt keine individuelle Gefährdungsbeurteilung, dokumentiert aber konsistent, was Ihre Mitarbeitenden vor Ort wissen müssen.</p>
+          </details>
+          <details class="gqr-faq group py-5">
+            <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">Deckt die Lösung CLP, REACH und technische Regeln wie TRGS ab?</summary>
+            <p class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">Die Einstufung und Kennzeichnung erfolgt im Alltag nach CLP (GHS-Piktogramme, H- und P-Sätze). REACH-relevante Aspekte wie UFI können — je nach SDB — strukturiert mitgeführt werden. Ergänzend helfen Module zu Lagerung und Substitution (z. B. TRGS 510 / TRGS 600), damit nicht nur das Etikett stimmt, sondern auch Lagerlogik und Substitutionspflichten dokumentierbar bleiben.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-banner border-t border-white/[0.07]" aria-label="Abschließender Handlungsaufruf">
       <div class="container cta-banner-inner">
-        <h2>Bereit, die Zettelwirtschaft zu beenden?</h2>
-        <p>Legen Sie jetzt Ihre ersten 5 Gefahrstoffe kostenlos an &mdash; in unter 5 Minuten.</p>
-        <a class="btn btn-primary btn-large" href="https://app.gefahrstoff-qr.de/register" title="Gefahrstoffverzeichnis jetzt kostenlos testen">Jetzt kostenlos starten</a>
-        <p style="margin-top:1rem;font-size:.9rem;opacity:.75;">Fragen vor dem Start? <a href="mailto:info@gefahrstoff-qr.de" style="color:inherit;text-decoration:underline;">info@gefahrstoff-qr.de</a></p>
+        <h2>Wechseln Sie von Listenpflege zu belastbaren Daten</h2>
+        <p>Testen Sie Gefahrstoff-QR mit Ihren echten Sicherheitsdatenblättern — ohne Kreditkarte, mit persönlicher Begleitung bei Fragen.</p>
+        <a class="btn btn-primary btn-large" href="https://app.gefahrstoff-qr.de/register" title="Gefahrstoffverzeichnis jetzt kostenlos testen">Jetzt kostenlos testen</a>
+        <p class="mt-4 text-sm opacity-[0.78]">Direkt zur Beratung: <a href="mailto:info@gefahrstoff-qr.de" class="text-inherit underline">info@gefahrstoff-qr.de</a></p>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
         <p class="logo">Gefahrstoff-QR</p>
-        <p class="footer-tagline">Rechtssicheres Gefahrstoffverzeichnis<br>nach &#167;&nbsp;6 GefStoffV.</p>
+        <p class="footer-tagline">Rechtssicheres Gefahrstoffverzeichnis<br>nach &#167;&nbsp;6 GefStoffV — mit KI aus dem SDB.</p>
       </div>
+
       <nav class="footer-links" aria-label="Footer-Navigation">
         <a href="/blog/">Blog</a>
         <a href="/impressum">Impressum</a>
         <a href="/datenschutz">Datenschutz</a>
         <a href="/agb">AGB</a>
       </nav>
+
+      <ul class="mt-6 flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-4 border-t border-white/10 pt-6 md:justify-start" role="list" aria-label="Vertrauen und Sicherheit">
+        <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
+          <svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M12 3 4 6v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/>
+            <path d="m9.5 12.5 2 2 3.5-3.5"/>
+          </svg>
+          <span>DSGVO-konform</span>
+        </li>
+        <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
+          <svg class="h-7 w-9 flex-shrink-0 overflow-visible rounded-md border border-white/20 shadow-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" aria-hidden="true" focusable="false">
+            <rect width="24" height="16" rx="1.5" fill="#1a1a1a"/>
+            <rect width="24" height="5.33" y="5.33" fill="#dd0000"/>
+            <rect width="24" height="5.34" y="10.66" fill="#ffce00"/>
+          </svg>
+          <span>Made in Germany</span>
+        </li>
+        <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
+          <svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M7 11V8a5 5 0 0 1 10 0v3"/>
+            <rect x="5" y="11" width="14" height="10" rx="2"/>
+            <path d="M12 16v2"/>
+          </svg>
+          <span>SSL-verschlüsselt</span>
+        </li>
+      </ul>
+
+      <div class="w-full border-t border-white/10 pt-8 mt-4 md:mt-2">
+        <p class="text-xs font-bold uppercase tracking-wider text-[#ff6b35] mb-3">Lösungen für Branchen</p>
+        <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#8fa4c0]" aria-label="Branchenlösungen">
+          <a class="transition hover:text-[#f0f6ff]" href="/loesungen/kfz-werkstatt/">Kfz-Werkstatt</a>
+          <a class="transition hover:text-[#f0f6ff]" href="/loesungen/schreinerei/">Schreinerei</a>
+          <a class="transition hover:text-[#f0f6ff]" href="/loesungen/malerbetrieb/">Malerbetrieb</a>
+          <a class="transition hover:text-[#f0f6ff]" href="/loesungen/industriebetriebe/">Industriebetriebe</a>
+          <a class="transition hover:text-[#f0f6ff]" href="/loesungen/labore/">Labore</a>
+        </nav>
+      </div>
+
       <p class="footer-copy">&#xa9; 2026 Gefahrstoff-QR &middot; Alle Rechte vorbehalten.</p>
     </div>
   </footer>
@@ -715,7 +796,6 @@
   </script>
 
   <script>
-    /* ── ROI Calculator ───────────────────────────────────────── */
     (function () {
       var MINUTES_PER_SUBSTANCE_TRADITIONAL = 10;
       var SECONDS_PER_SUBSTANCE_DIGITAL     = 30;
@@ -748,7 +828,7 @@
       }
 
       slider.addEventListener('input', updateCalculator);
-      updateCalculator(); // set initial state
+      updateCalculator();
     })();
   </script>
 

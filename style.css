@@ -391,6 +391,46 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   border-bottom: 1px solid var(--color-border);
 }
 
+/* ── Gefahrstoffkataster (SEO-Landingcopy) ───────────────────── */
+.kataster-section {
+  background: rgba(45, 212, 191, .03);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.kataster-prose {
+  max-width: 760px;
+  margin-inline: auto;
+  color: var(--color-muted);
+  font-size: var(--text-lg);
+  line-height: 1.65;
+}
+
+.kataster-prose h3 {
+  margin-top: 1.75rem;
+  margin-bottom: .65rem;
+  color: var(--color-text);
+  font-size: clamp(var(--text-lg), 2.2vw, var(--text-xl));
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.kataster-prose p + p {
+  margin-top: 1rem;
+}
+
+.kataster-prose a {
+  color: var(--color-trust);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.kataster-prose a:hover {
+  text-decoration-color: var(--color-trust);
+}
+
 .pain-grid {
   display: grid;
   grid-template-columns: 1fr;
