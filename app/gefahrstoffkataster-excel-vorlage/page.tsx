@@ -7,6 +7,10 @@ import { ExpertHeading } from '@/components/expert-blog/ExpertHeading';
 import { LeadMagnetCta } from '@/components/expert-blog/LeadMagnetCta';
 import { RoiEstimator } from '@/components/expert-blog/RoiEstimator';
 
+/**
+ * Statische Kopie für GitHub Pages: `gefahrstoffkataster-excel-vorlage/index.html`
+ * (dasselbe Thema; `out/` wird nicht deployt).
+ */
 const siteUrl = 'https://gefahrstoff-qr.de';
 const path = '/gefahrstoffkataster-excel-vorlage/';
 
@@ -240,7 +244,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
               </p>
               <p>
                 In der Praxis bedeutet das: Sie investieren die Zeit dort, wo sie
-                Arbeitschutzlich wirkt — in Abweichungen, Betriebsanweisungen und
+                arbeitsschutzlich wirkt — in Abweichungen, Betriebsanweisungen und
                 Freigaben — statt in abtippen.
               </p>
               <ul>
