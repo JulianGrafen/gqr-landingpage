@@ -18,7 +18,7 @@ const pageUrl = `${siteUrl}${path}`;
 const SEO_TITLE =
   'Gefahrstoffkataster Excel Vorlage? Erstellen in Sekunden statt Stunden';
 const SEO_DESCRIPTION =
-  'Suchen Sie ein Gefahrstoffverzeichnis als Excel-Vorlage? Laden Sie unser kostenloses Muster herunter UND entdecken Sie, wie Sie SDB-Daten in 30 Sek. automatisch extrahieren statt manuell abtippen. Jetzt Zeit sparen!';
+  'Suchen Sie ein Gefahrstoffverzeichnis als Excel-Vorlage? Testen Sie jetzt kostenlos und entdecken Sie, wie Sie SDB-Daten in 30 Sek. automatisch extrahieren statt manuell abtippen. Jetzt Zeit sparen!';
 
 const OG_IMAGE_ALT =
   'Gefahrstoffkataster Software: schneller als nur Gefahrstoffverzeichnis Excel – automatische SDB-Extraktion';
@@ -252,7 +252,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
                 href={REGISTER_HREF}
                 className="gqr-cta-primary gqr-cta-primary--lg mt-8 inline-flex"
               >
-                Kostenlose Vorlage erhalten &amp; SDB-Auto-Check testen
+                Jetzt kostenlos testen &amp; SDB-Auto-Check
               </Link>
             </div>
             <div className="flex justify-center lg:justify-end">
@@ -315,7 +315,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
                 href={REGISTER_HREF}
                 className="gqr-cta-primary gqr-cta-primary--md inline-flex text-center"
               >
-                Kostenlose Vorlage erhalten &amp; SDB-Auto-Check testen
+                Jetzt kostenlos testen &amp; SDB-Auto-Check
               </Link>
             </div>
           </div>
@@ -544,7 +544,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
             <LeadMagnetCta
               title="Excel-Einstieg behalten — Automatisierung dazu nutzen"
               body="Starten Sie kostenlos: Struktur wie bei einer Vorlage, plus automatische Übernahme aus echten SDBs. Keine Kreditkarte."
-              ctaLabel="Kostenlose Vorlage erhalten & SDB-Auto-Check testen"
+              ctaLabel="Jetzt kostenlos testen & SDB-Auto-Check"
             />
             <p className="mt-10 text-center text-sm text-[#8fa4c0]">
               <Link
