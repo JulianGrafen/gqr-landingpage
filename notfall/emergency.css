@@ -275,6 +275,23 @@ a {
   white-space: pre-line;
 }
 
+.qr-statement--first-aid {
+  white-space: normal;
+}
+
+.qr-first-aid__p {
+  margin: 0 0 0.65em;
+}
+
+.qr-first-aid__p:last-child {
+  margin-bottom: 0;
+}
+
+.qr-first-aid__p strong {
+  font-weight: 950;
+  color: inherit;
+}
+
 .qr-empty-state {
   display: flex;
   min-height: 66px;

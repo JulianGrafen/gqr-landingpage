@@ -10,7 +10,12 @@ export const DEMO_SUBSTANCE = Object.freeze({
   storageClass: "LGK 8A (Brennbare ätzende Stoffe)",
   hazardStatements: ["H314 Verursacht schwere Verätzungen der Haut."],
   precautionaryStatements: ["P280 Schutzhandschuhe/Augenschutz tragen."],
-  firstAid: "Bei Augenkontakt sofort behutsam mit Wasser ausspülen.",
+  firstAid: [
+    "Einatmen: Bei unregelmäßiger Atmung oder Atemstillstand sofort ärztlichen Beistand suchen und Erste-Hilfe-Maßnahmen einleiten. Bei Reizung der Atemwege Arzt aufsuchen. Für Frischluft sorgen.",
+    "Haut: Mit viel Wasser und Seife waschen.",
+    "Augen: Eventuell vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter ausspülen. Augenlider geöffnet halten und mindestens 10 Minuten lang reichlich mit sauberem, fließendem Wasser spülen.",
+    "Verschlucken: Mund mit Wasser ausspülen (nur wenn Verunfallter bei Bewusstsein ist). KEIN Erbrechen herbeiführen. Arzt anrufen.",
+  ].join("\n"),
   supplier: "Mock Chemie GmbH, 53925 Kall",
 });
 
