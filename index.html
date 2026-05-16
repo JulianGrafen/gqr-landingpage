@@ -335,11 +335,16 @@
         </div>
 
         <div id="produkt" class="scroll-mt-28 mb-20 flex flex-col gap-10 lg:mb-24 lg:flex-row lg:items-center lg:gap-16">
-          <div class="flex-1 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1e35]/80 shadow-xl shadow-black/25">
-            <picture>
-              <source srcset="/images/app-screenshot-dashboard.webp" type="image/webp" />
-              <img src="/images/app-screenshot-dashboard.png" width="1400" height="452" loading="lazy" decoding="async" class="w-full object-cover object-top" alt="Dashboard des Gefahrstoffverzeichnisses: Überblick mit KMR-Warnung und Prüfstatus" />
-            </picture>
+          <div class="flex-1 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#f9fafb] shadow-xl shadow-black/25">
+            <img
+              src="/images/landing-kataster-dashboard.png"
+              width="1024"
+              height="581"
+              loading="lazy"
+              decoding="async"
+              class="w-full object-cover object-top"
+              alt="Gefahrstoffverzeichnis in Gefahrstoff-QR: gefilterbare Tabelle mit Name, Lieferant, SDB-Revision, Signalwort und GHS-Piktogrammen"
+            />
           </div>
           <div class="flex-1">
             <p class="text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Gefahrstoffverzeichnis</p>
@@ -356,22 +361,27 @@
         </div>
 
         <div class="mb-20 flex flex-col gap-10 lg:mb-24 lg:flex-row-reverse lg:items-center lg:gap-16">
-          <div class="flex-1 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1e35]/80 p-6 shadow-xl shadow-black/25 sm:p-8">
-            <picture>
-              <source srcset="/images/app-screenshot-form.webp" type="image/webp" />
-              <img src="/images/app-screenshot-form.png" width="1000" height="530" loading="lazy" decoding="async" class="w-full rounded-lg object-cover" alt="GHS-Piktogramme und H-Sätze beim Anlegen eines Gefahrstoffs im Verzeichnis" />
-            </picture>
+          <div class="flex max-h-[min(70vh,640px)] flex-1 items-center justify-center overflow-hidden rounded-2xl border border-white/[0.08] bg-[#f9fafb] shadow-xl shadow-black/25">
+            <img
+              src="/images/landing-revisionsverlauf.png"
+              width="948"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+              class="h-full max-h-[min(70vh,640px)] w-auto max-w-full object-contain object-top"
+              alt="Revisionsverlauf in Gefahrstoff-QR: zeitlicher Ablauf mit Einträgen Erstellt und Bearbeitet inkl. geänderter SDB-Datei und SDB-Felder"
+            />
           </div>
           <div class="flex-1">
-            <p class="text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">SDB &amp; KI</p>
-            <h3 class="mt-2 text-xl font-black text-[#f0f6ff] sm:text-2xl lg:text-3xl">Kein Abtippen: Daten aus dem Sicherheitsdatenblatt</h3>
+            <p class="text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Nachvollziehbarkeit</p>
+            <h3 class="mt-2 text-xl font-black text-[#f0f6ff] sm:text-2xl lg:text-3xl">Revisionsverlauf statt Excel-Versionen-Wirrwarr</h3>
             <p class="mt-4 text-sm leading-relaxed text-[#8fa4c0] sm:text-base">
-              Laden Sie das PDF hoch — relevante Abschnitte werden strukturiert erkannt. Sie prüfen und geben fachlich frei, statt H- und P-Sätze zu kopieren.
+              Jede Änderung am Kataster bleibt nachvollziehbar: Zeitstempel, Zuständigkeit und was sich an Feldern oder am SDB-Dokument geändert hat — die Basis für interne Freigaben und Audits.
             </p>
             <ul class="mt-6 space-y-3 text-sm text-[#c5d0e2] sm:text-base" role="list">
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>KI-gestützte Extraktion in Sekunden</li>
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>GHS, H-/P-Sätze und Schutzmaßnahmen gebündelt</li>
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Menschliche Freigabe bleibt Pflicht</li>
+              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Zeitachse mit Erstellung und Bearbeitungen</li>
+              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Nachvollziehbare SDB-Datei- und Feldänderungen</li>
+              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Weniger Streit bei „Wer hat wann was geändert?“</li>
             </ul>
           </div>
         </div>
