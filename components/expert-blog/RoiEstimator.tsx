@@ -1,14 +1,13 @@
 'use client';
 
 import { useId, useMemo, useState } from 'react';
-
-const MIN_SDB = 10;
-const MAX_SDB = 400;
-const DEFAULT_SDB = 100;
-/** Minuten pro SDB bei manueller Übertragung (konservativer Richtwert) */
-const MINUTES_MANUAL_PER_SDB = 20;
-/** Minuten gesamt bei automatisierter Extraktion, skaliert linear ab Referenz 100 → 15 Min */
-const AUTO_MINUTES_AT_100 = 15;
+import {
+  ROI_GQR_MINUTES_PER_SDB,
+  ROI_MANUAL_MINUTES_PER_SDB,
+  ROI_SDB_COUNT_DEFAULT,
+  ROI_SDB_COUNT_MAX,
+  ROI_SDB_COUNT_MIN,
+} from '@/config/roi-estimator';
 
 function formatHoursDe(totalHours: number): string {
   const h = Math.floor(totalHours);
@@ -26,15 +25,15 @@ function formatMinutesDe(minutes: number): string {
 }
 
 /**
- * Einfache Nutzer-Rechnung: manuell vs. automatisiert (illustrativ).
+ * Illustrativer Vergleich: manuelle Excel-Pflege vs. GQR inkl. Freigabe pro SDB.
  */
 export function RoiEstimator() {
   const id = useId();
-  const [count, setCount] = useState(DEFAULT_SDB);
+  const [count, setCount] = useState(ROI_SDB_COUNT_DEFAULT);
 
   const { manualHours, autoMinutes, manualPct, autoPct } = useMemo(() => {
-    const manualMin = count * MINUTES_MANUAL_PER_SDB;
-    const autoMin = (count / DEFAULT_SDB) * AUTO_MINUTES_AT_100;
+    const manualMin = count * ROI_MANUAL_MINUTES_PER_SDB;
+    const autoMin = count * ROI_GQR_MINUTES_PER_SDB;
     const manual = manualMin / 60;
     const maxMin = Math.max(manualMin, autoMin, 1);
     return {
@@ -54,9 +53,9 @@ export function RoiEstimator() {
         Aufwand bei der Datenübernahme aus Sicherheitsdatenblättern
       </h3>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#8fa4c0]">
-        Schieben Sie den Regler, um eine typische Stückzahl abzubilden. Die
-        Werte sind ein Plausibilitäts-Check auf Basis üblicher
-        Copy-&amp;-Paste-Zeiten — keine Garantie für Ihren Einzelfall.
+        Schieben Sie den Regler, um eine typische Stückzahl abzubilden. Beide
+        Spalten umfassen Erfassung und fachliche Freigabe — die Werte sind ein
+        Plausibilitäts-Check, keine Garantie für Ihren Einzelfall.
       </p>
 
       <div className="mt-8">
@@ -70,20 +69,20 @@ export function RoiEstimator() {
         <input
           id={id}
           type="range"
-          min={MIN_SDB}
-          max={MAX_SDB}
+          min={ROI_SDB_COUNT_MIN}
+          max={ROI_SDB_COUNT_MAX}
           step={5}
           value={count}
           onChange={(e) => setCount(Number(e.target.value))}
           className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-[#ff6b35]"
-          aria-valuemin={MIN_SDB}
-          aria-valuemax={MAX_SDB}
+          aria-valuemin={ROI_SDB_COUNT_MIN}
+          aria-valuemax={ROI_SDB_COUNT_MAX}
           aria-valuenow={count}
           aria-label="Anzahl der Sicherheitsdatenblätter"
         />
         <div className="mt-1 flex justify-between text-xs text-[#8fa4c0]">
-          <span>{MIN_SDB}</span>
-          <span>{MAX_SDB}</span>
+          <span>{ROI_SDB_COUNT_MIN}</span>
+          <span>{ROI_SDB_COUNT_MAX}</span>
         </div>
       </div>
 
@@ -96,8 +95,8 @@ export function RoiEstimator() {
             {formatHoursDe(manualHours)}
           </p>
           <p className="mt-1 text-xs text-[#8fa4c0]">
-            Annahme: ca. {MINUTES_MANUAL_PER_SDB} Min. pro SDB für Erfassung und
-            Formatierung
+            Annahme: ca. {ROI_MANUAL_MINUTES_PER_SDB} Min. pro SDB für Erfassung,
+            Formatierung und Freigabe
           </p>
           <div
             className="mt-3 h-3 overflow-hidden rounded-full bg-white/10"
@@ -111,14 +110,14 @@ export function RoiEstimator() {
         </div>
         <div>
           <p className="text-sm font-semibold text-[#8fa4c0]">
-            Strukturierte Extraktion + Prüfung
+            Gefahrstoff-QR (Extraktion + Freigabe)
           </p>
           <p className="mt-1 text-2xl font-black tabular-nums text-[#2dd4bf] sm:text-3xl">
             {formatMinutesDe(autoMinutes)}
           </p>
           <p className="mt-1 text-xs text-[#8fa4c0]">
-            Skalierung ab Referenz: 100 SDB ≈ {AUTO_MINUTES_AT_100} Min. für
-            technischen Import; Freigabe durch Fachpersonal zusätzlich
+            Annahme: ca. {ROI_GQR_MINUTES_PER_SDB} Min. pro SDB inkl. KI-Import
+            und fachlicher Freigabe
           </p>
           <div
             className="mt-3 h-3 overflow-hidden rounded-full bg-white/10"

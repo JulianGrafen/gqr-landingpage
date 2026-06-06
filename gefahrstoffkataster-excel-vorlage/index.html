@@ -188,14 +188,14 @@
           <p class="expert-section-eyebrow">Größenordnung</p>
           <h2 class="expert-section-title" id="roi-heading">Vom Stunden-Berg zur fokussierten Prüfphase rechnen</h2>
           <p class="expert-section-sub">
-            Ein interaktiver Grob-Vergleich: dieselbe Stückzahl, zwei unterschiedliche Prozessschritte. Die Freigabe durch Fachkräfte bleibt in beiden Fällen Ihre Aufgabe.
+            Ein interaktiver Grob-Vergleich: dieselbe Stückzahl, zwei Wege zur vollständigen Erfassung — jeweils inkl. fachlicher Freigabe.
           </p>
         </header>
         <div class="expert-roi">
           <p class="expert-section-eyebrow">Prozessvergleich</p>
           <h3>Aufwand bei der Datenübernahme aus Sicherheitsdatenblättern</h3>
           <p class="expert-roi-lead">
-            Schieben Sie den Regler, um eine typische Stückzahl abzubilden. Die Werte sind ein Plausibilitäts-Check auf Basis üblicher Copy-&amp;-Paste-Zeiten — keine Garantie für Ihren Einzelfall.
+            Schieben Sie den Regler, um eine typische Stückzahl abzubilden. Beide Spalten umfassen Erfassung und fachliche Freigabe — die Werte sind ein Plausibilitäts-Check, keine Garantie für Ihren Einzelfall.
           </p>
           <div>
             <div class="expert-roi-label-row">
@@ -209,14 +209,14 @@
             <div>
               <p class="expert-roi-stat-label">Manuelle Pflege (Excel-Vorlage)</p>
               <p class="expert-roi-stat-value" id="roi-manual">33 Std. 20 Min.</p>
-              <p class="expert-roi-stat-note">Annahme: ca. 20 Min. pro SDB für Erfassung und Formatierung</p>
+              <p class="expert-roi-stat-note">Annahme: ca. 20 Min. pro SDB für Erfassung, Formatierung und Freigabe</p>
               <div class="expert-roi-bar expert-roi-bar--manual" role="presentation"><span id="roi-bar-manual" style="width:100%"></span></div>
             </div>
             <div>
-              <p class="expert-roi-stat-label">Strukturierte Extraktion + Prüfung</p>
-              <p class="expert-roi-stat-value expert-roi-stat-value--teal" id="roi-auto">15 Min.</p>
-              <p class="expert-roi-stat-note">Skalierung ab Referenz: 100 SDB ≈ 15 Min. für technischen Import; Freigabe durch Fachpersonal zusätzlich</p>
-              <div class="expert-roi-bar expert-roi-bar--auto" role="presentation"><span id="roi-bar-auto" style="width:6%"></span></div>
+              <p class="expert-roi-stat-label">Gefahrstoff-QR (Extraktion + Freigabe)</p>
+              <p class="expert-roi-stat-value expert-roi-stat-value--teal" id="roi-auto">3 Std. 20 Min.</p>
+              <p class="expert-roi-stat-note">Annahme: ca. 2 Min. pro SDB inkl. KI-Import und fachlicher Freigabe</p>
+              <div class="expert-roi-bar expert-roi-bar--auto" role="presentation"><span id="roi-bar-auto" style="width:10%"></span></div>
             </div>
           </div>
         </div>
@@ -246,7 +246,7 @@
               <tr>
                 <th scope="row">Erfassungsdauer</th>
                 <td>Steigt linear: jede neue Version eines SDB erzeugt erneuten manuellen Aufwand.</td>
-                <td>Große Teile der Stammdaten lassen sich gebündelt übernehmen; Sie konzentrieren sich auf Prüfung und Abweichungen.</td>
+                <td>Typisch ca. 2&nbsp;Min. pro SDB inkl. KI-Import und fachlicher Freigabe — statt Abtippen konzentrieren Sie sich auf Abweichungen.</td>
               </tr>
               <tr>
                 <th scope="row">Fehlerrate / Datengenauigkeit</th>
@@ -400,7 +400,7 @@
         input.setAttribute('aria-valuenow', String(n));
 
         var manualMin = n * 20;
-        var autoMin = (n / 100) * 15;
+        var autoMin = n * 2;
         manualEl.textContent = fmtHours(manualMin / 60);
         autoEl.textContent = fmtMinutes(autoMin);
 

@@ -124,7 +124,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
     criterion: 'Erfassungsdauer',
     excel: 'Steigt linear: jede neue Version eines SDB erzeugt erneuten manuellen Aufwand.',
     extraction:
-      'Große Teile der Stammdaten lassen sich gebündelt übernehmen; Sie konzentrieren sich auf Prüfung und Abweichungen.',
+      'Typisch ca. 2 Min. pro SDB inkl. KI-Import und fachlicher Freigabe — statt Abtippen konzentrieren Sie sich auf Abweichungen.',
   },
   {
     criterion: 'Fehlerrate / Datengenauigkeit',
@@ -366,7 +366,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
               tone="dark"
               eyebrow="Größenordnung"
               title="Vom Stunden-Berg zur fokussierten Prüfphase rechnen"
-              subtitle="Ein interaktiver Grob-Vergleich: dieselbe Stückzahl, zwei unterschiedliche Prozessschritte. Die Freigabe durch Fachkräfte bleibt in beiden Fällen Ihre Aufgabe."
+              subtitle="Ein interaktiver Grob-Vergleich: dieselbe Stückzahl, zwei Wege zur vollständigen Erfassung — jeweils inkl. fachlicher Freigabe."
             />
             <div className="mt-10">
               <RoiEstimator />
