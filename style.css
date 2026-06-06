@@ -52,6 +52,13 @@
   --shadow-card:  0 4px 24px rgba(0, 0, 0, .35);
   --shadow-hover: 0 12px 40px rgba(0, 0, 0, .5);
   --transition:   all .25s cubic-bezier(.2, .9, .2, 1);
+
+  /* Zigzag-Medien (einheitliche Bildskalierung) */
+  --zigzag-media-ratio: 16 / 10;
+  --zigzag-media-min-h: clamp(220px, 38vw, 400px);
+  --zigzag-media-max-h: min(52vw, 420px);
+  --zigzag-media-radius: 1.25rem;
+  --zigzag-stage-inset: clamp(12px, 2vw, 20px);
 }
 
 /* ── Reset ──────────────────────────────────────────────────── */
@@ -501,7 +508,7 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   text-decoration-color: var(--color-trust);
 }
 
-/* ── Zigzag: Text ↔ Bild im Wechsel, einheitliche Rahmen ─────── */
+/* ── Zigzag: Text ↔ Bild, einheitliche Medien-Skalierung ─────── */
 .zigzag-rows {
   display: flex;
   flex-direction: column;
@@ -510,7 +517,7 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 .zigzag-row {
   display: flex;
   flex-direction: column;
-  gap: clamp(1.75rem, 4vw, 2.5rem);
+  gap: clamp(1.75rem, 4vw, 2.75rem);
   align-items: stretch;
   padding: clamp(2.5rem, 5vw, 4rem) 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -523,8 +530,8 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 @media (min-width: 1024px) {
   .zigzag-row {
     flex-direction: row;
-    align-items: center;
-    gap: clamp(2.5rem, 5vw, 4rem);
+    align-items: stretch;
+    gap: clamp(2.5rem, 5vw, 4.5rem);
   }
 
   .zigzag-row--reverse {
@@ -539,34 +546,84 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   min-width: 0;
 }
 
+@media (min-width: 1024px) {
+  .zigzag-row__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .zigzag-row__media {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+/* Äußerer Rahmen — überall gleiche Fläche */
 .zigzag-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: 1rem;
+  aspect-ratio: var(--zigzag-media-ratio);
+  min-height: var(--zigzag-media-min-h);
+  max-height: var(--zigzag-media-max-h);
+  padding: var(--zigzag-stage-inset);
+  border-radius: var(--zigzag-media-radius);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: #f9fafb;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(165deg, #ffffff 0%, #f1f5f9 48%, #e8eef5 100%);
+  box-shadow:
+    0 0 0 1px rgba(15, 23, 42, 0.04) inset,
+    0 28px 56px -20px rgba(0, 0, 0, 0.55);
 }
 
 .zigzag-frame--dark {
-  background: linear-gradient(145deg, #0f1e35 0%, #162340 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(165deg, #1a2d4a 0%, #0f1e35 52%, #0a1628 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 28px 56px -20px rgba(0, 0, 0, 0.65);
+}
+
+/* Innenbühne — einheitliche Skalierung für alle Assets */
+.zigzag-frame__stage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: calc(var(--zigzag-media-radius) - 8px);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.zigzag-frame--dark .zigzag-frame__stage {
+  background: rgba(8, 18, 34, 0.55);
+}
+
+.zigzag-frame__stage picture {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .zigzag-frame__img {
   display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Breite UI-Screenshots: füllen die Bühne proportional */
+.zigzag-frame__img--landscape {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
-}
-
-.zigzag-frame__img--contain {
-  object-fit: contain;
-  object-position: center;
-  padding: clamp(12px, 2.5vw, 28px);
-  box-sizing: border-box;
 }
 
 .zigzag-row__eyebrow {
@@ -647,14 +704,21 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   color: #475569;
 }
 
-.zigzag-row__media--panel {
-  display: flex;
-  align-items: stretch;
+.zigzag-frame--demo {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  min-height: var(--zigzag-media-min-h);
+  max-height: none;
 }
 
-.zigzag-row__media--panel .sdb-demo-shell {
+.zigzag-frame--demo .sdb-demo-shell {
   width: 100%;
+  height: 100%;
+  min-height: var(--zigzag-media-min-h);
   margin: 0;
+  border-radius: var(--zigzag-media-radius);
 }
 
 .kataster-section .zigzag-row,
