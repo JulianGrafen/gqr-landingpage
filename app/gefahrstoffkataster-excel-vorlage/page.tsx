@@ -6,22 +6,17 @@ import { ExpertCard } from '@/components/expert-blog/ExpertCard';
 import { ExpertHeading } from '@/components/expert-blog/ExpertHeading';
 import { LeadMagnetCta } from '@/components/expert-blog/LeadMagnetCta';
 import { RoiEstimator } from '@/components/expert-blog/RoiEstimator';
+import { EXCEL_VORLAGE_SEO, GSC_TARGET_KEYWORDS, SITE_URL } from '@/config/site-seo';
 
 /**
  * Dokumentation: Statische Kopie für GitHub Pages unter
  * `gefahrstoffkataster-excel-vorlage/index.html`.
  */
-const siteUrl = 'https://gefahrstoff-qr.de';
-const path = '/gefahrstoffkataster-excel-vorlage/';
-const pageUrl = `${siteUrl}${path}`;
+const pageUrl = `${SITE_URL}${EXCEL_VORLAGE_SEO.path}`;
 
-const SEO_TITLE =
-  'Gefahrstoffkataster Excel Vorlage? Erstellen in Sekunden statt Stunden';
-const SEO_DESCRIPTION =
-  'Suchen Sie ein Gefahrstoffverzeichnis als Excel-Vorlage? Testen Sie jetzt kostenlos und entdecken Sie, wie Sie SDB-Daten in 30 Sek. automatisch extrahieren statt manuell abtippen. Jetzt Zeit sparen!';
-
-const OG_IMAGE_ALT =
-  'Gefahrstoffkataster Software: schneller als nur Gefahrstoffverzeichnis Excel – automatische SDB-Extraktion';
+const SEO_TITLE = EXCEL_VORLAGE_SEO.title;
+const SEO_DESCRIPTION = EXCEL_VORLAGE_SEO.description;
+const OG_IMAGE_ALT = EXCEL_VORLAGE_SEO.ogImageAlt;
 
 const STRUC_DATA = {
   '@context': 'https://schema.org',
@@ -32,10 +27,10 @@ const STRUC_DATA = {
       url: pageUrl,
       name: SEO_TITLE,
       description: SEO_DESCRIPTION,
-      isPartOf: { '@type': 'WebSite', name: 'Gefahrstoff-QR', url: siteUrl },
+      isPartOf: { '@type': 'WebSite', name: 'Gefahrstoff-QR', url: SITE_URL },
       primaryImageOfPage: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/og-image.png`,
+        url: `${SITE_URL}/og-image.png`,
       },
     },
     {
@@ -93,18 +88,7 @@ const STRUC_DATA = {
 export const metadata: Metadata = {
   title: SEO_TITLE,
   description: SEO_DESCRIPTION,
-  keywords: [
-    'gefahrstoffkataster excel',
-    'gefahrstoffverzeichnis vorlage excel',
-    'gefahrstoffkataster software kostenlos',
-    'gefahrstoffverzeichnis muster',
-    'gefahrstoffverzeichnis vorlage excel kostenlos',
-    'SDB Extraktion',
-    'gefahrstoffliste lösungen',
-    'Gefahrstoffkataster erstellen',
-    'Excel Gefahrstoffliste',
-    'GefStoffV',
-  ],
+  keywords: [...GSC_TARGET_KEYWORDS, 'SDB Extraktion', 'GefStoffV', 'Excel Gefahrstoffliste'],
   alternates: { canonical: pageUrl },
   robots: {
     index: true,
@@ -200,8 +184,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
                 id="excel-vorlage-hero-title"
                 className="mt-3 text-3xl font-black leading-tight tracking-tight text-[#f0f6ff] sm:text-4xl lg:text-[2.35rem] lg:leading-[1.15]"
               >
-                Gefahrstoffkataster professionell erstellen: Von der
-                Excel-Vorlage zur Automatisierung
+                {EXCEL_VORLAGE_SEO.h1}
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-[#8fa4c0]">
                 Wer nach{' '}

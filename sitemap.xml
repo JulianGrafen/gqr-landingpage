@@ -4,7 +4,7 @@
   <!-- Core pages -->
   <url>
     <loc>https://gefahrstoff-qr.de/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -16,9 +16,9 @@
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/gefahrstoffkataster-excel-vorlage/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.85</priority>
   </url>
 
   <!-- Branchen-Landingpages -->
@@ -145,6 +145,12 @@
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/blog/gefahrstoffkataster-in-excel-/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
 
 </urlset>

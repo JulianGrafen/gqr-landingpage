@@ -2,17 +2,15 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
-
-const siteUrl = 'https://gefahrstoff-qr.de';
+import { SITE_DEFAULT_SEO, SITE_URL } from '@/config/site-seo';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Gefahrstoff-QR | Digitales Gefahrstoffverzeichnis',
+    default: SITE_DEFAULT_SEO.title,
     template: '%s | Gefahrstoff-QR',
   },
-  description:
-    'Gefahrstoffverzeichnis und Betriebsanweisungen mit KI-Extraktion aus Sicherheitsdatenblättern — GefStoffV, CLP, REACH.',
+  description: SITE_DEFAULT_SEO.description,
 };
 
 export default function RootLayout({
