@@ -657,6 +657,20 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   margin: 0;
 }
 
+.kataster-section .zigzag-row,
+#notfall-scan .zigzag-row {
+  border-bottom: none;
+  padding-top: 0;
+}
+
+.kataster-section .zigzag-row {
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+#notfall-scan .zigzag-row {
+  padding-bottom: 0;
+}
+
 .pain-grid {
   display: grid;
   grid-template-columns: 1fr;

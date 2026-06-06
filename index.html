@@ -357,100 +357,124 @@
           </p>
         </div>
 
-        <div id="produkt" class="scroll-mt-28 mb-20 flex flex-col gap-10 md:mb-24 md:flex-row-reverse md:items-center md:gap-16 lg:mb-24">
-          <div class="flex-1 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#f9fafb] shadow-xl shadow-black/25">
-            <img
-              src="/images/landing-kataster-dashboard.png"
-              width="1024"
-              height="581"
-              loading="lazy"
-              decoding="async"
-              class="w-full object-cover object-top"
-              alt="Gefahrstoffverzeichnis in Gefahrstoff-QR: gefilterbare Tabelle mit Name, Lieferant, SDB-Revision, Signalwort und GHS-Piktogrammen"
-            />
-          </div>
-          <div class="flex-1">
-            <p class="text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Gefahrstoffverzeichnis</p>
-            <h3 class="mt-2 text-xl font-black text-[#f0f6ff] sm:text-2xl lg:text-3xl">Alles sichtbar, was Aufsicht &amp; Praxis brauchen</h3>
-            <p class="mt-4 text-sm leading-relaxed text-[#8fa4c0] sm:text-base">
-              Statt verstreuter Tabellen: ein digitales Verzeichnis nach &sect;&nbsp;6 GefStoffV mit klaren Feldern, KMR-Hinweisen und nachvollziehbarem Stand Ihrer Stoffe.
-            </p>
-            <ul class="mt-6 space-y-3 text-sm text-[#c5d0e2] sm:text-base" role="list">
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Durchsuchbares Kataster statt Excel-Fragmenten</li>
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>KMR- und Prüf-Hinweise auf einen Blick</li>
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Export &amp; Revisionen für Kontrollen vorbereitet</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="mb-20 flex flex-col gap-10 md:mb-24 md:flex-row-reverse md:items-center md:gap-16 lg:mb-24">
-          <div class="flex max-h-[min(70vh,640px)] flex-1 items-center justify-center overflow-hidden rounded-2xl border border-white/[0.08] bg-[#f9fafb] shadow-xl shadow-black/25">
-            <img
-              src="/images/landing-revisionsverlauf.png"
-              width="948"
-              height="1024"
-              loading="lazy"
-              decoding="async"
-              class="h-full max-h-[min(70vh,640px)] w-auto max-w-full object-contain object-top"
-              alt="Revisionsverlauf in Gefahrstoff-QR: zeitlicher Ablauf mit Einträgen Erstellt und Bearbeitet inkl. geänderter SDB-Datei und SDB-Felder"
-            />
-          </div>
-          <div class="flex-1">
-            <p class="text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Nachvollziehbarkeit</p>
-            <h3 class="mt-2 text-xl font-black text-[#f0f6ff] sm:text-2xl lg:text-3xl">Revisionsverlauf statt Excel-Versionen-Wirrwarr</h3>
-            <p class="mt-4 text-sm leading-relaxed text-[#8fa4c0] sm:text-base">
-              Jede Änderung am Kataster bleibt nachvollziehbar: Zeitstempel, Zuständigkeit und was sich an Feldern oder am SDB-Dokument geändert hat — die Basis für interne Freigaben und Audits.
-            </p>
-            <ul class="mt-6 space-y-3 text-sm text-[#c5d0e2] sm:text-base" role="list">
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Zeitachse mit Erstellung und Bearbeitungen</li>
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Nachvollziehbare SDB-Datei- und Feldänderungen</li>
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Weniger Streit bei „Wer hat wann was geändert?“</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="mb-20 flex flex-col gap-10 md:mb-24 md:flex-row-reverse md:items-center md:gap-16 lg:mb-24">
-          <div class="flex flex-1 justify-center">
-            <div class="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1e35]/80 shadow-xl shadow-black/25" style="aspect-ratio: 390 / 844; max-width: 320px; width: 100%;">
-              <picture class="w-full h-full">
-                <source srcset="/images/app-gefahrstoff-detail-mobile.webp" type="image/webp" />
-                <img src="/images/app-gefahrstoff-detail-mobile.jpg" width="390" height="844" loading="lazy" decoding="async" class="mx-auto w-full h-full object-contain" alt="Mobile Ansicht: GHS-Piktogramme und Notruf-Buttons für einen Gefahrstoff" />
-              </picture>
+        <div class="zigzag-rows">
+          <article id="produkt" class="zigzag-row scroll-mt-28">
+            <div class="zigzag-row__media">
+              <div class="zigzag-frame">
+                <img
+                  class="zigzag-frame__img"
+                  src="/images/landing-kataster-dashboard.png"
+                  width="1024"
+                  height="581"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Gefahrstoffverzeichnis in Gefahrstoff-QR: gefilterbare Tabelle mit Name, Lieferant, SDB-Revision, Signalwort und GHS-Piktogrammen"
+                />
+              </div>
             </div>
-          </div>
-          <div class="flex-1">
-            <p class="text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Vor Ort</p>
-            <h3 class="mt-2 text-xl font-black text-[#f0f6ff] sm:text-2xl lg:text-3xl">QR scannen — Sicherheit am Regal &amp; im Notfall</h3>
-            <p class="mt-4 text-sm leading-relaxed text-[#8fa4c0] sm:text-base">
-              Mitarbeitende öffnen die richtigen Infos direkt auf dem Smartphone: Kennzeichnung, Handlungshilfen und dokumentierte Betriebsanweisungen dort, wo die Chemie steht.
-            </p>
-            <ul class="mt-6 space-y-3 text-sm text-[#c5d0e2] sm:text-base" role="list">
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>QR-gestützte Notfall- und Infoscreens</li>
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Betriebsanweisungen am Arbeitsplatz greifbar</li>
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Weniger Rückfragen, mehr Sicherheit im Alltag</li>
-            </ul>
-          </div>
+            <div class="zigzag-row__content">
+              <p class="zigzag-row__eyebrow">Gefahrstoffverzeichnis</p>
+              <h3 class="zigzag-row__title">Alles sichtbar, was Aufsicht &amp; Praxis brauchen</h3>
+              <p class="zigzag-row__lead">
+                Statt verstreuter Tabellen: ein digitales Verzeichnis nach &sect;&nbsp;6 GefStoffV mit klaren Feldern, KMR-Hinweisen und nachvollziehbarem Stand Ihrer Stoffe.
+              </p>
+              <ul class="zigzag-checklist" role="list">
+                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Durchsuchbares Kataster statt Excel-Fragmenten</li>
+                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>KMR- und Prüf-Hinweise auf einen Blick</li>
+                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Export &amp; Revisionen für Kontrollen vorbereitet</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="zigzag-row zigzag-row--reverse">
+            <div class="zigzag-row__media">
+              <div class="zigzag-frame">
+                <img
+                  class="zigzag-frame__img zigzag-frame__img--contain"
+                  src="/images/landing-revisionsverlauf.png"
+                  width="948"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Revisionsverlauf in Gefahrstoff-QR: zeitlicher Ablauf mit Einträgen Erstellt und Bearbeitet inkl. geänderter SDB-Datei und SDB-Felder"
+                />
+              </div>
+            </div>
+            <div class="zigzag-row__content">
+              <p class="zigzag-row__eyebrow">Nachvollziehbarkeit</p>
+              <h3 class="zigzag-row__title">Revisionsverlauf statt Excel-Versionen-Wirrwarr</h3>
+              <p class="zigzag-row__lead">
+                Jede Änderung am Kataster bleibt nachvollziehbar: Zeitstempel, Zuständigkeit und was sich an Feldern oder am SDB-Dokument geändert hat — die Basis für interne Freigaben und Audits.
+              </p>
+              <ul class="zigzag-checklist" role="list">
+                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Zeitachse mit Erstellung und Bearbeitungen</li>
+                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Nachvollziehbare SDB-Datei- und Feldänderungen</li>
+                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Weniger Streit bei „Wer hat wann was geändert?“</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="zigzag-row">
+            <div class="zigzag-row__media">
+              <div class="zigzag-frame">
+                <picture>
+                  <source srcset="/images/app-gefahrstoff-detail-mobile.webp" type="image/webp" />
+                  <img
+                    class="zigzag-frame__img zigzag-frame__img--contain"
+                    src="/images/app-gefahrstoff-detail-mobile.jpg"
+                    width="390"
+                    height="844"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Mobile Ansicht: GHS-Piktogramme und Notruf-Buttons für einen Gefahrstoff"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="zigzag-row__content">
+              <p class="zigzag-row__eyebrow">Vor Ort</p>
+              <h3 class="zigzag-row__title">QR scannen — Sicherheit am Regal &amp; im Notfall</h3>
+              <p class="zigzag-row__lead">
+                Mitarbeitende öffnen die richtigen Infos direkt auf dem Smartphone: Kennzeichnung, Handlungshilfen und dokumentierte Betriebsanweisungen dort, wo die Chemie steht.
+              </p>
+              <ul class="zigzag-checklist" role="list">
+                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>QR-gestützte Notfall- und Infoscreens</li>
+                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Betriebsanweisungen am Arbeitsplatz greifbar</li>
+                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Weniger Rückfragen, mehr Sicherheit im Alltag</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="zigzag-row zigzag-row--reverse">
+            <div class="zigzag-row__media">
+              <div class="zigzag-frame zigzag-frame--dark">
+                <img
+                  class="zigzag-frame__img zigzag-frame__img--contain"
+                  src="/images/gefahrstoffverzeichnis-app.svg"
+                  width="380"
+                  height="320"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Digitales Gefahrstoffverzeichnis: strukturierte Erfassung statt Excel-Chaos"
+                />
+              </div>
+            </div>
+            <div class="zigzag-row__content">
+              <p class="zigzag-row__eyebrow">Compliance</p>
+              <h3 class="zigzag-row__title">Lager, Mengen &amp; Zusammenlagerung im Griff</h3>
+              <p class="zigzag-row__lead">
+                Ergänzen Sie das Verzeichnis um Lagerklasse, Mengen und Verträglichkeiten — um TRGS&nbsp;510 und Schwellen rechtzeitig zu sehen, statt im Blindflug zu reagieren.
+              </p>
+              <ul class="zigzag-checklist" role="list">
+                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Zusammenlagerungs-Check nach TRGS&nbsp;510</li>
+                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Mengenüberwachung &amp; sinnvolle Alerts</li>
+                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Hinweise zu abgelaufenen SDB &amp; Substitutionspfad</li>
+              </ul>
+            </div>
+          </article>
         </div>
 
-        <div class="mb-20 flex flex-col gap-10 md:mb-24 md:flex-row-reverse md:items-center md:gap-16 lg:mb-24">
-          <div class="flex flex-1 items-center justify-center rounded-2xl border border-white/[0.08] bg-gradient-to-br from-[#0f1e35] to-[#162340] p-10 shadow-xl shadow-black/25">
-            <img src="/images/sicherheitsdatenblatt-digital.svg" width="320" height="320" loading="lazy" decoding="async" class="mx-auto max-h-56 w-auto max-w-full object-contain" alt="Schematische Darstellung: Papier-SDB wird zu digital strukturierten Daten" />
-          </div>
-          <div class="flex-1">
-            <p class="text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Compliance</p>
-            <h3 class="mt-2 text-xl font-black text-[#f0f6ff] sm:text-2xl lg:text-3xl">Lager, Mengen &amp; Zusammenlagerung im Griff</h3>
-            <p class="mt-4 text-sm leading-relaxed text-[#8fa4c0] sm:text-base">
-              Ergänzen Sie das Verzeichnis um Lagerklasse, Mengen und Verträglichkeiten — um TRGS&nbsp;510 und Schwellen rechtzeitig zu sehen, statt im Blindflug zu reagieren.
-            </p>
-            <ul class="mt-6 space-y-3 text-sm text-[#c5d0e2] sm:text-base" role="list">
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Zusammenlagerungs-Check nach TRGS&nbsp;510</li>
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Mengenüberwachung &amp; sinnvolle Alerts</li>
-              <li class="flex gap-3"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ff6b35]/18 text-xs font-bold text-[#ff6b35]" aria-hidden="true">&#10003;</span>Hinweise zu abgelaufenen SDB &amp; Substitutionspfad</li>
-            </ul>
-          </div>
-        </div>
-
-        <ol class="relative mb-20 grid gap-10 lg:grid-cols-3 lg:gap-8">
+        <ol class="relative mb-20 mt-16 grid gap-10 border-t border-white/[0.06] pt-16 lg:grid-cols-3 lg:gap-8">
           <li class="relative flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6 pt-10 lg:pt-12">
             <span class="absolute -top-4 left-6 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#ff6b35] to-[#ff9a5c] text-sm font-black text-[#0a1628]">1</span>
             <h3 class="text-lg font-bold text-[#f0f6ff]">SDB hochladen</h3>
@@ -523,15 +547,17 @@
     <!-- SDB DEMO -->
     <section id="demo" class="section sdb-demo-section" aria-labelledby="sdbDemoHeadline">
       <div class="container">
-        <div class="section-header sdb-demo-heading">
-          <p class="section-label">Interaktive Demo</p>
-          <h2 id="sdbDemoHeadline">Vom Sicherheitsdatenblatt zum QR-Code in Sekunden.</h2>
-          <p class="section-intro">
-            Ziehen Sie das Beispiel-PDF in die Scan-Zone und sehen Sie, welche Daten Gefahrstoff-QR
-            nach &sect;&nbsp;6&nbsp;GefStoffV strukturiert bereitstellt.
-          </p>
-        </div>
+        <div class="zigzag-row zigzag-row--reverse">
+          <div class="zigzag-row__content">
+            <p class="zigzag-row__eyebrow">Interaktive Demo</p>
+            <h2 id="sdbDemoHeadline" class="zigzag-row__title">Vom Sicherheitsdatenblatt zum QR-Code in Sekunden.</h2>
+            <p class="zigzag-row__lead">
+              Ziehen Sie das Beispiel-PDF in die Scan-Zone und sehen Sie, welche Daten Gefahrstoff-QR
+              nach &sect;&nbsp;6&nbsp;GefStoffV strukturiert bereitstellt.
+            </p>
+          </div>
 
+          <div class="zigzag-row__media zigzag-row__media--panel">
         <div class="sdb-demo-shell" data-sdb-demo>
           <div class="sdb-demo-workflow" aria-label="Sicherheitsdatenblatt scannen">
             <div
@@ -592,45 +618,69 @@
             </div>
           </div>
         </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Notfall: QR-Scan (Demo-Aufnahme) -->
     <section id="notfall-scan" class="border-t border-white/[0.07] bg-[#0f1e35]/50 py-14 lg:py-20" aria-labelledby="notfallScanHeadline">
       <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2 id="notfallScanHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">
-            Im Notfall alles parat - in Sekunden
-          </h2>
-          <p class="mt-3 text-sm text-[#8fa4c0] sm:text-base">
-            QR-Code am Behälter scannen &mdash; Sicherheitsinfos und Handlungshilfen sofort auf dem Smartphone.
-          </p>
-        </div>
-        <figure class="mx-auto mt-10 w-full max-w-[280px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[473px]">
-          <picture>
-            <source srcset="/images/notfall-qr-scan-demo.gif" media="(min-width: 1024px)" />
-            <source srcset="/images/notfall-qr-scan-demo.gif" media="(min-width: 640px)" />
-            <img
-              src="/images/notfall-qr-scan-demo.gif"
-              alt="Smartphone scannt den Gefahrstoff-QR-Code; Verknüpfung zur Notfallansicht in der App"
-              width="473"
-              height="1024"
-              class="mx-auto w-full rounded-2xl border border-white/10 shadow-xl shadow-black/40 object-contain"
-              style="max-height:70vh"
-              playsinline
-            />
-          </picture>
-        </figure>
+        <article class="zigzag-row">
+          <div class="zigzag-row__media">
+            <div class="zigzag-frame">
+              <img
+                class="zigzag-frame__img zigzag-frame__img--contain"
+                src="/images/notfall-qr-scan-demo.gif"
+                alt="Smartphone scannt den Gefahrstoff-QR-Code; Verknüpfung zur Notfallansicht in der App"
+                width="473"
+                height="1024"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+          <div class="zigzag-row__content">
+            <p class="zigzag-row__eyebrow">Notfall</p>
+            <h2 id="notfallScanHeadline" class="zigzag-row__title">Im Notfall alles parat — in Sekunden</h2>
+            <p class="zigzag-row__lead">
+              QR-Code am Behälter scannen — Sicherheitsinfos, Erste-Hilfe-Hinweise und Handlungshilfen sofort auf dem Smartphone, ohne Ordnersuche.
+            </p>
+            <ul class="zigzag-checklist" role="list">
+              <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>QR-Scan inklusive — in jedem Paket</li>
+              <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Notfallpass mit GHS- und Erste-Hilfe-Daten</li>
+              <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Direkt am Lagerort und in der Werkstatt</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- SEO Kataster -->
     <section id="gefahrstoffkataster" class="section kataster-section" aria-labelledby="katasterHeadline">
       <div class="container">
-        <div class="section-header">
-          <p class="section-label">Gefahrstoffkataster digital</p>
-          <h2 id="katasterHeadline">Digitales Gefahrstoffkataster für rechtssichere Unternehmen</h2>
-        </div>
+        <article class="zigzag-row zigzag-row--reverse">
+          <div class="zigzag-row__content">
+            <p class="zigzag-row__eyebrow">Gefahrstoffkataster digital</p>
+            <h2 id="katasterHeadline" class="zigzag-row__title">Digitales Gefahrstoffkataster für rechtssichere Unternehmen</h2>
+            <p class="zigzag-row__lead">
+              Die GefStoffV verpflichtet zu einem vollständigen Gefahrstoffverzeichnis — in der Praxis oft als Gefahrstoffkataster geführt. Wer noch Excel und PDF-Ordner mischt, riskiert Lücken bei BG- und Behördenkontrollen.
+            </p>
+          </div>
+          <div class="zigzag-row__media">
+            <div class="zigzag-frame zigzag-frame--dark">
+              <img
+                class="zigzag-frame__img zigzag-frame__img--contain"
+                src="/images/qr-gefahrstoff-einsatzort.svg"
+                width="400"
+                height="320"
+                loading="lazy"
+                decoding="async"
+                alt="QR-Code am Gefahrstoffbehälter für schnellen Zugriff auf Sicherheitsinformationen"
+              />
+            </div>
+          </div>
+        </article>
 
         <article class="kataster-prose">
           <p>
