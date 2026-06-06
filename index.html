@@ -250,110 +250,97 @@
 
   <main>
 
-    <!-- HERO -->
-    <section id="hero" class="relative flex min-h-0 items-center overflow-hidden py-12 lg:min-h-[560px] lg:py-20" aria-labelledby="heroHeadline">
-      <div class="mx-auto grid w-full max-w-[1160px] gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-start lg:gap-16 lg:px-10">
-
-        <div class="flex flex-col gap-6 text-center lg:items-start lg:text-left">
-          <span class="mx-auto inline-flex items-center rounded-full border border-teal-400/40 bg-teal-400/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-teal-300 lg:mx-0 sm:text-sm">
-            KI-gestützte SDB-Extraktion
-          </span>
-
-          <h1 id="heroHeadline" class="text-[1.65rem] font-black leading-tight text-[#f0f6ff] sm:text-3xl lg:text-[2.65rem] lg:leading-[1.08]">
-            Gefahrstoffkataster Software – die nächste Stufe nach Excel
-          </h1>
-
-          <p class="mx-auto max-w-xl text-base text-[#8fa4c0] sm:text-lg lg:mx-0 lg:text-xl lg:leading-relaxed">
-            Statt fehleranfälliger Excel-Vorlagen: KI extrahiert SDB-Daten automatisch, führt Ihr Verzeichnis revisionssicher und spart Stunden Abtipp-Arbeit.
-          </p>
-
-          <div class="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-            <a class="btn-cta-orange" href="https://app.gefahrstoff-qr.de/register" title="Jetzt kostenlos testen">
-              Jetzt kostenlos testen
-            </a>
-            <a class="inline-flex min-h-[48px] items-center justify-center rounded-2xl border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-[#f0f6ff] transition hover:border-white/25 hover:bg-white/[0.06] sm:text-base" href="#funktionen">
-              Funktionen ansehen
-            </a>
-          </div>
-
-          <ul class="flex flex-wrap justify-center gap-2 lg:justify-start" aria-label="Vertrauensmerkmale">
-            <li class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-[#c5d0e2]">DSGVO-konform</li>
-            <li class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-[#c5d0e2]">Made in Germany</li>
-            <li class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-[#c5d0e2]">Keine Kreditkarte nötig</li>
-          </ul>
-
-          <p class="text-xs text-[#8fa4c0]">Fragen? <a href="mailto:info@gefahrstoff-qr.de" class="font-semibold text-teal-300 underline-offset-2 hover:underline">info@gefahrstoff-qr.de</a></p>
+    <!-- HERO: SDS-Engine-inspirierter Einstieg -->
+    <section id="hero" class="sds-hero" aria-labelledby="heroHeadline">
+      <div class="container sds-hero__inner">
+        <p class="sds-kicker">KI-gestützte Gefahrstoffdaten</p>
+        <h1 id="heroHeadline" class="sds-hero__title">
+          Sicherheitsdatenblätter in ein strukturiertes Gefahrstoffkataster verwandeln.
+        </h1>
+        <p class="sds-hero__lead">
+          Gefahrstoff-QR macht aus Excel-Listen, PDF-Ordnern und verteilten SDB eine belastbare Datenbasis für Suche,
+          Revisionsverlauf, QR-Notfallpass und Bereitstellung im Arbeitsalltag.
+        </p>
+        <div class="sds-hero__actions">
+          <a class="btn-cta-orange" href="https://app.gefahrstoff-qr.de/register" title="Jetzt kostenlos testen">
+            Unverbindlich testen
+          </a>
+          <a class="sds-secondary-link" href="mailto:info@gefahrstoff-qr.de?subject=Gefahrstoff-QR%20Gespräch">
+            Gespräch anfragen
+          </a>
         </div>
+        <ul class="sds-hero__checks" aria-label="Zentrale Vorteile">
+          <li><span aria-hidden="true">✓</span>Strukturierte Auslesung aus SDB-PDFs</li>
+          <li><span aria-hidden="true">✓</span>Gezielte Prüfung statt Vollabgleich</li>
+          <li><span aria-hidden="true">✓</span>Aktuelle Infos per QR im Arbeitsbereich</li>
+        </ul>
+      </div>
+    </section>
 
-        <aside class="roi-card" aria-label="ROI-Rechner: Zeitersparnis berechnen">
-          <h2 class="roi-card__title">ROI-Rechner: Wie viel Zeit sparen Sie?</h2>
+    <!-- EINSTIEGE -->
+    <section class="sds-entry-section" aria-labelledby="entryHeadline">
+      <div class="container">
+        <div class="sds-section-heading">
+          <h2 id="entryHeadline">Drei typische Einstiege in Gefahrstoff-QR</h2>
+          <p>Meist geht es zuerst um eine saubere Datenbasis, schnellere Prüfung neuer SDB-Stände oder aktuelle Informationen direkt im Bereich.</p>
+        </div>
+        <div class="sds-entry-grid">
+          <article class="sds-entry-card">
+            <span>Anwendungsfall</span>
+            <h3>Digitales Gefahrstoffverzeichnis</h3>
+            <p>Für Betriebe, die Excel, Laufwerke und Papierordner in eine strukturierte, durchsuchbare Datenbasis überführen wollen.</p>
+            <a href="#produkt">Anwendungsfall ansehen →</a>
+          </article>
+          <article class="sds-entry-card">
+            <span>Anwendungsfall</span>
+            <h3>SDB-Versionierung und Freigabe</h3>
+            <p>Für Teams, die neue Dokumentstände schneller einordnen, Änderungen nachvollziehen und Prüfaufwand reduzieren wollen.</p>
+            <a href="#funktionen">Anwendungsfall ansehen →</a>
+          </article>
+          <article class="sds-entry-card">
+            <span>Anwendungsfall</span>
+            <h3>QR-Zugriff auf aktuelle Sicherheitsinfos</h3>
+            <p>Für Arbeitsbereiche, in denen aktuelle SDB- und Notfallinformationen ohne Ordnersuche sofort verfügbar sein müssen.</p>
+            <a href="#notfall-scan">Anwendungsfall ansehen →</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <div class="roi-slider-wrap">
-            <div class="roi-slider-header">
-              <label for="substanceSlider" class="roi-slider-label">Gefahrstoffe im Betrieb</label>
-              <span class="roi-slider-value" id="substanceValue" aria-live="polite">20</span>
-            </div>
-            <input
-              type="range"
-              id="substanceSlider"
-              class="roi-slider"
-              min="5"
-              max="100"
-              value="20"
-              aria-label="Anzahl der Gefahrstoffe auswählen"
-            />
-            <div class="roi-slider-ticks">
-              <span>5</span>
-              <span>100</span>
-            </div>
-          </div>
-
-          <div class="roi-metrics">
-            <div class="roi-metric roi-metric--bad">
-              <div class="roi-metric__label">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                Excel / Papier
-              </div>
-              <p class="roi-metric__value">
-                <span id="traditionalHours">3.3</span><span class="roi-metric__unit">h</span>
-              </p>
-            </div>
-
-            <div class="roi-metric roi-metric--good">
-              <div class="roi-metric__label">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Gefahrstoff-QR
-              </div>
-              <p class="roi-metric__value">
-                <span id="digitalMinutes">10</span><span class="roi-metric__unit">min</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="roi-savings">
-            <div class="roi-savings__label">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              Gesparte Zeit
-            </div>
-            <p class="roi-savings__value">
-              <span id="savedHours">3.2</span><span class="roi-savings__unit">h</span>
-            </p>
-          </div>
-        </aside>
-
+    <!-- PROBLEME -->
+    <section class="sds-problem-section" aria-labelledby="problemHeadline">
+      <div class="container">
+        <div class="sds-section-heading">
+          <h2 id="problemHeadline">Wo Gefahrstoffprozesse im Alltag aus dem Tritt geraten</h2>
+          <p>Das Problem ist selten das einzelne PDF. Kritisch wird die Summe aus verteilter Ablage, manueller Pflege, fehlender Aktualität und fehlendem Zugriff im Arbeitskontext.</p>
+        </div>
+        <div class="sds-problem-grid">
+          <article class="sds-problem-card">
+            <span>Typisches Problem</span>
+            <h3>Verteilte Ablage wird mit jedem Stoff unübersichtlicher</h3>
+            <p>SDB liegen oft gleichzeitig in Excel-Listen, Laufwerken, E-Mails oder Papierordnern. Genau diese Mischung macht Suche, Pflege und Nachvollziehbarkeit fehleranfällig.</p>
+          </article>
+          <article class="sds-problem-card">
+            <span>Typisches Problem</span>
+            <h3>Aktualität sauber zu halten kostet Konzentration</h3>
+            <p>Neue Stände müssen gefunden, geprüft, ersetzt und wieder bereitgestellt werden. Dieser Pflegeaufwand bremst Prozesse und bleibt leicht liegen.</p>
+          </article>
+          <article class="sds-problem-card">
+            <span>Typisches Problem</span>
+            <h3>Vor Ort fehlt oft genau das aktuelle SDB</h3>
+            <p>Im Arbeitsbereich zählt nicht die schönste Ablage, sondern dass aktuelle Informationen in Sekunden erreichbar sind. Tote Links und alte Ausdrucke helfen dort nicht weiter.</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- PRODUKT + FUNKTIONEN (Zickzack) -->
     <section id="funktionen" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="funktionenHeadline">
       <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-          <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Kennen Sie das?</p>
-          <h2 id="funktionenHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Vom PDF zum rechtssicheren Kataster — ohne Abtipp-Marathon</h2>
-          <p class="mt-4 text-base text-[#8fa4c0] sm:text-lg">
-            Excel-Listen, SDB-Zettelchaos und fehlende Nachweise bremsen Teams aus. Gefahrstoff-QR strukturiert Ihre Dokumentation und hält Sie prüfbereit —
-            <a href="/gefahrstoffkataster-excel-vorlage/" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Noch mit Excel-Vorlage?</a>
-            oder <a href="#demo" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Interaktive Demo ausprobieren</a>.
+        <div class="sds-section-heading">
+          <h2 id="funktionenHeadline">Wie Gefahrstoff-QR im Alltag unterstützt</h2>
+          <p>
+            Vier zentrale Ansichten zeigen, wie aus Sicherheitsdatenblättern ein nutzbarer Arbeitsprozess für Suche, Prüfung, Nachvollziehbarkeit und Zugriff vor Ort wird.
           </p>
         </div>
 
@@ -555,18 +542,21 @@
     <!-- SDB DEMO -->
     <section id="demo" class="section sdb-demo-section" aria-labelledby="sdbDemoHeadline">
       <div class="container">
-        <div class="zigzag-row zigzag-row--reverse">
-          <div class="zigzag-row__content">
-            <p class="zigzag-row__eyebrow">Interaktive Demo</p>
-            <h2 id="sdbDemoHeadline" class="zigzag-row__title">Vom Sicherheitsdatenblatt zum QR-Code in Sekunden.</h2>
-            <p class="zigzag-row__lead">
-              Ziehen Sie das Beispiel-PDF in die Scan-Zone und sehen Sie, welche Daten Gefahrstoff-QR
-              nach &sect;&nbsp;6&nbsp;GefStoffV strukturiert bereitstellt.
-            </p>
-          </div>
+        <div class="sds-section-heading sdb-demo-heading">
+          <p class="sds-kicker">Interaktive Demo</p>
+          <h2 id="sdbDemoHeadline">Vom Sicherheitsdatenblatt zum QR-Code in Sekunden.</h2>
+          <p>
+            Ziehen Sie das Beispiel-PDF in die Scan-Zone und sehen Sie, welche Daten Gefahrstoff-QR
+            nach &sect;&nbsp;6&nbsp;GefStoffV strukturiert bereitstellt.
+          </p>
+        </div>
 
-          <div class="zigzag-row__media">
-            <div class="zigzag-frame zigzag-frame--demo">
+        <div class="sdb-demo-highlights" aria-label="Demo-Vorteile">
+          <span>✓ SDB-Daten aus PDF auslesen</span>
+          <span>✓ Relevante Felder prüfen</span>
+          <span>✓ QR-Notfallansicht öffnen</span>
+        </div>
+
         <div class="sdb-demo-shell" data-sdb-demo>
           <div class="sdb-demo-workflow" aria-label="Sicherheitsdatenblatt scannen">
             <div
@@ -624,9 +614,6 @@
                   Mobile Notfallansicht öffnen
                 </a>
               </aside>
-            </div>
-          </div>
-        </div>
             </div>
           </div>
         </div>
