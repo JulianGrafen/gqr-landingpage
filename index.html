@@ -357,7 +357,7 @@
           </p>
         </div>
 
-        <div id="produkt" class="scroll-mt-28 mb-20 flex flex-col gap-10 lg:mb-24 lg:flex-row lg:items-center lg:gap-16">
+        <div id="produkt" class="scroll-mt-28 mb-20 flex flex-col gap-10 md:mb-24 md:flex-row-reverse md:items-center md:gap-16 lg:mb-24">
           <div class="flex-1 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#f9fafb] shadow-xl shadow-black/25">
             <img
               src="/images/landing-kataster-dashboard.png"
@@ -383,7 +383,7 @@
           </div>
         </div>
 
-        <div class="mb-20 flex flex-col gap-10 lg:mb-24 lg:flex-row-reverse lg:items-center lg:gap-16">
+        <div class="mb-20 flex flex-col gap-10 md:mb-24 md:flex-row-reverse md:items-center md:gap-16 lg:mb-24">
           <div class="flex max-h-[min(70vh,640px)] flex-1 items-center justify-center overflow-hidden rounded-2xl border border-white/[0.08] bg-[#f9fafb] shadow-xl shadow-black/25">
             <img
               src="/images/landing-revisionsverlauf.png"
@@ -409,12 +409,14 @@
           </div>
         </div>
 
-        <div class="mb-20 flex flex-col gap-10 lg:mb-24 lg:flex-row lg:items-center lg:gap-16">
-          <div class="flex flex-1 justify-center overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1e35]/80 py-8 shadow-xl shadow-black/25">
-            <picture>
-              <source srcset="/images/app-gefahrstoff-detail-mobile.webp" type="image/webp" />
-              <img src="/images/app-gefahrstoff-detail-mobile.jpg" width="400" height="747" loading="lazy" decoding="async" class="mx-auto w-full max-w-[280px] object-contain sm:max-w-[320px]" alt="Mobile Ansicht: GHS-Piktogramme und Notruf-Buttons für einen Gefahrstoff" />
-            </picture>
+        <div class="mb-20 flex flex-col gap-10 md:mb-24 md:flex-row-reverse md:items-center md:gap-16 lg:mb-24">
+          <div class="flex flex-1 justify-center">
+            <div class="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1e35]/80 shadow-xl shadow-black/25" style="aspect-ratio: 390 / 844; max-width: 320px; width: 100%;">
+              <picture class="w-full h-full">
+                <source srcset="/images/app-gefahrstoff-detail-mobile.webp" type="image/webp" />
+                <img src="/images/app-gefahrstoff-detail-mobile.jpg" width="390" height="844" loading="lazy" decoding="async" class="mx-auto w-full h-full object-contain" alt="Mobile Ansicht: GHS-Piktogramme und Notruf-Buttons für einen Gefahrstoff" />
+              </picture>
+            </div>
           </div>
           <div class="flex-1">
             <p class="text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Vor Ort</p>
@@ -430,7 +432,7 @@
           </div>
         </div>
 
-        <div class="mb-20 flex flex-col gap-10 lg:mb-24 lg:flex-row-reverse lg:items-center lg:gap-16">
+        <div class="mb-20 flex flex-col gap-10 md:mb-24 md:flex-row-reverse md:items-center md:gap-16 lg:mb-24">
           <div class="flex flex-1 items-center justify-center rounded-2xl border border-white/[0.08] bg-gradient-to-br from-[#0f1e35] to-[#162340] p-10 shadow-xl shadow-black/25">
             <img src="/images/sicherheitsdatenblatt-digital.svg" width="320" height="320" loading="lazy" decoding="async" class="mx-auto max-h-56 w-auto max-w-full object-contain" alt="Schematische Darstellung: Papier-SDB wird zu digital strukturierten Daten" />
           </div>
