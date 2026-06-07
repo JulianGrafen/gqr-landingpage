@@ -314,7 +314,7 @@
                 Gefahrstoff-QR
               </div>
               <p class="roi-metric__value">
-                <span id="digitalMinutes">10</span><span class="roi-metric__unit">min</span>
+                <span id="digitalMinutes">60</span><span class="roi-metric__unit">min</span>
               </p>
             </div>
           </div>
@@ -325,7 +325,7 @@
               Gesparte Zeit
             </div>
             <p class="roi-savings__value">
-              <span id="savedHours">3.2</span><span class="roi-savings__unit">h</span>
+              <span id="savedHours">2.3</span><span class="roi-savings__unit">h</span>
             </p>
           </div>
         </aside>
@@ -1065,11 +1065,11 @@
   <script>
     (function () {
       var MINUTES_PER_SUBSTANCE_TRADITIONAL = 10;
-      var SECONDS_PER_SUBSTANCE_DIGITAL     = 30;
+      var MINUTES_PER_SUBSTANCE_DIGITAL     = 3; // KI-Import, Prüfung & Freigabe pro SDB
 
       function calculateTimeComparison(substanceCount) {
         var traditionalMinutes = substanceCount * MINUTES_PER_SUBSTANCE_TRADITIONAL;
-        var digitalRawMinutes  = (substanceCount * SECONDS_PER_SUBSTANCE_DIGITAL) / 60;
+        var digitalRawMinutes  = substanceCount * MINUTES_PER_SUBSTANCE_DIGITAL;
         return {
           traditionalHours: (traditionalMinutes / 60).toFixed(1),
           digitalMinutes:   Math.ceil(digitalRawMinutes),
