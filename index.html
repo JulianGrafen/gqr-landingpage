@@ -24,9 +24,9 @@
   <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png">
 
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="style.css?v=3" as="style">
   <link rel="preload" href="tw.css" as="style">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
   <link rel="stylesheet" href="tw.css">
 
   <link rel="icon" type="image/png" href="/favico.png">
@@ -398,7 +398,7 @@
         <div class="sds-section-heading">
           <h2 id="funktionenHeadline">Wie Gefahrstoff-QR im Alltag unterstützt</h2>
           <p>
-            Vier zentrale Ansichten zeigen, wie aus Sicherheitsdatenblättern ein nutzbarer Arbeitsprozess für Suche, Prüfung, Nachvollziehbarkeit und Zugriff vor Ort wird.
+            Drei zentrale Ansichten zeigen, wie aus Sicherheitsdatenblättern ein nutzbarer Arbeitsprozess für Suche, Prüfung, Nachvollziehbarkeit und Zugriff vor Ort wird.
           </p>
         </div>
 
@@ -496,35 +496,6 @@
             </div>
           </article>
 
-          <article class="zigzag-row zigzag-row--reverse">
-            <div class="zigzag-row__media">
-              <div class="zigzag-frame zigzag-frame--dark">
-                <div class="zigzag-frame__stage">
-                <img
-                  class="zigzag-frame__img"
-                  src="/images/gefahrstoffverzeichnis-app.svg"
-                  width="380"
-                  height="320"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Digitales Gefahrstoffverzeichnis: strukturierte Erfassung statt Excel-Chaos"
-                />
-                </div>
-              </div>
-            </div>
-            <div class="zigzag-row__content">
-              <p class="zigzag-row__eyebrow">Compliance</p>
-              <h3 class="zigzag-row__title">Lager, Mengen &amp; Zusammenlagerung im Griff</h3>
-              <p class="zigzag-row__lead">
-                Ergänzen Sie das Verzeichnis um Lagerklasse, Mengen und Verträglichkeiten — um TRGS&nbsp;510 und Schwellen rechtzeitig zu sehen, statt im Blindflug zu reagieren.
-              </p>
-              <ul class="zigzag-checklist" role="list">
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Zusammenlagerungs-Check nach TRGS&nbsp;510</li>
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Mengenüberwachung &amp; sinnvolle Alerts</li>
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Hinweise zu abgelaufenen SDB &amp; Substitutionspfad</li>
-              </ul>
-            </div>
-          </article>
         </div>
 
         <ol class="relative mb-20 mt-16 grid gap-10 border-t border-white/[0.06] pt-16 lg:grid-cols-3 lg:gap-8">
@@ -600,22 +571,22 @@
     <!-- SDB DEMO -->
     <section id="demo" class="section sdb-demo-section" aria-labelledby="sdbDemoHeadline">
       <div class="container">
-        <div class="sdb-demo-layout">
-          <div class="sdb-demo-copy">
-            <p class="sdb-demo-kicker">Interaktive Demo</p>
-            <h2 id="sdbDemoHeadline">Vom Sicherheitsdatenblatt zum QR-Code in Sekunden.</h2>
-            <p>
-              Ziehen Sie das Beispiel-PDF in die Scan-Zone und sehen Sie, welche Daten Gefahrstoff-QR
-              nach &sect;&nbsp;6&nbsp;GefStoffV strukturiert bereitstellt.
-            </p>
-            <ul class="sdb-demo-benefits" aria-label="Demo-Vorteile">
-              <li><span aria-hidden="true">✓</span>SDB-Daten aus PDF auslesen</li>
-              <li><span aria-hidden="true">✓</span>Relevante Felder prüfen</li>
-              <li><span aria-hidden="true">✓</span>QR-Notfallansicht öffnen</li>
-            </ul>
-          </div>
+        <div class="sds-section-heading sdb-demo-heading">
+          <p class="sds-kicker">Interaktive Demo</p>
+          <h2 id="sdbDemoHeadline">Vom Sicherheitsdatenblatt zum QR-Code in Sekunden.</h2>
+          <p>
+            Ziehen Sie das Beispiel-PDF in die Scan-Zone und sehen Sie, welche Daten Gefahrstoff-QR
+            nach &sect;&nbsp;6&nbsp;GefStoffV strukturiert bereitstellt.
+          </p>
+        </div>
 
-          <div class="sdb-demo-shell" data-sdb-demo>
+        <div class="sdb-demo-highlights" aria-label="Demo-Vorteile">
+          <span>✓ SDB-Daten aus PDF auslesen</span>
+          <span>✓ Relevante Felder prüfen</span>
+          <span>✓ QR-Notfallansicht öffnen</span>
+        </div>
+
+        <div class="sdb-demo-shell" data-sdb-demo>
             <div class="sdb-demo-workflow" aria-label="Sicherheitsdatenblatt scannen">
               <div
                 class="sdb-demo-file"
@@ -675,7 +646,6 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
 
@@ -684,17 +654,17 @@
       <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
         <article class="zigzag-row">
           <div class="zigzag-row__media">
-            <div class="zigzag-frame">
-              <div class="zigzag-frame__stage">
-              <img
-                class="zigzag-frame__img"
-                src="/images/notfall-qr-scan-demo.gif"
-                alt="Smartphone scannt den Gefahrstoff-QR-Code; Verknüpfung zur Notfallansicht in der App"
-                width="473"
-                height="1024"
-                loading="lazy"
-                decoding="async"
-              />
+            <div class="zigzag-frame zigzag-frame--portrait">
+              <div class="zigzag-frame__stage zigzag-frame__stage--phone">
+                <img
+                  class="zigzag-frame__img zigzag-frame__img--portrait"
+                  src="/images/notfall-qr-scan-demo.gif?v=2"
+                  alt="Smartphone scannt den Gefahrstoff-QR-Code; Verknüpfung zur Notfallansicht in der App"
+                  width="320"
+                  height="692"
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>
