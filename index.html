@@ -24,9 +24,9 @@
   <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png">
 
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="preload" href="style.css?v=4" as="style">
+  <link rel="preload" href="style.css?v=5" as="style">
   <link rel="preload" href="tw.css" as="style">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
   <link rel="stylesheet" href="tw.css">
 
   <link rel="icon" type="image/png" href="/favico.png">
@@ -76,34 +76,41 @@
     "offers": [
       {
         "@type": "Offer",
-        "name": "Basis",
-        "description": "50 Gefahrstoffe, SDB-Upload, Verzeichnis als PDF, Support",
-        "price": "49",
+        "name": "Test",
+        "description": "Unverbindlich, begrenzte SDB-Verarbeitung, Verzeichnis als PDF",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Small Biz",
+        "description": "Bis 50 Stoffe, Verzeichnis als PDF, für kleine Betriebe",
+        "price": "89",
         "priceCurrency": "EUR",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "49",
+          "price": "89",
           "priceCurrency": "EUR",
           "unitText": "MONTH"
         }
       },
       {
         "@type": "Offer",
-        "name": "Pro",
-        "description": "Bis 250 Stoffe, Verzeichnis als PDF, Priorisierter Support",
-        "price": "99",
+        "name": "Professional",
+        "description": "Mehrere Nutzer, höhere Limits, Verzeichnis als PDF, Support",
+        "price": "199",
         "priceCurrency": "EUR",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "99",
+          "price": "199",
           "priceCurrency": "EUR",
           "unitText": "MONTH"
         }
       },
       {
         "@type": "Offer",
-        "name": "Enterprise",
-        "description": "Multi-Mandanten, Werkstrennung, Verzeichnis als PDF, Schulungen — ab 299 €/Monat",
+        "name": "Multi-Mandant",
+        "description": "Multi-Mandanten-Fähigkeit für SiFa-Beratungen — ab 299 €/Monat",
         "price": "299",
         "priceCurrency": "EUR",
         "priceSpecification": {
@@ -111,7 +118,13 @@
           "price": "299",
           "priceCurrency": "EUR",
           "unitText": "MONTH"
-        },
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Enterprise",
+        "description": "Organisationsweiter Rollout und Schulungen — Preis auf Anfrage",
+        "priceCurrency": "EUR",
         "availability": "https://schema.org/OnlineOnly",
         "url": "mailto:info@gefahrstoff-qr.de?subject=Enterprise%20Gefahrstoff-QR"
       }
@@ -739,44 +752,68 @@
         <div class="mx-auto mb-12 max-w-2xl text-center">
           <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Preise</p>
           <h2 id="pricingHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Skalieren Sie ohne Überraschungen</h2>
-          <p class="mt-4 text-base text-[#8fa4c0]">Monatlich kündbar, klare Pakete — kostenlos testen mit 5 aktiven Stoffen, ohne Kreditkarte. Der QR-Scan für Notfall- und Infoscreens ist in jedem Paket inklusive.</p>
+          <p class="mt-4 text-base text-[#8fa4c0]">Monatlich kündbar — vom unverbindlichen Test bis zur Enterprise-Lösung. Der QR-Scan für Notfall- und Infoscreens ist in jedem Paket inklusive.</p>
         </div>
 
-        <div class="grid gap-6 lg:grid-cols-3 lg:gap-8 lg:items-stretch">
-          <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-8 shadow-lg shadow-black/10">
-            <h3 class="text-lg font-bold text-[#f0f6ff]">Basis</h3>
-            <p class="mt-1 text-sm text-[#8fa4c0]">Solides Digital-Kataster für Teams, die Excel endlich ablösen möchten.</p>
-            <p class="mt-6 text-3xl font-black text-[#f0f6ff]">49&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]">/Monat</span></p>
+        <div class="pricing-tier-grid">
+          <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Test</h3>
+            <p class="mt-1 text-sm text-[#8fa4c0]">Unverbindlich, begrenzte SDB-Verarbeitung.</p>
+            <p class="mt-6 text-3xl font-black text-[#f0f6ff]">0&nbsp;&euro;</p>
             <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
-              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> 50 Stoffe inklusive</li>
-              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> SDB-Upload &amp; Verzeichnis</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Begrenzte SDB-Verarbeitung</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Verzeichnis als PDF downloadbar</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> QR-Notfallansicht</li>
+            </ul>
+            <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="https://app.gefahrstoff-qr.de/register">Kostenlos testen</a>
+          </article>
+
+          <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Small Biz</h3>
+            <p class="mt-1 text-sm text-[#8fa4c0]">Für kleine Betriebe, bis 50 Stoffe.</p>
+            <p class="mt-6 text-3xl font-black text-[#f0f6ff]">89&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]">/Monat</span></p>
+            <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis 50 Stoffe</li>
               <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Verzeichnis als PDF downloadbar</li>
               <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> E-Mail-Support</li>
             </ul>
-            <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="https://app.gefahrstoff-qr.de/register">Basis wählen</a>
+            <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="https://app.gefahrstoff-qr.de/register">Small Biz wählen</a>
           </article>
 
-          <article class="relative flex flex-col rounded-2xl border-2 border-[#ff6b35]/60 bg-[#162340] p-8 shadow-xl shadow-orange-900/20 ring-1 ring-orange-400/30 lg:-mt-2 lg:mb-2" aria-label="Empfohlenes Paket">
+          <article class="relative flex flex-col rounded-2xl border-2 border-[#ff6b35]/60 bg-[#162340] p-6 shadow-xl shadow-orange-900/20 ring-1 ring-orange-400/30 lg:-mt-2 lg:mb-2 lg:p-7" aria-label="Empfohlenes Paket">
             <span class="pricing-badge-recommended">Empfohlen</span>
-            <h3 class="text-lg font-bold text-[#f0f6ff]">Pro</h3>
-            <p class="mt-1 text-sm text-[#8fa4c0]">Für Betriebe mit wachsendem Portfolio und hohem Änderungsaufkommen.</p>
-            <p class="mt-6 text-3xl font-black text-[#f0f6ff]">99&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]">/Monat</span></p>
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Professional</h3>
+            <p class="mt-1 text-sm text-[#8fa4c0]">Mehrere Nutzer, höhere Limits, Support.</p>
+            <p class="mt-6 text-3xl font-black text-[#f0f6ff]">199&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]">/Monat</span></p>
             <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
-              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis 250 Stoffe</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Mehrere Nutzer</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Höhere Stoff-Limits</li>
               <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Verzeichnis als PDF downloadbar</li>
               <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Priorisierter Support</li>
             </ul>
-            <a class="btn-cta-orange btn-cta-orange--block mt-8" href="https://app.gefahrstoff-qr.de/register">Pro wählen</a>
+            <a class="btn-cta-orange btn-cta-orange--block mt-8" href="https://app.gefahrstoff-qr.de/register">Professional wählen</a>
           </article>
 
-          <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-8 shadow-lg shadow-black/10">
-            <h3 class="text-lg font-bold text-[#f0f6ff]">Enterprise</h3>
-            <p class="mt-1 text-sm text-[#8fa4c0]">Multi-Mandanten, Werkstrennung und Begleitung bei der organisationsweiten Einführung.</p>
+          <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Multi-Mandant</h3>
+            <p class="mt-1 text-sm text-[#8fa4c0]">Speziell für SiFa-Beratungen (Multi-Mandanten-Fähigkeit inkl.).</p>
             <p class="mt-6 text-3xl font-black text-[#f0f6ff]">ab 299&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]">/Monat</span></p>
             <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
               <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Multi-Mandanten &amp; Werkstrennung</li>
               <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Verzeichnis als PDF downloadbar</li>
-              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Schulungen &amp; Rollout</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> SiFa-taugliche Mandantenverwaltung</li>
+            </ul>
+            <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="mailto:info@gefahrstoff-qr.de?subject=Multi-Mandant%20Gefahrstoff-QR">Angebot einholen</a>
+          </article>
+
+          <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
+            <h3 class="text-lg font-bold text-[#f0f6ff]">Enterprise</h3>
+            <p class="mt-1 text-sm text-[#8fa4c0]">Großkonzerne: organisationsweiter Rollout und Begleitung.</p>
+            <p class="mt-6 text-3xl font-black text-[#f0f6ff]">Individuell</p>
+            <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Individuelle Stoff-Limits</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Verzeichnis als PDF downloadbar</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Rollout &amp; Schulungen</li>
             </ul>
             <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="mailto:info@gefahrstoff-qr.de?subject=Enterprise%20Gefahrstoff-QR">Angebot einholen</a>
           </article>
@@ -787,43 +824,48 @@
           <div class="pricing-compare__panel">
             <div class="pricing-compare__scroll" tabindex="0" role="region" aria-label="Paketvergleich als Tabelle">
               <table class="pricing-compare__table">
-                <caption>Vergleich der Pakete Kostenlos testen, Basis, Pro und Enterprise</caption>
+                <caption>Vergleich der Pakete Test, Small Biz, Professional, Multi-Mandant und Enterprise</caption>
                 <thead>
                   <tr>
                     <th scope="col">Vergleich</th>
-                    <th scope="col">Kostenlos testen</th>
-                    <th scope="col">Basis</th>
-                    <th scope="col" class="pricing-compare__col--highlight">Pro</th>
+                    <th scope="col">Test</th>
+                    <th scope="col">Small Biz</th>
+                    <th scope="col" class="pricing-compare__col--highlight">Professional</th>
+                    <th scope="col">Multi-Mandant</th>
                     <th scope="col">Enterprise</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">Preis</th>
-                    <td>Kostenlos</td>
-                    <td>49&nbsp;&euro;/Monat</td>
-                    <td class="pricing-compare__col--highlight">99&nbsp;&euro;/Monat</td>
+                    <td>0&nbsp;&euro;</td>
+                    <td>89&nbsp;&euro;/Monat</td>
+                    <td class="pricing-compare__col--highlight">199&nbsp;&euro;/Monat</td>
                     <td>ab 299&nbsp;&euro;/Monat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Aktive Stoffe</th>
-                    <td>5</td>
-                    <td>50</td>
-                    <td class="pricing-compare__col--highlight">250</td>
                     <td>Individuell</td>
                   </tr>
                   <tr>
-                    <th scope="row">Einsatz im Alltag</th>
-                    <td>Zum Kennenlernen</td>
-                    <td>Excel ablösen</td>
-                    <td class="pricing-compare__col--highlight">Hohes Änderungsaufkommen</td>
-                    <td>Organisationsweite Einführung</td>
+                    <th scope="row">Fokus</th>
+                    <td>Unverbindlich testen</td>
+                    <td>Kleine Betriebe</td>
+                    <td class="pricing-compare__col--highlight">Teams &amp; Wachstum</td>
+                    <td>SiFa-Beratungen</td>
+                    <td>Großkonzerne</td>
                   </tr>
                   <tr>
-                    <th scope="row">SDB-Upload &amp; Verzeichnis</th>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+                    <th scope="row">Aktive Stoffe</th>
+                    <td>Begrenzt</td>
+                    <td>Bis 50</td>
+                    <td class="pricing-compare__col--highlight">Höhere Limits</td>
+                    <td>Individuell</td>
+                    <td>Individuell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SDB-Verarbeitung</th>
+                    <td>Begrenzt</td>
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                   </tr>
                   <tr>
@@ -832,19 +874,6 @@
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Gefahrstoffverzeichnis nach &sect;&nbsp;6 GefStoffV</th>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                    <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Revisionsverlauf</th>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                    <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                   </tr>
                   <tr>
@@ -853,6 +882,7 @@
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                   </tr>
                   <tr>
                     <th scope="row">QR-Notfallansicht am Einsatzort</th>
@@ -860,26 +890,14 @@
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Digitales GHS-Piktogramm-Management</th>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                    <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                   </tr>
                   <tr>
-                    <th scope="row">Mengenüberwachung &amp; Alerts</th>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+                    <th scope="row">Mehrere Nutzer</th>
+                    <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+                    <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
                     <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">TRGS&nbsp;510 / TRGS&nbsp;600 Hinweise</th>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                    <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                   </tr>
                   <tr>
@@ -887,13 +905,15 @@
                     <td><span class="pricing-compare__dash" aria-hidden="true">&ndash;</span></td>
                     <td>E-Mail-Support</td>
                     <td class="pricing-compare__col--highlight">Priorisierter Support</td>
-                    <td>Schulungen &amp; Rollout</td>
+                    <td>SiFa-Support</td>
+                    <td>Rollout &amp; Schulungen</td>
                   </tr>
                   <tr>
                     <th scope="row">Multi-Mandanten &amp; Werkstrennung</th>
                     <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
                     <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
                     <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                   </tr>
                 </tbody>
