@@ -19,7 +19,7 @@ const SLIDER_MAX = 100;
 const DEFAULT_SUBSTANCE_COUNT = 20;
 const DEFAULT_NEW_SUBSTANCES_PER_YEAR = 3;
 
-const SETUP_MINUTES_MANUAL  = 15; // SDB suchen, abtippen, prüfen
+const SETUP_MINUTES_MANUAL  = 20; // Excel: SDB suchen, abtippen, prüfen
 const SETUP_MINUTES_DIGITAL = 3;  // KI-Import, Prüfung & Freigabe pro SDB
 
 const REVISION_MINUTES_MANUAL  = 5; // SDB-Aktualität prüfen (§ 6 GefStoffV)

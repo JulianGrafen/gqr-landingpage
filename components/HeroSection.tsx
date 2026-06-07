@@ -16,8 +16,8 @@ import {
 const SLIDER_MIN = 5;
 const SLIDER_MAX = 100;
 const SLIDER_DEFAULT = 20;
-const MINUTES_PER_SUBSTANCE_TRADITIONAL = 10;
-const SECONDS_PER_SUBSTANCE_DIGITAL = 30;
+const MINUTES_PER_SUBSTANCE_TRADITIONAL = 20;
+const MINUTES_PER_SUBSTANCE_DIGITAL = 3;
 
 // ─────────────────────────────────────────────────────────────────────────────
 // TYPES
@@ -37,8 +37,7 @@ type ColorAccent = "red" | "emerald";
 
 function calculateTimeComparison(substanceCount: number): TimeComparison {
   const traditionalMinutes = substanceCount * MINUTES_PER_SUBSTANCE_TRADITIONAL;
-  const digitalRawMinutes =
-    (substanceCount * SECONDS_PER_SUBSTANCE_DIGITAL) / 60;
+  const digitalRawMinutes = substanceCount * MINUTES_PER_SUBSTANCE_DIGITAL;
   const savedMinutes = traditionalMinutes - digitalRawMinutes;
 
   return {
