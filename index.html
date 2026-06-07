@@ -77,7 +77,7 @@
       {
         "@type": "Offer",
         "name": "Basis",
-        "description": "50 Gefahrstoffe, SDB-Upload, Support",
+        "description": "50 Gefahrstoffe, SDB-Upload, Verzeichnis als PDF, Support",
         "price": "49",
         "priceCurrency": "EUR",
         "priceSpecification": {
@@ -90,7 +90,7 @@
       {
         "@type": "Offer",
         "name": "Pro",
-        "description": "Unbegrenzt Stoffe, Priorisierter Support",
+        "description": "Unbegrenzt Stoffe, Verzeichnis als PDF, Priorisierter Support",
         "price": "99",
         "priceCurrency": "EUR",
         "priceSpecification": {
@@ -103,8 +103,15 @@
       {
         "@type": "Offer",
         "name": "Enterprise",
-        "description": "Multi-User, API, Schulungen — Preis auf Anfrage",
+        "description": "Multi-Mandanten, Werkstrennung, Verzeichnis als PDF, Schulungen — ab 299 €/Monat",
+        "price": "299",
         "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "299",
+          "priceCurrency": "EUR",
+          "unitText": "MONTH"
+        },
         "availability": "https://schema.org/OnlineOnly",
         "url": "mailto:info@gefahrstoff-qr.de?subject=Enterprise%20Gefahrstoff-QR"
       }
@@ -743,6 +750,7 @@
             <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
               <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> 50 Stoffe inklusive</li>
               <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> SDB-Upload &amp; Verzeichnis</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Verzeichnis als PDF downloadbar</li>
               <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> E-Mail-Support</li>
             </ul>
             <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="https://app.gefahrstoff-qr.de/register">Basis wählen</a>
@@ -755,6 +763,7 @@
             <p class="mt-6 text-3xl font-black text-[#f0f6ff]">99&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]">/Monat</span></p>
             <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
               <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Unbegrenzt Stoffe</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Verzeichnis als PDF downloadbar</li>
               <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Priorisierter Support</li>
             </ul>
             <a class="btn-cta-orange btn-cta-orange--block mt-8" href="https://app.gefahrstoff-qr.de/register">Pro wählen</a>
@@ -762,12 +771,11 @@
 
           <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-8 shadow-lg shadow-black/10">
             <h3 class="text-lg font-bold text-[#f0f6ff]">Enterprise</h3>
-            <p class="mt-1 text-sm text-[#8fa4c0]">Mandanten, Schnittstellen und Begleitung bei der organisationsweiten Einführung.</p>
-            <p class="mt-6 text-3xl font-black text-[#f0f6ff]">Auf Anfrage</p>
-            <p class="text-sm text-[#8fa4c0]">&nbsp;</p>
+            <p class="mt-1 text-sm text-[#8fa4c0]">Multi-Mandanten, Werkstrennung und Begleitung bei der organisationsweiten Einführung.</p>
+            <p class="mt-6 text-3xl font-black text-[#f0f6ff]">ab 299&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]">/Monat</span></p>
             <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
-              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Multi-User &amp; Rechte</li>
-              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> API &amp; Integrationen</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Multi-Mandanten &amp; Werkstrennung</li>
+              <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Verzeichnis als PDF downloadbar</li>
               <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Schulungen &amp; Rollout</li>
             </ul>
             <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="mailto:info@gefahrstoff-qr.de?subject=Enterprise%20Gefahrstoff-QR">Angebot einholen</a>
@@ -790,6 +798,13 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    <th scope="row">Preis</th>
+                    <td>Kostenlos</td>
+                    <td>49&nbsp;&euro;/Monat</td>
+                    <td class="pricing-compare__col--highlight">99&nbsp;&euro;/Monat</td>
+                    <td>ab 299&nbsp;&euro;/Monat</td>
+                  </tr>
                   <tr>
                     <th scope="row">Aktive Stoffe</th>
                     <td>Zum Kennenlernen</td>
@@ -833,6 +848,13 @@
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                   </tr>
                   <tr>
+                    <th scope="row">Verzeichnis als PDF downloadbar</th>
+                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+                    <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+                  </tr>
+                  <tr>
                     <th scope="row">QR-Notfallansicht am Einsatzort</th>
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
                     <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
@@ -868,14 +890,7 @@
                     <td>Schulungen &amp; Rollout</td>
                   </tr>
                   <tr>
-                    <th scope="row">Multi-User &amp; Rechte</th>
-                    <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
-                    <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
-                    <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
-                    <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">API &amp; Integrationen</th>
+                    <th scope="row">Multi-Mandanten &amp; Werkstrennung</th>
                     <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
                     <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
                     <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
