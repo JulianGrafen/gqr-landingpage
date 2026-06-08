@@ -759,7 +759,10 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 }
 
 .sds-entry-card h3,
-.sds-problem-card h3 {
+.sds-entry-card__title,
+.sds-problem-card h3,
+.sds-problem-card__title {
+  display: block;
   margin-top: 0.75rem;
   color: #f0f6ff;
   font-size: 1.18rem;
@@ -909,7 +912,9 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   line-height: 1.65;
 }
 
-.kataster-prose h3 {
+.kataster-prose h3,
+.kataster-prose__subhead {
+  display: block;
   margin-top: 1.75rem;
   margin-bottom: .65rem;
   color: var(--color-text);
@@ -2054,9 +2059,12 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   text-transform: uppercase;
 }
 
-.sdb-result__header h3 {
+.sdb-result__header h3,
+.sdb-result__product {
+  margin: 0;
   color: #0f172a;
   font-size: clamp(1.35rem, 3vw, 1.9rem);
+  font-weight: 900;
   line-height: 1.15;
 }
 
@@ -2166,9 +2174,12 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   text-transform: uppercase;
 }
 
-.sdb-qr-card h3 {
+.sdb-qr-card h3,
+.sdb-qr-card__headline {
+  margin: 0;
   color: #0f172a;
   font-size: 1.2rem;
+  font-weight: 900;
   line-height: 1.25;
 }
 
