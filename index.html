@@ -1166,7 +1166,7 @@
 
       var hints = {
         monthly: 'Monatliche Abrechnung, monatlich kündbar.',
-        yearly: 'Jährliche Vorauszahlung mit 15\u00a0% Rabatt — Preise pro Jahr, einmalig abgerechnet.',
+        yearly: 'Jährliche Vorauszahlung mit 15\u00a0% Rabatt — Monatspreis bei Jahreszahlung, einmalig pro Jahr abgerechnet.',
       };
 
       var footnotes = {
@@ -1192,7 +1192,13 @@
       function formatComparePrice(monthly, mode, prefix) {
         var prefixText = prefix ? prefix + ' ' : '';
         if (mode === 'yearly') {
-          return prefixText + formatAmount(yearlyTotal(monthly), 0) + '\u00a0\u20ac/Jahr';
+          return (
+            prefixText +
+            formatAmount(monthlyEquivalent(monthly), 2) +
+            '\u00a0\u20ac/Monat · ' +
+            formatAmount(yearlyTotal(monthly), 0) +
+            '\u00a0\u20ac/Jahr'
+          );
         }
         return prefixText + formatAmount(monthly, 0) + '\u00a0\u20ac/Monat';
       }
@@ -1223,13 +1229,13 @@
           }
 
           if (mode === 'yearly') {
-            amountEl.textContent = formatAmount(yearlyTotal(monthly), 0);
-            periodEl.textContent = '/Jahr';
+            amountEl.textContent = formatAmount(monthlyEquivalent(monthly), 2);
+            periodEl.textContent = '/Monat';
             if (noteEl) {
               noteEl.textContent =
-                '15\u00a0% Rabatt · entspricht ' +
-                formatAmount(monthlyEquivalent(monthly), 2) +
-                '\u00a0\u20ac/Monat';
+                (prefix ? prefix + ' ' : '') +
+                formatAmount(yearlyTotal(monthly), 0) +
+                '\u00a0\u20ac jährlich abgerechnet (15\u00a0% Rabatt)';
               noteEl.hidden = false;
             }
           } else {

@@ -448,10 +448,10 @@ ul { list-style: none; }
 
 .pricing-tier__price-note {
   margin: 0.45rem 0 0;
-  color: #5eead4;
-  font-size: 0.78rem;
-  font-weight: 700;
-  line-height: 1.4;
+  color: #8fa4c0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.45;
 }
 
 .pricing-tier__price-note[hidden] {
