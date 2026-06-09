@@ -12,11 +12,11 @@ export const VORLAGE_DOWNLOAD_FILE = '/downloads/gefahrstoffverzeichnis-vorlage.
 export const VORLAGE_LEAD_CONFIG_PATH = '/vorlage-lead-config.json';
 
 export const VORLAGE_LANDING_SEO = {
-  title: 'Gefahrstoffverzeichnis Excel-Vorlage gratis | GQR',
+  title: 'Excel-Vorlage Gefahrstoffverzeichnis: Gratis Download | GQR',
   description:
-    'Kostenlose Gefahrstoffverzeichnis-Vorlage Excel: rechtssicher für Audit & Gefährdungsbeurteilung. Sofort downloaden – Upgrade auf GQR möglich.',
+    'Gratis Excel-Vorlage: Gefahrstoffverzeichnis für Audit & Gefährdungsbeurteilung. GefStoffV-konform, sofort downloaden.',
   ogImageAlt:
-    'Kostenlose Excel-Vorlage Gefahrstoffverzeichnis für Audit und Gefährdungsbeurteilung nach GefStoffV',
+    'Gratis Excel-Vorlage Gefahrstoffverzeichnis — audit-tauglich für Gefährdungsbeurteilung nach GefStoffV',
 } as const;
 
 export const VORLAGE_GQR_BENEFITS = [

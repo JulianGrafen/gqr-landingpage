@@ -20,9 +20,9 @@ export const HOME_SEO = {
 /** Lead-Magnet: Gratis Excel-Vorlage Download — siehe config/vorlage-landing.ts */
 export const VORLAGE_DOWNLOAD_SEO = {
   path: '/gefahrstoffverzeichnis-excel-vorlage/',
-  title: 'Gefahrstoffverzeichnis Excel-Vorlage gratis | GQR',
+  title: 'Excel-Vorlage Gefahrstoffverzeichnis: Gratis Download | GQR',
   description:
-    'Kostenlose Gefahrstoffverzeichnis-Vorlage Excel: rechtssicher für Audit & Gefährdungsbeurteilung. Sofort downloaden – Upgrade auf GQR möglich.',
+    'Gratis Excel-Vorlage: Gefahrstoffverzeichnis für Audit & Gefährdungsbeurteilung. GefStoffV-konform, sofort downloaden.',
 } as const;
 
 /** Expert-Landing Excel-Intent — Title 2 + Description 1 */
