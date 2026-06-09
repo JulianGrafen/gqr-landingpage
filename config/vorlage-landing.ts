@@ -5,8 +5,11 @@
 
 export const VORLAGE_LANDING_PATH = '/gefahrstoffverzeichnis-excel-vorlage/';
 
-/** Pfad zur XLSX — Datei vom Kunden noch einzubinden unter public/downloads/ */
+/** Pfad zur XLSX */
 export const VORLAGE_DOWNLOAD_FILE = '/downloads/gefahrstoffverzeichnis-vorlage.xlsx';
+
+/** Lead-Endpoint: vorlage-lead-config.json (Google Apps Script Web-App-URL) */
+export const VORLAGE_LEAD_CONFIG_PATH = '/vorlage-lead-config.json';
 
 export const VORLAGE_LANDING_SEO = {
   title: 'Gefahrstoffverzeichnis Excel-Vorlage gratis | GQR',

@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useId, useState, type FormEvent } from 'react';
 import { VORLAGE_DOWNLOAD_FILE } from '@/config/vorlage-landing';
+import { submitVorlageLead } from '@/lib/submit-vorlage-lead';
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -13,10 +14,21 @@ type VorlageDownloadFormProps = {
   tone?: 'dark' | 'light';
 };
 
+function triggerDownload() {
+  const link = document.createElement('a');
+  link.href = VORLAGE_DOWNLOAD_FILE;
+  link.download = 'Gefahrstoffverzeichnis-Muster.xlsx';
+  link.rel = 'noopener';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 export function VorlageDownloadForm({
   className = '',
   tone = 'dark',
 }: VorlageDownloadFormProps) {
+  const emailFieldId = useId();
   const [email, setEmail] = useState('');
   const [state, setState] = useState<FormState>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -27,7 +39,7 @@ export function VorlageDownloadForm({
     event.preventDefault();
     setErrorMessage('');
 
-    const trimmed = email.trim();
+    const trimmed = email.trim().toLowerCase();
     if (!trimmed || !EMAIL_PATTERN.test(trimmed)) {
       setState('error');
       setErrorMessage('Bitte gib eine gültige E-Mail-Adresse ein.');
@@ -36,21 +48,10 @@ export function VorlageDownloadForm({
 
     setState('submitting');
 
-    try {
-      await Promise.resolve();
-    } catch {
-      /* Download auch ohne Backend ermöglichen */
-    }
+    await submitVorlageLead(trimmed);
 
     setState('success');
-
-    const link = document.createElement('a');
-    link.href = VORLAGE_DOWNLOAD_FILE;
-    link.download = 'Gefahrstoffverzeichnis-Muster.xlsx';
-    link.rel = 'noopener';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    triggerDownload();
   }
 
   if (state === 'success') {
@@ -88,9 +89,7 @@ export function VorlageDownloadForm({
     ? 'border border-[#2dd4bf]/28 bg-gradient-to-br from-[#2dd4bf]/10 via-[#0f1e35]/80 to-[#0a1628]/90 shadow-lg shadow-black/25'
     : 'border border-slate-200 bg-white shadow-lg shadow-slate-900/5';
 
-  const labelCls = isDark
-    ? 'text-[#c8d4e6]'
-    : 'text-slate-800';
+  const labelCls = isDark ? 'text-[#c8d4e6]' : 'text-slate-800';
 
   const inputCls = isDark
     ? 'min-h-[52px] flex-1 rounded-xl border border-white/15 bg-[#0a1628]/70 px-4 text-base text-[#f0f6ff] placeholder:text-[#8fa4c0] focus:border-[#2dd4bf]/50 focus:outline-none focus:ring-2 focus:ring-[#2dd4bf]/25 disabled:opacity-60'
@@ -107,12 +106,12 @@ export function VorlageDownloadForm({
       className={`rounded-2xl p-6 sm:p-8 ${formSurface} ${className}`}
       aria-label="Excel-Vorlage per E-Mail sichern"
     >
-      <label htmlFor="vorlage-email" className={`block text-sm font-semibold ${labelCls}`}>
+      <label htmlFor={emailFieldId} className={`block text-sm font-semibold ${labelCls}`}>
         E-Mail für den Download
       </label>
       <div className="mt-3 flex flex-col gap-3 sm:flex-row">
         <input
-          id="vorlage-email"
+          id={emailFieldId}
           name="email"
           type="email"
           required

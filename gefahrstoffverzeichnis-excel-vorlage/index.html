@@ -215,41 +215,9 @@
     </div>
   </footer>
 
+  <script src="../scripts/vorlage-lead-collector.js" defer></script>
   <script>
   (function () {
-    var DOWNLOAD = '/downloads/gefahrstoffverzeichnis-vorlage.xlsx';
-    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    function wireForm(formId, emailId, errorId, successId) {
-      var form = document.getElementById(formId);
-      var emailInput = document.getElementById(emailId);
-      var errorEl = document.getElementById(errorId);
-      var successEl = document.getElementById(successId);
-      if (!form || !emailInput) return;
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var email = (emailInput.value || '').trim();
-        if (!EMAIL_RE.test(email)) {
-          errorEl.textContent = 'Bitte gib eine gültige E-Mail-Adresse ein.';
-          errorEl.hidden = false;
-          return;
-        }
-        errorEl.hidden = true;
-        form.hidden = true;
-        successEl.hidden = false;
-        var a = document.createElement('a');
-        a.href = DOWNLOAD;
-        a.download = 'Gefahrstoffverzeichnis-Muster.xlsx';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      });
-    }
-
-    wireForm('vorlage-form', 'vorlage-email', 'vorlage-form-error', 'vorlage-success');
-    wireForm('vorlage-form-bottom', 'vorlage-email-bottom', 'vorlage-form-bottom-error', 'vorlage-success-bottom');
-
     var openBtn = document.getElementById('navOpenBtn');
     var closeBtn = document.getElementById('navCloseBtn');
     var menu = document.getElementById('mobileMenu');
