@@ -1,66 +1,85 @@
 import Link from 'next/link';
 import { VorlageDownloadForm } from './VorlageDownloadForm';
+import { ExpertHeading } from '@/components/expert-blog/ExpertHeading';
 import {
   VORLAGE_GQR_BENEFITS,
   VORLAGE_LANDING_SEO,
 } from '@/config/vorlage-landing';
-import { CheckCircle2, FileSpreadsheet } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 export function VorlageLandingPage() {
   return (
-    <div className="bg-slate-100 text-slate-900">
+    <article>
       {/* Hero */}
       <section
-        className="border-b border-slate-200 bg-gradient-to-b from-slate-50 to-slate-100"
+        className="border-b border-white/[0.07] bg-gradient-to-b from-[#0f1e35]/90 to-[#0a1628] px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
         aria-labelledby="vorlage-hero-title"
       >
-        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-          <div className="flex items-center gap-2 text-sm font-semibold text-slate-500">
-            <FileSpreadsheet className="h-4 w-4 text-slate-400" aria-hidden="true" />
-            <span>Gratis Excel-Vorlage · GefStoffV-konform strukturiert</span>
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[minmax(0,1fr),minmax(0,380px)] lg:items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">
+              Gratis Excel-Vorlage · GefStoffV-konform
+            </p>
+            <h1
+              id="vorlage-hero-title"
+              className="mt-3 text-3xl font-black leading-tight tracking-tight text-[#f0f6ff] sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]"
+            >
+              Gefahrstoffverzeichnis: Kostenlose Excel-Vorlage für dein Audit
+            </h1>
+            <p className="mt-6 text-lg leading-relaxed text-[#8fa4c0]">
+              Sofort einsatzbereit, rechtssicher strukturiert und ideal für die{' '}
+              <strong className="font-semibold text-[#c8d4e6]">Gefährdungsbeurteilung</strong> nach
+              GefStoffV. Lade dir jetzt unsere Vorlage herunter.
+            </p>
+
+            <VorlageDownloadForm className="mt-10" tone="dark" />
+
+            <ul
+              className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-[#8fa4c0]"
+              aria-label="Vorteile der Vorlage"
+            >
+              {[
+                'Keine Kreditkarte',
+                'Sofort nutzbar in Excel',
+                'Audit-taugliche Struktur',
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <CheckCircle2
+                    className="h-4 w-4 shrink-0 text-[#2dd4bf]"
+                    aria-hidden="true"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <h1
-            id="vorlage-hero-title"
-            className="mt-4 text-3xl font-black leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-[2.5rem]"
-          >
-            Gefahrstoffverzeichnis: Kostenlose Excel-Vorlage für dein Audit
-          </h1>
-
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
-            Sofort einsatzbereit, rechtssicher strukturiert und ideal für die{' '}
-            <strong className="font-semibold text-slate-800">Gefährdungsbeurteilung</strong> nach
-            GefStoffV. Lade dir jetzt unsere Vorlage herunter.
-          </p>
-
-          <VorlageDownloadForm className="mt-10" />
-
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500">
-            <li className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-600" aria-hidden="true" />
-              Keine Kreditkarte
-            </li>
-            <li className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-600" aria-hidden="true" />
-              Sofort nutzbar in Excel
-            </li>
-            <li className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-600" aria-hidden="true" />
-              Audit-taugliche Struktur
-            </li>
-          </ul>
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src="/images/gefahrstoffverzeichnis-app.svg"
+              width={380}
+              height={320}
+              className="max-h-72 w-auto max-w-full drop-shadow-lg"
+              loading="eager"
+              decoding="async"
+              alt="Gefahrstoffverzeichnis Excel-Vorlage und digitales Kataster im Vergleich"
+            />
+          </div>
         </div>
       </section>
 
       {/* Problem */}
-      <section className="border-b border-slate-200 bg-white" aria-labelledby="problem-title">
-        <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
-          <h2
+      <section
+        className="border-b border-[#e5e7eb] bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
+        aria-labelledby="problem-title"
+      >
+        <div className="mx-auto max-w-3xl">
+          <ExpertHeading
             id="problem-title"
-            className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"
-          >
-            Warum Excel beim Gefahrstoffmanagement irgendwann scheitert
-          </h2>
+            eyebrow="Praxis"
+            title="Warum Excel beim Gefahrstoffmanagement irgendwann scheitert"
+            tone="light"
+          />
           <p className="mt-6 text-base leading-relaxed text-slate-600 sm:text-lg">
             Excel ist der Klassiker – doch bei 20+ Stoffen, wechselnden Standorten und jährlichen
             Audit-Anforderungen stößt man schnell an Grenzen: Manuelles Abtippen, fehlende
@@ -75,36 +94,38 @@ export function VorlageLandingPage() {
 
       {/* GQR Bridge */}
       <section
-        className="border-b border-slate-200 bg-slate-50"
+        className="border-b border-white/[0.07] bg-[#0a1628] px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
         aria-labelledby="gqr-bridge-title"
       >
-        <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
-          <h2
+        <div className="mx-auto max-w-3xl">
+          <ExpertHeading
             id="gqr-bridge-title"
-            className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"
-          >
-            Dein Upgrade: vom Excel-Start zum digitalen Compliance-Cockpit
-          </h2>
-          <p className="mt-6 text-base leading-relaxed text-slate-600 sm:text-lg">
+            eyebrow="Upgrade"
+            title="Dein Upgrade: vom Excel-Start zum digitalen Compliance-Cockpit"
+            tone="dark"
+          />
+          <p className="mt-6 text-base leading-relaxed text-[#8fa4c0] sm:text-lg">
             Du arbeitest bereits mit Excel? Kein Problem. Nutze unsere Vorlage als Startpunkt. Wenn
             dein Verzeichnis wächst, bietet Gefahrstoff-QR (GQR) dir das Upgrade auf das digitale
             Compliance-Cockpit für professionelles{' '}
-            <strong className="font-semibold text-slate-800">Gefahrstoffmanagement im Betrieb</strong>:
+            <strong className="font-semibold text-[#c8d4e6]">Gefahrstoffmanagement im Betrieb</strong>:
           </p>
 
           <ul className="mt-8 space-y-4">
             {VORLAGE_GQR_BENEFITS.map((item) => (
               <li
                 key={item.title}
-                className="flex gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+                className="flex gap-4 rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-5 shadow-lg shadow-black/10"
               >
                 <CheckCircle2
                   className="mt-0.5 h-5 w-5 shrink-0 text-[#ff6b35]"
                   aria-hidden="true"
                 />
                 <div>
-                  <h3 className="font-bold text-slate-900">{item.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{item.description}</p>
+                  <h3 className="font-bold text-[#f0f6ff]">{item.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-[#8fa4c0]">
+                    {item.description}
+                  </p>
                 </div>
               </li>
             ))}
@@ -117,7 +138,7 @@ export function VorlageLandingPage() {
             >
               GQR kostenlos testen
             </Link>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-[#8fa4c0]">
               5 Stoffe gratis · Keine Kreditkarte · In Minuten startklar
             </p>
           </div>
@@ -125,14 +146,17 @@ export function VorlageLandingPage() {
       </section>
 
       {/* SEO Fließtext */}
-      <section className="bg-white" aria-labelledby="seo-section-title">
-        <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
-          <h2
+      <section
+        className="border-b border-[#e5e7eb] bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
+        aria-labelledby="seo-section-title"
+      >
+        <div className="mx-auto max-w-3xl">
+          <ExpertHeading
             id="seo-section-title"
-            className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"
-          >
-            Gefahrstoffverzeichnis erstellen: Vorlage, Gefährdungsbeurteilung und der nächste Schritt
-          </h2>
+            eyebrow="Leitfaden"
+            title="Gefahrstoffverzeichnis erstellen: Vorlage, Gefährdungsbeurteilung und der nächste Schritt"
+            tone="light"
+          />
 
           <div className="mt-8 space-y-8 text-base leading-relaxed text-slate-600">
             <div>
@@ -180,13 +204,11 @@ export function VorlageLandingPage() {
             <h3 className="text-lg font-bold text-slate-900">
               Bereit für dein Audit? Hol dir die Vorlage jetzt.
             </h3>
-            <p className="mt-2 text-sm text-slate-600">
-              {VORLAGE_LANDING_SEO.description}
-            </p>
-            <VorlageDownloadForm className="mt-6 !shadow-none" />
+            <p className="mt-2 text-sm text-slate-600">{VORLAGE_LANDING_SEO.description}</p>
+            <VorlageDownloadForm className="mt-6 !shadow-none" tone="light" />
           </div>
         </div>
       </section>
-    </div>
+    </article>
   );
 }

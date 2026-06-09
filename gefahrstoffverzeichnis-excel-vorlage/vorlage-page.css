@@ -1,0 +1,251 @@
+/* Lead-Magnet: Gefahrstoffverzeichnis Excel-Vorlage — ergänzt expert-page.css */
+
+.vorlage-download-form {
+  margin-top: 2.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(45, 212, 191, 0.28);
+  border-radius: 1.15rem;
+  background:
+    linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(15, 30, 53, 0.72)),
+    rgba(255, 255, 255, 0.03);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.vorlage-download-form--light {
+  margin-top: 1.5rem;
+  border-color: #e2e8f0;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.vorlage-download-form label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #c8d4e6;
+}
+
+.vorlage-download-form--light label {
+  color: #1e293b;
+}
+
+.vorlage-download-form__row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .vorlage-download-form__row {
+    flex-direction: row;
+  }
+}
+
+.vorlage-download-form input[type="email"] {
+  flex: 1;
+  min-height: 52px;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.75rem;
+  background: rgba(10, 22, 40, 0.7);
+  color: #f0f6ff;
+  font-size: 1rem;
+}
+
+.vorlage-download-form input[type="email"]::placeholder {
+  color: #8fa4c0;
+}
+
+.vorlage-download-form input[type="email"]:focus {
+  outline: none;
+  border-color: rgba(45, 212, 191, 0.5);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.15);
+}
+
+.vorlage-download-form--light input[type="email"] {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.vorlage-download-form--light input[type="email"]::placeholder {
+  color: #94a3b8;
+}
+
+.vorlage-download-form__hint {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #8fa4c0;
+}
+
+.vorlage-download-form--light .vorlage-download-form__hint {
+  color: #64748b;
+}
+
+.vorlage-download-form__hint a {
+  color: #5eead4;
+  text-decoration: underline;
+}
+
+.vorlage-download-form--light .vorlage-download-form__hint a {
+  color: #475569;
+}
+
+.vorlage-download-form__error {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #f87171;
+}
+
+.vorlage-download-success {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  border-radius: 1rem;
+  background: rgba(45, 212, 191, 0.1);
+  text-align: center;
+}
+
+.vorlage-download-success--light {
+  margin-top: 1.5rem;
+  border-color: #a7f3d0;
+  background: #ecfdf5;
+}
+
+.vorlage-download-success__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #f0f6ff;
+}
+
+.vorlage-download-success--light .vorlage-download-success__title {
+  color: #064e3b;
+}
+
+.vorlage-download-success__text {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #8fa4c0;
+}
+
+.vorlage-download-success--light .vorlage-download-success__text {
+  color: #047857;
+}
+
+.vorlage-hero-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+  font-size: 0.875rem;
+  color: #8fa4c0;
+}
+
+.vorlage-hero-checks li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vorlage-hero-checks li::before {
+  content: "✓";
+  color: #2dd4bf;
+  font-weight: 900;
+}
+
+.vorlage-benefit-list {
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.vorlage-benefit-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  background: rgba(15, 30, 53, 0.7);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.vorlage-benefit-card__icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.125rem;
+  color: #ff6b35;
+}
+
+.vorlage-benefit-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f0f6ff;
+}
+
+.vorlage-benefit-card p {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #8fa4c0;
+}
+
+.vorlage-cta-row {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vorlage-cta-note {
+  font-size: 0.875rem;
+  color: #8fa4c0;
+}
+
+.vorlage-seo-block + .vorlage-seo-block {
+  margin-top: 2rem;
+}
+
+.vorlage-seo-block h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.vorlage-seo-block p {
+  margin-top: 0.75rem;
+  line-height: 1.65;
+  color: #475569;
+}
+
+.vorlage-seo-block strong {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.vorlage-bottom-cta {
+  margin-top: 3rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #f8fafc;
+}
+
+.vorlage-bottom-cta h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.vorlage-bottom-cta p {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
