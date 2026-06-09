@@ -17,6 +17,14 @@ export const HOME_SEO = {
     'Gefahrstoffkataster Software: KI extrahiert Sicherheitsdatenblätter automatisch — die nächste Stufe nach Excel mit revisionssicherem Verzeichnis, Revisionsverlauf und QR-Notfallpass inklusive.',
 } as const;
 
+/** Lead-Magnet: Gratis Excel-Vorlage Download — siehe config/vorlage-landing.ts */
+export const VORLAGE_DOWNLOAD_SEO = {
+  path: '/gefahrstoffverzeichnis-excel-vorlage/',
+  title: 'Gefahrstoffverzeichnis Excel-Vorlage gratis | GQR',
+  description:
+    'Kostenlose Gefahrstoffverzeichnis-Vorlage Excel: rechtssicher für Audit & Gefährdungsbeurteilung. Sofort downloaden – Upgrade auf GQR möglich.',
+} as const;
+
 /** Expert-Landing Excel-Intent — Title 2 + Description 1 */
 export const EXCEL_VORLAGE_SEO = {
   path: '/gefahrstoffkataster-excel-vorlage/',

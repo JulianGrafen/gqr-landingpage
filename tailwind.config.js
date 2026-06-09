@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     './index.html',
+    './gefahrstoffverzeichnis-excel-vorlage/**/*.html',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './config/**/*.{js,ts,jsx,tsx,mdx}',
