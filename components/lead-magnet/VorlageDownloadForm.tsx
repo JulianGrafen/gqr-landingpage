@@ -17,7 +17,7 @@ type VorlageDownloadFormProps = {
 function triggerDownload() {
   const link = document.createElement('a');
   link.href = VORLAGE_DOWNLOAD_FILE;
-  link.download = 'Gefahrstoffverzeichnis-Muster.xlsx';
+  link.download = 'Gefahrstoffverzeichnis-Mustervorlage.xlsx';
   link.rel = 'noopener';
   document.body.appendChild(link);
   link.click();

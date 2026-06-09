@@ -8,7 +8,7 @@
   var CONFIG_PATH = '/vorlage-lead-config.json';
   var DEFAULT_SOURCE = 'gefahrstoffverzeichnis-excel-vorlage';
   var DOWNLOAD_PATH = '/downloads/gefahrstoffverzeichnis-vorlage.xlsx';
-  var DOWNLOAD_NAME = 'Gefahrstoffverzeichnis-Muster.xlsx';
+  var DOWNLOAD_NAME = 'Gefahrstoffverzeichnis-Mustervorlage.xlsx';
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   var cachedEndpoint;
