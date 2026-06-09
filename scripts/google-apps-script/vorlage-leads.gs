@@ -42,6 +42,18 @@ function isValidEmail_(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email || '').trim());
 }
 
+function appendLeadRow_(data) {
+  var sheet = ensureSheet_();
+  sheet.appendRow([
+    new Date(),
+    String(data.email || '').trim().toLowerCase(),
+    String(data.source || ''),
+    String(data.page || ''),
+    String(data.submittedAt || ''),
+  ]);
+  return sheet.getLastRow();
+}
+
 function doPost(e) {
   var lock = LockService.getScriptLock();
   lock.waitLock(30000);
@@ -55,17 +67,10 @@ function doPost(e) {
         .setMimeType(ContentService.MimeType.JSON);
     }
 
-    var sheet = ensureSheet_();
-    sheet.appendRow([
-      new Date(),
-      email,
-      String(data.source || ''),
-      String(data.page || ''),
-      String(data.submittedAt || ''),
-    ]);
+    var row = appendLeadRow_(data);
 
     return ContentService
-      .createTextOutput(JSON.stringify({ ok: true }))
+      .createTextOutput(JSON.stringify({ ok: true, row: row }))
       .setMimeType(ContentService.MimeType.JSON);
   } catch (err) {
     return ContentService
@@ -76,9 +81,56 @@ function doPost(e) {
   }
 }
 
-/** Optional: GET-Test im Browser — zeigt, ob die Web-App erreichbar ist */
-function doGet() {
+/**
+ * GET-Test im Browser:
+ * - Nur Status:  …/exec
+ * - Dummy-Zeile: …/exec?test=dummy
+ */
+function doGet(e) {
+  if (e && e.parameter && e.parameter.test === 'dummy') {
+    try {
+      var row = appendLeadRow_({
+        email: 'dummy-test@gefahrstoff-qr.de',
+        source: 'gefahrstoffverzeichnis-excel-vorlage',
+        page: 'https://gefahrstoff-qr.de/gefahrstoffverzeichnis-excel-vorlage/',
+        submittedAt: new Date().toISOString(),
+      });
+      return ContentService
+        .createTextOutput(
+          JSON.stringify({
+            ok: true,
+            service: 'gqr-vorlage-leads',
+            test: 'dummy',
+            row: row,
+            message: 'Dummy-Lead in Zeile ' + row + ' geschrieben.',
+          }),
+        )
+        .setMimeType(ContentService.MimeType.JSON);
+    } catch (err) {
+      return ContentService
+        .createTextOutput(JSON.stringify({ ok: false, error: String(err) }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+  }
+
   return ContentService
     .createTextOutput(JSON.stringify({ ok: true, service: 'gqr-vorlage-leads' }))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+/**
+ * Test im Apps-Script-Editor: Funktion auswählen → Ausführen.
+ * Schreibt eine Dummy-Zeile in den Tab „Leads“ und loggt die Zeilennummer.
+ */
+function testWriteDummyLead() {
+  var row = appendLeadRow_({
+    email: 'dummy-test@gefahrstoff-qr.de',
+    source: 'gefahrstoffverzeichnis-excel-vorlage',
+    page: 'https://gefahrstoff-qr.de/gefahrstoffverzeichnis-excel-vorlage/',
+    submittedAt: new Date().toISOString(),
+  });
+  Logger.log('Dummy-Lead geschrieben — Zeile ' + row);
+  SpreadsheetApp.getUi().alert(
+    'Dummy-Lead geschrieben in Zeile ' + row + ' (Tab „' + SHEET_NAME + '“).',
+  );
 }
