@@ -38,7 +38,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     metaTitle:
       'Gefahrstoffverzeichnis Kfz-Werkstatt & Betriebsanweisung Werkstatt',
     metaDescription:
-      'Gefahrstoffverzeichnis für die Kfz-Werkstatt: Öle, Bremsflüssigkeit, Kühlerfrostschutz und Dokumentation von Dieselmotor-Emissionen (DME). Betriebsanweisungen aus dem SDB – mit KI-Extraktion.',
+      'Gefahrstoffverzeichnis Kfz-Werkstatt: Öle, Bremsenreiniger, DME-Protokoll und Betriebsanweisungen aus dem SDB per KI.',
     heroText:
       'Vom Bremsenreiniger bis zu den Anforderungen rund um Dieselmotor-Emissionen (DME) – Stoffe, Mengen und Sicherheitsdatenblätter an einem Ort.',
     typischeStoffe: [
@@ -62,7 +62,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     metaTitle:
       'Gefahrstoffverzeichnis Schreinerei & Betriebsanweisung Holzwerkstatt',
     metaDescription:
-      'Gefahrstoffverzeichnis Schreinerei: Holzstäube, Leime, Lacke und Beizen – PSA und Betriebsanweisung aus Sicherheitsdatenblättern strukturiert. KI liest Ihre SDBs aus.',
+      'Gefahrstoffverzeichnis Schreinerei: Holzstaub, Leime, Lacke – PSA und Betriebsanweisung aus Sicherheitsdatenblättern per KI.',
     heroText:
       'Holzstäube in der Luft, 2K-Leime in der Verarbeitung, Lacke in der Spritzkabine – Ihre Gefahrstoffliste muss zur echten Nutzung passen.',
     typischeStoffe: [
@@ -86,7 +86,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     metaTitle:
       'Gefahrstoffverzeichnis Malerbetrieb & Betriebsanweisung Maler',
     metaDescription:
-      'Gefahrstoffverzeichnis Malerbetrieb: Lösemittel, Dispersionen, 2K-Beschichtungen – PSA-Auswahl und Betriebsanweisung aus dem SDB. GefStoffV-konform mit KI.',
+      'Gefahrstoffverzeichnis Malerbetrieb: Lösemittel, 2K-Systeme, PSA – Betriebsanweisungen aus dem SDB, GefStoffV-konform per KI.',
     heroText:
       'Lösemittel, wasserverdünnbare Lacke oder 2K-Systeme: Was auf der Baustelle wirklich ankommt, muss im Verzeichnis und in der PSA nachvollziehbar sein.',
     typischeStoffe: [
@@ -110,7 +110,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     metaTitle:
       'Gefahrstoffverzeichnis Labor & Chemikalien-Inventur · Betriebsanweisung Labor',
     metaDescription:
-      'Gefahrstoffverzeichnis Laborbetrieb: Chemikalien-Inventur, schnelle SDB-Aktualisierung, GHS-Daten und Betriebsanweisungen – KI-Extraktion statt manuellem Abtippen.',
+      'Gefahrstoffverzeichnis Labor: Chemikalien-Inventur, SDB-Updates und GHS-Daten – KI-Extraktion statt manuellem Abtippen.',
     heroText:
       'Reagenzien, interne Ansätze und Lieferantenwechsel: Ihre Inventur braucht Tempo bei neuen Versionen des Sicherheitsdatenblatts.',
     typischeStoffe: [
@@ -134,7 +134,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     metaTitle:
       'Gefahrstoffverzeichnis Reinigung & Betriebsanweisung Gebäudereinigung · Hautschutzplan',
     metaDescription:
-      'Gefahrstoffverzeichnis Reinigungsunternehmen: Desinfektionsmittel, alkalische und saure Reiniger, Hautschutzpläne und Betriebsanweisungen – Daten aus dem SDB per KI.',
+      'Gefahrstoffverzeichnis Reinigung: Reiniger, Desinfektion, Hautschutzpläne – Betriebsanweisungen aus dem SDB per KI.',
     heroText:
       'Von alkalischen Kraftreinigern bis zu desinfektionswirksamen Produkten: Hautschutz und Gefahrstoffdokumentation müssen zusammenpassen.',
     typischeStoffe: [

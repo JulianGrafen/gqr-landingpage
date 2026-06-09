@@ -9,7 +9,7 @@ export const SITE_URL = 'https://gefahrstoff-qr.de';
 export const HOME_SEO = {
   title: 'Gefahrstoffkataster Software statt Excel | Gefahrstoff-QR',
   description:
-    'Manuelles Übertragen aus PDFs kostet Zeit und birgt Lücken bei Prüfungen. Die nächste Stufe nach Excel: automatisches Gefahrstoffverzeichnis mit QR-Notfallpass. Kostenlos starten.',
+    'Gefahrstoffkataster & App: Excel-Alternative mit KI-SDB-Import, QR-Notfallpass und Revisionsverlauf nach § 6. Kostenlos testen.',
   h1: 'Gefahrstoffkataster Software – die nächste Stufe nach Excel',
   heroSubline:
     'Statt fehleranfälliger Excel-Vorlagen: KI extrahiert SDB-Daten automatisch, führt Ihr Verzeichnis revisionssicher und spart Stunden Abtipp-Arbeit.',
@@ -22,7 +22,7 @@ export const EXCEL_VORLAGE_SEO = {
   path: '/gefahrstoffkataster-excel-vorlage/',
   title: 'Gefahrstoffverzeichnis: Schluss mit Excel-Vorlagen | GQR',
   description:
-    'Excel-Vorlage veraltet schnell? Gefahrstoff-QR extrahiert SDB-Daten per KI, führt Ihr digitales Kataster revisionssicher – ohne Abtippen. Jetzt kostenlos testen.',
+    'Excel Gefahrstoffverzeichnis-Vorlage: Grenzen bei Revisionen und Prüfungen – KI-Kataster als nächster Schritt nach § 6.',
   ogImageAlt:
     'Gefahrstoffverzeichnis Software statt Excel-Vorlage – KI-SDB-Extraktion und digitales Kataster',
   h1: 'Gefahrstoffverzeichnis: Von der Excel-Vorlage zur KI-gestützten Software',
@@ -32,7 +32,7 @@ export const EXCEL_VORLAGE_SEO = {
 export const SITE_DEFAULT_SEO = {
   title: 'Digitales Gefahrstoffkataster – SDB per KI, nicht Excel',
   description:
-    'Statt fehleranfälliger Excel-Listen: rechtssicheres Gefahrstoffkataster mit KI-Import, Revisionsverlauf & QR-Scan inklusive. Ohne Kreditkarte – in Minuten startklar.',
+    'Digitales Gefahrstoffkataster: KI-SDB-Import, Revisionsverlauf und QR-Notfallpass statt fehleranfälliger Excel-Listen.',
 } as const;
 
 export const GSC_TARGET_KEYWORDS = [
