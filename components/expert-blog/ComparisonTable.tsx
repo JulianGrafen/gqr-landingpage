@@ -9,6 +9,7 @@ type ComparisonTableProps = {
   rightColumnTitle: string;
   rows: ComparisonRow[];
   caption?: string;
+  tone?: 'light' | 'dark';
 };
 
 /**
@@ -19,7 +20,18 @@ export function ComparisonTable({
   rightColumnTitle,
   rows,
   caption = 'Vergleich der Ansätze',
+  tone = 'light',
 }: ComparisonTableProps) {
+  const isDark = tone === 'dark';
+  const border = isDark ? 'border-white/10' : 'border-slate-200';
+  const headBg = isDark ? 'bg-[#162340]' : 'bg-slate-100';
+  const headText = isDark ? 'text-[#f0f6ff]' : 'text-slate-800';
+  const rowBg = isDark ? 'bg-[#0f1e35]/80' : 'bg-white';
+  const rowText = isDark ? 'text-[#8fa4c0]' : 'text-slate-600';
+  const criterionText = isDark ? 'text-[#c8d4e6]' : 'text-slate-800';
+  const gqrBg = isDark ? 'bg-[#ff6b35]/12' : 'bg-[#ff6b35]/10';
+  const gqrText = isDark ? 'text-[#f0f6ff]' : 'text-slate-700';
+
   return (
     <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:overflow-visible sm:px-0">
       <table className="w-full min-w-[36rem] border-separate border-spacing-0 text-left text-sm">
@@ -28,19 +40,19 @@ export function ComparisonTable({
           <tr>
             <th
               scope="col"
-              className="rounded-tl-2xl border border-b-0 border-slate-200 bg-slate-100 px-4 py-3.5 font-bold text-slate-800 sm:px-5"
+              className={`rounded-tl-2xl border border-b-0 ${border} ${headBg} px-4 py-3.5 font-bold ${headText} sm:px-5`}
             >
               Kriterium
             </th>
             <th
               scope="col"
-              className="border border-b-0 border-l-0 border-slate-200 bg-slate-100 px-4 py-3.5 font-bold text-slate-800 sm:px-5"
+              className={`border border-b-0 border-l-0 ${border} ${headBg} px-4 py-3.5 font-bold ${headText} sm:px-5`}
             >
               {leftColumnTitle}
             </th>
             <th
               scope="col"
-              className="rounded-tr-2xl border border-b-0 border-l-0 border-slate-200 bg-[#ff6b35]/10 px-4 py-3.5 font-bold text-slate-900 sm:px-5"
+              className={`rounded-tr-2xl border border-b-0 border-l-0 ${border} ${gqrBg} px-4 py-3.5 font-bold ${headText} sm:px-5`}
             >
               {rightColumnTitle}
             </th>
@@ -55,15 +67,15 @@ export function ComparisonTable({
               <tr key={row.criterion}>
                 <th
                   scope="row"
-                  className={`border border-slate-200 bg-white px-4 py-3.5 font-semibold text-slate-800 sm:px-5 ${roundedBL}`}
+                  className={`border ${border} ${rowBg} px-4 py-3.5 font-semibold ${criterionText} sm:px-5 ${roundedBL}`}
                 >
                   {row.criterion}
                 </th>
-                <td className="border border-l-0 border-slate-200 bg-white px-4 py-3.5 text-slate-600 sm:px-5">
+                <td className={`border border-l-0 ${border} ${rowBg} px-4 py-3.5 ${rowText} sm:px-5`}>
                   {row.excel}
                 </td>
                 <td
-                  className={`border border-l-0 border-slate-200 bg-slate-50/80 px-4 py-3.5 text-slate-700 sm:px-5 ${roundedBR}`}
+                  className={`border border-l-0 ${border} ${gqrBg} px-4 py-3.5 ${gqrText} sm:px-5 ${roundedBR}`}
                 >
                   {row.extraction}
                 </td>

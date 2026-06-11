@@ -18,8 +18,8 @@ export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
     <main className="pb-20 lg:pb-0">
       <FaqJsonLd faq={meta.faq} />
 
-      <div className="border-b border-white/[0.07] bg-[#0a1628] px-4 py-6 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
+      <div className="border-b border-white/[0.07] bg-[#0a1628] px-4 py-5 sm:px-6 lg:px-10">
+        <div className="mx-auto max-w-[1160px]">
           <DeepinfoBreadcrumb label={meta.breadcrumbLabel} />
         </div>
       </div>
@@ -33,10 +33,10 @@ export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
       />
 
       <section
-        className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+        className="border-b border-white/[0.07] px-4 py-12 sm:px-6 sm:py-16 lg:px-10"
         aria-label="Fachinhalt"
       >
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
+        <div className="mx-auto grid max-w-[1160px] gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
           <div className="min-w-0">
             <DeepinfoProse source={mdxSource} />
             <ManualVsGqrComparison

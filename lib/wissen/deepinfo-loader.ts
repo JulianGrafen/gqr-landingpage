@@ -80,3 +80,26 @@ export function getDeepinfoPage(slug: string): DeepinfoPage | null {
 export function getDeepinfoCanonicalPath(slug: DeepinfoSlug): string {
   return `/wissen/${slug}/`;
 }
+
+export interface DeepinfoSummary {
+  slug: DeepinfoSlug;
+  title: string;
+  excerpt: string;
+  category: string;
+  href: string;
+}
+
+export function getAllDeepinfoSummaries(): DeepinfoSummary[] {
+  return getAllDeepinfoSlugs().map((slug) => {
+    const page = getDeepinfoPage(slug);
+    if (!page) throw new Error(`Deepinfo ${slug} nicht ladbar`);
+
+    return {
+      slug,
+      title: page.meta.title,
+      excerpt: page.meta.subheadline,
+      category: page.meta.targetAudience,
+      href: getDeepinfoCanonicalPath(slug),
+    };
+  });
+}

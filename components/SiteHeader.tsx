@@ -7,7 +7,7 @@ const nav = [
   { href: '/#produkt', label: 'Produkt' },
   { href: '/#funktionen', label: 'Funktionen' },
   { href: '/#preise', label: 'Preise' },
-  { href: '/blog/', label: 'Wissen' },
+  { href: '/wissen/', label: 'Wissen' },
 ] as const;
 
 export function SiteHeader() {

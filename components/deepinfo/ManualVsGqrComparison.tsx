@@ -26,7 +26,7 @@ export function ManualVsGqrComparison({
 
   return (
     <section
-      className="mt-14 border-t border-slate-200 pt-14"
+      className="mt-14 border-t border-white/[0.08] pt-14"
       aria-labelledby="deepinfo-comparison-heading"
     >
       <ExpertHeading
@@ -34,6 +34,7 @@ export function ManualVsGqrComparison({
         eyebrow="Vergleich"
         title="Manuell vs. digital: Was sich im Betrieb ändert"
         subtitle={`Für ${targetAudience} zeigt sich der Unterschied besonders bei Aktualität, Nachweisen und Zeitaufwand.`}
+        tone="dark"
       />
       <div className="mt-8">
         <ComparisonTable
@@ -41,6 +42,7 @@ export function ManualVsGqrComparison({
           rightColumnTitle={rightTitle}
           rows={rows}
           caption="Vergleich Excel oder Papier mit Gefahrstoff-QR"
+          tone="dark"
         />
       </div>
     </section>

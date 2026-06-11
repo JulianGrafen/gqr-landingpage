@@ -15,7 +15,9 @@ export function DeepinfoBreadcrumb({ label }: DeepinfoBreadcrumbProps) {
         </li>
         <li aria-hidden className="text-white/25">/</li>
         <li>
-          <span className="font-semibold text-[#8fa4c0]">Wissen</span>
+          <Link href="/wissen/" className="font-semibold text-[#2dd4bf] no-underline hover:underline">
+            Wissen
+          </Link>
         </li>
         <li aria-hidden className="text-white/25">/</li>
         <li>

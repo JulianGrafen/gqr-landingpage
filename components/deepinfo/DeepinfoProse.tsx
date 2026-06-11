@@ -9,7 +9,7 @@ export function DeepinfoProse({ source }: DeepinfoProseProps) {
   return (
     <article
       id="deepinfo-content"
-      className="prose prose-slate max-w-none prose-headings:scroll-mt-24 prose-p:text-slate-600 prose-li:text-slate-600 prose-a:text-teal-700 prose-a:no-underline hover:prose-a:underline"
+      className="rounded-2xl border border-white/[0.08] bg-[#162340]/50 p-6 sm:p-8 lg:p-10"
     >
       <MDXRemote source={source} components={deepinfoMdxComponents} />
     </article>

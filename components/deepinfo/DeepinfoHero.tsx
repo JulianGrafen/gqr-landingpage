@@ -22,7 +22,7 @@ export function DeepinfoHero({
     >
       <div className="mx-auto max-w-6xl">
         <p className="text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">
-          Deepinfo · {targetAudience}
+          Fachleitfaden · {targetAudience}
         </p>
         <h1
           id="deepinfo-hero-title"

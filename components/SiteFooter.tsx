@@ -16,8 +16,8 @@ export function SiteFooter() {
             className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#8fa4c0]"
             aria-label="Footer-Navigation"
           >
-            <Link href="/blog/" className="no-underline hover:text-[#f0f6ff]">
-              Blog
+            <Link href="/wissen/" className="no-underline hover:text-[#f0f6ff]">
+              Wissen
             </Link>
             <Link href="/impressum" className="no-underline hover:text-[#f0f6ff]">
               Impressum

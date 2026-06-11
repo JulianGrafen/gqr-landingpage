@@ -23,15 +23,15 @@ export function DeepinfoStickyCta({ text, variant }: DeepinfoStickyCtaProps) {
   if (variant === 'sidebar') {
     return (
       <div
-        className={`sticky top-24 rounded-2xl border border-[#2dd4bf]/25 bg-gradient-to-br from-[#2dd4bf]/12 to-white p-5 shadow-lg shadow-black/10 transition-opacity duration-300 ${
+        className={`sticky top-24 rounded-2xl border border-[#2dd4bf]/25 bg-gradient-to-br from-[#2dd4bf]/12 to-[#162340]/90 p-5 shadow-[0_12px_40px_rgba(0,0,0,0.35)] transition-opacity duration-300 ${
           visible ? 'opacity-100' : 'opacity-60'
         }`}
         aria-label="Handlungsaufruf"
       >
-        <p className="text-xs font-bold uppercase tracking-wider text-[#0d9488]">
+        <p className="text-xs font-bold uppercase tracking-wider text-[#2dd4bf]">
           Digitalisieren
         </p>
-        <p className="mt-2 text-base font-black leading-snug text-slate-900">
+        <p className="mt-2 text-base font-black leading-snug text-[#f0f6ff]">
           {text}
         </p>
         <Link
@@ -40,7 +40,7 @@ export function DeepinfoStickyCta({ text, variant }: DeepinfoStickyCtaProps) {
         >
           GQR kostenlos testen
         </Link>
-        <p className="mt-3 text-xs leading-relaxed text-slate-500">
+        <p className="mt-3 text-xs leading-relaxed text-[#8fa4c0]">
           Unverbindlich · Keine Kreditkarte · KI-SDB-Import
         </p>
       </div>
