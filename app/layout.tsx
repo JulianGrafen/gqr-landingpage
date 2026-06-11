@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     template: '%s | Gefahrstoff-QR',
   },
   description: SITE_DEFAULT_SEO.description,
+  icons: {
+    icon: [{ url: '/favico.png', type: 'image/png' }],
+    shortcut: '/favico.png',
+  },
 };
 
 export default function RootLayout({

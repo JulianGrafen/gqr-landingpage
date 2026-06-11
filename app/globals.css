@@ -3,16 +3,80 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-bg: #0a1628;
+    --color-bg-surface: #0f1e35;
+    --color-bg-raised: #162340;
+    --color-text: #f0f6ff;
+    --color-muted: #8fa4c0;
+    --color-border: rgba(255, 255, 255, 0.07);
+    --color-accent: #ff6b35;
+    --color-accent-2: #ff9a6b;
+    --color-trust: #2dd4bf;
+  }
+
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply min-h-screen bg-[#0a1628] font-sans text-[#f0f6ff] antialiased;
+    @apply min-h-screen bg-gqr-bg font-sans text-gqr-text antialiased;
+    background:
+      radial-gradient(circle at 50% -10%, rgba(45, 212, 191, 0.1), transparent 30%),
+      radial-gradient(circle at 80% 5%, rgba(255, 107, 53, 0.08), transparent 26%),
+      linear-gradient(180deg, #08111f 0%, #0a1628 42%, #0d1f38 100%);
+    background-attachment: fixed;
   }
 }
 
-/* Primär-CTA: identisch zu .btn-primary in style.css (Orange-Gradient) */
 @layer components {
+  .gqr-kicker {
+    @apply text-xs font-bold uppercase tracking-wider text-gqr-accent sm:text-sm;
+  }
+
+  .gqr-section-title {
+    @apply text-2xl font-black tracking-tight text-gqr-text sm:text-3xl;
+  }
+
+  .gqr-section-sub {
+    @apply text-base leading-relaxed text-gqr-muted sm:text-lg;
+  }
+
+  .gqr-card {
+    @apply rounded-[1.25rem] border border-white/[0.08] bg-gqr-raised/80 p-6 transition duration-200;
+  }
+
+  .gqr-card:hover {
+    @apply -translate-y-1 border-gqr-accent/30 shadow-gqr-hover;
+  }
+
+  .gqr-card--featured {
+    @apply border-gqr-accent/35 bg-gradient-to-br from-gqr-accent/10 to-gqr-raised/95 shadow-gqr-hover;
+  }
+
+  .gqr-content-panel {
+    @apply rounded-2xl border border-white/[0.08] bg-gqr-raised/60 p-6 sm:p-8 lg:p-10;
+  }
+
+  .gqr-pitch-box {
+    @apply rounded-2xl border border-gqr-trust/25 bg-gradient-to-br from-gqr-trust/10 to-gqr-raised/80;
+  }
+
+  .gqr-divider {
+    @apply border-white/[0.08];
+  }
+
+  .gqr-link {
+    @apply font-semibold text-gqr-trust underline-offset-2 hover:text-gqr-accent-soft hover:underline;
+  }
+
+  .gqr-prose {
+    @apply prose prose-invert max-w-none prose-headings:text-gqr-text prose-headings:scroll-mt-24 prose-p:text-gqr-muted prose-li:text-gqr-muted prose-strong:text-gqr-soft prose-a:text-gqr-trust prose-a:no-underline hover:prose-a:underline;
+  }
+
+  .gqr-btn-secondary {
+    @apply inline-flex min-h-[52px] items-center justify-center rounded-xl border border-white/20 px-6 py-3 text-sm font-bold text-gqr-text no-underline transition hover:border-white/35 hover:bg-white/[0.06];
+  }
+
   .gqr-cta-primary {
     display: inline-flex;
     align-items: center;

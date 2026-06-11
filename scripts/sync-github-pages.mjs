@@ -30,4 +30,11 @@ for (const rel of SYNC_PATHS) {
   console.log(`✓ ${rel}/`);
 }
 
+const faviconSrc = path.join(OUT, 'favico.png');
+const faviconDest = path.join(ROOT, 'favico.png');
+if (fs.existsSync(faviconSrc)) {
+  fs.copyFileSync(faviconSrc, faviconDest);
+  console.log('✓ favico.png');
+}
+
 console.log('GitHub-Pages-Sync abgeschlossen.');

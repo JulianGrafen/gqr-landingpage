@@ -26,7 +26,7 @@ export function ManualVsGqrComparison({
 
   return (
     <section
-      className="mt-14 border-t border-white/[0.08] pt-14"
+      className="mt-14 border-t gqr-divider pt-14"
       aria-labelledby="deepinfo-comparison-heading"
     >
       <ExpertHeading

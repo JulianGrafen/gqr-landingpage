@@ -23,24 +23,20 @@ export function DeepinfoStickyCta({ text, variant }: DeepinfoStickyCtaProps) {
   if (variant === 'sidebar') {
     return (
       <div
-        className={`sticky top-24 rounded-2xl border border-[#2dd4bf]/25 bg-gradient-to-br from-[#2dd4bf]/12 to-[#162340]/90 p-5 shadow-[0_12px_40px_rgba(0,0,0,0.35)] transition-opacity duration-300 ${
+        className={`gqr-pitch-box sticky top-24 p-5 transition-opacity duration-300 ${
           visible ? 'opacity-100' : 'opacity-60'
         }`}
         aria-label="Handlungsaufruf"
       >
-        <p className="text-xs font-bold uppercase tracking-wider text-[#2dd4bf]">
-          Digitalisieren
-        </p>
-        <p className="mt-2 text-base font-black leading-snug text-[#f0f6ff]">
-          {text}
-        </p>
+        <p className="gqr-kicker text-gqr-trust">Digitalisieren</p>
+        <p className="mt-2 text-base font-black leading-snug text-gqr-text">{text}</p>
         <Link
           href="https://app.gefahrstoff-qr.de/register"
           className="gqr-cta-primary gqr-cta-primary--md mt-5 w-full no-underline"
         >
           GQR kostenlos testen
         </Link>
-        <p className="mt-3 text-xs leading-relaxed text-[#8fa4c0]">
+        <p className="mt-3 text-xs leading-relaxed text-gqr-muted">
           Unverbindlich · Keine Kreditkarte · KI-SDB-Import
         </p>
       </div>
@@ -49,13 +45,13 @@ export function DeepinfoStickyCta({ text, variant }: DeepinfoStickyCtaProps) {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#0f1e35]/95 px-4 py-3 backdrop-blur-md transition-transform duration-300 lg:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-gqr-surface/95 px-4 py-3 backdrop-blur-md transition-transform duration-300 lg:hidden ${
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
       aria-label="Mobiler Handlungsaufruf"
     >
       <div className="mx-auto flex max-w-lg items-center gap-3">
-        <p className="min-w-0 flex-1 text-xs font-semibold leading-snug text-[#c8d4e6]">
+        <p className="min-w-0 flex-1 text-xs font-semibold leading-snug text-gqr-soft">
           {text}
         </p>
         <Link

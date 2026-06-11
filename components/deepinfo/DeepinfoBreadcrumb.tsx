@@ -7,21 +7,25 @@ type DeepinfoBreadcrumbProps = {
 export function DeepinfoBreadcrumb({ label }: DeepinfoBreadcrumbProps) {
   return (
     <nav aria-label="Breadcrumb" className="text-sm">
-      <ol className="flex flex-wrap items-center gap-2 text-[#8fa4c0]">
+      <ol className="flex flex-wrap items-center gap-2 text-gqr-muted">
         <li>
-          <Link href="/" className="font-semibold text-[#2dd4bf] no-underline hover:underline">
+          <Link href="/" className="font-semibold text-gqr-trust no-underline hover:underline">
             Home
           </Link>
         </li>
-        <li aria-hidden className="text-white/25">/</li>
+        <li aria-hidden className="text-white/25">
+          /
+        </li>
         <li>
-          <Link href="/wissen/" className="font-semibold text-[#2dd4bf] no-underline hover:underline">
+          <Link href="/wissen/" className="font-semibold text-gqr-trust no-underline hover:underline">
             Wissen
           </Link>
         </li>
-        <li aria-hidden className="text-white/25">/</li>
+        <li aria-hidden className="text-white/25">
+          /
+        </li>
         <li>
-          <span className="font-semibold text-[#f0f6ff]">{label}</span>
+          <span className="font-semibold text-gqr-text">{label}</span>
         </li>
       </ol>
     </nav>
