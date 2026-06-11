@@ -33,6 +33,50 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- Deepinfo / Wissen -->
+  <url>
+    <loc>https://gefahrstoff-qr.de/wissen/gefahrstoffverzeichnis-arztpraxis-muster/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/wissen/gefahrstoffkataster-was-muss-rein/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/wissen/gefahrstoffverzeichnis-muster-kfz-werkstatt/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/wissen/gefahrstoffmanagement-software/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/wissen/gefahrstoffverzeichnis-online-erstellen/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/wissen/gefahrstoffkataster-erstellen-lassen/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/wissen/gefahrstoffkataster-software/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Branchen-Landingpages -->
   <url>
     <loc>https://gefahrstoff-qr.de/loesungen/kfz-werkstatt/</loc>
