@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TRGS 510 Zusammenlagerungs-Check: Lagerklassen prüfen | Gefahrstoff-QR</title>
+  <meta name="description" content="TRGS 510 Zusammenlagerung Tabelle interaktiv prüfen: Lagerklassen auswählen, Ampel-Ergebnis erhalten und GQR-Automatisierung kennenlernen." />
+  <link rel="canonical" href="https://gefahrstoff-qr.de/trgs-510-zusammenlagerungs-check/" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="TRGS 510 Zusammenlagerungs-Check: Lagerklassen prüfen" />
+  <meta property="og:description" content="TRGS 510 Zusammenlagerung Tabelle interaktiv prüfen: Lagerklassen auswählen, Ampel-Ergebnis erhalten und GQR-Automatisierung kennenlernen." />
+  <meta property="og:url" content="https://gefahrstoff-qr.de/trgs-510-zusammenlagerungs-check/" />
+  <meta property="og:site_name" content="Gefahrstoff-QR" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://gefahrstoff-qr.de/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TRGS 510 Zusammenlagerungs-Check: Lagerklassen prüfen" />
+  <meta name="twitter:description" content="TRGS 510 Zusammenlagerung Tabelle interaktiv prüfen: Lagerklassen auswählen, Ampel-Ergebnis erhalten und GQR-Automatisierung kennenlernen." />
+  <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../gefahrstoffkataster-excel-vorlage/expert-page.css" />
+  <link rel="stylesheet" href="trgs510-page.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "TRGS 510 Zusammenlagerungs-Check",
+    "description": "Interaktiver TRGS 510 Zusammenlagerungs-Check für Lagerklassen nach Tabelle 12.",
+    "url": "https://gefahrstoff-qr.de/trgs-510-zusammenlagerungs-check/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "isPartOf": { "@type": "WebSite", "name": "Gefahrstoff-QR", "url": "https://gefahrstoff-qr.de" }
+  }
+  </script>
+</head>
+<body class="expert-page-body">
+  <header class="site-header">
+    <a class="logo" href="/" aria-label="Gefahrstoff-QR Startseite">Gefahrstoff-QR</a>
+    <nav class="nav-desktop" aria-label="Hauptnavigation">
+      <a class="nav-link" href="/#produkt">Produkt</a>
+      <a class="nav-link" href="/#funktionen">Funktionen</a>
+      <a class="nav-link" href="/#preise">Preise</a>
+      <a class="nav-link" href="/blog/">Wissen</a>
+      <a class="btn btn-primary nav-cta" href="https://app.gefahrstoff-qr.de/register">Kostenlos starten</a>
+    </nav>
+    <button type="button" id="navOpenBtn" class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menü öffnen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"/></svg>
+    </button>
+    <div class="nav-mobile" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="nav-mobile-inner">
+        <button type="button" id="navCloseBtn" class="nav-close">&#x2715; Schließen</button>
+        <nav class="mobile-links">
+          <a class="nav-link" href="/#produkt">Produkt</a>
+          <a class="nav-link" href="/#funktionen">Funktionen</a>
+          <a class="nav-link" href="/#preise">Preise</a>
+          <a class="nav-link" href="/blog/">Wissen</a>
+          <a class="btn btn-primary" href="https://app.gefahrstoff-qr.de/register">Kostenlos starten</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="expert-main" id="main">
+    <section class="expert-hero" aria-labelledby="trgs510-hero-title">
+      <div class="expert-hero-inner" style="max-width:72rem;">
+        <p class="expert-kicker">TRGS 510 · Zusammenlagerung · Lagerklassen</p>
+        <h1 id="trgs510-hero-title">TRGS 510 Zusammenlagerungs-Check: Lagerklassen schnell und sicher prüfen</h1>
+        <p class="expert-hero-lead">
+          Prüfe die TRGS 510 Zusammenlagerung Tabelle direkt im Browser: Wähle zwei Lagerklassen, erhalte ein Ampel-Ergebnis und sieh, welche Regel für die Lagerung deiner Gefahrstoffe relevant ist.
+        </p>
+        <div class="trgs510-hero-ctas">
+          <a href="#trgs510-check" class="btn btn-primary btn-large">Lagerklassen jetzt prüfen</a>
+          <a href="https://app.gefahrstoff-qr.de/register" class="btn-outline-light">GQR kostenlos testen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="expert-section expert-section--dark" id="trgs510-check" aria-label="TRGS 510 Zusammenlagerungs-Check Tool">
+      <div class="expert-container">
+        <section class="trgs510-tool" aria-labelledby="trgs510-tool-heading">
+          <div class="trgs510-tool__header">
+            <div>
+              <p class="expert-section-eyebrow" style="margin-bottom:0.5rem;">Interaktiver Matrix-Check</p>
+              <h2 id="trgs510-tool-heading" class="expert-section-title" style="font-size:1.5rem;">Lagerklassen prüfen</h2>
+            </div>
+            <p class="trgs510-tool__intro">Wähle zwei LGK aus. Die Prüfung läuft sofort im Browser und nutzt die hinterlegte TRGS-510-Zusammenlagerungstabelle.</p>
+          </div>
+
+          <div class="trgs510-selects">
+            <div class="trgs510-select">
+              <label for="storage-class-one">
+                <span>Lagerklasse (LGK) Stoff 1</span>
+                <select id="storage-class-one" aria-label="Lagerklasse Stoff 1"></select>
+              </label>
+            </div>
+            <div class="trgs510-select">
+              <label for="storage-class-two">
+                <span>Lagerklasse (LGK) Stoff 2</span>
+                <select id="storage-class-two" aria-label="Lagerklasse Stoff 2"></select>
+              </label>
+            </div>
+          </div>
+
+          <div id="trgs510-result" class="trgs510-result-wrap" aria-live="polite"></div>
+
+          <p class="trgs510-disclaimer">
+            Hinweis: Das Tool ersetzt keine Gefährdungsbeurteilung. Produktangaben aus dem Sicherheitsdatenblatt, Lagermengen, bauliche Bedingungen und behördliche Vorgaben sind zusätzlich zu prüfen.
+          </p>
+        </section>
+      </div>
+    </section>
+
+    <section class="expert-section expert-section--white" aria-labelledby="trgs510-seo-title">
+      <div class="expert-container">
+        <header class="expert-container--narrow">
+          <p class="expert-section-eyebrow">Programmatic SEO</p>
+          <h2 class="expert-section-title" id="trgs510-seo-title">Lagerklassen prüfen statt TRGS-510-Tabelle manuell durchsuchen</h2>
+          <p class="expert-section-sub" style="margin-top:1rem;">
+            Wer Gefahrstoffe zusammenlagern will, muss Lagerklassen korrekt zuordnen und die Matrix der TRGS 510 auswerten. Dieser Zusammenlagerungs-Check macht die Prüfung schneller verständlich, ohne die fachliche Gefährdungsbeurteilung zu ersetzen.
+          </p>
+        </header>
+
+        <div class="trgs510-feature-grid">
+          <article class="trgs510-feature-card">
+            <div class="trgs510-feature-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+            </div>
+            <h3>TRGS 510 Zusammenlagerung Tabelle</h3>
+            <p>Die hinterlegte Matrix bewertet jede LGK-Kombination nach Tabelle 12 mit erlaubt, eingeschränkt oder Separatlagerung.</p>
+          </article>
+          <article class="trgs510-feature-card">
+            <div class="trgs510-feature-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <h3>Lagerklassen prüfen im Lager</h3>
+            <p>Mobile-first Selects, große Touch-Ziele und sofortiges Ergebnis ohne Reload — ideal für Smartphone-Nutzung im Betrieb.</p>
+          </article>
+          <article class="trgs510-feature-card">
+            <div class="trgs510-feature-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>Gefahrstoffe zusammenlagern</h3>
+            <p>Das Tool zeigt die Regel und verweist bei Einschränkungen auf die relevanten TRGS-510-Erläuterungen.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Gefahrstoff-QR</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+      <p class="footer-copy">© Gefahrstoff-QR</p>
+    </div>
+  </footer>
+
+  <script src="trgs510-tool.js" defer></script>
+  <script>
+  (function () {
+    var openBtn = document.getElementById('navOpenBtn');
+    var closeBtn = document.getElementById('navCloseBtn');
+    var menu = document.getElementById('mobileMenu');
+    if (openBtn && closeBtn && menu) {
+      function openMenu() {
+        document.body.classList.add('nav-open');
+        menu.setAttribute('aria-hidden', 'false');
+        openBtn.setAttribute('aria-expanded', 'true');
+        closeBtn.focus();
+      }
+      function closeMenu() {
+        document.body.classList.remove('nav-open');
+        menu.setAttribute('aria-hidden', 'true');
+        openBtn.setAttribute('aria-expanded', 'false');
+        openBtn.focus();
+      }
+      openBtn.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+      menu.querySelectorAll('.nav-link, .btn').forEach(function (el) {
+        el.addEventListener('click', closeMenu);
+      });
+    }
+  })();
+  </script>
+</body>
+</html>

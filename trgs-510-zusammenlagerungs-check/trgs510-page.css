@@ -1,0 +1,388 @@
+/* TRGS 510 Zusammenlagerungs-Check — ergänzt expert-page.css */
+
+.trgs510-tool {
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  background: rgba(15, 30, 53, 0.7);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+}
+
+.trgs510-tool__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .trgs510-tool__header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.trgs510-tool__intro {
+  max-width: 20rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #8fa4c0;
+}
+
+.trgs510-selects {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .trgs510-selects {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.trgs510-select label span {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #c8d4e6;
+}
+
+.trgs510-select select {
+  margin-top: 0.5rem;
+  min-height: 56px;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  background: rgba(10, 22, 40, 0.85);
+  color: #f0f6ff;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238fa4c0' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.trgs510-select select:focus {
+  outline: none;
+  border-color: rgba(45, 212, 191, 0.6);
+  box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.15);
+}
+
+.trgs510-result-wrap {
+  margin-top: 2rem;
+}
+
+.trgs510-placeholder {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  text-align: center;
+}
+
+.trgs510-placeholder__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #f0f6ff;
+}
+
+.trgs510-placeholder__text {
+  margin-top: 0.5rem;
+  max-width: 36rem;
+  margin-inline: auto;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #8fa4c0;
+}
+
+.trgs510-result {
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border-radius: 1.5rem;
+  border: 1px solid transparent;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+}
+
+.trgs510-result--green {
+  border-color: rgba(110, 231, 183, 0.25);
+  background: rgba(52, 211, 153, 0.1);
+}
+
+.trgs510-result--yellow {
+  border-color: rgba(252, 211, 77, 0.25);
+  background: rgba(251, 191, 36, 0.1);
+}
+
+.trgs510-result--red {
+  border-color: rgba(248, 113, 113, 0.25);
+  background: rgba(248, 113, 113, 0.1);
+}
+
+.trgs510-result__top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .trgs510-result__top {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.trgs510-result__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.trgs510-result--green .trgs510-result__icon { color: #6ee7b7; }
+.trgs510-result--yellow .trgs510-result__icon { color: #fcd34d; }
+.trgs510-result--red .trgs510-result__icon { color: #fca5a5; }
+
+.trgs510-result__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.trgs510-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.trgs510-result--green .trgs510-badge {
+  background: rgba(52, 211, 153, 0.15);
+  color: #a7f3d0;
+  border: 1px solid rgba(110, 231, 183, 0.25);
+}
+
+.trgs510-result--yellow .trgs510-badge {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fef3c7;
+  border: 1px solid rgba(252, 211, 77, 0.25);
+}
+
+.trgs510-result--red .trgs510-badge {
+  background: rgba(248, 113, 113, 0.15);
+  color: #fecaca;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+}
+
+.trgs510-result__pair {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8fa4c0;
+}
+
+.trgs510-result__title {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.trgs510-result--green .trgs510-result__title { color: #d1fae5; }
+.trgs510-result--yellow .trgs510-result__title { color: #fef3c7; }
+.trgs510-result--red .trgs510-result__title { color: #fee2e2; }
+
+.trgs510-result__short {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #c8d4e6;
+}
+
+.trgs510-rule-box {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 22, 40, 0.6);
+}
+
+.trgs510-rule-box h3 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #f0f6ff;
+}
+
+.trgs510-rule-box p {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #8fa4c0;
+}
+
+.trgs510-rule-box .trgs510-source {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #5eead4;
+}
+
+.trgs510-pitch {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.12), rgba(255, 255, 255, 0.03));
+}
+
+.trgs510-pitch__kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #2dd4bf;
+}
+
+.trgs510-pitch h3 {
+  margin-top: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 900;
+  color: #f0f6ff;
+}
+
+.trgs510-pitch p {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #8fa4c0;
+}
+
+.trgs510-pitch__actions {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .trgs510-pitch__actions {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.trgs510-pitch__secondary {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #f0f6ff;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.trgs510-pitch__secondary:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.trgs510-disclaimer {
+  margin-top: 1.25rem;
+  font-size: 0.75rem;
+  line-height: 1.65;
+  color: #8fa4c0;
+}
+
+.trgs510-feature-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .trgs510-feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.trgs510-feature-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.trgs510-feature-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 107, 53, 0.12);
+  color: #ff6b35;
+}
+
+.trgs510-feature-card h3 {
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.trgs510-feature-card p {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #475569;
+}
+
+.trgs510-hero-ctas {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .trgs510-hero-ctas {
+    flex-direction: row;
+  }
+}
+
+.trgs510-hero-ctas .btn-outline-light {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #f0f6ff;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.trgs510-hero-ctas .btn-outline-light:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+}
