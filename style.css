@@ -833,6 +833,18 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   font-weight: 950;
 }
 
+.sds-hero__checks a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sds-hero__checks a:hover {
+  color: var(--color-trust);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .sds-entry-section {
   padding-block: clamp(52px, 8vw, 88px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
