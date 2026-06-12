@@ -1732,7 +1732,14 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   font-size: var(--text-base);
   font-weight: 700;
   color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.roi-card__subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
   margin-bottom: var(--space-md);
+  line-height: 1.5;
 }
 
 /* — Slider — */
