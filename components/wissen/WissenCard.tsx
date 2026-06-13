@@ -18,16 +18,16 @@ export function WissenCard({
   featured = false,
 }: WissenCardProps) {
   return (
-    <article className={`group gqr-card flex flex-col gap-3 ${featured ? 'gqr-card--featured' : ''}`}>
-      <span className="gqr-kicker">{category}</span>
-      <h2 className="text-xl font-extrabold leading-snug text-gqr-text">
-        <Link href={href} className="no-underline hover:text-gqr-accent-soft">
-          {title}
-        </Link>
+    <article
+      className={`gqr-post-card ${featured ? 'gqr-post-card--featured' : ''}`}
+    >
+      <span className="gqr-post-tag">{category}</span>
+      <h2 className="gqr-post-card-title">
+        <Link href={href}>{title}</Link>
       </h2>
-      <p className="flex-grow text-sm leading-relaxed text-gqr-muted">{excerpt}</p>
-      {meta ? <p className="text-xs text-gqr-muted">{meta}</p> : null}
-      <Link href={href} className="text-sm font-bold text-gqr-accent no-underline group-hover:underline">
+      <p className="gqr-post-card-excerpt">{excerpt}</p>
+      {meta ? <p className="gqr-post-card-meta">{meta}</p> : null}
+      <Link href={href} className="gqr-post-card-cta">
         Weiterlesen →
       </Link>
     </article>

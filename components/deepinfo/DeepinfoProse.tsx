@@ -6,9 +6,5 @@ type DeepinfoProseProps = {
 };
 
 export function DeepinfoProse({ source }: DeepinfoProseProps) {
-  return (
-    <article id="deepinfo-content" className="gqr-content-panel">
-      <MDXRemote source={source} components={deepinfoMdxComponents} />
-    </article>
-  );
+  return <MDXRemote source={source} components={deepinfoMdxComponents} />;
 }

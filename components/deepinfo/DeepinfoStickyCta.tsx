@@ -5,12 +5,13 @@ import { useEffect, useState } from 'react';
 
 type DeepinfoStickyCtaProps = {
   text: string;
+  ctaText: string;
   variant: 'sidebar' | 'mobile';
 };
 
 const SCROLL_THRESHOLD = 320;
 
-export function DeepinfoStickyCta({ text, variant }: DeepinfoStickyCtaProps) {
+export function DeepinfoStickyCta({ text, ctaText, variant }: DeepinfoStickyCtaProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -22,23 +23,15 @@ export function DeepinfoStickyCta({ text, variant }: DeepinfoStickyCtaProps) {
 
   if (variant === 'sidebar') {
     return (
-      <div
-        className={`gqr-pitch-box sticky top-24 p-5 transition-opacity duration-300 ${
-          visible ? 'opacity-100' : 'opacity-60'
-        }`}
-        aria-label="Handlungsaufruf"
-      >
-        <p className="gqr-kicker text-gqr-trust">Digitalisieren</p>
-        <p className="mt-2 text-base font-black leading-snug text-gqr-text">{text}</p>
+      <div className="gqr-sidebar-card gqr-sidebar-card--cta sticky top-24" aria-label="Handlungsaufruf">
+        <h3>{text}</h3>
+        <p>Unverbindlich · Keine Kreditkarte · KI-SDB-Import</p>
         <Link
           href="https://app.gefahrstoff-qr.de/register"
-          className="gqr-cta-primary gqr-cta-primary--md mt-5 w-full no-underline"
+          className="gqr-cta-primary gqr-cta-primary--md mt-2 w-full no-underline"
         >
-          GQR kostenlos testen
+          {ctaText}
         </Link>
-        <p className="mt-3 text-xs leading-relaxed text-gqr-muted">
-          Unverbindlich · Keine Kreditkarte · KI-SDB-Import
-        </p>
       </div>
     );
   }
@@ -51,9 +44,7 @@ export function DeepinfoStickyCta({ text, variant }: DeepinfoStickyCtaProps) {
       aria-label="Mobiler Handlungsaufruf"
     >
       <div className="mx-auto flex max-w-lg items-center gap-3">
-        <p className="min-w-0 flex-1 text-xs font-semibold leading-snug text-gqr-soft">
-          {text}
-        </p>
+        <p className="min-w-0 flex-1 text-xs font-semibold leading-snug text-gqr-soft">{text}</p>
         <Link
           href="https://app.gefahrstoff-qr.de/register"
           className="gqr-cta-primary gqr-cta-primary--compact shrink-0 no-underline"
