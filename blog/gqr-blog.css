@@ -389,3 +389,100 @@
 .sidebar-links a:hover {
   color: var(--color-trust);
 }
+
+/* ── FAQ-Bereich in Blog-Artikeln (Landingpage-Palette) ──────── */
+.post-faq-heading {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.post-faq-list {
+  margin-top: var(--space-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  background: rgba(15, 30, 53, 0.5);
+  overflow: hidden;
+}
+
+.post-faq-list details {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.post-faq-list details:last-child {
+  border-bottom: none;
+}
+
+.post-faq-list summary {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 1.1rem 3rem 1.1rem 1.25rem;
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.45;
+}
+
+.post-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.post-faq-list summary::after {
+  content: '+';
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-trust);
+}
+
+.post-faq-list details[open] summary::after {
+  content: '–';
+}
+
+.post-faq-list .post-faq-answer {
+  padding: 0 1.25rem 1.15rem;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+.post-faq-list .post-faq-answer a {
+  color: var(--color-trust);
+  font-weight: 600;
+}
+
+.post-faq-list .post-faq-answer a:hover {
+  color: var(--color-accent-2);
+}
+
+/* Fallback: h3/p FAQ ohne Akkordeon-Markup */
+.post-content .post-faq-heading ~ h3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  padding: 1rem 1.25rem;
+  background: var(--color-bg-raised);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  color: var(--color-text);
+  font-size: var(--text-base);
+  scroll-margin-top: 80px;
+}
+
+.post-content .post-faq-heading ~ h3 + p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 1.25rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  background: rgba(15, 30, 53, 0.55);
+}
+
+.post-content .post-faq-heading ~ h3:not(:first-of-type) {
+  margin-top: 0.65rem;
+}

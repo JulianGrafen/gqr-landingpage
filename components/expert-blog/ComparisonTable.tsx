@@ -24,13 +24,13 @@ export function ComparisonTable({
 }: ComparisonTableProps) {
   const isDark = tone === 'dark';
   const border = isDark ? 'border-white/10' : 'border-slate-200';
-  const headBg = isDark ? 'bg-[#162340]' : 'bg-slate-100';
-  const headText = isDark ? 'text-[#f0f6ff]' : 'text-slate-800';
-  const rowBg = isDark ? 'bg-[#0f1e35]/80' : 'bg-white';
-  const rowText = isDark ? 'text-[#8fa4c0]' : 'text-slate-600';
-  const criterionText = isDark ? 'text-[#c8d4e6]' : 'text-slate-800';
-  const gqrBg = isDark ? 'bg-[#ff6b35]/12' : 'bg-[#ff6b35]/10';
-  const gqrText = isDark ? 'text-[#f0f6ff]' : 'text-slate-700';
+  const headBg = isDark ? 'bg-gqr-raised' : 'bg-slate-100';
+  const headText = isDark ? 'text-gqr-text' : 'text-slate-800';
+  const rowBg = isDark ? 'bg-gqr-surface/80' : 'bg-white';
+  const rowText = isDark ? 'text-gqr-muted' : 'text-slate-600';
+  const criterionText = isDark ? 'text-gqr-soft' : 'text-slate-800';
+  const gqrBg = isDark ? 'bg-gqr-accent/12' : 'bg-gqr-accent/10';
+  const gqrText = isDark ? 'text-gqr-text' : 'text-slate-700';
 
   return (
     <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:overflow-visible sm:px-0">

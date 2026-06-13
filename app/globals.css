@@ -126,4 +126,41 @@
     font-size: 0.875rem;
     border-radius: 0.75rem;
   }
+
+  .gqr-card--flat {
+    @apply shadow-none;
+  }
+
+  .gqr-card--flat:hover {
+    @apply translate-y-0 shadow-none;
+  }
+
+  .gqr-faq-list {
+    @apply divide-y divide-white/10 rounded-2xl border border-white/[0.08] bg-gqr-surface/50 px-4 sm:px-6;
+  }
+
+  .gqr-faq {
+    @apply py-5;
+  }
+
+  .gqr-faq summary {
+    @apply relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-gqr-text marker:content-none;
+  }
+
+  .gqr-faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .gqr-faq summary::after {
+    content: '+';
+    @apply absolute right-0 top-0 text-xl font-normal text-gqr-trust;
+  }
+
+  .gqr-faq[open] summary::after {
+    content: '–';
+  }
+
+  .gqr-faq__answer {
+    @apply mt-3 text-sm leading-relaxed text-gqr-muted [&_a]:font-semibold [&_a]:text-gqr-trust [&_a]:underline-offset-2 hover:[&_a]:underline;
+  }
 }
