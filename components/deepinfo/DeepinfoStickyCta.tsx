@@ -28,7 +28,7 @@ export function DeepinfoStickyCta({ text, ctaText, variant }: DeepinfoStickyCtaP
         <p>Unverbindlich · Keine Kreditkarte · KI-SDB-Import</p>
         <Link
           href="https://app.gefahrstoff-qr.de/register"
-          className="gqr-cta-primary gqr-cta-primary--md mt-2 w-full no-underline"
+          className="gqr-cta-primary gqr-cta-primary--md mt-2 box-border flex w-full max-w-full no-underline"
         >
           {ctaText}
         </Link>
