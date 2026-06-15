@@ -26,35 +26,24 @@ export function GefahrstoffkatasterSoftwareSiloPage() {
       }
     >
       <LandingRoiSection
-        title="ROI-Rechner: Excel-Pflege vs. KI-SDB-Import"
-        subline="Schieben Sie die Stoffanzahl — der Unterschied zwischen manuellem Abtippen und GQR inklusive fachlicher Freigabe wird schnell sichtbar."
+        title="ROI-Rechner: Versteckte Personalkosten vs. KI-Automatisierung"
+        subline="Berechnen Sie den teuersten Kostenblock Ihres Gefahrstoffmanagements: Die Arbeitszeit Ihrer Sicherheitsfachkraft. Vergleichen Sie den Aufwand für manuelles Abtippen von SDB-Daten mit dem automatisierten KI-Import von GQR."
       />
 
       <LandingProseSection
         id="audit-sicherheit"
-        eyebrow="Audit & Haftung"
-        title="Was Prüfer sehen — und was Excel nicht liefern kann"
-        intro="BG-Inspektionen und Behördenbegehungen fokussieren auf Nachvollziehbarkeit, nicht auf Dateiformate."
+        eyebrow="Compliance & Haftung"
+        title="Was Auditoren sehen wollen — und warum Excel ein Haftungsrisiko darstellt"
+        intro="Bei Betriebsprüfungen durch die Berufsgenossenschaft oder Gewerbeaufsicht geht es nicht um Dateiformate, sondern um die lückenlose Beweiskette Ihrer Betreiberverantwortung."
       >
         <p>
-          Ein <strong>Gefahrstoffverzeichnis nach § 6 GefStoffV</strong> muss aktuell sein und auf
-          die zugrunde liegenden Sicherheitsdatenblätter zurückführbar sein. In Excel fehlt die
-          Kette: Welche PDF-Version stand hinter Zeile 47 am Tag der Unterweisung? Wer hat den
-          P-Satz nach der CLP-Umstellung geändert — und wann? Diese Lücken sind bei
-          Arbeitsunfällen Haftungsthemen, nicht nur Formalia.
+          Ein <strong>Gefahrstoffverzeichnis nach § 6 GefStoffV</strong> ist nur dann rechtssicher, wenn es auf die zugrunde liegenden Sicherheitsdatenblätter (SDB) lückenlos zurückführbar ist. Genau hier scheitert Excel strukturell: Tabellen kennen keine Historie. Wenn ein Lieferant Rezepturen ändert und die SiFa die Zeile überschreibt, wird der alte Datenstand vernichtet. Kommt es Jahre später zur Meldung einer Berufskrankheit, fehlt Ihnen der revisionssichere Nachweis, unter welchen Bedingungen der Mitarbeiter damals gearbeitet hat. 
         </p>
         <p>
-          Das <strong>Aktivitätsprotokoll in GQR</strong> dokumentiert Uploads, Feldänderungen und
-          Nutzeraktionen. Für die <strong>Gefährdungsbeurteilung nach TRGS 400</strong> bedeutet
-          das: weniger Zeit für Datensammlung, mehr Zeit für Bewertung. Für{' '}
-          <strong>§ 14 GefStoffV</strong> bleibt die Unterweisungspflicht — aber die Informationsbasis
-          ist konsistent, statt aus veralteten Word- und Excel-Fragmenten zusammengesucht.
+          <strong>Der Stichtag Mai 2026:</strong> Mit dem Ablauf der CLP-Übergangsfrist für Gemische müssen Hunderte bestehende H- und P-Sätze (z.B. für endokrine Disruptoren) im Bestand aktualisiert werden. Wer dies manuell in Excel und Word-Dokumenten versucht, provoziert Übertragungsfehler. GQR extrahiert diese Änderungen automatisiert, protokolliert jede Version und zwingt das System in die gesetzliche Konformität.
         </p>
         <p>
-          Wer lagert, braucht <strong>TRGS 510</strong> im Blick. Software warnt bei
-          Zusammenlagerungskonflikten pro Lagerort — Excel nicht. Und am Regal zählt der{' '}
-          <strong>QR-Notfallpass</strong>: Ersthelfer brauchen P-Sätze in Sekunden, nicht Ordner im
-          Büro.
+          <strong>Die Kausalkette der TRGS 400:</strong> Eine Änderung im SDB muss zwingend eine Überprüfung der Gefährdungsbeurteilung (GB) und eine Anpassung der Unterweisung (<strong>§ 14 GefStoffV</strong>) auslösen. Eine spezialisierte Software verknüpft diese Prozesse. Die SiFa investiert ihre Zeit in die fachliche Risikobewertung – nicht in das Formatieren von Dokumenten. Parallel prüft das System vollautomatisch im Hintergrund die <strong>TRGS 510</strong>, um fatale Zusammenlagerungskonflikte pro Standort präventiv zu blockieren.
         </p>
       </LandingProseSection>
 
@@ -62,8 +51,8 @@ export function GefahrstoffkatasterSoftwareSiloPage() {
         <ManualVsGqrComparison
           targetAudience={KATASTER_SOFTWARE_COMPARISON.targetAudience}
           comparison={{
-            leftColumnTitle: 'Excel / manuelle Pflege',
-            rightColumnTitle: 'Gefahrstoff-QR (GQR)',
+            leftColumnTitle: 'Manuelle Pflege (Excel / Word)',
+            rightColumnTitle: 'Automatisierung (GQR)',
             rows: [...KATASTER_SOFTWARE_COMPARISON.rows],
           }}
         />
@@ -71,40 +60,35 @@ export function GefahrstoffkatasterSoftwareSiloPage() {
 
       <LandingProseSection
         id="auswahl"
-        eyebrow="Entscheidungshilfe"
-        title="Gefahrstoffkataster Software auswählen — ohne Buzzword-Checklisten"
+        eyebrow="Investitionsentscheidung"
+        title="Software-Auswahl für den Mittelstand: Schlanke Compliance statt schwerfälliger IT-Projekte"
         variant="raised"
       >
-        <h3>Minimum für kaufbereite Betriebe</h3>
+        <h3>Das Minimum für audit-sichere Betriebe</h3>
         <p>
-          Vier Kriterien, die sich in Audits bewährt haben: (1) automatisierte SDB-Extraktion mit
-          manueller Freigabe, (2) revisionssichere Historie, (3) TRGS-510-Bezug bei Lagerung,
-          (4) Export und mobile Abrufbarkeit am Einsatzort. Alles andere ist Nice-to-have — ohne
-          diese Basis bleibt Excel die teurere Option.
+          Eine moderne Software für Arbeitssicherheit darf kein Selbstzweck sein. Verlangen Sie von Ihrem System drei nicht verhandelbare Kernfunktionen: (1) Die automatisierte Extraktion von SDB-Daten zur Entlastung teurer Fachkräfte, (2) ein revisionssicheres Aktivitätsprotokoll für BG-Audits und (3) die mobile Bereitstellung von Notfallmaßnahmen am Ort der Gefahr. Fehlt nur eine dieser Säulen, ist die Software ihr Geld nicht wert.
         </p>
 
-        <h3>Umstieg ohne IT-Projekt</h3>
+        <h3>Integration ohne IT-Blockaden</h3>
         <p>
-          Typischer Rollout: SDB-Bestand hochladen, Felder prüfen, Lagerorte und Verantwortliche
-          zuordnen, erste Exporte für interne Audits. Kein ERP-Zwang am Tag eins. SiFa-Zeit fließt
-          in Freigabe und GB — nicht in Formatierung und Abtippen.
+          Mittelständische Betriebe haben keine Zeit für 12-monatige Software-Einführungen. GQR ist als "Low-Friction"-System konzipiert. Der Rollout erfordert keine Anbindung an komplexe ERP-Systeme. Sie laden Ihren SDB-Bestand hoch, die KI übernimmt das initiale Mapping, Sie geben die Daten fachlich frei und generieren sofort TRGS-konforme Betriebsanweisungen. 
         </p>
 
-        <h3>Verwandte Themen</h3>
+        <h3>Nächste rationale Schritte</h3>
         <p>
-          Noch in Excel? Starten Sie mit der{' '}
+          Wenn Ihr Betrieb noch tief in der Zettelwirtschaft steckt, evaluieren Sie Ihren aktuellen Schmerzpunkt mit unserer{' '}
           <Link href="/gefahrstoffverzeichnis-excel-vorlage/" className="gqr-link">
-            gratis Excel-Vorlage
-          </Link>{' '}
-          und vergleichen Sie den Pflegeaufwand. Für Fachtiefe:{' '}
-          <Link href="/wissen/gefahrstoffkataster-software/" className="gqr-link">
-            Leitfaden Gefahrstoffkataster Software
+            kostenlosen Excel-Vorlage
           </Link>
-          . Lagerkonflikte prüfen:{' '}
+          . Reicht diese nicht mehr aus, um Ihre Haftung zu minimieren, lesen Sie unseren detaillierten{' '}
+          <Link href="/wissen/gefahrstoffkataster-software/" className="gqr-link">
+            Leitfaden zur Software-Evaluation
+          </Link>
+          . Für den direkten Abgleich im Lager nutzen Sie begleitend unseren{' '}
           <Link href="/trgs-510-zusammenlagerungs-check/" className="gqr-link">
             TRGS-510-Checker
           </Link>
-          .
+          , um kritische Lagerkonflikte sofort aufzudecken.
         </p>
       </LandingProseSection>
     </LandingPageWrapper>
