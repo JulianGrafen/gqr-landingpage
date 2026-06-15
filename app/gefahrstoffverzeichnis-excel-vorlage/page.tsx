@@ -1,20 +1,17 @@
 import type { Metadata } from 'next';
-import { VorlageLandingPage } from '@/components/lead-magnet/VorlageLandingPage';
-import {
-  VORLAGE_LANDING_PATH,
-  VORLAGE_LANDING_SEO,
-} from '@/config/vorlage-landing';
+import { ExcelVorlageSiloPage } from '@/components/seo-silo/pages/ExcelVorlageSiloPage';
+import { EXCEL_VORLAGE_SILO_CONFIG } from '@/config/seo-silo/pages/gefahrstoffverzeichnis-excel-vorlage';
 import { SITE_URL } from '@/config/site-seo';
 
-const canonical = `${SITE_URL}${VORLAGE_LANDING_PATH}`;
+const canonical = `${SITE_URL}${EXCEL_VORLAGE_SILO_CONFIG.seo.canonicalPath}`;
 
 export const metadata: Metadata = {
-  title: VORLAGE_LANDING_SEO.title,
-  description: VORLAGE_LANDING_SEO.description,
+  title: EXCEL_VORLAGE_SILO_CONFIG.seo.title,
+  description: EXCEL_VORLAGE_SILO_CONFIG.seo.description,
   alternates: { canonical },
   openGraph: {
-    title: VORLAGE_LANDING_SEO.title,
-    description: VORLAGE_LANDING_SEO.description,
+    title: EXCEL_VORLAGE_SILO_CONFIG.seo.title,
+    description: EXCEL_VORLAGE_SILO_CONFIG.seo.description,
     url: canonical,
     siteName: 'Gefahrstoff-QR',
     locale: 'de_DE',
@@ -24,19 +21,19 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: VORLAGE_LANDING_SEO.ogImageAlt,
+        alt: EXCEL_VORLAGE_SILO_CONFIG.seo.ogImageAlt,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: VORLAGE_LANDING_SEO.title,
-    description: VORLAGE_LANDING_SEO.description,
+    title: EXCEL_VORLAGE_SILO_CONFIG.seo.title,
+    description: EXCEL_VORLAGE_SILO_CONFIG.seo.description,
     images: ['/og-image.png'],
   },
   robots: { index: true, follow: true },
 };
 
 export default function GefahrstoffverzeichnisExcelVorlagePage() {
-  return <VorlageLandingPage />;
+  return <ExcelVorlageSiloPage />;
 }

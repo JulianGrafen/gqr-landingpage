@@ -1,0 +1,109 @@
+{
+  "silo": [
+    {
+      "slug": "gefahrstoffverzeichnis-excel-vorlage",
+      "path": "/gefahrstoffverzeichnis-excel-vorlage/",
+      "intent": "excel-intercept",
+      "primaryKeyword": "gefahrstoffverzeichnis excel vorlage",
+      "secondaryKeywords": [
+        "gefahrstoffverzeichnis vorlage",
+        "gefahrstoffkataster excel",
+        "excel gefahrstoffverzeichnis"
+      ],
+      "regulatoryHooks": [
+        "§ 6 GefStoffV Informationsermittlung",
+        "TRGS 400 Gefährdungsbeurteilung",
+        "CLP-Übergangsfrist Gemische Mai 2026"
+      ],
+      "painPoints": [
+        "Excel ist nicht revisionssicher — SDB-Historien fehlen bei BG-Audits",
+        "Manuelle H-/P-Satz-Pflege bei CLP-Anpassungspflicht",
+        "Keine Nachweiskette wer wann welche Zelle geändert hat"
+      ],
+      "gqrSolutionAngles": [
+        "Gratis-Vorlage als Einstieg, GQR als audit-sichere Alternative",
+        "Automatische SDB-Extraktion statt Copy-Paste",
+        "Aktivitätsprotokoll statt Tabellen-Chaos"
+      ]
+    },
+    {
+      "slug": "gefahrstoffkataster-software",
+      "path": "/gefahrstoffkataster-software/",
+      "intent": "software-buy",
+      "primaryKeyword": "gefahrstoffkataster software",
+      "secondaryKeywords": [
+        "gefahrstoffmanagement software",
+        "gefahrstoffverzeichnis software",
+        "gefahrstoffkataster software kostenlos"
+      ],
+      "regulatoryHooks": [
+        "§ 6 GefStoffV Verzeichnispflicht",
+        "TRGS 510 Lagerklassen und Zusammenlagerung",
+        "§ 14 GefStoffV Unterweisungspflicht"
+      ],
+      "painPoints": [
+        "SiFa-Stunden für Word-Betriebsanweisungen und Excel-Pflege",
+        "ROI: manuelle Pflege skaliert nicht mit Stoffanzahl und Standorten",
+        "Audit-Risiko ohne tagesaktuelle P-Sätze"
+      ],
+      "gqrSolutionAngles": [
+        "ROI durch KI-SDB-Import",
+        "One-Click-Export für Behördenkontrollen",
+        "Multi-Standort-Compliance-KPIs"
+      ]
+    },
+    {
+      "slug": "gefahrstoff-app",
+      "path": "/gefahrstoff-app/",
+      "intent": "mobile-app",
+      "primaryKeyword": "gefahrstoff app",
+      "secondaryKeywords": [
+        "gefahrstoffverzeichnis app",
+        "sicherheitsdatenblatt app",
+        "qr code gefahrstoff"
+      ],
+      "regulatoryHooks": [
+        "§ 6 GefStoffV Information am Arbeitsplatz",
+        "TRGS 400 — Information der Beschäftigten vor Ort",
+        "Ersthelfer-Information bei Unfällen"
+      ],
+      "painPoints": [
+        "SDB im Büro-Server nutzt im Lager nichts",
+        "Baustelle und Werkstatt ohne Netz — Information muss trotzdem da sein",
+        "Ersthelfer finden H-/P-Sätze nicht in Sekunden"
+      ],
+      "gqrSolutionAngles": [
+        "QR-Scan am Gebinde — Notfallinfos in Sekunden",
+        "Mobile Detailansicht mit GHS und Erste-Hilfe",
+        "Betriebsanweisung digital am Einsatzort"
+      ]
+    },
+    {
+      "slug": "gefahrstoffkataster-erstellen",
+      "path": "/wissen/gefahrstoffkataster-erstellen/",
+      "intent": "how-to-guide",
+      "primaryKeyword": "gefahrstoffkataster erstellen",
+      "secondaryKeywords": [
+        "gefahrstoffverzeichnis erstellen",
+        "gefahrstoffkataster anlegen",
+        "gefahrstoffkataster muster"
+      ],
+      "regulatoryHooks": [
+        "TRGS 400 Schrittfolge Gefährdungsbeurteilung",
+        "§ 6 GefStoffV Pflichtinhalte Verzeichnis",
+        "TRGS 510 bei Lagerung",
+        "§ 14 GefStoffV Unterweisungsdokumentation"
+      ],
+      "painPoints": [
+        "Unklare Reihenfolge: GB → Verzeichnis → BA → Unterweisung",
+        "Word-Templates ohne Verknüpfung zum SDB",
+        "Excel-Listen veralten nach erstem Lieferantenwechsel"
+      ],
+      "gqrSolutionAngles": [
+        "How-To nach TRGS-Vorgaben mit GQR als Beschleuniger",
+        "SDB-Upload statt manueller Katalogisierung",
+        "Revisionssichere Dokumentation von Anfang an"
+      ]
+    }
+  ]
+}
