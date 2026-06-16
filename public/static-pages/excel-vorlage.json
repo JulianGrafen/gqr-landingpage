@@ -1,0 +1,147 @@
+{
+  "seo": {
+    "title": "Gefahrstoffverzeichnis Excel-Vorlage: Gratis Download & Grenzen | GQR",
+    "description": "Gratis Excel-Vorlage für § 6 GefStoffV und TRGS 400 — plus faktenbasiert, warum Tabellen bei BG-Audits scheitern und wann digitales Gefahrstoffmanagement sinnvoller ist.",
+    "ogImageAlt": "Excel-Vorlage Gefahrstoffverzeichnis — audit-tauglicher Einstieg und Upgrade zu Gefahrstoff-QR"
+  },
+  "breadcrumb": [
+    { "label": "Start", "href": "/" },
+    { "label": "Excel-Vorlage Gefahrstoffverzeichnis", "href": "/gefahrstoffverzeichnis-excel-vorlage/" }
+  ],
+  "hero": {
+    "eyebrow": "Gratis Excel-Vorlage · § 6 GefStoffV · TRGS 400",
+    "h1": "Gefahrstoffverzeichnis Excel-Vorlage — strukturiert starten, Grenzen kennen",
+    "lead": "Sie suchen eine Vorlage für Ihr Gefahrstoffverzeichnis? Unsere XLSX deckt die Pflichtfelder ab, die SiFa und Prüfer typischerweise erwarten — als pragmatischer Einstieg vor dem nächsten BG-Audit.",
+    "proofLine": "Wichtig vorab: Excel erfüllt die Informationspflicht nach § 6 GefStoffV nicht automatisch. Ohne revisionssichere SDB-Historie und nachvollziehbare Änderungen riskieren Betriebe Nachweise bei Behörden- und BG-Kontrollen — besonders seit der CLP-Anpassungspflicht für Gemische (Übergangsfrist bis Mai 2026).",
+    "primaryCta": {
+      "label": "Gratis Vorlage sichern",
+      "href": "#vorlage-download",
+      "external": false
+    },
+    "trustBullets": [
+      "Keine Kreditkarte",
+      "Sofort in Excel nutzbar",
+      "Struktur für Gefährdungsbeurteilung nach TRGS 400"
+    ],
+    "image": {
+      "src": "/images/gefahrstoffverzeichnis-app.svg",
+      "alt": "Excel-Vorlage Gefahrstoffverzeichnis und digitales Kataster im Vergleich",
+      "width": 380,
+      "height": 320
+    }
+  },
+  "sections": [
+    {
+      "id": "excel-grenzen",
+      "type": "prose",
+      "eyebrow": "Haftungsrisiko Tabellenkalkulation",
+      "title": "Die Illusion der Compliance: Warum eine Excel-Liste im Audit scheitert",
+      "intro": "Eine saubere Excel-Tabelle suggeriert Kontrolle. In der juristischen Realität einer BG-Inspektion oder nach einem Arbeitsunfall erweist sie sich jedoch oft als wertlos, da ihr entscheidende regulatorische Mechanismen fehlen.",
+      "body": "<p><strong>1. Fehlende Revisionssicherheit (§ 6 GefStoffV):</strong> Die Informationsermittlung fordert eine lückenlose Historie. Excel ist statisch: Überschreiben Sie eine Zeile aufgrund eines neuen Sicherheitsdatenblattes (SDB), vernichten Sie den historischen Beweis. Kommt es Jahre später zu einer Berufskrankheit, können Sie nicht mehr rechtssicher belegen, mit welchem Datenstand (und welchen H-/P-Sätzen) der Mitarbeiter zum damaligen Zeitpunkt gearbeitet hat.</p><p><strong>2. Die stille Gefahr der CLP-Frist (Mai 2026):</strong> Wenn die Übergangsfrist für chemische Gemische abläuft, ändern sich unzählige Einstufungen (z.B. für endokrine Disruptoren). In Excel bedeutet das: Sie müssen Hunderte Zeilen manuell prüfen und abtippen. Das ist nicht nur extrem fehleranfällig, Excel schlägt auch keinen Alarm, wenn Einträge veralten. Sie wiegen sich in Sicherheit, während Ihre Dokumentation längst rechtswidrig ist.</p><p><strong>3. Blockierte Kausalketten (TRGS 400 & § 14 GefStoffV):</strong> Eine Liste ist keine Gefährdungsbeurteilung. Wenn sich ein SDB ändert, muss zwingend die Gefährdungsbeurteilung angepasst und die Belegschaft neu unterwiesen werden. Manuelle Tabellen triggern diese Prozesse nicht. Die Dokumente laufen asynchron – der Mitarbeiter am Band arbeitet nach alten Schutzmaßnahmen, während im Büro bereits das neue SDB liegt.</p><p><strong>4. Blindflug bei der Zusammenlagerung (TRGS 510):</strong> Excel warnt Sie nicht, wenn Sie in Zeile 10 eine Säure und in Zeile 45 eine Lauge demselben Regal zuordnen. Ein übersehener Konflikt in den Lagerklassen wird erst dann sichtbar, wenn der Auditor in der Tür steht oder – im Worst Case – die Feuerwehr anrückt.</p>"
+    },
+    {
+      "id": "comparison",
+      "type": "comparison",
+      "targetAudience": "Betriebe mit Excel-Vorlage oder Tabellenkalkulation",
+      "leftColumnTitle": "Statisch (Excel-Vorlage)",
+      "rightColumnTitle": "Aktiv (Gefahrstoff-QR)",
+      "rows": [
+        {
+          "criterion": "SDB-Historie & Revisionssicherheit",
+          "manual": "Dateiversionen auf Laufwerk — keine gerichtsfeste Änderungskette",
+          "gqr": "Aktivitätsprotokoll: wer, wann, welche SDB-Felder geändert hat"
+        },
+        {
+          "criterion": "CLP-Anpassung (Gemische bis Mai 2026)",
+          "manual": "H-/P-Sätze manuell in jeder Zeile nachziehen",
+          "gqr": "Extraktion aus aktuellem SDB — tagesaktuelle P-Sätze im Verzeichnis"
+        },
+        {
+          "criterion": "TRGS 510 Zusammenlagerung",
+          "manual": "Matrix manuell — Konflikte leicht übersehen",
+          "gqr": "Lagerklassen-Check mit Warnung pro Lagerort"
+        },
+        {
+          "criterion": "BG- und Behördenaudit",
+          "manual": "Export ohne Herkunftsnachweis der Daten",
+          "gqr": "One-Click-Export mit SDB-Bezug und Dokumentation"
+        },
+        {
+          "criterion": "Information am Arbeitsplatz",
+          "manual": "SDB im Büro — am Regal nicht abrufbar",
+          "gqr": "QR-Notfallpass: GHS, Erste-Hilfe, P-Sätze per Scan am Gebinde"
+        }
+      ]
+    },
+    {
+      "id": "seo-leitfaden",
+      "type": "prose",
+      "eyebrow": "Realitätscheck & Leitfaden",
+      "title": "Von der Erstaufnahme zur revisionssicheren Automatisierung",
+      "variant": "raised",
+      "body": "<h3>Der pragmatische Einstieg: Wann Excel ausreicht</h3><p>Lassen Sie uns realistisch bleiben: Wenn Ihr Betrieb lediglich 10 Standard-Reinigungsmittel verwaltet, brauchen Sie keine komplexe Software. Nutzen Sie unsere kostenlose XLSX-Vorlage. Sie liefert Ihnen die exakte Struktur (Produktname, GHS-Kennzeichnung, Lagerklasse, Mengen, Verwendungsort), die Auditoren im ersten Schritt sehen wollen. Sie sparen sich die Formatierungsarbeit und haben ein solides Grundgerüst.</p><h3>Der Tipping-Point: Versteckte Personalkosten</h3><p>Der faktische Nachteil der Vorlage ist der manuelle Wartungsaufwand. Excel ist nicht kostenlos. Wenn Ihre Sicherheitsfachkraft (bei einem Stundensatz von 60 € bis 80 €) wöchentlich mehrere Stunden damit verbringt, Hersteller-Websites nach SDB-Updates abzusuchen, PDF-Texte in Tabellen zu kopieren und Word-Betriebsanweisungen zu formatieren, übersteigen die Prozesskosten die Lizenzgebühren für ein automatisiertes SaaS-Tool um ein Vielfaches.</p><h3>Die rationale Alternative: Digitales Gefahrstoffmanagement</h3><p>Sobald Sie Stoffe substituieren, Gefahrstoffe lagern oder externe Dienstleister auf dem Gelände haben, wird der manuelle Weg unwirtschaftlich und riskant. Ein System wie GQR extrahiert die SDB-Daten per KI, führt das gesetzlich geforderte Aktivitätsprotokoll vollautomatisch im Hintergrund und schlägt die Brücke zum Einsatzort: <strong>Notfallinformationen werden direkt per QR-Code am Fass abgerufen</strong> – dort, wo Ersthelfer sie in Sekunden benötigen.</p><div id=\"vorlage-download\" style=\"background: #f5f5f5; padding: 2rem; border-radius: 0.5rem; margin-top: 2rem; scroll-margin-top: 7rem;\"><h3 style=\"margin-top: 0; margin-bottom: 0.5rem; font-size: 1.125rem; font-weight: 600;\">Der erste Schritt: Gratis Excel-Vorlage jetzt sichern</h3><p style=\"margin: 0.5rem 0 1rem 0; font-size: 0.875rem; color: #666;\">Nutzen Sie unsere strukturierte Excel-Vorlage für Ihr Gefahrstoffverzeichnis — mit allen Pflichtfeldern nach § 6 GefStoffV.</p><p style=\"margin: 0.5rem 0;\"><strong>Hinweis:</strong> Formular-Integration in dieser HTML-Version nicht vorhanden. Bitte verwenden Sie die React-Version auf <code>/gefahrstoffverzeichnis-excel-vorlage/</code> zum Download.</p><h4 style=\"margin-top: 2rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600;\">Bereit für echte Automatisierung?</h4><p style=\"margin: 0.5rem 0 1rem 0; font-size: 0.875rem; color: #666;\">Überspringen Sie das manuelle Abtippen. Laden Sie Ihre ersten Sicherheitsdatenblätter direkt hoch und lassen Sie die KI das Verzeichnis erstellen.</p><a href=\"https://app.gefahrstoff-qr.de/register\" style=\"display: inline-block; padding: 0.625rem 1.25rem; background: #0066cc; color: white; text-decoration: none; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500;\">GQR kostenlos & ohne Kreditkarte testen</a></div>"
+    }
+  ],
+  "features": {
+    "sectionTitle": "Was die Vorlage abdeckt — und was Sie selbst pflegen müssen",
+    "sectionSubline": "Die XLSX ersetzt keine Sicherheitsfachkraft. Sie liefert Spalten und Logik für den Start — die inhaltliche Pflege bleibt bei Ihnen.",
+    "items": [
+      {
+        "id": "pflichtfelder",
+        "title": "Pflichtfelder nach § 6 GefStoffV",
+        "description": "Produktbezeichnung, Hersteller, H- und P-Sätze, Verwendungszweck, Lagerort und Mengen — strukturiert statt freier Zellen."
+      },
+      {
+        "id": "trgs400",
+        "title": "Bezug zur Gefährdungsbeurteilung (TRGS 400)",
+        "description": "Das Verzeichnis ist die Datenbasis für die GB chemischer Stoffe. Die Vorlage trennt Erfassung und Bewertungsschritte nachvollziehbar."
+      },
+      {
+        "id": "trgs510",
+        "title": "Lagerklassen-Spalte für TRGS 510",
+        "description": "Platz für Lagerklassen und Hinweise zur Zusammenlagerung — die eigentliche Konfliktprüfung erfolgt bei Ihnen manuell oder in GQR automatisch."
+      },
+      {
+        "id": "unterweisung",
+        "title": "Unterweisungs-Referenz (§ 14 GefStoffV)",
+        "description": "Spalte für letzte Unterweisung und Verantwortliche — Excel warnt nicht, wenn der jährliche Unterweisungsrhythmus reißt."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Reicht eine Excel-Vorlage für ein rechtssicheres Gefahrstoffverzeichnis?",
+      "answer": "Als Übergangslösung für wenige Stoffe ja — als dauerhaftes System selten. § 6 GefStoffV verlangt aktuelle Informationen aus Sicherheitsdatenblättern. Excel speichert keine revisionssichere Historie: Wer welche Zelle wann geändert hat, lässt sich bei Audits kaum belegen. Fehlt die SDB-Version hinter einem Eintrag, entsteht Haftungsrisiko — nicht wegen der Vorlage, sondern wegen fehlender Nachweiskette."
+    },
+    {
+      "question": "Warum scheitern Betriebe bei BG-Kontrollen trotz Excel-Liste?",
+      "answer": "Typische Mängel: veraltete SDB-PDFs ohne Bezug zur Tabellenzeile, fehlende Dokumentation von Rezepturänderungen, keine Historie bei CLP-Umstellung (H-/P-Sätze bis Mai 2026 für Gemische), fehlende Unterweisungsnachweise nach § 14 GefStoffV. Prüfer fragen nicht nach der Dateiendung — sie prüfen Nachvollziehbarkeit und Aktualität."
+    },
+    {
+      "question": "Was muss in die Gefährdungsbeurteilung nach TRGS 400 einfließen?",
+      "answer": "Die GB chemischer Arbeitsstoffe baut auf dem Verzeichnis auf: Exposition, Mengen, Verwendungsart, Schutzmaßnahmen, Substitution. Die Excel-Vorlage hilft bei der Stoffliste — die Bewertung und Dokumentation der Maßnahmen bleiben separate Pflichten. Word-Vorlagen für Betriebsanweisungen kosten SiFa oft hunderte Stunden pro Jahr, wenn SDB-Daten erneut abgetippt werden."
+    },
+    {
+      "question": "Ab wann lohnt sich Gefahrstoff-QR statt Excel?",
+      "answer": "Faustregel ab 15–20 Stoffen, mehreren Standorten oder wechselnden Lieferanten: Dann übersteigt die manuelle Pflege die Softwarekosten. GQR extrahiert SDB-Daten per KI, führt ein Aktivitätsprotokoll und prüft TRGS-510-Lagerkonflikte — mit QR-Notfallpass am Gebinde für Ersthelfer."
+    },
+    {
+      "question": "Ist die Vorlage kostenlos und DSGVO-konform?",
+      "answer": "Ja. Der Download ist unverbindlich, ohne Kreditkarte. Für den Versand benötigen wir Ihre E-Mail; Verarbeitung gemäß Datenschutzerklärung. Sie erhalten die XLSX und optional praxisnahe Hinweise zum Gefahrstoffmanagement — Abmeldung jederzeit."
+    },
+    {
+      "question": "Wie geht es nach dem Excel-Start mit GQR weiter?",
+      "answer": "Viele Betriebe nutzen die Vorlage für die Erstaufnahme und wechseln bei wachsendem Bestand zu GQR: SDB hochladen, Felder prüfen, Verzeichnis exportieren — ohne erneutes Abtippen. Der kostenlose Einstieg umfasst die ersten Stoffe ohne Zahlungsdaten."
+    }
+  ],
+  "closingCta": {
+    "headline": "Excel war der Start — GQR hält Sie audit-sicher",
+    "subline": "Wenn SDB-Revisionen, CLP-Anpassungen und BG-Nachweise mehr Zeit kosten als Ihre SiFa einplanen kann: testen Sie die automatisierte Alternative.",
+    "primaryCta": {
+      "label": "GQR kostenlos testen",
+      "href": "https://app.gefahrstoff-qr.de/register",
+      "external": true
+    },
+    "disclaimer": "Unverbindlich · Keine Kreditkarte · KI-SDB-Import"
+  }
+}

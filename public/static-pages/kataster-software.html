@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gefahrstoffkataster Software | GQR</title>
+  <meta name="description" content="Gefahrstoffkataster Software mit KI-SDB-Import, revisionssicher nach § 6 GefStoffV.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #ffffff;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 1rem 0;
+      sticky-top: 0;
+      z-index: 50;
+    }
+    .breadcrumb { display: flex; gap: 0.5rem; font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem; }
+    .breadcrumb a { color: #0066cc; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .hero {
+      padding: 3rem 0;
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    }
+    .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .hero-text h1 { font-size: 2.25rem; font-weight: 700; margin: 1rem 0; line-height: 1.2; }
+    .hero-eyebrow { font-size: 0.875rem; color: #0066cc; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .hero-lead { font-size: 1.125rem; color: #4b5563; margin: 1rem 0; }
+    .hero-proof { font-size: 0.875rem; color: #6b7280; font-style: italic; margin: 1rem 0; }
+    .cta-group { display: flex; gap: 1rem; margin: 2rem 0; flex-wrap: wrap; }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary { background: #0066cc; color: white; }
+    .btn-primary:hover { background: #0052a3; }
+    .btn-secondary { background: white; color: #0066cc; border: 2px solid #0066cc; }
+    .btn-secondary:hover { background: #f3f4f6; }
+    .trust-bullets { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+    .trust-bullet { display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; }
+    .trust-bullet::before { content: "✓"; color: #10b981; font-weight: bold; font-size: 1.25rem; }
+
+    @media (max-width: 768px) {
+      .hero-content { grid-template-columns: 1fr; }
+      .hero-text h1 { font-size: 1.875rem; }
+      .hero-image { display: none; }
+    }
+
+    .section {
+      padding: 3rem 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .section.raised { background: #f9fafb; }
+    .section-eyebrow { font-size: 0.875rem; color: #0066cc; font-weight: 600; text-transform: uppercase; }
+    .section h2 { font-size: 1.875rem; font-weight: 700; margin: 0.75rem 0; }
+    .section-intro { font-size: 1rem; color: #6b7280; margin: 1rem 0; font-style: italic; }
+    .section-body { color: #374151; line-height: 1.8; }
+    .section-body p { margin: 1.25rem 0; }
+    .section-body h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem 0; }
+    .section-body strong { color: #1f2937; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .feature-card {
+      padding: 1.5rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      background: white;
+    }
+    .feature-card h3 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .feature-card p { color: #6b7280; }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: white;
+      border: 1px solid #e5e7eb;
+    }
+    .comparison-table th,
+    .comparison-table td { padding: 1.25rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+    .comparison-table th { background: #f3f4f6; font-weight: 600; }
+    .comparison-table tr:last-child th,
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table td:first-child { font-weight: 600; color: #1f2937; }
+    .comparison-table td:nth-child(2) { color: #6b7280; }
+    .comparison-table td:nth-child(3) { color: #10b981; font-weight: 500; }
+
+    .faq-item {
+      margin: 1.5rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.375rem;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 1rem;
+      background: #f3f4f6;
+      cursor: pointer;
+      font-weight: 600;
+      user-select: none;
+    }
+    .faq-question:hover { background: #e5e7eb; }
+    .faq-answer {
+      padding: 1rem;
+      color: #6b7280;
+      display: none;
+    }
+    .faq-item.active .faq-answer { display: block; }
+
+    .closing-cta {
+      background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+      color: white;
+      padding: 3rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .closing-cta h2 { color: white; margin-bottom: 0.75rem; }
+    .closing-cta p { margin: 0.75rem 0; }
+    .closing-cta .btn { margin-top: 1.5rem; }
+    .disclaimer { font-size: 0.75rem; color: rgba(255,255,255,0.8); margin-top: 1rem; }
+
+    .roi-box {
+      background: #f0f9ff;
+      border: 2px solid #0066cc;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .roi-box h3 { color: #0066cc; margin-bottom: 1rem; }
+    .roi-box p { color: #1e40af; }
+
+    footer { padding: 2rem 0; border-top: 1px solid #e5e7eb; text-align: center; color: #6b7280; font-size: 0.875rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="breadcrumb" id="breadcrumb-nav"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-eyebrow" id="hero-eyebrow"></div>
+            <h1 id="hero-h1"></h1>
+            <p class="hero-lead" id="hero-lead"></p>
+            <p class="hero-proof" id="hero-proof"></p>
+            <div class="cta-group">
+              <a class="btn btn-primary" id="hero-primary-cta" href="#"></a>
+              <a class="btn btn-secondary" id="hero-secondary-cta" href="#"></a>
+            </div>
+            <div class="trust-bullets" id="hero-trust-bullets"></div>
+          </div>
+          <div class="hero-image" id="hero-image"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="silo-roi">
+      <div class="container">
+        <div class="roi-box">
+          <h3>💡 ROI-Rechner</h3>
+          <p>Die manuelle Pflege von Sicherheitsdatenblättern ist der teuerste Ineffizienz-Faktor im Arbeitsschutz. Berechnen Sie objektiv, ab wie vielen Gefahrstoffen der Einsatz einer Software die Personalkosten Ihrer Sicherheitsfachkraft signifikant senkt.</p>
+        </div>
+      </div>
+    </section>
+
+    <div id="sections-container"></div>
+
+    <section class="section">
+      <div class="container">
+        <h2 style="font-size: 1.875rem; margin-bottom: 1rem;" id="features-title"></h2>
+        <p style="color: #6b7280; margin-bottom: 2rem;" id="features-subline"></p>
+        <div class="features-grid" id="features-grid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 style="font-size: 1.875rem; margin-bottom: 2rem;">Häufig gestellte Fragen</h2>
+        <div id="faq-container"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" id="closing-cta-container"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Gefahrstoff-QR. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script>
+    const dataUrl = './kataster-software.json';
+
+    async function loadAndRenderPage() {
+      try {
+        const response = await fetch(dataUrl);
+        const data = await response.json();
+        renderPage(data);
+      } catch (error) {
+        console.error('Error loading page data:', error);
+        document.body.innerHTML = '<div style="padding: 2rem; text-align: center; color: red;">Fehler beim Laden der Seite.</div>';
+      }
+    }
+
+    function renderPage(data) {
+      document.title = data.seo.title;
+      document.querySelector('meta[name="description"]').setAttribute('content', data.seo.description);
+
+      const breadcrumbNav = document.getElementById('breadcrumb-nav');
+      if (data.breadcrumb) {
+        breadcrumbNav.innerHTML = data.breadcrumb.map((item, i) =>
+          `<span>${i > 0 ? ' / ' : ''}<a href="${item.href}">${item.label}</a></span>`
+        ).join('');
+      }
+
+      document.getElementById('hero-eyebrow').textContent = data.hero.eyebrow;
+      document.getElementById('hero-h1').textContent = data.hero.h1;
+      document.getElementById('hero-lead').textContent = data.hero.lead;
+      document.getElementById('hero-proof').textContent = data.hero.proofLine;
+      document.getElementById('hero-primary-cta').textContent = data.hero.primaryCta.label;
+      document.getElementById('hero-primary-cta').href = data.hero.primaryCta.href;
+      document.getElementById('hero-secondary-cta').textContent = data.hero.secondaryCta.label;
+      document.getElementById('hero-secondary-cta').href = data.hero.secondaryCta.href;
+
+      const trustBullets = document.getElementById('hero-trust-bullets');
+      trustBullets.innerHTML = data.hero.trustBullets.map(bullet =>
+        `<div class="trust-bullet">${bullet}</div>`
+      ).join('');
+
+      if (data.hero.image) {
+        const imgContainer = document.getElementById('hero-image');
+        imgContainer.innerHTML = `<img src="${data.hero.image.src}" alt="${data.hero.image.alt}" style="width: 100%; height: auto; border-radius: 0.5rem;">`;
+      }
+
+      const sectionsContainer = document.getElementById('sections-container');
+      if (data.sections) {
+        data.sections.forEach(section => {
+          if (section.type === 'prose') {
+            sectionsContainer.innerHTML += renderProseSection(section);
+          } else if (section.type === 'comparison') {
+            sectionsContainer.innerHTML += renderComparisonSection(section);
+          }
+        });
+      }
+
+      const featuresTitle = document.getElementById('features-title');
+      const featuresSubline = document.getElementById('features-subline');
+      const featuresGrid = document.getElementById('features-grid');
+
+      if (data.features) {
+        featuresTitle.textContent = data.features.sectionTitle;
+        featuresSubline.textContent = data.features.sectionSubline;
+        featuresGrid.innerHTML = data.features.items.map(item =>
+          `<div class="feature-card">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+          </div>`
+        ).join('');
+      }
+
+      const faqContainer = document.getElementById('faq-container');
+      if (data.faq) {
+        faqContainer.innerHTML = data.faq.map(item =>
+          `<div class="faq-item">
+            <div class="faq-question">${item.question}</div>
+            <div class="faq-answer">${item.answer}</div>
+          </div>`
+        ).join('');
+
+        document.querySelectorAll('.faq-question').forEach(q => {
+          q.addEventListener('click', function() {
+            this.parentElement.classList.toggle('active');
+          });
+        });
+      }
+
+      const closingCtaContainer = document.getElementById('closing-cta-container');
+      if (data.closingCta) {
+        closingCtaContainer.innerHTML = `
+          <div class="closing-cta">
+            <h2>${data.closingCta.headline}</h2>
+            <p>${data.closingCta.subline}</p>
+            <a href="${data.closingCta.primaryCta.href}" class="btn btn-primary" style="background: white; color: #0066cc;">${data.closingCta.primaryCta.label}</a>
+            <p class="disclaimer">${data.closingCta.disclaimer}</p>
+          </div>
+        `;
+      }
+    }
+
+    function renderProseSection(section) {
+      return `
+        <section class="section${section.variant === 'raised' ? ' raised' : ''}">
+          <div class="container">
+            <div class="section-eyebrow">${section.eyebrow}</div>
+            <h2>${section.title}</h2>
+            ${section.intro ? `<p class="section-intro">${section.intro}</p>` : ''}
+            <div class="section-body">${section.body}</div>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderComparisonSection(section) {
+      return `
+        <section class="section">
+          <div class="container">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Kriterium</th>
+                  <th>${section.leftColumnTitle}</th>
+                  <th>${section.rightColumnTitle}</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${section.rows.map(row => `
+                  <tr>
+                    <td>${row.criterion}</td>
+                    <td>${row.manual}</td>
+                    <td>${row.gqr}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      `;
+    }
+
+    document.addEventListener('DOMContentLoaded', loadAndRenderPage);
+  </script>
+</body>
+</html>
