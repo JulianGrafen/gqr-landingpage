@@ -223,7 +223,7 @@
       <a class="btn btn-primary nav-cta" href="https://app.gefahrstoff-qr.de/register">Jetzt kostenlos registrieren</a>
     </nav>
 
-    <button id="navOpenBtn" class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menü öffnen">
+    <button id="navOpenBtn" class="nav-toggle flex w-full flex-wrap items-center justify-center" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menü öffnen">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"/></svg>
     </button>
   </header>
@@ -247,24 +247,49 @@
 
     <!-- HERO: SDS-Engine-inspirierter Einstieg -->
     <section id="hero" class="sds-hero" aria-labelledby="heroHeadline">
-      <div class="container sds-hero__headline">
-        <h1 id="heroHeadline" class="sds-hero__title">Gefahrstoffmanagement ohne Chaos.</h1>
+      <div class=" flex w-full flex-wrap items-center justify-center container sds-hero__headline">
+        <h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap items-center justify-center"> Gefahrstoffmanagement ohne Chaos.</h1>
         <p class="mt-5 sds-hero__subtitle">Automatisiertes SDB auslesen, QR-Notfallpass, Automatischer TRGS510 Check und Betriebsanweisungen in einer Minute erstellen.</p>
        <!--  <p class="sds-hero__lead">
           Schluss mit  Excel-Listen und versteckten PDFs. Laden Sie Ihre Dokumente einfach hoch: Gefahrstoff-QR liest Ihre Sicherheitsdatenblätter (SDB) vollautomatisch aus und strukturiert die Daten nach GefStoffV. Sparen Sie Stunden an Verwaltungsarbeit und sichern Sie sich sofortige Audit-Sicherheit – inklusive mobiler App für den direkten Notfall-Zugriff am Arbeitsplatz.
         </p>-->
       </div>
+        <ul class="mt-6 mb-8 flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-4 border-t border-white/10 pt-6" role="list" aria-label="Vertrauen und Sicherheit">
+        <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
+          <svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M12 3 4 6v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/>
+            <path d="m9.5 12.5 2 2 3.5-3.5"/>
+          </svg>
+          <span>DSGVO-konform</span>
+        </li>
+        <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
+          <svg class="h-7 w-9 flex-shrink-0 overflow-visible rounded-md border border-white/20 shadow-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" aria-hidden="true" focusable="false">
+            <rect width="24" height="16" rx="1.5" fill="#1a1a1a"/>
+            <rect width="24" height="5.33" y="5.33" fill="#dd0000"/>
+            <rect width="24" height="5.34" y="10.66" fill="#ffce00"/>
+          </svg>
+          <span>Made in Germany</span>
+        </li>
+        <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
+          <svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M7 11V8a5 5 0 0 1 10 0v3"/>
+            <rect x="5" y="11" width="14" height="10" rx="2"/>
+            <path d="M12 16v2"/>
+          </svg>
+          <span>SSL-verschlüsselt</span>
+        </li>
+      </ul>
 
       <div class="container sds-hero__inner">
         <div class="sds-hero__copy">
-          <div class="sds-hero__actions">
+        <!--  <div class="sds-hero__actions">
             <a class="btn-cta-orange" href="https://app.gefahrstoff-qr.de/register" title="Jetzt kostenlos testen">
               Kostenlos testen
             </a>
             <a class="sds-secondary-link" href="mailto:info@gefahrstoff-qr.de?subject=Gefahrstoff-QR%20Gespräch">
               Gespräch anfragen
             </a>
-          </div>
+          </div>-->
 
          <!-- <aside class="sds-hero-lead-magnet" aria-label="Gratis Excel-Audit">
             <div class="sds-hero-lead-magnet__badge" aria-hidden="true">Gratis</div>
@@ -285,7 +310,7 @@
             </div>
           </aside>*-->
 
-         <ul class="sds-hero__checks" aria-label="Zentrale Vorteile" style="text-align: left; list-style-position: inside;">
+         <ul class="sds-hero__checks text-2xl " aria-label="Zentrale Vorteile" style="text-align: left; list-style-position: inside;">
   <li><span aria-hidden="true">✓</span> Anlegen von Gefahrstoffen in 30 Sekunden durch SDB Scan</li>
   <li><span aria-hidden="true">✓</span> Automatischer TRGS510 Zusammenlagerungscheck</li>
   <li><span aria-hidden="true">✓</span> SDB & Notfallinfos per QR-Code direkt am Regal</li>
@@ -666,24 +691,27 @@
           </article>
           <article class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
             <div class="mb-4 text-teal-300" aria-hidden="true">
-              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
             </div>
-            <h4 class="font-bold text-[#f0f6ff]">KI-Extraktion aus Sicherheitsdatenblättern</h4>
-            <p class="mt-2 text-sm text-[#8fa4c0]">Eliminieren Sie manuelle Übertragungsfehler. Relevante Daten landen automatisch im System.</p>
+            <h4 class="font-bold text-[#f0f6ff]">Such-&amp; Filterfunktionen</h4>
+            <p class="mt-2 text-sm text-[#8fa4c0]">Effizientes Finden und Filtern von Gefahrstoffdaten- egal ob nach GHS-Symbol, Werk oder Produkt.</p>
           </article>
           <article class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
             <div class="mb-4 text-teal-300" aria-hidden="true">
-              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
             </div>
-            <h4 class="font-bold text-[#f0f6ff]">Digitales GHS-Piktogramm-Management</h4>
-            <p class="mt-2 text-sm text-[#8fa4c0]">Kennzeichnungen bleiben zwingend konsistent mit dem zugrunde liegenden SDB.</p>
+            <h4 class="font-bold text-[#f0f6ff]">Batch-Upload</h4>
+            <p class="mt-2 text-sm text-[#8fa4c0]">Laden Sie mehrere Sicherheitsdatenblätter gleichzeitig hoch und verarbeiten Sie sie automatisch.</p>
           </article>
           <article class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
             <div class="mb-4 text-teal-300" aria-hidden="true">
-              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
             </div>
-            <h4 class="font-bold text-[#f0f6ff]">Mengenüberwachung &amp; Alerts</h4>
-            <p class="mt-2 text-sm text-[#8fa4c0]">Automatische Warnungen bei kritischen Schwellenwerten oder abgelaufenen Dokumenten.</p>
+            <h4 class="font-bold text-[#f0f6ff]">Export als PDF oder Excel-Datei</h4>
+            <p class="mt-2 text-sm text-[#8fa4c0]">Exportieren Sie Ihre strukturierten Gefahrstoffdaten in gängigen Formaten für Berichte und Dokumentation.</p>
+          </article>
+           <article class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
+            <div class="mb-4 text-teal-300" aria-hidden="true">
+            </div>
+            <h4 class="font-bold text-[#f0f6ff]">Automatisches anfordern von aktuellen SDBs</h4>
+            <p class="mt-2 text-sm text-[#8fa4c0]">Fordern Sie automatisch aktuelle Sicherheitsdatenblätter an, um Ihre Informationen immer auf dem neuesten Stand zu haben.</p>
           </article>
         </div>
       </div>
@@ -816,10 +844,10 @@
               Die Gefahrstoffverordnung (GefStoffV) verlangt ein lückenloses Gefahrstoffverzeichnis. Wer dieses Kataster in Excel-Listen und PDF-Ordnern führt, riskiert nicht nur massiven Zeitverlust, sondern empfindliche Sanktionen bei BG- und Behördenkontrollen.
             </p>
           </div>
-          <div class="zigzag-row__media">
+          <!--   <div class="zigzag-row__media">
             <div class="zigzag-frame zigzag-frame--dark">
               <div class="zigzag-frame__stage">
-              <img
+           <img
                 class="zigzag-frame__img"
                 src="/images/qr-gefahrstoff-einsatzort.svg"
                 width="400"
@@ -828,7 +856,7 @@
                 decoding="async"
                 alt="QR-Code am Gefahrstoffbehälter für schnellen Zugriff auf Sicherheitsinformationen"
                 title="QR-Code am Gefahrstoffbehälter für mobilen Zugriff"
-              />
+              /> -->
               </div>
             </div>
           </div>
