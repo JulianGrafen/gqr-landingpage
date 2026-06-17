@@ -2421,23 +2421,15 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   }
 }
 
-/* ── YouTube section ─────────────────────────────────────────── */
-.youtube-section {
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  background: rgba(15, 30, 53, 0.45);
-  padding-block: clamp(3.5rem, 6vw, 6rem);
-}
-
-.youtube-section__heading {
-  margin-bottom: clamp(2rem, 4vw, 2.75rem);
-}
-
+/* ── YouTube section (Zickzack-Rahmen + 2-Spalten wie Funktionen) ── */
 .youtube-grid {
   display: grid;
-  gap: clamp(1.25rem, 3vw, 1.75rem);
+  grid-template-columns: 1fr;
+  gap: clamp(1.75rem, 4vw, 2.5rem);
+  align-items: start;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 640px) {
   .youtube-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2446,20 +2438,30 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 .youtube-card {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  border-radius: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(22, 35, 64, 0.85);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  gap: 1.15rem;
+  min-width: 0;
 }
 
-.youtube-embed {
+.youtube-frame {
+  min-height: unset;
+  max-height: none;
+  height: auto;
+  aspect-ratio: unset;
+  padding: clamp(10px, 1.4vw, 14px);
+}
+
+.youtube-frame__stage {
   position: relative;
   aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  padding: 0;
   background: #0a1628;
+  border-radius: calc(var(--zigzag-media-radius) - 8px);
+  overflow: hidden;
 }
 
-.youtube-embed iframe {
+.youtube-frame__iframe {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -2467,32 +2469,22 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   border: 0;
 }
 
-.youtube-card__body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1.25rem 1.35rem 1.35rem;
+.youtube-card__copy {
+  padding-inline: 0.15rem;
 }
 
-.youtube-card__title {
-  font-size: 1.125rem;
-  font-weight: 800;
-  line-height: 1.35;
-  color: var(--color-text, #f0f6ff);
-}
-
-.youtube-card__desc {
-  font-size: 0.875rem;
-  line-height: 1.65;
-  color: var(--color-muted, #8fa4c0);
+.youtube-card__copy .zigzag-row__title {
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
 }
 
 .youtube-card__link {
-  margin-top: 0.35rem;
+  display: inline-flex;
+  margin-top: 0.85rem;
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--color-trust, #2dd4bf);
+  color: var(--color-trust);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .youtube-card__link:hover {
@@ -2501,15 +2493,15 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 }
 
 .youtube-section__channel {
-  margin-top: clamp(1.5rem, 3vw, 2rem);
+  margin-top: clamp(2rem, 4vw, 2.75rem);
   text-align: center;
   font-size: 0.875rem;
-  color: var(--color-muted, #8fa4c0);
+  color: var(--color-muted);
 }
 
 .youtube-section__channel a {
   font-weight: 700;
-  color: var(--color-trust, #2dd4bf);
+  color: var(--color-trust);
   text-decoration: none;
 }
 
