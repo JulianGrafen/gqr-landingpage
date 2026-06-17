@@ -30,11 +30,24 @@ for (const rel of SYNC_PATHS) {
   console.log(`✓ ${rel}/`);
 }
 
-const faviconSrc = path.join(OUT, 'favico.png');
-const faviconDest = path.join(ROOT, 'favico.png');
-if (fs.existsSync(faviconSrc)) {
-  fs.copyFileSync(faviconSrc, faviconDest);
-  console.log('✓ favico.png');
+const FAVICON_FILES = [
+  'favicon.ico',
+  'favicon.png',
+  'favicon-48x48.png',
+  'favicon-192x192.png',
+  'apple-touch-icon.png',
+  'favico.png',
+];
+
+for (const name of FAVICON_FILES) {
+  const src = path.join(OUT, name);
+  const dest = path.join(ROOT, name);
+  if (!fs.existsSync(src)) {
+    console.warn(`Übersprungen (nicht in out/): ${name}`);
+    continue;
+  }
+  fs.copyFileSync(src, dest);
+  console.log(`✓ ${name}`);
 }
 
 console.log('GitHub-Pages-Sync abgeschlossen.');

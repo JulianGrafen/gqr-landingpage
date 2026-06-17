@@ -12,8 +12,13 @@ export const metadata: Metadata = {
   },
   description: SITE_DEFAULT_SEO.description,
   icons: {
-    icon: [{ url: '/favico.png', type: 'image/png' }],
-    shortcut: '/favico.png',
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/favicon-48x48.png', type: 'image/png', sizes: '48x48' },
+      { url: '/favicon-192x192.png', type: 'image/png', sizes: '192x192' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: '/favicon.ico',
   },
 };
 
