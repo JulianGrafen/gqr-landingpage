@@ -1,520 +1,75 @@
-<!doctype html>
-<html lang="de">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="icon" href="https://gefahrstoff-qr.de/favicon.ico" sizes="48x48">
-  <link rel="icon" type="image/png" sizes="48x48" href="https://gefahrstoff-qr.de/favicon-48x48.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="https://gefahrstoff-qr.de/favicon-192x192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://gefahrstoff-qr.de/apple-touch-icon.png">
-  <link rel="shortcut icon" href="https://gefahrstoff-qr.de/favicon.ico">
-
-  <title>Gefahrstoff Software Werkstatt: Kataster &amp; App | Gefahrstoff-QR</title>
-  <meta name="description" content="Die Gefahrstoff Software für Ihre Werkstatt: Excel ablösen, SDBs für Bremsenreiniger & Co. per KI scannen, QR-Notfallpass direkt am Regal. Jetzt kostenlos testen.">
-  <link rel="canonical" href="https://gefahrstoff-qr.de/gefahrstoff-software-werkstatt/" />
-
-  <meta property="og:title" content="Gefahrstoff Software Werkstatt: Die smarte Excel-Alternative | Gefahrstoff-QR">
-  <meta property="og:description" content="Gefahrstoffkataster & App speziell für Werkstätten: KI-SDB-Import für Öle und Reiniger, QR-Notfallpass und Revisionsverlauf nach § 6. Kostenlos testen.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://gefahrstoff-qr.de/gefahrstoff-software-werkstatt/">
-  <meta property="og:image" content="https://gefahrstoff-qr.de/og-image.png">
-  <meta property="og:image:alt" content="Gefahrstoff-QR — KI-gestütztes digitales Gefahrstoffverzeichnis für Werkstätten">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="de_DE">
-  <meta property="og:site_name" content="Gefahrstoff-QR">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@gefahrstoff_qr">
-  <meta name="twitter:title" content="Gefahrstoff Software Werkstatt: Die Excel-Alternative | Gefahrstoff-QR">
-  <meta name="twitter:description" content="Gefahrstoffkataster & App für die Werkstatt: KI-SDB-Import, QR-Notfallpass und Revisionsverlauf nach § 6. Kostenlos testen.">
-  <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png">
-
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="preload" href="style.css?v=11" as="style">
-  <link rel="preload" href="tw.css" as="style">
-  <link rel="stylesheet" href="style.css?v=11">
-  <link rel="stylesheet" href="tw.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://gefahrstoff-qr.de/gefahrstoff-software-werkstatt/#webpage",
-    "url": "https://gefahrstoff-qr.de/gefahrstoff-software-werkstatt/",
-    "name": "Gefahrstoff Software Werkstatt: Die Excel-Alternative | Gefahrstoff-QR",
-    "description": "Gefahrstoff Software für die Werkstatt statt Excel: Automatisches Verzeichnis für Bremsenreiniger und Co. mit QR-Notfallpass am Regal. Zeit sparen, rechtssicher vor der BG. Jetzt kostenlos starten!",
-    "isPartOf": { "@type": "WebSite", "name": "Gefahrstoff-QR", "url": "https://gefahrstoff-qr.de/" },
-    "about": { "@type": "SoftwareApplication", "name": "Gefahrstoff-QR" }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Gefahrstoff-QR",
-    "url": "https://gefahrstoff-qr.de/gefahrstoff-software-werkstatt/",
-    "applicationCategory": "BusinessApplication",
-    "applicationSubCategory": "Compliance Software",
-    "applicationSuite": "Gefahrstoff-QR",
-    "operatingSystem": "Web, iOS, Android",
-    "alternateName": ["Gefahrstoff App Werkstatt", "Gefahrstoff Software Werkstatt", "Gefahrstoffverzeichnis Kfz-Werkstatt"],
-    "description": "Gefahrstoff Software speziell für die Werkstatt: KI extrahiert Sicherheitsdatenblätter von Motorölen und Reinigern automatisch. Revisionssicheres Verzeichnis und QR-Notfallpass für die Werkstatthalle.",
-    "featureList": [
-      "Automatisches Gefahrstoffverzeichnis für Werkstätten nach § 6 GefStoffV",
-      "KI-Extraktion aus SDBs (Bremsenreiniger, Lacke, Öle)",
-      "Digitales GHS-Piktogramm-Management",
-      "QR-Notfallansicht direkt am Gefahrstoffschrank",
-      "Betriebsanweisungen in einer Minute generieren",
-      "TRGS 510 Zusammenlagerungs-Check für die Werkstatthalle"
-    ],
-    "provider": {
-      "@type": "Organization",
-      "name": "Gefahrstoff-QR",
-      "url": "https://gefahrstoff-qr.de/"
-    },
-    "audience": {
-      "@type": "BusinessAudience",
-      "audienceType": "Kfz-Werkstätten, Schreiner, Handwerksbetriebe, Lackierereien"
-    },
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Test",
-        "description": "Unverbindlich, 5 Stoffe verfügbar, Verzeichnis als PDF",
-        "price": "0",
-        "priceCurrency": "EUR"
-      },
-      {
-        "@type": "Offer",
-        "name": "Small Business",
-        "description": "Bis 50 Stoffe, Alerts und automatische SDB-Anforderung, Verzeichnis als PDF, ideal für kleine Werkstätten",
-        "price": "89",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "89",
-          "priceCurrency": "EUR",
-          "unitText": "MONTH"
-        }
-      },
-      {
-        "@type": "Offer",
-        "name": "Professional",
-        "description": "Bis 250 Stoffe, KI BA-Erstellung, Alerts, mehrere Nutzer, Support - für mittelständische Betriebe",
-        "price": "199",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "199",
-          "priceCurrency": "EUR",
-          "unitText": "MONTH"
-        }
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Lohnt sich eine Gefahrstoff Software in der Werkstatt, wenn wir Excel haben?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Excel skaliert im Werkstattalltag nicht. Versionen veralten, SDB-Daten von Lacken oder Reinigern müssen manuell abgetippt werden und bei BG-Audits fehlen die Revisions-Nachweise. Gefahrstoff-QR automatisiert den Import und liefert die Rechtssicherheit, die Excel nicht bieten kann."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Erfüllt die Software die Pflichten aus § 6 GefStoffV für Handwerksbetriebe?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja. Das Gesetz fordert ein vollständiges Verzeichnis. GQR strukturiert die SDB-Inhalte exakt nach diesen Vorgaben, minimiert Fehler bei der Übertragung und macht das Kataster revisionssicher für die nächste Kontrolle."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Wie hilft der QR-Code den Mechanikern in der Halle?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Wenn etwas ins Auge geht, bleibt keine Zeit, um im Büro Ordner zu wälzen. Der QR-Code klebt am Gefahrstoffschrank. Ein Scan mit dem Smartphone zeigt dem Mechaniker sofort die nötigen Erste-Hilfe-Maßnahmen und Betriebsanweisungen."
-        }
-      }
-    ]
-  }
-  </script>
-</head>
-<body>
-
-  <header class="site-header" id="siteHeader">
-    <a class="logo " href="/" aria-label="Gefahrstoff-QR Startseite"><img class="h-24 w-24 object-contain" src="logo.png" alt="Gefahrstoff-QR" ></a>
-
-    <nav class="nav-desktop" aria-label="Hauptnavigation">
-      <a class="nav-link" href="#produkt">Produkt</a>
-      <a class="nav-link" href="#funktionen">Funktionen</a>
-      <a class="nav-link" href="#preise">Preise</a>
-      <a class="nav-link" href="#faq">FAQ</a>
-      <a class="nav-link" href="/wissen/">Wissen</a>
-      <a class="nav-link" href="https://app.gefahrstoff-qr.de/login">Login</a>
-      <a class="btn btn-primary nav-cta" href="https://app.gefahrstoff-qr.de/register">Jetzt kostenlos registrieren</a>
-    </nav>
-
-    <button id="navOpenBtn" class="nav-toggle flex flex-wrap items-center justify-center" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menü öffnen">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"/></svg>
-    </button>
-  </header>
-
-  <div class="nav-mobile" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Mobilmenü">
-    <div class="nav-mobile-inner">
-      <button id="navCloseBtn" class="nav-close" aria-label="Schließen">&#x2715; Schließen</button>
-      <nav class="mobile-links">
-        <a class="nav-link" href="#produkt">Produkt</a>
-        <a class="nav-link" href="#funktionen">Funktionen</a>
-        <a class="nav-link" href="#preise">Preise</a>
-        <a class="nav-link" href="#faq">FAQ</a>
-        <a class="nav-link" href="/wissen/">Wissen</a>
-        <a class="nav-link" href="https://app.gefahrstoff-qr.de/login">Login</a>
-        <a class="btn btn-primary" href="https://app.gefahrstoff-qr.de/register">Jetzt kostenlos registrieren</a>
-      </nav>
-    </div>
-  </div>
-
-  <main>
-
-    <section id="hero" class="sds-hero" aria-labelledby="heroHeadline">
-      <div class=" flex w-full flex-wrap items-center justify-center container sds-hero__headline">
-<h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-start justify-center">
-  Gefahrstoff Software für die Werkstatt - <br> 
-  <span style="color: rgb(255, 94, 0); display: block; text-align: left;">10x effizienter als Excel.</span>
-</h1>
-  <p class="mt-5 sds-hero__subtitle">Speziell für Kfz- und Handwerksbetriebe: SDBs (Bremsenreiniger, Öle) automatisch auslesen, QR-Notfallpass am Regal, TRGS510 Check und Betriebsanweisungen in einer Minute generieren!</p>
-      </div>
-        <ul class="mt-6 mb-8 flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-4 border-t border-white/10 pt-6" role="list" aria-label="Vertrauen und Sicherheit">
-        <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
-          <svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-            <path d="M12 3 4 6v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/>
-            <path d="m9.5 12.5 2 2 3.5-3.5"/>
-          </svg>
-          <span>BG-Audit konform</span>
-        </li>
-        <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
-          <svg class="h-7 w-9 flex-shrink-0 overflow-visible rounded-md border border-white/20 shadow-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" aria-hidden="true" focusable="false">
-            <rect width="24" height="16" rx="1.5" fill="#1a1a1a"/>
-            <rect width="24" height="5.33" y="5.33" fill="#dd0000"/>
-            <rect width="24" height="5.34" y="10.66" fill="#ffce00"/>
-          </svg>
-          <span>Made in Germany</span>
-        </li>
-        <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
-          <svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-            <path d="M7 11V8a5 5 0 0 1 10 0v3"/>
-            <rect x="5" y="11" width="14" height="10" rx="2"/>
-            <path d="M12 16v2"/>
-          </svg>
-          <span>SSL-verschlüsselt</span>
-        </li>
-      </ul>
-
-      <div class="container sds-hero__inner">
-        <div class="sds-hero__copy">
-         <ul class="sds-hero__checks text-2xl " aria-label="Zentrale Vorteile" style="text-align: left; list-style-position: inside;">
-  <li><span aria-hidden="true">✓</span> Werkstatt-Stoffe in 30 Sekunden anlegen: Kein Copy & Paste mehr</li>
-  <li><span aria-hidden="true">✓</span> Automatischer TRGS510 Zusammenlagerungscheck für die Halle</li>
-  <li><span aria-hidden="true">✓</span> SDB & Erste-Hilfe-Infos per QR-Code direkt am Gefahrstoffschrank</li>
-  <li><span aria-hidden="true">✓</span> Revisionssicheres Protokoll für Prüfer und Berufsgenossenschaft</li>
-  <li><span aria-hidden="true">✓</span> Betriebsanweisungen in einer Minute druckfertig erstellen</li>
+<!DOCTYPE html><html lang="de"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/84231c2906f2a042.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-c81f7fd28659d64f.js"/><script src="/_next/static/chunks/fd9d1056-ebe2ecc4aa304d7e.js" async=""></script><script src="/_next/static/chunks/117-f15684b7e12ffd66.js" async=""></script><script src="/_next/static/chunks/main-app-a932de9403f7a6df.js" async=""></script><script src="/_next/static/chunks/972-8872c52d935a0562.js" async=""></script><script src="/_next/static/chunks/app/wissen/%5Bslug%5D/page-50254477bbb76e67.js" async=""></script><title>Gefahrstoffverzeichnis Muster Kfz-Werkstatt — Öle, Reiniger, DME | Gefahrstoff-QR</title><meta name="description" content="Gefahrstoffverzeichnis Muster Kfz-Werkstatt: typische Stoffe, DME-Protokoll, TRGS 510 und digitale Alternative zu Excel in der Werkstatt."/><meta name="robots" content="index, follow"/><link rel="canonical" href="https://gefahrstoff-qr.de/wissen/gefahrstoffverzeichnis-muster-kfz-werkstatt/"/><meta property="og:title" content="Gefahrstoffverzeichnis Muster Kfz-Werkstatt — Öle, Reiniger, DME"/><meta property="og:description" content="Gefahrstoffverzeichnis Muster Kfz-Werkstatt: typische Stoffe, DME-Protokoll, TRGS 510 und digitale Alternative zu Excel in der Werkstatt."/><meta property="og:url" content="https://gefahrstoff-qr.de/wissen/gefahrstoffverzeichnis-muster-kfz-werkstatt/"/><meta property="og:site_name" content="Gefahrstoff-QR"/><meta property="og:locale" content="de_DE"/><meta property="og:image" content="https://gefahrstoff-qr.de/og-image.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Gefahrstoffverzeichnis Muster Kfz-Werkstatt — Öle, Reiniger, DME"/><meta property="og:type" content="article"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Gefahrstoffverzeichnis Muster Kfz-Werkstatt — Öle, Reiniger, DME"/><meta name="twitter:description" content="Gefahrstoffverzeichnis Muster Kfz-Werkstatt: typische Stoffe, DME-Protokoll, TRGS 510 und digitale Alternative zu Excel in der Werkstatt."/><meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png"/><link rel="shortcut icon" href="/favicon.ico"/><link rel="icon" href="/favicon.ico" sizes="48x48"/><link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48"/><link rel="icon" href="/favicon-192x192.png" type="image/png" sizes="192x192"/><link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" type="image/png"/><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="flex min-h-screen flex-col"><header class="sticky top-0 z-[100] border-b border-white/[0.07] bg-gqr-bg/90 backdrop-blur-md"><div class="mx-auto flex max-w-[1160px] items-center gap-6 px-4 py-3.5 sm:px-6 lg:px-10"><a class="shrink-0 text-lg font-black text-gqr-text no-underline" href="/">Gefahrstoff-QR</a><nav class="ml-auto hidden items-center gap-1 lg:flex" aria-label="Hauptnavigation"><a class="rounded-lg px-3 py-2 text-sm font-semibold text-gqr-muted no-underline transition hover:bg-white/[0.05] hover:text-gqr-text" href="/#produkt">Produkt</a><a class="rounded-lg px-3 py-2 text-sm font-semibold text-gqr-muted no-underline transition hover:bg-white/[0.05] hover:text-gqr-text" href="/#funktionen">Funktionen</a><a class="rounded-lg px-3 py-2 text-sm font-semibold text-gqr-muted no-underline transition hover:bg-white/[0.05] hover:text-gqr-text" href="/#preise">Preise</a><a class="rounded-lg px-3 py-2 text-sm font-semibold text-gqr-muted no-underline transition hover:bg-white/[0.05] hover:text-gqr-text" href="/#faq">FAQ</a><a class="rounded-lg px-3 py-2 text-sm font-semibold text-gqr-muted no-underline transition hover:bg-white/[0.05] hover:text-gqr-text" href="/wissen/">Wissen</a><a class="rounded-lg px-3 py-2 text-sm font-semibold text-gqr-muted no-underline transition hover:bg-white/[0.05] hover:text-gqr-text" href="https://app.gefahrstoff-qr.de/login">Login</a><a class="gqr-cta-primary gqr-cta-primary--compact ml-2 no-underline" href="https://app.gefahrstoff-qr.de/register">Jetzt kostenlos registrieren</a></nav><details class="relative ml-auto lg:hidden"><summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-lg border border-white/[0.12] text-gqr-text marker:content-none">☰</summary><div class="absolute right-0 top-full z-[99] mt-2 min-w-[16rem] rounded-xl border border-white/[0.08] bg-gqr-surface p-3 shadow-gqr"><nav class="flex flex-col gap-1" aria-label="Mobilnavigation"><a class="rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]" href="/#produkt">Produkt</a><a class="rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]" href="/#funktionen">Funktionen</a><a class="rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]" href="/#preise">Preise</a><a class="rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]" href="/#faq">FAQ</a><a class="rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]" href="/wissen/">Wissen</a><a class="rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]" href="https://app.gefahrstoff-qr.de/login">Login</a><a class="gqr-cta-primary gqr-cta-primary--md mt-2 w-full justify-center no-underline" href="https://app.gefahrstoff-qr.de/register">Jetzt kostenlos registrieren</a></nav></div></details></div></header><div class="flex-1"><main class="pb-20 lg:pb-0"><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Welche Stoffe sind in Werkstätten Pflicht im Verzeichnis?","acceptedAnswer":{"@type":"Answer","text":"Motor- und Getriebeöle, Bremsenreiniger, Frostschutz, Lackierstoffe, Altöle, Dichtmassen, Reiniger und die emissionsbezogene Dokumentation (wie DME oder Schweißrauche) — kurz gesagt alles, was laut CLP-Verordnung als Gefahrstoff eingestuft ist oder bei der Arbeit als gefährlicher Stoff entsteht."}},{"@type":"Question","name":"Brauche ich ein separates DME-Protokoll?","acceptedAnswer":{"@type":"Answer","text":"DME-Anforderungen (TRGS 554) ergänzen das Gefahrstoffmanagement. Eine Trennung in separate Aktenordner ist fehleranfällig. Ein digitales System wie GQR kann das Gefahrstoffverzeichnis und emissionsbezogene Nachweise (inklusive der Betriebsanweisungen für Absauganlagen) parallel und konsistent in einer Datenbank führen."}},{"@type":"Question","name":"Hilft GQR bei TRGS 510 in der Werkstatt?","acceptedAnswer":{"@type":"Answer","text":"Ja. Das manuelle Suchen in Zusammenlagerungsmatrizen ist aufwendig. GQR erfasst die Lagerklassen direkt aus den hochgeladenen SDBs und unterstützt die Zusammenlagerungslogik aktiv. Das bedeutet weniger Matrix-Suchen bei der Lagerplanung von Ölen, brennbaren Gasen und entzündlichen Bremsenreinigern."}},{"@type":"Question","name":"Kann ich in GQR auch Produkte mit schnellem Wechsel (z. B. verschiedene Lackfarben) effizient pflegen?","acceptedAnswer":{"@type":"Answer","text":"Softwarelösungen sind für Produktwechsel ausgelegt. Wird ein Produkt ausgemustert, wird es mit einem Klick rechtssicher archiviert (nicht gelöscht). Das neue Produkt wird per SDB-Upload in Sekunden als Ersatz angelegt, wobei die Historie für eventuelle spätere Nachfragen intakt bleibt."}}]}</script><div class="gqr-container"><div class="gqr-post-wrapper"><article class="gqr-post-article"><a class="gqr-post-back" href="/wissen/">← Zurück zu Wissen</a><span class="gqr-post-tag">Kfz-Werkstatt</span><h1 class="gqr-post-headline">Gefahrstoffverzeichnis Muster Kfz-Werkstatt — Öle, Reiniger, DME</h1><div class="gqr-post-meta"><span>Fachleitfaden</span><span aria-hidden="true">·</span><span>Deepinfo</span></div><div id="deepinfo-content" class="gqr-post-content"><p class="gqr-post-lead">Kfz-Werkstätten managen Dutzende Stoffe und schnelle Produktwechsel — ein statisches Excel-Muster reicht selten für Inspektion und DME-Nachweise.</p><p><strong>Typisches Problem:</strong> <!-- -->Bremsenreiniger, Öle und DME-Dokumentation liegen in verschiedenen Ordnern — das Verzeichnis hinkt hinterher.</p><h2>Der Ultimate Guide: Gefahrstoffmanagement in der Kfz-Werkstatt</h2>
+<p>Kfz-Werkstätten sind im Arbeitsalltag echte <strong>Gefahrstoff-Hotspots</strong>. Ob lösende Bremsenreiniger aus der Spraydose, hunderte Liter an Motorölen, aggressive Bremsflüssigkeiten, Frostschutzmittel oder Lackierstoffe – kaum ein Handwerksbetrieb hantiert mit einer vergleichbaren Dichte an entzündbaren, umweltgefährdenden oder gesundheitsschädlichen Chemikalien.</p>
+<p>Wenn die Berufsgenossenschaft (z. B. BGHM) oder die Gewerbeaufsicht zur Kontrolle auf den Hof fährt, ist das Gefahrstoffverzeichnis nach § 6 der Gefahrstoffverordnung (GefStoffV) das erste Dokument, das auf dem Tisch liegen muss. Ein statisches <strong>Gefahrstoffverzeichnis Muster Kfz-Werkstatt</strong> aus dem Internet herunterzuladen und in Excel mit einigen Standardwerten zu füllen, ist eine weit verbreitete Praxis. Doch diese Praxis hält der betrieblichen Realität und modernen Audits nicht mehr stand.</p>
+<p>Dieser Deep Info Beitrag beleuchtet schonungslos die Fakten: Warum Tabellenkalkulationen in der Werkstatt scheitern, wie Dieselmotoremissionen (DME) rechtssicher dokumentiert werden müssen, welche Herausforderungen die TRGS 510 bei der Zusammenlagerung im Öllager mit sich bringt und warum der Wechsel auf eine Software wie GQR nicht nur ein administrativer, sondern ein operativer und haftungsrelevanter Pflichtschritt ist.</p>
+<h2>Die Illusion des kostenlosen Excel-Musters</h2>
+<p>Viele Werkstattinhaber und Serviceleiter suchen online nach einem Muster für die Kfz-Werkstatt, um Kosten zu sparen. Die rationale Wahrheit ist: Ein Gefahrstoffverzeichnis ist kein Formular, das man einmalig ausfüllt und dann abheftet. Es ist ein dynamisches Steuerungsinstrument.</p>
+<p>Ein statisches Excel-Muster hat systembedingte Nachteile, die im Werkstattalltag schnell zu Haftungsfallen werden:</p>
+<ul>
+<li><strong>Fehlende Revisionssicherheit:</strong> Wenn der Lieferant die Rezeptur des Bremsenreinigers ändert, wird in der Regel die alte Excel-Zeile überschrieben. Kommt es zu einem Hautekzem bei einem Mechatroniker, kann die Werkstatt nicht mehr beweisen, auf welchem Informationsstand der Mitarbeiter vor zwei Jahren gearbeitet hat.</li>
+<li><strong>Keine Warnfunktion bei veralteten SDBs:</strong> Sicherheitsdatenblätter (SDB) veralten. Ein Excel-Muster schlägt keinen Alarm, wenn ein Datenblatt seit fünf Jahren nicht erneuert wurde.</li>
+<li><strong>Entkopplung von der Realität:</strong> In der Tabelle steht der Stoff, doch das dazugehörige, 20-seitige Sicherheitsdatenblatt liegt ausgedruckt in einem Leitz-Ordner im Meisterbüro. Ein Mechaniker unter der Hebebühne hat im Falle einer Augenverätzung durch Bremsflüssigkeit keinen sofortigen Zugriff auf die Erste-Hilfe-Maßnahmen.</li>
+<li><strong>Blinder Fleck für Entstehungsstoffe:</strong> Standard-Muster listen nur gekaufte Produkte auf (Fassware, Dosen). Gefahrstoffe, die bei der Arbeit erst entstehen – wie Schweißrauche oder <strong>Dieselmotoremissionen (DME)</strong> – fehlen in diesen Tabellen meist komplett, obwohl sie die höchsten Gesundheitsrisiken bergen.</li>
 </ul>
-        </div>
-
-        <aside class="roi-card" aria-label="ROI-Rechner: Zeitersparnis berechnen">
-          <h2 class="roi-card__title">ROI-Rechner: Die Realität der manuellen Pflege</h2>
-          <p class="roi-card__subtitle">Wie viel Arbeitszeit verbrennen Sie mit Copy &amp; Paste?</p>
-
-          <div class="roi-slider-wrap">
-            <div class="roi-slider-header">
-              <label for="substanceSlider" class="roi-slider-label">Gefahrstoffe in der Werkstatt</label>
-              <span class="roi-slider-value" id="substanceValue" aria-live="polite">20</span>
-            </div>
-            <input
-              type="range"
-              id="substanceSlider"
-              class="roi-slider"
-              min="5"
-              max="100"
-              value="20"
-              aria-label="Anzahl der Gefahrstoffe auswählen"
-            />
-            <div class="roi-slider-ticks">
-              <span>5</span>
-              <span>100</span>
-            </div>
-          </div>
-
-          <div class="roi-metrics">
-            <div class="roi-metric roi-metric--bad">
-              <div class="roi-metric__label">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                Aufwand Excel / Papier
-              </div>
-              <p class="roi-metric__value">
-                <span id="traditionalHours">6.7</span><span class="roi-metric__unit">h</span>
-              </p>
-            </div>
-
-            <div class="roi-metric roi-metric--good">
-              <div class="roi-metric__label">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Aufwand mit Gefahrstoff-QR
-              </div>
-              <p class="roi-metric__value">
-                <span id="digitalMinutes">60</span><span class="roi-metric__unit">min</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="roi-savings">
-            <div class="roi-savings__label">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              Ihre gesparte Zeit
-            </div>
-            <p class="roi-savings__value">
-              <span id="savedHours">5.7</span><span class="roi-savings__unit">h</span>
-            </p>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="sds-entry-section" aria-labelledby="entryHeadline">
-      <div class="container">
-        <div class="sds-section-heading">
-<div class=" w-full">
-  <h2 id="entryHeadline" class="text-2xl font-bold text-gray-900">
-    Das macht GQR zur besten Gefahrstoff Software für die Werkstatt:
-  </h2>
-</div>        </div>
-        <div class="sds-entry-grid">
-          <article class="sds-entry-card">
-            <span>Werkstattstoffe in 30s digitalisieren
-            </span>
-            <strong class="sds-entry-card__title">SDB werden automatisch ausgelesen.</strong>
-            <p>Schluss mit abtippen: PDF von Bremsenreiniger oder Lack hochladen, Scan starten, fertig! Strukturierte Compliance-Datenbank ohne manuelle Eingabe.</p>
-            <a href="#produkt">Anwendungsfall ansehen →</a>
-          </article>
-            <article class="sds-entry-card">
-            <span>Notfall-Scan: Infos in der Halle parat</span>
-            <strong class="sds-entry-card__title">QR-Zugriff direkt am Schrank</strong>
-            <p>Für Arbeitsbereiche, in denen Mechaniker bei Augenkontakt sofortige Erste-Hilfe-Infos auf dem Smartphone brauchen, statt Ordner im Büro zu suchen.</p>
-            <a href="#notfall-scan">Anwendungsfall ansehen →</a>
-          </article>
-          <article class="sds-entry-card">
-            <span>TRGS510 Checker</span>
-            <strong class="sds-entry-card__title">Automatische Prüfung der Zusammenlagerung</strong>
-            <p>Überprüfen Sie automatisch, ob Öle, Gase und Reiniger korrekt im Werkstattschrank gelagert werden dürfen.</p>
-            <a href="#funktionen">Anwendungsfall ansehen →</a>
-          </article>
-           <article class="sds-entry-card">
-            <span>Betriebsanweisungen auf Knopfdruck</span>
-            <strong class="sds-entry-card__title">Kein Word-Chaos mehr</strong>
-            <p>Automatisches Erstellen von Betriebsanweisungen basierend auf den aktuellen SDBs innerhalb von einer Minute. Fertig zum Aushängen.</p>
-            <a href="#funktionen">Anwendungsfall ansehen →</a>
-            </article>
-
-             <article class="sds-entry-card">
-            <span>Filialen & Abteilungen verwalten</span>
-            <strong class="sds-entry-card__title">Zentrale Verwaltung für Handwerk & Kfz</strong>
-            <p>Legen Sie Lackiererei, Karosseriebau und Service getrennt an und überwachen Sie die Stoffe pro Bereich.</p>
-            <a href="#funktionen">Anwendungsfall ansehen →</a>
-          </article>
-
-             <article class="sds-entry-card">
-            <span>Immer auf dem neusten Stand</span>
-            <strong class="sds-entry-card__title">Automatische SDB Aktualisierungen</strong>
-            <p>Das System warnt bei veralteten Datenblättern, damit Sie bei der nächsten BG-Begehung sicher aufgestellt sind.</p>
-            <a href="#funktionen">Anwendungsfall ansehen →</a>
-          </article>
-        
-        </div>
-      </div>
-    </section>
-
-    <section id="funktionen" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="funktionenHeadline">
-      <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
-        <div class="sds-section-heading">
-          <h2 id="funktionenHeadline">Gefahrstoff App &amp; Kataster: Werkstatt-Compliance auf Autopilot</h2>
-          <p>
-            Aus verstaubten Leitz-Ordnern wird ein digitaler Prozess, der Sie bei Audits und im Werkstatt-Alltag absichert.
-          </p>
-        </div>
-
-        <div class="zigzag-rows">
-          <article id="produkt" class="zigzag-row scroll-mt-28">
-            <div class="zigzag-row__media">
-              <div class="zigzag-frame">
-                <div class="zigzag-frame__stage">
-                <img
-                  class="zigzag-frame__img zigzag-frame__img--landscape"
-                  src="/images/app-screenshot-dashboard.png"
-                  width="2940"
-                  height="1656"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Gefahrstoffverzeichnis in Gefahrstoff-QR: KPI-Karten, Filter und Tabelle"
-                  title="Gefahrstoffverzeichnis-Dashboard"
-                />
-                </div>
-              </div>
-            </div>
-            <div class="zigzag-row__content">
-              <p class="zigzag-row__eyebrow">Gefahrstoffverzeichnis</p>
-              <h3 class="zigzag-row__title">Gefahrstoffverzeichnis: Beweislast umkehren bei Kontrollen</h3>
-              <p class="zigzag-row__lead">
-                Kein Tabellen-Wirrwarr mehr. Ein digitales Verzeichnis nach &sect;&nbsp;6 GefStoffV, das KMR-Hinweise und Gefahrenklassen für alle Werkstattstoffe exportierbar macht.
-              </p>
-              <ul class="zigzag-checklist" role="list">
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Durchsuchbares Kataster statt Excel-Fragmente</li>
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>KMR- und Substitutions-Prüfhinweise auf einen Blick</li>
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>One-Click-Export für die Aufsichtsbehörde</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="zigzag-row zigzag-row--reverse">
-            <div class="zigzag-row__media">
-              <div class="zigzag-frame">
-                <div class="zigzag-frame__stage">
-                <img
-                  class="zigzag-frame__img zigzag-frame__img--landscape"
-                  src="/images/aktivitätsprotokoll.jpeg"
-                  width="1180"
-                  height="665"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Aktivitäten-Protokoll in Gefahrstoff-QR"
-                  title="Revisionssicheres Aktivitäten-Protokoll mit SDB-Änderungen"
-                />
-                </div>
-              </div>
-            </div>
-            <div class="zigzag-row__content">
-              <p class="zigzag-row__eyebrow">Nachvollziehbarkeit</p>
-              <h3 class="zigzag-row__title">Revisionssicherheit auf Knopfdruck</h3>
-              <p class="zigzag-row__lead">
-                Jede Änderung wird geloggt. Zeitstempel, Zuständigkeiten und Dokumentenhistorie sind lückenlos dokumentiert – die essenzielle Basis für jedes BG-Audit in der Werkstatt.
-              </p>
-              <ul class="zigzag-checklist" role="list">
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Lückenlose Zeitachse aller Erstellungen und Freigaben</li>
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Exakte Nachvollziehbarkeit von SDB-Datei-Änderungen</li>
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Klare Verantwortlichkeiten statt „Wer hat das Excel geändert?“</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="zigzag-row">
-            <div class="zigzag-row__media">
-              <div class="zigzag-frame">
-                <div class="zigzag-frame__stage">
-                <picture>
-                  <source srcset="/images/app-gefahrstoff-detail-mobile.webp" type="image/webp" />
-                  <img
-                    class="zigzag-frame__img"
-                    src="/images/app-gefahrstoff-detail-mobile.jpg"
-                    width="390"
-                    height="844"
-                    loading="lazy"
-                    decoding="async"
-                    alt="Mobile Ansicht: GHS-Piktogramme und Notruf-Buttons"
-                    title="Gefahrstoff App: mobile Detailansicht"
-                  />
-                </picture>
-                </div>
-              </div>
-            </div>
-            <div class="zigzag-row__content">
-              <p class="zigzag-row__eyebrow">Vor Ort in der Halle</p>
-              <h3 class="zigzag-row__title">Gefahrstoff App für Sicherheit am Regal</h3>
-              <p class="zigzag-row__lead">
-                Ihre Mitarbeiter scannen den QR-Code am Fass oder Gebinde und haben sofort alle relevanten Kennzeichnungen, Handlungshilfen und Notfallmaßnahmen auf dem Smartphone.
-              </p>
-              <ul class="zigzag-checklist" role="list">
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>QR-gestützte Notfall- und Infoscreens direkt am Lagerort</li>
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Betriebsanweisungen digital und greifbar</li>
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Sofortige Handlungssicherheit im Ernstfall</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="zigzag-row zigzag-row--reverse">
-            <div class="zigzag-row__media">
-              <div class="zigzag-frame">
-                <div class="zigzag-frame__stage">
-                <img
-                  class="zigzag-frame__img zigzag-frame__img--landscape"
-                  src="/images/gefahrstoffmanagement-trgs510-check.jpeg"
-                  width="1770"
-                  height="1294"
-                  loading="lazy"
-                  decoding="async"
-                  alt="TRGS 510 Zusammenlagerungskonflikt in Gefahrstoff-QR"
-                  title="Automatische TRGS-510-Prüfung"
-                />
-                </div>
-              </div>
-            </div>
-            <div class="zigzag-row__content">
-              <p class="zigzag-row__eyebrow">TRGS 510</p>
-              <h3 class="zigzag-row__title">Lagerkonflikte erkennen, bevor der Prüfer kommt</h3>
-              <p class="zigzag-row__lead">
-                Zusammenlagerungsverbote nach TRGS&nbsp;510 werden im Kataster sichtbar – mit klarer Warnung bei Separatlagerung im Werkstattschrank statt manueller Matrixsuche.
-              </p>
-              <ul class="zigzag-checklist" role="list">
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Lagerklassen aus dem SDB automatisch hinterlegt</li>
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Konflikte pro Schrank/Raum mit Regeltext</li>
-                <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Weniger Risiko bei Feuerwehr- und Umweltbegehungen</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-
-        <p class="mx-auto mb-10 max-w-2xl text-center text-xl font-black text-[#f0f6ff] sm:text-2xl mt-16">In 3 Schritten zum digitalen Gefahrstoffverzeichnis</p>
-
-        <ol class="relative mb-20 mt-0 grid gap-10 border-t border-white/[0.06] pt-16 lg:grid-cols-3 lg:gap-8">
-          <li class="relative flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6 pt-10 lg:pt-12">
-            <span class="absolute -top-4 left-6 flex h-9 w-9 items-center justify-center rounded-full bg-teal-400 text-sm font-black text-[#fffff]">1</span>
-            <p class="text-lg font-bold text-[#f0f6ff]">SDB hochladen</p>
-            <p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Ziehen Sie das PDF in die App. Ein Vorgang, keine manuelle Doppelpflege.</p>
-          </li>
-          <li class="relative flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6 pt-10 lg:pt-12">
-            <span class="absolute -top-4 left-6 flex h-9 w-9 items-center justify-center rounded-full bg-teal-400 text-sm font-black text-[#fffff]">2</span>
-            <p class="text-lg font-bold text-[#f0f6ff]">KI-Analyse</p>
-            <p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Unser Modell extrahiert GHS-Piktogramme, H-/P-Sätze und Schutzmaßnahmen in Sekunden.</p>
-          </li>
-          <li class="relative flex flex-col rounded-2xl border border-teal-400/30 bg-teal-400/[0.06] p-6 pt-10 ring-1 ring-teal-400/20 lg:pt-12">
-            <span class="absolute -top-4 left-6 flex h-9 w-9 items-center justify-center rounded-full bg-teal-400 text-sm font-black text-[#fffff]">3</span>
-            <p class="text-lg font-bold text-[#f0f6ff]">Fertig!</p>
-            <p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Sie erhalten ein revisionssicheres Verzeichnis inklusive QR-Notfallpass für die Werkstatt.</p>
-          </li>
-        </ol>
-
-      </div>
-    </section>
-
-    <section id="videos" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="youtubeHeadline">
-      <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
-
-        <div class="mx-auto mb-12 max-w-2xl text-center">
-          <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Video-Demos</p>
-          <h2 id="youtubeHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Gefahrstoff-QR in Aktion</h2>
-          <p class="mt-4 text-base text-[#8fa4c0]">
-            Sehen Sie den Workflow live: Gefahrstoffverzeichnis per KI-SDB-Import und Betriebsanweisung in Minuten — ohne Abtipp-Marathon.
-          </p>
-        </div>
-
-        <div class="grid gap-8 sm:grid-cols-2">
-          <article class="flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 shadow-lg transition-all hover:border-white/[0.15] hover:bg-[#0f1e35]/70">
-            <div
-              class="yt-facade group relative w
+<h2>Das Inventar: Typische Gefahrstoffe im Werkstattalltag</h2>
+<p>Ein rechtssicheres Kataster muss alle Gefahrstoffe umfassen. In einer durchschnittlichen Kfz-Werkstatt oder einem Karosseriebaubetrieb sammeln sich schnell über 50 bis 100 verschiedene Produkte an.</p>
+<h3>1. Aerosole und Reinigungsmittel</h3>
+<p>Der klassische Bremsenreiniger ist in der Werkstatt allgegenwärtig. Er ist hochgradig entzündbar (H222, H229) und kann Schläfrigkeit oder Benommenheit verursachen (H336). Hinzu kommen Drosselklappenreiniger, Polsterreiniger und Teilereiniger für Waschtische. Bei Aerosolen besteht zudem die Gefahr der explosionsfähigen Atmosphäre, selbst wenn nur kleine Mengen freigesetzt werden.</p>
+<h3>2. Schmierstoffe und Betriebsflüssigkeiten</h3>
+<p>Motoröle, Getriebeöle und Hydraulikflüssigkeiten sind oft in großen Fässern (z. B. 208 Liter) oder IBC-Containern gelagert. Während frische Öle gesundheitlich oft als weniger kritisch eingestuft sind, bergen sie ein massives Risiko für die Umwelt (Wassergefährdungsklassen, AwSV). Kühlerfrostschutz (meist auf Basis von Ethylenglykol) ist gesundheitsschädlich beim Verschlucken, und Bremsflüssigkeit (Polyglykolether) wirkt stark augenreizend.</p>
+<h3>3. Klebstoffe, Dichtmassen und Lacke</h3>
+<p>Beim Scheibentausch kommen Polyurethan-Klebstoffe zum Einsatz, die Isocyanate enthalten können (Sensibilisierung der Atemwege, potenziell krebserzeugend). Im Karosseriebereich summieren sich Spachtelmassen, Grundierungen, Härter und Klarlacke. Hier ist die Substitution (Prüfung auf weniger gefährliche Ersatzstoffe nach TRGS 600) eine ständige gesetzliche Pflicht.</p>
+<h3>4. Gase und Batterien</h3>
+<p>Schweißgase (Argon, CO₂) und Brenngase (Acetylen) sind Standard. Starterbatterien enthalten verdünnte Schwefelsäure, die ätzend wirkt, sowie Blei. Beim Laden von Batterien kann sich zudem hochexplosives Knallgas bilden.</p>
+<h3>5. Altöl und Abfälle</h3>
+<p>Das Gefahrstoffrecht endet nicht bei der Nutzung. Altöl ist ein gefährliches Gemisch, das durch Verbrennungsrückstände, Schwermetalle und unverbrannten Kraftstoff verunreinigt ist. Es muss im Gefahrstoffverzeichnis und in den Betriebsanweisungen bezüglich der korrekten Entsorgungswege (Altölsammeltank, strikte Trennung von anderen Lösemitteln) zwingend aufgeführt werden.</p>
+<h2>Der unsichtbare Gefahrstoff: Dieselmotoremissionen (DME)</h2>
+<p>Ein Thema, an dem einfache Tabellen-Muster regelmäßig scheitern, sind Dieselmotoremissionen. Nach der <strong>TRGS 554 (Abgase von Dieselmotoren)</strong> gelten DME als krebserzeugend.</p>
+<p>Wenn in einer Kfz-Werkstatt ein Dieselmotor für Einstellarbeiten, Abgasuntersuchungen (AU) oder zur Fehlersuche in der Halle laufen muss, entstehen diese Emissionen. Sie müssen zwingend in die Gefährdungsbeurteilung und das Gefahrstoffmanagement einfließen.</p>
+<ul>
+<li><strong>Die Maßnahmen:</strong> Die TRGS 554 fordert primär technische Schutzmaßnahmen, konkret die Verwendung von Abgasabsauganlagen, die direkt am Auspuff angeschlossen werden (Aufsteck-Erfassungselemente), bevor der Motor gestartet wird.</li>
+<li><strong>Das DME-Protokoll:</strong> Die Werkstatt muss dokumentieren, bei welchen Tätigkeiten DME entstehen, welche Absaugsysteme genutzt werden und wie diese gewartet werden.</li>
+<li><strong>Integration ins Verzeichnis:</strong> Ein isoliertes DME-Protokoll in einem separaten Ordner führt zu Dokumentationsbrüchen. Eine professionelle Software ermöglicht es, DME als entstehenden Gefahrstoff im Kataster anzulegen, die dazugehörige Betriebsanweisung für die Nutzung der Absauganlage zu generieren und die Unterweisung der Mechatroniker an diesem System rechtssicher abzulegen.</li>
+</ul>
+<h2>Das Lager-Chaos: TRGS 510 in der Praxis</h2>
+<p>Eine der größten Herausforderungen in der Werkstatt ist das Öllager beziehungsweise der Gefahrstoffschrank. Hier greift die <strong>TRGS 510 (Lagerung von Gefahrstoffen in ortsbeweglichen Behältern)</strong>.</p>
+<p>Die Zusammenlagerung von Gefahrstoffen ist streng reglementiert, um gefährliche Reaktionen im Falle einer Leckage oder eines Brandes zu vermeiden. In der Praxis führt dies ohne digitale Unterstützung oft zu chaotischen Zuständen:</p>
+<ul>
+<li>Dürfen die Kartons mit Bremsenreiniger-Aerosolen (Lagerklasse 2B) direkt neben dem 208-Liter-Fass Motoröl (Lagerklasse 10) gelagert werden?</li>
+<li>Wo steht die Kiste mit den alten Starterbatterien (Lagerklasse 8, ätzend)?</li>
+<li>Was passiert mit hochentzündlichen Lackverdünnern (Lagerklasse 3)?</li>
+</ul>
+<p>Ein manuelles Excel-Muster zwingt den Verantwortlichen dazu, für jedes neue Produkt die Zusammenlagerungsmatrix der TRGS 510 händisch abzugleichen. Bei schnellen Produktwechseln im Werkstattalltag unterbleibt diese Prüfung fast immer. Das Resultat bei Begehungen durch die Feuerwehr oder die Gewerbeaufsicht sind Mängelberichte und Nachbesserungsauflagen, da unzulässige Lagerungen ein massives Brand- und Umweltrisiko darstellen.</p>
+<h2>Excel vs. GQR: Der Systemvergleich für die Werkstatt</h2>
+<p>Um die Notwendigkeit der Digitalisierung im Werkstattbetrieb aufzuzeigen, hilft ein rationaler Vergleich zwischen dem manuellen Tabellen-Ansatz und einer spezialisierten Software. Am Ende dieses Beitrags fassen wir die Unterschiede in einer Übersicht zusammen.</p>
+<h2>Die Systemlösung: GQR als digitaler Werkstattmeister</h2>
+<p>Die Pflege von Excel-Listen ist für eine Werkstatt tote Zeit, die dem produktiven Kundenauftrag verloren geht. GQR (Gefahrstoff-QR) positioniert sich als das digitale Werkzeug, das den Administrationsaufwand minimiert und die Rechtssicherheit für den Betreiber maximiert.</p>
+<h3>1. Intelligenter Import statt Abtippen</h3>
+<p>Hersteller von Werkstatt-Chemie (wie Würth, Liqui Moly, Fuchs oder Berner) aktualisieren ihre Sicherheitsdatenblätter regelmäßig. Mit GQR zieht der Verantwortliche das neue SDB-PDF per Drag &amp; Drop in das System. Die integrierte KI-Logik (Azure Intelligence) liest die komplexen Tabellenstrukturen aus, extrahiert die GHS-Piktogramme, die H- und P-Sätze sowie die relevanten Schutzmaßnahmen und befüllt das digitale Kataster. Die manuelle Fehlerquelle Tippfehler wird eliminiert.</p>
+<h3>2. Betriebsanweisungen (BA) mit Praxisbezug</h3>
+<p>Gemäß TRGS 555 muss die Werkstatt für Tätigkeiten mit Gefahrstoffen Betriebsanweisungen in verständlicher Form am Arbeitsplatz aushängen. GQR löst das Problem des weißen Blattes. Das System nutzt die extrahierten SDB-Daten, um eine BA zu generieren.</p>
+<p>Da Automatisierung bei der Sicherheit ihre Grenzen hat, erfordert GQR eine menschliche Validierung: Das System fordert den Meister oder die SiFa auf, konkrete Werkstatt-Spezifika zu ergänzen (Welcher Schutzhandschuh genau? Wo steht die Augenspülflasche? Wie wird das Altöl an diesem Standort gesammelt?). Das Ergebnis ist eine hochprofessionelle, rechtssichere PDF-Betriebsanweisung ohne Formatierungs-Chaos.</p>
+<h3>3. Sicherheit am Ort des Geschehens: Der QR-Code</h3>
+<p>In der Werkstatt zählen Sekunden, wenn Bremsflüssigkeit ins Auge spritzt oder ein Lappen mit Verdünner Feuer fängt. GQR ermöglicht es, für jeden Gefahrstoff oder für ganze Arbeitsbereiche (z. B. Lackierkabine oder Öllager) einen QR-Code zu generieren. Dieser wird vor Ort aufgeklebt. Ein schneller Scan mit dem Smartphone des Mitarbeiters öffnet den digitalen Notfallpass – ohne Login, ohne App-Installation. Sofort stehen die Erste-Hilfe-Maßnahmen, die Feuerlösch-Richtlinien und die Betriebsanweisung zur Verfügung.</p>
+<h3>4. Automatisierte TRGS 510 Konformität</h3>
+<p>Durch die Strukturierung der Daten weiß GQR, in welche Lagerklasse ein Produkt fällt. Wird dem System mitgeteilt, dass Bremsenreiniger und bestimmte Säuren in denselben Gefahrstoffschrank gebucht werden, schlägt das System basierend auf der TRGS 510 Matrix Alarm. Dies schützt Inhaber vor empfindlichen Strafen bei unangekündigten Umwelt-Inspektionen.</p>
+<h2>Schritt-für-Schritt: Die Digitalisierung des Werkstatt-Katasters</h2>
+<p>Der Wechsel von einem veralteten Excel-Muster zu einer Software wie GQR scheitert selten an der Technik, sondern an der Sorge vor dem initialen Aufwand. Mit einer klaren Struktur ist der Übergang im Werkstattbetrieb schnell vollzogen:</p>
+<ol>
+<li><strong>Die Inventur (Ausmisten):</strong> Der wichtigste Schritt vor der Digitalisierung. Es wird physisch durch die Regale, Lackierschränke und Waschtische gegangen. Welche Produkte stehen dort? Welche Dosen sind veraltet und können entsorgt werden? Es ergibt keinen Sinn, Karteileichen zu digitalisieren.</li>
+<li><strong>SDB-Sammel-Aktion:</strong> Für alle verbliebenen, aktiven Produkte werden die aktuellen Sicherheitsdatenblätter von den Hersteller-Websites heruntergeladen.</li>
+<li><strong>Der Batch-Upload:</strong> Die PDFs werden in GQR hochgeladen. Das System übernimmt die Extraktion der Daten und baut das Grundgerüst des Gefahrstoffverzeichnisses nach § 6 GefStoffV auf.</li>
+<li><strong>Standort-Zuweisung:</strong> Die Stoffe werden in GQR den realen Bereichen zugeordnet (z. B. Karosserie, Mechanik, Lagerraum, Fahrzeugaufbereitung).</li>
+<li><strong>BA-Validierung und QR-Druck:</strong> Die Betriebsanweisungen werden durch den Meister kontrolliert, um spezifische Pflichtfelder ergänzt und freigegeben. Abschließend werden die QR-Codes ausgedruckt und an den Regalen, Waschtischen oder Absauganlagen angebracht.</li>
+</ol>
+<h2>Bereit für das Audit: Wenn die Berufsgenossenschaft prüft</h2>
+<p>Ein Audit in einer Kfz-Werkstatt konzentriert sich meist auf folgende Punkte: Arbeitsschutz an der Hebebühne, Hautschutz bei der Arbeit mit Ölen und Reinigern, Absaugung von Dieselmotoremissionen und das Gefahrstoffverzeichnis.</p>
+<p>Wenn ein Betrieb in der Lage ist, dem Prüfer anstelle eines unstrukturierten Excel-Ausdrucks einen Zugang zum digitalen System (oder einen sauberen One-Click-PDF-Export) zu präsentieren, ändert sich die Tonalität der Prüfung sofort. GQR liefert den Beweis für ein gelebtes Managementsystem:</p>
+<ul>
+<li>Die Historie (Audit-Log) beweist, dass das System gepflegt wird.</li>
+<li>Archivierte Stoffe und alte Betriebsanweisungen sind jederzeit abrufbar (wichtig für die Dokumentation von Berufskrankheiten, die erst Jahre später auftreten).</li>
+<li>Die Verknüpfung von SDB, TRGS-Einstufung und tätigkeitsbezogener Betriebsanweisung ist lückenlos.</li>
+</ul>
+<h2>Fazit: Zeitersparnis und Risikominimierung</h2>
+<p>Eine Kfz-Werkstatt ist ein hochtechnischer Betrieb. Während Diagnosegeräte und Hebebühnen stets auf dem neuesten Stand der Technik sind, wird das Gefahrstoffmanagement oft noch wie in den Neunzigerjahren mit Klemmbrett und Tabellen betrieben.</p>
+<p>Der Versuch, mit einem kostenlosen Excel-Muster rechtssicher zu agieren, ist betriebswirtschaftlich und haftungsrechtlich riskant. Die Kosten für die stundenlange manuelle Datenpflege durch einen Meister oder Betriebsleiter übersteigen die Investition in eine moderne Softwarelösung bei Weitem. GQR digitalisiert die lästige Fleißarbeit, bringt Ordnung in das Lager-Chaos und stellt sicher, dass die Sicherheitsinformationen dort sind, wo sie hingehören: Direkt beim Mechaniker in der Werkstatt.</p><section class="gqr-post-section" aria-labelledby="deepinfo-comparison-heading"><p class="gqr-kicker">Vergleich</p><h2 id="deepinfo-comparison-heading" class="gqr-post-section-title">Manuell vs. digital: Was sich im Betrieb ändert</h2><p class="gqr-post-section-sub">Für <!-- -->Kfz-Werkstatt<!-- --> zeigt sich der Unterschied besonders bei Aktualität, Nachweisen und Zeitaufwand.</p><div class="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:overflow-visible sm:px-0"><table class="w-full min-w-[36rem] border-separate border-spacing-0 text-left text-sm"><caption class="sr-only">Vergleich Excel oder Papier mit Gefahrstoff-QR</caption><thead><tr><th scope="col" class="rounded-tl-2xl border border-b-0 border-white/10 bg-gqr-raised px-4 py-3.5 font-bold text-gqr-text sm:px-5">Kriterium</th><th scope="col" class="border border-b-0 border-l-0 border-white/10 bg-gqr-raised px-4 py-3.5 font-bold text-gqr-text sm:px-5">Manuelles Excel-Muster</th><th scope="col" class="rounded-tr-2xl border border-b-0 border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 font-bold text-gqr-text sm:px-5">Software-System (GQR)</th></tr></thead><tbody><tr><th scope="row" class="border border-white/10 bg-gqr-surface/80 px-4 py-3.5 font-semibold text-gqr-soft sm:px-5 ">SDB-Erfassung bei neuen Ölen</th><td class="border border-l-0 border-white/10 bg-gqr-surface/80 px-4 py-3.5 text-gqr-muted sm:px-5">Manuelles Abtippen von H-Sätzen, P-Sätzen und Inhaltsstoffen. Dauer ca. 30 Minuten pro Stoff.</td><td class="border border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 text-gqr-text sm:px-5 ">KI-Extraktion. PDF hochladen, TRGS- und GHS-Daten in Sekunden extrahiert.</td></tr><tr><th scope="row" class="border border-white/10 bg-gqr-surface/80 px-4 py-3.5 font-semibold text-gqr-soft sm:px-5 ">Erstellung Betriebsanweisung</th><td class="border border-l-0 border-white/10 bg-gqr-surface/80 px-4 py-3.5 text-gqr-muted sm:px-5">SDB-Daten per Copy-Paste in ein separates Word-Muster übertragen.</td><td class="border border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 text-gqr-text sm:px-5 ">Semi-automatische BA. GQR bereitet Daten vor, Meister ergänzt werkstattspezifische Details.</td></tr><tr><th scope="row" class="border border-white/10 bg-gqr-surface/80 px-4 py-3.5 font-semibold text-gqr-soft sm:px-5 ">Verfügbarkeit an der Hebebühne</th><td class="border border-l-0 border-white/10 bg-gqr-surface/80 px-4 py-3.5 text-gqr-muted sm:px-5">Ausdrucke verschmutzen, verölen oder fehlen komplett in der Halle.</td><td class="border border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 text-gqr-text sm:px-5 ">QR-Notfallpass. Scan am Arbeitsplatz liefert Erste-Hilfe-Infos und die BA.</td></tr><tr><th scope="row" class="border border-white/10 bg-gqr-surface/80 px-4 py-3.5 font-semibold text-gqr-soft sm:px-5 ">DME und Schweißrauche</th><td class="border border-l-0 border-white/10 bg-gqr-surface/80 px-4 py-3.5 text-gqr-muted sm:px-5">Meist nicht vorgesehen oder in separaten Akten geführt.</td><td class="border border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 text-gqr-text sm:px-5 ">Zentrale Führung als entstehende Stoffe inkl. Maßnahmen-Dokumentation.</td></tr><tr><th scope="row" class="border border-white/10 bg-gqr-surface/80 px-4 py-3.5 font-semibold text-gqr-soft sm:px-5 ">Lagerprüfung (TRGS 510)</th><td class="border border-l-0 border-white/10 bg-gqr-surface/80 px-4 py-3.5 text-gqr-muted sm:px-5">Meister muss die Kreuztabelle der TRGS 510 händisch studieren.</td><td class="border border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 text-gqr-text sm:px-5 ">Automatische Logik. Warnung bei Zusammenlagerungsverboten durch Lagerklassen.</td></tr><tr><th scope="row" class="border border-white/10 bg-gqr-surface/80 px-4 py-3.5 font-semibold text-gqr-soft sm:px-5 rounded-bl-2xl">Revisionssicherheit (Audit)</th><td class="border border-l-0 border-white/10 bg-gqr-surface/80 px-4 py-3.5 text-gqr-muted sm:px-5">Überschriebene Excel-Zeilen haben keine gerichtsfeste Historie.</td><td class="border border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 text-gqr-text sm:px-5 rounded-br-2xl">Audit-Log. Jede SDB-Änderung und Freigabe mit unveränderbarem Zeitstempel.</td></tr></tbody></table></div></section><h2 class="gqr-post-faq-heading">Häufige Fragen</h2><div class="gqr-post-faq-list"><details><summary>Welche Stoffe sind in Werkstätten Pflicht im Verzeichnis?</summary><div class="gqr-post-faq-answer">Motor- und Getriebeöle, Bremsenreiniger, Frostschutz, Lackierstoffe, Altöle, Dichtmassen, Reiniger und die emissionsbezogene Dokumentation (wie DME oder Schweißrauche) — kurz gesagt alles, was laut CLP-Verordnung als Gefahrstoff eingestuft ist oder bei der Arbeit als gefährlicher Stoff entsteht.</div></details><details><summary>Brauche ich ein separates DME-Protokoll?</summary><div class="gqr-post-faq-answer">DME-Anforderungen (TRGS 554) ergänzen das Gefahrstoffmanagement. Eine Trennung in separate Aktenordner ist fehleranfällig. Ein digitales System wie GQR kann das Gefahrstoffverzeichnis und emissionsbezogene Nachweise (inklusive der Betriebsanweisungen für Absauganlagen) parallel und konsistent in einer Datenbank führen.</div></details><details><summary>Hilft GQR bei TRGS 510 in der Werkstatt?</summary><div class="gqr-post-faq-answer">Ja. Das manuelle Suchen in Zusammenlagerungsmatrizen ist aufwendig. GQR erfasst die Lagerklassen direkt aus den hochgeladenen SDBs und unterstützt die Zusammenlagerungslogik aktiv. Das bedeutet weniger Matrix-Suchen bei der Lagerplanung von Ölen, brennbaren Gasen und entzündlichen Bremsenreinigern.</div></details><details><summary>Kann ich in GQR auch Produkte mit schnellem Wechsel (z. B. verschiedene Lackfarben) effizient pflegen?</summary><div class="gqr-post-faq-answer">Softwarelösungen sind für Produktwechsel ausgelegt. Wird ein Produkt ausgemustert, wird es mit einem Klick rechtssicher archiviert (nicht gelöscht). Das neue Produkt wird per SDB-Upload in Sekunden als Ersatz angelegt, wobei die Historie für eventuelle spätere Nachfragen intakt bleibt.</div></details></div></div></article><aside class="gqr-post-sidebar" aria-label="Sidebar"><div class="gqr-sidebar-card gqr-sidebar-card--cta sticky top-24" aria-label="Handlungsaufruf"><h3>Jetzt Gefahrstoff-Prozess digitalisieren</h3><p>Unverbindlich · Keine Kreditkarte · KI-SDB-Import</p><a class="gqr-cta-primary gqr-cta-primary--md mt-2 box-border flex w-full max-w-full no-underline" href="https://app.gefahrstoff-qr.de/register">GQR kostenlos testen</a></div></aside></div></div><div class="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-gqr-surface/95 px-4 py-3 backdrop-blur-md transition-transform duration-300 lg:hidden translate-y-full" aria-label="Mobiler Handlungsaufruf"><div class="mx-auto flex max-w-lg items-center gap-3"><p class="min-w-0 flex-1 text-xs font-semibold leading-snug text-gqr-soft">Jetzt Gefahrstoff-Prozess digitalisieren</p><a class="gqr-cta-primary gqr-cta-primary--compact shrink-0 no-underline" href="https://app.gefahrstoff-qr.de/register">Jetzt starten</a></div></div></main></div><footer class="border-t border-white/[0.07] bg-gqr-bg py-12"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><div class="flex flex-col gap-8 md:flex-row md:flex-wrap md:items-start md:justify-between"><div><p class="text-lg font-black text-gqr-text">Gefahrstoff-QR</p><p class="mt-2 max-w-xs text-sm leading-relaxed text-gqr-muted">Rechtssicheres Gefahrstoffverzeichnis nach § 6 GefStoffV — mit KI aus dem Sicherheitsdatenblatt.</p></div><nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-gqr-muted" aria-label="Footer-Navigation"><a class="no-underline hover:text-gqr-text" href="/gefahrstoffverzeichnis-excel-vorlage/">Excel-Vorlage</a><a class="no-underline hover:text-gqr-text" href="/trgs-510-zusammenlagerungs-check/">TRGS-510-Checker</a><a class="no-underline hover:text-gqr-text" href="/wissen/">Wissen</a><a class="no-underline hover:text-gqr-text" href="/blog/">Blog</a><a class="no-underline hover:text-gqr-text" href="/impressum/">Impressum</a><a class="no-underline hover:text-gqr-text" href="/datenschutz/">Datenschutz</a><a class="no-underline hover:text-gqr-text" href="/agb/">AGB</a></nav></div><p class="mt-10 text-center text-xs text-gqr-muted md:text-left">© <!-- -->2026<!-- --> Gefahrstoff-QR · Alle Rechte vorbehalten.</p></div></footer><script src="/_next/static/chunks/webpack-c81f7fd28659d64f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/css/84231c2906f2a042.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"2:I[2846,[],\"\"]\n5:I[2972,[\"972\",\"static/chunks/972-8872c52d935a0562.js\",\"889\",\"static/chunks/app/wissen/%5Bslug%5D/page-50254477bbb76e67.js\"],\"\"]\n7:I[6482,[\"972\",\"static/chunks/972-8872c52d935a0562.js\",\"889\",\"static/chunks/app/wissen/%5Bslug%5D/page-50254477bbb76e67.js\"],\"DeepinfoStickyCta\"]\n8:I[4707,[],\"\"]\na:I[6423,[],\"\"]\nc:I[1060,[],\"\"]\n4:T729,{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Welche Stoffe sind in Werkstätten Pflicht im Verzeichnis?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Motor- und Getriebeöle, Bremsenreiniger, Frostschutz, Lackierstoffe, Altöle, Dichtmassen, Reiniger und die emissionsbezogene Dokumentation (wie DME oder Schweißrauche) — kurz gesagt alles, was laut CLP-Verordnung als Gefahrstoff eingestuft ist oder bei der Arbeit als gefährlicher Stoff entsteht.\"}},{\"@type\":\"Question\",\"name\":\"Brauche ich ein separates DME-Protokoll?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"DME-Anforderungen (TRGS 554) ergänzen das Gefahrstoffmanagement. Eine Trennung in separate Aktenordner ist fehleranfällig. Ein digitales System wie GQR kann das Gefahrstoffverzeichnis und emissionsbezogene Nachweise (inklusive der Betriebsanweisungen für Absauganlagen) parallel und konsistent in einer Datenbank führen.\"}},{\"@type\":\"Question\",\"name\":\"Hilft GQR bei TRGS 510 in der Werkstatt?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Ja. Das manuelle Suchen in Zusammenlagerungsmatrizen ist aufwendig. GQR erfasst die Lagerklassen direkt aus den hochgeladenen SDBs und unterstützt die Zusammenlagerungslogik aktiv. Das bedeutet weniger Matrix-Suchen bei der Lagerplanung von Ölen, brennbaren Gasen und entzündlichen Bremsenreinigern.\"}},{\"@type\":\"Question\",\"name\":\"Kann ich in GQR auch Produkte mit schnellem Wechsel (z. B. verschiedene Lackfarben) effizient pflegen?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Softwarelösungen sind für Produktwechsel ausgelegt. Wird ein Produkt ausgemustert, wird es mit einem Klick rechtssicher archiviert (nicht gelöscht). Das neue Pr"])</script><script>self.__next_f.push([1,"odukt wird per SDB-Upload in Sekunden als Ersatz angelegt, wobei die Historie für eventuelle spätere Nachfragen intakt bleibt.\"}}]}9:[\"slug\",\"gefahrstoffverzeichnis-muster-kfz-werkstatt\",\"d\"]\nd:[]\n"])</script><script>self.__next_f.push([1,"0:[\"$\",\"$L2\",null,{\"buildId\":\"8pBBLnflWoA0ds6yE45tF\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"wissen\",\"gefahrstoffverzeichnis-muster-kfz-werkstatt\",\"\"],\"initialTree\":[\"\",{\"children\":[\"wissen\",{\"children\":[[\"slug\",\"gefahrstoffverzeichnis-muster-kfz-werkstatt\",\"d\"],{\"children\":[\"__PAGE__?{\\\"slug\\\":\\\"gefahrstoffverzeichnis-muster-kfz-werkstatt\\\"}\",{}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"wissen\",{\"children\":[[\"slug\",\"gefahrstoffverzeichnis-muster-kfz-werkstatt\",\"d\"],{\"children\":[\"__PAGE__\",{},[[\"$L3\",[\"$\",\"main\",null,{\"className\":\"pb-20 lg:pb-0\",\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"$4\"}}],[\"$\",\"div\",null,{\"className\":\"gqr-container\",\"children\":[\"$\",\"div\",null,{\"className\":\"gqr-post-wrapper\",\"children\":[[\"$\",\"article\",null,{\"className\":\"gqr-post-article\",\"children\":[[\"$\",\"$L5\",null,{\"href\":\"/wissen/\",\"className\":\"gqr-post-back\",\"children\":\"← Zurück zu Wissen\"}],[\"$\",\"span\",null,{\"className\":\"gqr-post-tag\",\"children\":\"Kfz-Werkstatt\"}],[\"$\",\"h1\",null,{\"className\":\"gqr-post-headline\",\"children\":\"Gefahrstoffverzeichnis Muster Kfz-Werkstatt — Öle, Reiniger, DME\"}],[\"$\",\"div\",null,{\"className\":\"gqr-post-meta\",\"children\":[[\"$\",\"span\",null,{\"children\":\"Fachleitfaden\"}],[\"$\",\"span\",null,{\"aria-hidden\":true,\"children\":\"·\"}],[\"$\",\"span\",null,{\"children\":\"Deepinfo\"}]]}],[\"$\",\"div\",null,{\"id\":\"deepinfo-content\",\"className\":\"gqr-post-content\",\"children\":[[\"$\",\"p\",null,{\"className\":\"gqr-post-lead\",\"children\":\"Kfz-Werkstätten managen Dutzende Stoffe und schnelle Produktwechsel — ein statisches Excel-Muster reicht selten für Inspektion und DME-Nachweise.\"}],[\"$\",\"p\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Typisches Problem:\"}],\" \",\"Bremsenreiniger, Öle und DME-Dokumentation liegen in verschiedenen Ordnern — das Verzeichnis hinkt hinterher.\"]}],\"$L6\",[\"$\",\"section\",null,{\"className\":\"gqr-post-section\",\"aria-labelledby\":\"deepinfo-comparison-heading\",\"children\":[[\"$\",\"p\",null,{\"className\":\"gqr-kicker\",\"children\":\"Vergleich\"}],[\"$\",\"h2\",null,{\"id\":\"deepinfo-comparison-heading\",\"className\":\"gqr-post-section-title\",\"children\":\"Manuell vs. digital: Was sich im Betrieb ändert\"}],[\"$\",\"p\",null,{\"className\":\"gqr-post-section-sub\",\"children\":[\"Für \",\"Kfz-Werkstatt\",\" zeigt sich der Unterschied besonders bei Aktualität, Nachweisen und Zeitaufwand.\"]}],[\"$\",\"div\",null,{\"className\":\"-mx-4 overflow-x-auto px-4 sm:mx-0 sm:overflow-visible sm:px-0\",\"children\":[\"$\",\"table\",null,{\"className\":\"w-full min-w-[36rem] border-separate border-spacing-0 text-left text-sm\",\"children\":[[\"$\",\"caption\",null,{\"className\":\"sr-only\",\"children\":\"Vergleich Excel oder Papier mit Gefahrstoff-QR\"}],[\"$\",\"thead\",null,{\"children\":[\"$\",\"tr\",null,{\"children\":[[\"$\",\"th\",null,{\"scope\":\"col\",\"className\":\"rounded-tl-2xl border border-b-0 border-white/10 bg-gqr-raised px-4 py-3.5 font-bold text-gqr-text sm:px-5\",\"children\":\"Kriterium\"}],[\"$\",\"th\",null,{\"scope\":\"col\",\"className\":\"border border-b-0 border-l-0 border-white/10 bg-gqr-raised px-4 py-3.5 font-bold text-gqr-text sm:px-5\",\"children\":\"Manuelles Excel-Muster\"}],[\"$\",\"th\",null,{\"scope\":\"col\",\"className\":\"rounded-tr-2xl border border-b-0 border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 font-bold text-gqr-text sm:px-5\",\"children\":\"Software-System (GQR)\"}]]}]}],[\"$\",\"tbody\",null,{\"children\":[[\"$\",\"tr\",\"SDB-Erfassung bei neuen Ölen\",{\"children\":[[\"$\",\"th\",null,{\"scope\":\"row\",\"className\":\"border border-white/10 bg-gqr-surface/80 px-4 py-3.5 font-semibold text-gqr-soft sm:px-5 \",\"children\":\"SDB-Erfassung bei neuen Ölen\"}],[\"$\",\"td\",null,{\"className\":\"border border-l-0 border-white/10 bg-gqr-surface/80 px-4 py-3.5 text-gqr-muted sm:px-5\",\"children\":\"Manuelles Abtippen von H-Sätzen, P-Sätzen und Inhaltsstoffen. Dauer ca. 30 Minuten pro Stoff.\"}],[\"$\",\"td\",null,{\"className\":\"border border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 text-gqr-text sm:px-5 \",\"children\":\"KI-Extraktion. PDF hochladen, TRGS- und GHS-Daten in Sekunden extrahiert.\"}]]}],[\"$\",\"tr\",\"Erstellung Betriebsanweisung\",{\"children\":[[\"$\",\"th\",null,{\"scope\":\"row\",\"className\":\"border border-white/10 bg-gqr-surface/80 px-4 py-3.5 font-semibold text-gqr-soft sm:px-5 \",\"children\":\"Erstellung Betriebsanweisung\"}],[\"$\",\"td\",null,{\"className\":\"border border-l-0 border-white/10 bg-gqr-surface/80 px-4 py-3.5 text-gqr-muted sm:px-5\",\"children\":\"SDB-Daten per Copy-Paste in ein separates Word-Muster übertragen.\"}],[\"$\",\"td\",null,{\"className\":\"border border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 text-gqr-text sm:px-5 \",\"children\":\"Semi-automatische BA. GQR bereitet Daten vor, Meister ergänzt werkstattspezifische Details.\"}]]}],[\"$\",\"tr\",\"Verfügbarkeit an der Hebebühne\",{\"children\":[[\"$\",\"th\",null,{\"scope\":\"row\",\"className\":\"border border-white/10 bg-gqr-surface/80 px-4 py-3.5 font-semibold text-gqr-soft sm:px-5 \",\"children\":\"Verfügbarkeit an der Hebebühne\"}],[\"$\",\"td\",null,{\"className\":\"border border-l-0 border-white/10 bg-gqr-surface/80 px-4 py-3.5 text-gqr-muted sm:px-5\",\"children\":\"Ausdrucke verschmutzen, verölen oder fehlen komplett in der Halle.\"}],[\"$\",\"td\",null,{\"className\":\"border border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 text-gqr-text sm:px-5 \",\"children\":\"QR-Notfallpass. Scan am Arbeitsplatz liefert Erste-Hilfe-Infos und die BA.\"}]]}],[\"$\",\"tr\",\"DME und Schweißrauche\",{\"children\":[[\"$\",\"th\",null,{\"scope\":\"row\",\"className\":\"border border-white/10 bg-gqr-surface/80 px-4 py-3.5 font-semibold text-gqr-soft sm:px-5 \",\"children\":\"DME und Schweißrauche\"}],[\"$\",\"td\",null,{\"className\":\"border border-l-0 border-white/10 bg-gqr-surface/80 px-4 py-3.5 text-gqr-muted sm:px-5\",\"children\":\"Meist nicht vorgesehen oder in separaten Akten geführt.\"}],[\"$\",\"td\",null,{\"className\":\"border border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 text-gqr-text sm:px-5 \",\"children\":\"Zentrale Führung als entstehende Stoffe inkl. Maßnahmen-Dokumentation.\"}]]}],[\"$\",\"tr\",\"Lagerprüfung (TRGS 510)\",{\"children\":[[\"$\",\"th\",null,{\"scope\":\"row\",\"className\":\"border border-white/10 bg-gqr-surface/80 px-4 py-3.5 font-semibold text-gqr-soft sm:px-5 \",\"children\":\"Lagerprüfung (TRGS 510)\"}],[\"$\",\"td\",null,{\"className\":\"border border-l-0 border-white/10 bg-gqr-surface/80 px-4 py-3.5 text-gqr-muted sm:px-5\",\"children\":\"Meister muss die Kreuztabelle der TRGS 510 händisch studieren.\"}],[\"$\",\"td\",null,{\"className\":\"border border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 text-gqr-text sm:px-5 \",\"children\":\"Automatische Logik. Warnung bei Zusammenlagerungsverboten durch Lagerklassen.\"}]]}],[\"$\",\"tr\",\"Revisionssicherheit (Audit)\",{\"children\":[[\"$\",\"th\",null,{\"scope\":\"row\",\"className\":\"border border-white/10 bg-gqr-surface/80 px-4 py-3.5 font-semibold text-gqr-soft sm:px-5 rounded-bl-2xl\",\"children\":\"Revisionssicherheit (Audit)\"}],[\"$\",\"td\",null,{\"className\":\"border border-l-0 border-white/10 bg-gqr-surface/80 px-4 py-3.5 text-gqr-muted sm:px-5\",\"children\":\"Überschriebene Excel-Zeilen haben keine gerichtsfeste Historie.\"}],[\"$\",\"td\",null,{\"className\":\"border border-l-0 border-white/10 bg-gqr-accent/12 px-4 py-3.5 text-gqr-text sm:px-5 rounded-br-2xl\",\"children\":\"Audit-Log. Jede SDB-Änderung und Freigabe mit unveränderbarem Zeitstempel.\"}]]}]]}]]}]}]]}],[[\"$\",\"h2\",null,{\"className\":\"gqr-post-faq-heading\",\"children\":\"Häufige Fragen\"}],[\"$\",\"div\",null,{\"className\":\"gqr-post-faq-list\",\"children\":[[\"$\",\"details\",\"Welche Stoffe sind in Werkstätten Pflicht im Verzeichnis?\",{\"children\":[[\"$\",\"summary\",null,{\"children\":\"Welche Stoffe sind in Werkstätten Pflicht im Verzeichnis?\"}],[\"$\",\"div\",null,{\"className\":\"gqr-post-faq-answer\",\"children\":\"Motor- und Getriebeöle, Bremsenreiniger, Frostschutz, Lackierstoffe, Altöle, Dichtmassen, Reiniger und die emissionsbezogene Dokumentation (wie DME oder Schweißrauche) — kurz gesagt alles, was laut CLP-Verordnung als Gefahrstoff eingestuft ist oder bei der Arbeit als gefährlicher Stoff entsteht.\"}]]}],[\"$\",\"details\",\"Brauche ich ein separates DME-Protokoll?\",{\"children\":[[\"$\",\"summary\",null,{\"children\":\"Brauche ich ein separates DME-Protokoll?\"}],[\"$\",\"div\",null,{\"className\":\"gqr-post-faq-answer\",\"children\":\"DME-Anforderungen (TRGS 554) ergänzen das Gefahrstoffmanagement. Eine Trennung in separate Aktenordner ist fehleranfällig. Ein digitales System wie GQR kann das Gefahrstoffverzeichnis und emissionsbezogene Nachweise (inklusive der Betriebsanweisungen für Absauganlagen) parallel und konsistent in einer Datenbank führen.\"}]]}],[\"$\",\"details\",\"Hilft GQR bei TRGS 510 in der Werkstatt?\",{\"children\":[[\"$\",\"summary\",null,{\"children\":\"Hilft GQR bei TRGS 510 in der Werkstatt?\"}],[\"$\",\"div\",null,{\"className\":\"gqr-post-faq-answer\",\"children\":\"Ja. Das manuelle Suchen in Zusammenlagerungsmatrizen ist aufwendig. GQR erfasst die Lagerklassen direkt aus den hochgeladenen SDBs und unterstützt die Zusammenlagerungslogik aktiv. Das bedeutet weniger Matrix-Suchen bei der Lagerplanung von Ölen, brennbaren Gasen und entzündlichen Bremsenreinigern.\"}]]}],[\"$\",\"details\",\"Kann ich in GQR auch Produkte mit schnellem Wechsel (z. B. verschiedene Lackfarben) effizient pflegen?\",{\"children\":[[\"$\",\"summary\",null,{\"children\":\"Kann ich in GQR auch Produkte mit schnellem Wechsel (z. B. verschiedene Lackfarben) effizient pflegen?\"}],[\"$\",\"div\",null,{\"className\":\"gqr-post-faq-answer\",\"children\":\"Softwarelösungen sind für Produktwechsel ausgelegt. Wird ein Produkt ausgemustert, wird es mit einem Klick rechtssicher archiviert (nicht gelöscht). Das neue Produkt wird per SDB-Upload in Sekunden als Ersatz angelegt, wobei die Historie für eventuelle spätere Nachfragen intakt bleibt.\"}]]}]]}]]]}]]}],[\"$\",\"aside\",null,{\"className\":\"gqr-post-sidebar\",\"aria-label\":\"Sidebar\",\"children\":[\"$\",\"$L7\",null,{\"text\":\"Jetzt Gefahrstoff-Prozess digitalisieren\",\"ctaText\":\"GQR kostenlos testen\",\"variant\":\"sidebar\"}]}]]}]}],[\"$\",\"$L7\",null,{\"text\":\"Jetzt Gefahrstoff-Prozess digitalisieren\",\"ctaText\":\"GQR kostenlos testen\",\"variant\":\"mobile\"}]]}],null],null],null]},[null,[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"wissen\",\"children\",\"$9\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$La\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[null,[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"wissen\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$La\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/84231c2906f2a042.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"de\",\"children\":[\"$\",\"body\",null,{\"className\":\"flex min-h-screen flex-col\",\"children\":[[\"$\",\"header\",null,{\"className\":\"sticky top-0 z-[100] border-b border-white/[0.07] bg-gqr-bg/90 backdrop-blur-md\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex max-w-[1160px] items-center gap-6 px-4 py-3.5 sm:px-6 lg:px-10\",\"children\":[[\"$\",\"$L5\",null,{\"href\":\"/\",\"className\":\"shrink-0 text-lg font-black text-gqr-text no-underline\",\"children\":\"Gefahrstoff-QR\"}],[\"$\",\"nav\",null,{\"className\":\"ml-auto hidden items-center gap-1 lg:flex\",\"aria-label\":\"Hauptnavigation\",\"children\":[[[\"$\",\"$L5\",\"/#produkt\",{\"href\":\"/#produkt\",\"className\":\"rounded-lg px-3 py-2 text-sm font-semibold text-gqr-muted no-underline transition hover:bg-white/[0.05] hover:text-gqr-text\",\"children\":\"Produkt\"}],[\"$\",\"$L5\",\"/#funktionen\",{\"href\":\"/#funktionen\",\"className\":\"rounded-lg px-3 py-2 text-sm font-semibold text-gqr-muted no-underline transition hover:bg-white/[0.05] hover:text-gqr-text\",\"children\":\"Funktionen\"}],[\"$\",\"$L5\",\"/#preise\",{\"href\":\"/#preise\",\"className\":\"rounded-lg px-3 py-2 text-sm font-semibold text-gqr-muted no-underline transition hover:bg-white/[0.05] hover:text-gqr-text\",\"children\":\"Preise\"}],[\"$\",\"$L5\",\"/#faq\",{\"href\":\"/#faq\",\"className\":\"rounded-lg px-3 py-2 text-sm font-semibold text-gqr-muted no-underline transition hover:bg-white/[0.05] hover:text-gqr-text\",\"children\":\"FAQ\"}],[\"$\",\"$L5\",\"/wissen/\",{\"href\":\"/wissen/\",\"className\":\"rounded-lg px-3 py-2 text-sm font-semibold text-gqr-muted no-underline transition hover:bg-white/[0.05] hover:text-gqr-text\",\"children\":\"Wissen\"}]],[\"$\",\"$L5\",null,{\"href\":\"https://app.gefahrstoff-qr.de/login\",\"className\":\"rounded-lg px-3 py-2 text-sm font-semibold text-gqr-muted no-underline transition hover:bg-white/[0.05] hover:text-gqr-text\",\"children\":\"Login\"}],[\"$\",\"$L5\",null,{\"href\":\"https://app.gefahrstoff-qr.de/register\",\"className\":\"gqr-cta-primary gqr-cta-primary--compact ml-2 no-underline\",\"children\":\"Jetzt kostenlos registrieren\"}]]}],[\"$\",\"details\",null,{\"className\":\"relative ml-auto lg:hidden\",\"children\":[[\"$\",\"summary\",null,{\"className\":\"flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-lg border border-white/[0.12] text-gqr-text marker:content-none\",\"children\":\"☰\"}],[\"$\",\"div\",null,{\"className\":\"absolute right-0 top-full z-[99] mt-2 min-w-[16rem] rounded-xl border border-white/[0.08] bg-gqr-surface p-3 shadow-gqr\",\"children\":[\"$\",\"nav\",null,{\"className\":\"flex flex-col gap-1\",\"aria-label\":\"Mobilnavigation\",\"children\":[[[\"$\",\"$L5\",\"/#produkt\",{\"href\":\"/#produkt\",\"className\":\"rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]\",\"children\":\"Produkt\"}],[\"$\",\"$L5\",\"/#funktionen\",{\"href\":\"/#funktionen\",\"className\":\"rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]\",\"children\":\"Funktionen\"}],[\"$\",\"$L5\",\"/#preise\",{\"href\":\"/#preise\",\"className\":\"rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]\",\"children\":\"Preise\"}],[\"$\",\"$L5\",\"/#faq\",{\"href\":\"/#faq\",\"className\":\"rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]\",\"children\":\"FAQ\"}],[\"$\",\"$L5\",\"/wissen/\",{\"href\":\"/wissen/\",\"className\":\"rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]\",\"children\":\"Wissen\"}]],[\"$\",\"$L5\",null,{\"href\":\"https://app.gefahrstoff-qr.de/login\",\"className\":\"rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]\",\"children\":\"Login\"}],[\"$\",\"$L5\",null,{\"href\":\"https://app.gefahrstoff-qr.de/register\",\"className\":\"gqr-cta-primary gqr-cta-primary--md mt-2 w-full justify-center no-underline\",\"children\":\"Jetzt kostenlos registrieren\"}]]}]}]]}]]}]}],[\"$\",\"div\",null,{\"className\":\"flex-1\",\"children\":[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$La\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[\"$\",\"main\",null,{\"className\":\"flex flex-1 flex-col items-center justify-center px-4 py-24 text-center\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-2xl font-bold text-[#f0f6ff] sm:text-3xl\",\"children\":\"Seite nicht gefunden\"}],[\"$\",\"p\",null,{\"className\":\"mt-3 max-w-md text-[#8fa4c0]\",\"children\":\"Diese Branchen-Seite existiert nicht oder wurde verschoben.\"}],[\"$\",\"$L5\",null,{\"href\":\"/\",\"className\":\"mt-8 inline-flex rounded-xl border border-white/20 px-6 py-3 text-sm font-semibold text-[#f0f6ff] no-underline hover:bg-white/[0.06]\",\"children\":\"Zur Startseite\"}]]}],\"notFoundStyles\":[]}]}],[\"$\",\"footer\",null,{\"className\":\"border-t border-white/[0.07] bg-gqr-bg py-12\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-8 md:flex-row md:flex-wrap md:items-start md:justify-between\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"text-lg font-black text-gqr-text\",\"children\":\"Gefahrstoff-QR\"}],[\"$\",\"p\",null,{\"className\":\"mt-2 max-w-xs text-sm leading-relaxed text-gqr-muted\",\"children\":\"Rechtssicheres Gefahrstoffverzeichnis nach § 6 GefStoffV — mit KI aus dem Sicherheitsdatenblatt.\"}]]}],[\"$\",\"nav\",null,{\"className\":\"flex flex-wrap gap-x-5 gap-y-2 text-sm text-gqr-muted\",\"aria-label\":\"Footer-Navigation\",\"children\":[[\"$\",\"$L5\",null,{\"href\":\"/gefahrstoffverzeichnis-excel-vorlage/\",\"className\":\"no-underline hover:text-gqr-text\",\"children\":\"Excel-Vorlage\"}],[\"$\",\"$L5\",null,{\"href\":\"/trgs-510-zusammenlagerungs-check/\",\"className\":\"no-underline hover:text-gqr-text\",\"children\":\"TRGS-510-Checker\"}],[\"$\",\"$L5\",null,{\"href\":\"/wissen/\",\"className\":\"no-underline hover:text-gqr-text\",\"children\":\"Wissen\"}],[\"$\",\"$L5\",null,{\"href\":\"/blog/\",\"className\":\"no-underline hover:text-gqr-text\",\"children\":\"Blog\"}],[\"$\",\"$L5\",null,{\"href\":\"/impressum\",\"className\":\"no-underline hover:text-gqr-text\",\"children\":\"Impressum\"}],[\"$\",\"$L5\",null,{\"href\":\"/datenschutz\",\"className\":\"no-underline hover:text-gqr-text\",\"children\":\"Datenschutz\"}],[\"$\",\"$L5\",null,{\"href\":\"/agb\",\"className\":\"no-underline hover:text-gqr-text\",\"children\":\"AGB\"}]]}]]}],[\"$\",\"p\",null,{\"className\":\"mt-10 text-center text-xs text-gqr-muted md:text-left\",\"children\":[\"© \",2026,\" Gefahrstoff-QR · Alle Rechte vorbehalten.\"]}]]}]}]]}]}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$Lb\"],\"globalErrorComponent\":\"$c\",\"missingSlots\":\"$Wd\"}]\n"])</script><script>self.__next_f.push([1,"6:[[\"$\",\"h2\",null,{\"children\":\"Der Ultimate Guide: Gefahrstoffmanagement in der Kfz-Werkstatt\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":[\"Kfz-Werkstätten sind im Arbeitsalltag echte \",[\"$\",\"strong\",null,{\"children\":\"Gefahrstoff-Hotspots\"}],\". Ob lösende Bremsenreiniger aus der Spraydose, hunderte Liter an Motorölen, aggressive Bremsflüssigkeiten, Frostschutzmittel oder Lackierstoffe – kaum ein Handwerksbetrieb hantiert mit einer vergleichbaren Dichte an entzündbaren, umweltgefährdenden oder gesundheitsschädlichen Chemikalien.\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":[\"Wenn die Berufsgenossenschaft (z. B. BGHM) oder die Gewerbeaufsicht zur Kontrolle auf den Hof fährt, ist das Gefahrstoffverzeichnis nach § 6 der Gefahrstoffverordnung (GefStoffV) das erste Dokument, das auf dem Tisch liegen muss. Ein statisches \",[\"$\",\"strong\",null,{\"children\":\"Gefahrstoffverzeichnis Muster Kfz-Werkstatt\"}],\" aus dem Internet herunterzuladen und in Excel mit einigen Standardwerten zu füllen, ist eine weit verbreitete Praxis. Doch diese Praxis hält der betrieblichen Realität und modernen Audits nicht mehr stand.\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Dieser Deep Info Beitrag beleuchtet schonungslos die Fakten: Warum Tabellenkalkulationen in der Werkstatt scheitern, wie Dieselmotoremissionen (DME) rechtssicher dokumentiert werden müssen, welche Herausforderungen die TRGS 510 bei der Zusammenlagerung im Öllager mit sich bringt und warum der Wechsel auf eine Software wie GQR nicht nur ein administrativer, sondern ein operativer und haftungsrelevanter Pflichtschritt ist.\"}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"Die Illusion des kostenlosen Excel-Musters\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Viele Werkstattinhaber und Serviceleiter suchen online nach einem Muster für die Kfz-Werkstatt, um Kosten zu sparen. Die rationale Wahrheit ist: Ein Gefahrstoffverzeichnis ist kein Formular, das man einmalig ausfüllt und dann abheftet. Es ist ein dynamisches Steuerungsinstrument.\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Ein statisches Excel-Muster hat systembedingte Nachteile, die im Werkstattalltag schnell zu Haftungsfallen werden:\"}],\"\\n\",[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Fehlende Revisionssicherheit:\"}],\" Wenn der Lieferant die Rezeptur des Bremsenreinigers ändert, wird in der Regel die alte Excel-Zeile überschrieben. Kommt es zu einem Hautekzem bei einem Mechatroniker, kann die Werkstatt nicht mehr beweisen, auf welchem Informationsstand der Mitarbeiter vor zwei Jahren gearbeitet hat.\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Keine Warnfunktion bei veralteten SDBs:\"}],\" Sicherheitsdatenblätter (SDB) veralten. Ein Excel-Muster schlägt keinen Alarm, wenn ein Datenblatt seit fünf Jahren nicht erneuert wurde.\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Entkopplung von der Realität:\"}],\" In der Tabelle steht der Stoff, doch das dazugehörige, 20-seitige Sicherheitsdatenblatt liegt ausgedruckt in einem Leitz-Ordner im Meisterbüro. Ein Mechaniker unter der Hebebühne hat im Falle einer Augenverätzung durch Bremsflüssigkeit keinen sofortigen Zugriff auf die Erste-Hilfe-Maßnahmen.\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Blinder Fleck für Entstehungsstoffe:\"}],\" Standard-Muster listen nur gekaufte Produkte auf (Fassware, Dosen). Gefahrstoffe, die bei der Arbeit erst entstehen – wie Schweißrauche oder \",[\"$\",\"strong\",null,{\"children\":\"Dieselmotoremissionen (DME)\"}],\" – fehlen in diesen Tabellen meist komplett, obwohl sie die höchsten Gesundheitsrisiken bergen.\"]}],\"\\n\"]}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"Das Inventar: Typische Gefahrstoffe im Werkstattalltag\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Ein rechtssicheres Kataster muss alle Gefahrstoffe umfassen. In einer durchschnittlichen Kfz-Werkstatt oder einem Karosseriebaubetrieb sammeln sich schnell über 50 bis 100 verschiedene Produkte an.\"}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"1. Aerosole und Reinigungsmittel\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Der klassische Bremsenreiniger ist in der Werkstatt allgegenwärtig. Er ist hochgradig entzündbar (H222, H229) und kann Schläfrigkeit oder Benommenheit verursachen (H336). Hinzu kommen Drosselklappenreiniger, Polsterreiniger und Teilereiniger für Waschtische. Bei Aerosolen besteht zudem die Gefahr der explosionsfähigen Atmosphäre, selbst wenn nur kleine Mengen freigesetzt werden.\"}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"2. Schmierstoffe und Betriebsflüssigkeiten\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Motoröle, Getriebeöle und Hydraulikflüssigkeiten sind oft in großen Fässern (z. B. 208 Liter) oder IBC-Containern gelagert. Während frische Öle gesundheitlich oft als weniger kritisch eingestuft sind, bergen sie ein massives Risiko für die Umwelt (Wassergefährdungsklassen, AwSV). Kühlerfrostschutz (meist auf Basis von Ethylenglykol) ist gesundheitsschädlich beim Verschlucken, und Bremsflüssigkeit (Polyglykolether) wirkt stark augenreizend.\"}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"3. Klebstoffe, Dichtmassen und Lacke\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Beim Scheibentausch kommen Polyurethan-Klebstoffe zum Einsatz, die Isocyanate enthalten können (Sensibilisierung der Atemwege, potenziell krebserzeugend). Im Karosseriebereich summieren sich Spachtelmassen, Grundierungen, Härter und Klarlacke. Hier ist die Substitution (Prüfung auf weniger gefährliche Ersatzstoffe nach TRGS 600) eine ständige gesetzliche Pflicht.\"}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"4. Gase und Batterien\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Schweißgase (Argon, CO₂) und Brenngase (Acetylen) sind Standard. Starterbatterien enthalten verdünnte Schwefelsäure, die ätzend wirkt, sowie Blei. Beim Laden von Batterien kann sich zudem hochexplosives Knallgas bilden.\"}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"5. Altöl und Abfälle\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Das Gefahrstoffrecht endet nicht bei der Nutzung. Altöl ist ein gefährliches Gemisch, das durch Verbrennungsrückstände, Schwermetalle und unverbrannten Kraftstoff verunreinigt ist. Es muss im Gefahrstoffverzeichnis und in den Betriebsanweisungen bezüglich der korrekten Entsorgungswege (Altölsammeltank, strikte Trennung von anderen Lösemitteln) zwingend aufgeführt werden.\"}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"Der unsichtbare Gefahrstoff: Dieselmotoremissionen (DME)\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":[\"Ein Thema, an dem einfache Tabellen-Muster regelmäßig scheitern, sind Dieselmotoremissionen. Nach der \",[\"$\",\"strong\",null,{\"children\":\"TRGS 554 (Abgase von Dieselmotoren)\"}],\" gelten DME als krebserzeugend.\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Wenn in einer Kfz-Werkstatt ein Dieselmotor für Einstellarbeiten, Abgasuntersuchungen (AU) oder zur Fehlersuche in der Halle laufen muss, entstehen diese Emissionen. Sie müssen zwingend in die Gefährdungsbeurteilung und das Gefahrstoffmanagement einfließen.\"}],\"\\n\",[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Die Maßnahmen:\"}],\" Die TRGS 554 fordert primär technische Schutzmaßnahmen, konkret die Verwendung von Abgasabsauganlagen, die direkt am Auspuff angeschlossen werden (Aufsteck-Erfassungselemente), bevor der Motor gestartet wird.\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Das DME-Protokoll:\"}],\" Die Werkstatt muss dokumentieren, bei welchen Tätigkeiten DME entstehen, welche Absaugsysteme genutzt werden und wie diese gewartet werden.\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Integration ins Verzeichnis:\"}],\" Ein isoliertes DME-Protokoll in einem separaten Ordner führt zu Dokumentationsbrüchen. Eine professionelle Software ermöglicht es, DME als entstehenden Gefahrstoff im Kataster anzulegen, die dazugehörige Betriebsanweisung für die Nutzung der Absauganlage zu generieren und die Unterweisung der Mechatroniker an diesem System rechtssicher abzulegen.\"]}],\"\\n\"]}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"Das Lager-Chaos: TRGS 510 in der Praxis\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":[\"Eine der größten Herausforderungen in der Werkstatt ist das Öllager beziehungsweise der Gefahrstoffschrank. Hier greift die \",[\"$\",\"strong\",null,{\"children\":\"TRGS 510 (Lagerung von Gefahrstoffen in ortsbeweglichen Behältern)\"}],\".\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Die Zusammenlagerung von Gefahrstoffen ist streng reglementiert, um gefährliche Reaktionen im Falle einer Leckage oder eines Brandes zu vermeiden. In der Praxis führt dies ohne digitale Unterstützung oft zu chaotischen Zuständen:\"}],\"\\n\",[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"Dürfen die Kartons mit Bremsenreiniger-Aerosolen (Lagerklasse 2B) direkt neben dem 208-Liter-Fass Motoröl (Lagerklasse 10) gelagert werden?\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"Wo steht die Kiste mit den alten Starterbatterien (Lagerklasse 8, ätzend)?\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"Was passiert mit hochentzündlichen Lackverdünnern (Lagerklasse 3)?\"}],\"\\n\"]}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Ein manuelles Excel-Muster zwingt den Verantwortlichen dazu, für jedes neue Produkt die Zusammenlagerungsmatrix der TRGS 510 händisch abzugleichen. Bei schnellen Produktwechseln im Werkstattalltag unterbleibt diese Prüfung fast immer. Das Resultat bei Begehungen durch die Feuerwehr oder die Gewerbeaufsicht sind Mängelberichte und Nachbesserungsauflagen, da unzulässige Lagerungen ein massives Brand- und Umweltrisiko darstellen.\"}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"Excel vs. GQR: Der Systemvergleich für die Werkstatt\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Um die Notwendigkeit der Digitalisierung im Werkstattbetrieb aufzuzeigen, hilft ein rationaler Vergleich zwischen dem manuellen Tabellen-Ansatz und einer spezialisierten Software. Am Ende dieses Beitrags fassen wir die Unterschiede in einer Übersicht zusammen.\"}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"Die Systemlösung: GQR als digitaler Werkstattmeister\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Die Pflege von Excel-Listen ist für eine Werkstatt tote Zeit, die dem produktiven Kundenauftrag verloren geht. GQR (Gefahrstoff-QR) positioniert sich als das digitale Werkzeug, das den Administrationsaufwand minimiert und die Rechtssicherheit für den Betreiber maximiert.\"}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"1. Intelligenter Import statt Abtippen\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Hersteller von Werkstatt-Chemie (wie Würth, Liqui Moly, Fuchs oder Berner) aktualisieren ihre Sicherheitsdatenblätter regelmäßig. Mit GQR zieht der Verantwortliche das neue SDB-PDF per Drag \u0026 Drop in das System. Die integrierte KI-Logik (Azure Intelligence) liest die komplexen Tabellenstrukturen aus, extrahiert die GHS-Piktogramme, die H- und P-Sätze sowie die relevanten Schutzmaßnahmen und befüllt das digitale Kataster. Die manuelle Fehlerquelle Tippfehler wird eliminiert.\"}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"2. Betriebsanweisungen (BA) mit Praxisbezug\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Gemäß TRGS 555 muss die Werkstatt für Tätigkeiten mit Gefahrstoffen Betriebsanweisungen in verständlicher Form am Arbeitsplatz aushängen. GQR löst das Problem des weißen Blattes. Das System nutzt die extrahierten SDB-Daten, um eine BA zu generieren.\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Da Automatisierung bei der Sicherheit ihre Grenzen hat, erfordert GQR eine menschliche Validierung: Das System fordert den Meister oder die SiFa auf, konkrete Werkstatt-Spezifika zu ergänzen (Welcher Schutzhandschuh genau? Wo steht die Augenspülflasche? Wie wird das Altöl an diesem Standort gesammelt?). Das Ergebnis ist eine hochprofessionelle, rechtssichere PDF-Betriebsanweisung ohne Formatierungs-Chaos.\"}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"3. Sicherheit am Ort des Geschehens: Der QR-Code\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"In der Werkstatt zählen Sekunden, wenn Bremsflüssigkeit ins Auge spritzt oder ein Lappen mit Verdünner Feuer fängt. GQR ermöglicht es, für jeden Gefahrstoff oder für ganze Arbeitsbereiche (z. B. Lackierkabine oder Öllager) einen QR-Code zu generieren. Dieser wird vor Ort aufgeklebt. Ein schneller Scan mit dem Smartphone des Mitarbeiters öffnet den digitalen Notfallpass – ohne Login, ohne App-Installation. Sofort stehen die Erste-Hilfe-Maßnahmen, die Feuerlösch-Richtlinien und die Betriebsanweisung zur Verfügung.\"}],\"\\n\",[\"$\",\"h3\",null,{\"children\":\"4. Automatisierte TRGS 510 Konformität\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Durch die Strukturierung der Daten weiß GQR, in welche Lagerklasse ein Produkt fällt. Wird dem System mitgeteilt, dass Bremsenreiniger und bestimmte Säuren in denselben Gefahrstoffschrank gebucht werden, schlägt das System basierend auf der TRGS 510 Matrix Alarm. Dies schützt Inhaber vor empfindlichen Strafen bei unangekündigten Umwelt-Inspektionen.\"}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"Schritt-für-Schritt: Die Digitalisierung des Werkstatt-Katasters\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Der Wechsel von einem veralteten Excel-Muster zu einer Software wie GQR scheitert selten an der Technik, sondern an der Sorge vor dem initialen Aufwand. Mit einer klaren Struktur ist der Übergang im Werkstattbetrieb schnell vollzogen:\"}],\"\\n\",[\"$\",\"ol\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Die Inventur (Ausmisten):\"}],\" Der wichtigste Schritt vor der Digitalisierung. Es wird physisch durch die Regale, Lackierschränke und Waschtische gegangen. Welche Produkte stehen dort? Welche Dosen sind veraltet und können entsorgt werden? Es ergibt keinen Sinn, Karteileichen zu digitalisieren.\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"SDB-Sammel-Aktion:\"}],\" Für alle verbliebenen, aktiven Produkte werden die aktuellen Sicherheitsdatenblätter von den Hersteller-Websites heruntergeladen.\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Der Batch-Upload:\"}],\" Die PDFs werden in GQR hochgeladen. Das System übernimmt die Extraktion der Daten und baut das Grundgerüst des Gefahrstoffverzeichnisses nach § 6 GefStoffV auf.\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"Standort-Zuweisung:\"}],\" Die Stoffe werden in GQR den realen Bereichen zugeordnet (z. B. Karosserie, Mechanik, Lagerraum, Fahrzeugaufbereitung).\"]}],\"\\n\",[\"$\",\"li\",null,{\"children\":[[\"$\",\"strong\",null,{\"children\":\"BA-Validierung und QR-Druck:\"}],\" Die Betriebsanweisungen werden durch den Meister kontrolliert, um spezifische Pflichtfelder ergänzt und freigegeben. Abschließend werden die QR-Codes ausgedruckt und an den Regalen, Waschtischen oder Absauganlagen angebracht.\"]}],\"\\n\"]}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"Bereit für das Audit: Wenn die Berufsgenossenschaft prüft\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Ein Audit in einer Kfz-Werkstatt konzentriert sich meist auf folgende Punkte: Arbeitsschutz an der Hebebühne, Hautschutz bei der Arbeit mit Ölen und Reinigern, Absaugung von Dieselmotoremissionen und das Gefahrstoffverzeichnis.\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Wenn ein Betrieb in der Lage ist, dem Prüfer anstelle eines unstrukturierten Excel-Ausdrucks einen Zugang zum digitalen System (oder einen sauberen One-Click-PDF-Export) zu präsentieren, ändert sich die Tonalität der Prüfung sofort. GQR liefert den Beweis für ein gelebtes Managementsystem:\"}],\"\\n\",[\"$\",\"ul\",null,{\"children\":[\"\\n\",[\"$\",\"li\",null,{\"children\":\"Die Historie (Audit-Log) beweist, dass das System gepflegt wird.\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"Archivierte Stoffe und alte Betriebsanweisungen sind jederzeit abrufbar (wichtig für die Dokumentation von Berufskrankheiten, die erst Jahre später auftreten).\"}],\"\\n\",[\"$\",\"li\",null,{\"children\":\"Die Verknüpfung von SDB, TRGS-Einstufung und tätigkeitsbezogener Betriebsanweisung ist lückenlos.\"}],\"\\n\"]}],\"\\n\",[\"$\",\"h2\",null,{\"children\":\"Fazit: Zeitersparnis und Risikominimierung\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Eine Kfz-Werkstatt ist ein hochtechnischer Betrieb. Während Diagnosegeräte und Hebebühnen stets auf dem neuesten Stand der Technik sind, wird das Gefahrstoffmanagement oft noch wie in den Neunzigerjahren mit Klemmbrett und Tabellen betrieben.\"}],\"\\n\",[\"$\",\"p\",null,{\"children\":\"Der Versuch, mit einem kostenlosen Excel-Muster rechtssicher zu agieren, ist betriebswirtschaftlich und haftungsrechtlich riskant. Die Kosten für die stundenlange manuelle Datenpflege durch einen Meister oder Betriebsleiter übersteigen die Investition in eine moderne Softwarelösung bei Weitem. GQR digitalisiert die lästige Fleißarbeit, bringt Ordnung in das Lager-Chaos und stellt sicher, dass die Sicherheitsinformationen dort sind, wo sie hingehören: Direkt beim Mechaniker in der Werkstatt.\"}]]\n"])</script><script>self.__next_f.push([1,"b:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Gefahrstoffverzeichnis Muster Kfz-Werkstatt — Öle, Reiniger, DME | Gefahrstoff-QR\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Gefahrstoffverzeichnis Muster Kfz-Werkstatt: typische Stoffe, DME-Protokoll, TRGS 510 und digitale Alternative zu Excel in der Werkstatt.\"}],[\"$\",\"meta\",\"4\",{\"name\":\"robots\",\"content\":\"index, follow\"}],[\"$\",\"link\",\"5\",{\"rel\":\"canonical\",\"href\":\"https://gefahrstoff-qr.de/wissen/gefahrstoffverzeichnis-muster-kfz-werkstatt/\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:title\",\"content\":\"Gefahrstoffverzeichnis Muster Kfz-Werkstatt — Öle, Reiniger, DME\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:description\",\"content\":\"Gefahrstoffverzeichnis Muster Kfz-Werkstatt: typische Stoffe, DME-Protokoll, TRGS 510 und digitale Alternative zu Excel in der Werkstatt.\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:url\",\"content\":\"https://gefahrstoff-qr.de/wissen/gefahrstoffverzeichnis-muster-kfz-werkstatt/\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:site_name\",\"content\":\"Gefahrstoff-QR\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:locale\",\"content\":\"de_DE\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:image\",\"content\":\"https://gefahrstoff-qr.de/og-image.png\"}],[\"$\",\"meta\",\"12\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"13\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"14\",{\"property\":\"og:image:alt\",\"content\":\"Gefahrstoffverzeichnis Muster Kfz-Werkstatt — Öle, Reiniger, DME\"}],[\"$\",\"meta\",\"15\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"$\",\"meta\",\"16\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"17\",{\"name\":\"twitter:title\",\"content\":\"Gefahrstoffverzeichnis Muster Kfz-Werkstatt — Öle, Reiniger, DME\"}],[\"$\",\"meta\",\"18\",{\"name\":\"twitter:description\",\"content\":\"Gefahrstoffverzeichnis Muster Kfz-Werkstatt: typische Stoffe, DME-Protokoll, TRGS 510 und digitale Alternative zu Excel in der Werkstatt.\"}],[\"$\",\"meta\",\"19\",{\"name\":\"twitter:image\",\"content\":\"https://gefahrstoff-qr.de/og-image.png\"}],[\"$\",\"link\",\"20\",{\"rel\":\"shortcut icon\",\"href\":\"/favicon.ico\"}],[\"$\",\"link\",\"21\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"sizes\":\"48x48\"}],[\"$\",\"link\",\"22\",{\"rel\":\"icon\",\"href\":\"/favicon-48x48.png\",\"type\":\"image/png\",\"sizes\":\"48x48\"}],[\"$\",\"link\",\"23\",{\"rel\":\"icon\",\"href\":\"/favicon-192x192.png\",\"type\":\"image/png\",\"sizes\":\"192x192\"}],[\"$\",\"link\",\"24\",{\"rel\":\"apple-touch-icon\",\"href\":\"/apple-touch-icon.png\",\"sizes\":\"180x180\",\"type\":\"image/png\"}]]\n"])</script><script>self.__next_f.push([1,"3:null\n"])</script></body></html>

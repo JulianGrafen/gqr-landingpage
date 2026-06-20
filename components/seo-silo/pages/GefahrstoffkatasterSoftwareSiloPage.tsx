@@ -96,4 +96,9 @@ export function GefahrstoffkatasterSoftwareSiloPage() {
           <strong>Der realistische, rechtssichere Software-Prozess:</strong> GQR nutzt modernste Natural Language Processing (NLP) und OCR-Technologien, um unstrukturierte Hersteller-SDBs in wenigen Sekunden auszulesen. Das System extrahiert zuverlässig CAS-Nummern, H-Sätze, P-Sätze, Wassergefährdungsklassen (WGK) und Lagerklassen (LGK) nach TRGS 510. Aber – und das ist der entscheidende Unterschied zwischen einem gefährlichen Spielzeug und einer Audit-Software – das System übernimmt "nur" die Fleißarbeit der Dateneingabe. Bevor ein Stoff im System "scharf" geschaltet wird, Betriebsanweisungen generiert oder Notfall-QR-Codes aktiviert werden, erzwingt das System einen "Human-in-the-Loop"-Prozess. Die Sicherheitsfachkraft sieht die extrahierten Daten neben dem Original-PDF, validiert diese mit einem Klick und übernimmt die rechtliche Freigabe. Die SiFa behält die absolute Kontrollinstanz.
         </p>
         <p>
-          <strong>Der Hebel bei TRGS 600 (Substitutionsprüfung):</strong> Ein gewaltiger Vorteil digitaler, strukturierter Datenbanken zeigt sich bei der Ersatzstoffprüfung. Das System flaggt kritische Substanzen, insbesondere CMR-Stoffe (krebserzeugend, mutagen, reprotoxisch)
+          <strong>Der Hebel bei TRGS 600 (Substitutionsprüfung):</strong> Ein gewaltiger Vorteil digitaler, strukturierter Datenbanken zeigt sich bei der Ersatzstoffprüfung. Das System flaggt kritische Substanzen, insbesondere CMR-Stoffe (krebserzeugend, mutagen, reprotoxisch), und führt sie automatisch in die Ersatzstoffprüfung ein.
+        </p>
+      </LandingProseSection>
+    </LandingPageWrapper>
+  );
+}
