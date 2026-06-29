@@ -30,9 +30,9 @@
   <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png">
 
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="preload" href="style.css?v=11" as="style">
+  <link rel="preload" href="style.css?v=12" as="style">
   <link rel="preload" href="tw.css" as="style">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=12">
   <link rel="stylesheet" href="tw.css">
 
   <script type="application/ld+json">
@@ -1413,6 +1413,34 @@
       </div>
     </section>
 
+    <!-- LEAD MAGNET -->
+    <section id="gratis-vorlage" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="leadMagnetHeadline">
+      <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
+        <div class="relative overflow-hidden rounded-3xl border border-[#ff6b35]/30 bg-gradient-to-br from-[#162340] via-[#0f1e35] to-[#0a1628] p-8 shadow-2xl shadow-black/40 sm:p-12 lg:p-16">
+          <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#ff6b35]/20 blur-3xl" aria-hidden="true"></div>
+          <div class="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-teal-400/10 blur-3xl" aria-hidden="true"></div>
+
+          <div class="relative mx-auto max-w-2xl text-center">
+            <p class="mb-4 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Kostenlos &amp; unverbindlich</p>
+            <h2 id="leadMagnetHeadline" class="text-3xl font-black leading-tight text-[#f0f6ff] sm:text-4xl lg:text-5xl">
+              Jetzt Gefahrstoff-QR<br class="hidden sm:block"> kostenlos testen
+            </h2>
+            <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-[#c5d0e2] sm:text-lg">
+              Überzeugen Sie sich selbst &ndash; fordern Sie Ihren kostenlosen Zugang an. Wir melden uns persönlich bei Ihnen.
+            </p>
+
+            <div class="mt-8 flex justify-center">
+              <button type="button" class="btn-cta-orange min-h-[52px] whitespace-nowrap px-8 text-base" data-trial-open>Kostenlos testen</button>
+            </div>
+
+            <p class="mx-auto mt-5 max-w-md text-xs leading-relaxed text-[#8fa4c0]">
+              100&nbsp;% kostenlos. Kein Risiko. Mit dem Absenden stimmen Sie unserer <a href="/datenschutz/" class="text-teal-300 underline-offset-2 hover:underline">Datenschutzerklärung</a> zu.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="section cta-banner border-t border-white/[0.07]" aria-label="Abschließender Handlungsaufruf">
       <div class="container cta-banner-inner">
@@ -1498,6 +1526,47 @@
       <p class="footer-copy">&#xa9; 2026 Gefahrstoff-QR &middot; Alle Rechte vorbehalten.</p>
     </div>
   </footer>
+
+  <!-- KOSTENLOS-TESTEN MODAL -->
+  <div id="trialModal" class="trial-modal" hidden>
+    <div class="trial-modal__overlay" data-trial-close></div>
+    <div class="trial-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="trialModalTitle">
+      <button type="button" class="trial-modal__close" data-trial-close aria-label="Dialog schließen">&#x2715;</button>
+      <p class="trial-modal__kicker">Kostenlos testen</p>
+      <h2 id="trialModalTitle" class="trial-modal__title">Eine gute Entscheidung!</h2>
+      <p class="trial-modal__lead">Probieren Sie Gefahrstoff-QR kostenlos und unverbindlich aus und überzeugen Sie sich selbst.</p>
+      <p class="trial-modal__badge">100&nbsp;% kostenlos. Kein Risiko.</p>
+
+      <form id="trialForm" class="trial-form" novalidate>
+        <div class="trial-form__row">
+          <div class="trial-form__field">
+            <label for="trial-vorname">Vorname</label>
+            <input id="trial-vorname" name="Vorname" type="text" autocomplete="given-name" required />
+          </div>
+          <div class="trial-form__field">
+            <label for="trial-nachname">Nachname</label>
+            <input id="trial-nachname" name="Nachname" type="text" autocomplete="family-name" required />
+          </div>
+        </div>
+        <div class="trial-form__field">
+          <label for="trial-email">E-Mail</label>
+          <input id="trial-email" name="E-Mail" type="email" autocomplete="email" required />
+        </div>
+        <div class="trial-form__field">
+          <label for="trial-telefon">Telefon</label>
+          <input id="trial-telefon" name="Telefon" type="tel" autocomplete="tel" required />
+        </div>
+        <button type="submit" class="btn-cta-orange trial-form__submit">Kostenlos testen</button>
+        <p id="trialFormError" class="trial-form__error" hidden role="alert"></p>
+        <p class="trial-form__hint">Mit dem Absenden stimmen Sie unserer <a href="/datenschutz/">Datenschutzerklärung</a> zu.</p>
+      </form>
+
+      <div id="trialSuccess" class="trial-form__success" hidden role="status">
+        <p class="trial-form__success-title">Vielen Dank!</p>
+        <p>Ihre Anfrage ist bei uns eingegangen. Wir melden uns schnellstmöglich persönlich bei Ihnen.</p>
+      </div>
+    </div>
+  </div>
 
   <script>
     (function () {
@@ -1687,6 +1756,7 @@
   </script>
 
   <script type="module" src="/scripts/sdb-demo.js" defer></script>
+  <script src="/scripts/trial-modal.js" defer></script>
 
   <script>
     (function () {
