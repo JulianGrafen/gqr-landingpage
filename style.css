@@ -946,6 +946,10 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   transform: translateY(-4px);
 }
 
+.sds-entry-card[open] {
+  border-color: rgba(45, 212, 191, 0.3);
+}
+
 .sds-problem-card:hover {
   border-color: rgba(255, 107, 53, 0.32);
 }
@@ -961,6 +965,42 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 
 .sds-problem-card span {
   color: #f59e0b;
+}
+
+.sds-entry-card__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.sds-entry-card__summary::-webkit-details-marker {
+  display: none;
+}
+
+.sds-entry-card__summary:focus-visible {
+  outline: 2px solid rgba(45, 212, 191, 0.65);
+  outline-offset: 6px;
+  border-radius: 0.8rem;
+}
+
+.sds-entry-card__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex: 0 0 auto;
+  color: #5eead4;
+  transition: transform 0.2s ease;
+}
+
+.sds-entry-card[open] .sds-entry-card__icon {
+  transform: rotate(180deg);
+}
+
+.sds-entry-card__body {
+  padding-top: 0.9rem;
 }
 
 .sds-entry-card h3,
