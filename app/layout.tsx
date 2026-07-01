@@ -33,6 +33,7 @@ export default function RootLayout({
         <SiteHeader />
         <div className="flex-1">{children}</div>
         <SiteFooter />
+        <script src="/scripts/gqr-chatbot.js" defer />
       </body>
     </html>
   );

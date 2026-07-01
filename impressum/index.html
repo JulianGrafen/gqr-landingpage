@@ -121,5 +121,6 @@
   <script>
     (function(){var o=document.getElementById('navOpenBtn'),c=document.getElementById('navCloseBtn'),m=document.getElementById('mobileMenu');function op(){document.body.classList.add('nav-open');m.setAttribute('aria-hidden','false');o.setAttribute('aria-expanded','true');c.focus();}function cl(){document.body.classList.remove('nav-open');m.setAttribute('aria-hidden','true');o.setAttribute('aria-expanded','false');o.focus();}o.addEventListener('click',op);c.addEventListener('click',cl);document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});m.querySelectorAll('.nav-link,.btn').forEach(function(el){el.addEventListener('click',cl);});})();
   </script>
+  <script src="/scripts/gqr-chatbot.js" defer></script>
 </body>
 </html>
