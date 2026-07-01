@@ -144,7 +144,7 @@ function RoiCalculatorCard({
 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl lg:p-8">
-      <h2 className="mb-6 text-Betriebsanweisungse font-bold text-slate-800">
+      <h2 className="mb-6 text-base font-bold text-slate-800">
         ROI-Rechner: Wie viel Zeit sparen Sie?
       </h2>
 
@@ -176,7 +176,7 @@ function RoiCalculatorCard({
         </div>
         <p className="tabular-nums text-3xl font-extrabold text-blue-600">
           {savedHours}
-          <span className="ml-1 text-Betriebsanweisungse font-semibold">h</span>
+          <span className="ml-1 text-base font-semibold">h</span>
         </p>
       </div>
     </div>
@@ -202,11 +202,11 @@ const buttonVariantStyles: Record<ButtonVariant, string> = {
 };
 
 function CtaButton({ variant, icon, href, children }: CtaButtonProps) {
-  const BetriebsanweisungseStyles =
+  const baseStyles =
     "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2";
 
   return (
-    <a href={href} className={`${BetriebsanweisungseStyles} ${buttonVariantStyles[variant]}`}>
+    <a href={href} className={`${baseStyles} ${buttonVariantStyles[variant]}`}>
       {children}
       {icon}
     </a>

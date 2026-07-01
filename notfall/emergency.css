@@ -30,7 +30,7 @@
 
 body {
   min-height: 100vh;
-  Betriebsanweisungckground: #ffffff;
+  background: #ffffff;
   color: var(--slate-900);
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.5;
@@ -46,7 +46,7 @@ a {
   min-height: 100vh;
   margin-inline: auto;
   padding: 82px 20px 118px;
-  Betriebsanweisungckground: #ffffff;
+  background: #ffffff;
 }
 
 .qr-app-header {
@@ -61,7 +61,7 @@ a {
   gap: 10px;
   padding-inline: 20px;
   border-bottom: 1px solid #eef2f7;
-  Betriebsanweisungckground: rgBetriebsanweisung(255, 255, 255, .96);
+  background: rgba(255, 255, 255, .96);
   color: var(--slate-500);
   font-size: .96rem;
   font-weight: 800;
@@ -93,7 +93,7 @@ a {
   min-height: 101px;
   padding: 20px 26px;
   border-radius: 18px;
-  Betriebsanweisungckground: var(--danger);
+  background: var(--danger);
   color: #ffffff;
 }
 
@@ -118,7 +118,7 @@ a {
 .qr-signal-label {
   display: block;
   margin-top: 4px;
-  color: rgBetriebsanweisung(255, 255, 255, .9);
+  color: rgba(255, 255, 255, .9);
   font-size: 1rem;
 }
 
@@ -154,14 +154,14 @@ a {
   min-height: 29px;
   padding: 4px 14px;
   border-radius: 999px;
-  Betriebsanweisungckground: var(--slate-100);
+  background: var(--slate-100);
   color: var(--slate-700);
   font-size: .94rem;
   font-weight: 850;
 }
 
 .qr-meta-pills span:nth-child(2) {
-  Betriebsanweisungckground: #cffafe;
+  background: #cffafe;
   color: #0e7490;
 }
 
@@ -200,7 +200,7 @@ a {
   gap: 12px;
   border: 2px solid var(--slate-200);
   border-radius: 14px;
-  Betriebsanweisungckground: #ffffff;
+  background: #ffffff;
   text-align: center;
 }
 
@@ -239,7 +239,7 @@ a {
 
 .qr-info-card--danger {
   border-color: var(--danger-200);
-  Betriebsanweisungckground: var(--danger-50);
+  background: var(--danger-50);
 }
 
 .qr-info-card--danger h2,
@@ -249,7 +249,7 @@ a {
 
 .qr-info-card--blue {
   border-color: var(--blue-200);
-  Betriebsanweisungckground: var(--blue-50);
+  background: var(--blue-50);
 }
 
 .qr-info-card--blue h2,
@@ -259,7 +259,7 @@ a {
 
 .qr-info-card--green {
   border-color: var(--green-200);
-  Betriebsanweisungckground: var(--green-50);
+  background: var(--green-50);
 }
 
 .qr-info-card--green h2,
@@ -309,7 +309,7 @@ a {
   padding: 15px 18px;
   border: 1px solid var(--blue-200);
   border-radius: 14px;
-  Betriebsanweisungckground: var(--blue-50);
+  background: var(--blue-50);
   color: #1d4ed8;
   font-size: .93rem;
   line-height: 1.5;
@@ -341,8 +341,8 @@ a {
   z-index: 30;
   padding: 12px 20px 8px;
   border-top: 1px solid #e5e7eb;
-  Betriebsanweisungckground: rgBetriebsanweisung(255, 255, 255, .97);
-  box-shadow: 0 -8px 24px rgBetriebsanweisung(15, 23, 42, .08);
+  background: rgba(255, 255, 255, .97);
+  box-shadow: 0 -8px 24px rgba(15, 23, 42, .08);
 }
 
 .qr-call-actions {
@@ -367,11 +367,11 @@ a {
 }
 
 .qr-call-button--danger {
-  Betriebsanweisungckground: var(--danger);
+  background: var(--danger);
 }
 
 .qr-call-button--poison {
-  Betriebsanweisungckground: var(--orange);
+  background: var(--orange);
 }
 
 .qr-call-button__icon {

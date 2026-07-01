@@ -2,10 +2,10 @@
 
 .trgs510-tool {
   padding: clamp(1rem, 3vw, 2rem);
-  border: 1px solid rgBetriebsanweisung(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 2rem;
-  Betriebsanweisungckground: rgBetriebsanweisung(15, 30, 53, 0.7);
-  box-shadow: 0 24px 48px rgBetriebsanweisung(0, 0, 0, 0.2);
+  background: rgba(15, 30, 53, 0.7);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
 }
 
 .trgs510-tool__header {
@@ -53,24 +53,24 @@
   min-height: 56px;
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid rgBetriebsanweisung(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 1rem;
-  Betriebsanweisungckground: rgBetriebsanweisung(10, 22, 40, 0.85);
+  background: rgba(10, 22, 40, 0.85);
   color: #f0f6ff;
   font-size: 1rem;
   font-weight: 600;
-  box-shadow: inset 0 2px 8px rgBetriebsanweisung(0, 0, 0, 0.2);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
   appearance: none;
-  Betriebsanweisungckground-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238fa4c0' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-  Betriebsanweisungckground-repeat: no-repeat;
-  Betriebsanweisungckground-position: right 1rem center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238fa4c0' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
   padding-right: 2.5rem;
 }
 
 .trgs510-select select:focus {
   outline: none;
-  border-color: rgBetriebsanweisung(45, 212, 191, 0.6);
-  box-shadow: 0 0 0 4px rgBetriebsanweisung(45, 212, 191, 0.15);
+  border-color: rgba(45, 212, 191, 0.6);
+  box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.15);
 }
 
 .trgs510-result-wrap {
@@ -79,9 +79,9 @@
 
 .trgs510-placeholder {
   padding: clamp(1.5rem, 3vw, 2rem);
-  border: 1px dashed rgBetriebsanweisung(255, 255, 255, 0.15);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
   border-radius: 1.5rem;
-  Betriebsanweisungckground: rgBetriebsanweisung(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.03);
   text-align: center;
 }
 
@@ -104,22 +104,22 @@
   padding: clamp(1.25rem, 3vw, 1.75rem);
   border-radius: 1.5rem;
   border: 1px solid transparent;
-  box-shadow: 0 24px 48px rgBetriebsanweisung(0, 0, 0, 0.2);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
 }
 
 .trgs510-result--green {
-  border-color: rgBetriebsanweisung(110, 231, 183, 0.25);
-  Betriebsanweisungckground: rgBetriebsanweisung(52, 211, 153, 0.1);
+  border-color: rgba(110, 231, 183, 0.25);
+  background: rgba(52, 211, 153, 0.1);
 }
 
 .trgs510-result--yellow {
-  border-color: rgBetriebsanweisung(252, 211, 77, 0.25);
-  Betriebsanweisungckground: rgBetriebsanweisung(251, 191, 36, 0.1);
+  border-color: rgba(252, 211, 77, 0.25);
+  background: rgba(251, 191, 36, 0.1);
 }
 
 .trgs510-result--red {
-  border-color: rgBetriebsanweisung(248, 113, 113, 0.25);
-  Betriebsanweisungckground: rgBetriebsanweisung(248, 113, 113, 0.1);
+  border-color: rgba(248, 113, 113, 0.25);
+  background: rgba(248, 113, 113, 0.1);
 }
 
 .trgs510-result__top {
@@ -143,43 +143,43 @@
   width: 3rem;
   height: 3rem;
   border-radius: 1rem;
-  Betriebsanweisungckground: rgBetriebsanweisung(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .trgs510-result--green .trgs510-result__icon { color: #6ee7b7; }
 .trgs510-result--yellow .trgs510-result__icon { color: #fcd34d; }
 .trgs510-result--red .trgs510-result__icon { color: #fca5a5; }
 
-.trgs510-result__Betriebsanweisungdges {
+.trgs510-result__badges {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
 }
 
-.trgs510-Betriebsanweisungdge {
+.trgs510-badge {
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 700;
 }
 
-.trgs510-result--green .trgs510-Betriebsanweisungdge {
-  Betriebsanweisungckground: rgBetriebsanweisung(52, 211, 153, 0.15);
+.trgs510-result--green .trgs510-badge {
+  background: rgba(52, 211, 153, 0.15);
   color: #a7f3d0;
-  border: 1px solid rgBetriebsanweisung(110, 231, 183, 0.25);
+  border: 1px solid rgba(110, 231, 183, 0.25);
 }
 
-.trgs510-result--yellow .trgs510-Betriebsanweisungdge {
-  Betriebsanweisungckground: rgBetriebsanweisung(251, 191, 36, 0.15);
+.trgs510-result--yellow .trgs510-badge {
+  background: rgba(251, 191, 36, 0.15);
   color: #fef3c7;
-  border: 1px solid rgBetriebsanweisung(252, 211, 77, 0.25);
+  border: 1px solid rgba(252, 211, 77, 0.25);
 }
 
-.trgs510-result--red .trgs510-Betriebsanweisungdge {
-  Betriebsanweisungckground: rgBetriebsanweisung(248, 113, 113, 0.15);
+.trgs510-result--red .trgs510-badge {
+  background: rgba(248, 113, 113, 0.15);
   color: #fecaca;
-  border: 1px solid rgBetriebsanweisung(248, 113, 113, 0.25);
+  border: 1px solid rgba(248, 113, 113, 0.25);
 }
 
 .trgs510-result__pair {
@@ -212,8 +212,8 @@
   margin-top: 1.25rem;
   padding: 1rem;
   border-radius: 1rem;
-  border: 1px solid rgBetriebsanweisung(255, 255, 255, 0.1);
-  Betriebsanweisungckground: rgBetriebsanweisung(10, 22, 40, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 22, 40, 0.6);
 }
 
 .trgs510-rule-box h3 {
@@ -242,8 +242,8 @@
   margin-top: 1.5rem;
   padding: 1.25rem;
   border-radius: 1rem;
-  border: 1px solid rgBetriebsanweisung(45, 212, 191, 0.25);
-  Betriebsanweisungckground: linear-gradient(135deg, rgBetriebsanweisung(45, 212, 191, 0.12), rgBetriebsanweisung(255, 255, 255, 0.03));
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.12), rgba(255, 255, 255, 0.03));
 }
 
 .trgs510-pitch__kicker {
@@ -289,17 +289,17 @@
   justify-content: center;
   padding: 0.75rem 1.25rem;
   border-radius: 0.75rem;
-  border: 1px solid rgBetriebsanweisung(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 0.875rem;
   font-weight: 700;
   color: #f0f6ff;
   text-decoration: none;
-  transition: border-color 0.15s, Betriebsanweisungckground 0.15s;
+  transition: border-color 0.15s, background 0.15s;
 }
 
 .trgs510-pitch__secondary:hover {
-  border-color: rgBetriebsanweisung(255, 255, 255, 0.35);
-  Betriebsanweisungckground: rgBetriebsanweisung(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .trgs510-disclaimer {
@@ -325,8 +325,8 @@
   padding: 1.5rem;
   border-radius: 1rem;
   border: 1px solid #e2e8f0;
-  Betriebsanweisungckground: #f8fafc;
-  box-shadow: 0 1px 3px rgBetriebsanweisung(0, 0, 0, 0.06);
+  background: #f8fafc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .trgs510-feature-card__icon {
@@ -336,7 +336,7 @@
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 0.75rem;
-  Betriebsanweisungckground: rgBetriebsanweisung(255, 107, 53, 0.12);
+  background: rgba(255, 107, 53, 0.12);
   color: #ff6b35;
 }
 
@@ -374,15 +374,15 @@
   justify-content: center;
   padding: 0.75rem 1.5rem;
   border-radius: 0.75rem;
-  border: 1px solid rgBetriebsanweisung(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 0.875rem;
   font-weight: 700;
   color: #f0f6ff;
   text-decoration: none;
-  transition: border-color 0.15s, Betriebsanweisungckground 0.15s;
+  transition: border-color 0.15s, background 0.15s;
 }
 
 .trgs510-hero-ctas .btn-outline-light:hover {
-  border-color: rgBetriebsanweisung(255, 255, 255, 0.35);
-  Betriebsanweisungckground: rgBetriebsanweisung(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
 }

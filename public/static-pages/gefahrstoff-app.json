@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Gefahrstoff App: QR-Scan am Gebinde & Notfallinfos | GQR",
-    "description": "Gefahrstoff App für Werkstatt und Betriebsanweisungustelle: QR-Code am Fass scannen, GHS, P-Sätze und Erste-Hilfe sofort — § 6 GefStoffV Information am Arbeitsplatz.",
+    "description": "Gefahrstoff App für Werkstatt und Baustelle: QR-Code am Fass scannen, GHS, P-Sätze und Erste-Hilfe sofort — § 6 GefStoffV Information am Arbeitsplatz.",
     "ogImageAlt": "Gefahrstoff App Gefahrstoff-QR — mobile Notfallansicht mit GHS-Piktogrammen am Einsatzort"
   },
   "breadcrumb": [
@@ -11,7 +11,7 @@
   "hero": {
     "eyebrow": "Mobil am Einsatzort · QR-Notfallpass · § 6 GefStoffV",
     "h1": "Gefahrstoff App — Information dort, wo Unfälle passieren",
-    "lead": "Ein Sicherheitsdatenblatt auf dem Büro-Server schützt niemanden am Regal. Mit Gefahrstoff-QR scannen Beschäftigte und Ersthelfer den QR-Code am Gebinde und sehen sofort GHS-Kennzeichnung, P-Sätze und Erste-Hilfe-Maßnahmen auf dem Smartphone.",
+    "lead": "Ein SDB auf dem Büro-Server schützt niemanden am Regal. Mit Gefahrstoff-QR scannen Beschäftigte und Ersthelfer den QR-Code am Gebinde und sehen sofort GHS-Kennzeichnung, P-Sätze und Erste-Hilfe-Maßnahmen auf dem Smartphone.",
     "proofLine": "Pflicht aus TRGS 400: Beschäftigte müssen wirksam informiert werden — nicht irgendwann, sondern am Arbeitsplatz. Wer im Ernstfall erst Ordner sucht, verliert Sekunden mit Haftungsfolgen.",
     "primaryCta": {
       "label": "GQR kostenlos testen",
@@ -43,10 +43,10 @@
       "type": "splitMedia",
       "eyebrow": "Ad-hoc Informationsbeschaffung",
       "title": "Im Ernstfall entscheidet die Reaktionszeit, nicht die Ablage im Büro",
-      "lead": "Ein Gefahrstoffaustritt wartet nicht, bis das richtige Sicherheitsdatenblatt auf dem Firmenserver gefunden ist. Der Scan am Gebinde liefert Ersthelfern sofort die überlebenswichtigen H- und P-Sätze – ohne Betriebsanweisungrriere, direkt am Gefahrenherd.",
+      "lead": "Ein Gefahrstoffaustritt wartet nicht, bis das richtige Sicherheitsdatenblatt auf dem Firmenserver gefunden ist. Der Scan am Gebinde liefert Ersthelfern sofort die überlebenswichtigen H- und P-Sätze – ohne Barriere, direkt am Gefahrenherd.",
       "bullets": [
         "Sekundenschneller Scan an Regalen, IBC-Containern oder Werkstattwagen",
-        "Direkter Zugriff auf Erste-Hilfe-Maßnahmen (Sicherheitsdatenblatt Abschnitt 4) ohne Login",
+        "Direkter Zugriff auf Erste-Hilfe-Maßnahmen (SDB Abschnitt 4) ohne Login",
         "Garantierte Aktualität durch Echtzeit-Synchronisation mit dem Hauptkataster"
       ],
       "media": {
@@ -67,20 +67,20 @@
       "id": "regulatorik-haftung",
       "type": "prose",
       "eyebrow": "Compliance nach TRGS 400 & § 6 GefStoffV",
-      "title": "Die Illusion der digitalen Ablage: Warum Server-Sicherheitsdatenblatts rechtlich oft wertlos sind",
+      "title": "Die Illusion der digitalen Ablage: Warum Server-SDBs rechtlich oft wertlos sind",
       "intro": "Arbeitsschutzinformationen müssen am Arbeitsplatz wirksam sein. Ein PDF im Intranet nützt dem Mechaniker an der Hebebühne nichts, wenn er mit einem ätzenden Stoff in Kontakt kommt.",
-      "body": "<p>Der Gesetzgeber ist eindeutig: <strong>§ 6 der Gefahrstoffverordnung (GefStoffV)</strong> verpflichtet den Arbeitgeber zur aktiven Bereitstellung von Gefahrstoffinformationen. Die <strong>TRGS 400</strong> präzisiert diesen Anspruch: Unterweisung und Information müssen für die Beschäftigten verständlich und vor allem am jeweiligen Arbeitsplatz jederzeit zugänglich sein. Ein zentrales Netzlaufwerk erfüllt diese Anforderung in der Praxis dezentraler Teams nicht.</p><p>Der Versuch, dieses Problem mit Papierausdrucken zu lösen, führt unweigerlich in eine Haftungsfalle. Papier veraltet stillschweigend. Durch Lieferantenwechsel, Rezepturanpassungen oder die <strong>Ablauffrist der CLP-Verordnung für Gemische im Mai 2026</strong> ändern sich Gefahrenklassen und Schutzmaßnahmen kontinuierlich. Der laminierte Ausdruck am Regal zeigt alte, teils gefährliche P-Sätze, während die Sicherheitsfachkraft (SiFa) die neue Sicherheitsdatenblatt-Version längst im Büro abgelegt hat. Bei BG-Kontrollen oder nach Arbeitsunfällen wird genau diese Diskrepanz geprüft.</p><p><strong>Der First-Responder-Faktor:</strong> Ersthelfer benötigen im Notfall sofortige, unmissverständliche Anweisungen. Wer in einer Stresssituation erst Vorgesetzte anrufen oder in Leitz-Ordnern blättern muss, verliert wertvolle Zeit. Ein QR-Code-Betriebsanweisungsierter Ansatz schließt diese Lücke, indem er die tagesaktuellen Notfallmaßnahmen physisch an das Gebinde bindet – ohne den administrativen Overhead einer parallelen Papierpflege.</p>"
+      "body": "<p>Der Gesetzgeber ist eindeutig: <strong>§ 6 der Gefahrstoffverordnung (GefStoffV)</strong> verpflichtet den Arbeitgeber zur aktiven Bereitstellung von Gefahrstoffinformationen. Die <strong>TRGS 400</strong> präzisiert diesen Anspruch: Unterweisung und Information müssen für die Beschäftigten verständlich und vor allem am jeweiligen Arbeitsplatz jederzeit zugänglich sein. Ein zentrales Netzlaufwerk erfüllt diese Anforderung in der Praxis dezentraler Teams nicht.</p><p>Der Versuch, dieses Problem mit Papierausdrucken zu lösen, führt unweigerlich in eine Haftungsfalle. Papier veraltet stillschweigend. Durch Lieferantenwechsel, Rezepturanpassungen oder die <strong>Ablauffrist der CLP-Verordnung für Gemische im Mai 2026</strong> ändern sich Gefahrenklassen und Schutzmaßnahmen kontinuierlich. Der laminierte Ausdruck am Regal zeigt alte, teils gefährliche P-Sätze, während die Sicherheitsfachkraft (SiFa) die neue SDB-Version längst im Büro abgelegt hat. Bei BG-Kontrollen oder nach Arbeitsunfällen wird genau diese Diskrepanz geprüft.</p><p><strong>Der First-Responder-Faktor:</strong> Ersthelfer benötigen im Notfall sofortige, unmissverständliche Anweisungen. Wer in einer Stresssituation erst Vorgesetzte anrufen oder in Leitz-Ordnern blättern muss, verliert wertvolle Zeit. Ein QR-Code-basierter Ansatz schließt diese Lücke, indem er die tagesaktuellen Notfallmaßnahmen physisch an das Gebinde bindet – ohne den administrativen Overhead einer parallelen Papierpflege.</p>"
     },
     {
       "id": "comparison",
       "type": "comparison",
-      "targetAudience": "Werkstatt, Betriebsanweisungustelle und Lager mit mobilem Gefahrstoffeinsatz",
+      "targetAudience": "Werkstatt, Baustelle und Lager mit mobilem Gefahrstoffeinsatz",
       "leftColumnTitle": "Klassischer Ordner / Papier am Lager",
       "rightColumnTitle": "Gefahrstoff-QR (Mobile Ansicht)",
       "rows": [
         {
           "criterion": "Information am Einsatzort",
-          "manual": "Sicherheitsdatenblatt-Ordner im Büro oder veralteter Ausdruck am Regal",
+          "manual": "SDB-Ordner im Büro oder veralteter Ausdruck am Regal",
           "gqr": "QR-Scan am Gebinde — aktuelle Ansicht auf dem Smartphone"
         },
         {
@@ -89,17 +89,17 @@
           "gqr": "Notfallscreen in Sekunden nach Scan"
         },
         {
-          "criterion": "Aktualität bei Sicherheitsdatenblatt-Wechsel",
+          "criterion": "Aktualität bei SDB-Wechsel",
           "manual": "Neuer Ausdruck vergessen — alte H-/P-Sätze am Regal",
           "gqr": "Zentrale Pflege, mobile Ansicht folgt dem Kataster"
         },
         {
           "criterion": "Betriebsanweisung vor Ort",
           "manual": "Word-Ausdruck, oft nicht am Gebinde",
-          "gqr": "Digitale Betriebsanweisung über dieselbe QR-Verknüpfung erreichBetriebsanweisungr"
+          "gqr": "Digitale BA über dieselbe QR-Verknüpfung erreichbar"
         },
         {
-          "criterion": "Betriebsanweisungustelle / wechselnde Standorte",
+          "criterion": "Baustelle / wechselnde Standorte",
           "manual": "Ordner pro Container — Pflege skaliert schlecht",
           "gqr": "QR am Gebinde wandert mit dem Stoff"
         }
@@ -109,14 +109,14 @@
       "id": "einsatzszenarien",
       "type": "prose",
       "eyebrow": "Praxisanwendung",
-      "title": "Werkstatt, Betriebsanweisungustelle, Produktion: Eine Architektur für jeden Einsatzort",
+      "title": "Werkstatt, Baustelle, Produktion: Eine Architektur für jeden Einsatzort",
       "variant": "raised",
-      "body": "<h3>Betriebsanweisungustellen und temporäre Arbeitsplätze</h3><p>Auf Betriebsanweisungustellen fehlt oft die grundlegende IT-Infrastruktur für klassische Softwarelösungen. Gefahrstoffe wandern mit den Subunternehmern und Teams. QR-Labels, die direkt auf die Behälter geklebt werden, lösen die Ortsbindung auf. Die SiFa pflegt die Daten zentral und revisionssicher im Kataster; die Teams vor Ort scannen das Gebinde mit jedem handelsüblichen Smartphone, ohne dicke Excel-Mappen mitschleppen zu müssen.</p><h3>Produktion und Werkstätten</h3><p>Im Umgang mit Schmierstoffen, Industriereinigern oder Lacken ist die Unfallwahrscheinlichkeit hoch. Eine verschmutzte Arbeitsumgebung zerstört Papierdokumente schnell. Die mobile Ansicht liefert hier nicht nur Erste-Hilfe-Maßnahmen, sondern auch die exakte <strong>Betriebsanweisung nach § 14 GefStoffV</strong>. Das eliminiert das Risiko, dass Mitarbeiter nach veralteten Word-Dokumenten arbeiten, die seit dem letzten Sicherheitsdatenblatt-Update nicht mehr manuell ausgetauscht wurden.</p><h3>Das Fundament: Verknüpfung zum digitalen Kataster</h3><p>Die mobile App-Ansicht ist keine isolierte Insellösung. Sie ist das Frontend für das zentrale Gefahrstoffkataster. Jede Änderung, die durch den KI-gestützten Sicherheitsdatenblatt-Import vorgenommen wird, synchronisiert sich in Echtzeit auf alle QR-Codes. Dies ermöglicht zudem einen rechtskonformen, automatisierten TRGS-510-Check. Für Unternehmen, die den ersten Schritt aus der Zettelwirtschaft machen wollen, bietet unsere kostenlose Vorlage einen Einstieg – der Wechsel zum mobilen QR-System ist danach das logische Upgrade zur vollständigen Rechtssicherheit.</p>"
+      "body": "<h3>Baustellen und temporäre Arbeitsplätze</h3><p>Auf Baustellen fehlt oft die grundlegende IT-Infrastruktur für klassische Softwarelösungen. Gefahrstoffe wandern mit den Subunternehmern und Teams. QR-Labels, die direkt auf die Behälter geklebt werden, lösen die Ortsbindung auf. Die SiFa pflegt die Daten zentral und revisionssicher im Kataster; die Teams vor Ort scannen das Gebinde mit jedem handelsüblichen Smartphone, ohne dicke Excel-Mappen mitschleppen zu müssen.</p><h3>Produktion und Werkstätten</h3><p>Im Umgang mit Schmierstoffen, Industriereinigern oder Lacken ist die Unfallwahrscheinlichkeit hoch. Eine verschmutzte Arbeitsumgebung zerstört Papierdokumente schnell. Die mobile Ansicht liefert hier nicht nur Erste-Hilfe-Maßnahmen, sondern auch die exakte <strong>Betriebsanweisung nach § 14 GefStoffV</strong>. Das eliminiert das Risiko, dass Mitarbeiter nach veralteten Word-Dokumenten arbeiten, die seit dem letzten SDB-Update nicht mehr manuell ausgetauscht wurden.</p><h3>Das Fundament: Verknüpfung zum digitalen Kataster</h3><p>Die mobile App-Ansicht ist keine isolierte Insellösung. Sie ist das Frontend für das zentrale Gefahrstoffkataster. Jede Änderung, die durch den KI-gestützten SDB-Import vorgenommen wird, synchronisiert sich in Echtzeit auf alle QR-Codes. Dies ermöglicht zudem einen rechtskonformen, automatisierten TRGS-510-Check. Für Unternehmen, die den ersten Schritt aus der Zettelwirtschaft machen wollen, bietet unsere kostenlose Vorlage einen Einstieg – der Wechsel zum mobilen QR-System ist danach das logische Upgrade zur vollständigen Rechtssicherheit.</p>"
     }
   ],
   "features": {
     "sectionTitle": "Was eine Gefahrstoff-App am Arbeitsplatz leisten muss",
-    "sectionSubline": "Checkliste für Lager, Werkstatt und Betriebsanweisungustelle — abgeleitet aus § 6 GefStoffV, TRGS 400 und Ersthelfer-Praxis.",
+    "sectionSubline": "Checkliste für Lager, Werkstatt und Baustelle — abgeleitet aus § 6 GefStoffV, TRGS 400 und Ersthelfer-Praxis.",
     "items": [
       {
         "id": "qr-scan",
@@ -126,22 +126,22 @@
       {
         "id": "ghs",
         "title": "GHS, H- und P-Sätze sofort",
-        "description": "Kennzeichnung und Handlungshinweise aus dem hinterlegten Sicherheitsdatenblatt — relevant bei CLP-Anpassungen bis Mai 2026."
+        "description": "Kennzeichnung und Handlungshinweise aus dem hinterlegten SDB — relevant bei CLP-Anpassungen bis Mai 2026."
       },
       {
         "id": "erste-hilfe",
         "title": "Erste-Hilfe für Ersthelfer",
-        "description": "Maßnahmen nach Sicherheitsdatenblatt Abschnitt 4 — strukturiert statt Blättern in 15-seitigen PDFs unter Zeitdruck."
+        "description": "Maßnahmen nach SDB Abschnitt 4 — strukturiert statt Blättern in 15-seitigen PDFs unter Zeitdruck."
       },
       {
-        "id": "Betriebsanweisung",
-        "title": "Betriebsanweisung greifBetriebsanweisungr",
-        "description": "Digitale Betriebsanweisung am Einsatzort statt ausgedruckter Word-Version, die seit dem letzten Lieferantenwechsel veraltet ist."
+        "id": "ba",
+        "title": "Betriebsanweisung greifbar",
+        "description": "Digitale BA am Einsatzort statt ausgedruckter Word-Version, die seit dem letzten Lieferantenwechsel veraltet ist."
       },
       {
         "id": "kataster-mobil",
         "title": "Kataster mobil durchsuchen",
-        "description": "SiFa und Vorarbeiter prüfen Stoffe, Lagerorte und Sicherheitsdatenblatt-Status unterwegs — nicht nur am Desktop."
+        "description": "SiFa und Vorarbeiter prüfen Stoffe, Lagerorte und SDB-Status unterwegs — nicht nur am Desktop."
       },
       {
         "id": "notruf",
@@ -153,27 +153,27 @@
   "faq": [
     {
       "question": "Brauchen Mitarbeiter eine native App aus dem Store?",
-      "answer": "Nein. GQR läuft mobil im Browser — QR-Code scannen, Stoffansicht öffnen. Das senkt die Hürde auf Betriebsanweisungustellen und in Werkstätten, wo keine zentrale App-Verteilung existiert. Voraussetzung ist Netzempfang am Scan-Ort für den Abruf der hinterlegten Daten."
+      "answer": "Nein. GQR läuft mobil im Browser — QR-Code scannen, Stoffansicht öffnen. Das senkt die Hürde auf Baustellen und in Werkstätten, wo keine zentrale App-Verteilung existiert. Voraussetzung ist Netzempfang am Scan-Ort für den Abruf der hinterlegten Daten."
     },
     {
-      "question": "Reicht ein Sicherheitsdatenblatt-Ausdruck im Ordner am Lager?",
-      "answer": "Als Minimum oft vorhanden — aber unzureichend bei Rezepturwechsel, fehlenden Revisionen oder wenn der Ordner nicht am exakten Einsatzort liegt. § 6 GefStoffV verlangt aktuelle Information. Ein veralteter Ausdruck ist bei Unfällen ein Haftungsthema — unabhängig davon, ob ein neueres Sicherheitsdatenblatt irgendwo auf dem Server liegt."
+      "question": "Reicht ein SDB-Ausdruck im Ordner am Lager?",
+      "answer": "Als Minimum oft vorhanden — aber unzureichend bei Rezepturwechsel, fehlenden Revisionen oder wenn der Ordner nicht am exakten Einsatzort liegt. § 6 GefStoffV verlangt aktuelle Information. Ein veralteter Ausdruck ist bei Unfällen ein Haftungsthema — unabhängig davon, ob ein neueres SDB irgendwo auf dem Server liegt."
     },
     {
       "question": "Wie hilft die App Ersthelfern im Ernstfall?",
-      "answer": "Scan am betroffenen Gebinde → strukturierte Notfallansicht mit GHS, Erste-Hilfe-Maßnahmen und P-Sätzen. Ziel: keine Suche im Büro, kein Blättern in PDFs. Ersthelfer handeln nach sichtBetriebsanweisungren Maßnahmen — Geschwindigkeit reduziert Schaden."
+      "answer": "Scan am betroffenen Gebinde → strukturierte Notfallansicht mit GHS, Erste-Hilfe-Maßnahmen und P-Sätzen. Ziel: keine Suche im Büro, kein Blättern in PDFs. Ersthelfer handeln nach sichtbaren Maßnahmen — Geschwindigkeit reduziert Schaden."
     },
     {
-      "question": "Funktioniert das auf der Betriebsanweisungustelle und in der Werkstatt?",
-      "answer": "Ja, überall wo ein QR-Code am Gebinde oder Regal angebracht ist und mobiles Netz verfügBetriebsanweisungr ist. Typische Einsätze: Lackiererei, Kfz-Werkstatt, Betriebsanweisungucontainer-Lager, Reinigungsmittel in Gebäudereinigung. Die Information folgt dem Stoff — nicht dem Standort des Papierordners."
+      "question": "Funktioniert das auf der Baustelle und in der Werkstatt?",
+      "answer": "Ja, überall wo ein QR-Code am Gebinde oder Regal angebracht ist und mobiles Netz verfügbar ist. Typische Einsätze: Lackiererei, Kfz-Werkstatt, Baucontainer-Lager, Reinigungsmittel in Gebäudereinigung. Die Information folgt dem Stoff — nicht dem Standort des Papierordners."
     },
     {
       "question": "Was ist der Unterschied zur Gefahrstoffkataster-Software?",
-      "answer": "Das Kataster ist das Compliance-Rückgrat — die App-Ansicht ist der Abruf vor Ort. GQR verbindet beides: SiFa pflegt zentral per KI-Sicherheitsdatenblatt-Import, Mitarbeiter und Ersthelfer nutzen mobilen QR-Zugang. Wer nur ein Desktop-Verzeichnis hat, löst den Einsatzort nicht."
+      "answer": "Das Kataster ist das Compliance-Rückgrat — die App-Ansicht ist der Abruf vor Ort. GQR verbindet beides: SiFa pflegt zentral per KI-SDB-Import, Mitarbeiter und Ersthelfer nutzen mobilen QR-Zugang. Wer nur ein Desktop-Verzeichnis hat, löst den Einsatzort nicht."
     },
     {
       "question": "Wie starte ich mit QR-Codes am Gebinde?",
-      "answer": "Stoff im Kataster anlegen, Sicherheitsdatenblatt importieren, QR-Label generieren und am Gebinde anbringen. Im kostenlosen Test können Sie den Workflow mit ersten Stoffen prüfen — ohne Kreditkarte."
+      "answer": "Stoff im Kataster anlegen, SDB importieren, QR-Label generieren und am Gebinde anbringen. Im kostenlosen Test können Sie den Workflow mit ersten Stoffen prüfen — ohne Kreditkarte."
     }
   ],
   "closingCta": {

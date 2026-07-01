@@ -38,7 +38,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     metaTitle:
       'Gefahrstoffverzeichnis Kfz-Werkstatt & Betriebsanweisung Werkstatt',
     metaDescription:
-      'Gefahrstoffverzeichnis Kfz-Werkstatt: Öle, Bremsenreiniger, DME-Protokoll und Betriebsanweisungen aus dem Sicherheitsdatenblatt per KI.',
+      'Gefahrstoffverzeichnis Kfz-Werkstatt: Öle, Bremsenreiniger, DME-Protokoll und Betriebsanweisungen aus dem SDB per KI.',
     heroText:
       'Vom Bremsenreiniger bis zu den Anforderungen rund um Dieselmotor-Emissionen (DME) – Stoffe, Mengen und Sicherheitsdatenblätter an einem Ort.',
     typischeStoffe: [
@@ -49,7 +49,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       'Altöl und Abfälle aus Abscheidern',
     ],
     spezifischerVorteil:
-      'Wiederkehrende Erfassungen und ein nachvollziehBetriebsanweisungres DME-Protokoll lassen sich parallel zum Gefahrstoffverzeichnis führen – ohne zweite Excel-Parallelwelt.',
+      'Wiederkehrende Erfassungen und ein nachvollziehbares DME-Protokoll lassen sich parallel zum Gefahrstoffverzeichnis führen – ohne zweite Excel-Parallelwelt.',
     handwerkAbsatz:
       'Werkstätten arbeiten oft mit vielen Herstellern und schnellen Produktwechseln. Wenn Sicherheitsdatenblätter nicht zeitnah in Verzeichnis und betriebliche Unterweisung einfließen, entstehen Lücken bei Prüfungen. KI-gestützte Extraktion aus dem PDF reduziert den manuellen Aufwand bei H- und P-Sätzen sowie Schutzmaßnahmen.',
     brancheGenitiv: 'Werkstatt',
@@ -73,7 +73,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       'Reiniger für Spritzkabinen und Geräte',
     ],
     spezifischerVorteil:
-      'GHS-Piktogramme, H-Sätze und empfohlene Schutzmaßnahmen aus dem Sicherheitsdatenblatt fließen strukturiert in Betriebsanweisungen ein – abgestimmt auf Sägen, Presse und Lackierbereich.',
+      'GHS-Piktogramme, H-Sätze und empfohlene Schutzmaßnahmen aus dem SDB fließen strukturiert in Betriebsanweisungen ein – abgestimmt auf Sägen, Presse und Lackierbereich.',
     handwerkAbsatz:
       'In der Holzverarbeitung überlagern sich Stäube, organische Lösemittel und reaktive Harze. Ein digitales Verzeichnis hilft, die richtige PSA und Lagerlogik (z. B. nach TRGS 510) konsistent zu dokumentieren und bei neuen Lacklinien schnell nachzuziehen.',
     brancheGenitiv: 'Schreinerhandwerk',
@@ -86,20 +86,20 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     metaTitle:
       'Gefahrstoffverzeichnis Malerbetrieb & Betriebsanweisung Maler',
     metaDescription:
-      'Gefahrstoffverzeichnis Malerbetrieb: Lösemittel, 2K-Systeme, PSA – Betriebsanweisungen aus dem Sicherheitsdatenblatt, GefStoffV-konform per KI.',
+      'Gefahrstoffverzeichnis Malerbetrieb: Lösemittel, 2K-Systeme, PSA – Betriebsanweisungen aus dem SDB, GefStoffV-konform per KI.',
     heroText:
-      'Lösemittel, wasserverdünnBetriebsanweisungre Lacke oder 2K-Systeme: Was auf der Betriebsanweisungustelle wirklich ankommt, muss im Verzeichnis und in der PSA nachvollziehBetriebsanweisungr sein.',
+      'Lösemittel, wasserverdünnbare Lacke oder 2K-Systeme: Was auf der Baustelle wirklich ankommt, muss im Verzeichnis und in der PSA nachvollziehbar sein.',
     typischeStoffe: [
-      'LösemittelBetriebsanweisungsierte Grundierungen und Lacke',
+      'Lösemittelbasierte Grundierungen und Lacke',
       'Zweikomponenten-Beschichtungen (Epoxid, PU)',
       'Reiniger und Entfetter',
       'Spachtel- und Kittmassen mit Harzen',
       'Biocide in filmgebenden Produkten (z. B. Algenschutz)',
     ],
     spezifischerVorteil:
-      'Schutzmaßnahmen und relevante Warnhinweise aus dem Sicherheitsdatenblatt werden extrahiert, damit Sie PSA und Betriebsanweisungen fachlich fundiert abstimmen – statt Felder in musterBetriebsanweisungsierten Listen zu raten.',
+      'Schutzmaßnahmen und relevante Warnhinweise aus dem SDB werden extrahiert, damit Sie PSA und Betriebsanweisungen fachlich fundiert abstimmen – statt Felder in musterbasierten Listen zu raten.',
     handwerkAbsatz:
-      'Malerbetriebe wechseln zwischen Werkstatt, Objekt und unterschiedlichen Materialien. Wenn Verzeichnis und Betriebsanweisungustellenlogik auseinanderlaufen, leidet die NachweisBetriebsanweisungrkeit. Digitale Erfassung mit KI beschleunigt die Übernahme neuer Produktdaten aus dem Lieferanten-Sicherheitsdatenblatt.',
+      'Malerbetriebe wechseln zwischen Werkstatt, Objekt und unterschiedlichen Materialien. Wenn Verzeichnis und Baustellenlogik auseinanderlaufen, leidet die Nachweisbarkeit. Digitale Erfassung mit KI beschleunigt die Übernahme neuer Produktdaten aus dem Lieferanten-SDB.',
     brancheGenitiv: 'Malerhandwerk',
     blogPostHref: '/blog/maler-gefahrstoffverzeichnis-excel/',
   },
@@ -110,7 +110,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     metaTitle:
       'Gefahrstoffverzeichnis Labor & Chemikalien-Inventur · Betriebsanweisung Labor',
     metaDescription:
-      'Gefahrstoffverzeichnis Labor: Chemikalien-Inventur, Sicherheitsdatenblatt-Updates und GHS-Daten – KI-Extraktion statt manuellem Abtippen.',
+      'Gefahrstoffverzeichnis Labor: Chemikalien-Inventur, SDB-Updates und GHS-Daten – KI-Extraktion statt manuellem Abtippen.',
     heroText:
       'Reagenzien, interne Ansätze und Lieferantenwechsel: Ihre Inventur braucht Tempo bei neuen Versionen des Sicherheitsdatenblatts.',
     typischeStoffe: [
@@ -121,7 +121,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       'Spezialverbrauchsmaterialien mit CLP-Kennzeichnung',
     ],
     spezifischerVorteil:
-      'Neue oder aktualisierte Sicherheitsdatenblatts werden in Sekunden strukturiert übernommen – weniger Fehler bei H/P-Sätzen und bessere Aktualität für Unterweisung und Genehmigungsnachweise.',
+      'Neue oder aktualisierte SDBs werden in Sekunden strukturiert übernommen – weniger Fehler bei H/P-Sätzen und bessere Aktualität für Unterweisung und Genehmigungsnachweise.',
     handwerkAbsatz:
       'Labore arbeiten mit vielen Stoffen geringer Menge aber hoher Einstufungsvielfalt. Revisionssicheres Führen des Gefahrstoffverzeichnisses und schnelle Synchronisierung bei Lieferantenupdates sind entscheidend, ohne den Fachkräfte-Alltag zu blockieren.',
     brancheGenitiv: 'Labor',
@@ -134,7 +134,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
     metaTitle:
       'Gefahrstoffverzeichnis Reinigung & Betriebsanweisung Gebäudereinigung · Hautschutzplan',
     metaDescription:
-      'Gefahrstoffverzeichnis Reinigung: Reiniger, Desinfektion, Hautschutzpläne – Betriebsanweisungen aus dem Sicherheitsdatenblatt per KI.',
+      'Gefahrstoffverzeichnis Reinigung: Reiniger, Desinfektion, Hautschutzpläne – Betriebsanweisungen aus dem SDB per KI.',
     heroText:
       'Von alkalischen Kraftreinigern bis zu desinfektionswirksamen Produkten: Hautschutz und Gefahrstoffdokumentation müssen zusammenpassen.',
     typischeStoffe: [
@@ -145,9 +145,9 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
       'Duft- und Pflegeadditive mit sensibilisierenden Inhaltsstoffen',
     ],
     spezifischerVorteil:
-      'Neben dem Gefahrstoffverzeichnis lassen sich Schutzmaßnahmen aus dem Sicherheitsdatenblatt nutzen, um Hautschutzpläne und betriebliche Anweisungen konsistent abzustimmen – besonders bei rotierenden Einsatzteams.',
+      'Neben dem Gefahrstoffverzeichnis lassen sich Schutzmaßnahmen aus dem SDB nutzen, um Hautschutzpläne und betriebliche Anweisungen konsistent abzustimmen – besonders bei rotierenden Einsatzteams.',
     handwerkAbsatz:
-      'Reinigungskräfte wechseln Objekte und Produktlinien. Wenn Sicherheitsdatenblatt-Updates oder neue Konzentrate nicht schnell im Verzeichnis landen, bestehen Lücken bei Unterweisung und Hautschutz. Digitale Erfassung verkürzt die Zeit vom Lieferanten-PDF bis zur freigegebenen Information am Einsatzort.',
+      'Reinigungskräfte wechseln Objekte und Produktlinien. Wenn SDB-Updates oder neue Konzentrate nicht schnell im Verzeichnis landen, bestehen Lücken bei Unterweisung und Hautschutz. Digitale Erfassung verkürzt die Zeit vom Lieferanten-PDF bis zur freigegebenen Information am Einsatzort.',
     brancheGenitiv: 'Reinigungsbetrieb',
     blogPostHref: '/blog/reinigung-gefahrstoffkataster-vorlage/',
   },

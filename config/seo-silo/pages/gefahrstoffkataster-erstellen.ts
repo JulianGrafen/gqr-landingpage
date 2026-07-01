@@ -9,7 +9,7 @@ export const KATASTER_ERSTELLEN_STEPS: SeoSiloStep[] = [
     title: 'Betriebsstruktur abbilden',
     regulatoryRef: 'Organisation',
     description:
-      'Erfassen Sie Standorte, Werke, Abteilungen, Arbeitsbereiche und Lagerorte — so wie sie physisch existieren. Ohne diese Hierarchie wird jedes Verzeichnis zur flachen Liste, die bei Audits nicht erklärBetriebsanweisungr ist.',
+      'Erfassen Sie Standorte, Werke, Abteilungen, Arbeitsbereiche und Lagerorte — so wie sie physisch existieren. Ohne diese Hierarchie wird jedes Verzeichnis zur flachen Liste, die bei Audits nicht erklärbar ist.',
     gqrHint:
       'Werkstrennung mit Compliance-KPIs pro Bereich — mehrere Standorte und Mandanten in einer Struktur.',
   },
@@ -21,7 +21,7 @@ export const KATASTER_ERSTELLEN_STEPS: SeoSiloStep[] = [
     description:
       'Pro Stoff: Produktbezeichnung, Hersteller, Verwendungszweck, Mengen, Lagerort, H-/P-Sätze und Bezug zum aktuellen Sicherheitsdatenblatt. Die Informationsermittlung ist Pflicht — nicht die Tabellenform.',
     gqrHint:
-      'Sicherheitsdatenblatt-PDF hochladen, KI extrahiert Pflichtfelder — Sie prüfen und geben frei statt abzutippen.',
+      'SDB-PDF hochladen, KI extrahiert Pflichtfelder — Sie prüfen und geben frei statt abzutippen.',
   },
   {
     id: 'gb',
@@ -29,9 +29,9 @@ export const KATASTER_ERSTELLEN_STEPS: SeoSiloStep[] = [
     title: 'Gefährdungsbeurteilung chemischer Stoffe',
     regulatoryRef: 'TRGS 400',
     description:
-      'Auf Betriebsanweisungsis des Verzeichnisses bewerten Sie Exposition, Mengen, Verwendungsart, Schutzmaßnahmen und Substitution. Das Verzeichnis allein ist keine GB — aber ohne aktuelles Verzeichnis ist die GB nicht belastBetriebsanweisungr.',
+      'Auf Basis des Verzeichnisses bewerten Sie Exposition, Mengen, Verwendungsart, Schutzmaßnahmen und Substitution. Das Verzeichnis allein ist keine GB — aber ohne aktuelles Verzeichnis ist die GB nicht belastbar.',
     gqrHint:
-      'Strukturierte Stoffdaten aus dem Kataster als GB-Grundlage — weniger Excel-Fragmente, klarer Sicherheitsdatenblatt-Bezug.',
+      'Strukturierte Stoffdaten aus dem Kataster als GB-Grundlage — weniger Excel-Fragmente, klarer SDB-Bezug.',
   },
   {
     id: 'lagerung',
@@ -44,14 +44,14 @@ export const KATASTER_ERSTELLEN_STEPS: SeoSiloStep[] = [
       'Automatische Lagerkonflikt-Warnung pro Lagerort mit Regeltext — statt manueller Matrix.',
   },
   {
-    id: 'Betriebsanweisung',
+    id: 'ba',
     number: 5,
     title: 'Betriebsanweisungen erstellen und bereitstellen',
     regulatoryRef: 'TRGS 555',
     description:
-      'Betriebsspezifische Ergänzungen zu Sicherheitsdatenblatt-Daten: Schutzausrüstung, Arbeitsverfahren, Notfallmaßnahmen am Einsatzort. Word-Vorlagen ohne Sicherheitsdatenblatt-Verknüpfung kosten SiFa hunderte Stunden pro Jahr.',
+      'Betriebsspezifische Ergänzungen zu SDB-Daten: Schutzausrüstung, Arbeitsverfahren, Notfallmaßnahmen am Einsatzort. Word-Vorlagen ohne SDB-Verknüpfung kosten SiFa hunderte Stunden pro Jahr.',
     gqrHint:
-      'Betriebsanweisung-Grundlage aus Sicherheitsdatenblatt-Feldern — Ergänzungsmaske für betriebsspezifische Inhalte, digital am Gebinde abrufBetriebsanweisungr.',
+      'BA-Grundlage aus SDB-Feldern — Ergänzungsmaske für betriebsspezifische Inhalte, digital am Gebinde abrufbar.',
   },
   {
     id: 'unterweisung',
@@ -61,7 +61,7 @@ export const KATASTER_ERSTELLEN_STEPS: SeoSiloStep[] = [
     description:
       'Beschäftigte müssen über Gefahren und Schutzmaßnahmen unterwiesen werden — bei Einstellung, bei wesentlichen Änderungen, mindestens jährlich. Nachweis führen: wer, wann, welcher Stoff.',
     gqrHint:
-      'Aktuelle Stoffinfos per QR am Arbeitsplatz — Unterweisung Betriebsanweisungut auf demselben Datenstand wie das Verzeichnis.',
+      'Aktuelle Stoffinfos per QR am Arbeitsplatz — Unterweisung baut auf demselben Datenstand wie das Verzeichnis.',
   },
 ];
 
@@ -86,9 +86,9 @@ export const KATASTER_ERSTELLEN_SILO_CONFIG: SeoSiloPageConfig = {
     eyebrow: 'How-To · TRGS 400 · § 6 GefStoffV · § 14 GefStoffV',
     h1: 'Gefahrstoffkataster erstellen — in der richtigen Reihenfolge',
     lead:
-      'Wer „Gefahrstoffkataster erstellen“ sucht, braucht keine Marketing-Checkliste, sondern eine belastBetriebsanweisungre Schrittfolge: Verzeichnis, Gefährdungsbeurteilung, Lagerung, Betriebsanweisung, Unterweisung — mit Nachweisen, die Audits standhalten.',
+      'Wer „Gefahrstoffkataster erstellen“ sucht, braucht keine Marketing-Checkliste, sondern eine belastbare Schrittfolge: Verzeichnis, Gefährdungsbeurteilung, Lagerung, Betriebsanweisung, Unterweisung — mit Nachweisen, die Audits standhalten.',
     proofLine:
-      'Typischer Fehler: mit Excel starten, GB vergessen, Betriebsanweisung in Word parallel pflegen — nach dem ersten Lieferantenwechsel sind Verzeichnis, Sicherheitsdatenblatt und Unterweisungsnachweis nicht mehr synchron. CLP-Anpassungen bis Mai 2026 verschärfen das.',
+      'Typischer Fehler: mit Excel starten, GB vergessen, BA in Word parallel pflegen — nach dem ersten Lieferantenwechsel sind Verzeichnis, SDB und Unterweisungsnachweis nicht mehr synchron. CLP-Anpassungen bis Mai 2026 verschärfen das.',
     primaryCta: {
       label: 'Mit GQR starten',
       href: 'https://app.gefahrstoff-qr.de/register',
@@ -111,16 +111,16 @@ export const KATASTER_ERSTELLEN_SILO_CONFIG: SeoSiloPageConfig = {
       'Pflichtinhalte kompakt — ohne Anspruch auf Vollständigkeit aller Einzelfragen Ihrer SiFa.',
     items: [
       {
-        id: 'Sicherheitsdatenblatt-bezug',
-        title: 'Sicherheitsdatenblatt-Bezug je Stoff',
+        id: 'sdb-bezug',
+        title: 'SDB-Bezug je Stoff',
         description:
-          'Jeder Katastereintrag muss auf ein aktuelles Sicherheitsdatenblatt zurückführBetriebsanweisungr sein — Version und Datum nachweisBetriebsanweisungr.',
+          'Jeder Katastereintrag muss auf ein aktuelles Sicherheitsdatenblatt zurückführbar sein — Version und Datum nachweisbar.',
       },
       {
         id: 'historie',
         title: 'Änderungshistorie',
         description:
-          'Wer wann welche Daten geändert hat — bei Unfällen und BG-Kontrollen entscheidend, in Excel praktisch nicht lösBetriebsanweisungr.',
+          'Wer wann welche Daten geändert hat — bei Unfällen und BG-Kontrollen entscheidend, in Excel praktisch nicht lösbar.',
       },
       {
         id: 'lagerklassen',
@@ -129,10 +129,10 @@ export const KATASTER_ERSTELLEN_SILO_CONFIG: SeoSiloPageConfig = {
           'TRGS 510 verlangt sachgerechte Lagerung — dokumentierte Prüfung der Zusammenlagerung, nicht nur Spalte „Lagerort“.',
       },
       {
-        id: 'Betriebsanweisung-link',
-        title: 'Betriebsanweisung am Einsatzort',
+        id: 'ba-link',
+        title: 'BA am Einsatzort',
         description:
-          'Betriebsanweisung muss für Beschäftigte verfügBetriebsanweisungr sein — Ausdruck oder digital, aber aktuell und auffindBetriebsanweisungr.',
+          'Betriebsanweisung muss für Beschäftigte verfügbar sein — Ausdruck oder digital, aber aktuell und auffindbar.',
       },
     ],
   },
@@ -140,22 +140,22 @@ export const KATASTER_ERSTELLEN_SILO_CONFIG: SeoSiloPageConfig = {
     {
       question: 'Muss ich zuerst das Verzeichnis oder die Gefährdungsbeurteilung erstellen?',
       answer:
-        'Das Verzeichnis nach § 6 GefStoffV ist die DatenBetriebsanweisungsis — die Gefährdungsbeurteilung nach TRGS 400 Betriebsanweisungut darauf auf. Ohne vollständiges, aktuelles Verzeichnis fehlen der GB belastBetriebsanweisungre Eingangsdaten. In der Praxis parallel starten ist möglich, aber die GB darf nicht auf unvollständigen Listen Betriebsanweisungsieren.',
+        'Das Verzeichnis nach § 6 GefStoffV ist die Datenbasis — die Gefährdungsbeurteilung nach TRGS 400 baut darauf auf. Ohne vollständiges, aktuelles Verzeichnis fehlen der GB belastbare Eingangsdaten. In der Praxis parallel starten ist möglich, aber die GB darf nicht auf unvollständigen Listen basieren.',
     },
     {
       question: 'Reicht Excel zum Gefahrstoffkataster erstellen?',
       answer:
-        'Als Erstaufsetzen mit wenigen Stoffen zeitweise ja — als dauerhaftes System selten. Excel ist nicht revisionssicher, warnt nicht bei Sicherheitsdatenblatt-Updates und verknüpft keine PDF-Historie. Nach dem ersten Audit mit Beanstandungen suchen viele Betriebe Software — siehe auch unsere Excel-Vorlage als Übergang.',
+        'Als Erstaufsetzen mit wenigen Stoffen zeitweise ja — als dauerhaftes System selten. Excel ist nicht revisionssicher, warnt nicht bei SDB-Updates und verknüpft keine PDF-Historie. Nach dem ersten Audit mit Beanstandungen suchen viele Betriebe Software — siehe auch unsere Excel-Vorlage als Übergang.',
     },
     {
       question: 'Was gehört mindestens ins Gefahrstoffverzeichnis?',
       answer:
-        'Mindestens: Bezeichnung des Stoffs, Hersteller/Lieferant, Verwendungszweck, Mengen oder Mengenbereiche, Arbeits-/Lagerbereich, Kennzeichnung (H-/P-Sätze, GHS), Bezug zum Sicherheitsdatenblatt. Ergänzend je Betrieb: KMR-Hinweise, Substitutionsprüfung, Unterweisungsstatus.',
+        'Mindestens: Bezeichnung des Stoffs, Hersteller/Lieferant, Verwendungszweck, Mengen oder Mengenbereiche, Arbeits-/Lagerbereich, Kennzeichnung (H-/P-Sätze, GHS), Bezug zum SDB. Ergänzend je Betrieb: KMR-Hinweise, Substitutionsprüfung, Unterweisungsstatus.',
     },
     {
       question: 'Wie oft muss das Kataster aktualisiert werden?',
       answer:
-        'Bei jedem neuen Stoff, jeder Sicherheitsdatenblatt-Revision, Rezepturänderung, Standortwechsel oder nach wesentlichen GB-Anpassungen. Statische Jahresaktualisierung reicht nicht — § 6 verlangt aktuelle Information, nicht eine einmalige Liste.',
+        'Bei jedem neuen Stoff, jeder SDB-Revision, Rezepturänderung, Standortwechsel oder nach wesentlichen GB-Anpassungen. Statische Jahresaktualisierung reicht nicht — § 6 verlangt aktuelle Information, nicht eine einmalige Liste.',
     },
     {
       question: 'Kann ich das Kataster extern erstellen lassen?',
@@ -165,13 +165,13 @@ export const KATASTER_ERSTELLEN_SILO_CONFIG: SeoSiloPageConfig = {
     {
       question: 'Wo beschleunigt GQR den Ablauf konkret?',
       answer:
-        'Schritt 2 und 4: Sicherheitsdatenblatt-Import per KI, Lagerkonflikt-Prüfung, Aktivitätsprotokoll, QR-Abruf für Betriebsanweisung und Notfallinfos. SiFa-Zeit fließt in Freigabe und Bewertung — nicht in Abtippen und Ordnerpflege.',
+        'Schritt 2 und 4: SDB-Import per KI, Lagerkonflikt-Prüfung, Aktivitätsprotokoll, QR-Abruf für BA und Notfallinfos. SiFa-Zeit fließt in Freigabe und Bewertung — nicht in Abtippen und Ordnerpflege.',
     },
   ],
   closingCta: {
     headline: 'Kataster erstellen — einmal richtig statt dreimal nacharbeiten',
     subline:
-      'Starten Sie mit Ihren echten Sicherheitsdatenblatts im kostenlosen Test. Schrittfolge oben, Beschleuniger in GQR.',
+      'Starten Sie mit Ihren echten SDBs im kostenlosen Test. Schrittfolge oben, Beschleuniger in GQR.',
     primaryCta: {
       label: 'GQR kostenlos testen',
       href: 'https://app.gefahrstoff-qr.de/register',
@@ -186,7 +186,7 @@ export const KATASTER_ERSTELLEN_COMPARISON = {
   rows: [
     {
       criterion: 'Schritt 2: Stoffe erfassen',
-      manual: 'Sicherheitsdatenblatt öffnen, Felder abtippen — 15–20 Min. pro Stoff',
+      manual: 'SDB öffnen, Felder abtippen — 15–20 Min. pro Stoff',
       gqr: 'Upload, KI-Extraktion, Freigabe — wenige Minuten',
     },
     {
@@ -197,7 +197,7 @@ export const KATASTER_ERSTELLEN_COMPARISON = {
     {
       criterion: 'Schritt 5: Betriebsanweisung',
       manual: 'Word-Vorlage pro Stoff neu befüllen',
-      gqr: 'Sicherheitsdatenblatt-Felder als Betriebsanweisung-Grundlage, Ergänzung im System',
+      gqr: 'SDB-Felder als BA-Grundlage, Ergänzung im System',
     },
     {
       criterion: 'Nachweiskette',
@@ -207,7 +207,7 @@ export const KATASTER_ERSTELLEN_COMPARISON = {
     {
       criterion: 'Nach Lieferantenwechsel',
       manual: 'Alles manuell nachziehen — Fehlerquote steigt',
-      gqr: 'Neues Sicherheitsdatenblatt hochladen, Diff sichtBetriebsanweisungr',
+      gqr: 'Neues SDB hochladen, Diff sichtbar',
     },
   ],
 } as const;

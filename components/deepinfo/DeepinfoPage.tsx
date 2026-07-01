@@ -20,7 +20,7 @@ export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
       <div className="gqr-container">
         <div className="gqr-post-wrapper">
           <article className="gqr-post-article">
-            <Link href="/wissen/" className="gqr-post-Betriebsanweisungck">
+            <Link href="/wissen/" className="gqr-post-back">
               ← Zurück zu Wissen
             </Link>
             <span className="gqr-post-tag">{meta.targetAudience}</span>
@@ -48,8 +48,8 @@ export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
             </div>
           </article>
 
-          <aside className="gqr-post-sideBetriebsanweisungr" aria-label="SideBetriebsanweisungr">
-            <DeepinfoStickyCta text={meta.stickyCtaText} ctaText={meta.ctaText} variant="sideBetriebsanweisungr" />
+          <aside className="gqr-post-sidebar" aria-label="Sidebar">
+            <DeepinfoStickyCta text={meta.stickyCtaText} ctaText={meta.ctaText} variant="sidebar" />
           </aside>
         </div>
       </div>

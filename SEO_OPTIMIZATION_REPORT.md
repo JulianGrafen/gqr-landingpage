@@ -75,7 +75,7 @@
 #### FAQPage Schema erweitert
 - **Vorher**: 3 FAQ-Items
 - **Nachher**: **6 FAQ-Items** mit SEO-Keywords:
-  1. ✅ "Was ist der digitale Produktpass?" → ESPR, maschinenlesBetriebsanweisungr
+  1. ✅ "Was ist der digitale Produktpass?" → ESPR, maschinenlesbar
   2. ✅ "Wer ist ab 2027 verpflichtet?" → Verordnung, Fristen
   3. ✅ "Wie hilft KI bei der DPP-Erstellung?" → Automation, Efficiency
   4. ✅ "Ist der Digitale Produktpass rechtssicher?" → Compliance
@@ -168,7 +168,7 @@
 ### Phase 1: Content (nächste 2-4 Wochen)
 1. **Erstellen Sie 5 SEO Blog-Artikel** gemäß `BLOG_SEO_STRATEGY.md`:
    - `espr-verordnung-digitaler-produktpass-2026`
-   - `Betriebsanweisungtteriepass-2026-anforderungen-kennzeichnung`
+   - `batteriepass-2026-anforderungen-kennzeichnung`
    - `kreislaufwirtschaft-digitaler-produktpass-nachhaltigkeit`
    - `dpp-datenmodelle-gs1-json-ld-standards`
    - `kmu-compliance-checkliste-digitaler-produktpass`
@@ -182,7 +182,7 @@
 
 ### Phase 2: Technical (nächste 4-8 Wochen)
 1. **Core Web Vitals überprüfen:**
-   ```Betriebsanweisungsh
+   ```bash
    pagespeed.web.dev
    ```
    
@@ -196,7 +196,7 @@
    - Alle Blog-Artikel hinzufügen
    - Google Search Console neu einreichen
 
-### Phase 3: Betriebsanweisungcklinks (parallel)
+### Phase 3: Backlinks (parallel)
 - LinkedIn Articles verlinken zu Blog
 - Guest Posts auf Industrie-Seiten
 - B2B Verzeichnis-Einträge aktualisieren
@@ -215,7 +215,7 @@
 - Schema Markup follows Google Best Practices
 - TypeScript-ready für future refactor
 
-✅ **WartBetriebsanweisungrkeit**:
+✅ **Wartbarkeit**:
 - Klare Dokumentation (diese Datei + BLOG_SEO_STRATEGY.md)
 - Konsistente Meta-Tag-Struktur
 - Semantische HTML-Architektur

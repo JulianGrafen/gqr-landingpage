@@ -9,12 +9,12 @@ const canonical = `${SITE_URL}/wissen/`;
 export const metadata: Metadata = {
   title: 'Wissen: Blog & Gefahrstoff-Leitfäden',
   description:
-    'Gefahrstoff-Wissen: Blog-Artikel, Deepinfo-Leitfäden zu GefStoffV, Sicherheitsdatenblatt, TRGS 510 und Gefahrstoffkataster Software — für SiFa und KMU.',
+    'Gefahrstoff-Wissen: Blog-Artikel, Deepinfo-Leitfäden zu GefStoffV, SDB, TRGS 510 und Gefahrstoffkataster Software — für SiFa und KMU.',
   alternates: { canonical },
   openGraph: {
     title: 'Wissen: Blog & Gefahrstoff-Leitfäden',
     description:
-      'Gefahrstoff-Wissen: Blog-Artikel, Deepinfo-Leitfäden zu GefStoffV, Sicherheitsdatenblatt und digitalem Verzeichnis.',
+      'Gefahrstoff-Wissen: Blog-Artikel, Deepinfo-Leitfäden zu GefStoffV, SDB und digitalem Verzeichnis.',
     url: canonical,
     siteName: 'Gefahrstoff-QR',
     locale: 'de_DE',

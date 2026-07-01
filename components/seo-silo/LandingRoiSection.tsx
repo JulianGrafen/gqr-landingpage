@@ -9,7 +9,7 @@ type LandingRoiSectionProps = {
 export function LandingRoiSection({
   id = 'silo-roi',
   title = 'ROI: Was manuelle Pflege wirklich kostet',
-  subline = 'Illustrativer Vergleich — Ihre SiFa-Zeit ist teurer als die Software-Lizenz, soBetriebsanweisungld das Kataster wächst.',
+  subline = 'Illustrativer Vergleich — Ihre SiFa-Zeit ist teurer als die Software-Lizenz, sobald das Kataster wächst.',
 }: LandingRoiSectionProps) {
   return (
     <section

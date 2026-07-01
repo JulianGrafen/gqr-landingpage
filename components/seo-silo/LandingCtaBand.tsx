@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import type { SeoSiloClosingCta } from '@/config/seo-silo/types';
 
-type LandingCtaBetriebsanweisungndProps = SeoSiloClosingCta & {
+type LandingCtaBandProps = SeoSiloClosingCta & {
   id?: string;
 };
 
-export function LandingCtaBetriebsanweisungnd({
+export function LandingCtaBand({
   id = 'silo-closing-cta',
   headline,
   subline,
   primaryCta,
   disclaimer,
-}: LandingCtaBetriebsanweisungndProps) {
+}: LandingCtaBandProps) {
   const ctaClassName = 'gqr-cta-primary gqr-cta-primary--lg mt-6 no-underline';
 
   return (
@@ -20,7 +20,7 @@ export function LandingCtaBetriebsanweisungnd({
       aria-labelledby={`${id}-title`}
     >
       <div className="gqr-container">
-        <div className="gqr-sideBetriebsanweisungr-card gqr-sideBetriebsanweisungr-card--cta mx-auto max-w-3xl px-6 py-10 text-center sm:px-10 sm:py-12">
+        <div className="gqr-sidebar-card gqr-sidebar-card--cta mx-auto max-w-3xl px-6 py-10 text-center sm:px-10 sm:py-12">
           <h2 id={`${id}-title`} className="gqr-post-section-title">
             {headline}
           </h2>

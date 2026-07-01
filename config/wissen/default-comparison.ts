@@ -1,9 +1,9 @@
 import type { DeepinfoComparisonRow } from '@/lib/wissen/types';
 
-/** Standard-Vergleich Excel/Papier vs. GQR — in MDX per `comparison.rows` überschreibBetriebsanweisungr. */
+/** Standard-Vergleich Excel/Papier vs. GQR — in MDX per `comparison.rows` überschreibbar. */
 export const DEFAULT_MANUAL_VS_GQR_ROWS: DeepinfoComparisonRow[] = [
   {
-    criterion: 'Sicherheitsdatenblatt-Daten erfassen',
+    criterion: 'SDB-Daten erfassen',
     manual: 'Manuelles Abtippen aus PDF — fehleranfällig und zeitintensiv',
     gqr: 'KI extrahiert H-/P-Sätze, LGK und Schutzmaßnahmen automatisch',
   },
@@ -20,7 +20,7 @@ export const DEFAULT_MANUAL_VS_GQR_ROWS: DeepinfoComparisonRow[] = [
   {
     criterion: 'Audit & Behörden',
     manual: 'Excel-Export ohne Nachweis der Datenherkunft',
-    gqr: 'Export mit Sicherheitsdatenblatt-Bezug und nachvollziehBetriebsanweisungrer Dokumentation',
+    gqr: 'Export mit SDB-Bezug und nachvollziehbarer Dokumentation',
   },
   {
     criterion: 'Skalierung im Betrieb',

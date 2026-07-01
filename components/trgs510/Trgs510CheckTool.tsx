@@ -32,7 +32,7 @@ function StorageClassSelect({ id, label, value, onChange }: StorageClassSelectPr
         id={id}
         value={value}
         onChange={(event) => onChange(normalizeSelection(event.target.value))}
-        className="mt-2 min-h-[56px] w-full rounded-2xl border border-white/12 bg-[#0a1628]/85 px-4 text-Betriebsanweisungse font-semibold text-[#f0f6ff] shadow-inner shadow-black/20 outline-none transition focus:border-[#2dd4bf]/60 focus:ring-4 focus:ring-[#2dd4bf]/15"
+        className="mt-2 min-h-[56px] w-full rounded-2xl border border-white/12 bg-[#0a1628]/85 px-4 text-base font-semibold text-[#f0f6ff] shadow-inner shadow-black/20 outline-none transition focus:border-[#2dd4bf]/60 focus:ring-4 focus:ring-[#2dd4bf]/15"
       >
         <option value="">Lagerklasse auswählen</option>
         {storageClasses.map((storageClass) => (
@@ -56,7 +56,7 @@ export function Trgs510CheckTool() {
 
   return (
     <section
-      className="rounded-[2rem] border border-white/[0.08] bg-[#0f1e35]/70 p-4 shadow-2xl shadow-black/20 Betriebsanweisungckdrop-blur-sm sm:p-6 lg:p-8"
+      className="rounded-[2rem] border border-white/[0.08] bg-[#0f1e35]/70 p-4 shadow-2xl shadow-black/20 backdrop-blur-sm sm:p-6 lg:p-8"
       aria-labelledby="trgs510-tool-heading"
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -107,7 +107,7 @@ export function Trgs510CheckTool() {
 
       <p className="mt-5 text-xs leading-relaxed text-[#8fa4c0]">
         Hinweis: Das Tool ersetzt keine Gefährdungsbeurteilung. Produktangaben aus dem
-        Sicherheitsdatenblatt, Lagermengen, Betriebsanweisunguliche Bedingungen und behördliche Vorgaben
+        Sicherheitsdatenblatt, Lagermengen, bauliche Bedingungen und behördliche Vorgaben
         sind zusätzlich zu prüfen.
       </p>
     </section>

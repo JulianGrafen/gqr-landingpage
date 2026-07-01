@@ -9,10 +9,10 @@ export const SITE_URL = 'https://gefahrstoff-qr.de';
 export const HOME_SEO = {
   title: 'Gefahrstoffkataster Software statt Excel | Gefahrstoff-QR',
   description:
-    'Gefahrstoffkataster & App: Excel-Alternative mit KI-Sicherheitsdatenblatt-Import, QR-Notfallpass und Revisionsverlauf nach § 6. Kostenlos testen.',
+    'Gefahrstoffkataster & App: Excel-Alternative mit KI-SDB-Import, QR-Notfallpass und Revisionsverlauf nach § 6. Kostenlos testen.',
   h1: 'Gefahrstoffkataster Software – die nächste Stufe nach Excel',
   heroSubline:
-    'Statt fehleranfälliger Excel-Vorlagen: KI extrahiert Sicherheitsdatenblatt-Daten automatisch, führt Ihr Verzeichnis revisionssicher und spart Stunden Abtipp-Arbeit.',
+    'Statt fehleranfälliger Excel-Vorlagen: KI extrahiert SDB-Daten automatisch, führt Ihr Verzeichnis revisionssicher und spart Stunden Abtipp-Arbeit.',
   softwareDescription:
     'Gefahrstoffkataster Software: KI extrahiert Sicherheitsdatenblätter automatisch — die nächste Stufe nach Excel mit revisionssicherem Verzeichnis, Revisionsverlauf und QR-Notfallpass inklusive.',
 } as const;
@@ -32,15 +32,15 @@ export const EXCEL_VORLAGE_SEO = {
   description:
     'Excel Gefahrstoffverzeichnis-Vorlage: Grenzen bei Revisionen und Prüfungen – KI-Kataster als nächster Schritt nach § 6.',
   ogImageAlt:
-    'Gefahrstoffverzeichnis Software statt Excel-Vorlage – KI-Sicherheitsdatenblatt-Extraktion und digitales Kataster',
+    'Gefahrstoffverzeichnis Software statt Excel-Vorlage – KI-SDB-Extraktion und digitales Kataster',
   h1: 'Gefahrstoffverzeichnis: Von der Excel-Vorlage zur KI-gestützten Software',
 } as const;
 
 /** Next.js-Default / Branchen-Unterseiten — Title 3 + Description 3 */
 export const SITE_DEFAULT_SEO = {
-  title: 'Digitales Gefahrstoffkataster – Sicherheitsdatenblatt per KI, nicht Excel',
+  title: 'Digitales Gefahrstoffkataster – SDB per KI, nicht Excel',
   description:
-    'Digitales Gefahrstoffkataster: KI-Sicherheitsdatenblatt-Import, Revisionsverlauf und QR-Notfallpass statt fehleranfälliger Excel-Listen.',
+    'Digitales Gefahrstoffkataster: KI-SDB-Import, Revisionsverlauf und QR-Notfallpass statt fehleranfälliger Excel-Listen.',
 } as const;
 
 export const GSC_TARGET_KEYWORDS = [

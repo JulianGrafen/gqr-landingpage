@@ -39,7 +39,7 @@ const STRUC_DATA = {
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web',
       description:
-        'Gefahrstoffkataster Software mit Sicherheitsdatenblatt-Extraktion und digitalem Gefahrstoffverzeichnis nach § 6 GefStoffV – Alternative zur reinen Excel-Vorlage.',
+        'Gefahrstoffkataster Software mit SDB-Extraktion und digitalem Gefahrstoffverzeichnis nach § 6 GefStoffV – Alternative zur reinen Excel-Vorlage.',
       url: pageUrl,
       offers: {
         '@type': 'Offer',
@@ -48,7 +48,7 @@ const STRUC_DATA = {
         description: 'Kostenloser Einstieg zum Testen',
       },
       featureList: [
-        'Sicherheitsdatenblatt Extraktion',
+        'SDB Extraktion',
         'Gefahrstoffliste strukturiert pflegen',
         'Revisionssichere Nutzung im Team',
       ],
@@ -62,13 +62,13 @@ const STRUC_DATA = {
       step: [
         {
           '@type': 'HowToStep',
-          name: 'Stoffe und Sicherheitsdatenblatts erfassen',
-          text: 'Sammeln Sie alle eingesetzten Gefahrstoffe und die zugehörigen Sicherheitsdatenblätter; legen Sie eine klare Liste als Betriebsanweisungsis für Ihr Verzeichnis an.',
+          name: 'Stoffe und SDBs erfassen',
+          text: 'Sammeln Sie alle eingesetzten Gefahrstoffe und die zugehörigen Sicherheitsdatenblätter; legen Sie eine klare Liste als Basis für Ihr Verzeichnis an.',
         },
         {
           '@type': 'HowToStep',
           name: 'Stammdaten übernehmen',
-          text: 'Übertragen Sie H- und P-Sätze, Kennzeichnung und weitere Pflichtfelder – manuell in einer Gefahrstoffverzeichnis-Vorlage oder per Sicherheitsdatenblatt Extraktion in eine Gefahrstoffkataster Software.',
+          text: 'Übertragen Sie H- und P-Sätze, Kennzeichnung und weitere Pflichtfelder – manuell in einer Gefahrstoffverzeichnis-Vorlage oder per SDB Extraktion in eine Gefahrstoffkataster Software.',
         },
         {
           '@type': 'HowToStep',
@@ -78,7 +78,7 @@ const STRUC_DATA = {
         {
           '@type': 'HowToStep',
           name: 'Pflegen und nachhalten',
-          text: 'Bei neuen Sicherheitsdatenblatt-Versionen Daten aktualisieren und Änderungen nachvollziehBetriebsanweisungr dokumentieren – das reduziert Haftungsrisiko und Prüfungsstress.',
+          text: 'Bei neuen SDB-Versionen Daten aktualisieren und Änderungen nachvollziehbar dokumentieren – das reduziert Haftungsrisiko und Prüfungsstress.',
         },
       ],
     },
@@ -88,7 +88,7 @@ const STRUC_DATA = {
 export const metadata: Metadata = {
   title: SEO_TITLE,
   description: SEO_DESCRIPTION,
-  keywords: [...GSC_TARGET_KEYWORDS, 'Sicherheitsdatenblatt Extraktion', 'GefStoffV', 'Excel Gefahrstoffliste'],
+  keywords: [...GSC_TARGET_KEYWORDS, 'SDB Extraktion', 'GefStoffV', 'Excel Gefahrstoffliste'],
   alternates: { canonical: pageUrl },
   robots: {
     index: true,
@@ -122,9 +122,9 @@ export const metadata: Metadata = {
 const COMPARISON_ROWS: ComparisonRow[] = [
   {
     criterion: 'Erfassungsdauer',
-    excel: 'Steigt linear: jede neue Version eines Sicherheitsdatenblatt erzeugt erneuten manuellen Aufwand.',
+    excel: 'Steigt linear: jede neue Version eines SDB erzeugt erneuten manuellen Aufwand.',
     extraction:
-      'Typisch ca. 2 Min. pro Sicherheitsdatenblatt inkl. KI-Import und fachlicher Freigabe — statt Abtippen konzentrieren Sie sich auf Abweichungen.',
+      'Typisch ca. 2 Min. pro SDB inkl. KI-Import und fachlicher Freigabe — statt Abtippen konzentrieren Sie sich auf Abweichungen.',
   },
   {
     criterion: 'Fehlerrate / Datengenauigkeit',
@@ -136,7 +136,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
   {
     criterion: 'Revisionssicherheit',
     excel:
-      'Hängt von Datei-Disziplin, Freigaben und NachvollziehBetriebsanweisungrkeit „wer hat wann geändert“ ab.',
+      'Hängt von Datei-Disziplin, Freigaben und Nachvollziehbarkeit „wer hat wann geändert“ ab.',
     extraction:
       'Strukturierte Ausgangsdaten erleichtern Nachweise; Umsetzung im Produkt bestimmt Audittrail und Freigaben.',
   },
@@ -200,14 +200,14 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
                   Gefahrstoffverzeichnis Muster
                 </strong>{' '}
                 sucht, startet oft bewusst mit Tabellen: niedrige
-                Einstiegskosten, schnell erklärt, überall verfügBetriebsanweisungr. Viele
+                Einstiegskosten, schnell erklärt, überall verfügbar. Viele
                 Suchanfragen nach{' '}
                 <strong className="font-semibold text-[#c8d4e6]">
                   Gefahrstoffkataster Software kostenlos
                 </strong>{' '}
                 sind genau dieser Logik geschuldet — erst strukturieren, später
                 optimieren. Der sachliche Nachteil: manuelles Abtippen aus dem
-                Sicherheitsdatenblatt skaliert schlecht, erzeugt{' '}
+                SDB skaliert schlecht, erzeugt{' '}
                 <strong className="font-semibold text-[#c8d4e6]">
                   Haftungsrisiko
                 </strong>{' '}
@@ -217,7 +217,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
               <p className="mt-4 text-lg leading-relaxed text-[#8fa4c0]">
                 Mit{' '}
                 <strong className="font-semibold text-[#c8d4e6]">
-                  Sicherheitsdatenblatt Extraktion
+                  SDB Extraktion
                 </strong>{' '}
                 lässt sich dieselbe{' '}
                 <strong className="font-semibold text-[#c8d4e6]">
@@ -228,14 +228,14 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
                 <strong className="font-semibold text-[#c8d4e6]">
                   Gefahrstoffliste Lösungen
                 </strong>{' '}
-                im Betrieb bleiben nachvollziehBetriebsanweisungr, während Sie den Kopf für die
+                im Betrieb bleiben nachvollziehbar, während Sie den Kopf für die
                 inhaltlich kniffligen Fälle freibekommen.
               </p>
               <Link
                 href={REGISTER_HREF}
                 className="gqr-cta-primary gqr-cta-primary--lg mt-8 inline-flex"
               >
-                Jetzt kostenlos testen &amp; Sicherheitsdatenblatt-Auto-Check
+                Jetzt kostenlos testen &amp; SDB-Auto-Check
               </Link>
             </div>
             <div className="flex justify-center lg:justify-end">
@@ -261,7 +261,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
               id="excel-muster-heading"
               eyebrow="Einstieg"
               title="Gefahrstoffverzeichnis Excel Muster"
-              subtitle="Ein Muster in Excel oder als exportierBetriebsanweisungre Liste gibt Orientierung für Spalten, die in Audits oft nachgefragt werden — von Stoffbezeichnung über Kennzeichnung bis zur Quelle des Sicherheitsdatenblatt. Eine Vorlage ersetzt aber weder die fachliche Bewertung noch eine belastBetriebsanweisungre Historie von Änderungen."
+              subtitle="Ein Muster in Excel oder als exportierbare Liste gibt Orientierung für Spalten, die in Audits oft nachgefragt werden — von Stoffbezeichnung über Kennzeichnung bis zur Quelle des SDB. Eine Vorlage ersetzt aber weder die fachliche Bewertung noch eine belastbare Historie von Änderungen."
             />
             <div className="mt-8 space-y-4 leading-relaxed text-slate-600">
               <p>
@@ -274,11 +274,11 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
                   Gefahrstoffverzeichnis Muster
                 </strong>
                 , um Konsens im Team zu schaffen: Welche Mindestfelder pflegen
-                wir? Wer trägt die Verantwortung bei neuen Lieferanten? SoBetriebsanweisungld die
-                Struktur steht, wird der Engpass sichtBetriebsanweisungr — nämlich die
+                wir? Wer trägt die Verantwortung bei neuen Lieferanten? Sobald die
+                Struktur steht, wird der Engpass sichtbar — nämlich die
                 wiederkehrende{' '}
                 <strong className="font-semibold text-slate-800">
-                  Sicherheitsdatenblatt Extraktion
+                  SDB Extraktion
                 </strong>{' '}
                 für jede Produktaktualisierung.
               </p>
@@ -289,7 +289,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
                 <strong className="font-semibold text-slate-800">
                   Gefahrstoffliste Lösungen
                 </strong>{' '}
-                vereinBetriebsanweisungr — entscheidend ist die Transparenz für Prüfer und
+                vereinbar — entscheidend ist die Transparenz für Prüfer und
                 Geschäftsführung.
               </p>
             </div>
@@ -298,7 +298,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
                 href={REGISTER_HREF}
                 className="gqr-cta-primary gqr-cta-primary--md inline-flex text-center"
               >
-                Jetzt kostenlos testen &amp; Sicherheitsdatenblatt-Auto-Check
+                Jetzt kostenlos testen &amp; SDB-Auto-Check
               </Link>
             </div>
           </div>
@@ -318,7 +318,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               <ExpertCard index={1} title="Manueller Aufwand">
                 <p>
-                  Wer Sicherheitsdatenblatt-Inhalte in Zeilen und Spalten überträgt, landet schnell
+                  Wer SDB-Inhalte in Zeilen und Spalten überträgt, landet schnell
                   bei <strong>ca. 15–25 Minuten pro Dokument</strong> — je nach
                   Layout, Sprache und wie tief Sie chemikalienrechtlich auswerten.
                 </p>
@@ -342,13 +342,13 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
               </ExpertCard>
               <ExpertCard index={3} title="Veraltete Datenstände">
                 <p>
-                  Lieferanten aktualisieren Sicherheitsdatenblatts regelmäßig. In Excel bleibt oft
+                  Lieferanten aktualisieren SDBs regelmäßig. In Excel bleibt oft
                   unklar, <strong>welche PDF-Version</strong> der Zeile zugrunde
                   liegt.
                 </p>
                 <p>
                   Revisionssicherheit entsteht nicht durch die Dateiendung,
-                  sondern durch definierte Freigaben und nachvollziehBetriebsanweisungre
+                  sondern durch definierte Freigaben und nachvollziehbare
                   Änderungen.
                 </p>
               </ExpertCard>
@@ -404,7 +404,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
               id="app-vorteile-heading"
               eyebrow="Digitale Gefahrstoffkataster Software"
               title="Vorteile einer Gefahrstoff-App oder -Software"
-              subtitle="Wenn der Katalog wächst, zählen WiederholBetriebsanweisungrkeit, Geschwindigkeit und NachweisBetriebsanweisungrkeit — nicht nur die Tabellenoptik."
+              subtitle="Wenn der Katalog wächst, zählen Wiederholbarkeit, Geschwindigkeit und Nachweisbarkeit — nicht nur die Tabellenoptik."
             />
             <ul className="mt-8 list-none space-y-4 text-slate-600">
               <li className="flex gap-3">
@@ -413,7 +413,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
                   aria-hidden
                 />
                 <span>
-                  <strong className="text-slate-800">Sicherheitsdatenblatt Extraktion</strong> in
+                  <strong className="text-slate-800">SDB Extraktion</strong> in
                   Sekunden statt handschriftlichem Übertrag — konsistentere
                   Stammdaten für Ihr{' '}
                   <strong className="text-slate-800">Gefahrstoffkataster</strong>
@@ -430,7 +430,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
                   <strong className="text-slate-800">
                     Gefahrstoffliste Lösungen
                   </strong>{' '}
-                  im Schichtbetrieb; Informationen bleiben am Einsatzort nutzBetriebsanweisungr.
+                  im Schichtbetrieb; Informationen bleiben am Einsatzort nutzbar.
                 </span>
               </li>
               <li className="flex gap-3">
@@ -449,7 +449,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
                   aria-hidden
                 />
                 <span>
-                  KombinierBetriebsanweisungr mit Ihrem bestehenden Mentalmodell: viele Teams
+                  Kombinierbar mit Ihrem bestehenden Mentalmodell: viele Teams
                   behalten eine{' '}
                   <strong className="text-slate-800">
                     Gefahrstoffverzeichnis Vorlage Excel
@@ -466,7 +466,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
                 className="max-h-56 w-auto max-w-full"
                 loading="lazy"
                 decoding="async"
-                alt="Gefahrstoffverzeichnis Excel und digitale Sicherheitsdatenblatt-Extraktion – Sicherheitsdatenblatt strukturiert erfassen"
+                alt="Gefahrstoffverzeichnis Excel und digitale SDB-Extraktion – Sicherheitsdatenblatt strukturiert erfassen"
               />
             </div>
           </div>
@@ -486,7 +486,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
             <div className="mt-8">
               <ExpertCallout title="Menschliche Endkontrolle bleibt Pflicht">
                 <p>
-                  Sicherheitsdatenblatts sind komplex; Ausnahmen, proprietäre Gemische und
+                  SDBs sind komplex; Ausnahmen, proprietäre Gemische und
                   firmenspezifische Bewertungen können nicht blind übernommen
                   werden. Was Automatisierung realistisch leistet, ist die{' '}
                   <strong>Entlastung bei großer Datenmenge</strong>: Standardfelder,
@@ -526,8 +526,8 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
           <div className="mx-auto max-w-[1160px]">
             <LeadMagnetCta
               title="Excel-Einstieg behalten — Automatisierung dazu nutzen"
-              body="Starten Sie kostenlos: Struktur wie bei einer Vorlage, plus automatische Übernahme aus echten Sicherheitsdatenblatts. Keine Kreditkarte."
-              ctaLabel="Jetzt kostenlos testen & Sicherheitsdatenblatt-Auto-Check"
+              body="Starten Sie kostenlos: Struktur wie bei einer Vorlage, plus automatische Übernahme aus echten SDBs. Keine Kreditkarte."
+              ctaLabel="Jetzt kostenlos testen & SDB-Auto-Check"
             />
             <p className="mt-10 text-center text-sm text-[#8fa4c0]">
               <Link

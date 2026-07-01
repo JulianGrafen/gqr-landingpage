@@ -55,7 +55,7 @@ const RULE_EXPLANATIONS: Record<Trgs510ResultCode, Trgs510RuleExplanation> = {
     label: 'Getrenntlagerung in Räumen möglich',
     shortText: 'Getrenntlagerung kann statt Separatlagerung zulässig sein.',
     detail:
-      'Zulässig bei maximal 50 gefüllten Druckgasbehältern, darunter höchstens 25 mit akut toxischen, entzündBetriebsanweisungren oder oxidierenden Gasen, wenn eine mindestens 2 m hohe Wand aus nichtbrennBetriebsanweisungren Betriebsanweisungustoffen und 5 m Abstand zu brennBetriebsanweisungren Lagergütern eingehalten werden.',
+      'Zulässig bei maximal 50 gefüllten Druckgasbehältern, darunter höchstens 25 mit akut toxischen, entzündbaren oder oxidierenden Gasen, wenn eine mindestens 2 m hohe Wand aus nichtbrennbaren Baustoffen und 5 m Abstand zu brennbaren Lagergütern eingehalten werden.',
     sourceReference: `${TRGS_SOURCE}, Erläuterung Nr. 2`,
   },
   '3': {
@@ -65,7 +65,7 @@ const RULE_EXPLANATIONS: Record<Trgs510ResultCode, Trgs510RuleExplanation> = {
     label: 'Gase nur unter Mengen- und Abstandsvorgaben',
     shortText: 'Verschiedene Druckgasbehälter dürfen nur unter definierten Bedingungen gemeinsam lagern.',
     detail:
-      'Die TRGS 510 erlaubt bestimmte Kombinationen entzündBetriebsanweisungrer, oxidierender, akut toxischer und inerter Gase nur innerhalb definierter Mengen. Zwischen entzündBetriebsanweisungren und oxidierenden Gasen ist mindestens 2 m Abstand einzuhalten.',
+      'Die TRGS 510 erlaubt bestimmte Kombinationen entzündbarer, oxidierender, akut toxischer und inerter Gase nur innerhalb definierter Mengen. Zwischen entzündbaren und oxidierenden Gasen ist mindestens 2 m Abstand einzuhalten.',
     sourceReference: `${TRGS_SOURCE}, Erläuterung Nr. 3`,
   },
   '4': {
@@ -83,9 +83,9 @@ const RULE_EXPLANATIONS: Record<Trgs510ResultCode, Trgs510RuleExplanation> = {
     status: 'restricted',
     severity: 'yellow',
     label: 'Brandlasten im Lagerabschnitt vermeiden',
-    shortText: 'BrennBetriebsanweisungre Materialien dürfen nicht zusätzlich im selben Lagerabschnitt stehen.',
+    shortText: 'Brennbare Materialien dürfen nicht zusätzlich im selben Lagerabschnitt stehen.',
     detail:
-      'Materialien wie Papier, Textilien, Holz, Holzwolle, Kartonagen, Folien oder brennBetriebsanweisungre Verpackungsfüllstoffe dürfen nicht gelagert werden, sofern sie nicht für Lagerung und Transport eine Einheit mit den ortsbeweglichen Behältern bilden.',
+      'Materialien wie Papier, Textilien, Holz, Holzwolle, Kartonagen, Folien oder brennbare Verpackungsfüllstoffe dürfen nicht gelagert werden, sofern sie nicht für Lagerung und Transport eine Einheit mit den ortsbeweglichen Behältern bilden.',
     sourceReference: `${TRGS_SOURCE}, Erläuterung Nr. 5`,
   },
   '6': {
@@ -102,10 +102,10 @@ const RULE_EXPLANATIONS: Record<Trgs510ResultCode, Trgs510RuleExplanation> = {
     code: '7',
     status: 'restricted',
     severity: 'yellow',
-    label: 'BrennBetriebsanweisungre Lagergüter nur unter Zusatzbedingungen',
-    shortText: 'Zusammenlagerung mit brennBetriebsanweisungren Lagergütern ist nur mit Brandschutzauflagen zulässig.',
+    label: 'Brennbare Lagergüter nur unter Zusatzbedingungen',
+    shortText: 'Zusammenlagerung mit brennbaren Lagergütern ist nur mit Brandschutzauflagen zulässig.',
     detail:
-      'Zusammenlagerung mit brennBetriebsanweisungren Lagergütern darf nur unter den Bedingungen nach Tabelle 13 und zusätzlich unter Beachtung der Brandlast-Regel aus Erläuterung Nr. 5 erfolgen.',
+      'Zusammenlagerung mit brennbaren Lagergütern darf nur unter den Bedingungen nach Tabelle 13 und zusätzlich unter Beachtung der Brandlast-Regel aus Erläuterung Nr. 5 erfolgen.',
     sourceReference: `${TRGS_SOURCE}, Erläuterung Nr. 7`,
   },
   '8': {

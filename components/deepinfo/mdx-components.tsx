@@ -10,7 +10,7 @@ function DarkCallout({ title, children }: { title: string; children: ReactNode }
   );
 }
 
-/** MDX-Elemente — Styling über `.gqr-post-content` in gloBetriebsanweisungls.css (Blog-Parität). */
+/** MDX-Elemente — Styling über `.gqr-post-content` in globals.css (Blog-Parität). */
 export const deepinfoMdxComponents: MDXComponents = {
   Callout: DarkCallout,
 };

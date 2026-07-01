@@ -34,7 +34,7 @@ export function ExpertHeading({
         {title}
       </h2>
       {subtitle ? (
-        <p className={`mt-4 text-Betriebsanweisungse leading-relaxed sm:text-lg ${subCls}`}>
+        <p className={`mt-4 text-base leading-relaxed sm:text-lg ${subCls}`}>
           {subtitle}
         </p>
       ) : null}

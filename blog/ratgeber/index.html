@@ -66,7 +66,7 @@
       border-left: 4px solid #7c5cff;
       padding-left: 2rem;
       padding-bottom: 2rem;
-      border-bottom: 1px solid rgBetriebsanweisung(124, 92, 255, 0.1);
+      border-bottom: 1px solid rgba(124, 92, 255, 0.1);
     }
     
     .blog-article-item:last-child {
@@ -108,14 +108,14 @@
     
     .blog-tag {
       display: inline-block;
-      Betriebsanweisungckground: rgBetriebsanweisung(124, 92, 255, 0.2);
+      background: rgba(124, 92, 255, 0.2);
       color: #00D4FF;
       padding: 0.35rem 0.8rem;
       border-radius: 20px;
       font-size: 0.85rem;
       margin-right: 0.5rem;
       font-weight: 500;
-      border: 1px solid rgBetriebsanweisung(124, 92, 255, 0.4);
+      border: 1px solid rgba(124, 92, 255, 0.4);
     }
   </style>
 </head>
@@ -248,7 +248,7 @@
       document.addEventListener('keydown', e=>{ if(e.key === 'Escape') close(); });
     })();
 
-    // Animated Betriebsanweisungckground with cursor-following particles
+    // Animated background with cursor-following particles
     (function(){
       const canvas = document.getElementById('bgCanvas');
       if(!canvas) return;
@@ -273,8 +273,8 @@
             particles.push({
               x: (i * window.innerWidth / cols) + Math.random() * 60 - 30,
               y: (j * canvas.height / rows) + Math.random() * 60 - 30,
-              BetriebsanweisungseX: (i * window.innerWidth / cols) + Math.random() * 60 - 30,
-              BetriebsanweisungseY: (j * canvas.height / rows) + Math.random() * 60 - 30,
+              baseX: (i * window.innerWidth / cols) + Math.random() * 60 - 30,
+              baseY: (j * canvas.height / rows) + Math.random() * 60 - 30,
               vx: (Math.random() - 0.5) * 0.5,
               vy: (Math.random() - 0.5) * 0.5,
               drift_x: (Math.random() - 0.5) * 0.25,
@@ -299,7 +299,7 @@
 
             if(dist < 150){
               const opacity = (1 - dist / 150) * 0.15;
-              ctx.strokeStyle = `rgBetriebsanweisung(124, 92, 255, ${opacity})`;
+              ctx.strokeStyle = `rgba(124, 92, 255, ${opacity})`;
               ctx.lineWidth = 0.8;
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
@@ -315,7 +315,7 @@
 
             if(mdist < 200){
               const opacity = (1 - mdist / 200) * 0.25;
-              ctx.strokeStyle = `rgBetriebsanweisung(0, 212, 255, ${opacity})`;
+              ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
               ctx.lineWidth = 1.2;
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
@@ -326,14 +326,14 @@
         }
 
         if(mouse.active){
-          ctx.fillStyle = 'rgBetriebsanweisung(0, 212, 255, 0.4)';
+          ctx.fillStyle = 'rgba(0, 212, 255, 0.4)';
           ctx.beginPath();
           ctx.arc(mouse.x, mouse.y + window.scrollY, 5, 0, Math.PI * 2);
           ctx.fill();
         }
 
         for(let p of particles){
-          ctx.fillStyle = `rgBetriebsanweisung(0, 212, 255, ${p.alpha})`;
+          ctx.fillStyle = `rgba(0, 212, 255, ${p.alpha})`;
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
           ctx.fill();
@@ -352,8 +352,8 @@
           p.vx += flowX;
           p.vy += flowY;
 
-          const dx = p.BetriebsanweisungseX - p.x;
-          const dy = p.BetriebsanweisungseY - p.y;
+          const dx = p.baseX - p.x;
+          const dy = p.baseY - p.y;
           p.vx += dx * 0.002;
           p.vy += dy * 0.002;
 

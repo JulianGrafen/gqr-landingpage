@@ -8,7 +8,7 @@ export const EXCEL_VORLAGE_SILO_CONFIG: SeoSiloPageConfig = {
   seo: {
     title: 'Gefahrstoffverzeichnis Excel-Vorlage: Gratis Download & Grenzen | GQR',
     description:
-      'Gratis Excel-Vorlage für § 6 GefStoffV und TRGS 400 — plus faktenBetriebsanweisungsiert, warum Tabellen bei BG-Audits scheitern und wann digitales Gefahrstoffmanagement sinnvoller ist.',
+      'Gratis Excel-Vorlage für § 6 GefStoffV und TRGS 400 — plus faktenbasiert, warum Tabellen bei BG-Audits scheitern und wann digitales Gefahrstoffmanagement sinnvoller ist.',
     ogImageAlt:
       'Excel-Vorlage Gefahrstoffverzeichnis — audit-tauglicher Einstieg und Upgrade zu Gefahrstoff-QR',
     canonicalPath: VORLAGE_LANDING_PATH,
@@ -23,7 +23,7 @@ export const EXCEL_VORLAGE_SILO_CONFIG: SeoSiloPageConfig = {
     lead:
       'Sie suchen eine Vorlage für Ihr Gefahrstoffverzeichnis? Unsere XLSX deckt die Pflichtfelder ab, die SiFa und Prüfer typischerweise erwarten — als pragmatischer Einstieg vor dem nächsten BG-Audit.',
     proofLine:
-      'Wichtig vorab: Excel erfüllt die Informationspflicht nach § 6 GefStoffV nicht automatisch. Ohne revisionssichere Sicherheitsdatenblatt-Historie und nachvollziehBetriebsanweisungre Änderungen riskieren Betriebe Nachweise bei Behörden- und BG-Kontrollen — besonders seit der CLP-Anpassungspflicht für Gemische (Übergangsfrist bis Mai 2026).',
+      'Wichtig vorab: Excel erfüllt die Informationspflicht nach § 6 GefStoffV nicht automatisch. Ohne revisionssichere SDB-Historie und nachvollziehbare Änderungen riskieren Betriebe Nachweise bei Behörden- und BG-Kontrollen — besonders seit der CLP-Anpassungspflicht für Gemische (Übergangsfrist bis Mai 2026).',
     primaryCta: {
       label: 'Gratis Vorlage sichern',
       href: '#vorlage-download',
@@ -31,7 +31,7 @@ export const EXCEL_VORLAGE_SILO_CONFIG: SeoSiloPageConfig = {
     },
     trustBullets: [
       'Keine Kreditkarte',
-      'Sofort in Excel nutzBetriebsanweisungr',
+      'Sofort in Excel nutzbar',
       'Struktur für Gefährdungsbeurteilung nach TRGS 400',
     ],
   },
@@ -50,7 +50,7 @@ export const EXCEL_VORLAGE_SILO_CONFIG: SeoSiloPageConfig = {
         id: 'trgs400',
         title: 'Bezug zur Gefährdungsbeurteilung (TRGS 400)',
         description:
-          'Das Verzeichnis ist die DatenBetriebsanweisungsis für die GB chemischer Stoffe. Die Vorlage trennt Erfassung und Bewertungsschritte nachvollziehBetriebsanweisungr.',
+          'Das Verzeichnis ist die Datenbasis für die GB chemischer Stoffe. Die Vorlage trennt Erfassung und Bewertungsschritte nachvollziehbar.',
       },
       {
         id: 'trgs510',
@@ -70,22 +70,22 @@ export const EXCEL_VORLAGE_SILO_CONFIG: SeoSiloPageConfig = {
     {
       question: 'Reicht eine Excel-Vorlage für ein rechtssicheres Gefahrstoffverzeichnis?',
       answer:
-        'Als Übergangslösung für wenige Stoffe ja — als dauerhaftes System selten. § 6 GefStoffV verlangt aktuelle Informationen aus Sicherheitsdatenblättern. Excel speichert keine revisionssichere Historie: Wer welche Zelle wann geändert hat, lässt sich bei Audits kaum belegen. Fehlt die Sicherheitsdatenblatt-Version hinter einem Eintrag, entsteht Haftungsrisiko — nicht wegen der Vorlage, sondern wegen fehlender Nachweiskette.',
+        'Als Übergangslösung für wenige Stoffe ja — als dauerhaftes System selten. § 6 GefStoffV verlangt aktuelle Informationen aus Sicherheitsdatenblättern. Excel speichert keine revisionssichere Historie: Wer welche Zelle wann geändert hat, lässt sich bei Audits kaum belegen. Fehlt die SDB-Version hinter einem Eintrag, entsteht Haftungsrisiko — nicht wegen der Vorlage, sondern wegen fehlender Nachweiskette.',
     },
     {
       question: 'Warum scheitern Betriebe bei BG-Kontrollen trotz Excel-Liste?',
       answer:
-        'Typische Mängel: veraltete Sicherheitsdatenblatt-PDFs ohne Bezug zur Tabellenzeile, fehlende Dokumentation von Rezepturänderungen, keine Historie bei CLP-Umstellung (H-/P-Sätze bis Mai 2026 für Gemische), fehlende Unterweisungsnachweise nach § 14 GefStoffV. Prüfer fragen nicht nach der Dateiendung — sie prüfen NachvollziehBetriebsanweisungrkeit und Aktualität.',
+        'Typische Mängel: veraltete SDB-PDFs ohne Bezug zur Tabellenzeile, fehlende Dokumentation von Rezepturänderungen, keine Historie bei CLP-Umstellung (H-/P-Sätze bis Mai 2026 für Gemische), fehlende Unterweisungsnachweise nach § 14 GefStoffV. Prüfer fragen nicht nach der Dateiendung — sie prüfen Nachvollziehbarkeit und Aktualität.',
     },
     {
       question: 'Was muss in die Gefährdungsbeurteilung nach TRGS 400 einfließen?',
       answer:
-        'Die GB chemischer Arbeitsstoffe Betriebsanweisungut auf dem Verzeichnis auf: Exposition, Mengen, Verwendungsart, Schutzmaßnahmen, Substitution. Die Excel-Vorlage hilft bei der Stoffliste — die Bewertung und Dokumentation der Maßnahmen bleiben separate Pflichten. Word-Vorlagen für Betriebsanweisungen kosten SiFa oft hunderte Stunden pro Jahr, wenn Sicherheitsdatenblatt-Daten erneut abgetippt werden.',
+        'Die GB chemischer Arbeitsstoffe baut auf dem Verzeichnis auf: Exposition, Mengen, Verwendungsart, Schutzmaßnahmen, Substitution. Die Excel-Vorlage hilft bei der Stoffliste — die Bewertung und Dokumentation der Maßnahmen bleiben separate Pflichten. Word-Vorlagen für Betriebsanweisungen kosten SiFa oft hunderte Stunden pro Jahr, wenn SDB-Daten erneut abgetippt werden.',
     },
     {
       question: 'Ab wann lohnt sich Gefahrstoff-QR statt Excel?',
       answer:
-        'Faustregel ab 15–20 Stoffen, mehreren Standorten oder wechselnden Lieferanten: Dann übersteigt die manuelle Pflege die Softwarekosten. GQR extrahiert Sicherheitsdatenblatt-Daten per KI, führt ein Aktivitätsprotokoll und prüft TRGS-510-Lagerkonflikte — mit QR-Notfallpass am Gebinde für Ersthelfer.',
+        'Faustregel ab 15–20 Stoffen, mehreren Standorten oder wechselnden Lieferanten: Dann übersteigt die manuelle Pflege die Softwarekosten. GQR extrahiert SDB-Daten per KI, führt ein Aktivitätsprotokoll und prüft TRGS-510-Lagerkonflikte — mit QR-Notfallpass am Gebinde für Ersthelfer.',
     },
     {
       question: 'Ist die Vorlage kostenlos und DSGVO-konform?',
@@ -95,19 +95,19 @@ export const EXCEL_VORLAGE_SILO_CONFIG: SeoSiloPageConfig = {
     {
       question: 'Wie geht es nach dem Excel-Start mit GQR weiter?',
       answer:
-        'Viele Betriebe nutzen die Vorlage für die Erstaufnahme und wechseln bei wachsendem Bestand zu GQR: Sicherheitsdatenblatt hochladen, Felder prüfen, Verzeichnis exportieren — ohne erneutes Abtippen. Der kostenlose Einstieg umfasst die ersten Stoffe ohne Zahlungsdaten.',
+        'Viele Betriebe nutzen die Vorlage für die Erstaufnahme und wechseln bei wachsendem Bestand zu GQR: SDB hochladen, Felder prüfen, Verzeichnis exportieren — ohne erneutes Abtippen. Der kostenlose Einstieg umfasst die ersten Stoffe ohne Zahlungsdaten.',
     },
   ],
   closingCta: {
     headline: 'Excel war der Start — GQR hält Sie audit-sicher',
     subline:
-      'Wenn Sicherheitsdatenblatt-Revisionen, CLP-Anpassungen und BG-Nachweise mehr Zeit kosten als Ihre SiFa einplanen kann: testen Sie die automatisierte Alternative.',
+      'Wenn SDB-Revisionen, CLP-Anpassungen und BG-Nachweise mehr Zeit kosten als Ihre SiFa einplanen kann: testen Sie die automatisierte Alternative.',
     primaryCta: {
       label: 'GQR kostenlos testen',
       href: 'https://app.gefahrstoff-qr.de/register',
       external: true,
     },
-    disclaimer: 'Unverbindlich · Keine Kreditkarte · KI-Sicherheitsdatenblatt-Import',
+    disclaimer: 'Unverbindlich · Keine Kreditkarte · KI-SDB-Import',
   },
 };
 
@@ -116,14 +116,14 @@ export const EXCEL_VORLAGE_COMPARISON = {
   targetAudience: 'Betriebe mit Excel-Vorlage oder Tabellenkalkulation',
   rows: [
     {
-      criterion: 'Sicherheitsdatenblatt-Historie & Revisionssicherheit',
+      criterion: 'SDB-Historie & Revisionssicherheit',
       manual: 'Dateiversionen auf Laufwerk — keine gerichtsfeste Änderungskette',
-      gqr: 'Aktivitätsprotokoll: wer, wann, welche Sicherheitsdatenblatt-Felder geändert hat',
+      gqr: 'Aktivitätsprotokoll: wer, wann, welche SDB-Felder geändert hat',
     },
     {
       criterion: 'CLP-Anpassung (Gemische bis Mai 2026)',
       manual: 'H-/P-Sätze manuell in jeder Zeile nachziehen',
-      gqr: 'Extraktion aus aktuellem Sicherheitsdatenblatt — tagesaktuelle P-Sätze im Verzeichnis',
+      gqr: 'Extraktion aus aktuellem SDB — tagesaktuelle P-Sätze im Verzeichnis',
     },
     {
       criterion: 'TRGS 510 Zusammenlagerung',
@@ -133,11 +133,11 @@ export const EXCEL_VORLAGE_COMPARISON = {
     {
       criterion: 'BG- und Behördenaudit',
       manual: 'Export ohne Herkunftsnachweis der Daten',
-      gqr: 'One-Click-Export mit Sicherheitsdatenblatt-Bezug und Dokumentation',
+      gqr: 'One-Click-Export mit SDB-Bezug und Dokumentation',
     },
     {
       criterion: 'Information am Arbeitsplatz',
-      manual: 'Sicherheitsdatenblatt im Büro — am Regal nicht abrufBetriebsanweisungr',
+      manual: 'SDB im Büro — am Regal nicht abrufbar',
       gqr: 'QR-Notfallpass: GHS, Erste-Hilfe, P-Sätze per Scan am Gebinde',
     },
   ],
