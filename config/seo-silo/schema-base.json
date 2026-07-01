@@ -1,31 +1,31 @@
 {
-  "softwareApplication": {
-    "name": "Gefahrstoff-QR",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": ["Web", "iOS", "Android"],
-    "description": "Gefahrstoffmanagement-Software: KI-Extraktion aus Sicherheitsdatenblättern, revisionssicheres Gefahrstoffverzeichnis nach § 6 GefStoffV, TRGS-510-Lagerlogik, Betriebsanweisungen und QR-Notfallpass am Gebinde.",
-    "url": "https://app.gefahrstoff-qr.de/register",
-    "offers": {
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "Kostenloser Einstieg — erste Stoffe ohne Kreditkarte anlegen."
-    },
-    "featureList": [
-      "KI-SDB-Import und automatische Feldextraktion",
-      "Revisionssicheres Gefahrstoffverzeichnis nach § 6 GefStoffV",
-      "TRGS 510 Zusammenlagerungsprüfung",
-      "Betriebsanweisungen aus SDB-Daten",
-      "QR-Notfallpass für Ersthelfer am Einsatzort",
-      "Aktivitätsprotokoll für BG- und Behördenaudits"
-    ],
-    "audience": {
-      "audienceType": "Sicherheitsfachkräfte, Betriebsleitung und KMU mit Gefahrstoffeinsatz",
-      "geographicArea": "Deutschland"
-    }
-  },
-  "faqPageTemplate": {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": []
-  }
+ "softwareApplication": {
+ "name": "Gefahrstoff-QR",
+ "applicationCategory": "BusinessApplication",
+ "operatingSystem": ["Web", "iOS", "Android"],
+ "description": "Gefahrstoffmanagement-Software: KI-Extraktion aus Sicherheitsdatenblättern, revisionssicheres Gefahrstoffverzeichnis nach § 6 GefStoffV, TRGS-510-Lagerlogik, Betriebsanweisungen und QR-Notfallpass am Gebinde.",
+ "url": "https://app.gefahrstoff-qr.de/register",
+ "offers": {
+ "price": "0",
+ "priceCurrency": "EUR",
+ "description": "Kostenloser Einstieg — erste Stoffe ohne Kreditkarte anlegen."
+ },
+ "featureList": [
+ "KI-Sicherheitsdatenblatt-Import und automatische Feldextraktion",
+ "Revisionssicheres Gefahrstoffverzeichnis nach § 6 GefStoffV",
+ "TRGS 510 Zusammenlagerungsprüfung",
+ "Betriebsanweisungen aus Daten aus dem Sicherheitsdatenblatt",
+ "QR-Notfallpass für Ersthelfer am Einsatzort",
+ "Aktivitätsprotokoll für BG- und Behördenaudits"
+ ],
+ "audience": {
+ "audienceType": "Sicherheitsfachkräfte, Betriebsleitung und KMU mit Gefahrstoffeinsatz",
+ "geographicArea": "Deutschland"
+ }
+ },
+ "faqPageTemplate": {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": []
+ }
 }
