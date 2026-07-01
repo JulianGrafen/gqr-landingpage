@@ -1249,23 +1249,6 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   }
 }
 
-@media (max-width: 720px) {
-  .sds-entry-section::before {
-    background: linear-gradient(180deg, rgba(8, 13, 22, 0.1), rgba(8, 13, 22, 0.76));
-  }
-
-  .sds-entry-visual {
-    min-height: 280px;
-  }
-
-  .sds-entry-device {
-    width: min(66vw, 280px);
-  }
-
-  .sds-entry-card__body {
-    padding-left: 0;
-  }
-}
 
 /* Engere SalesViewer-Anmutung: breites Dashboard links, minimalistische Feature-Liste rechts */
 .sds-entry-section {
@@ -1433,47 +1416,136 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 }
 
 @media (max-width: 899px) {
+  .sds-entry-section::before {
+    background: linear-gradient(180deg, rgba(17, 20, 24, 0.08) 0%, rgba(17, 20, 24, 0.88) 55%);
+  }
+
   .sds-entry-showcase {
     min-height: 0;
+    gap: clamp(2.75rem, 8vw, 3.5rem);
   }
 
   .sds-entry-visual {
-    min-height: 330px;
+    min-height: auto;
+    padding-block: 0.5rem 0.75rem;
     justify-content: center;
   }
 
   .sds-entry-device {
-    width: min(92vw, 580px);
+    width: min(88vw, 480px);
     margin-left: 0;
+    transform: perspective(1000px) rotate(-8deg) rotateX(3deg) skewX(-2deg);
+    filter: drop-shadow(0 28px 36px rgba(0, 0, 0, 0.45));
   }
 
   .sds-entry-content {
     max-width: none;
+    padding-top: 0.25rem;
+  }
+
+  .sds-entry-grid {
+    margin-top: 0.5rem;
+  }
+
+  .sds-entry-card__summary {
+    min-height: 76px;
+    padding-block: 0.85rem;
+  }
+
+  .sds-entry-card__body {
+    padding-bottom: 1.5rem;
   }
 }
 
 @media (max-width: 540px) {
   .sds-entry-section {
-    padding-block: 48px;
+    padding-block: clamp(64px, 14vw, 80px);
+  }
+
+  .sds-entry-section .container {
+    padding-inline: clamp(20px, 5.5vw, 28px);
+  }
+
+  .sds-entry-showcase {
+    gap: clamp(2.5rem, 10vw, 3.25rem);
+  }
+
+  .sds-entry-visual__arc--small {
+    display: none;
+  }
+
+  .sds-entry-visual__arc--left {
+    opacity: 0.55;
+    width: clamp(140px, 38vw, 200px);
+    height: clamp(140px, 38vw, 200px);
   }
 
   .sds-entry-visual {
-    min-height: 245px;
+    min-height: 0;
+    padding-block: 0.25rem 1rem;
   }
 
   .sds-entry-device {
-    width: min(104vw, 420px);
-    transform: perspective(900px) rotate(-9deg) rotateX(4deg) skewX(-3deg);
+    width: min(90vw, 340px);
+    transform: perspective(800px) rotate(-5deg) rotateX(2deg);
+    filter: drop-shadow(0 20px 28px rgba(0, 0, 0, 0.38));
+  }
+
+  .sds-entry-device img {
+    border-width: 6px;
+    border-radius: 1.35rem;
+  }
+
+  .sds-entry-card {
+    border-top-color: rgba(255, 255, 255, 0.055);
   }
 
   .sds-entry-card__summary {
-    grid-template-columns: 32px minmax(0, 1fr) 36px;
-    min-height: 64px;
+    grid-template-columns: 30px minmax(0, 1fr) 40px;
+    column-gap: 0.85rem;
+    min-height: 80px;
+    padding-block: 1rem;
+  }
+
+  .sds-entry-card__number {
+    align-self: start;
+    padding-top: 0.15rem;
+    font-size: 0.64rem;
+  }
+
+  .sds-entry-card__heading {
+    font-size: 1.02rem;
+    line-height: 1.38;
+    padding-right: 0.35rem;
+  }
+
+  .sds-entry-card__feature-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sds-entry-card__feature-icon svg {
+    width: 21px;
+    height: 21px;
   }
 
   .sds-entry-card__body {
-    padding-left: 32px;
-    padding-right: 0;
+    padding: 0.35rem 0 1.85rem 30px;
+  }
+
+  .sds-entry-card__title {
+    font-size: 0.98rem;
+    line-height: 1.42;
+  }
+
+  .sds-entry-card p {
+    margin-top: 0.8rem;
+    font-size: 0.92rem;
+    line-height: 1.72;
+  }
+
+  .sds-entry-card a {
+    margin-top: 1.15rem;
   }
 }
 
