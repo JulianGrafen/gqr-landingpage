@@ -33,7 +33,7 @@ export function ExcelVorlageSiloPage() {
       >
         <p>
           <strong>1. Fehlende Revisionssicherheit (§ 6 GefStoffV):</strong> 
-          Die Informationsermittlung fordert eine lückenlose Historie. Excel ist statisch: Überschreiben Sie eine Zeile aufgrund eines neuen Sicherheitsdatenblattes (SDB), vernichten Sie den historischen Beweis. Kommt es Jahre später zu einer Berufskrankheit, können Sie nicht mehr rechtssicher belegen, mit welchem Datenstand (und welchen H-/P-Sätzen) der Mitarbeiter zum damaligen Zeitpunkt gearbeitet hat.
+          Die Informationsermittlung fordert eine lückenlose Historie. Excel ist statisch: Überschreiben Sie eine Zeile aufgrund eines neuen Sicherheitsdatenblattes (Sicherheitsdatenblatt), vernichten Sie den historischen Beweis. Kommt es Jahre später zu einer Berufskrankheit, können Sie nicht mehr rechtssicher belegen, mit welchem Datenstand (und welchen H-/P-Sätzen) der Mitarbeiter zum damaligen Zeitpunkt gearbeitet hat.
         </p>
         <p>
           <strong>2. Die stille Gefahr der CLP-Frist (Mai 2026):</strong> 
@@ -41,11 +41,11 @@ export function ExcelVorlageSiloPage() {
         </p>
         <p>
           <strong>3. Blockierte Kausalketten (TRGS 400 & § 14 GefStoffV):</strong> 
-          Eine Liste ist keine Gefährdungsbeurteilung. Wenn sich ein SDB ändert, muss zwingend die Gefährdungsbeurteilung angepasst und die Belegschaft neu unterwiesen werden. Manuelle Tabellen triggern diese Prozesse nicht. Die Dokumente laufen asynchron – der Mitarbeiter am Band arbeitet nach alten Schutzmaßnahmen, während im Büro bereits das neue SDB liegt.
+          Eine Liste ist keine Gefährdungsbeurteilung. Wenn sich ein Sicherheitsdatenblatt ändert, muss zwingend die Gefährdungsbeurteilung angepasst und die Belegschaft neu unterwiesen werden. Manuelle Tabellen triggern diese Prozesse nicht. Die Dokumente laufen asynchron – der Mitarbeiter am Betriebsanweisungnd arbeitet nach alten Schutzmaßnahmen, während im Büro bereits das neue Sicherheitsdatenblatt liegt.
         </p>
         <p>
           <strong>4. Blindflug bei der Zusammenlagerung (TRGS 510):</strong> 
-          Excel warnt Sie nicht, wenn Sie in Zeile 10 eine Säure und in Zeile 45 eine Lauge demselben Regal zuordnen. Ein übersehener Konflikt in den Lagerklassen wird erst dann sichtbar, wenn der Auditor in der Tür steht oder – im Worst Case – die Feuerwehr anrückt.
+          Excel warnt Sie nicht, wenn Sie in Zeile 10 eine Säure und in Zeile 45 eine Lauge demselben Regal zuordnen. Ein übersehener Konflikt in den Lagerklassen wird erst dann sichtBetriebsanweisungr, wenn der Auditor in der Tür steht oder – im Worst Case – die Feuerwehr anrückt.
         </p>
       </LandingProseSection>
 
@@ -73,12 +73,12 @@ export function ExcelVorlageSiloPage() {
 
         <h3>Der Tipping-Point: Versteckte Personalkosten</h3>
         <p>
-          Der faktische Nachteil der Vorlage ist der manuelle Wartungsaufwand. Excel ist nicht kostenlos. Wenn Ihre Sicherheitsfachkraft (bei einem Stundensatz von 60 € bis 80 €) wöchentlich mehrere Stunden damit verbringt, Hersteller-Websites nach SDB-Updates abzusuchen, PDF-Texte in Tabellen zu kopieren und Word-Betriebsanweisungen zu formatieren, übersteigen die Prozesskosten die Lizenzgebühren für ein automatisiertes SaaS-Tool um ein Vielfaches.
+          Der faktische Nachteil der Vorlage ist der manuelle Wartungsaufwand. Excel ist nicht kostenlos. Wenn Ihre Sicherheitsfachkraft (bei einem Stundensatz von 60 € bis 80 €) wöchentlich mehrere Stunden damit verbringt, Hersteller-Websites nach Sicherheitsdatenblatt-Updates abzusuchen, PDF-Texte in Tabellen zu kopieren und Word-Betriebsanweisungen zu formatieren, übersteigen die Prozesskosten die Lizenzgebühren für ein automatisiertes SaaS-Tool um ein Vielfaches.
         </p>
 
         <h3>Die rationale Alternative: Digitales Gefahrstoffmanagement</h3>
         <p>
-          Sobald Sie Stoffe substituieren, Gefahrstoffe lagern oder externe Dienstleister auf dem Gelände haben, wird der manuelle Weg unwirtschaftlich und riskant. Ein System wie GQR extrahiert die SDB-Daten per KI, führt das gesetzlich geforderte Aktivitätsprotokoll vollautomatisch im Hintergrund und schlägt die Brücke zum Einsatzort: <strong>Notfallinformationen werden direkt per QR-Code am Fass abgerufen</strong> – dort, wo Ersthelfer sie in Sekunden benötigen.
+          SoBetriebsanweisungld Sie Stoffe substituieren, Gefahrstoffe lagern oder externe Dienstleister auf dem Gelände haben, wird der manuelle Weg unwirtschaftlich und riskant. Ein System wie GQR extrahiert die Sicherheitsdatenblatt-Daten per KI, führt das gesetzlich geforderte Aktivitätsprotokoll vollautomatisch im Hintergrund und schlägt die Brücke zum Einsatzort: <strong>Notfallinformationen werden direkt per QR-Code am Fass abgerufen</strong> – dort, wo Ersthelfer sie in Sekunden benötigen.
         </p>
 
         <div

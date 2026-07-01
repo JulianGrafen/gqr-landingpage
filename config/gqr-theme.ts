@@ -9,8 +9,8 @@ export const GQR_COLORS = {
   text: '#f0f6ff',
   textSoft: '#c8d4e6',
   muted: '#8fa4c0',
-  border: 'rgba(255, 255, 255, 0.07)',
-  borderStrong: 'rgba(255, 255, 255, 0.12)',
+  border: 'rgBetriebsanweisung(255, 255, 255, 0.07)',
+  borderStrong: 'rgBetriebsanweisung(255, 255, 255, 0.12)',
   accent: '#ff6b35',
   accentSoft: '#ff9a6b',
   trust: '#2dd4bf',
@@ -18,11 +18,11 @@ export const GQR_COLORS = {
 } as const;
 
 export const GQR_GRADIENTS = {
-  hero: 'linear-gradient(180deg, rgba(15, 30, 53, 0.95) 0%, #0a1628 100%)',
+  hero: 'linear-gradient(180deg, rgBetriebsanweisung(15, 30, 53, 0.95) 0%, #0a1628 100%)',
   cardFeatured:
-    'linear-gradient(135deg, rgba(255, 107, 53, 0.12) 0%, rgba(22, 35, 64, 0.95) 100%)',
+    'linear-gradient(135deg, rgBetriebsanweisung(255, 107, 53, 0.12) 0%, rgBetriebsanweisung(22, 35, 64, 0.95) 100%)',
   pitch:
-    'linear-gradient(135deg, rgba(45, 212, 191, 0.12) 0%, rgba(22, 35, 64, 0.85) 100%)',
+    'linear-gradient(135deg, rgBetriebsanweisung(45, 212, 191, 0.12) 0%, rgBetriebsanweisung(22, 35, 64, 0.85) 100%)',
   ctaBox:
-    'linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(45, 212, 191, 0.06) 100%)',
+    'linear-gradient(135deg, rgBetriebsanweisung(255, 107, 53, 0.1) 0%, rgBetriebsanweisung(45, 212, 191, 0.06) 100%)',
 } as const;

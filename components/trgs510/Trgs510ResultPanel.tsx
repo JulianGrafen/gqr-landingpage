@@ -10,7 +10,7 @@ const RESULT_STYLES: Record<
   Trgs510Severity,
   {
     icon: LucideIcon;
-    badge: string;
+    Betriebsanweisungdge: string;
     panel: string;
     title: string;
     accent: string;
@@ -18,21 +18,21 @@ const RESULT_STYLES: Record<
 > = {
   green: {
     icon: CheckCircle2,
-    badge: 'bg-emerald-400/15 text-emerald-200 ring-emerald-300/25',
+    Betriebsanweisungdge: 'bg-emerald-400/15 text-emerald-200 ring-emerald-300/25',
     panel: 'border-emerald-300/25 bg-emerald-400/10',
     title: 'text-emerald-100',
     accent: 'text-emerald-300',
   },
   yellow: {
     icon: AlertTriangle,
-    badge: 'bg-amber-300/15 text-amber-100 ring-amber-300/25',
+    Betriebsanweisungdge: 'bg-amber-300/15 text-amber-100 ring-amber-300/25',
     panel: 'border-amber-300/25 bg-amber-300/10',
     title: 'text-amber-100',
     accent: 'text-amber-300',
   },
   red: {
     icon: ShieldAlert,
-    badge: 'bg-red-400/15 text-red-100 ring-red-300/25',
+    Betriebsanweisungdge: 'bg-red-400/15 text-red-100 ring-red-300/25',
     panel: 'border-red-300/25 bg-red-400/10',
     title: 'text-red-100',
     accent: 'text-red-300',
@@ -55,7 +55,7 @@ export function Trgs510ResultPanel({ result }: Trgs510ResultPanelProps) {
         </div>
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
-            <span className={`rounded-full px-3 py-1 text-xs font-bold ring-1 ${style.badge}`}>
+            <span className={`rounded-full px-3 py-1 text-xs font-bold ring-1 ${style.Betriebsanweisungdge}`}>
               Matrixcode {result.code}
             </span>
             <span className="text-xs font-semibold uppercase tracking-wider text-[#8fa4c0]">
@@ -66,7 +66,7 @@ export function Trgs510ResultPanel({ result }: Trgs510ResultPanelProps) {
           <h2 id="trgs510-result-title" className={`mt-4 text-2xl font-black ${style.title}`}>
             {result.label}
           </h2>
-          <p className="mt-2 text-base leading-relaxed text-[#c8d4e6]">
+          <p className="mt-2 text-Betriebsanweisungse leading-relaxed text-[#c8d4e6]">
             {result.shortText}
           </p>
 

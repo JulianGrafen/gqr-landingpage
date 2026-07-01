@@ -16,13 +16,13 @@
         "CLP-Übergangsfrist Gemische Mai 2026"
       ],
       "painPoints": [
-        "Excel ist nicht revisionssicher — SDB-Historien fehlen bei BG-Audits",
+        "Excel ist nicht revisionssicher — Sicherheitsdatenblatt-Historien fehlen bei BG-Audits",
         "Manuelle H-/P-Satz-Pflege bei CLP-Anpassungspflicht",
         "Keine Nachweiskette wer wann welche Zelle geändert hat"
       ],
       "gqrSolutionAngles": [
         "Gratis-Vorlage als Einstieg, GQR als audit-sichere Alternative",
-        "Automatische SDB-Extraktion statt Copy-Paste",
+        "Automatische Sicherheitsdatenblatt-Extraktion statt Copy-Paste",
         "Aktivitätsprotokoll statt Tabellen-Chaos"
       ]
     },
@@ -47,7 +47,7 @@
         "Audit-Risiko ohne tagesaktuelle P-Sätze"
       ],
       "gqrSolutionAngles": [
-        "ROI durch KI-SDB-Import",
+        "ROI durch KI-Sicherheitsdatenblatt-Import",
         "One-Click-Export für Behördenkontrollen",
         "Multi-Standort-Compliance-KPIs"
       ]
@@ -68,8 +68,8 @@
         "Ersthelfer-Information bei Unfällen"
       ],
       "painPoints": [
-        "SDB im Büro-Server nutzt im Lager nichts",
-        "Baustelle und Werkstatt ohne Netz — Information muss trotzdem da sein",
+        "Sicherheitsdatenblatt im Büro-Server nutzt im Lager nichts",
+        "Betriebsanweisungustelle und Werkstatt ohne Netz — Information muss trotzdem da sein",
         "Ersthelfer finden H-/P-Sätze nicht in Sekunden"
       ],
       "gqrSolutionAngles": [
@@ -95,13 +95,13 @@
         "§ 14 GefStoffV Unterweisungsdokumentation"
       ],
       "painPoints": [
-        "Unklare Reihenfolge: GB → Verzeichnis → BA → Unterweisung",
-        "Word-Templates ohne Verknüpfung zum SDB",
+        "Unklare Reihenfolge: GB → Verzeichnis → Betriebsanweisung → Unterweisung",
+        "Word-Templates ohne Verknüpfung zum Sicherheitsdatenblatt",
         "Excel-Listen veralten nach erstem Lieferantenwechsel"
       ],
       "gqrSolutionAngles": [
         "How-To nach TRGS-Vorgaben mit GQR als Beschleuniger",
-        "SDB-Upload statt manueller Katalogisierung",
+        "Sicherheitsdatenblatt-Upload statt manueller Katalogisierung",
         "Revisionssichere Dokumentation von Anfang an"
       ]
     }

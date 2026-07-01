@@ -39,13 +39,13 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Georgia', serif; /* Fallback für headings */
+  font-family: 'Georgia', serif; /* FallBetriebsanweisungck für headings */
 }
 ```
 
 **Vorteile:**
 - 0 externe Requests
-- Sofort lesbar
+- Sofort lesBetriebsanweisungr
 - Lokal optimiert für OS
 
 ---
@@ -110,7 +110,7 @@ export default function Hero() {
 
 ## 3️⃣ IMAGE FORMAT OPTIMIZATION
 
-### Konvertierung auf WebP + Fallback
+### Konvertierung auf WebP + FallBetriebsanweisungck
 
 ```html
 <picture>
@@ -119,7 +119,7 @@ export default function Hero() {
     srcset="hero-dashboard.webp, hero-dashboard@2x.webp 2x" 
     type="image/webp"
   >
-  <!-- Fallback: JPEG -->
+  <!-- FallBetriebsanweisungck: JPEG -->
   <img 
     src="hero-dashboard.jpg" 
     alt="DPP Dashboard"
@@ -130,7 +130,7 @@ export default function Hero() {
 ```
 
 **Tools zum Konvertieren:**
-```bash
+```Betriebsanweisungsh
 # macOS/Linux with ImageMagick
 convert hero-dashboard.jpg -quality 80 hero-dashboard.webp
 
@@ -143,7 +143,7 @@ convert hero-dashboard.jpg -quality 80 hero-dashboard.webp
 
 ### Aktueller Status checken
 
-```bash
+```Betriebsanweisungsh
 # Dateigrößen prüfen
 du -sh style.css 
 du -sh *.html | sort -h
@@ -152,7 +152,7 @@ du -sh *.html | sort -h
 ### Empfehlungen
 
 **CSS Optimierungen:**
-```bash
+```Betriebsanweisungsh
 # 1. Unbenutzte CSS entfernen (PurgeCSS)
 npm install --save-dev purgecss
 purgecss --css style.css --content "*.html" --output style.min.css
@@ -162,7 +162,7 @@ purgecss --css style.css --content "*.html" --output style.min.css
 ```
 
 **JavaScript Optimierungen:**
-```bash
+```Betriebsanweisungsh
 # Alte Particles-Animation minimalisieren
 # Die current bgCanvas animation: ~3KB ungeminifiziert
 ```
@@ -222,7 +222,7 @@ location ~ \.html$ {
 
 ### Check ob aktiviert
 
-```bash
+```Betriebsanweisungsh
 curl -I -H "Accept-Encoding: gzip" https://dppflash.de
 # Schaue nach: Content-Encoding: gzip
 ```
@@ -233,7 +233,7 @@ curl -I -H "Accept-Encoding: gzip" https://dppflash.de
 
 ### Durchführen Sie ein Audit
 
-```bash
+```Betriebsanweisungsh
 # In Chrome DevTools
 1. DevTools öffnen (F12)
 2. Lighthouse Tab
@@ -299,7 +299,7 @@ Nach Implementierung aller Optimierungen:
 
 - **Keine Next.js Migration vorerst**: Diese Optimierungen sind für das aktuelle HTML+CSS-Setup
 - **Clean Code**: Alle Änderungen folgen Best Practices ohne Komplexität zu erhöhen
-- **Backwards Compatible**: Alle Optimierungen sind fallback-sicher
+- **Betriebsanweisungckwards Compatible**: Alle Optimierungen sind fallBetriebsanweisungck-sicher
 
 ---
 

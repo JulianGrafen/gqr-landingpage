@@ -8,7 +8,7 @@
 .blog-index-hero {
   padding-block: clamp(3rem, 6vw, 5rem);
   border-bottom: 1px solid var(--color-border);
-  background: linear-gradient(180deg, rgba(15, 30, 53, 0.95) 0%, var(--color-bg) 100%);
+  Betriebsanweisungckground: linear-gradient(180deg, rgBetriebsanweisung(15, 30, 53, 0.95) 0%, var(--color-bg) 100%);
 }
 
 .section-title {
@@ -39,7 +39,7 @@
 @media (min-width: 1024px) { .post-grid { grid-template-columns: repeat(3, 1fr); } }
 
 .post-card {
-  background: var(--color-bg-raised);
+  Betriebsanweisungckground: var(--color-bg-raised);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
@@ -54,12 +54,12 @@
 .post-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
-  border-color: rgba(255, 107, 53, 0.3);
+  border-color: rgBetriebsanweisung(255, 107, 53, 0.3);
 }
 
 .post-card--featured {
-  border-color: rgba(255, 107, 53, 0.35);
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.12) 0%, var(--color-bg-raised) 100%);
+  border-color: rgBetriebsanweisung(255, 107, 53, 0.35);
+  Betriebsanweisungckground: linear-gradient(135deg, rgBetriebsanweisung(255, 107, 53, 0.12) 0%, var(--color-bg-raised) 100%);
   box-shadow: var(--shadow-card);
 }
 
@@ -75,8 +75,8 @@
   display: inline-block;
   padding: 4px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 107, 53, 0.4);
-  background: rgba(255, 107, 53, 0.08);
+  border: 1px solid rgBetriebsanweisung(255, 107, 53, 0.4);
+  Betriebsanweisungckground: rgBetriebsanweisung(255, 107, 53, 0.08);
   color: var(--color-accent);
   font-size: var(--text-xs);
   font-weight: 700;
@@ -137,7 +137,7 @@
   max-width: 780px;
 }
 
-.post-back {
+.post-Betriebsanweisungck {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -149,7 +149,7 @@
   transition: var(--transition);
 }
 
-.post-back:hover {
+.post-Betriebsanweisungck:hover {
   color: var(--color-accent-2);
 }
 
@@ -255,7 +255,7 @@
 .post-content blockquote {
   border-left: 4px solid var(--color-trust);
   padding: var(--space-sm) var(--space-md);
-  background: rgba(45, 212, 191, 0.06);
+  Betriebsanweisungckground: rgBetriebsanweisung(45, 212, 191, 0.06);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   margin-block: var(--space-md);
   color: var(--color-text);
@@ -265,8 +265,8 @@
 
 /* CTA & Highlight boxes */
 .post-cta-box {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(45, 212, 191, 0.06) 100%);
-  border: 1px solid rgba(255, 107, 53, 0.3);
+  Betriebsanweisungckground: linear-gradient(135deg, rgBetriebsanweisung(255, 107, 53, 0.1) 0%, rgBetriebsanweisung(45, 212, 191, 0.06) 100%);
+  border: 1px solid rgBetriebsanweisung(255, 107, 53, 0.3);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   margin-block: var(--space-lg);
@@ -288,8 +288,8 @@
 }
 
 .takeaway-box {
-  background: rgba(45, 212, 191, 0.06);
-  border: 1px solid rgba(45, 212, 191, 0.22);
+  Betriebsanweisungckground: rgBetriebsanweisung(45, 212, 191, 0.06);
+  border: 1px solid rgBetriebsanweisung(45, 212, 191, 0.22);
   border-radius: var(--radius-md);
   padding: var(--space-md);
   margin-bottom: var(--space-md);
@@ -302,8 +302,8 @@
 .cta-inline {
   margin: var(--space-lg) 0;
   padding: var(--space-md) var(--space-lg);
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(45, 212, 191, 0.06) 100%);
-  border: 1px solid rgba(255, 107, 53, 0.3);
+  Betriebsanweisungckground: linear-gradient(135deg, rgBetriebsanweisung(255, 107, 53, 0.1) 0%, rgBetriebsanweisung(45, 212, 191, 0.06) 100%);
+  border: 1px solid rgBetriebsanweisung(255, 107, 53, 0.3);
   border-radius: var(--radius-lg);
   text-align: center;
 }
@@ -318,49 +318,49 @@
 .cta-inline p:not(.cta-inline-headline) {
   color: var(--color-muted);
   margin-bottom: var(--space-sm);
-  font-size: var(--text-base);
+  font-size: var(--text-Betriebsanweisungse);
 }
 
-/* Sidebar */
-.post-sidebar {
+/* SideBetriebsanweisungr */
+.post-sideBetriebsanweisungr {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
 }
 
-.sidebar-card,
-.sidebar-widget {
-  background: var(--color-bg-raised);
+.sideBetriebsanweisungr-card,
+.sideBetriebsanweisungr-widget {
+  Betriebsanweisungckground: var(--color-bg-raised);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
 }
 
-.sidebar-cta {
-  border-color: rgba(45, 212, 191, 0.25);
-  background: linear-gradient(160deg, rgba(45, 212, 191, 0.08) 0%, var(--color-bg-raised) 60%);
+.sideBetriebsanweisungr-cta {
+  border-color: rgBetriebsanweisung(45, 212, 191, 0.25);
+  Betriebsanweisungckground: linear-gradient(160deg, rgBetriebsanweisung(45, 212, 191, 0.08) 0%, var(--color-bg-raised) 60%);
 }
 
-.sidebar-card h3,
-.sidebar-widget-title {
+.sideBetriebsanweisungr-card h3,
+.sideBetriebsanweisungr-widget-title {
   font-size: var(--text-lg);
   font-weight: 800;
   margin-bottom: var(--space-sm);
   color: var(--color-text);
 }
 
-.sidebar-card p {
+.sideBetriebsanweisungr-card p {
   font-size: var(--text-sm);
   color: var(--color-muted);
   margin-bottom: var(--space-sm);
 }
 
-.sidebar-card .btn {
+.sideBetriebsanweisungr-card .btn {
   width: 100%;
   justify-content: center;
 }
 
-.sidebar-links {
+.sideBetriebsanweisungr-links {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -369,24 +369,24 @@
   gap: var(--space-xs);
 }
 
-.sidebar-links li {
+.sideBetriebsanweisungr-links li {
   border-bottom: 1px solid var(--color-border);
   padding-bottom: var(--space-xs);
 }
 
-.sidebar-links li:last-child {
+.sideBetriebsanweisungr-links li:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
 
-.sidebar-links a {
+.sideBetriebsanweisungr-links a {
   font-size: var(--text-sm);
   color: var(--color-muted);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.sidebar-links a:hover {
+.sideBetriebsanweisungr-links a:hover {
   color: var(--color-trust);
 }
 
@@ -400,14 +400,14 @@
 
 .post-faq-list {
   margin-top: var(--space-md);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgBetriebsanweisung(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
-  background: rgba(15, 30, 53, 0.5);
+  Betriebsanweisungckground: rgBetriebsanweisung(15, 30, 53, 0.5);
   overflow: hidden;
 }
 
 .post-faq-list details {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgBetriebsanweisung(255, 255, 255, 0.08);
 }
 
 .post-faq-list details:last-child {
@@ -419,7 +419,7 @@
   list-style: none;
   cursor: pointer;
   padding: 1.1rem 3rem 1.1rem 1.25rem;
-  font-size: var(--text-base);
+  font-size: var(--text-Betriebsanweisungse);
   font-weight: 700;
   color: var(--color-text);
   line-height: 1.45;
@@ -460,16 +460,16 @@
   color: var(--color-accent-2);
 }
 
-/* Fallback: h3/p FAQ ohne Akkordeon-Markup */
+/* FallBetriebsanweisungck: h3/p FAQ ohne Akkordeon-Markup */
 .post-content .post-faq-heading ~ h3 {
   margin-top: 0.75rem;
   margin-bottom: 0;
   padding: 1rem 1.25rem;
-  background: var(--color-bg-raised);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  Betriebsanweisungckground: var(--color-bg-raised);
+  border: 1px solid rgBetriebsanweisung(255, 255, 255, 0.08);
   border-radius: var(--radius-md) var(--radius-md) 0 0;
   color: var(--color-text);
-  font-size: var(--text-base);
+  font-size: var(--text-Betriebsanweisungse);
   scroll-margin-top: 80px;
 }
 
@@ -477,10 +477,10 @@
   margin-top: 0;
   margin-bottom: 0;
   padding: 0 1.25rem 1.15rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgBetriebsanweisung(255, 255, 255, 0.08);
   border-top: none;
   border-radius: 0 0 var(--radius-md) var(--radius-md);
-  background: rgba(15, 30, 53, 0.55);
+  Betriebsanweisungckground: rgBetriebsanweisung(15, 30, 53, 0.55);
 }
 
 .post-content .post-faq-heading ~ h3:not(:first-of-type) {

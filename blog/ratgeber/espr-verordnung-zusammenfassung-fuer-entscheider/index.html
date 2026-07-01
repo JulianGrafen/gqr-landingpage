@@ -90,7 +90,7 @@
         
         <p><strong>ESPR steht für "Ecodesign for Sustainable Products Regulation"</strong> – die EU-Verordnung für nachhaltige Produktgestaltung.</p>
         
-        <p>Die Verordnung verpflichtet Hersteller von vielen Produkten (Möbel, Textilien, IT-Hardware, Batterien, etc.) dazu:</p>
+        <p>Die Verordnung verpflichtet Hersteller von vielen Produkten (Möbel, Textilien, IT-Hardware, Betriebsanweisungtterien, etc.) dazu:</p>
         <ul class="feature-list">
           <li>Produkte nachhaltiger zu designen</li>
           <li>Langeverbrauchsinformationen transparent zu machen</li>
@@ -163,20 +163,20 @@
         <ul class="feature-list">
           <li><strong>Materialzusammensetzung:</strong> Aus welchen Materialien besteht das Produkt?</li>
           <li><strong>Langlebigkeit:</strong> Wie lange hält das Produkt durchschnittlich?</li>
-          <li><strong>Reparierbarkeit:</strong> Wie leicht lässt sich das Produkt reparieren?</li>
+          <li><strong>ReparierBetriebsanweisungrkeit:</strong> Wie leicht lässt sich das Produkt reparieren?</li>
           <li><strong>Recycling-Informationen:</strong> Wie wird das Produkt am Ende recycelt?</li>
           <li><strong>Umweltauswirkung:</strong> CO2-Fußabdruck, Wasserverbrauch, etc.</li>
           <li><strong>Herkunft & Lieferketteninformationen</strong></li>
         </ul>
 
-        <p>Alle Daten müssen maschinen-lesbar sein (für Compliance-Behörden und Plattformen wie Marktplätze).</p>
+        <p>Alle Daten müssen maschinen-lesBetriebsanweisungr sein (für Compliance-Behörden und Plattformen wie Marktplätze).</p>
       </section>
 
       <section class="article-cta-section">
         <div class="conversion-card">
           <div class="conversion-header">
             <h3>Vorbereitung beginnt heute</h3>
-            <p>Vereinbaren Sie einen Compliance-Check mit unseren Experten.</p>
+            <p>VereinBetriebsanweisungren Sie einen Compliance-Check mit unseren Experten.</p>
           </div>
           
           <div class="conversion-benefits">
@@ -262,8 +262,8 @@
             particles.push({
               x: (i * window.innerWidth / cols) + Math.random() * 60 - 30,
               y: (j * canvas.height / rows) + Math.random() * 60 - 30,
-              baseX: (i * window.innerWidth / cols) + Math.random() * 60 - 30,
-              baseY: (j * canvas.height / rows) + Math.random() * 60 - 30,
+              BetriebsanweisungseX: (i * window.innerWidth / cols) + Math.random() * 60 - 30,
+              BetriebsanweisungseY: (j * canvas.height / rows) + Math.random() * 60 - 30,
               vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5,
               drift_x: (Math.random() - 0.5) * 0.25, drift_y: (Math.random() - 0.5) * 0.25,
               angle: Math.random() * Math.PI * 2, speed: Math.random() * 0.8 + 0.3,
@@ -277,20 +277,20 @@
         for(let i = 0; i < particles.length; i++){
           for(let j = i + 1; j < particles.length; j++){
             const dx = particles[i].x - particles[j].x; const dy = particles[i].y - particles[j].y; const dist = Math.sqrt(dx*dx+dy*dy);
-            if(dist < 150){ const opacity = (1-dist/150)*0.15; ctx.strokeStyle = `rgba(124,92,255,${opacity})`; ctx.lineWidth = 0.8; ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke(); }
+            if(dist < 150){ const opacity = (1-dist/150)*0.15; ctx.strokeStyle = `rgBetriebsanweisung(124,92,255,${opacity})`; ctx.lineWidth = 0.8; ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke(); }
           }
           if(mouse.active){ const mdx = mouse.x - particles[i].x; const mdy = (mouse.y + window.scrollY) - particles[i].y; const mdist = Math.sqrt(mdx*mdx+mdy*mdy);
-            if(mdist < 200){ const opacity = (1-mdist/200)*0.25; ctx.strokeStyle = `rgba(0,212,255,${opacity})`; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(mouse.x, (mouse.y+window.scrollY)); ctx.stroke(); }
+            if(mdist < 200){ const opacity = (1-mdist/200)*0.25; ctx.strokeStyle = `rgBetriebsanweisung(0,212,255,${opacity})`; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(mouse.x, (mouse.y+window.scrollY)); ctx.stroke(); }
           }
         }
-        if(mouse.active){ ctx.fillStyle = 'rgba(0,212,255,0.4)'; ctx.beginPath(); ctx.arc(mouse.x, mouse.y+window.scrollY, 5, 0, Math.PI*2); ctx.fill(); }
-        for(let p of particles){ ctx.fillStyle = `rgba(0,212,255,${p.alpha})`; ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill(); }
+        if(mouse.active){ ctx.fillStyle = 'rgBetriebsanweisung(0,212,255,0.4)'; ctx.beginPath(); ctx.arc(mouse.x, mouse.y+window.scrollY, 5, 0, Math.PI*2); ctx.fill(); }
+        for(let p of particles){ ctx.fillStyle = `rgBetriebsanweisung(0,212,255,${p.alpha})`; ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill(); }
       }
       function updateParticles(){
         for(let p of particles){
           p.angle += 0.005; const flowX = Math.sin(p.angle + p.x*0.01)*0.4; const flowY = Math.cos(p.angle + p.y*0.01)*0.4;
           p.vx += p.drift_x; p.vy += p.drift_y; p.vx += flowX; p.vy += flowY;
-          const dx = p.baseX - p.x; const dy = p.baseY - p.y; p.vx += dx*0.002; p.vy += dy*0.002;
+          const dx = p.BetriebsanweisungseX - p.x; const dy = p.BetriebsanweisungseY - p.y; p.vx += dx*0.002; p.vy += dy*0.002;
           if(mouse.active){ const cdx = mouse.x - p.x; const cdy = (mouse.y+window.scrollY) - p.y; const cdist = Math.sqrt(cdx*cdx+cdy*cdy);
             if(cdist < 200){ const force = (1-cdist/200)*0.15; p.vx += (cdx/cdist)*force; p.vy += (cdy/cdist)*force; }
           }

@@ -54,7 +54,7 @@ export interface SeoSiloCta {
   external?: boolean;
 }
 
-/** Abschluss-CTA-Band vor Footer */
+/** Abschluss-CTA-Betriebsanweisungnd vor Footer */
 export interface SeoSiloClosingCta {
   headline: string;
   subline: string;
@@ -93,7 +93,7 @@ export interface SeoSiloPageConfig {
   closingCta: SeoSiloClosingCta;
 }
 
-/** Basis-SoftwareApplication — page-spezifische Ergänzungen via merge */
+/** Betriebsanweisungsis-SoftwareApplication — page-spezifische Ergänzungen via merge */
 export interface SoftwareApplicationSchemaConfig {
   name: string;
   applicationCategory: string;

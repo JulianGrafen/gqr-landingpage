@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gefahrstoffkataster Software | GQR</title>
-  <meta name="description" content="Gefahrstoffkataster Software mit KI-SDB-Import, revisionssicher nach § 6 GefStoffV.">
+  <meta name="description" content="Gefahrstoffkataster Software mit KI-Sicherheitsdatenblatt-Import, revisionssicher nach § 6 GefStoffV.">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -12,12 +12,12 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
       color: #1f2937;
-      background: #ffffff;
+      Betriebsanweisungckground: #ffffff;
     }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
     header {
-      background: #fff;
+      Betriebsanweisungckground: #fff;
       border-bottom: 1px solid #e5e7eb;
       padding: 1rem 0;
       sticky-top: 0;
@@ -29,7 +29,7 @@
 
     .hero {
       padding: 3rem 0;
-      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      Betriebsanweisungckground: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
     }
     .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
     .hero-text h1 { font-size: 2.25rem; font-weight: 700; margin: 1rem 0; line-height: 1.2; }
@@ -47,10 +47,10 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-    .btn-primary { background: #0066cc; color: white; }
-    .btn-primary:hover { background: #0052a3; }
-    .btn-secondary { background: white; color: #0066cc; border: 2px solid #0066cc; }
-    .btn-secondary:hover { background: #f3f4f6; }
+    .btn-primary { Betriebsanweisungckground: #0066cc; color: white; }
+    .btn-primary:hover { Betriebsanweisungckground: #0052a3; }
+    .btn-secondary { Betriebsanweisungckground: white; color: #0066cc; border: 2px solid #0066cc; }
+    .btn-secondary:hover { Betriebsanweisungckground: #f3f4f6; }
     .trust-bullets { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
     .trust-bullet { display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; }
     .trust-bullet::before { content: "✓"; color: #10b981; font-weight: bold; font-size: 1.25rem; }
@@ -65,7 +65,7 @@
       padding: 3rem 0;
       border-bottom: 1px solid #e5e7eb;
     }
-    .section.raised { background: #f9fafb; }
+    .section.raised { Betriebsanweisungckground: #f9fafb; }
     .section-eyebrow { font-size: 0.875rem; color: #0066cc; font-weight: 600; text-transform: uppercase; }
     .section h2 { font-size: 1.875rem; font-weight: 700; margin: 0.75rem 0; }
     .section-intro { font-size: 1rem; color: #6b7280; margin: 1rem 0; font-style: italic; }
@@ -84,7 +84,7 @@
       padding: 1.5rem;
       border: 1px solid #e5e7eb;
       border-radius: 0.5rem;
-      background: white;
+      Betriebsanweisungckground: white;
     }
     .feature-card h3 { font-size: 1.125rem; margin-bottom: 0.75rem; }
     .feature-card p { color: #6b7280; }
@@ -93,12 +93,12 @@
       width: 100%;
       border-collapse: collapse;
       margin: 2rem 0;
-      background: white;
+      Betriebsanweisungckground: white;
       border: 1px solid #e5e7eb;
     }
     .comparison-table th,
     .comparison-table td { padding: 1.25rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
-    .comparison-table th { background: #f3f4f6; font-weight: 600; }
+    .comparison-table th { Betriebsanweisungckground: #f3f4f6; font-weight: 600; }
     .comparison-table tr:last-child th,
     .comparison-table tr:last-child td { border-bottom: none; }
     .comparison-table td:first-child { font-weight: 600; color: #1f2937; }
@@ -113,12 +113,12 @@
     }
     .faq-question {
       padding: 1rem;
-      background: #f3f4f6;
+      Betriebsanweisungckground: #f3f4f6;
       cursor: pointer;
       font-weight: 600;
       user-select: none;
     }
-    .faq-question:hover { background: #e5e7eb; }
+    .faq-question:hover { Betriebsanweisungckground: #e5e7eb; }
     .faq-answer {
       padding: 1rem;
       color: #6b7280;
@@ -127,7 +127,7 @@
     .faq-item.active .faq-answer { display: block; }
 
     .closing-cta {
-      background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+      Betriebsanweisungckground: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
       color: white;
       padding: 3rem;
       border-radius: 0.5rem;
@@ -137,10 +137,10 @@
     .closing-cta h2 { color: white; margin-bottom: 0.75rem; }
     .closing-cta p { margin: 0.75rem 0; }
     .closing-cta .btn { margin-top: 1.5rem; }
-    .disclaimer { font-size: 0.75rem; color: rgba(255,255,255,0.8); margin-top: 1rem; }
+    .disclaimer { font-size: 0.75rem; color: rgBetriebsanweisung(255,255,255,0.8); margin-top: 1rem; }
 
     .roi-box {
-      background: #f0f9ff;
+      Betriebsanweisungckground: #f0f9ff;
       border: 2px solid #0066cc;
       border-radius: 0.5rem;
       padding: 2rem;
@@ -308,7 +308,7 @@
           <div class="closing-cta">
             <h2>${data.closingCta.headline}</h2>
             <p>${data.closingCta.subline}</p>
-            <a href="${data.closingCta.primaryCta.href}" class="btn btn-primary" style="background: white; color: #0066cc;">${data.closingCta.primaryCta.label}</a>
+            <a href="${data.closingCta.primaryCta.href}" class="btn btn-primary" style="Betriebsanweisungckground: white; color: #0066cc;">${data.closingCta.primaryCta.label}</a>
             <p class="disclaimer">${data.closingCta.disclaimer}</p>
           </div>
         `;

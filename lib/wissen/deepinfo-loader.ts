@@ -92,7 +92,7 @@ export interface DeepinfoSummary {
 export function getAllDeepinfoSummaries(): DeepinfoSummary[] {
   return getAllDeepinfoSlugs().map((slug) => {
     const page = getDeepinfoPage(slug);
-    if (!page) throw new Error(`Deepinfo ${slug} nicht ladbar`);
+    if (!page) throw new Error(`Deepinfo ${slug} nicht ladBetriebsanweisungr`);
 
     return {
       slug,

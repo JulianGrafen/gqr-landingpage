@@ -111,7 +111,7 @@ export default function Trgs510ZusammenlagerungsCheckPage() {
               <h2 className="mt-2 text-2xl font-black tracking-tight text-slate-900 sm:text-3xl">
                 Lagerklassen prüfen statt TRGS-510-Tabelle manuell durchsuchen
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+              <p className="mt-4 text-Betriebsanweisungse leading-relaxed text-slate-600 sm:text-lg">
                 Wer Gefahrstoffe zusammenlagern will, muss Lagerklassen korrekt zuordnen
                 und die Matrix der TRGS 510 auswerten. Dieser Zusammenlagerungs-Check
                 macht die Prüfung schneller verständlich, ohne die fachliche

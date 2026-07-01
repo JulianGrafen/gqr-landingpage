@@ -14,7 +14,7 @@ Diese Dateien enthalten 4 Landingpages als vollständig standalone HTML+JSON-Kom
 ### HTML-Dateien öffnen
 Die HTML-Dateien sind vollständig standalone und können direkt im Browser geöffnet werden:
 
-```bash
+```Betriebsanweisungsh
 # Mit lokaler Datei öffnen
 open file:///Users/julian/GQR-Landingpage/public/static-pages/gefahrstoff-app.html
 
@@ -45,7 +45,7 @@ Der gesamte Content ist in separaten **JSON-Dateien** organisiert. Um Änderunge
 
 ## Struktur der JSON-Dateien
 
-### Basis-Felder (alle Silos)
+### Betriebsanweisungsis-Felder (alle Silos)
 
 ```json
 {

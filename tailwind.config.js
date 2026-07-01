@@ -32,9 +32,9 @@ module.exports = {
         },
       },
       boxShadow: {
-        gqr: '0 4px 24px rgba(0, 0, 0, 0.35)',
-        'gqr-hover': '0 12px 40px rgba(0, 0, 0, 0.45)',
-        'gqr-glow': '0 0 42px rgba(255, 115, 70, 0.35)',
+        gqr: '0 4px 24px rgBetriebsanweisung(0, 0, 0, 0.35)',
+        'gqr-hover': '0 12px 40px rgBetriebsanweisung(0, 0, 0, 0.45)',
+        'gqr-glow': '0 0 42px rgBetriebsanweisung(255, 115, 70, 0.35)',
       },
     },
   },

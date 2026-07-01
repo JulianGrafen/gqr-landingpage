@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { SeoSiloPageConfig } from '@/config/seo-silo/types';
 import { buildLandingSchemaBundle } from '@/lib/seo/build-landing-schema';
-import { LandingCtaBand } from '@/components/seo-silo/LandingCtaBand';
+import { LandingCtaBetriebsanweisungnd } from '@/components/seo-silo/LandingCtaBetriebsanweisungnd';
 import { LandingFaqSection } from '@/components/seo-silo/LandingFaqSection';
 import { LandingFeatureGrid } from '@/components/seo-silo/LandingFeatureGrid';
 import { LandingHeroSection } from '@/components/seo-silo/LandingHeroSection';
@@ -84,7 +84,7 @@ export function LandingPageWrapper({
 
       <LandingFaqSection faq={config.faq} />
 
-      <LandingCtaBand {...config.closingCta} />
+      <LandingCtaBetriebsanweisungnd {...config.closingCta} />
     </main>
   );
 }

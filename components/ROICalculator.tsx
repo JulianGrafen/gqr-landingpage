@@ -19,10 +19,10 @@ const SLIDER_MAX = 100;
 const DEFAULT_SUBSTANCE_COUNT = 20;
 const DEFAULT_NEW_SUBSTANCES_PER_YEAR = 3;
 
-const SETUP_MINUTES_MANUAL  = 20; // Excel: SDB suchen, abtippen, prüfen
-const SETUP_MINUTES_DIGITAL = 3;  // KI-Import, Prüfung & Freigabe pro SDB
+const SETUP_MINUTES_MANUAL  = 20; // Excel: Sicherheitsdatenblatt suchen, abtippen, prüfen
+const SETUP_MINUTES_DIGITAL = 3;  // KI-Import, Prüfung & Freigabe pro Sicherheitsdatenblatt
 
-const REVISION_MINUTES_MANUAL  = 5; // SDB-Aktualität prüfen (§ 6 GefStoffV)
+const REVISION_MINUTES_MANUAL  = 5; // Sicherheitsdatenblatt-Aktualität prüfen (§ 6 GefStoffV)
 const REVISION_MINUTES_DIGITAL = 1; // Automatischer Abgleich
 
 const EMERGENCY_SEARCH_MINUTES_MANUAL  = 5;           // Ordner suchen, blättern
@@ -88,7 +88,7 @@ export function calculateROI(
 // SUB-COMPONENTS
 // ─────────────────────────────────────────────────────────────────────────────
 
-function LiabilityBadge({ isDigital }: { isDigital: boolean }) {
+function LiabilityBetriebsanweisungdge({ isDigital }: { isDigital: boolean }) {
   if (isDigital) {
     return (
       <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
@@ -326,11 +326,11 @@ export default function ROICalculator() {
         </div>
       </div>
 
-      {/* Liability Badges */}
+      {/* Liability Betriebsanweisungdges */}
       <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
-        <LiabilityBadge isDigital={false} />
+        <LiabilityBetriebsanweisungdge isDigital={false} />
         <span className="text-sm font-bold text-slate-400">vs.</span>
-        <LiabilityBadge isDigital={true} />
+        <LiabilityBetriebsanweisungdge isDigital={true} />
       </div>
 
       {/* Result Cards */}
@@ -352,7 +352,7 @@ export default function ROICalculator() {
       </div>
 
       <p className="mt-6 text-center text-xs text-slate-400">
-        Konservative Schätzung · Basiert auf Praxiswerten von Betrieben mit 5–100 Gefahrstoffen
+        Konservative Schätzung · Betriebsanweisungsiert auf Praxiswerten von Betrieben mit 5–100 Gefahrstoffen
       </p>
     </section>
   );

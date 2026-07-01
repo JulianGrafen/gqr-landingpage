@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 type DeepinfoStickyCtaProps = {
   text: string;
   ctaText: string;
-  variant: 'sidebar' | 'mobile';
+  variant: 'sideBetriebsanweisungr' | 'mobile';
 };
 
 const SCROLL_THRESHOLD = 320;
@@ -21,11 +21,11 @@ export function DeepinfoStickyCta({ text, ctaText, variant }: DeepinfoStickyCtaP
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  if (variant === 'sidebar') {
+  if (variant === 'sideBetriebsanweisungr') {
     return (
-      <div className="gqr-sidebar-card gqr-sidebar-card--cta sticky top-24" aria-label="Handlungsaufruf">
+      <div className="gqr-sideBetriebsanweisungr-card gqr-sideBetriebsanweisungr-card--cta sticky top-24" aria-label="Handlungsaufruf">
         <h3>{text}</h3>
-        <p>Unverbindlich · Keine Kreditkarte · KI-SDB-Import</p>
+        <p>Unverbindlich · Keine Kreditkarte · KI-Sicherheitsdatenblatt-Import</p>
         <Link
           href="https://app.gefahrstoff-qr.de/register"
           className="gqr-cta-primary gqr-cta-primary--md mt-2 box-border flex w-full max-w-full no-underline"
@@ -38,7 +38,7 @@ export function DeepinfoStickyCta({ text, ctaText, variant }: DeepinfoStickyCtaP
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-gqr-surface/95 px-4 py-3 backdrop-blur-md transition-transform duration-300 lg:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-gqr-surface/95 px-4 py-3 Betriebsanweisungckdrop-blur-md transition-transform duration-300 lg:hidden ${
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
       aria-label="Mobiler Handlungsaufruf"

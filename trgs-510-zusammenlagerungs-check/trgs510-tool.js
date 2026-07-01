@@ -7,28 +7,28 @@
     { id: '1', label: 'LGK 1', shortDescription: 'Explosive Stoffe' },
     { id: '2 A', label: 'LGK 2 A', shortDescription: 'Gase' },
     { id: '2 B', label: 'LGK 2 B', shortDescription: 'Aerosolpackungen' },
-    { id: '3', label: 'LGK 3', shortDescription: 'Entzündbare flüssige Stoffe' },
+    { id: '3', label: 'LGK 3', shortDescription: 'EntzündBetriebsanweisungre flüssige Stoffe' },
     { id: '4.1 A', label: 'LGK 4.1 A', shortDescription: 'Sonstige explosionsgefährliche Stoffe' },
-    { id: '4.1 B', label: 'LGK 4.1 B', shortDescription: 'Entzündbare feste oder desensibilisierte Stoffe' },
+    { id: '4.1 B', label: 'LGK 4.1 B', shortDescription: 'EntzündBetriebsanweisungre feste oder desensibilisierte Stoffe' },
     { id: '4.2', label: 'LGK 4.2', shortDescription: 'Pyrophore oder selbsterhitzungsfähige Stoffe' },
     { id: '4.3', label: 'LGK 4.3', shortDescription: 'Stoffe, die mit Wasser entzündliche Gase bilden' },
     { id: '5.1 A', label: 'LGK 5.1 A', shortDescription: 'Stark oxidierend wirkende Stoffe' },
     { id: '5.1 B', label: 'LGK 5.1 B', shortDescription: 'Oxidierend wirkende Stoffe' },
     { id: '5.1 C', label: 'LGK 5.1 C', shortDescription: 'Ammoniumnitrat und ammoniumnitrathaltige Stoffe' },
     { id: '5.2', label: 'LGK 5.2', shortDescription: 'Organische Peroxide und selbstzersetzliche Stoffe' },
-    { id: '6.1 A', label: 'LGK 6.1 A', shortDescription: 'Brennbare akut toxische Stoffe' },
-    { id: '6.1 B', label: 'LGK 6.1 B', shortDescription: 'Nichtbrennbare akut toxische Stoffe' },
-    { id: '6.1 C', label: 'LGK 6.1 C', shortDescription: 'Brennbare toxische oder chronisch wirkende Stoffe' },
-    { id: '6.1 D', label: 'LGK 6.1 D', shortDescription: 'Nichtbrennbare toxische oder chronisch wirkende Stoffe' },
+    { id: '6.1 A', label: 'LGK 6.1 A', shortDescription: 'BrennBetriebsanweisungre akut toxische Stoffe' },
+    { id: '6.1 B', label: 'LGK 6.1 B', shortDescription: 'NichtbrennBetriebsanweisungre akut toxische Stoffe' },
+    { id: '6.1 C', label: 'LGK 6.1 C', shortDescription: 'BrennBetriebsanweisungre toxische oder chronisch wirkende Stoffe' },
+    { id: '6.1 D', label: 'LGK 6.1 D', shortDescription: 'NichtbrennBetriebsanweisungre toxische oder chronisch wirkende Stoffe' },
     { id: '6.2', label: 'LGK 6.2', shortDescription: 'Ansteckungsgefährliche Stoffe' },
     { id: '7', label: 'LGK 7', shortDescription: 'Radioaktive Stoffe' },
-    { id: '8 A', label: 'LGK 8 A', shortDescription: 'Brennbare ätzende Stoffe' },
-    { id: '8 B', label: 'LGK 8 B', shortDescription: 'Nichtbrennbare ätzende Stoffe' },
-    { id: '10-13', label: 'LGK 10-13', shortDescription: 'Sonstige brennbare und nichtbrennbare Stoffe' },
-    { id: '10*', label: 'LGK 10*', shortDescription: 'Brennbare Flüssigkeiten, soweit nicht LGK 3' },
-    { id: '11*', label: 'LGK 11*', shortDescription: 'Brennbare Feststoffe' },
-    { id: '12*', label: 'LGK 12*', shortDescription: 'Nichtbrennbare Flüssigkeiten' },
-    { id: '13*', label: 'LGK 13*', shortDescription: 'Nichtbrennbare Feststoffe' },
+    { id: '8 A', label: 'LGK 8 A', shortDescription: 'BrennBetriebsanweisungre ätzende Stoffe' },
+    { id: '8 B', label: 'LGK 8 B', shortDescription: 'NichtbrennBetriebsanweisungre ätzende Stoffe' },
+    { id: '10-13', label: 'LGK 10-13', shortDescription: 'Sonstige brennBetriebsanweisungre und nichtbrennBetriebsanweisungre Stoffe' },
+    { id: '10*', label: 'LGK 10*', shortDescription: 'BrennBetriebsanweisungre Flüssigkeiten, soweit nicht LGK 3' },
+    { id: '11*', label: 'LGK 11*', shortDescription: 'BrennBetriebsanweisungre Feststoffe' },
+    { id: '12*', label: 'LGK 12*', shortDescription: 'NichtbrennBetriebsanweisungre Flüssigkeiten' },
+    { id: '13*', label: 'LGK 13*', shortDescription: 'NichtbrennBetriebsanweisungre Feststoffe' },
   ];
 
   var RULE_EXPLANATIONS = {
@@ -65,7 +65,7 @@
       label: 'Getrenntlagerung in Räumen möglich',
       shortText: 'Getrenntlagerung kann statt Separatlagerung zulässig sein.',
       detail:
-        'Zulässig bei maximal 50 gefüllten Druckgasbehältern, darunter höchstens 25 mit akut toxischen, entzündbaren oder oxidierenden Gasen, wenn eine mindestens 2 m hohe Wand aus nichtbrennbaren Baustoffen und 5 m Abstand zu brennbaren Lagergütern eingehalten werden.',
+        'Zulässig bei maximal 50 gefüllten Druckgasbehältern, darunter höchstens 25 mit akut toxischen, entzündBetriebsanweisungren oder oxidierenden Gasen, wenn eine mindestens 2 m hohe Wand aus nichtbrennBetriebsanweisungren Betriebsanweisungustoffen und 5 m Abstand zu brennBetriebsanweisungren Lagergütern eingehalten werden.',
       sourceReference: TRGS_SOURCE + ', Erläuterung Nr. 2',
     },
     '3': {
@@ -74,7 +74,7 @@
       label: 'Gase nur unter Mengen- und Abstandsvorgaben',
       shortText: 'Verschiedene Druckgasbehälter dürfen nur unter definierten Bedingungen gemeinsam lagern.',
       detail:
-        'Die TRGS 510 erlaubt bestimmte Kombinationen entzündbarer, oxidierender, akut toxischer und inerter Gase nur innerhalb definierter Mengen. Zwischen entzündbaren und oxidierenden Gasen ist mindestens 2 m Abstand einzuhalten.',
+        'Die TRGS 510 erlaubt bestimmte Kombinationen entzündBetriebsanweisungrer, oxidierender, akut toxischer und inerter Gase nur innerhalb definierter Mengen. Zwischen entzündBetriebsanweisungren und oxidierenden Gasen ist mindestens 2 m Abstand einzuhalten.',
       sourceReference: TRGS_SOURCE + ', Erläuterung Nr. 3',
     },
     '4': {
@@ -90,9 +90,9 @@
       code: '5',
       severity: 'yellow',
       label: 'Brandlasten im Lagerabschnitt vermeiden',
-      shortText: 'Brennbare Materialien dürfen nicht zusätzlich im selben Lagerabschnitt stehen.',
+      shortText: 'BrennBetriebsanweisungre Materialien dürfen nicht zusätzlich im selben Lagerabschnitt stehen.',
       detail:
-        'Materialien wie Papier, Textilien, Holz, Holzwolle, Kartonagen, Folien oder brennbare Verpackungsfüllstoffe dürfen nicht gelagert werden, sofern sie nicht für Lagerung und Transport eine Einheit mit den ortsbeweglichen Behältern bilden.',
+        'Materialien wie Papier, Textilien, Holz, Holzwolle, Kartonagen, Folien oder brennBetriebsanweisungre Verpackungsfüllstoffe dürfen nicht gelagert werden, sofern sie nicht für Lagerung und Transport eine Einheit mit den ortsbeweglichen Behältern bilden.',
       sourceReference: TRGS_SOURCE + ', Erläuterung Nr. 5',
     },
     '6': {
@@ -107,10 +107,10 @@
     '7': {
       code: '7',
       severity: 'yellow',
-      label: 'Brennbare Lagergüter nur unter Zusatzbedingungen',
-      shortText: 'Zusammenlagerung mit brennbaren Lagergütern ist nur mit Brandschutzauflagen zulässig.',
+      label: 'BrennBetriebsanweisungre Lagergüter nur unter Zusatzbedingungen',
+      shortText: 'Zusammenlagerung mit brennBetriebsanweisungren Lagergütern ist nur mit Brandschutzauflagen zulässig.',
       detail:
-        'Zusammenlagerung mit brennbaren Lagergütern darf nur unter den Bedingungen nach Tabelle 13 und zusätzlich unter Beachtung der Brandlast-Regel aus Erläuterung Nr. 5 erfolgen.',
+        'Zusammenlagerung mit brennBetriebsanweisungren Lagergütern darf nur unter den Bedingungen nach Tabelle 13 und zusätzlich unter Beachtung der Brandlast-Regel aus Erläuterung Nr. 5 erfolgen.',
       sourceReference: TRGS_SOURCE + ', Erläuterung Nr. 7',
     },
     '8': {
@@ -171,8 +171,8 @@
       '<div class="trgs510-result__top">' +
       '<div class="trgs510-result__icon">' + icon + '</div>' +
       '<div class="trgs510-result__body">' +
-      '<div class="trgs510-result__badges">' +
-      '<span class="trgs510-badge">Matrixcode ' + rule.code + '</span>' +
+      '<div class="trgs510-result__Betriebsanweisungdges">' +
+      '<span class="trgs510-Betriebsanweisungdge">Matrixcode ' + rule.code + '</span>' +
       '<span class="trgs510-result__pair">' + firstClass.label + ' × ' + secondClass.label + '</span>' +
       '</div>' +
       '<h2 id="trgs510-result-title" class="trgs510-result__title">' + rule.label + '</h2>' +

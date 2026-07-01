@@ -35,9 +35,9 @@ export function IndustryFooter() {
         >
           Maßgeschneiderte Lösungen für Ihre Branche
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-sm leading-relaxed text-slate-600 sm:text-base">
+        <p className="mx-auto mt-3 max-w-2xl text-center text-sm leading-relaxed text-slate-600 sm:text-Betriebsanweisungse">
           Lesen Sie im Blog, wie Gefahrstoff-QR in Ihrer Branche bei
-          GefStoffV, SDB und Betriebsanweisungen hilft.
+          GefStoffV, Sicherheitsdatenblatt und Betriebsanweisungen hilft.
         </p>
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5" role="list">
@@ -52,7 +52,7 @@ export function IndustryFooter() {
                   >
                     <Icon className="h-6 w-6" strokeWidth={1.75} />
                   </span>
-                  <span className="mt-4 text-base font-bold text-slate-900">
+                  <span className="mt-4 text-Betriebsanweisungse font-bold text-slate-900">
                     {item.label}
                   </span>
                   <Link

@@ -3,12 +3,12 @@ import type {
   SeoSiloSchemaBundle,
   SoftwareApplicationSchemaConfig,
 } from '@/config/seo-silo/types';
-import schemaBase from '@/config/seo-silo/schema-base.json';
+import schemaBetriebsanweisungse from '@/config/seo-silo/schema-Betriebsanweisungse.json';
 import { SITE_URL } from '@/config/site-seo';
 
-type SchemaBase = typeof schemaBase;
+type SchemaBetriebsanweisungse = typeof schemaBetriebsanweisungse;
 
-const baseSoftware = schemaBase.softwareApplication;
+const BetriebsanweisungseSoftware = schemaBetriebsanweisungse.softwareApplication;
 
 /** FAQPage JSON-LD aus FAQ-Array */
 export function buildFaqPageSchema(faq: SeoSiloFaqItem[]): SeoSiloSchemaBundle['faqPage'] {
@@ -26,14 +26,14 @@ export function buildFaqPageSchema(faq: SeoSiloFaqItem[]): SeoSiloSchemaBundle['
   };
 }
 
-/** SoftwareApplication JSON-LD — Basis aus schema-base.json, optional page-spezifisch erweitert */
+/** SoftwareApplication JSON-LD — Betriebsanweisungsis aus schema-Betriebsanweisungse.json, optional page-spezifisch erweitert */
 export function buildSoftwareApplicationSchema(
   overrides?: Partial<SoftwareApplicationSchemaConfig> & {
     pageUrl?: string;
     pageDescription?: string;
   },
 ): SeoSiloSchemaBundle['softwareApplication'] {
-  const merged = { ...baseSoftware, ...overrides };
+  const merged = { ...BetriebsanweisungseSoftware, ...overrides };
   const operatingSystem = Array.isArray(merged.operatingSystem)
     ? merged.operatingSystem.join(', ')
     : merged.operatingSystem;
@@ -54,12 +54,12 @@ export function buildSoftwareApplicationSchema(
     },
   };
 
-  const features = merged.featureList ?? baseSoftware.featureList;
+  const features = merged.featureList ?? BetriebsanweisungseSoftware.featureList;
   if (features?.length) {
     schema.featureList = features.join('; ');
   }
 
-  const audience = merged.audience ?? baseSoftware.audience;
+  const audience = merged.audience ?? BetriebsanweisungseSoftware.audience;
   if (audience) {
     schema.audience = {
       '@type': 'Audience',

@@ -7,7 +7,7 @@ export const DEMO_SUBSTANCE = Object.freeze({
   pictograms: ["Ätzwirkung (GHS05)", "Ausrufezeichen (GHS07)"],
   ufiCode: "A1B2-C3D4-E5F6-G7H8",
   waterHazardClass: "WGK 2 (deutlich wassergefährdend)",
-  storageClass: "LGK 8A (Brennbare ätzende Stoffe)",
+  storageClass: "LGK 8A (BrennBetriebsanweisungre ätzende Stoffe)",
   hazardStatements: ["H314 Verursacht schwere Verätzungen der Haut."],
   precautionaryStatements: ["P280 Schutzhandschuhe/Augenschutz tragen."],
   firstAid: [
@@ -19,7 +19,7 @@ export const DEMO_SUBSTANCE = Object.freeze({
   supplier: "Mock Chemie GmbH, 53925 Kall",
 });
 
-export const SDB_EXTRACTION_FIELDS = Object.freeze([
+export const Sicherheitsdatenblatt_EXTRACTION_FIELDS = Object.freeze([
   { key: "productName", label: "Produktname" },
   { key: "signalWord", label: "Signalwort", variant: "danger" },
   { key: "pictograms", label: "Piktogramme" },

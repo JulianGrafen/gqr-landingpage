@@ -31,10 +31,10 @@ export function GefahrstoffAppSiloPage() {
         id="qr-scan-demo"
         eyebrow="Ad-hoc Informationsbeschaffung"
         title="Im Ernstfall entscheidet die Reaktionszeit, nicht die Ablage im Büro"
-        lead="Ein Gefahrstoffaustritt wartet nicht, bis das richtige Sicherheitsdatenblatt auf dem Firmenserver gefunden ist. Der Scan am Gebinde liefert Ersthelfern sofort die überlebenswichtigen H- und P-Sätze – ohne Barriere, direkt am Gefahrenherd."
+        lead="Ein Gefahrstoffaustritt wartet nicht, bis das richtige Sicherheitsdatenblatt auf dem Firmenserver gefunden ist. Der Scan am Gebinde liefert Ersthelfern sofort die überlebenswichtigen H- und P-Sätze – ohne Betriebsanweisungrriere, direkt am Gefahrenherd."
         bullets={[
           'Sekundenschneller Scan an Regalen, IBC-Containern oder Werkstattwagen',
-          'Direkter Zugriff auf Erste-Hilfe-Maßnahmen (SDB Abschnitt 4) ohne Login',
+          'Direkter Zugriff auf Erste-Hilfe-Maßnahmen (Sicherheitsdatenblatt Abschnitt 4) ohne Login',
           'Garantierte Aktualität durch Echtzeit-Synchronisation mit dem Hauptkataster',
         ]}
         media={{
@@ -55,17 +55,17 @@ export function GefahrstoffAppSiloPage() {
       <LandingProseSection
         id="regulatorik-haftung"
         eyebrow="Compliance nach TRGS 400 & § 6 GefStoffV"
-        title="Die Illusion der digitalen Ablage: Warum Server-SDBs rechtlich oft wertlos sind"
+        title="Die Illusion der digitalen Ablage: Warum Server-Sicherheitsdatenblatts rechtlich oft wertlos sind"
         intro="Arbeitsschutzinformationen müssen am Arbeitsplatz wirksam sein. Ein PDF im Intranet nützt dem Mechaniker an der Hebebühne nichts, wenn er mit einem ätzenden Stoff in Kontakt kommt."
       >
         <p>
           Der Gesetzgeber ist eindeutig: <strong>§ 6 der Gefahrstoffverordnung (GefStoffV)</strong> verpflichtet den Arbeitgeber zur aktiven Bereitstellung von Gefahrstoffinformationen. Die <strong>TRGS 400</strong> präzisiert diesen Anspruch: Unterweisung und Information müssen für die Beschäftigten verständlich und vor allem am jeweiligen Arbeitsplatz jederzeit zugänglich sein. Ein zentrales Netzlaufwerk erfüllt diese Anforderung in der Praxis dezentraler Teams nicht.
         </p>
         <p>
-          Der Versuch, dieses Problem mit Papierausdrucken zu lösen, führt unweigerlich in eine Haftungsfalle. Papier veraltet stillschweigend. Durch Lieferantenwechsel, Rezepturanpassungen oder die <strong>Ablauffrist der CLP-Verordnung für Gemische im Mai 2026</strong> ändern sich Gefahrenklassen und Schutzmaßnahmen kontinuierlich. Der laminierte Ausdruck am Regal zeigt alte, teils gefährliche P-Sätze, während die Sicherheitsfachkraft (SiFa) die neue SDB-Version längst im Büro abgelegt hat. Bei BG-Kontrollen oder nach Arbeitsunfällen wird genau diese Diskrepanz geprüft.
+          Der Versuch, dieses Problem mit Papierausdrucken zu lösen, führt unweigerlich in eine Haftungsfalle. Papier veraltet stillschweigend. Durch Lieferantenwechsel, Rezepturanpassungen oder die <strong>Ablauffrist der CLP-Verordnung für Gemische im Mai 2026</strong> ändern sich Gefahrenklassen und Schutzmaßnahmen kontinuierlich. Der laminierte Ausdruck am Regal zeigt alte, teils gefährliche P-Sätze, während die Sicherheitsfachkraft (SiFa) die neue Sicherheitsdatenblatt-Version längst im Büro abgelegt hat. Bei BG-Kontrollen oder nach Arbeitsunfällen wird genau diese Diskrepanz geprüft.
         </p>
         <p>
-          <strong>Der First-Responder-Faktor:</strong> Ersthelfer benötigen im Notfall sofortige, unmissverständliche Anweisungen. Wer in einer Stresssituation erst Vorgesetzte anrufen oder in Leitz-Ordnern blättern muss, verliert wertvolle Zeit. Ein QR-Code-basierter Ansatz schließt diese Lücke, indem er die tagesaktuellen Notfallmaßnahmen physisch an das Gebinde bindet – ohne den administrativen Overhead einer parallelen Papierpflege.
+          <strong>Der First-Responder-Faktor:</strong> Ersthelfer benötigen im Notfall sofortige, unmissverständliche Anweisungen. Wer in einer Stresssituation erst Vorgesetzte anrufen oder in Leitz-Ordnern blättern muss, verliert wertvolle Zeit. Ein QR-Code-Betriebsanweisungsierter Ansatz schließt diese Lücke, indem er die tagesaktuellen Notfallmaßnahmen physisch an das Gebinde bindet – ohne den administrativen Overhead einer parallelen Papierpflege.
         </p>
       </LandingProseSection>
 
@@ -83,17 +83,17 @@ export function GefahrstoffAppSiloPage() {
       <LandingProseSection
         id="einsatzszenarien"
         eyebrow="Praxisanwendung"
-        title="Werkstatt, Baustelle, Produktion: Eine Architektur für jeden Einsatzort"
+        title="Werkstatt, Betriebsanweisungustelle, Produktion: Eine Architektur für jeden Einsatzort"
         variant="raised"
       >
-        <h3>Baustellen und temporäre Arbeitsplätze</h3>
+        <h3>Betriebsanweisungustellen und temporäre Arbeitsplätze</h3>
         <p>
-          Auf Baustellen fehlt oft die grundlegende IT-Infrastruktur für klassische Softwarelösungen. Gefahrstoffe wandern mit den Subunternehmern und Teams. QR-Labels, die direkt auf die Behälter geklebt werden, lösen die Ortsbindung auf. Die SiFa pflegt die Daten zentral und revisionssicher im Kataster; die Teams vor Ort scannen das Gebinde mit jedem handelsüblichen Smartphone, ohne dicke Excel-Mappen mitschleppen zu müssen.
+          Auf Betriebsanweisungustellen fehlt oft die grundlegende IT-Infrastruktur für klassische Softwarelösungen. Gefahrstoffe wandern mit den Subunternehmern und Teams. QR-Labels, die direkt auf die Behälter geklebt werden, lösen die Ortsbindung auf. Die SiFa pflegt die Daten zentral und revisionssicher im Kataster; die Teams vor Ort scannen das Gebinde mit jedem handelsüblichen Smartphone, ohne dicke Excel-Mappen mitschleppen zu müssen.
         </p>
 
         <h3>Produktion und Werkstätten</h3>
         <p>
-          Im Umgang mit Schmierstoffen, Industriereinigern oder Lacken ist die Unfallwahrscheinlichkeit hoch. Eine verschmutzte Arbeitsumgebung zerstört Papierdokumente schnell. Die mobile Ansicht liefert hier nicht nur Erste-Hilfe-Maßnahmen, sondern auch die exakte <strong>Betriebsanweisung nach § 14 GefStoffV</strong>. Das eliminiert das Risiko, dass Mitarbeiter nach veralteten Word-Dokumenten arbeiten, die seit dem letzten SDB-Update nicht mehr manuell ausgetauscht wurden.
+          Im Umgang mit Schmierstoffen, Industriereinigern oder Lacken ist die Unfallwahrscheinlichkeit hoch. Eine verschmutzte Arbeitsumgebung zerstört Papierdokumente schnell. Die mobile Ansicht liefert hier nicht nur Erste-Hilfe-Maßnahmen, sondern auch die exakte <strong>Betriebsanweisung nach § 14 GefStoffV</strong>. Das eliminiert das Risiko, dass Mitarbeiter nach veralteten Word-Dokumenten arbeiten, die seit dem letzten Sicherheitsdatenblatt-Update nicht mehr manuell ausgetauscht wurden.
         </p>
 
         <h3>Das Fundament: Verknüpfung zum digitalen Kataster</h3>
@@ -102,7 +102,7 @@ export function GefahrstoffAppSiloPage() {
           <Link href="/gefahrstoffkataster-software/" className="gqr-link">
             Gefahrstoffkataster
           </Link>
-          . Jede Änderung, die durch den KI-gestützten SDB-Import vorgenommen wird, synchronisiert sich in Echtzeit auf alle QR-Codes. Dies ermöglicht zudem einen rechtskonformen, automatisierten{' '}
+          . Jede Änderung, die durch den KI-gestützten Sicherheitsdatenblatt-Import vorgenommen wird, synchronisiert sich in Echtzeit auf alle QR-Codes. Dies ermöglicht zudem einen rechtskonformen, automatisierten{' '}
           <Link href="/trgs-510-zusammenlagerungs-check/" className="gqr-link">
             TRGS-510-Check
           </Link>

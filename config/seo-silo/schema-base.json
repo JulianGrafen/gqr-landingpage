@@ -11,10 +11,10 @@
       "description": "Kostenloser Einstieg — erste Stoffe ohne Kreditkarte anlegen."
     },
     "featureList": [
-      "KI-SDB-Import und automatische Feldextraktion",
+      "KI-Sicherheitsdatenblatt-Import und automatische Feldextraktion",
       "Revisionssicheres Gefahrstoffverzeichnis nach § 6 GefStoffV",
       "TRGS 510 Zusammenlagerungsprüfung",
-      "Betriebsanweisungen aus SDB-Daten",
+      "Betriebsanweisungen aus Sicherheitsdatenblatt-Daten",
       "QR-Notfallpass für Ersthelfer am Einsatzort",
       "Aktivitätsprotokoll für BG- und Behördenaudits"
     ],

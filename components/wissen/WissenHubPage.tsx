@@ -28,7 +28,7 @@ export function WissenHubPage({ deepinfoPages, blogPosts }: WissenHubPageProps) 
           </h1>
           <p className="gqr-post-section-sub max-w-2xl">
             Praxisnahe Artikel, SEO-Leitfäden und Deepinfo-Landingpages zu §&nbsp;6 GefStoffV,
-            SDB-Pflege, TRGS&nbsp;510 und digitalem Gefahrstoffmanagement.
+            Sicherheitsdatenblatt-Pflege, TRGS&nbsp;510 und digitalem Gefahrstoffmanagement.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -106,7 +106,7 @@ export function WissenHubPage({ deepinfoPages, blogPosts }: WissenHubPageProps) 
 
       <section className="gqr-wissen-section" aria-label="Handlungsaufruf">
         <div className="gqr-container">
-          <div className="gqr-sidebar-card gqr-sidebar-card--cta mx-auto max-w-3xl px-6 py-10 text-center sm:px-10 sm:py-12">
+          <div className="gqr-sideBetriebsanweisungr-card gqr-sideBetriebsanweisungr-card--cta mx-auto max-w-3xl px-6 py-10 text-center sm:px-10 sm:py-12">
             <h2 className="gqr-post-section-title">Bereit für rechtssicheres Gefahrstoffmanagement?</h2>
             <p className="gqr-post-section-sub">
               Starten Sie kostenlos — erste Stoffe ohne Kreditkarte anlegen.

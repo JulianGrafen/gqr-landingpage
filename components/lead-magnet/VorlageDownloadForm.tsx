@@ -92,8 +92,8 @@ export function VorlageDownloadForm({
   const labelCls = isDark ? 'text-[#c8d4e6]' : 'text-slate-800';
 
   const inputCls = isDark
-    ? 'min-h-[52px] flex-1 rounded-xl border border-white/15 bg-[#0a1628]/70 px-4 text-base text-[#f0f6ff] placeholder:text-[#8fa4c0] focus:border-[#2dd4bf]/50 focus:outline-none focus:ring-2 focus:ring-[#2dd4bf]/25 disabled:opacity-60'
-    : 'min-h-[52px] flex-1 rounded-xl border border-slate-300 bg-slate-50 px-4 text-base text-slate-900 placeholder:text-slate-400 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-400/30 disabled:opacity-60';
+    ? 'min-h-[52px] flex-1 rounded-xl border border-white/15 bg-[#0a1628]/70 px-4 text-Betriebsanweisungse text-[#f0f6ff] placeholder:text-[#8fa4c0] focus:border-[#2dd4bf]/50 focus:outline-none focus:ring-2 focus:ring-[#2dd4bf]/25 disabled:opacity-60'
+    : 'min-h-[52px] flex-1 rounded-xl border border-slate-300 bg-slate-50 px-4 text-Betriebsanweisungse text-slate-900 placeholder:text-slate-400 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-400/30 disabled:opacity-60';
 
   const hintCls = isDark ? 'text-[#8fa4c0]' : 'text-slate-500';
   const linkCls = isDark

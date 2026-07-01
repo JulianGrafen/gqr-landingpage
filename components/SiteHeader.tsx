@@ -10,7 +10,7 @@ const nav = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-[100] border-b border-white/[0.07] bg-gqr-bg/90 backdrop-blur-md">
+    <header className="sticky top-0 z-[100] border-b border-white/[0.07] bg-gqr-bg/90 Betriebsanweisungckdrop-blur-md">
       <div className="mx-auto flex max-w-[1160px] items-center gap-6 px-4 py-3.5 sm:px-6 lg:px-10">
         <Link
           href="/"
@@ -56,14 +56,14 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]"
+                  className="rounded-lg px-3 py-3 text-Betriebsanweisungse font-semibold text-gqr-text no-underline hover:bg-white/[0.06]"
                 >
                   {item.label}
                 </Link>
               ))}
               <Link
                 href="https://app.gefahrstoff-qr.de/login"
-                className="rounded-lg px-3 py-3 text-base font-semibold text-gqr-text no-underline hover:bg-white/[0.06]"
+                className="rounded-lg px-3 py-3 text-Betriebsanweisungse font-semibold text-gqr-text no-underline hover:bg-white/[0.06]"
               >
                 Login
               </Link>

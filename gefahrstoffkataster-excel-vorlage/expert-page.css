@@ -7,8 +7,8 @@
 .expert-hero {
   padding-block: clamp(3.5rem, 6vw, 5.5rem);
   padding-inline: clamp(1rem, 4vw, 2.5rem);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  background: linear-gradient(180deg, rgba(15, 30, 53, 0.92) 0%, #0a1628 100%);
+  border-bottom: 1px solid rgBetriebsanweisung(255, 255, 255, 0.07);
+  Betriebsanweisungckground: linear-gradient(180deg, rgBetriebsanweisung(15, 30, 53, 0.92) 0%, #0a1628 100%);
 }
 
 .expert-hero-inner {
@@ -45,7 +45,7 @@
   max-height: 18rem;
   width: auto;
   max-width: 100%;
-  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 12px 24px rgBetriebsanweisung(0, 0, 0, 0.35));
 }
 
 .expert-cta-row {
@@ -91,7 +91,7 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 999px;
-  background: #ff6b35;
+  Betriebsanweisungckground: #ff6b35;
 }
 
 .expert-benefits strong {
@@ -114,7 +114,7 @@
 }
 
 .expert-breadcrumb-sep {
-  color: rgba(255, 255, 255, 0.25);
+  color: rgBetriebsanweisung(255, 255, 255, 0.25);
 }
 
 .expert-kicker {
@@ -155,7 +155,7 @@
 }
 
 .expert-section--white {
-  background: #fff;
+  Betriebsanweisungckground: #fff;
   border-bottom-color: #e2e8f0;
 }
 
@@ -170,7 +170,7 @@
 }
 
 .expert-section--slate {
-  background: #f1f5f9;
+  Betriebsanweisungckground: #f1f5f9;
   border-bottom-color: #e2e8f0;
 }
 
@@ -184,8 +184,8 @@
 }
 
 .expert-section--dark {
-  background: #0a1628;
-  border-bottom-color: rgba(255, 255, 255, 0.07);
+  Betriebsanweisungckground: #0a1628;
+  border-bottom-color: rgBetriebsanweisung(255, 255, 255, 0.07);
 }
 
 .expert-section--dark .expert-section-title,
@@ -242,7 +242,7 @@
 
 .expert-section-sub {
   margin-top: 1rem;
-  font-size: var(--text-base);
+  font-size: var(--text-Betriebsanweisungse);
   line-height: 1.65;
 }
 
@@ -269,16 +269,16 @@
   flex-direction: column;
   height: 100%;
   padding: 1.5rem 1.75rem;
-  background: rgba(248, 250, 252, 0.95);
+  Betriebsanweisungckground: rgBetriebsanweisung(248, 250, 252, 0.95);
   border: 1px solid #e2e8f0;
   border-radius: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgBetriebsanweisung(0, 0, 0, 0.06);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .expert-pain-card:hover {
   border-color: #cbd5e1;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgBetriebsanweisung(0, 0, 0, 0.08);
 }
 
 .expert-pain-card__row {
@@ -295,7 +295,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 0.75rem;
-  background: rgba(255, 107, 53, 0.15);
+  Betriebsanweisungckground: rgBetriebsanweisung(255, 107, 53, 0.15);
   font-size: var(--text-sm);
   font-weight: 700;
   color: #ff6b35;
@@ -328,10 +328,10 @@
 .expert-roi {
   margin-top: 2.5rem;
   padding: 1.75rem 2rem;
-  background: rgba(22, 35, 64, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  Betriebsanweisungckground: rgBetriebsanweisung(22, 35, 64, 0.9);
+  border: 1px solid rgBetriebsanweisung(255, 255, 255, 0.1);
   border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 32px rgBetriebsanweisung(0, 0, 0, 0.35);
 }
 
 @media (min-width: 640px) {
@@ -378,7 +378,7 @@
   height: 0.5rem;
   border-radius: 999px;
   appearance: none;
-  background: rgba(255, 255, 255, 0.1);
+  Betriebsanweisungckground: rgBetriebsanweisung(255, 255, 255, 0.1);
   accent-color: #ff6b35;
   cursor: pointer;
 }
@@ -428,27 +428,27 @@
   color: var(--color-muted);
 }
 
-.expert-roi-bar {
+.expert-roi-Betriebsanweisungr {
   margin-top: 0.75rem;
   height: 0.75rem;
   overflow: hidden;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
+  Betriebsanweisungckground: rgBetriebsanweisung(255, 255, 255, 0.1);
 }
 
-.expert-roi-bar > span {
+.expert-roi-Betriebsanweisungr > span {
   display: block;
   height: 100%;
   border-radius: 999px;
   transition: width 0.2s ease;
 }
 
-.expert-roi-bar--manual > span {
-  background: rgba(148, 163, 184, 0.85);
+.expert-roi-Betriebsanweisungr--manual > span {
+  Betriebsanweisungckground: rgBetriebsanweisung(148, 163, 184, 0.85);
 }
 
-.expert-roi-bar--auto > span {
-  background: #2dd4bf;
+.expert-roi-Betriebsanweisungr--auto > span {
+  Betriebsanweisungckground: #2dd4bf;
 }
 
 /* Tabelle */
@@ -489,7 +489,7 @@
 }
 
 .expert-table thead th {
-  background: #f1f5f9;
+  Betriebsanweisungckground: #f1f5f9;
   font-weight: 700;
   color: #1e293b;
 }
@@ -500,22 +500,22 @@
 
 .expert-table thead th:last-child {
   border-radius: 0 1rem 0 0;
-  background: rgba(255, 107, 53, 0.1);
+  Betriebsanweisungckground: rgBetriebsanweisung(255, 107, 53, 0.1);
 }
 
 .expert-table tbody th {
-  background: #fff;
+  Betriebsanweisungckground: #fff;
   font-weight: 600;
   color: #1e293b;
 }
 
 .expert-table tbody td {
-  background: #fff;
+  Betriebsanweisungckground: #fff;
   color: #475569;
 }
 
 .expert-table tbody td:last-child {
-  background: rgba(248, 250, 252, 0.95);
+  Betriebsanweisungckground: rgBetriebsanweisung(248, 250, 252, 0.95);
   color: #334155;
 }
 
@@ -531,11 +531,11 @@
 .expert-callout {
   margin-top: 2rem;
   padding: 1.5rem 2rem;
-  background: #fff;
+  Betriebsanweisungckground: #fff;
   border: 1px solid #e2e8f0;
   border-left: 3px solid #2dd4bf;
   border-radius: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgBetriebsanweisung(0, 0, 0, 0.06);
 }
 
 @media (min-width: 640px) {
@@ -585,16 +585,16 @@
 .expert-cta-section {
   padding-block: clamp(3.5rem, 5vw, 5rem);
   padding-inline: clamp(1rem, 4vw, 2.5rem);
-  background: #0f1e35;
+  Betriebsanweisungckground: #0f1e35;
 }
 
 .expert-cta-box {
   padding: 2rem 2.25rem;
   text-align: center;
-  border: 1px solid rgba(45, 212, 191, 0.3);
+  border: 1px solid rgBetriebsanweisung(45, 212, 191, 0.3);
   border-radius: 1rem;
-  background: linear-gradient(135deg, #0f1e35 0%, #162340 100%);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  Betriebsanweisungckground: linear-gradient(135deg, #0f1e35 0%, #162340 100%);
+  box-shadow: 0 12px 40px rgBetriebsanweisung(0, 0, 0, 0.35);
 }
 
 @media (min-width: 640px) {
@@ -626,18 +626,18 @@
   color: var(--color-muted);
 }
 
-.expert-back-blog {
+.expert-Betriebsanweisungck-blog {
   margin-top: 2.5rem;
   text-align: center;
   font-size: var(--text-sm);
 }
 
-.expert-back-blog a {
+.expert-Betriebsanweisungck-blog a {
   font-weight: 600;
   color: #5eead4;
   text-decoration: none;
 }
-.expert-back-blog a:hover {
+.expert-Betriebsanweisungck-blog a:hover {
   text-decoration: underline;
   text-underline-offset: 2px;
 }

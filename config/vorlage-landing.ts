@@ -21,12 +21,12 @@ export const VORLAGE_LANDING_SEO = {
 
 export const VORLAGE_GQR_BENEFITS = [
   {
-    title: 'Automatische SDB-Extraktion',
+    title: 'Automatische Sicherheitsdatenblatt-Extraktion',
     description: 'Nie wieder manuell tippen — KI liest Sicherheitsdatenblätter und füllt Pflichtfelder.',
   },
   {
     title: 'Rechtssichere Archivierung mit Prüfsummen',
-    description: 'Revisionssichere Historie: jede SDB-Version nachvollziehbar für Audits und BG-Prüfungen.',
+    description: 'Revisionssichere Historie: jede Sicherheitsdatenblatt-Version nachvollziehBetriebsanweisungr für Audits und BG-Prüfungen.',
   },
   {
     title: 'QR-Code für Notfallinfos am Arbeitsplatz',

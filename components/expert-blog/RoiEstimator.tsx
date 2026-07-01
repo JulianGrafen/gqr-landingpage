@@ -2,11 +2,11 @@
 
 import { useId, useMemo, useState } from 'react';
 import {
-  ROI_GQR_MINUTES_PER_SDB,
-  ROI_MANUAL_MINUTES_PER_SDB,
-  ROI_SDB_COUNT_DEFAULT,
-  ROI_SDB_COUNT_MAX,
-  ROI_SDB_COUNT_MIN,
+  ROI_GQR_MINUTES_PER_Sicherheitsdatenblatt,
+  ROI_MANUAL_MINUTES_PER_Sicherheitsdatenblatt,
+  ROI_Sicherheitsdatenblatt_COUNT_DEFAULT,
+  ROI_Sicherheitsdatenblatt_COUNT_MAX,
+  ROI_Sicherheitsdatenblatt_COUNT_MIN,
 } from '@/config/roi-estimator';
 
 function formatHoursDe(totalHours: number): string {
@@ -25,15 +25,15 @@ function formatMinutesDe(minutes: number): string {
 }
 
 /**
- * Illustrativer Vergleich: manuelle Excel-Pflege vs. GQR inkl. Freigabe pro SDB.
+ * Illustrativer Vergleich: manuelle Excel-Pflege vs. GQR inkl. Freigabe pro Sicherheitsdatenblatt.
  */
 export function RoiEstimator() {
   const id = useId();
-  const [count, setCount] = useState(ROI_SDB_COUNT_DEFAULT);
+  const [count, setCount] = useState(ROI_Sicherheitsdatenblatt_COUNT_DEFAULT);
 
   const { manualHours, autoMinutes, manualPct, autoPct } = useMemo(() => {
-    const manualMin = count * ROI_MANUAL_MINUTES_PER_SDB;
-    const autoMin = count * ROI_GQR_MINUTES_PER_SDB;
+    const manualMin = count * ROI_MANUAL_MINUTES_PER_Sicherheitsdatenblatt;
+    const autoMin = count * ROI_GQR_MINUTES_PER_Sicherheitsdatenblatt;
     const manual = manualMin / 60;
     const maxMin = Math.max(manualMin, autoMin, 1);
     return {
@@ -45,7 +45,7 @@ export function RoiEstimator() {
   }, [count]);
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-[#162340]/90 p-6 shadow-lg backdrop-blur-sm sm:p-8">
+    <div className="rounded-2xl border border-white/10 bg-[#162340]/90 p-6 shadow-lg Betriebsanweisungckdrop-blur-sm sm:p-8">
       <p className="text-xs font-bold uppercase tracking-wider text-[#ff6b35]">
         Prozessvergleich
       </p>
@@ -63,26 +63,26 @@ export function RoiEstimator() {
           htmlFor={id}
           className="flex flex-wrap items-center justify-between gap-2 text-sm font-semibold text-[#f0f6ff]"
         >
-          <span>Anzahl SDB im Kataster</span>
+          <span>Anzahl Sicherheitsdatenblatt im Kataster</span>
           <span className="tabular-nums text-[#2dd4bf]">{count}</span>
         </label>
         <input
           id={id}
           type="range"
-          min={ROI_SDB_COUNT_MIN}
-          max={ROI_SDB_COUNT_MAX}
+          min={ROI_Sicherheitsdatenblatt_COUNT_MIN}
+          max={ROI_Sicherheitsdatenblatt_COUNT_MAX}
           step={5}
           value={count}
           onChange={(e) => setCount(Number(e.target.value))}
           className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-[#ff6b35]"
-          aria-valuemin={ROI_SDB_COUNT_MIN}
-          aria-valuemax={ROI_SDB_COUNT_MAX}
+          aria-valuemin={ROI_Sicherheitsdatenblatt_COUNT_MIN}
+          aria-valuemax={ROI_Sicherheitsdatenblatt_COUNT_MAX}
           aria-valuenow={count}
           aria-label="Anzahl der Sicherheitsdatenblätter"
         />
         <div className="mt-1 flex justify-between text-xs text-[#8fa4c0]">
-          <span>{ROI_SDB_COUNT_MIN}</span>
-          <span>{ROI_SDB_COUNT_MAX}</span>
+          <span>{ROI_Sicherheitsdatenblatt_COUNT_MIN}</span>
+          <span>{ROI_Sicherheitsdatenblatt_COUNT_MAX}</span>
         </div>
       </div>
 
@@ -95,7 +95,7 @@ export function RoiEstimator() {
             {formatHoursDe(manualHours)}
           </p>
           <p className="mt-1 text-xs text-[#8fa4c0]">
-            Annahme: ca. {ROI_MANUAL_MINUTES_PER_SDB} Min. pro SDB für Erfassung,
+            Annahme: ca. {ROI_MANUAL_MINUTES_PER_Sicherheitsdatenblatt} Min. pro Sicherheitsdatenblatt für Erfassung,
             Formatierung und Freigabe
           </p>
           <div
@@ -116,7 +116,7 @@ export function RoiEstimator() {
             {formatMinutesDe(autoMinutes)}
           </p>
           <p className="mt-1 text-xs text-[#8fa4c0]">
-            Annahme: ca. {ROI_GQR_MINUTES_PER_SDB} Min. pro SDB inkl. KI-Import
+            Annahme: ca. {ROI_GQR_MINUTES_PER_Sicherheitsdatenblatt} Min. pro Sicherheitsdatenblatt inkl. KI-Import
             und fachlicher Freigabe
           </p>
           <div

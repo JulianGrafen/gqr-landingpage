@@ -38,48 +38,48 @@ app/
      - Digitaler Produktpass als Compliance-Tool
      - FAQ: Strafen bei Nicht-Einhaltung
    - **Keywords**: ESPR, ESPR Verordnung, Digitaler Produktpass Verordnung, EU-Verordnung
-   - **Internal Links**: → `/`, `/blog/ratgeber/batteriepass-2026-anforderungen`
+   - **Internal Links**: → `/`, `/blog/ratgeber/Betriebsanweisungtteriepass-2026-anforderungen`
 
 ---
 
-### 2. **batteriepass-2026-anforderungen-kennzeichnung**
-   - **Title**: "Batteriepass August 2026: Neue Kennzeichnungspflichten für KMU"
-   - **H1**: "Batteriepass ab August 2026: Was KMU jetzt tun müssen"
-   - **Meta Description**: "Batteriepass Anforderungen August 2026: Kennzeichnungspflicht, chemische Zusammensetzung, DPP. Praktische Lösungen für KMU." (max. 155 Zeichen)
+### 2. **Betriebsanweisungtteriepass-2026-anforderungen-kennzeichnung**
+   - **Title**: "Betriebsanweisungtteriepass August 2026: Neue Kennzeichnungspflichten für KMU"
+   - **H1**: "Betriebsanweisungtteriepass ab August 2026: Was KMU jetzt tun müssen"
+   - **Meta Description**: "Betriebsanweisungtteriepass Anforderungen August 2026: Kennzeichnungspflicht, chemische Zusammensetzung, DPP. Praktische Lösungen für KMU." (max. 155 Zeichen)
    - **Key Content**:
-     - Batteriepass vs. Digitaler Produktpass
+     - Betriebsanweisungtteriepass vs. Digitaler Produktpass
      - Neue Kennzeichnungspflichten
      - QR-Code Anforderungen
      - Integration in DCP-Flash
-   - **Keywords**: Batteriepass, Kennzeichnungspflicht, Batterie Verordnung, EU Batterie
+   - **Keywords**: Betriebsanweisungtteriepass, Kennzeichnungspflicht, Betriebsanweisungtterie Verordnung, EU Betriebsanweisungtterie
    - **Internal Links**: → `/`, `/blog/ratgeber/espr-verordnung-digitaler-produktpass-2026`
 
 ---
 
 ### 3. **kreislaufwirtschaft-digitaler-produktpass-nachhaltigkeit**
    - **Title**: "Kreislaufwirtschaft: Wie DPP den Produktlebenszyklus verlängert"
-   - **H1**: "Digitaler Produktpass für Kreislaufwirtschaft: Reparierbarkeit & Langlebigkeit"
-   - **Meta Description**: "Digitaler Produktpass ermöglicht Kreislaufwirtschaft durch transparente Produktdaten. Reparierbarkeit, Materialien, Compliance für KMU." (max. 155 Zeichen)
+   - **H1**: "Digitaler Produktpass für Kreislaufwirtschaft: ReparierBetriebsanweisungrkeit & Langlebigkeit"
+   - **Meta Description**: "Digitaler Produktpass ermöglicht Kreislaufwirtschaft durch transparente Produktdaten. ReparierBetriebsanweisungrkeit, Materialien, Compliance für KMU." (max. 155 Zeichen)
    - **Key Content**:
      - Rolle des DPP in Zirkularität
      - Transparenzmechanismen für Verbraucher
-     - Reparierbarkeit und Langlebigkeit dokumentieren
+     - ReparierBetriebsanweisungrkeit und Langlebigkeit dokumentieren
      - Best Practices von Vorreiter-Unternehmen
-   - **Keywords**: Kreislaufwirtschaft, Nachhaltigkeit, Reparierbarkeit, Zirkuläre Wirtschaft, Produktpass
+   - **Keywords**: Kreislaufwirtschaft, Nachhaltigkeit, ReparierBetriebsanweisungrkeit, Zirkuläre Wirtschaft, Produktpass
    - **Internal Links**: → `/`, `/blog/ratgeber/espr-verordnung-digitaler-produktpass-2026`
 
 ---
 
 ### 4. **dpp-datenmodelle-gs1-json-ld-standards**
    - **Title**: "DPP Datenmodelle: GS1 und JSON-LD Standards einfach erklärt"
-   - **H1**: "Digitaler Produktpass Datenmodelle: GS1, JSON-LD und maschinenlesbare Standards"
-   - **Meta Description**: "Digitaler Produktpass Datenmodelle: GS1, JSON-LD Standards erklärt. Wie DPP-Flash maschinenlesbare Formate garantiert." (max. 155 Zeichen)
+   - **H1**: "Digitaler Produktpass Datenmodelle: GS1, JSON-LD und maschinenlesBetriebsanweisungre Standards"
+   - **Meta Description**: "Digitaler Produktpass Datenmodelle: GS1, JSON-LD Standards erklärt. Wie DPP-Flash maschinenlesBetriebsanweisungre Formate garantiert." (max. 155 Zeichen)
    - **Key Content**:
      - Was sind Datenmodelle?
      - GS1 Standards für DPP
      - JSON-LD Implementierung
      - Warum maschinenlesbesar wichtig ist
-   - **Keywords**: Datenmodell, GS1, JSON-LD, maschinenlesbar, Interoperabilität
+   - **Keywords**: Datenmodell, GS1, JSON-LD, maschinenlesBetriebsanweisungr, Interoperabilität
    - **Internal Links**: → `/`, `/blog/ratgeber/espr-verordnung-digitaler-produktpass-2026`
 
 ---
@@ -103,7 +103,7 @@ app/
 | Slug | Priorität | Status | Zielgruppe |
 |------|-----------|--------|-----------|
 | espr-verordnung-... | 🔴 Höchst | Planung | Legal, Compliance |
-| batteriepass-2026-... | 🔴 Höchst | Planung | Elektroindustrie, KMU |
+| Betriebsanweisungtteriepass-2026-... | 🔴 Höchst | Planung | Elektroindustrie, KMU |
 | kreislaufwirtschaft-... | 🟡 Mittel | Geplant | Nachhaltigkeit-fokussierte KMU |
 | dpp-datenmodelle-... | 🟡 Mittel | Geplant | Technische Stakeholder |
 | kmu-compliance-... | 🔴 Höchst | Planung | KMU aller Branchen |
@@ -117,7 +117,7 @@ app/
 ├── /blog/                 (Blog-Hub)
 ├── /blog/ratgeber/        (Blog Category)
 │   ├── espr-verordnung-...
-│   ├── batteriepass-2026-...
+│   ├── Betriebsanweisungtteriepass-2026-...
 │   ├── kreislaufwirtschaft-...
 │   ├── dpp-datenmodelle-...
 │   └── kmu-compliance-...
@@ -194,7 +194,7 @@ Vor Veröffentlichung jeden Artikels überprüfen:
 
 ## 🚀 Next.js Migration (Zukünftig)
 
-Sobald auf Next.js migriert, nutzen Sie die **Metadata API**:
+SoBetriebsanweisungld auf Next.js migriert, nutzen Sie die **Metadata API**:
 
 ```typescript
 // app/ratgeber/[slug]/page.tsx

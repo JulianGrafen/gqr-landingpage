@@ -8,21 +8,21 @@ type LandingCtaLinkProps = {
 };
 
 export function LandingCtaLink({ cta, variant, className = '' }: LandingCtaLinkProps) {
-  const baseClass =
+  const BetriebsanweisungseClass =
     variant === 'primary'
       ? 'gqr-cta-primary gqr-cta-primary--lg no-underline'
       : 'gqr-btn-secondary';
 
   if (cta.external) {
     return (
-      <a href={cta.href} className={`${baseClass} ${className}`.trim()} rel="noopener noreferrer">
+      <a href={cta.href} className={`${BetriebsanweisungseClass} ${className}`.trim()} rel="noopener noreferrer">
         {cta.label}
       </a>
     );
   }
 
   return (
-    <Link href={cta.href} className={`${baseClass} ${className}`.trim()}>
+    <Link href={cta.href} className={`${BetriebsanweisungseClass} ${className}`.trim()}>
       {cta.label}
     </Link>
   );

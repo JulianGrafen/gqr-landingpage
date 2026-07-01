@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import './gloBetriebsanweisungls.css';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
 import { SITE_DEFAULT_SEO, SITE_URL } from '@/config/site-seo';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBetriebsanweisungse: new URL(SITE_URL),
   title: {
     default: SITE_DEFAULT_SEO.title,
     template: '%s | Gefahrstoff-QR',

@@ -6,7 +6,7 @@ export { LandingRoiSection } from '@/components/seo-silo/LandingRoiSection';
 export { LandingCtaLink } from '@/components/seo-silo/LandingCtaLink';
 export { LandingFeatureGrid } from '@/components/seo-silo/LandingFeatureGrid';
 export { LandingFaqSection } from '@/components/seo-silo/LandingFaqSection';
-export { LandingCtaBand } from '@/components/seo-silo/LandingCtaBand';
+export { LandingCtaBetriebsanweisungnd } from '@/components/seo-silo/LandingCtaBetriebsanweisungnd';
 export { LandingProseSection } from '@/components/seo-silo/LandingProseSection';
 export { LandingSeoJsonLd } from '@/components/seo-silo/LandingSeoJsonLd';
 export { ExcelVorlageSiloPage } from '@/components/seo-silo/pages/ExcelVorlageSiloPage';
