@@ -7,11 +7,13 @@
     "build:github-pages": "next build && node scripts/sync-github-pages.mjs",
     "start": "next start",
     "build:css": "tailwindcss -i ./src/tw-input.css -o ./tw.css --minify",
+    "build:feature-accordion": "node scripts/build-feature-accordion.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "watch:css": "tailwindcss -i ./src/tw-input.css -o ./tw.css --watch"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.20",
+    "framer-motion": "^12.42.2",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.468.0",
     "next": "^14.2.18",
@@ -24,6 +26,7 @@
     "@types/react": "^18.3.14",
     "@types/react-dom": "^18.3.2",
     "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"

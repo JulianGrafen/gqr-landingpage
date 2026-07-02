@@ -1549,6 +1549,46 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   }
 }
 
+/* Framer Motion accordion (JS-enhanced) */
+.sds-entry-card.is-open {
+  border-color: rgba(255, 255, 255, 0.13);
+}
+
+.sds-entry-card.is-open .sds-entry-card__heading {
+  color: rgba(240, 246, 255, 0.92);
+}
+
+.sds-entry-card.is-open .sds-entry-card__feature-icon {
+  color: #5eead4;
+}
+
+button.sds-entry-card__summary {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button.sds-entry-card__summary:focus-visible {
+  outline: 2px solid rgba(45, 212, 191, 0.65);
+  outline-offset: 6px;
+  border-radius: 0.8rem;
+}
+
+.sds-entry-card__body-wrapper {
+  will-change: height;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sds-entry-card__body-wrapper {
+    will-change: auto;
+  }
+}
+
 /* ── Hero ────────────────────────────────────────────────────── */
 .hero {
   min-height: clamp(500px, 80vh, 780px);
