@@ -30,9 +30,9 @@
  <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png">
 
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="preload" href="style.css?v=21" as="style">
+  <link rel="preload" href="style.css?v=22" as="style">
  <link rel="preload" href="tw.css" as="style">
-  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="style.css?v=22">
  <link rel="stylesheet" href="tw.css">
 
  <script type="application/ld+json">
@@ -251,13 +251,16 @@
  <!-- HERO: Einstieg -->
  <section id="hero" class="sds-hero" aria-labelledby="heroHeadline">
  <div class=" flex w-full flex-wrap items-center justify-center container sds-hero__headline">
-<h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-start justify-center">
+<h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-center md:items-start justify-center">
  Gefahrstoffmanagement Software für Mittelstand, SiFa und Industrie - <br>
- <span style="color: rgb(255, 94, 0); display: block; text-align: left;">10x effizienter als Excel.</span>
+ <span class="text-center md:text-left" style="color: rgb(255, 94, 0); display: block;">10x effizienter als Excel.</span>
 </h1>
- <p class="mt-5 sds-hero__subtitle">Sicherheitsdatenblätter automatisch auslesen, QR-Notfallpass, Automatischer TRGS510 Check, Betriebsanweisungen in einer Minute erstellen und mehr!</p>
+ <p class="text-2xl mt-5 sds-hero__subtitle">Sicherheitsdatenblätter automatisch auslesen - KI liest aus, die SiFa gibt frei. 
+  Volle Kontrolle bei 90 % weniger Tipparbeit.</p>
  <div class="mt-8 flex flex-wrap justify-center gap-4">
-   <a class="btn-cta-orange px-8 py-3 text-base" href="https://app.gefahrstoff-qr.de/#preise">Kostenlos testen</a>
+   <a class="btn-cta-orange px-8 py-3 text-white" style="color: white !important;"href="https://app.gefahrstoff-qr.de/#preise">Jetzt Zeit sparen
+
+   </a>
  </div>
  </div>
 
@@ -285,6 +288,10 @@
  </svg>
  <span>SSL-verschlüsselt</span>
  </li>
+  <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
+    <img class="h-7 w-7 flex-shrink-0" src="./linkedIn.png" alt="LinkedIn" width="28" height="28" />
+    <a  href="https://de.linkedin.com/in/julian-gr%C3%A4fen-959846203" class="no-underline" target="_blank" rel="noopener noreferrer">Bekannt auf LinkedIn</a>
+  </li>
  </ul>
 
  <div class="container sds-hero__inner">
@@ -317,22 +324,21 @@
  </div>
  </aside>*-->
 
- <ul class="sds-hero__checks text-2xl " aria-label="Zentrale Vorteile" style="text-align: left; list-style-position: inside;">
- <li><span aria-hidden="true">✓</span> Anlegen von Gefahrstoffen in 30 Sekunden durch Sicherheitsdatenblatt-Scan: Kein Copy & Paste mehr</li>
- <li><span aria-hidden="true">✓</span> Automatischer TRGS510 Zusammenlagerungscheck</li>
- <li><span aria-hidden="true">✓</span> Sicherheitsdatenblatt & Notfallinfos per QR-Code direkt am Regal</li>
- <li><span aria-hidden="true">✓</span> Revisionssicheres Protokoll aller Änderungen für Audits</li>
- <li><span aria-hidden="true">✓</span> Betriebsanweisungen in einer Minute erstellen</li>
+<ul class="-mt-px-20 sds-hero__checks text-2xl" aria-label="Zentrale Vorteile" style="text-align: left; list-style-position: outside; padding-left: 0; margin-left: 1.25rem; margin-top: 5rem;">
+ <li style="margin-top: 8px;"><span aria-hidden="true">✓</span>Anlegen von Gefahrstoffen in 30 Sekunden</li>
+ <li style="margin-top: 8px;"><span aria-hidden="true">✓</span>Automatischer TRGS510 Zusammenlagerungscheck</li>
+ <li style="margin-top: 8px;"><span aria-hidden="true">✓</span>Sicherheitsdatenblatt & Notfallinfos per QR-Code</li>
+ <li style="margin-top: 8px;"><span aria-hidden="true">✓</span>Betriebsanweisungen in einer Minute erstellen</li>
 </ul>
  </div>
 
- <aside class="roi-card" aria-label="ROI-Rechner: Zeitersparnis berechnen">
- <h2 class="roi-card__title">ROI-Rechner: Die Realität der manuellen Pflege</h2>
+ <aside class="roi-card" aria-label="ROI-Rechner: Zeitersparnis berechnen" style="margin-top: 12rem;">
+ <h2 class="roi-card__title">ROI-Rechner</h2>
  <p class="roi-card__subtitle">Wie viel Arbeitszeit verbrennen Sie mit Copy &amp; Paste?</p>
 
  <div class="roi-slider-wrap">
  <div class="roi-slider-header">
- <label for="substanceSlider" class="roi-slider-label">Gefahrstoffe im Betrieb</label>
+ <label for="substanceSlider" class="roi-slider-label">Gefahrstoffe</label>
  <span class="roi-slider-value" id="substanceValue" aria-live="polite">20</span>
  </div>
  <input
@@ -353,8 +359,7 @@
  <div class="roi-metrics">
  <div class="roi-metric roi-metric--bad">
  <div class="roi-metric__label">
- <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
- Aufwand Excel / Papier
+Mit Excel
  </div>
  <p class="roi-metric__value">
  <span id="traditionalHours">6.7</span><span class="roi-metric__unit">h</span>
@@ -363,8 +368,7 @@
 
  <div class="roi-metric roi-metric--good">
  <div class="roi-metric__label">
- <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
- Aufwand mit Gefahrstoff-QR
+ Mit Gefahrstoff-QR
  </div>
  <p class="roi-metric__value">
  <span id="digitalMinutes">60</span><span class="roi-metric__unit">min</span>
@@ -375,7 +379,7 @@
  <div class="roi-savings">
  <div class="roi-savings__label">
  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
- Ihre gesparte Zeit
+ Gesparte Zeit
  </div>
  <p class="roi-savings__value">
  <span id="savedHours">5.7</span><span class="roi-savings__unit">h</span>
@@ -410,7 +414,9 @@
             </summary>
             <div class="sds-entry-card__body">
               <strong class="sds-entry-card__title">Sicherheitsdatenblätter werden automatisch ausgelesen.</strong>
-              <p>Schluss mit abtippen: Sicherheitsdatenblatt hochladen, Scan starten, fertig! Strukturierte, durchsuchbare Compliance-Datenbank ohne manuelle Eingabe.</p>
+              <p>Schluss mit abtippen: Sicherheitsdatenblatt hochladen, Scan starten, fertig! Strukturierte, durchsuchbare Compliance-Datenbank ohne manuelle Eingabe.<br>
+                Die KI liest aus, die SiFa gibt frei. 
+                Volle Kontrolle bei 90 % weniger Tipparbeit.</p>
               <a href="#produkt">Anwendungsfall ansehen →</a>
             </div>
           </details>
@@ -438,7 +444,7 @@
             </summary>
             <div class="sds-entry-card__body">
               <strong class="sds-entry-card__title">QR-Zugriff auf alle Sicherheitsinfos</strong>
-              <p>Für Arbeitsbereiche, in denen Mitarbeiter im Ernstfall keine Ordner suchen können, sondern sofortige Erste-Hilfe-Infos auf dem Smartphone brauchen.</p>
+              <p>Für Arbeitsbereiche, in denen Mitarbeiter im Ernstfall keine Ordner suchen können, sondern sofortige Erste-Hilfe-Infos auf dem Smartphone brauchen. Einfacher Zugriff per Firmen-Smartphone, zentralem Tablet am Gefahrstoffschrank oder klassisch als ausgedruckte Betriebsanweisung für die analoge Mappe.</p>
               <a href="#notfall-scan">Anwendungsfall ansehen →</a>
             </div>
           </details>
@@ -535,9 +541,9 @@
  <section id="funktionen" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="funktionenHeadline">
  <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
  <div class="sds-section-heading">
- <h2 id="funktionenHeadline">Gefahrstoff App &amp; Kataster: Compliance auf Autopilot</h2>
+ <h2 id="funktionenHeadline">Compliance auf Autopilot</h2>
  <p>
- Aus statischen Dokumenten wird ein aktiver Arbeitsprozess, der Sie bei Audits und im Alltag absichert.
+ Aus Sicherheitsdatenblättern wird ein aktiver Arbeitsprozess, der Sie bei Audits und im Alltag absichert.
  </p>
  </div>
 
@@ -560,9 +566,7 @@
  </div>
  </div>
  <div class="zigzag-row__content">
- <p class="zigzag-row__eyebrow">Gefahrstoffverzeichnis</p>
- <h3 class="zigzag-row__title">Gefahrstoffverzeichnis: Beweislast umkehren bei Kontrollen</h3>
- <p class="zigzag-row__lead">
+ <p class="text-2xl zigzag-row__eyebrow">Gefahrstoffverzeichnis</p>
  Kein Tabellen-Wirrwarr mehr. Ein digitales Verzeichnis nach &sect;&nbsp;6 GefStoffV, das KMR-Hinweise und Gefahrenklassen strukturiert und exportierbar macht.
  </p>
  <ul class="zigzag-checklist" role="list">
@@ -591,9 +595,8 @@
  </div>
  </div>
  <div class="zigzag-row__content">
- <p class="zigzag-row__eyebrow">Nachvollziehbarkeit</p>
- <h3 class="zigzag-row__title">Nachvollziehbarkeit: Revisionssicherheit auf Knopfdruck</h3>
- <p class="zigzag-row__lead">
+ <p class="text-2xl zigzag-row__eyebrow">Nachvollziehbarkeit</p>
+
  Jede Änderung wird geloggt. Zeitstempel, Zuständigkeiten und Dokumentenhistorie sind lückenlos dokumentiert – die essenzielle Basis für jedes ISO- oder BG-Audit.
  </p>
  <ul class="zigzag-checklist" role="list">
@@ -625,8 +628,7 @@
  </div>
  </div>
  <div class="zigzag-row__content">
- <p class="zigzag-row__eyebrow">Vor Ort</p>
- <h3 class="zigzag-row__title">Vor Ort: Gefahrstoff App für Sicherheit am Regal</h3>
+ <p class="text-2xl zigzag-row__eyebrow">Vor Ort</p>
  <p class="zigzag-row__lead">
  Ihre Mitarbeiter scannen den QR-Code am Gebinde und haben sofort alle relevanten Kennzeichnungen, Handlungshilfen und Notfallmaßnahmen auf dem Smartphone.
  </p>
@@ -656,8 +658,7 @@
  </div>
  </div>
  <div class="zigzag-row__content">
- <p class="zigzag-row__eyebrow">TRGS 510</p>
- <h3 class="zigzag-row__title">Lagerkonflikte erkennen, bevor die Behörde kommt</h3>
+ <p class="text-2xl zigzag-row__eyebrow">TRGS 510</p>
  <p class="zigzag-row__lead">
  Zusammenlagerungsverbote nach TRGS&nbsp;510 werden im Kataster sichtbar – mit klarer Warnung bei Separatlagerung statt manueller Matrixsuche im Ordner.
  </p>
@@ -687,8 +688,7 @@
  </div>
  </div>
  <div class="zigzag-row__content">
- <p class="zigzag-row__eyebrow">Multi-Standort</p>
- <h3 class="zigzag-row__title">Werke, Abteilungen und Lagerorte zentral steuern</h3>
+ <p class="text-2xl zigzag-row__eyebrow">Multi-Standort</p>
  <p class="zigzag-row__lead">
  Organisationsverwaltung mit Compliance-KPIs pro Bereich – für mehrere Standorte im Betrieb oder als externe SiFa mit Mandantentrennung.
  </p>
@@ -718,8 +718,7 @@
  </div>
  </div>
  <div class="zigzag-row__content">
- <p class="zigzag-row__eyebrow">Team &amp; Zugriff</p>
- <h3 class="zigzag-row__title">Kolleginnen und Kollegen gezielt einladen</h3>
+ <p class="text-2xl zigzag-row__eyebrow">Team &amp; Zugriff</p>
  <p class="zigzag-row__lead">
  Rollen und Einladungen per E-Mail – Mitarbeiter erhalten Zugriff auf Kataster und Lagerorte, ohne IT-Projekt oder Passwort-Chaos.
  </p>
@@ -732,7 +731,7 @@
  </article>
 
  </div>
-
+<!---
  <p class="mx-auto mb-10 max-w-2xl text-center text-xl font-black text-[#f0f6ff] sm:text-2xl">In 3 Schritten zum digitalen Gefahrstoffverzeichnis</p>
 
  <ol class="relative mb-20 mt-0 grid gap-10 border-t border-white/[0.06] pt-16 lg:grid-cols-3 lg:gap-8">
@@ -752,6 +751,7 @@
  <p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Sie erhalten ein revisionssicheres Verzeichnis inklusive QR-Notfallpass für die Werkshalle.</p>
  </li>
  </ol>
+-->
 
  <div class="mx-auto mb-4 max-w-3xl text-center">
  <p class="text-xl font-black text-[#f0f6ff] sm:text-2xl">Weitere Funktionen</p>
@@ -1173,6 +1173,70 @@
  </div>
  </section>
 
+ <!-- ONBOARDING / MIGRATION -->
+ <section id="onboarding" class="onboarding-section border-t border-white/[0.07] py-14 lg:py-24" aria-labelledby="onboardingHeadline">
+ <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
+
+ <div class="mx-auto mb-12 max-w-3xl text-center">
+ <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Kein Onboarding-Berg</p>
+ <h2 id="onboardingHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Wer pflegt die Altdaten ein? — Sie nicht.</h2>
+ <p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">
+ Nach zehn Jahren Excel liegt oft ein Berg unsortierter Sicherheitsdatenblatt-PDFs im Netzlaufwerk.
+ B2B-Software scheitert selten am Preis — sondern an der gefühlten Migrations-Hürde.
+ </p>
+ </div>
+
+ <div class="onboarding-pain" role="note">
+ <p class="onboarding-pain__quote">
+ „Wir haben hunderte PDFs — aber niemand hat Zeit, alles abzutippen.“
+ </p>
+ <p class="onboarding-pain__text">
+ Genau dieser Einwand stoppt viele Betriebe. Deshalb machen wir aus dem Batch-Upload kein Feature, sondern einen zentralen Einstieg — optional sogar ohne Ihre Hands-on-Arbeit.
+ </p>
+ </div>
+
+ <div class="onboarding-paths">
+ <article class="onboarding-path">
+ <span class="onboarding-path__step" aria-hidden="true">01</span>
+ <h3 class="onboarding-path__title">Batch-Upload: Altdaten in einem Rutsch</h3>
+ <p class="onboarding-path__text">
+ Laden Sie mehrere Sicherheitsdatenblätter gleichzeitig hoch — statt PDF für PDF.
+ Die KI extrahiert Handelsname, GHS-Piktogramme, H-/P-Sätze und Schutzmaßnahmen automatisch.
+ Sie prüfen fachlich, statt abzutippen.
+ </p>
+ <ul class="onboarding-path__list" role="list">
+ <li>Ideal für Ordner mit 20–250 PDFs</li>
+ <li>Verfügbar ab Professional</li>
+ <li>Start in Minuten, kein IT-Projekt</li>
+ </ul>
+ <a class="onboarding-path__link" href="#preise">Professional-Paket ansehen →</a>
+ </article>
+
+ <article class="onboarding-path onboarding-path--featured" aria-label="Umzugsservice ab Professional">
+ <span class="onboarding-path__badge">Ab Professional</span>
+ <span class="onboarding-path__step" aria-hidden="true">02</span>
+ <h3 class="onboarding-path__title">Umzugsservice: Wir importieren für Sie</h3>
+ <p class="onboarding-path__text">
+ Senden Sie uns Ihren aktuellen ZIP-Ordner mit Sicherheitsdatenblättern —
+ wir übernehmen den initialen Import für Sie.
+ Kein Excel-Abtippen, kein internes Projekt, kein Start-Stopp durch fehlende Kapazitäten.
+ </p>
+ <ul class="onboarding-path__list" role="list">
+ <li>Persönliche Begleitung beim Erstimport</li>
+ <li>Strukturiertes, revisionssicheres Verzeichnis ab Tag 1</li>
+ <li>Einwand „Wer pflegt das ein?“ — erledigt</li>
+ </ul>
+ <a class="btn-cta-orange onboarding-path__cta" href="mailto:info@gefahrstoff-qr.de?subject=Umzugsservice%20Gefahrstoff-QR">Umzug anfragen</a>
+ </article>
+ </div>
+
+ <p class="onboarding-footnote">
+ Kein Migrationsprojekt. Kein Abtipp-Marathon. <strong class="text-[#f0f6ff]">Start in Tagen statt Monaten.</strong>
+ </p>
+
+ </div>
+ </section>
+
  <!-- PRICING -->
  <section id="preise" class="border-t mt-8 border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="pricingHeadline">
  <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
@@ -1236,6 +1300,7 @@
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Mehrere Nutzer</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis 250 Stoffe</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Batch-Upload (mehrere Sicherheitsdatenblatt auf einmal)</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Umzugsservice: initialer Import Ihrer Altdaten</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> KI-Betriebsanweisung-Erstellung</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Alerts &amp; automatische Sicherheitsdatenblatt-Anforderung</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Verzeichnis als PDF downloadbar</li>
@@ -1254,6 +1319,7 @@
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Multi-Mandanten &amp; Werkstrennung</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Batch-Upload (mehrere Sicherheitsdatenblatt auf einmal)</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Umzugsservice: initialer Import Ihrer Altdaten</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> KI-Betriebsanweisung-Erstellung</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Alerts &amp; automatische Sicherheitsdatenblatt-Anforderung</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Verzeichnis als PDF downloadbar</li>
@@ -1323,6 +1389,13 @@
  </tr>
  <tr>
  <th scope="row">Batch-Upload (mehrere Sicherheitsdatenblatt auf einmal)</th>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ </tr>
+ <tr>
+ <th scope="row">Umzugsservice (initialer Import Ihrer Altdaten)</th>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
