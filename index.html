@@ -30,9 +30,9 @@
  <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png">
 
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="preload" href="style.css?v=15" as="style">
+  <link rel="preload" href="style.css?v=16" as="style">
  <link rel="preload" href="tw.css" as="style">
-  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="stylesheet" href="style.css?v=16">
  <link rel="stylesheet" href="tw.css">
 
  <script type="application/ld+json">
@@ -383,6 +383,115 @@
  </aside>
  </div>
  </section>
+
+  <!-- PRODUCT DEMO -->
+  <section class="hero-demo-section" aria-label="Produkt-Demo: Gefahrstoff-QR in Aktion">
+    <div class="container">
+      <div class="hero-demo-section__head">
+        <p class="hero-demo-section__kicker">Live-Demo</p>
+        <h2 class="hero-demo-section__title">In 30 Sekunden vom Sicherheitsdatenblatt zum digitalen Eintrag</h2>
+      </div>
+
+      <!-- Demo player -->
+      <div class="hero-demo" role="img" aria-label="Animierte Produktvorschau: Gefahrstoff digitalisieren mit KI">
+
+        <!-- Browser chrome -->
+        <div class="hd-browser">
+          <div class="hd-chrome">
+            <div class="hd-chrome__dots">
+              <span class="hd-chrome__dot"></span>
+              <span class="hd-chrome__dot"></span>
+              <span class="hd-chrome__dot"></span>
+            </div>
+            <div class="hd-chrome__url">
+              <svg class="hd-chrome__lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              app.gefahrstoff-qr.de
+            </div>
+          </div>
+
+          <div class="hd-screen">
+            <!-- Scene 0: Dashboard -->
+            <div class="hd-scene">
+              <img class="hd-scene-img" src="/images/demo/scene-1-dashboard.png"
+                   width="1024" height="524" loading="eager" decoding="async"
+                   alt="Gefahrstoffverzeichnis Dashboard mit zwei Einträgen" />
+            </div>
+
+            <!-- Scene 1: AI Extraction form -->
+            <div class="hd-scene">
+              <img class="hd-scene-img" src="/images/demo/scene-2-extraction.png"
+                   width="1024" height="646" loading="lazy" decoding="async"
+                   alt="5-stufiges Formular nach KI-Scan: Stammdaten, Eigenschaften, Gefahren, Arbeitsschutz, Prüfen" />
+            </div>
+
+            <!-- Scene 2: Detail view (portrait → scroll) -->
+            <div class="hd-scene hd-scene--portrait">
+              <img class="hd-scene-img" src="/images/demo/scene-3-detail.png"
+                   width="586" height="1024" loading="lazy" decoding="async"
+                   alt="Vollständige Detailansicht eines Gefahrstoffs mit GHS-Piktogrammen, H/P-Sätzen und QR-Code" />
+            </div>
+
+            <!-- AI overlay -->
+            <div class="hd-ai-overlay" aria-hidden="true">
+              <div class="hd-ai-box">
+                <div class="hd-ai-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5eead4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                  </svg>
+                </div>
+                <p class="hd-ai-step">KI liest Sicherheitsdatenblatt aus …</p>
+                <div class="hd-ai-progress"><div class="hd-ai-fill"></div></div>
+                <div class="hd-ai-fields">
+                  <span class="hd-ai-field">Handelsname</span>
+                  <span class="hd-ai-field">GHS-Piktogramme</span>
+                  <span class="hd-ai-field">H-Sätze</span>
+                  <span class="hd-ai-field">P-Sätze</span>
+                  <span class="hd-ai-field">Signalwort</span>
+                  <span class="hd-ai-field">Erste-Hilfe</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone overlay (Scene 3: Mobile QR) -->
+            <div class="hd-phone" aria-hidden="true">
+              <div class="hd-phone-frame">
+                <div class="hd-phone-notch"></div>
+                <div class="hd-phone-screen">
+                  <img class="hd-phone-scroll" src="/images/demo/scene-4-qr-mobile.png"
+                       width="506" height="1024" loading="lazy" decoding="async"
+                       alt="Mobile Notfallansicht mit GHS-Piktogrammen, Erste-Hilfe und QR-Code" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Animated cursor -->
+            <div class="hd-cursor" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 2l14 9-8 2-3 8z" fill="white" stroke="#1a1d23" stroke-width="1.2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <!-- Caption labels -->
+            <div class="hd-caption-wrap" aria-hidden="true">
+              <span data-caption="dashboard"><span class="hd-caption-dot"></span>Schritt 1: Neuer Gefahrstoff</span>
+              <span data-caption="ai"><span class="hd-caption-dot"></span>KI extrahiert Daten</span>
+              <span data-caption="form"><span class="hd-caption-dot"></span>Formular befüllt</span>
+              <span data-caption="detail"><span class="hd-caption-dot"></span>Vollständiger Eintrag</span>
+              <span data-caption="qr"><span class="hd-caption-dot"></span>QR-Notfallpass</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress dots -->
+        <div class="hd-dots" aria-hidden="true">
+          <span class="hd-dot is-active"></span>
+          <span class="hd-dot"></span>
+          <span class="hd-dot"></span>
+          <span class="hd-dot"></span>
+        </div>
+      </div>
+    </div>
+  </section>
 
  <!-- EINSTIEGE -->
     <section class="sds-entry-section" aria-labelledby="entryHeadline">
@@ -1889,6 +1998,7 @@
  </script>
 
   <script src="/scripts/feature-accordion.js" defer></script>
+  <script src="/scripts/hero-demo.js" defer></script>
   <script src="/scripts/gqr-chatbot.js" defer></script>
 </body>
 </html>
