@@ -1637,7 +1637,7 @@ button.sds-entry-card__summary:focus-visible {
 .hero-demo {
   position: relative;
   width: 100%;
-  max-width: 1040px;
+  max-width: 1160px;
   margin-inline: auto;
 }
 
@@ -1646,13 +1646,19 @@ button.sds-entry-card__summary:focus-visible {
   border-radius: 14px;
   overflow: hidden;
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.09),
-    0 2px 0 0 rgba(255, 255, 255, 0.04) inset,
-    0 56px 96px rgba(0, 0, 0, 0.55),
-    0 24px 48px rgba(37, 99, 235, 0.12);
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 2px 0 0 rgba(255, 255, 255, 0.05) inset,
+    0 80px 120px rgba(0, 0, 0, 0.6),
+    0 32px 64px rgba(0, 0, 0, 0.4),
+    0 0 0 0.5px rgba(37, 99, 235, 0.3);
   background: #1a1d23;
-  transform: perspective(1200px) rotateX(2deg);
-  transform-origin: top center;
+  transform: perspective(2000px) rotateX(3deg) translateZ(0);
+  transform-origin: 50% 0%;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-demo:hover .hd-browser {
+  transform: perspective(2000px) rotateX(1deg) translateZ(0);
 }
 
 /* Chrome bar */
@@ -1712,7 +1718,8 @@ button.sds-entry-card__summary:focus-visible {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #f1f5f9;
+  background: #e8edf5;
+  transform-style: preserve-3d;
 }
 
 /* Scenes */
@@ -1722,10 +1729,52 @@ button.sds-entry-card__summary:focus-visible {
   opacity: 0;
   overflow: hidden;
   z-index: 1;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .hd-scene:first-child {
   opacity: 1;
+  z-index: 2;
+}
+
+/* 3D enter/exit transitions */
+@keyframes hd-scene-in {
+  0% {
+    opacity: 0;
+    transform: perspective(1400px) translateX(3%) translateZ(-80px) rotateY(-7deg);
+    filter: brightness(0.6) blur(2px);
+  }
+  60% {
+    filter: brightness(0.95) blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1400px) translateX(0) translateZ(0) rotateY(0deg);
+    filter: brightness(1) blur(0px);
+  }
+}
+
+@keyframes hd-scene-out {
+  0% {
+    opacity: 1;
+    transform: perspective(1400px) translateX(0) translateZ(0) rotateY(0deg);
+    filter: brightness(1) blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: perspective(1400px) translateX(-3%) translateZ(-80px) rotateY(7deg);
+    filter: brightness(0.6) blur(2px);
+  }
+}
+
+.hd-scene--entering {
+  animation: hd-scene-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 3;
+}
+
+.hd-scene--exiting {
+  animation: hd-scene-out 0.5s cubic-bezier(0.4, 0, 0.8, 0.2) forwards;
   z-index: 2;
 }
 
@@ -1735,12 +1784,12 @@ button.sds-entry-card__summary:focus-visible {
   height: auto;
   transform: translateY(0);
   will-change: transform;
-  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
 }
 
-/* Scene 0 (dashboard): cover-fill the 16:9 frame — image is wider ratio, crop bottom */
+/* Scene 0 (dashboard): cover-fill the 16:9 frame */
 .hd-scene--cover {
-  background: #f1f5f9;
+  background: #edf2f9;
 }
 
 .hd-scene--cover .hd-scene-img {
@@ -1752,7 +1801,7 @@ button.sds-entry-card__summary:focus-visible {
   object-position: top center;
 }
 
-/* Scene 3: portrait detail view — fill width, let height overflow for scrolling */
+/* Scene 3: portrait detail view — fill width, overflow for scrolling */
 .hd-scene--portrait .hd-scene-img {
   width: 100%;
   height: auto;
@@ -1900,12 +1949,14 @@ button.sds-entry-card__summary:focus-visible {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.93) translateY(50px);
+  transform: translate(-50%, -50%) scale(0.88) translateY(60px);
   width: min(34%, 230px);
   z-index: 9;
   opacity: 0;
   pointer-events: none;
-  filter: drop-shadow(0 32px 56px rgba(0, 0, 0, 0.6)) drop-shadow(0 4px 16px rgba(37, 99, 235, 0.18));
+  filter:
+    drop-shadow(0 40px 70px rgba(0, 0, 0, 0.65))
+    drop-shadow(0 6px 20px rgba(37, 99, 235, 0.2));
 }
 
 .hd-phone-frame {
