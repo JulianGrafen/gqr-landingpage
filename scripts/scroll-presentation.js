@@ -245,9 +245,22 @@
     });
 
     state.slides.forEach(function (slide, index) {
+      slide.style.opacity = '';
+      slide.style.transform = '';
+      slide.style.visibility = '';
+      slide.style.zIndex = '';
+      slide.style.position = '';
+      slide.style.inset = '';
+      slide.style.height = '';
       slide.classList.toggle('is-active', index === 0);
       slide.classList.toggle('is-in-view', index === 0);
     });
+
+    if (state.track) state.track.style.transform = '';
+    if (state.spacer) state.spacer.style.height = '';
+    if (state.sticky) state.sticky.style.backgroundColor = '';
+    var copy = root.querySelector('.scroll-story__copy');
+    if (copy) copy.style.minHeight = '';
 
     setActiveIndex(state, 0);
 
