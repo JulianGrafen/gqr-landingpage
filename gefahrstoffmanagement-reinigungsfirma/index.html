@@ -1139,7 +1139,7 @@
  <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="https://app.gefahrstoff-qr.de/#preise">Small Business wählen</a>
  </article>
 
- <article class="relative flex flex-col rounded-2xl border-2 border-[#ff6b35]/60 bg-[#162340] p-6 shadow-xl shadow-orange-900/20 ring-1 ring-orange-400/30 lg:-mt-2 lg:mb-2 lg:p-7" aria-label="Empfohlenes Paket">
+ <article class="relative flex flex-col rounded-2xl border-2 border-[#ff6b35]/60 bg-[#162340] p-6 shadow-xl shadow-orange-900/20 ring-1 ring-orange-400/30 lg:p-7" aria-label="Empfohlenes Paket">
  <span class="pricing-badge-recommended">Empfohlen</span>
  <p class="text-lg font-bold text-[#f0f6ff]">Professional</p>
  <p class="mt-1 text-sm text-[#8fa4c0]">Maximale Zeitersparnis für KMUs.</p>
@@ -1336,13 +1336,17 @@
  <section id="sifa-faq" class="border-t border-white/[0.07] bg-[#0f1e35]/30 py-14 lg:py-24" aria-labelledby="deepFaqHeadline">
  <div class="mx-auto max-w-[900px] px-4 sm:px-6 lg:px-10">
 
- <div class="mb-10 text-center">
- <p class="mb-3 text-xs font-bold uppercase tracking-wider text-teal-400 sm:text-sm">Compliance Wissensdatenbank</p>
- <h2 id="deepFaqHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl">Rechtliche Grundlagen & Praxis im Gefahrstoffmanagement</h2>
- <p class="mt-3 text-sm text-[#8fa4c0] sm:text-base">Antworten auf die häufigsten Fragen von Sicherheitsfachkräften und Auditoren.</p>
- </div>
+ <details class="compliance-kb group">
+ <summary class="compliance-kb__toggle">
+ <span class="compliance-kb__header">
+ <span class="compliance-kb__kicker">Compliance Wissensdatenbank</span>
+ <h2 id="deepFaqHeadline" class="compliance-kb__title">Rechtliche Grundlagen &amp; Praxis im Gefahrstoffmanagement</h2>
+ <span class="compliance-kb__lead">Antworten auf die häufigsten Fragen von Sicherheitsfachkräften und Auditoren.</span>
+ </span>
+ </summary>
 
- <div class="divide-y divide-white/10 rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 px-4 sm:px-6" itemscope itemtype="https://schema.org/FAQPage">
+ <div class="compliance-kb__panel">
+ <div class="compliance-kb__faq divide-y divide-white/10 px-4 sm:px-6" itemscope itemtype="https://schema.org/FAQPage">
 
  <!-- GefStoffV §6 -->
  <details class="group py-5" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -1413,6 +1417,8 @@
  </details>
 
  </div>
+ </div>
+ </details>
  </div>
  </section>
 
