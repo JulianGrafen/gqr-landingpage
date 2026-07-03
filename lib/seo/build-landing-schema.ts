@@ -4,6 +4,7 @@ import type {
   SoftwareApplicationSchemaConfig,
 } from '@/config/seo-silo/types';
 import schemaBase from '@/config/seo-silo/schema-base.json';
+import { buildFaqPageSchema as buildFaqPageSchemaFromItems } from '@/lib/seo/build-faq-page-schema';
 import { SITE_URL } from '@/config/site-seo';
 
 type SchemaBase = typeof schemaBase;
@@ -12,18 +13,7 @@ const baseSoftware = schemaBase.softwareApplication;
 
 /** FAQPage JSON-LD aus FAQ-Array */
 export function buildFaqPageSchema(faq: SeoSiloFaqItem[]): SeoSiloSchemaBundle['faqPage'] {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faq.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
+  return buildFaqPageSchemaFromItems(faq);
 }
 
 /** SoftwareApplication JSON-LD — Basis aus schema-base.json, optional page-spezifisch erweitert */

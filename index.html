@@ -162,52 +162,45 @@
  }
  </script>
 
+<!-- FAQPage JSON-LD: sync with config/landing-home-seo-faq.ts -->
  <script type="application/ld+json">
  {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "Lohnt sich eine Software wirklich, wenn wir Excel haben?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Excel skaliert nicht. Versionen veralten, Daten aus dem Sicherheitsdatenblatt müssen manuell abgetippt werden und bei Audits fehlen oft die Revisions-Nachweise. Gefahrstoff-QR automatisiert den Import via KI und liefert die Rechtssicherheit, die Excel konzeptionell nicht bieten kann."
- }
- },
- {
- "@type": "Question",
- "name": "Erfüllen wir damit die Pflichten aus § 6 GefStoffV?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Ja. Das Gesetz fordert ein vollständiges, aktuelles und nachvollziehbares Verzeichnis. GQR strukturiert die Sicherheitsdatenblatt-Inhalte exakt nach diesen Vorgaben, minimiert menschliche Fehler bei der Übertragung und macht das Kataster revisionssicher."
- }
- },
- {
- "@type": "Question",
- "name": "Was bringt die KI-Extraktion im Vergleich zum Abtippen?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Das zeilenweise Kopieren von H/P-Sätzen und Schutzmaßnahmen ist extrem fehleranfällig und teuer bezahlte Arbeitszeit. Die KI erledigt die Datenextraktion in Sekunden. Die SiFa behält die fachliche Kontrolle, spart aber 90% der administrativen Fleißarbeit."
- }
- },
- {
- "@type": "Question",
- "name": "Ist das System DSGVO-konform?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Ja. Wir arbeiten nach strengen Auftragsverarbeitungs-Modellen (AVV) inklusive dokumentierter Zweckbindung und Löschfristen. Hosting und Datenverarbeitung erfolgen in gesicherten Umgebungen."
- }
- },
- {
- "@type": "Question",
- "name": "Sind auch TRGS und REACH abgedeckt?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Die Einstufung erfolgt nach CLP. REACH-relevante Daten (wie UFI) können geführt werden. Das System unterstützt aktiv bei TRGS 510 (Lagerung) und TRGS 600 (Substitution), damit nicht nur das Etikett stimmt, sondern auch die rechtlichen Pflichten dahinter."
- }
- }
- ]
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Welche Pflichtangaben muss ein digitales Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthalten?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Nach § 6 Abs. 12 GefStoffV gehören mindestens Stoffbezeichnung, Einstufung (GHS-Gefahrenklassen und -kategorien), verwendete Mengenbereiche, Expositions-Arbeitsbereiche und ein Verweis auf das aktuelle Sicherheitsdatenblatt in das Verzeichnis. In Excel fehlen häufig revisionssichere SDB-Verknüpfungen und Zeitstempel pro Änderung — bei einer Betriebsprüfung reicht ein Tabellenexport oft nicht als Nachweis der Aktualität. Gefahrstoff-QR strukturiert diese Pflichtfelder automatisch aus dem SDB-PDF und führt einen Revisionsverlauf, damit Sie nicht nur wissen, was einzutragen ist, sondern den Nachweis revisionssicher vorlegen können."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Reicht Excel als Gefahrstoffverzeichnis-Software für die Pflichten nach § 6 GefStoffV?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Excel kann Pflichtfelder abbilden, erfüllt aber nicht zuverlässig die laufende Aktualitätspflicht, nachvollziehbare SDB-Versionierung und revisionssichere Änderungsdokumentation — genau die Punkte, die SiFa und Gewerbeaufsicht bei Betriebsprüfungen vertiefen. Ohne automatischen SDB-Import und protokollierte Freigabe durch die SiFa bleibt eine Haftungslücke bestehen, auch wenn die Liste optisch vollständig wirkt. Gefahrstoff-QR digitalisiert den §-6-Workflow: KI-Extraktion aus dem SDB, fachliche Freigabe und exportierbares PDF-Verzeichnis aus derselben Datenbasis — ohne Abtipp-Marathon."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Wie dokumentiere ich die Zusammenlagerungsprüfung nach TRGS 510 revisionssicher?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "TRGS 510 verlangt den Abgleich von Lagerklassen (LGK) über eine Zusammenlagerungsmatrix — manuell in Tabellen ein fehleranfälliger Prozess, der bei jeder neuen Charge oder Lagerplatzänderung neu bewertet werden muss. Ein Screenshot oder Excel-Hinweis genügt bei Audits selten als belastbarer Nachweis, welche Kombination zum Prüfzeitpunkt tatsächlich geprüft wurde. Gefahrstoff-QR klassifiziert Stoffe nach LGK und warnt automatisch bei verbotenen oder trennpflichtigen Kombinationen im selben Brandabschnitt — Sie sehen den Konflikt in Ihrem Lager, bevor die Behörde ihn findet."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Worin erkennt eine Betriebsprüfung, dass unser Gefahrstoffverzeichnis nach § 6 GefStoffV veraltet ist?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Prüfer vergleichen Verzeichnisstand, SDB-Versionen und Arbeitsbereichszuordnungen — Abweichungen zwischen Etikett, Lagerort und dokumentiertem Eintrag gelten als Organisationsverschulden. Ordner mit PDFs oder unversionierte Excel-Listen zeigen selten, wer wann welches Feld geändert hat; fehlende Nachweise zu SDB-Aktualisierungen sind ein häufiger Beanstandungsgrund. Gefahrstoff-QR protokolliert Revisionen, fordert SDB-Updates zyklisch an und verknüpft jede Verzeichniszeile mit der gültigen SDB-Version — für die Prüfung exportieren Sie ein revisionssicheres Verzeichnis, ohne den Vortag mit Copy-Paste zu verbringen."
+    }
+   }
+  ]
  }
  </script>
 </head>
@@ -1463,73 +1456,41 @@ Mit Excel
  </summary>
 
  <div class="compliance-kb__panel">
- <div class="compliance-kb__faq divide-y divide-white/10 px-4 sm:px-6" itemscope itemtype="https://schema.org/FAQPage">
+ <div class="compliance-kb__faq divide-y divide-white/10 px-4 sm:px-6">
 
- <!-- GefStoffV §6 -->
- <details class="group py-5" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']" itemprop="name">
- Was muss ein Gefahrstoffverzeichnis nach § 6 GefStoffV zwingend enthalten?
+ <details class="group py-5">
+ <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
+ Welche Pflichtangaben muss ein digitales Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthalten?
  </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
- <div itemprop="text">
- <p class="mb-2">Gemäß § 6 Abs. 12 der Gefahrstoffverordnung muss das Verzeichnis mindestens folgende Daten dokumentieren:</p>
- <ul class="list-inside list-disc space-y-1">
- <li>Bezeichnung des Gefahrstoffs</li>
- <li>Einstufung (GHS-Gefahrenklassen und -kategorien)</li>
- <li>Verwendete Mengenbereiche</li>
- <li>Arbeitsbereiche, in denen Beschäftigte dem Stoff ausgesetzt sein können</li>
- <li>Verweis auf das aktuelle Sicherheitsdatenblatt </li>
- </ul>
- <p class="mt-2">Der Prozess kann manuell in Tabellen geführt oder durch Gefahrstoff-Software über automatische Sicherheitsdatenblatt-Scans rechtskonform und revisionssicher automatisiert werden.</p>
- </div>
+ <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
+ <p>Nach § 6 Abs. 12 GefStoffV gehören mindestens Stoffbezeichnung, Einstufung (GHS-Gefahrenklassen und -kategorien), verwendete Mengenbereiche, Expositions-Arbeitsbereiche und ein Verweis auf das aktuelle Sicherheitsdatenblatt in das Verzeichnis. In Excel fehlen häufig revisionssichere SDB-Verknüpfungen und Zeitstempel pro Änderung — bei einer Betriebsprüfung reicht ein Tabellenexport oft nicht als Nachweis der Aktualität. Gefahrstoff-QR strukturiert diese Pflichtfelder automatisch aus dem SDB-PDF und führt einen Revisionsverlauf, damit Sie nicht nur wissen, was einzutragen ist, sondern den Nachweis revisionssicher vorlegen können.</p>
  </div>
  </details>
 
- <!-- TRGS 510 -->
- <details class="group py-5" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']" itemprop="name">
- Wie funktioniert die Zusammenlagerungsprüfung nach TRGS 510?
+ <details class="group py-5">
+ <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
+ Reicht Excel als Gefahrstoffverzeichnis-Software für die Pflichten nach § 6 GefStoffV?
  </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
- <p itemprop="text">
- Die TRGS 510 regelt die Lagerung von Gefahrstoffen in ortsbeweglichen Behältern. Die Prüfung erfolgt über eine Zusammenlagerungsmatrix, die anhand von Lagerklassen (z. B. LGK 3 für entzündbare Flüssigkeiten) definiert, ob Stoffe im selben Brandabschnitt gelagert werden dürfen, separat gelagert werden müssen oder eine Zusammenlagerung streng verboten ist. Digitale Systeme gleichen diese Lagerklassen automatisch ab und geben bei Konflikten proaktive Warnungen aus.
- </p>
+ <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
+ <p>Excel kann Pflichtfelder abbilden, erfüllt aber nicht zuverlässig die laufende Aktualitätspflicht, nachvollziehbare SDB-Versionierung und revisionssichere Änderungsdokumentation — genau die Punkte, die SiFa und Gewerbeaufsicht bei Betriebsprüfungen vertiefen. Ohne automatischen SDB-Import und protokollierte Freigabe durch die SiFa bleibt eine Haftungslücke bestehen, auch wenn die Liste optisch vollständig wirkt. Gefahrstoff-QR digitalisiert den §-6-Workflow: KI-Extraktion aus dem SDB, fachliche Freigabe und exportierbares PDF-Verzeichnis aus derselben Datenbasis — ohne Abtipp-Marathon.</p>
  </div>
  </details>
 
- <!-- TRGS 600 / Substitution -->
- <details class="group py-5" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']" itemprop="name">
- Wer ist zur Substitutionsprüfung nach TRGS 600 verpflichtet?
+ <details class="group py-5">
+ <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
+ Wie dokumentiere ich die Zusammenlagerungsprüfung nach TRGS 510 revisionssicher?
  </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
- <p itemprop="text">
- Jeder Arbeitgeber, der Gefahrstoffe verwendet, ist gesetzlich zur Substitutionsprüfung verpflichtet (GefStoffV § 6). Es muss dokumentiert geprüft werden, ob ein gefährlicher Stoff durch einen Stoff mit geringerem gesundheitlichem oder physikalischem Risiko ersetzt werden kann. Besonders im Fokus stehen KMR-Stoffe (krebserzeugend, mutagen, reproduktionstoxisch). Die Software-gestützte Dokumentation dieser Prüfzyklen ist bei BG-Audits ein zentraler Nachweis.
- </p>
+ <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
+ <p>TRGS 510 verlangt den Abgleich von Lagerklassen (LGK) über eine Zusammenlagerungsmatrix — manuell in Tabellen ein fehleranfälliger Prozess, der bei jeder neuen Charge oder Lagerplatzänderung neu bewertet werden muss. Ein Screenshot oder Excel-Hinweis genügt bei Audits selten als belastbarer Nachweis, welche Kombination zum Prüfzeitpunkt tatsächlich geprüft wurde. Gefahrstoff-QR klassifiziert Stoffe nach LGK und warnt automatisch bei verbotenen oder trennpflichtigen Kombinationen im selben Brandabschnitt — Sie sehen den Konflikt in Ihrem Lager, bevor die Behörde ihn findet.</p>
  </div>
  </details>
 
- <!-- Sicherheitsdatenblatt Aktualität -->
- <details class="group py-5" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']" itemprop="name">
- Wie oft muss ein Sicherheitsdatenblatt aktualisiert werden?
+ <details class="group py-5">
+ <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
+ Worin erkennt eine Betriebsprüfung, dass unser Gefahrstoffverzeichnis nach § 6 GefStoffV veraltet ist?
  </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
- <p itemprop="text">
- Es gibt kein festes Ablaufdatum für Sicherheitsdatenblätter. Nach Artikel 31 Abs. 9 der REACH-Verordnung muss der Lieferant das Sicherheitsdatenblatt jedoch unverzüglich aktualisieren, sobald neue Informationen zu Gefährdungen oder Schutzmaßnahmen vorliegen. Betriebe stehen in der Holschuld, diese Aktualität zu überwachen. Ein automatisiertes Gefahrstoffkataster fordert aktualisierte Versionen bei Herstellern zyklisch an und protokolliert Änderungen im Revisionsverlauf.
- </p>
- </div>
- </details>
-
- <!-- Betriebsanweisungen & Zugänglichkeit -->
- <details class="group py-5" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']" itemprop="name">
- Wie mache ich Gefahrstoffinformationen im Notfall am besten zugänglich?
- </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
- <p itemprop="text">
- Gemäß § 14 GefStoffV müssen Beschäftigte Zugang zu Betriebsanweisungen und relevanten Sicherheitsdatenblatt-Informationen haben. Physische Ordner sind im Ernstfall oft schwer erreichbar oder veraltet. Der Stand der Technik sieht dezentrale Zugriffe vor, beispielsweise über QR-Codes am Gefahrstoffschrank oder Gebinde, die bei einem Scan per Smartphone sofort die Erste-Hilfe-Maßnahmen und Notfallkontakte des jeweiligen Stoffes ausgeben.
- </p>
+ <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
+ <p>Prüfer vergleichen Verzeichnisstand, SDB-Versionen und Arbeitsbereichszuordnungen — Abweichungen zwischen Etikett, Lagerort und dokumentiertem Eintrag gelten als Organisationsverschulden. Ordner mit PDFs oder unversionierte Excel-Listen zeigen selten, wer wann welches Feld geändert hat; fehlende Nachweise zu SDB-Aktualisierungen sind ein häufiger Beanstandungsgrund. Gefahrstoff-QR protokolliert Revisionen, fordert SDB-Updates zyklisch an und verknüpft jede Verzeichniszeile mit der gültigen SDB-Version — für die Prüfung exportieren Sie ein revisionssicheres Verzeichnis, ohne den Vortag mit Copy-Paste zu verbringen.</p>
  </div>
  </details>
 

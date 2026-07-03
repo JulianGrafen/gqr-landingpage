@@ -9,6 +9,7 @@
     "build:css": "tailwindcss -i ./src/tw-input.css -o ./tw.css --minify",
     "build:feature-accordion": "node scripts/build-feature-accordion.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
+    "sync:home-faq-jsonld": "npx tsx scripts/sync-home-faq-jsonld.ts",
     "watch:css": "tailwindcss -i ./src/tw-input.css -o ./tw.css --watch"
   },
   "dependencies": {
