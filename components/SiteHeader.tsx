@@ -5,7 +5,7 @@ const nav = [
   { href: '/#funktionen', label: 'Funktionen' },
   { href: '/#preise', label: 'Preise' },
   { href: '/#faq', label: 'FAQ' },
-  { href: '/wissen/', label: 'Wissen' },
+  { href: '/blog/', label: 'Blog' },
 ] as const;
 
 export function SiteHeader() {

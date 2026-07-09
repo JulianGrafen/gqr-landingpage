@@ -22,9 +22,6 @@ export function SiteFooter() {
             <Link href="/trgs-510-zusammenlagerungs-check/" className="no-underline hover:text-gqr-text">
               TRGS-510-Checker
             </Link>
-            <Link href="/wissen/" className="no-underline hover:text-gqr-text">
-              Wissen
-            </Link>
             <Link href="/blog/" className="no-underline hover:text-gqr-text">
               Blog
             </Link>
