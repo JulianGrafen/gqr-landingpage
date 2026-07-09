@@ -70,10 +70,10 @@ html = html
     '"name": "Gefahrstoffmanagement Software: 10x effizienter als Excel | Gefahrstoff-QR"',
     '"name": "Gefahrstoffmanagement für Kfz-Werkstätten | Gefahrstoff-QR"',
   )
-  .replace(/href="style\.css/g, 'href="../style.css')
-  .replace(/href="tw\.css/g, 'href="../tw.css')
-  .replace('src="logo.png"', 'src="../logo.png"')
-  .replace('src="./linkedIn.png"', 'src="../linkedIn.png"');
+  .replace(/href="style\.css/g, 'href="/style.css')
+  .replace(/href="tw\.css/g, 'href="/tw.css')
+  .replace('src="logo.png"', 'src="/logo.png"')
+  .replace('src="./linkedIn.png"', 'src="/linkedIn.png"');
 
 const heroOld = `<h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-center md:items-start justify-center">
  Gefahrstoffmanagement Software für Mittelstand, SiFa und Industrie - <br>
