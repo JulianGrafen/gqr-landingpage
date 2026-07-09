@@ -50,4 +50,16 @@ for (const name of FAVICON_FILES) {
   console.log(`✓ ${name}`);
 }
 
+const STATIC_LOESUNGEN = path.join(ROOT, 'static-loesungen');
+if (fs.existsSync(STATIC_LOESUNGEN)) {
+  for (const name of fs.readdirSync(STATIC_LOESUNGEN)) {
+    const src = path.join(STATIC_LOESUNGEN, name);
+    const dest = path.join(ROOT, 'loesungen', name);
+    if (!fs.statSync(src).isDirectory()) continue;
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.cpSync(src, dest, { recursive: true });
+    console.log(`✓ loesungen/${name}/ (static overlay)`);
+  }
+}
+
 console.log('GitHub-Pages-Sync abgeschlossen.');

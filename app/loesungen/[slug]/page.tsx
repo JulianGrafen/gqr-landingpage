@@ -13,8 +13,13 @@ type PageProps = {
   params: { slug: string };
 };
 
+/** Kfz-Werkstatt: vollständige statische Landingpage (scripts/generate-kfz-werkstatt-landing.mjs). */
+const STATIC_INDUSTRY_LANDINGS: IndustrySlug[] = ['kfz-werkstatt'];
+
 export function generateStaticParams(): { slug: IndustrySlug }[] {
-  return INDUSTRY_SLUGS.map((slug) => ({ slug }));
+  return INDUSTRY_SLUGS.filter((slug) => !STATIC_INDUSTRY_LANDINGS.includes(slug)).map((slug) => ({
+    slug,
+  }));
 }
 
 export function generateMetadata({ params }: PageProps): Metadata {

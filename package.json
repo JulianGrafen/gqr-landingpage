@@ -10,6 +10,7 @@
     "build:feature-accordion": "node scripts/build-feature-accordion.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "sync:home-faq-jsonld": "npx tsx scripts/sync-home-faq-jsonld.ts",
+    "generate:kfz-werkstatt-landing": "node scripts/generate-kfz-werkstatt-landing.mjs",
     "watch:css": "tailwindcss -i ./src/tw-input.css -o ./tw.css --watch"
   },
   "dependencies": {
