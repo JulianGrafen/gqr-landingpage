@@ -12,33 +12,33 @@ comparison:
  leftColumnTitle: Manuelles Excel-Muster
  rightColumnTitle: Software-System (GQR)
  rows:
- - criterion: Sicherheitsdatenblatt-Erfassung bei neuen Ölen
- manual: Manuelles Abtippen von H-Sätzen, P-Sätzen und Inhaltsstoffen. Dauer ca. 30 Minuten pro Stoff.
- gqr: KI-Extraktion. PDF hochladen, TRGS- und GHS-Daten in Sekunden extrahiert.
- - criterion: Erstellung Betriebsanweisung
- manual: Daten aus dem Sicherheitsdatenblatt per Copy-Paste in ein separates Word-Muster übertragen.
- gqr: Semi-automatische Betriebsanweisung. GQR bereitet Daten vor, Meister ergänzt werkstattspezifische Details.
- - criterion: Verfügbarkeit an der Hebebühne
- manual: Ausdrucke verschmutzen, verölen oder fehlen komplett in der Halle.
- gqr: QR-Notfallpass. Scan am Arbeitsplatz liefert Erste-Hilfe-Infos und die Betriebsanweisung.
- - criterion: DME und Schweißrauche
- manual: Meist nicht vorgesehen oder in separaten Akten geführt.
- gqr: Zentrale Führung als entstehende Stoffe inkl. Maßnahmen-Dokumentation.
- - criterion: Lagerprüfung (TRGS 510)
- manual: Meister muss die Kreuztabelle der TRGS 510 händisch studieren.
- gqr: Automatische Logik. Warnung bei Zusammenlagerungsverboten durch Lagerklassen.
- - criterion: Revisionssicherheit (Audit)
- manual: Überschriebene Excel-Zeilen haben keine gerichtsfeste Historie.
- gqr: Audit-Log. Jede Sicherheitsdatenblatt-Änderung und Freigabe mit unveränderbarem Zeitstempel.
+    - criterion: Sicherheitsdatenblatt-Erfassung bei neuen Ölen
+      manual: Manuelles Abtippen von H-Sätzen, P-Sätzen und Inhaltsstoffen. Dauer ca. 30 Minuten pro Stoff.
+      gqr: KI-Extraktion. PDF hochladen, TRGS- und GHS-Daten in Sekunden extrahiert.
+    - criterion: Erstellung Betriebsanweisung
+      manual: Daten aus dem Sicherheitsdatenblatt per Copy-Paste in ein separates Word-Muster übertragen.
+      gqr: Semi-automatische Betriebsanweisung. GQR bereitet Daten vor, Meister ergänzt werkstattspezifische Details.
+    - criterion: Verfügbarkeit an der Hebebühne
+      manual: Ausdrucke verschmutzen, verölen oder fehlen komplett in der Halle.
+      gqr: QR-Notfallpass. Scan am Arbeitsplatz liefert Erste-Hilfe-Infos und die Betriebsanweisung.
+    - criterion: DME und Schweißrauche
+      manual: Meist nicht vorgesehen oder in separaten Akten geführt.
+      gqr: Zentrale Führung als entstehende Stoffe inkl. Maßnahmen-Dokumentation.
+    - criterion: Lagerprüfung (TRGS 510)
+      manual: Meister muss die Kreuztabelle der TRGS 510 händisch studieren.
+      gqr: Automatische Logik. Warnung bei Zusammenlagerungsverboten durch Lagerklassen.
+    - criterion: Revisionssicherheit (Audit)
+      manual: Überschriebene Excel-Zeilen haben keine gerichtsfeste Historie.
+      gqr: Audit-Log. Jede Sicherheitsdatenblatt-Änderung und Freigabe mit unveränderbarem Zeitstempel.
 faq:
- - question: Welche Stoffe sind in Werkstätten Pflicht im Verzeichnis?
- answer: Motor- und Getriebeöle, Bremsenreiniger, Frostschutz, Lackierstoffe, Altöle, Dichtmassen, Reiniger und die emissionsbezogene Dokumentation (wie DME oder Schweißrauche) — kurz gesagt alles, was laut CLP-Verordnung als Gefahrstoff eingestuft ist oder bei der Arbeit als gefährlicher Stoff entsteht.
- - question: Brauche ich ein separates DME-Protokoll?
- answer: DME-Anforderungen (TRGS 554) ergänzen das Gefahrstoffmanagement. Eine Trennung in separate Aktenordner ist fehleranfällig. Ein digitales System wie GQR kann das Gefahrstoffverzeichnis und emissionsbezogene Nachweise (inklusive der Betriebsanweisungen für Absauganlagen) parallel und konsistent in einer Datenbank führen.
- - question: Hilft GQR bei TRGS 510 in der Werkstatt?
- answer: Ja. Das manuelle Suchen in Zusammenlagerungsmatrizen ist aufwendig. GQR erfasst die Lagerklassen direkt aus den hochgeladenen Sicherheitsdatenblätter und unterstützt die Zusammenlagerungslogik aktiv. Das bedeutet weniger Matrix-Suchen bei der Lagerplanung von Ölen, brennbaren Gasen und entzündlichen Bremsenreinigern.
- - question: Kann ich in GQR auch Produkte mit schnellem Wechsel (z. B. verschiedene Lackfarben) effizient pflegen?
- answer: Softwarelösungen sind für Produktwechsel ausgelegt. Wird ein Produkt ausgemustert, wird es mit einem Klick rechtssicher archiviert (nicht gelöscht). Das neue Produkt wird per Sicherheitsdatenblatt-Upload in Sekunden als Ersatz angelegt, wobei die Historie für eventuelle spätere Nachfragen intakt bleibt.
+  - question: Welche Stoffe sind in Werkstätten Pflicht im Verzeichnis?
+    answer: Motor- und Getriebeöle, Bremsenreiniger, Frostschutz, Lackierstoffe, Altöle, Dichtmassen, Reiniger und die emissionsbezogene Dokumentation (wie DME oder Schweißrauche) — kurz gesagt alles, was laut CLP-Verordnung als Gefahrstoff eingestuft ist oder bei der Arbeit als gefährlicher Stoff entsteht.
+  - question: Brauche ich ein separates DME-Protokoll?
+    answer: DME-Anforderungen (TRGS 554) ergänzen das Gefahrstoffmanagement. Eine Trennung in separate Aktenordner ist fehleranfällig. Ein digitales System wie GQR kann das Gefahrstoffverzeichnis und emissionsbezogene Nachweise (inklusive der Betriebsanweisungen für Absauganlagen) parallel und konsistent in einer Datenbank führen.
+  - question: Hilft GQR bei TRGS 510 in der Werkstatt?
+    answer: Ja. Das manuelle Suchen in Zusammenlagerungsmatrizen ist aufwendig. GQR erfasst die Lagerklassen direkt aus den hochgeladenen Sicherheitsdatenblätter und unterstützt die Zusammenlagerungslogik aktiv. Das bedeutet weniger Matrix-Suchen bei der Lagerplanung von Ölen, brennbaren Gasen und entzündlichen Bremsenreinigern.
+  - question: Kann ich in GQR auch Produkte mit schnellem Wechsel (z. B. verschiedene Lackfarben) effizient pflegen?
+    answer: Softwarelösungen sind für Produktwechsel ausgelegt. Wird ein Produkt ausgemustert, wird es mit einem Klick rechtssicher archiviert (nicht gelöscht). Das neue Produkt wird per Sicherheitsdatenblatt-Upload in Sekunden als Ersatz angelegt, wobei die Historie für eventuelle spätere Nachfragen intakt bleibt.
 ---
 
 ## Der Ultimate Guide: Gefahrstoffmanagement in der Kfz-Werkstatt

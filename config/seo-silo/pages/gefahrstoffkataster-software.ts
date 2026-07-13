@@ -7,11 +7,11 @@ export const KATASTER_SOFTWARE_SILO_CONFIG: SeoSiloPageConfig = {
  path: KATASTER_SOFTWARE_SILO_PATH,
  intent: 'software-buy',
  seo: {
- title: 'Gefahrstoffkataster Software: Audit-sicher statt Excel | GQR',
+ title: 'Cloud Gefahrstoffmanagement Software: Audit-sicher statt Excel | GQR',
  description:
- 'Gefahrstoffkataster Software mit KI-Sicherheitsdatenblatt-Import, revisionssicherem Verzeichnis nach § 6 GefStoffV, TRGS 510 und QR-Notfallpass — ROI für SiFa und Betriebsleitung.',
+ 'Cloud Gefahrstoffmanagement Software mit KI-Sicherheitsdatenblatt-Import, revisionssicherem Verzeichnis nach § 6 GefStoffV, TRGS 510 und QR-Notfallpass — browserbasiert, ohne Installation.',
  ogImageAlt:
- 'Gefahrstoffkataster Software Gefahrstoff-QR — Dashboard mit Sicherheitsdatenblatt-Status und Compliance-KPIs',
+ 'Cloud Gefahrstoffmanagement Software Gefahrstoff-QR — Dashboard mit Sicherheitsdatenblatt-Status und Compliance-KPIs',
  canonicalPath: KATASTER_SOFTWARE_SILO_PATH,
  },
  breadcrumb: [
@@ -22,7 +22,7 @@ export const KATASTER_SOFTWARE_SILO_CONFIG: SeoSiloPageConfig = {
  eyebrow: 'Kaufbereit · § 6 GefStoffV · KI-Sicherheitsdatenblatt-Import',
  h1: 'Gefahrstoffkataster Software — wenn Excel die Audit-Sicherheit kostet',
  lead:
- 'Sie evaluieren Software statt Tabellen? GQR führt Ihr Gefahrstoffverzeichnis revisionssicher, extrahiert Sicherheitsdatenblätter automatisch und liefert Nachweise, die BG- und Behördenprüfungen erwarten.',
+ 'Sie evaluieren Cloud Gefahrstoffmanagement Software statt Tabellen? GQR führt Ihr Gefahrstoffverzeichnis revisionssicher im Browser, extrahiert Sicherheitsdatenblätter automatisch und liefert Nachweise, die BG- und Behördenprüfungen erwarten.',
  proofLine:
  'Rechenbeispiel: 50 Stoffe × 20 Minuten manuelles Abtippen = über 16 Stunden Setup — plus jährliche Revisionen, CLP-Anpassungen bis Mai 2026 und fehlende Sicherheitsdatenblatt-Historie als Haftungsrisiko. Software amortisiert sich oft im ersten Audit-Zyklus.',
  primaryCta: {
@@ -46,6 +46,12 @@ export const KATASTER_SOFTWARE_SILO_CONFIG: SeoSiloPageConfig = {
  sectionSubline:
  'Checkliste für die Anbieterauswahl — abgeleitet aus GefStoffV, TRGS 400, TRGS 510 und Praxis bei BG-Kontrollen.',
  items: [
+ {
+ id: 'cloud',
+ title: 'Cloud Gefahrstoffmanagement ohne Installation',
+ description:
+ 'Browserbasiert statt On-Premise: Sofort startklar auf Desktop, Tablet und Smartphone — keine Server-Projekte, keine Client-Rollouts.',
+ },
  {
  id: 'sdb-import',
  title: 'Automatischer Sicherheitsdatenblatt-Workflow',

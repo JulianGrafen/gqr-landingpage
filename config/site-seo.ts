@@ -7,14 +7,14 @@ export const SITE_URL = 'https://gefahrstoff-qr.de';
 
 /** Homepage — Title 1 + Description 2 */
 export const HOME_SEO = {
- title: 'Gefahrstoffkataster Software statt Excel | Gefahrstoff-QR',
+ title: 'Cloud Gefahrstoffmanagement Software statt Excel | Gefahrstoff-QR',
  description:
- 'Gefahrstoffkataster & App: Excel-Alternative mit KI-Sicherheitsdatenblatt-Import, QR-Notfallpass und Revisionsverlauf nach § 6. Kostenlos testen.',
- h1: 'Gefahrstoffkataster Software – die nächste Stufe nach Excel',
+ 'Cloud Gefahrstoffmanagement Software im Browser: KI-Sicherheitsdatenblatt-Import, QR-Notfallpass und revisionssicheres Verzeichnis nach § 6 — ohne Installation. Kostenlos testen.',
+ h1: 'Cloud Gefahrstoffmanagement Software – die nächste Stufe nach Excel',
  heroSubline:
- 'Statt fehleranfälliger Excel-Vorlagen: KI extrahiert Daten aus dem Sicherheitsdatenblatt automatisch, führt Ihr Verzeichnis revisionssicher und spart Stunden Abtipp-Arbeit.',
+ 'Browserbasiert in der Cloud statt fehleranfälliger Excel-Vorlagen: KI extrahiert Daten aus dem Sicherheitsdatenblatt automatisch, führt Ihr Verzeichnis revisionssicher und spart Stunden Abtipp-Arbeit.',
  softwareDescription:
- 'Gefahrstoffkataster Software: KI extrahiert Sicherheitsdatenblätter automatisch — die nächste Stufe nach Excel mit revisionssicherem Verzeichnis, Revisionsverlauf und QR-Notfallpass inklusive.',
+ 'Cloud Gefahrstoffmanagement Software: KI extrahiert Sicherheitsdatenblätter automatisch im Browser — die nächste Stufe nach Excel mit revisionssicherem Verzeichnis, Revisionsverlauf und QR-Notfallpass inklusive.',
 } as const;
 
 /** Lead-Magnet: Gratis Excel-Vorlage Download — siehe config/vorlage-landing.ts */
@@ -44,6 +44,8 @@ export const SITE_DEFAULT_SEO = {
 } as const;
 
 export const GSC_TARGET_KEYWORDS = [
+ 'cloud gefahrstoffmanagement software',
+ 'gefahrstoffmanagement software',
  'gefahrstoffkataster software',
  'gefahrstoffkataster excel',
  'gefahrstoffverzeichnis vorlage excel',
