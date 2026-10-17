@@ -3,8 +3,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "build:github-pages": "npm run build:sdb-preview && next build && node scripts/sync-github-pages.mjs",
+    "build": "npm run validate:betriebsanweisung && npm run generate:sitemap && next build",
+    "build:github-pages": "npm run build:sdb-preview && npm run validate:betriebsanweisung && npm run generate:sitemap && next build && node scripts/sync-github-pages.mjs",
+    "validate:betriebsanweisung": "npx tsx scripts/validate-betriebsanweisung-entries.ts",
+    "generate:sitemap": "npx tsx scripts/generate-sitemap.ts",
+    "typecheck": "tsc --noEmit",
     "start": "next start",
     "build:css": "tailwindcss -i ./src/tw-input.css -o ./tw.css --minify",
     "build:feature-accordion": "node scripts/build-feature-accordion.mjs",

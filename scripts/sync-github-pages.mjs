@@ -9,7 +9,7 @@ const ROOT = process.cwd();
 const OUT = path.join(ROOT, 'out');
 
 /** Pfade relativ zu out/ → Repo-Root (kein index.html — Homepage bleibt statisch). */
-const SYNC_PATHS = ['wissen', 'loesungen', '_next'];
+const SYNC_PATHS = ['wissen', 'loesungen', 'betriebsanweisung', '_next'];
 
 if (!fs.existsSync(OUT)) {
   console.error('out/ fehlt. Zuerst: npm run build');
