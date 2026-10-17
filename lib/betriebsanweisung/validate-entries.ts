@@ -1,3 +1,4 @@
+import { BETRIEBSANWEISUNG_EXPERT_EXTENSIONS } from '@/config/betriebsanweisung/expert-extensions';
 import { HAZARDOUS_SUBSTANCE_SEO_ENTRIES } from '@/config/betriebsanweisung/entries';
 import type {
   GhsPictogramCode,
@@ -105,6 +106,22 @@ function validateEntry(entry: HazardousSubstanceSeoEntry, index: number): void {
     throw new Error(`${prefix}: classificationBasis fehlt`);
   }
 
+  if (!entry.documentDisplayName.trim()) {
+    throw new Error(`${prefix}: documentDisplayName fehlt`);
+  }
+
+  if (!entry.applicationAreaWorkplace.trim()) {
+    throw new Error(`${prefix}: applicationAreaWorkplace fehlt`);
+  }
+
+  if (!entry.trgs510Storage.zusammenlagerungsverbote.length) {
+    throw new Error(`${prefix}: trgs510Storage.zusammenlagerungsverbote leer`);
+  }
+
+  if (!entry.trgs510Storage.safetyCabinetNotes.trim()) {
+    throw new Error(`${prefix}: safetyCabinetNotes fehlt`);
+  }
+
   if (!Array.isArray(entry.faqItems) || entry.faqItems.length !== 3) {
     throw new Error(`${prefix}: faqItems muss exakt 3 Einträge haben`);
   }
@@ -119,8 +136,12 @@ export function validateHazardousSubstanceEntries(
   entries: readonly HazardousSubstanceSeoEntry[] = HAZARDOUS_SUBSTANCE_SEO_ENTRIES,
 ): void {
   const slugs = new Set<string>();
+  const expertSlugs = new Set(Object.keys(BETRIEBSANWEISUNG_EXPERT_EXTENSIONS));
 
   entries.forEach((entry, index) => {
+    if (!expertSlugs.has(entry.slug)) {
+      throw new Error(`Kein Expert-Extension-Eintrag für slug: ${entry.slug}`);
+    }
     validateEntry(entry, index);
     if (slugs.has(entry.slug)) {
       throw new Error(`Doppelter slug: ${entry.slug}`);
