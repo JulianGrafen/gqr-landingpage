@@ -6,6 +6,7 @@ import {
   INDUSTRY_SLUGS,
   type IndustrySlug,
 } from '@/config/industry-solutions';
+import { SdbLivePreviewDropzone } from '@/components/sdb-preview';
 
 const siteUrl = 'https://gefahrstoff-qr.de';
 
@@ -87,6 +88,11 @@ export default function IndustryPage({ params }: PageProps) {
             </Link>
           </div>
         </div>
+        {data.showSdbPreview ? (
+          <div className="mx-auto mt-12 max-w-3xl">
+            <SdbLivePreviewDropzone variant="next" />
+          </div>
+        ) : null}
       </section>
 
       {/* Typische Stoffe */}

@@ -30,9 +30,9 @@
  <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png">
 
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="preload" href="style.css?v=48" as="style">
+  <link rel="preload" href="style.css?v=49" as="style">
  <link rel="preload" href="tw.css" as="style">
-  <link rel="stylesheet" href="style.css?v=48">
+  <link rel="stylesheet" href="style.css?v=49">
  <link rel="stylesheet" href="tw.css">
 
  <script type="application/ld+json">
@@ -255,6 +255,10 @@
 
    </a>
  </div>
+ </div>
+
+ <div class="container sds-hero__preview w-full" id="sdb-live-preview-root">
+ <div data-sdb-live-preview aria-label="Sicherheitsdatenblatt live testen"></div>
  </div>
 
  <ul class="mt-6 mb-12 flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-4 border-t border-white/10 pt-6" role="list" aria-label="Vertrauen und Sicherheit">
@@ -875,24 +879,27 @@ Mit Excel
 
  </div>
  </section>
- <!-- SDB DEMO -->
+ <!-- SDB DEMO (verweist auf Hero-Live-Dropzone) -->
  <section id="demo" class="section sdb-demo-section" aria-labelledby="sdbDemoHeadline">
  <div class="container">
  <div class="sds-section-heading sdb-demo-heading">
  <p class="sds-kicker">Interaktive Demo</p>
- <h2 id="sdbDemoHeadline">Interaktive Demo: Vom Sicherheitsdatenblatt zum QR-Code in Sekunden</h2>
+ <h2 id="sdbDemoHeadline">Zero-Login: SDB sofort im Hero testen</h2>
  <p>
- Testen Sie die KI-Extraktion live. Ziehen Sie ein Beispiel-PDF in die Scan-Zone und sehen Sie, wie GQR die Daten nach &sect;&nbsp;6&nbsp;GefStoffV strukturiert.
+ Die Live-Dropzone finden Sie oben im Hero — PDF ablegen oder Beispiel-SDB wählen, KI-gestützter TRGS-555-Entwurf in Sekunden, ohne Login.
+ </p>
+ <p class="mt-4">
+ <a class="btn-cta-orange px-6 py-2.5 text-white no-underline" style="color: white !important;" href="#sdb-live-preview-root">Zur Live-Dropzone</a>
  </p>
  </div>
 
  <div class="sdb-demo-highlights" aria-label="Demo-Vorteile">
  <span>✓ Daten aus dem Sicherheitsdatenblatt auslesen</span>
- <span>✓ Relevante Felder prüfen</span>
- <span>✓ QR-Notfallansicht öffnen</span>
+ <span>✓ KI-gestützter Entwurf (TRGS 555)</span>
+ <span>✓ Freischaltung zur SiFa-Prüfung</span>
  </div>
 
- <div class="sdb-demo-shell" data-sdb-demo>
+ <div class="sdb-demo-shell sdb-demo-shell--retired" hidden data-sdb-demo aria-hidden="true">
             <div  PROT4  aria-label="Sicherheitsdatenblatt scannen">
  <div
  class="sdb-demo-file"
@@ -1842,7 +1849,7 @@ Mit Excel
  })();
  </script>
 
- <script type="module" src="/scripts/sdb-demo.js" defer></script>
+ <script src="/scripts/sdb-preview.js" defer></script>
  <script src="/scripts/trial-modal.js" defer></script>
 
  <script>

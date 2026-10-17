@@ -28,6 +28,8 @@ export interface IndustrySolution {
  brancheGenitiv: string;
  /** Blog-Artikel unter /blog/ (vorhandene statische URL) */
  blogPostHref: string;
+ /** Zero-Login SDB-Live-Dropzone im Hero-Bereich */
+ showSdbPreview?: boolean;
 }
 
 export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
@@ -54,6 +56,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  'Werkstätten arbeiten oft mit vielen Herstellern und schnellen Produktwechseln. Wenn Sicherheitsdatenblätter nicht zeitnah in Verzeichnis und betriebliche Unterweisung einfließen, entstehen Lücken bei Prüfungen. KI-gestützte Extraktion aus dem PDF reduziert den manuellen Aufwand bei H- und P-Sätzen sowie Schutzmaßnahmen.',
  brancheGenitiv: 'Werkstatt',
  blogPostHref: '/blog/kfz-gefahrstoff-excel/',
+ showSdbPreview: true,
  },
  schreinerei: {
  slug: 'schreinerei',
@@ -102,6 +105,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  'Malerbetriebe wechseln zwischen Werkstatt, Objekt und unterschiedlichen Materialien. Wenn Verzeichnis und Baustellenlogik auseinanderlaufen, leidet die Nachweisbarkeit. Digitale Erfassung mit KI beschleunigt die Übernahme neuer Produktdaten aus dem Lieferanten-Sicherheitsdatenblatt.',
  brancheGenitiv: 'Malerhandwerk',
  blogPostHref: '/blog/maler-gefahrstoffverzeichnis-excel/',
+ showSdbPreview: true,
  },
  laborbetrieb: {
  slug: 'laborbetrieb',
@@ -150,6 +154,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  'Reinigungskräfte wechseln Objekte und Produktlinien. Wenn Sicherheitsdatenblatt-Updates oder neue Konzentrate nicht schnell im Verzeichnis landen, bestehen Lücken bei Unterweisung und Hautschutz. Digitale Erfassung verkürzt die Zeit vom Lieferanten-PDF bis zur freigegebenen Information am Einsatzort.',
  brancheGenitiv: 'Reinigungsbetrieb',
  blogPostHref: '/blog/reinigung-gefahrstoffkataster-vorlage/',
+ showSdbPreview: true,
  },
 };
 

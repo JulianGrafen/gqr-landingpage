@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SdbLivePreviewDropzone } from '@/components/sdb-preview';
 import { ManualVsGqrComparison } from '@/components/deepinfo/ManualVsGqrComparison';
 import { LandingHeroWithMedia } from '@/components/seo-silo/LandingHeroWithMedia';
 import { LandingPageWrapper } from '@/components/seo-silo/LandingPageWrapper';
@@ -25,6 +26,10 @@ export function GefahrstoffkatasterSoftwareSiloPage() {
  />
  }
  >
+ <section className="gqr-container py-10 sm:py-14" aria-label="SDB Live-Vorschau">
+ <SdbLivePreviewDropzone variant="next" className="mx-auto max-w-3xl" />
+ </section>
+
  <LandingRoiSection
  title="ROI-Rechner: Versteckte Personalkosten vs. Systemgestützte Prozesse"
  subline="Die manuelle Pflege von Sicherheitsdatenblättern ist der teuerste Ineffizienz-Faktor im Arbeitsschutz. Berechnen Sie objektiv, ab wie vielen Gefahrstoffen der Einsatz einer Software die Personalkosten Ihrer Sicherheitsfachkraft signifikant senkt und das Haftungsrisiko der Geschäftsführung minimiert."

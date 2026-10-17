@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SdbLivePreviewDropzone } from '@/components/sdb-preview';
 import { ManualVsGqrComparison } from '@/components/deepinfo/ManualVsGqrComparison';
 import { LandingHeroWithMedia } from '@/components/seo-silo/LandingHeroWithMedia';
 import { LandingPageWrapper } from '@/components/seo-silo/LandingPageWrapper';
@@ -27,6 +28,10 @@ export function GefahrstoffAppSiloPage() {
  />
  }
  >
+ <section className="gqr-container py-10 sm:py-14" aria-label="SDB Live-Vorschau">
+ <SdbLivePreviewDropzone variant="next" className="mx-auto max-w-3xl" />
+ </section>
+
  <LandingSplitMediaSection
  id="qr-scan-demo"
  eyebrow="Ad-hoc Informationsbeschaffung"

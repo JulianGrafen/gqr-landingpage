@@ -4,10 +4,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:github-pages": "next build && node scripts/sync-github-pages.mjs",
+    "build:github-pages": "npm run build:sdb-preview && next build && node scripts/sync-github-pages.mjs",
     "start": "next start",
     "build:css": "tailwindcss -i ./src/tw-input.css -o ./tw.css --minify",
     "build:feature-accordion": "node scripts/build-feature-accordion.mjs",
+    "build:sdb-preview": "node scripts/build-sdb-preview.mjs",
+    "verify:sdb-preview": "node scripts/verify-sdb-preview.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "sync:home-faq-jsonld": "npx tsx scripts/sync-home-faq-jsonld.ts",
     "generate:kfz-werkstatt-landing": "node scripts/generate-kfz-werkstatt-landing.mjs",
