@@ -1,13 +1,11 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import type { SdbPreviewExampleId } from '@/lib/sdb-preview/api-contract';
 import { PROCESSING_STEP_LABELS } from '@/lib/sdb-preview/api-contract';
 import { loadSdbPreviewConfig } from '@/lib/sdb-preview/load-config';
 import {
-  fetchPreviewByToken,
   persistPreviewToken,
-  readPersistedPreviewToken,
   runExamplePreview,
   uploadPdfPreview,
   type SdbPreviewTeaser,
@@ -22,36 +20,16 @@ export function useSdbPreview() {
   const [error, setError] = useState<string | null>(null);
   const [fileLabel, setFileLabel] = useState<string | null>(null);
   const abortRef = useRef(false);
-  const hydratedRef = useRef(false);
 
-  useEffect(() => {
-    if (hydratedRef.current) return;
-    hydratedRef.current = true;
-
-    const token = readPersistedPreviewToken();
-    if (!token) return;
-
-    void (async () => {
-      const config = await loadSdbPreviewConfig();
-      if (config.useMock) return;
-
-      setPhase('processing');
-      const res = await fetchPreviewByToken(config.apiBaseUrl, token);
-      if (res.ok && res.teaser) {
-        setTeaser(res.teaser);
-        setPhase('ready');
-        return;
-      }
-      setPhase('idle');
-    })();
-  }, []);
-
+  /** Hero zeigt initial keine Teaser — Animation dauert fest 2,5 s (CRO). */
   const runProcessingAnimation = useCallback(async () => {
+    const totalMs = 2500;
+    const stepMs = Math.ceil(totalMs / PROCESSING_STEP_LABELS.length);
     setProcessingStepIndex(0);
     for (let i = 0; i < PROCESSING_STEP_LABELS.length; i += 1) {
       if (abortRef.current) return;
       setProcessingStepIndex(i);
-      await new Promise((r) => setTimeout(r, 700));
+      await new Promise((r) => setTimeout(r, stepMs));
     }
   }, []);
 
