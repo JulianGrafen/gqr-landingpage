@@ -1,20 +1,10 @@
-const GHS_ASSETS: Record<string, { label: string; src: string }> = {
-  GHS02: { label: 'Entzündbar', src: '/images/ghs/ghs02.svg' },
-  GHS05: { label: 'Ätzwirkung', src: '/images/ghs/ghs05.svg' },
-  GHS07: { label: 'Ausrufezeichen', src: '/images/ghs/ghs07.svg' },
-  GHS08: { label: 'Gesundheitsgefahr', src: '/images/ghs/ghs08.svg' },
-};
-
-function normalizeCode(raw: string): string {
-  const match = raw.match(/GHS\d{2}/i);
-  return match ? match[0].toUpperCase() : raw;
-}
+import { GHS_ASSETS, normalizeGhsCode } from '@/lib/ghs/ghs-assets';
 
 type Props = { code: string; variant: 'next' | 'static' };
 
 export function GhsPictogramBadge({ code, variant }: Props) {
-  const normalized = normalizeCode(code);
-  const asset = GHS_ASSETS[normalized];
+  const normalized = normalizeGhsCode(code) ?? code.toUpperCase();
+  const asset = GHS_ASSETS[normalized as keyof typeof GHS_ASSETS];
 
   const cardClass =
     variant === 'static'

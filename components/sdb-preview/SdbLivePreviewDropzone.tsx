@@ -10,9 +10,15 @@ import { useSdbPreview } from '@/lib/sdb-preview/useSdbPreview';
 export type SdbLivePreviewDropzoneProps = {
   variant?: SdbPreviewVariant;
   className?: string;
+  /** Optionaler Text oberhalb der Dropzone (z. B. stoffspezifischer SDB-Hinweis). */
+  uploadIntro?: string;
 };
 
-export function SdbLivePreviewDropzone({ variant = 'next', className = '' }: SdbLivePreviewDropzoneProps) {
+export function SdbLivePreviewDropzone({
+  variant = 'next',
+  className = '',
+  uploadIntro,
+}: SdbLivePreviewDropzoneProps) {
   const {
     phase,
     processingStepIndex,
@@ -29,6 +35,17 @@ export function SdbLivePreviewDropzone({ variant = 'next', className = '' }: Sdb
 
   return (
     <div className={[shellClass(variant), className].filter(Boolean).join(' ')} data-sdb-live-preview>
+      {uploadIntro ? (
+        <p
+          className={
+            variant === 'static'
+              ? 'sdb-live-preview-intro'
+              : 'mb-4 text-sm leading-relaxed text-[#c8d4e6]'
+          }
+        >
+          {uploadIntro}
+        </p>
+      ) : null}
       <SdbDropzoneInput variant={variant} disabled={busy} onFile={uploadFile} />
       <SdbExampleChips variant={variant} disabled={busy} onSelect={runExample} />
 
