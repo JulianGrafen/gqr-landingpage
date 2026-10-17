@@ -2034,9 +2034,11 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   max-width: 28rem;
   font-size: clamp(1.65rem, 4.2vw, 3.35rem);
   font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  line-height: 1.22;
+  letter-spacing: -0.03em;
   text-wrap: balance;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .scroll-story__text {
@@ -2262,6 +2264,7 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   .scroll-story__title {
     max-width: none;
     font-size: clamp(1.35rem, 5.2vw, 1.65rem);
+    line-height: 1.28;
   }
 
   .scroll-story__text {
@@ -2341,6 +2344,7 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 
   .scroll-story__title {
     font-size: clamp(1.5rem, 2.8vw, 2.35rem);
+    line-height: 1.22;
   }
 
   .scroll-story__text {

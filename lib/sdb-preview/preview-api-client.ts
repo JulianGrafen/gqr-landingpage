@@ -79,7 +79,7 @@ export async function uploadPdfPreview(
   return postPreview(options.apiBaseUrl, form);
 }
 
-/** Teaser nach Reload aus sessionStorage-Token (nur Live-API, nicht Mock). */
+/** Token für Unlock-CTA nach erfolgreicher Preview (kein Auto-Restore beim Seitenaufruf). */
 export async function fetchPreviewByToken(
   apiBaseUrl: string,
   previewToken: string,
