@@ -73,7 +73,7 @@ app/
 ### 4. **dpp-datenmodelle-gs1-json-ld-standards**
    - **Title**: "DPP Datenmodelle: GS1 und JSON-LD Standards einfach erklärt"
    - **H1**: "Digitaler Produktpass Datenmodelle: GS1, JSON-LD und maschinenlesbare Standards"
-   - **Meta Description**: "Digitaler Produktpass Datenmodelle: GS1, JSON-LD Standards erklärt. Wie DPP-Flash maschinenlesbare Formate garantiert." (max. 155 Zeichen)
+   - **Meta Description**: "Digitaler Produktpass Datenmodelle: GS1, JSON-LD Standards erklärt. Wie DPP-Flash maschinenlesbare Formate bereitstellt." (max. 155 Zeichen)
    - **Key Content**:
      - Was sind Datenmodelle?
      - GS1 Standards für DPP

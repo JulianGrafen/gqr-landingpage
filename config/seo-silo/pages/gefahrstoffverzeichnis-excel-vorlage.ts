@@ -68,7 +68,7 @@ export const EXCEL_VORLAGE_SILO_CONFIG: SeoSiloPageConfig = {
  },
  faq: [
  {
- question: 'Reicht eine Excel-Vorlage für ein rechtssicheres Gefahrstoffverzeichnis?',
+ question: 'Reicht eine Excel-Vorlage für ein Gefahrstoffverzeichnis nach Vorgaben von § 6 GefStoffV & TRGS?',
  answer:
  'Als Übergangslösung für wenige Stoffe ja — als dauerhaftes System selten. § 6 GefStoffV verlangt aktuelle Informationen aus Sicherheitsdatenblättern. Excel speichert keine revisionssichere Historie: Wer welche Zelle wann geändert hat, lässt sich bei Audits kaum belegen. Fehlt die Sicherheitsdatenblatt-Version hinter einem Eintrag, entsteht Haftungsrisiko — nicht wegen der Vorlage, sondern wegen fehlender Nachweiskette.',
  },

@@ -14,5 +14,5 @@ Unser Ziel ist 100 % Product-Led Growth (Self-Serve ohne Verkaufsgespräche).
 - **Wartbarkeit:** Keine Hardcodings von Texten oder Styles in tief verschachtelten Komponenten. Trenne Daten, Geschäftslogik und UI-Darstellung strikt.
 
 ## 3. Rechtliche Brandmauer (Compliance-Pflicht)
-- Verwende im gesamten UI und auf allen Landingpages niemals Formulierungen wie "vollautomatisch rechtssicher" oder "ersetzt die Fachkraft".
+- Verwende im gesamten UI und auf allen Landingpages niemals Formulierungen wie "vollautomatisch nachvollziehbar" oder "ersetzt die Fachkraft".
 - Nutze konsequent die Begriffe "KI-gestützter Entwurf (gemäß TRGS 555)" und "Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV)".

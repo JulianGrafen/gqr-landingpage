@@ -78,7 +78,7 @@
   1. ✅ "Was ist der digitale Produktpass?" → ESPR, maschinenlesbar
   2. ✅ "Wer ist ab 2027 verpflichtet?" → Verordnung, Fristen
   3. ✅ "Wie hilft KI bei der DPP-Erstellung?" → Automation, Efficiency
-  4. ✅ "Ist der Digitale Produktpass rechtssicher?" → Compliance
+  4. ✅ "Ist der Digitale Produktpass nachvollziehbar?" → Compliance
   5. ✅ "Wie funktioniert die KI-Datenextraktion?" → Technologie
   6. ✅ "Wie entsteht der digitale Produktpass QR-Code?" → Ausgabe
 
@@ -96,16 +96,16 @@
 <div class="feature-icon" aria-hidden="true">...</div>
 
 <!-- Nachher: semantisch korrekt -->
-<div class="feature-icon" role="img" aria-label="Rechtssicheres DPP Dashboard Symbol">
+<div class="feature-icon" role="img" aria-label="Revisionssicheres DPP Dashboard Symbol">
   <svg ...>
-    <title>Rechtssicherheit Icon</title>
+    <title>prüfbare Dokumentation Icon</title>
     ...
   </svg>
 </div>
 ```
 
 **Alle 4 Feature-Icons mit Keywords versehen:**
-- "Rechtssicheres DPP Dashboard Symbol"
+- "Revisionssicheres DPP Dashboard Symbol"
 - "Schnelle KI-Datenextraktion Icon"
 - "Künstliche Intelligenz für Datenextraktion"
 - "15 Jahre sichere Langzeit-Archivierung für DPP"
