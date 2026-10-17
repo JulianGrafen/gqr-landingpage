@@ -14,7 +14,9 @@ type Props = {
   embedded?: boolean;
 };
 
-const BLUR_LAYER_CLASS = 'pointer-events-none select-none opacity-40 backdrop-blur-md';
+/** Filter blur on content (not backdrop-blur); strength aligned with teaser sections. */
+const TEASER_DATA_BLUR_CLASS =
+  'pointer-events-none select-none opacity-40 blur-[5px] [transform:translateZ(0)]';
 
 export function SdbPreviewCompactResult({ variant, teaser, embedded = false }: Props) {
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -117,16 +119,15 @@ export function SdbPreviewCompactResult({ variant, teaser, embedded = false }: P
         <p className="text-[10px] font-bold uppercase tracking-wider text-[#ff6b35]">Extraktion abgeschlossen</p>
 
         {teaserLocked ? (
-          <div className={`relative ${embedded ? 'mt-1 min-h-[5.5rem]' : 'mt-2 min-h-[7rem]'}`}>
-            <div className={BLUR_LAYER_CLASS} aria-hidden="true">
+          <div
+            className={`relative overflow-hidden rounded-lg ${embedded ? 'mt-1.5 min-h-[6.25rem]' : 'mt-2 min-h-[7.5rem]'}`}
+          >
+            <div className={TEASER_DATA_BLUR_CLASS} aria-hidden="true">
               {extractedBody}
             </div>
-            <div
-              className="pointer-events-none absolute inset-0 flex items-center justify-center px-2"
-              aria-hidden="true"
-            >
-              <p className="flex items-center gap-1.5 rounded-full border border-white/10 bg-[#0f1e35]/80 px-2.5 py-1 text-[10px] font-semibold text-teal-300">
-                <Lock className="h-3 w-3 shrink-0" strokeWidth={2.5} />
+            <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-[#0f1e35]/20 px-3 py-2">
+              <p className="flex max-w-[14rem] items-center justify-center gap-1.5 rounded-full border border-white/15 bg-[#0f1e35]/95 px-3 py-1.5 text-center text-[10px] font-semibold leading-snug text-teal-300 shadow-lg">
+                <Lock className="h-3 w-3 shrink-0" strokeWidth={2.5} aria-hidden />
                 Vollständige Auswertung in der App
               </p>
             </div>
