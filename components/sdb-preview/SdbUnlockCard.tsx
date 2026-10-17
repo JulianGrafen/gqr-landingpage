@@ -28,10 +28,11 @@ export function SdbUnlockCard({ variant, previewToken, compact = false }: Props)
   if (compact && variant === 'next') {
     return (
       <div className="text-center">
-        <p className="text-[10px] font-bold uppercase tracking-wider text-teal-300">Vorprüfung zur fachlichen Freigabe</p>
-        <p className="mt-1 text-sm font-semibold text-[#f0f6ff]">Entwurf &amp; Notfall-QR vorbereitet</p>
+        <p className="text-[10px] leading-snug text-[#8fa4c0]">
+          KI-gestützter Entwurf — Vorprüfung zur fachlichen Freigabe durch SiFa / Arbeitgeber
+        </p>
         <a
-          className="gqr-cta-primary gqr-cta-primary--md mt-3 inline-flex w-full justify-center text-sm no-underline"
+          className="gqr-cta-primary gqr-cta-primary--md mt-2 inline-flex w-full justify-center py-2.5 text-sm no-underline"
           href={href}
         >
           Kompletten Entwurf freischalten

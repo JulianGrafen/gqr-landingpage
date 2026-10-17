@@ -9,9 +9,17 @@ type Props = {
   label: string;
   /** 0–100; when omitted, bar animates indeterminately between steps. */
   progressPercent?: number;
+  /** Sidebar: nur Label + Balken, ohne Schrittliste. */
+  compact?: boolean;
 };
 
-export function SdbProcessingProgressBar({ variant, activeIndex, label, progressPercent }: Props) {
+export function SdbProcessingProgressBar({
+  variant,
+  activeIndex,
+  label,
+  progressPercent,
+  compact = false,
+}: Props) {
   const stepCount = PROCESSING_STEP_LABELS.length;
   const determinate =
     typeof progressPercent === 'number'
@@ -21,7 +29,9 @@ export function SdbProcessingProgressBar({ variant, activeIndex, label, progress
   const boxClass =
     variant === 'static'
       ? 'sdb-live-preview-processing'
-      : 'mt-4 rounded-xl border border-[#ff6b35]/25 bg-[#0f1e35]/80 px-4 py-4';
+      : compact
+        ? 'rounded-xl border border-[#ff6b35]/25 bg-[#0f1e35]/80 px-3 py-3'
+        : 'mt-4 rounded-xl border border-[#ff6b35]/25 bg-[#0f1e35]/80 px-4 py-4';
 
   return (
     <div className={boxClass} aria-live="polite" aria-busy="true">
@@ -51,30 +61,32 @@ export function SdbProcessingProgressBar({ variant, activeIndex, label, progress
           style={{ width: `${determinate}%` }}
         />
       </div>
-      <ol
-        className={
-          variant === 'static'
-            ? 'sdb-live-preview-steps'
-            : 'mt-3 flex flex-col gap-1 text-xs text-[#8fa4c0]'
-        }
-      >
-        {PROCESSING_STEP_LABELS.map((step, index) => (
-          <li
-            key={step}
-            className={
-              index <= activeIndex
-                ? variant === 'static'
-                  ? 'is-done'
-                  : 'font-medium text-[#f0f6ff]'
-                : variant === 'static'
-                  ? undefined
-                  : 'opacity-70'
-            }
-          >
-            {step}
-          </li>
-        ))}
-      </ol>
+      {compact ? null : (
+        <ol
+          className={
+            variant === 'static'
+              ? 'sdb-live-preview-steps'
+              : 'mt-3 flex flex-col gap-1 text-xs text-[#8fa4c0]'
+          }
+        >
+          {PROCESSING_STEP_LABELS.map((step, index) => (
+            <li
+              key={step}
+              className={
+                index <= activeIndex
+                  ? variant === 'static'
+                    ? 'is-done'
+                    : 'font-medium text-[#f0f6ff]'
+                  : variant === 'static'
+                    ? undefined
+                    : 'opacity-70'
+              }
+            >
+              {step}
+            </li>
+          ))}
+        </ol>
+      )}
     </div>
   );
 }

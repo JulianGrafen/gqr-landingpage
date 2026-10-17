@@ -10,11 +10,22 @@ export function shellClass(variant: SdbPreviewVariant, embedded = false): string
   return 'rounded-2xl border border-white/10 bg-gradient-to-br from-[#162340]/95 to-[#0f1e35]/90 p-5 shadow-xl shadow-black/25 sm:p-6';
 }
 
-export function dropzoneClass(variant: SdbPreviewVariant, state: 'idle' | 'drag' | 'processing'): string {
+export function dropzoneClass(
+  variant: SdbPreviewVariant,
+  state: 'idle' | 'drag' | 'processing',
+  compact = false,
+): string {
   if (variant === 'static') {
     const base = 'sdb-live-preview-dropzone';
     if (state === 'drag') return `${base} is-drag-over`;
     if (state === 'processing') return `${base} is-processing`;
+    return base;
+  }
+  if (compact) {
+    const base =
+      'flex cursor-pointer items-center justify-between gap-3 rounded-lg border border-dashed border-teal-400/35 bg-teal-400/5 px-3 py-2.5 text-left transition';
+    if (state === 'drag') return `${base} border-blue-500/60 bg-blue-100/10`;
+    if (state === 'processing') return `${base} border-teal-500/50 opacity-80`;
     return base;
   }
   const base =
