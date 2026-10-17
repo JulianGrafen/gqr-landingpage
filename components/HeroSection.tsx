@@ -230,7 +230,7 @@ export default function HeroSection() {
             <div className="flex flex-col gap-5">
               <span className="inline-flex w-fit items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-700">
                 <ShieldCheck className="h-3.5 w-3.5" />
-                Rechtssicher nach § 6 GefStoffV
+                Gefahrstoffverzeichnis nach § 6 GefStoffV & TRGS
               </span>
 
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
@@ -239,9 +239,9 @@ export default function HeroSection() {
               </h1>
 
               <p className="max-w-xl text-lg leading-relaxed text-slate-600">
-                Rechtssicher nach §&nbsp;6 GefStoffV. Für Maler, Werkstätten
-                und den Mittelstand. Komplett digital&nbsp;—&nbsp;kein Papier,
-                kein Haftungsrisiko.
+                Gefahrstoffmanagement nach §&nbsp;6 GefStoffV strukturieren. Für Maler,
+                Werkstätten und den Mittelstand. Komplett digital&nbsp;—&nbsp;mit SiFa-Freigabe
+                statt generischer Vorlagen.
               </p>
             </div>
 

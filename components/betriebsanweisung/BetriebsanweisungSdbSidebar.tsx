@@ -1,6 +1,7 @@
 'use client';
 
 import { SdbLivePreviewDropzone } from '@/components/sdb-preview';
+import { DSGVO_HOSTING_BADGE } from '@/config/legal/site-copy';
 
 type Props = {
   substanceName: string;
@@ -8,7 +9,10 @@ type Props = {
 
 export function BetriebsanweisungSdbSidebar({ substanceName }: Props) {
   return (
-    <aside className="rounded-2xl border border-white/10 bg-[#162340]/80 p-5 shadow-xl shadow-black/20 sm:p-6 lg:sticky lg:top-8">
+    <aside
+      id="ba-sdb-dropzone"
+      className="scroll-mt-24 rounded-2xl border border-white/10 bg-[#162340]/80 p-5 shadow-xl shadow-black/20 sm:p-6 lg:sticky lg:top-8"
+    >
       <h2 className="text-xl font-bold text-[#f0f6ff]">
         Nutzen Sie {substanceName} eines bestimmten Herstellers?
       </h2>
@@ -18,9 +22,9 @@ export function BetriebsanweisungSdbSidebar({ substanceName }: Props) {
       </p>
       <SdbLivePreviewDropzone variant="next" className="mt-5" />
       <ul className="mt-4 space-y-1 text-xs text-[#8fa4c0]" role="list">
-        <li>✓ 100 % DSGVO-konform</li>
+        <li>✓ {DSGVO_HOSTING_BADGE}</li>
         <li>✓ Keine Installation</li>
-        <li>✓ Sofortige Extraktion</li>
+        <li>✓ Extraktion aus Ihrem SDB-PDF</li>
       </ul>
     </aside>
   );

@@ -7,8 +7,10 @@ import { BetriebsanweisungTeaserDocument } from '@/components/betriebsanweisung/
 import { HAZARDOUS_SUBSTANCE_SLUGS } from '@/config/betriebsanweisung/entries';
 import type { HazardousSubstanceSlug } from '@/config/betriebsanweisung/entries';
 import { getAllBetriebsanweisungEntries, getBetriebsanweisungEntry } from '@/config/betriebsanweisung/registry';
+import { REGISTER_CTA_LABEL } from '@/config/legal/site-copy';
 import { SITE_URL } from '@/config/site-seo';
 import { buildBetriebsanweisungRegisterUrl } from '@/lib/betriebsanweisung/build-register-url';
+import { buildBetriebsanweisungFaqItems } from '@/lib/betriebsanweisung/build-substance-faq';
 import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
 
 type PageProps = {
@@ -20,7 +22,7 @@ export function generateStaticParams(): { slug: HazardousSubstanceSlug }[] {
 }
 
 function buildMetaDescription(substanceName: string): string {
-  return `Betriebsanweisung ${substanceName}: KI-gestützter TRGS-555-Entwurf in 15 Sekunden, Muster-PDF-Layout, H-Sätze & PSA — SDB hochladen für Lieferantenwerte. Vorprüfung durch SiFa.`;
+  return `Betriebsanweisung ${substanceName}: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt — Vorprüfung zur fachlichen Freigabe durch SiFa / Arbeitgeber (§ 14 GefStoffV).`;
 }
 
 export function generateMetadata({ params }: PageProps): Metadata {
@@ -57,7 +59,7 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
 
   const allEntries = getAllBetriebsanweisungEntries();
   const related = allEntries.filter((e) => e.slug !== entry.slug).slice(0, 4);
-  const faqSchema = buildFaqPageSchema(entry.faqItems);
+  const faqSchema = buildFaqPageSchema(buildBetriebsanweisungFaqItems(entry.substanceName));
   const registerUrl = buildBetriebsanweisungRegisterUrl(entry.slug);
 
   return (
@@ -80,8 +82,8 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
             Betriebsanweisung {entry.substanceName} nach TRGS 555 – Entwurf in 15 Sekunden erstellen
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#8fa4c0]">
-            KI-gestützter Entwurf (gemäß TRGS 555) mit Muster-Dokument und SDB-Upload — Vorprüfung zur
-            fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).
+            KI-gestützter Entwurf (gemäß TRGS 555) mit SDB-Upload — Vorprüfung zur fachlichen Freigabe durch die
+            SiFa / den Arbeitgeber (§ 14 GefStoffV).
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {entry.typicalIndustries.map((industry) => (
@@ -139,7 +141,7 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
       <section className="border-t border-white/[0.07] bg-[#0f1e35] px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <Link href={registerUrl} className="gqr-cta-primary gqr-cta-primary--lg">
-            Muster-Entwurf jetzt freischalten (Sofort-Download)
+            {REGISTER_CTA_LABEL}
           </Link>
           <p className="mt-4 text-sm text-[#8fa4c0]">
             KI-gestützter Entwurf (gemäß TRGS 555) — Vorprüfung zur fachlichen Freigabe durch SiFa / Arbeitgeber.

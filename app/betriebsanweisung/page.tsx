@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllBetriebsanweisungEntries } from '@/config/betriebsanweisung/registry';
+import { formatCasDisplay } from '@/config/betriebsanweisung/registry';
 import { SITE_URL } from '@/config/site-seo';
 
 const canonical = `${SITE_URL}/betriebsanweisung/`;
@@ -8,7 +9,7 @@ const canonical = `${SITE_URL}/betriebsanweisung/`;
 export const metadata: Metadata = {
   title: 'Betriebsanweisungen nach TRGS 555 — Stoffübersicht',
   description:
-    'Betriebsanweisung-Entwürfe für typische Gefahrstoffe: Aceton, Isopropanol, Bremsenreiniger, Schwefelsäure und mehr — KI-gestützter Entwurf mit SDB-Upload.',
+    'Betriebsanweisung-Entwürfe für typische Gefahrstoffe: Aceton, Isopropanol, Bremsenreiniger und mehr — KI-gestützter Entwurf mit SDB-Upload und SiFa-Freigabe.',
   alternates: { canonical },
   openGraph: {
     title: 'Betriebsanweisungen nach TRGS 555 — Stoffübersicht',
@@ -33,9 +34,8 @@ export default function BetriebsanweisungIndexPage() {
             Betriebsanweisungen für typische Gefahrstoffe
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-[#8fa4c0]">
-            KI-gestützter Entwurf (gemäß TRGS 555) für häufige Stoffe und Produkte — mit Musterlayout,
-            Stoffdaten und SDB-Live-Vorschau. Vorprüfung zur fachlichen Freigabe durch die SiFa / den
-            Arbeitgeber (§ 14 GefStoffV).
+            KI-gestützter Entwurf (gemäß TRGS 555) für häufige Stoffe und Produkte — mit SDB-Live-Vorschau.
+            Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).
           </p>
         </div>
       </section>
@@ -51,7 +51,7 @@ export default function BetriebsanweisungIndexPage() {
                   className="flex flex-col rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-4 transition hover:border-[#ff6b35]/40 hover:bg-white hover:shadow-sm"
                 >
                   <span className="font-semibold text-slate-900">{entry.substanceName}</span>
-                  <span className="mt-1 text-xs text-slate-500">{entry.storageClassTrgs510}</span>
+                  <span className="mt-1 text-xs text-slate-500">{formatCasDisplay(entry.casNumber)}</span>
                   <span className="mt-2 text-sm text-[#ff6b35]">Entwurf ansehen →</span>
                 </Link>
               </li>

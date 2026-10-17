@@ -1,5 +1,3 @@
-import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
-
 /** GHS-CLP Piktogramme (01–09). */
 export type GhsPictogramCode =
   | 'GHS01'
@@ -14,18 +12,12 @@ export type GhsPictogramCode =
 
 export type SignalWord = 'Gefahr' | 'Achtung';
 
-/** H- / EUH-Sätze (CLP); Muster für typische Codes in den Einträgen. */
-export type HStatementCode =
-  | `H${number}${number}${number}`
-  | `EUH${number}${number}${number}`;
-
-export type TypicalHStatement = {
-  code: HStatementCode;
-  text: string;
-};
-
-/** Genau drei praxisnahe FAQs pro Stoff (Programmatic SEO + JSON-LD). */
-export type SubstanceFaqTuple = [SeoFaqItem, SeoFaqItem, SeoFaqItem];
+/** Genau drei FAQs (Programmatic SEO + JSON-LD) — werden im Template generiert. */
+export type SubstanceFaqTuple = [
+  { question: string; answer: string },
+  { question: string; answer: string },
+  { question: string; answer: string },
+];
 
 /** Einzelstoff-CAS oder dokumentiertes Gemisch (Produkte / Mischungen). */
 export type CasNumber =
@@ -40,23 +32,10 @@ export type CasNumber =
       mainComponentCas?: string;
     };
 
-/** Chemisch-physikalische Kennwerte für SEO-Tabellen (Stoff vs. Gemisch). */
-export type ExpertDataField =
-  | { kind: 'value'; text: string }
-  | { kind: 'notApplicable'; note: string }
-  | { kind: 'mixtureVariable'; note: string };
-
-export type AgwTrgs900Field =
-  | { kind: 'limit'; text: string }
-  | { kind: 'notApplicable'; note: string }
-  | { kind: 'mixtureVariable'; note: string };
-
-export type Trgs510StorageExpert = {
-  /** Konkrete LGK / Stoffgruppen laut TRGS 510-Zusammenlagerungstabelle (Auszug). */
-  zusammenlagerungsverbote: string[];
-  safetyCabinetNotes: string;
-};
-
+/**
+ * Öffentliche Stoffdaten für Betriebsanweisungs-Landingpages.
+ * Keine betrieblichen Schutz- oder Lagerangaben — nur Identifikation + rechtlicher Rahmen.
+ */
 export interface HazardousSubstanceSeoEntry {
   slug: string;
   substanceName: string;
@@ -64,22 +43,9 @@ export interface HazardousSubstanceSeoEntry {
   documentDisplayName: string;
   synonyms: string[];
   casNumber: CasNumber;
-  /** Summenformel; `null` bei Gemischen ohne eindeutige Formel. */
-  chemicalFormula: string | null;
-  ecNumber: ExpertDataField;
-  flashPoint: ExpertDataField;
-  ignitionTemperature: ExpertDataField;
-  agwTrgs900: AgwTrgs900Field;
-  /** Abschnitt 1 — Anwendungsbereich & Arbeitsplatz (sichtbar im Teaser). */
+  /** Abschnitt 1 — Anwendungsbereich (ohne PSA-/Notfall-Inhalte). */
   applicationAreaWorkplace: string;
   ghsPictograms: GhsPictogramCode[];
   signalWord: SignalWord;
-  typicalHStatements: TypicalHStatement[];
   typicalIndustries: string[];
-  specificPpeAdvice: string;
-  typicalPpeMistake: string;
-  storageClassTrgs510: string;
-  trgs510Storage: Trgs510StorageExpert;
-  classificationBasis: string;
-  faqItems: SubstanceFaqTuple;
 }

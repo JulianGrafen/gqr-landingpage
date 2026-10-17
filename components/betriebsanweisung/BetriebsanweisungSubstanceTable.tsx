@@ -25,33 +25,9 @@ export function BetriebsanweisungSubstanceTable({ entry }: Props) {
           </tr>
           <tr>
             <th scope="row" className="whitespace-nowrap bg-slate-50 px-4 py-3 font-semibold text-slate-700">
-              Lagerklasse (TRGS 510)
-            </th>
-            <td className="px-4 py-3 text-slate-800">{entry.storageClassTrgs510}</td>
-          </tr>
-          <tr>
-            <th scope="row" className="whitespace-nowrap bg-slate-50 px-4 py-3 font-semibold text-slate-700">
               Signalwort (typisch)
             </th>
             <td className="px-4 py-3 text-slate-800">{entry.signalWord}</td>
-          </tr>
-          <tr>
-            <th scope="row" className="whitespace-nowrap bg-slate-50 px-4 py-3 font-semibold text-slate-700">
-              Einstufungsgrundlage
-            </th>
-            <td className="px-4 py-3 text-slate-800">{entry.classificationBasis}</td>
-          </tr>
-          <tr>
-            <th scope="row" className="whitespace-nowrap bg-slate-50 px-4 py-3 font-semibold text-slate-700">
-              Typische PSA-Fehler
-            </th>
-            <td className="px-4 py-3 text-slate-800">{entry.typicalPpeMistake}</td>
-          </tr>
-          <tr>
-            <th scope="row" className="whitespace-nowrap bg-slate-50 px-4 py-3 font-semibold text-slate-700">
-              Empfohlene PSA (Auszug)
-            </th>
-            <td className="px-4 py-3 text-slate-800">{entry.specificPpeAdvice}</td>
           </tr>
         </tbody>
       </table>

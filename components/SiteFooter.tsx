@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FOOTER_COPYRIGHT, FOOTER_TAGLINE } from '@/config/legal/site-copy';
 
 export function SiteFooter() {
   return (
@@ -7,10 +8,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-8 md:flex-row md:flex-wrap md:items-start md:justify-between">
           <div>
             <p className="text-lg font-black text-gqr-text">Gefahrstoff-QR</p>
-            <p className="mt-2 max-w-xs text-sm leading-relaxed text-gqr-muted">
-              Rechtssicheres Gefahrstoffverzeichnis nach §&nbsp;6 GefStoffV — mit
-              KI aus dem Sicherheitsdatenblatt.
-            </p>
+            <p className="mt-2 max-w-xs text-sm leading-relaxed text-gqr-muted">{FOOTER_TAGLINE}</p>
           </div>
           <nav
             className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-gqr-muted"
@@ -36,9 +34,7 @@ export function SiteFooter() {
             </Link>
           </nav>
         </div>
-        <p className="mt-10 text-center text-xs text-gqr-muted md:text-left">
-          © {new Date().getFullYear()} Gefahrstoff-QR · Alle Rechte vorbehalten.
-        </p>
+        <p className="mt-10 text-center text-xs leading-relaxed text-gqr-muted md:text-left">{FOOTER_COPYRIGHT}</p>
       </div>
     </footer>
   );
