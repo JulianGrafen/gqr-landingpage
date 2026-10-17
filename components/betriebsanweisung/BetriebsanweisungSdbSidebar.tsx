@@ -21,11 +21,20 @@ export function BetriebsanweisungSdbSidebar({ substanceName }: Props) {
         Lieferanten hoch, um die exakten Werte automatisch einzusetzen.
       </p>
       <SdbLivePreviewDropzone variant="next" embedded className="mt-4" />
-      <ul className="mt-4 space-y-1 text-xs text-[#8fa4c0]" role="list">
-        <li>✓ {DSGVO_HOSTING_BADGE}</li>
-        <li>✓ Keine Installation</li>
-        <li>✓ Extraktion aus Ihrem SDB-PDF</li>
-      </ul>
+      <div className="mt-4 flex flex-col gap-1.5 text-xs text-[#8fa4c0]" role="group" aria-label="Vertrauensmerkmale">
+        <span className="flex items-center gap-1.5">
+          <span aria-hidden="true">✓</span>
+          {DSGVO_HOSTING_BADGE}
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span aria-hidden="true">✓</span>
+          Keine Installation
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span aria-hidden="true">✓</span>
+          Extraktion aus Ihrem SDB-PDF
+        </span>
+      </div>
     </aside>
   );
 }

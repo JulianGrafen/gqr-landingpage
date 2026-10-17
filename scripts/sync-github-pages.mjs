@@ -30,6 +30,15 @@ for (const rel of SYNC_PATHS) {
   console.log(`✓ ${rel}/`);
 }
 
+/** GHS-Piktogramme aus public/ → Repo-Root images/ghs/ (ohne restliches images/ zu überschreiben). */
+const ghsOut = path.join(OUT, 'images', 'ghs');
+const ghsDest = path.join(ROOT, 'images', 'ghs');
+if (fs.existsSync(ghsOut)) {
+  fs.mkdirSync(ghsDest, { recursive: true });
+  fs.cpSync(ghsOut, ghsDest, { recursive: true });
+  console.log('✓ images/ghs/');
+}
+
 const FAVICON_FILES = [
   'favicon.ico',
   'favicon.png',

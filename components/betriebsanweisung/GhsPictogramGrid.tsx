@@ -11,13 +11,17 @@ export function GhsPictogramGrid({ codes, size = 'md', variant = 'light' }: Prop
   const dim = size === 'sm' ? 40 : 52;
   const figureClass =
     variant === 'dark'
-      ? 'flex flex-col items-center gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-2'
-      : 'flex flex-col items-center gap-1 rounded-xl border border-slate-200 bg-white p-2 shadow-sm';
+      ? 'flex w-[4.5rem] flex-col items-center gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-2'
+      : 'flex w-[4.5rem] flex-col items-center gap-1 rounded-xl border border-slate-200 bg-white p-2 shadow-sm';
   const captionClass =
     variant === 'dark' ? 'text-[10px] font-bold uppercase tracking-wide text-[#8fa4c0]' : 'text-[10px] font-bold uppercase tracking-wide text-slate-500';
 
   return (
-    <div className="flex flex-wrap items-end gap-3" role="group" aria-label="GHS-Piktogramme">
+    <div
+      className={`flex flex-wrap items-center gap-x-3 gap-y-2 ${variant === 'dark' ? 'justify-center' : 'justify-center sm:justify-start'}`}
+      role="group"
+      aria-label="GHS-Piktogramme"
+    >
       {codes.map((code) => {
         const asset = GHS_ASSETS[code];
         return (

@@ -34,7 +34,7 @@ export function SdbPreviewCompactResult({ variant, teaser }: Props) {
           </p>
         ) : null}
 
-        <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="GHS aus SDB">
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-2" role="group" aria-label="GHS aus SDB">
           {teaser.ghsPictograms.map((code) => (
             <GhsPictogramBadge key={code} code={code} variant="next" />
           ))}
