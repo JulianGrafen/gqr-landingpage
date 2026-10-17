@@ -29,7 +29,7 @@ export function LeadMagnetCta({
       </Link>
       <p className="mt-4 text-sm text-[#8fa4c0]">
         Keine Kreditkarte · Sie entscheiden über Freigaben und
-        Rechtssicherheit im Betrieb
+        Dokumentation im Betrieb
       </p>
     </aside>
   );

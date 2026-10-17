@@ -33,7 +33,7 @@ export function ExcelVorlageSiloPage() {
  >
  <p>
  <strong>1. Fehlende Revisionssicherheit (§ 6 GefStoffV):</strong>
- Die Informationsermittlung fordert eine lückenlose Historie. Excel ist statisch: Überschreiben Sie eine Zeile aufgrund eines neuen Sicherheitsdatenblattes , vernichten Sie den historischen Beweis. Kommt es Jahre später zu einer Berufskrankheit, können Sie nicht mehr rechtssicher belegen, mit welchem Datenstand (und welchen H-/P-Sätzen) der Mitarbeiter zum damaligen Zeitpunkt gearbeitet hat.
+ Die Informationsermittlung fordert eine lückenlose Historie. Excel ist statisch: Überschreiben Sie eine Zeile aufgrund eines neuen Sicherheitsdatenblattes , vernichten Sie den historischen Beweis. Kommt es Jahre später zu einer Berufskrankheit, können Sie nicht mehr nachvollziehbar belegen, mit welchem Datenstand (und welchen H-/P-Sätzen) der Mitarbeiter zum damaligen Zeitpunkt gearbeitet hat.
  </p>
  <p>
  <strong>2. Die stille Gefahr der CLP-Frist (Mai 2026):</strong>

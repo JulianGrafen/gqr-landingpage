@@ -509,7 +509,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
  warum Ihre SiFa oder externe Fachkraft weiterhin signiert.
  </li>
  <li>
- <strong>Rechtssicherheit</strong> entsteht durch den
+ <strong>prüfbare Dokumentation</strong> entsteht durch den
  dokumentierten Prozess — nicht durch das Versprechen
  fehlerfreier Software.
  </li>

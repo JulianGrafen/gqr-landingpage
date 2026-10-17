@@ -106,7 +106,7 @@ export function GefahrstoffkatasterErstellenSiloPage() {
  Ein klassisches Beispiel aus der Praxis: Die gemeinsame Lagerung von Säuren (Lagerklasse 8B) und Laugen/Basen (Lagerklasse 8A). Werden diese in derselben Auffangwanne gelagert und kommt es zu einer Havarie, entsteht eine unkontrollierbare, exotherme Reaktion. Die TRGS 510 schreibt hier eine strikte Separatlagerung vor. Ähnlich kritisch verhält es sich mit entzündbaren Flüssigkeiten (Lagerklasse 3) und oxidierenden Stoffen (Lagerklasse 5.1). Oxidationsmittel liefern im Brandfall den Sauerstoff und wirken als extremer Brandbeschleuniger – eine gemeinsame Lagerung im selben Regal ist strengstens untersagt.
  </p>
  <p>
- <strong>Die Grenze der manuellen Überwachung:</strong> Eine Sicherheitsfachkraft kann die Zusammenlagerungstabelle der TRGS 510 (die Matrix mit den grünen, gelben und roten Kreuzen) für zehn Stoffe manuell im Kopf oder auf Papier prüfen. Bei 150 oder 500 Stoffen, die über verschiedene Werkstätten, Baustellen und Hauptlager verteilt sind, bricht dieses System zusammen. Ein rechtssicheres Gefahrstoffkataster muss daher zwingend den exakten Lagerort (Halle, Regal, Wanne) mit der Einstufung verknüpfen. Nur eine systemgestützte Software kann hier im Hintergrund die Konflikte der Lagerklassen (LGK) in Echtzeit berechnen und bei einer Fehlzuordnung sofort Alarm schlagen.
+ <strong>Die Grenze der manuellen Überwachung:</strong> Eine Sicherheitsfachkraft kann die Zusammenlagerungstabelle der TRGS 510 (die Matrix mit den grünen, gelben und roten Kreuzen) für zehn Stoffe manuell im Kopf oder auf Papier prüfen. Bei 150 oder 500 Stoffen, die über verschiedene Werkstätten, Baustellen und Hauptlager verteilt sind, bricht dieses System zusammen. Ein strukturiertes Gefahrstoffkataster muss daher zwingend den exakten Lagerort (Halle, Regal, Wanne) mit der Einstufung verknüpfen. Nur eine systemgestützte Software kann hier im Hintergrund die Konflikte der Lagerklassen (LGK) in Echtzeit berechnen und bei einer Fehlzuordnung sofort Alarm schlagen.
  </p>
  </LandingProseSection>
 
@@ -142,7 +142,7 @@ export function GefahrstoffkatasterErstellenSiloPage() {
  <Link href="/gefahrstoffkataster-software/" className="gqr-link">
  Gefahrstoffkataster Software
  </Link>{' '}
- automatisiert den Sicherheitsdatenblatt-Import via KI, generiert Betriebsanweisungen auf Knopfdruck und sichert Audits ab. <strong>Der Realitätscheck:</strong> Software ist kein magischer Problemlöser. Die initiale Überführung historisch gewachsener, unstrukturierter Ordner in das System erfordert einmalig konzentrierte Zeit und eiserne Disziplin. Der Return on Investment (massive Zeitersparnis und garantierte Rechtssicherheit) setzt nicht an Tag eins ein, sondern erst nach dem initialen Setup und der ersten Sicherheitsdatenblatt-Aktualisierungswelle.
+ automatisiert den Sicherheitsdatenblatt-Import via KI, generiert Betriebsanweisungen auf Knopfdruck und sichert Audits ab. <strong>Der Realitätscheck:</strong> Software ist kein magischer Problemlöser. Die initiale Überführung historisch gewachsener, unstrukturierter Ordner in das System erfordert einmalig konzentrierte Zeit und eiserne Disziplin. Der Return on Investment (massive Zeitersparnis und planbare Zeitersparnis und bessere Nachweise) setzt nicht an Tag eins ein, sondern erst nach dem initialen Setup und der ersten Sicherheitsdatenblatt-Aktualisierungswelle.
  </p>
 
  <h3>3. Die letzte Meile: Die Ad-hoc Information am Einsatzort</h3>

@@ -1,21 +1,40 @@
 import Link from 'next/link';
-import { Lock } from 'lucide-react';
 import type { HazardousSubstanceSeoEntry } from '@/config/betriebsanweisung/types';
 import { formatCasDisplay } from '@/config/betriebsanweisung/registry';
 import { GhsPictogramGrid } from '@/components/betriebsanweisung/GhsPictogramGrid';
-import {
-  BETRIEBSANWEISUNG_REGISTER_URL,
-  buildBetriebsanweisungRegisterUrl,
-} from '@/lib/betriebsanweisung/build-register-url';
+import { REGISTER_CTA_LABEL } from '@/config/legal/site-copy';
+import { buildBetriebsanweisungRegisterUrl } from '@/lib/betriebsanweisung/build-register-url';
 
 type Props = {
   entry: HazardousSubstanceSeoEntry;
 };
 
-const BLUR_PLACEHOLDER = `Schutzmaßnahmen und Verhaltensregeln — PSA, Lüftung, Arbeitsverfahren.
-Verhalten im Gefahrfall — Leckage, Brand, Kontakt.
-Erste Hilfe — Haut, Augen, Einatmen.
-Sachgerechte Entsorgung — Abfall, Kanalisation.`;
+const LOCKED_SECTIONS = [
+  { num: 2, title: 'Gefahren für Mensch und Umwelt' },
+  { num: 3, title: 'Schutzmaßnahmen & PSA' },
+  { num: 4, title: 'Verhalten im Gefahrfall' },
+  { num: 5, title: 'Erste Hilfe' },
+  { num: 6, title: 'Sachgerechte Entsorgung' },
+] as const;
+
+function classificationDisclaimer(entry: HazardousSubstanceSeoEntry): string {
+  const basis =
+    entry.casNumber.kind === 'mixture'
+      ? 'harmonisierten bzw. typischen Standardwerten'
+      : 'harmonisierten Standardwerten';
+  return `Hinweis: Die angezeigten Piktogramme und das Signalwort basieren auf ${basis}. Maßgeblich für Ihren Betrieb ist stets das Sicherheitsdatenblatt Ihres konkreten Lieferanten.`;
+}
+
+function SkeletonBars() {
+  return (
+    <div className="mt-3 space-y-2" aria-hidden="true">
+      <div className="h-2.5 w-full rounded bg-white/10" />
+      <div className="h-2.5 w-[92%] rounded bg-white/10" />
+      <div className="h-2.5 w-[78%] rounded bg-white/10" />
+      <div className="h-2.5 w-[85%] rounded bg-white/10" />
+    </div>
+  );
+}
 
 export function BetriebsanweisungTeaserDocument({ entry }: Props) {
   const registerUrl = buildBetriebsanweisungRegisterUrl(entry.slug);
@@ -31,15 +50,7 @@ export function BetriebsanweisungTeaserDocument({ entry }: Props) {
           Betriebsanweisung gemäß § 14 GefStoffV / TRGS 555 (Muster-Entwurf)
         </p>
         <h2 className="mt-2 text-lg font-black sm:text-xl">{entry.documentDisplayName}</h2>
-        <p className="mt-1 text-sm text-[#8fa4c0]">
-          {entry.chemicalFormula ? (
-            <>
-              Summenformel: {entry.chemicalFormula} · CAS: {casLabel}
-            </>
-          ) : (
-            <>CAS / Produkt: {casLabel}</>
-          )}
-        </p>
+        <p className="mt-1 text-sm text-[#8fa4c0]">CAS / Produkt: {casLabel}</p>
         <p className="mt-2 text-sm">
           Signalwort:{' '}
           <span className={entry.signalWord === 'Gefahr' ? 'font-bold text-red-400' : 'font-bold text-amber-300'}>
@@ -51,6 +62,10 @@ export function BetriebsanweisungTeaserDocument({ entry }: Props) {
         </div>
       </header>
 
+      <p className="border-b border-white/10 bg-[#0a1628]/40 px-5 py-3 text-xs leading-relaxed text-[#8fa4c0]">
+        {classificationDisclaimer(entry)}
+      </p>
+
       <div className="space-y-0 bg-[#0f1e35]/60 text-sm leading-relaxed text-[#c8d4e6]">
         <section className="border-b border-white/10 px-5 py-4">
           <h3 className="text-xs font-bold uppercase tracking-wide text-[#ff6b35]">
@@ -59,62 +74,33 @@ export function BetriebsanweisungTeaserDocument({ entry }: Props) {
           <p className="mt-2">{entry.applicationAreaWorkplace}</p>
         </section>
 
-        <section className="border-b border-white/10 px-5 py-4">
-          <h3 className="text-xs font-bold uppercase tracking-wide text-[#ff6b35]">
-            2. Gefahren für Mensch und Umwelt
-          </h3>
-          <ul className="mt-2 space-y-1" role="list">
-            {entry.typicalHStatements.map((h) => (
-              <li key={h.code}>
-                <strong className="text-[#f0f6ff]">{h.code}:</strong> {h.text}
-              </li>
-            ))}
-          </ul>
-        </section>
+        {LOCKED_SECTIONS.map(({ num, title }) => (
+          <section key={num} className="border-b border-white/10 px-5 py-4">
+            <h3 className="text-xs font-bold uppercase tracking-wide text-[#ff6b35]">
+              {num}. {title}
+            </h3>
+            <SkeletonBars />
+          </section>
+        ))}
 
-        <div className="relative">
-          <div
-            className="pointer-events-none select-none space-y-0 opacity-40 backdrop-blur-md"
-            aria-hidden="true"
+        <section className="border-t border-white/10 px-5 py-5">
+          <a
+            href="#ba-sdb-dropzone"
+            className="gqr-cta-primary gqr-cta-primary--md inline-flex w-full justify-center text-center no-underline"
           >
-            {[3, 4, 5, 6].map((num) => (
-              <section key={num} className="border-b border-white/10 px-5 py-4">
-                <h3 className="text-xs font-bold uppercase tracking-wide text-[#ff6b35]">
-                  {num}. {num === 3 ? 'Schutzmaßnahmen & PSA' : num === 4 ? 'Verhalten im Gefahrfall' : num === 5 ? 'Erste Hilfe' : 'Sachgerechte Entsorgung'}
-                </h3>
-                <p className="mt-2 whitespace-pre-line">{BLUR_PLACEHOLDER}</p>
-              </section>
-            ))}
-            <section className="px-5 py-6 text-center">
-              <img
-                src="/images/qr-gefahrstoff-einsatzort.svg"
-                alt=""
-                width={96}
-                height={96}
-                className="mx-auto opacity-70"
-              />
-              <p className="mt-2 text-xs text-[#8fa4c0]">Notfall-QR (Vorschau)</p>
-            </section>
-          </div>
-
-          <div className="absolute inset-0 flex items-center justify-center p-4">
-            <div className="max-w-sm rounded-2xl border border-white/15 bg-[#0f1e35]/95 p-6 text-center shadow-xl backdrop-blur-sm">
-              <Lock className="mx-auto h-8 w-8 text-teal-300" aria-hidden />
-              <h3 className="mt-3 text-lg font-bold text-[#f0f6ff]">Vollständigen TRGS-555-Entwurf freischalten</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#8fa4c0]">
-                Enthält spezifische PSA-Vorgaben, Erste-Hilfe-Schritte, Notfallmaßnahmen und QR-Code zur
-                Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber.
-              </p>
-              <Link href={registerUrl} className="gqr-cta-primary gqr-cta-primary--md mt-5 inline-flex w-full justify-center">
-                Muster-Entwurf jetzt freischalten (Sofort-Download)
-              </Link>
-              <p className="mt-3 text-[11px] text-[#8fa4c0]">
-                KI-gestützter Entwurf (gemäß TRGS 555) · Registrierung unter{' '}
-                <span className="text-teal-300">{BETRIEBSANWEISUNG_REGISTER_URL.replace('https://', '')}</span>
-              </p>
-            </div>
-          </div>
-        </div>
+            Eigenes SDB hochladen oder Entwurf in der App freischalten
+          </a>
+          <p className="mt-4 text-center text-sm leading-relaxed text-[#8fa4c0]">
+            Schutzmaßnahmen, PSA-Vorgaben und Notfallmaßnahmen werden automatisiert aus dem Sicherheitsdatenblatt
+            Ihres Lieferanten ausgelesen.
+          </p>
+          <Link
+            href={registerUrl}
+            className="mt-4 block text-center text-sm font-semibold text-teal-300 hover:underline"
+          >
+            {REGISTER_CTA_LABEL} →
+          </Link>
+        </section>
       </div>
     </article>
   );

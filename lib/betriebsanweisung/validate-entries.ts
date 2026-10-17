@@ -1,10 +1,5 @@
-import { BETRIEBSANWEISUNG_EXPERT_EXTENSIONS } from '@/config/betriebsanweisung/expert-extensions';
 import { HAZARDOUS_SUBSTANCE_SEO_ENTRIES } from '@/config/betriebsanweisung/entries';
-import type {
-  GhsPictogramCode,
-  HStatementCode,
-  HazardousSubstanceSeoEntry,
-} from '@/config/betriebsanweisung/types';
+import type { GhsPictogramCode, HazardousSubstanceSeoEntry } from '@/config/betriebsanweisung/types';
 
 const GHS_CODES = new Set<GhsPictogramCode>([
   'GHS01',
@@ -18,7 +13,21 @@ const GHS_CODES = new Set<GhsPictogramCode>([
   'GHS09',
 ]);
 
-const H_CODE_PATTERN = /^(H\d{3}|EUH\d{3})$/;
+/** Verbotene Schlüssel — dürfen in Nightly-Batches nicht mehr gesetzt werden. */
+const FORBIDDEN_ENTRY_KEYS = [
+  'specificPpeAdvice',
+  'typicalPpeMistake',
+  'storageClassTrgs510',
+  'trgs510Storage',
+  'typicalHStatements',
+  'classificationBasis',
+  'chemicalFormula',
+  'ecNumber',
+  'flashPoint',
+  'ignitionTemperature',
+  'agwTrgs900',
+  'faqItems',
+] as const;
 
 export function isValidCasChecksum(casNumber: string): boolean {
   const normalized = casNumber.replace(/\s/g, '');
@@ -33,14 +42,15 @@ export function isValidCasChecksum(casNumber: string): boolean {
   return sum % 10 === checkDigit;
 }
 
-function assertHCode(code: string): asserts code is HStatementCode {
-  if (!H_CODE_PATTERN.test(code)) {
-    throw new Error(`Ungültiger H-/EUH-Code: ${code}`);
-  }
-}
-
 function validateEntry(entry: HazardousSubstanceSeoEntry, index: number): void {
   const prefix = `Eintrag #${index + 1} (${entry.slug || 'ohne slug'})`;
+  const raw = entry as unknown as Record<string, unknown>;
+
+  for (const key of FORBIDDEN_ENTRY_KEYS) {
+    if (key in raw && raw[key] !== undefined) {
+      throw new Error(`${prefix}: verbotenes Feld "${key}" — nur öffentliche Identifikationsdaten erlaubt`);
+    }
+  }
 
   if (!entry.slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.slug)) {
     throw new Error(`${prefix}: slug fehlt oder ungültig`);
@@ -48,6 +58,10 @@ function validateEntry(entry: HazardousSubstanceSeoEntry, index: number): void {
 
   if (!entry.substanceName.trim()) {
     throw new Error(`${prefix}: substanceName fehlt`);
+  }
+
+  if (!entry.documentDisplayName.trim()) {
+    throw new Error(`${prefix}: documentDisplayName fehlt`);
   }
 
   if (!Array.isArray(entry.synonyms) || entry.synonyms.length === 0) {
@@ -67,6 +81,10 @@ function validateEntry(entry: HazardousSubstanceSeoEntry, index: number): void {
     }
   }
 
+  if (!entry.applicationAreaWorkplace.trim()) {
+    throw new Error(`${prefix}: applicationAreaWorkplace fehlt`);
+  }
+
   if (!entry.ghsPictograms.length) {
     throw new Error(`${prefix}: mindestens ein GHS-Piktogramm erforderlich`);
   }
@@ -80,55 +98,8 @@ function validateEntry(entry: HazardousSubstanceSeoEntry, index: number): void {
     throw new Error(`${prefix}: signalWord ungültig`);
   }
 
-  if (!entry.typicalHStatements.length) {
-    throw new Error(`${prefix}: typicalHStatements leer`);
-  }
-  for (const h of entry.typicalHStatements) {
-    assertHCode(h.code);
-    if (!h.text.trim()) {
-      throw new Error(`${prefix}: H-Text leer für ${h.code}`);
-    }
-  }
-
   if (!entry.typicalIndustries.length) {
     throw new Error(`${prefix}: typicalIndustries leer`);
-  }
-
-  if (!entry.specificPpeAdvice.trim() || !entry.typicalPpeMistake.trim()) {
-    throw new Error(`${prefix}: PSA-Felder fehlen`);
-  }
-
-  if (!entry.storageClassTrgs510.trim()) {
-    throw new Error(`${prefix}: storageClassTrgs510 fehlt`);
-  }
-
-  if (!entry.classificationBasis.trim()) {
-    throw new Error(`${prefix}: classificationBasis fehlt`);
-  }
-
-  if (!entry.documentDisplayName.trim()) {
-    throw new Error(`${prefix}: documentDisplayName fehlt`);
-  }
-
-  if (!entry.applicationAreaWorkplace.trim()) {
-    throw new Error(`${prefix}: applicationAreaWorkplace fehlt`);
-  }
-
-  if (!entry.trgs510Storage.zusammenlagerungsverbote.length) {
-    throw new Error(`${prefix}: trgs510Storage.zusammenlagerungsverbote leer`);
-  }
-
-  if (!entry.trgs510Storage.safetyCabinetNotes.trim()) {
-    throw new Error(`${prefix}: safetyCabinetNotes fehlt`);
-  }
-
-  if (!Array.isArray(entry.faqItems) || entry.faqItems.length !== 3) {
-    throw new Error(`${prefix}: faqItems muss exakt 3 Einträge haben`);
-  }
-  for (const [i, faq] of entry.faqItems.entries()) {
-    if (!faq.question.trim() || !faq.answer.trim()) {
-      throw new Error(`${prefix}: FAQ ${i + 1} unvollständig`);
-    }
   }
 }
 
@@ -136,12 +107,8 @@ export function validateHazardousSubstanceEntries(
   entries: readonly HazardousSubstanceSeoEntry[] = HAZARDOUS_SUBSTANCE_SEO_ENTRIES,
 ): void {
   const slugs = new Set<string>();
-  const expertSlugs = new Set(Object.keys(BETRIEBSANWEISUNG_EXPERT_EXTENSIONS));
 
   entries.forEach((entry, index) => {
-    if (!expertSlugs.has(entry.slug)) {
-      throw new Error(`Kein Expert-Extension-Eintrag für slug: ${entry.slug}`);
-    }
     validateEntry(entry, index);
     if (slugs.has(entry.slug)) {
       throw new Error(`Doppelter slug: ${entry.slug}`);

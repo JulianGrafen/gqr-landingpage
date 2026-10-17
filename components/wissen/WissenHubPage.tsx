@@ -107,7 +107,7 @@ export function WissenHubPage({ deepinfoPages, blogPosts }: WissenHubPageProps) 
  <section className="gqr-wissen-section" aria-label="Handlungsaufruf">
  <div className="gqr-container">
  <div className="gqr-sidebar-card gqr-sidebar-card--cta mx-auto max-w-3xl px-6 py-10 text-center sm:px-10 sm:py-12">
- <h2 className="gqr-post-section-title">Bereit für rechtssicheres Gefahrstoffmanagement?</h2>
+ <h2 className="gqr-post-section-title">Bereit für strukturiertes Gefahrstoffmanagement?</h2>
  <p className="gqr-post-section-sub">
  Starten Sie kostenlos — erste Stoffe ohne Kreditkarte anlegen.
  </p>

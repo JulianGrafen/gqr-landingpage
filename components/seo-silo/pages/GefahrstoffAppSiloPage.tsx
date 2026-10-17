@@ -40,7 +40,7 @@ export function GefahrstoffAppSiloPage() {
  bullets={[
  'Sekundenschneller Scan an Regalen, IBC-Containern oder Werkstattwagen',
  'Direkter Zugriff auf Erste-Hilfe-Maßnahmen (Sicherheitsdatenblatt Abschnitt 4) ohne Login',
- 'Garantierte Aktualität durch Echtzeit-Synchronisation mit dem Hauptkataster',
+ 'Aktualität durch Echtzeit-Synchronisation mit dem Hauptkataster',
  ]}
  media={{
  src: '/images/notfall-qr-scan-demo.gif?v=2',
@@ -115,7 +115,7 @@ export function GefahrstoffAppSiloPage() {
  <Link href="/gefahrstoffverzeichnis-excel-vorlage/" className="gqr-link">
  kostenlose Vorlage
  </Link>{' '}
- einen Einstieg – der Wechsel zum mobilen QR-System ist danach das logische Upgrade zur vollständigen Rechtssicherheit.
+ einen Einstieg – der Wechsel zum mobilen QR-System ist danach das logische Upgrade zur besserer Nachweisführung.
  </p>
  </LandingProseSection>
  </LandingPageWrapper>
