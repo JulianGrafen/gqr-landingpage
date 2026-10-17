@@ -2,9 +2,12 @@
 
 import { SdbDropzoneInput } from '@/components/sdb-preview/SdbDropzoneInput';
 import { SdbExampleChips } from '@/components/sdb-preview/SdbExampleChips';
+import { SdbProcessingProgressBar } from '@/components/sdb-preview/SdbProcessingProgressBar';
 import { SdbProcessingTimeline } from '@/components/sdb-preview/SdbProcessingTimeline';
+import { SdbPreviewCompactResult } from '@/components/sdb-preview/SdbPreviewCompactResult';
 import { Trgs555PreviewDocument } from '@/components/sdb-preview/Trgs555PreviewDocument';
 import { shellClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
+import { PROCESSING_STEP_LABELS } from '@/lib/sdb-preview/api-contract';
 import { useSdbPreview } from '@/lib/sdb-preview/useSdbPreview';
 
 export type SdbLivePreviewDropzoneProps = {
@@ -12,12 +15,15 @@ export type SdbLivePreviewDropzoneProps = {
   className?: string;
   /** Optionaler Text oberhalb der Dropzone (z. B. stoffspezifischer SDB-Hinweis). */
   uploadIntro?: string;
+  /** Engere Einbettung in Sidebars (ohne doppelte Schatten). */
+  embedded?: boolean;
 };
 
 export function SdbLivePreviewDropzone({
   variant = 'next',
   className = '',
   uploadIntro,
+  embedded = false,
 }: SdbLivePreviewDropzoneProps) {
   const {
     phase,
@@ -32,15 +38,20 @@ export function SdbLivePreviewDropzone({
   } = useSdbPreview();
 
   const busy = phase === 'processing';
+  const stepCount = PROCESSING_STEP_LABELS.length;
+  const progressPercent = Math.round(((processingStepIndex + 1) / stepCount) * 100);
 
   return (
-    <div className={[shellClass(variant), className].filter(Boolean).join(' ')} data-sdb-live-preview>
+    <div
+      className={[shellClass(variant, embedded), className].filter(Boolean).join(' ')}
+      data-sdb-live-preview
+    >
       {uploadIntro ? (
         <p
           className={
             variant === 'static'
               ? 'sdb-live-preview-intro'
-              : 'mb-4 text-sm leading-relaxed text-[#c8d4e6]'
+              : 'mb-3 text-sm leading-relaxed text-[#8fa4c0]'
           }
         >
           {uploadIntro}
@@ -50,13 +61,22 @@ export function SdbLivePreviewDropzone({
       <SdbExampleChips variant={variant} disabled={busy} onSelect={runExample} />
 
       {fileLabel && phase !== 'idle' ? (
-        <p className={variant === 'static' ? 'sdb-live-preview-file-label' : 'mt-2 text-xs text-[#8fa4c0]'}>
+        <p className={variant === 'static' ? 'sdb-live-preview-file-label' : 'mt-2 truncate text-xs text-[#8fa4c0]'}>
           Datei: {fileLabel}
         </p>
       ) : null}
 
       {phase === 'processing' ? (
-        <SdbProcessingTimeline variant={variant} activeIndex={processingStepIndex} label={processingLabel} />
+        variant === 'static' ? (
+          <SdbProcessingTimeline variant={variant} activeIndex={processingStepIndex} label={processingLabel} />
+        ) : (
+          <SdbProcessingProgressBar
+            variant={variant}
+            activeIndex={processingStepIndex}
+            label={processingLabel}
+            progressPercent={progressPercent}
+          />
+        )
       ) : null}
 
       {phase === 'error' && error ? (
@@ -75,7 +95,13 @@ export function SdbLivePreviewDropzone({
         </div>
       ) : null}
 
-      {phase === 'ready' && teaser ? <Trgs555PreviewDocument variant={variant} teaser={teaser} /> : null}
+      {phase === 'ready' && teaser ? (
+        variant === 'static' ? (
+          <Trgs555PreviewDocument variant={variant} teaser={teaser} />
+        ) : (
+          <SdbPreviewCompactResult variant={variant} teaser={teaser} />
+        )
+      ) : null}
     </div>
   );
 }

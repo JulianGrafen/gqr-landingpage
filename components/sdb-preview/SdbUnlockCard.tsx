@@ -8,9 +8,10 @@ import { loadSdbPreviewConfig } from '@/lib/sdb-preview/load-config';
 type Props = {
   variant: SdbPreviewVariant;
   previewToken: string;
+  compact?: boolean;
 };
 
-export function SdbUnlockCard({ variant, previewToken }: Props) {
+export function SdbUnlockCard({ variant, previewToken, compact = false }: Props) {
   const [href, setHref] = useState('#');
 
   useEffect(() => {
@@ -23,6 +24,21 @@ export function SdbUnlockCard({ variant, previewToken }: Props) {
       );
     });
   }, [previewToken]);
+
+  if (compact && variant === 'next') {
+    return (
+      <div className="text-center">
+        <p className="text-[10px] font-bold uppercase tracking-wider text-teal-300">Vorprüfung zur fachlichen Freigabe</p>
+        <p className="mt-1 text-sm font-semibold text-[#f0f6ff]">Entwurf &amp; Notfall-QR vorbereitet</p>
+        <a
+          className="gqr-cta-primary gqr-cta-primary--md mt-3 inline-flex w-full justify-center text-sm no-underline"
+          href={href}
+        >
+          Kompletten Entwurf freischalten
+        </a>
+      </div>
+    );
+  }
 
   return (
     <div className={unlockCardClass(variant)}>

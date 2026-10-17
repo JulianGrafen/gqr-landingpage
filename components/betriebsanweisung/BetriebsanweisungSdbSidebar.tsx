@@ -20,7 +20,7 @@ export function BetriebsanweisungSdbSidebar({ substanceName }: Props) {
         Sicherheitsdatenblätter variieren je nach Lieferant und Konzentration. Laden Sie das PDF Ihres
         Lieferanten hoch, um die exakten Werte automatisch einzusetzen.
       </p>
-      <SdbLivePreviewDropzone variant="next" className="mt-5" />
+      <SdbLivePreviewDropzone variant="next" embedded className="mt-4" />
       <ul className="mt-4 space-y-1 text-xs text-[#8fa4c0]" role="list">
         <li>✓ {DSGVO_HOSTING_BADGE}</li>
         <li>✓ Keine Installation</li>

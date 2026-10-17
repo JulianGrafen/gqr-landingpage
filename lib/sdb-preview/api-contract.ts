@@ -63,7 +63,7 @@ export const sdbPreviewTokenPath = (token: string) =>
   `${SDB_PREVIEW_API_PATH}/${encodeURIComponent(token)}` as const;
 
 export const PROCESSING_STEP_LABELS = [
-  'Lese Abschnitt 2: Einstufung & Kennzeichnung …',
-  'Extrahiere H- und P-Sätze …',
-  'Generiere KI-gestützten TRGS-555-Entwurf …',
+  'PDF wird gelesen …',
+  'Werte werden extrahiert …',
+  'Entwurf wird vorbereitet …',
 ] as const;

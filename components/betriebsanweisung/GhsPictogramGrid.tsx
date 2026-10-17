@@ -17,24 +17,22 @@ export function GhsPictogramGrid({ codes, size = 'md', variant = 'light' }: Prop
     variant === 'dark' ? 'text-[10px] font-bold uppercase tracking-wide text-[#8fa4c0]' : 'text-[10px] font-bold uppercase tracking-wide text-slate-500';
 
   return (
-    <ul className="flex flex-wrap gap-3" role="list">
+    <div className="flex flex-wrap items-end gap-3" role="group" aria-label="GHS-Piktogramme">
       {codes.map((code) => {
         const asset = GHS_ASSETS[code];
         return (
-          <li key={code}>
-            <figure className={figureClass}>
-              <img
-                src={asset.src}
-                alt={`${code} ${asset.label}`}
-                width={dim}
-                height={dim}
-                loading="lazy"
-              />
-              <figcaption className={captionClass}>{code}</figcaption>
-            </figure>
-          </li>
+          <figure key={code} className={figureClass}>
+            <img
+              src={asset.src}
+              alt={`${code} ${asset.label}`}
+              width={dim}
+              height={dim}
+              loading="lazy"
+            />
+            <figcaption className={captionClass}>{code}</figcaption>
+          </figure>
         );
       })}
-    </ul>
+    </div>
   );
 }
