@@ -8,9 +8,10 @@ import { loadSdbPreviewConfig } from '@/lib/sdb-preview/load-config';
 type Props = {
   variant: SdbPreviewVariant;
   previewToken: string;
+  compact?: boolean;
 };
 
-export function SdbUnlockCard({ variant, previewToken }: Props) {
+export function SdbUnlockCard({ variant, previewToken, compact = false }: Props) {
   const [href, setHref] = useState('#');
 
   useEffect(() => {
@@ -23,6 +24,22 @@ export function SdbUnlockCard({ variant, previewToken }: Props) {
       );
     });
   }, [previewToken]);
+
+  if (compact && variant === 'next') {
+    return (
+      <div className="text-center">
+        <p className="text-[10px] leading-snug text-[#8fa4c0]">
+          KI-gestützter Entwurf — Vorprüfung zur fachlichen Freigabe durch SiFa / Arbeitgeber
+        </p>
+        <a
+          className="gqr-cta-primary gqr-cta-primary--md mt-2 inline-flex w-full justify-center py-2.5 text-sm no-underline"
+          href={href}
+        >
+          Kompletten Entwurf freischalten
+        </a>
+      </div>
+    );
+  }
 
   return (
     <div className={unlockCardClass(variant)}>

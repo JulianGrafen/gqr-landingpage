@@ -22,10 +22,14 @@ export async function loadSdbPreviewConfig(): Promise<SdbPreviewConfig> {
       return fallback;
     }
     const data = (await res.json()) as SdbPreviewConfig;
+    const hostname = window.location.hostname;
+    const isLocalDev = hostname === 'localhost' || hostname === '127.0.0.1';
     cached = {
       ...fallback,
       ...data,
       apiBaseUrl: (data.apiBaseUrl ?? fallback.apiBaseUrl).replace(/\/$/, ''),
+      /** Beispiel-Chips & PDF-Demo ohne CORS auf localhost / 127.0.0.1 */
+      useMock: isLocalDev ? true : Boolean(data.useMock),
     };
     return cached;
   } catch {

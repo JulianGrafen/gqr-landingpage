@@ -2,20 +2,34 @@
 
 export type SdbPreviewVariant = 'next' | 'static';
 
-export function shellClass(variant: SdbPreviewVariant): string {
+export function shellClass(variant: SdbPreviewVariant, embedded = false): string {
   if (variant === 'static') return 'sdb-live-preview-shell';
-  return 'rounded-[1.75rem] border border-white/[0.09] bg-gradient-to-br from-[#162340]/95 to-[#0f1e35]/90 p-6 shadow-[0_28px_70px_rgba(0,0,0,0.36)] sm:p-8';
+  if (embedded) {
+    return 'rounded-xl border border-white/10 bg-[#0f1e35]/70 p-4 shadow-inner shadow-black/20';
+  }
+  return 'rounded-2xl border border-white/10 bg-gradient-to-br from-[#162340]/95 to-[#0f1e35]/90 p-5 shadow-xl shadow-black/25 sm:p-6';
 }
 
-export function dropzoneClass(variant: SdbPreviewVariant, state: 'idle' | 'drag' | 'processing'): string {
+export function dropzoneClass(
+  variant: SdbPreviewVariant,
+  state: 'idle' | 'drag' | 'processing',
+  compact = false,
+): string {
   if (variant === 'static') {
     const base = 'sdb-live-preview-dropzone';
     if (state === 'drag') return `${base} is-drag-over`;
     if (state === 'processing') return `${base} is-processing`;
     return base;
   }
+  if (compact) {
+    const base =
+      'flex cursor-pointer items-center justify-between gap-3 rounded-lg border border-dashed border-teal-400/35 bg-teal-400/5 px-3 py-2.5 text-left transition';
+    if (state === 'drag') return `${base} border-blue-500/60 bg-blue-100/10`;
+    if (state === 'processing') return `${base} border-teal-500/50 opacity-80`;
+    return base;
+  }
   const base =
-    'flex min-h-[164px] cursor-pointer flex-col items-center justify-center gap-2 rounded-[22px] border-2 border-dashed border-teal-400/55 bg-teal-400/10 px-4 py-6 text-center transition';
+    'flex min-h-[140px] cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-teal-400/45 bg-teal-400/5 px-3 py-5 text-center transition';
   if (state === 'drag') return `${base} border-blue-500 bg-blue-100/10`;
   if (state === 'processing') return `${base} border-teal-500 bg-teal-500/10`;
   return base;

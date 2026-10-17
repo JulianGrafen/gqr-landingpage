@@ -9,7 +9,7 @@ export function GhsPictogramBadge({ code, variant }: Props) {
   const cardClass =
     variant === 'static'
       ? 'sdb-live-preview-ghs'
-      : 'flex flex-col items-center gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-2';
+      : 'flex w-[4.5rem] flex-shrink-0 flex-col items-center gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-2';
 
   if (!asset) {
     return (
