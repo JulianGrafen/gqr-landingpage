@@ -36,30 +36,50 @@ export type CasNumber =
     }
   | {
       kind: 'mixture';
-      /** Kurzbezeichnung für Tabellen & Preview (z. B. „Gemisch (Kohlenwasserstoffe)“). */
       label: string;
-      /** Optional: CAS einer Hauptkomponente zur Orientierung. */
       mainComponentCas?: string;
     };
+
+/** Chemisch-physikalische Kennwerte für SEO-Tabellen (Stoff vs. Gemisch). */
+export type ExpertDataField =
+  | { kind: 'value'; text: string }
+  | { kind: 'notApplicable'; note: string }
+  | { kind: 'mixtureVariable'; note: string };
+
+export type AgwTrgs900Field =
+  | { kind: 'limit'; text: string }
+  | { kind: 'notApplicable'; note: string }
+  | { kind: 'mixtureVariable'; note: string };
+
+export type Trgs510StorageExpert = {
+  /** Konkrete LGK / Stoffgruppen laut TRGS 510-Zusammenlagerungstabelle (Auszug). */
+  zusammenlagerungsverbote: string[];
+  safetyCabinetNotes: string;
+};
 
 export interface HazardousSubstanceSeoEntry {
   slug: string;
   substanceName: string;
+  /** Anzeige im Muster-Dokument, z. B. „Isopropanol (2-Propanol)“. */
+  documentDisplayName: string;
   synonyms: string[];
   casNumber: CasNumber;
+  /** Summenformel; `null` bei Gemischen ohne eindeutige Formel. */
+  chemicalFormula: string | null;
+  ecNumber: ExpertDataField;
+  flashPoint: ExpertDataField;
+  ignitionTemperature: ExpertDataField;
+  agwTrgs900: AgwTrgs900Field;
+  /** Abschnitt 1 — Anwendungsbereich & Arbeitsplatz (sichtbar im Teaser). */
+  applicationAreaWorkplace: string;
   ghsPictograms: GhsPictogramCode[];
   signalWord: SignalWord;
   typicalHStatements: TypicalHStatement[];
   typicalIndustries: string[];
-  /** Konkrete PSA-Empfehlung inkl. Material & Dicke, wo relevant. */
   specificPpeAdvice: string;
-  /** Typischer PSA-Fehler in der Praxis (Tabellenzeile auf der Landingpage). */
   typicalPpeMistake: string;
   storageClassTrgs510: string;
-  /**
-   * Konzentrations- oder produktspezifische Annahme für die Beispieleinstufung
-   * (Pflicht bei Gemischen / konzentrationsabhängigen Stoffen).
-   */
+  trgs510Storage: Trgs510StorageExpert;
   classificationBasis: string;
   faqItems: SubstanceFaqTuple;
 }

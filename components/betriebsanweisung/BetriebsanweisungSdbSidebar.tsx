@@ -1,0 +1,27 @@
+'use client';
+
+import { SdbLivePreviewDropzone } from '@/components/sdb-preview';
+
+type Props = {
+  substanceName: string;
+};
+
+export function BetriebsanweisungSdbSidebar({ substanceName }: Props) {
+  return (
+    <aside className="rounded-2xl border border-white/10 bg-[#162340]/80 p-5 shadow-xl shadow-black/20 sm:p-6 lg:sticky lg:top-8">
+      <h2 className="text-xl font-bold text-[#f0f6ff]">
+        Nutzen Sie {substanceName} eines bestimmten Herstellers?
+      </h2>
+      <p className="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
+        Sicherheitsdatenblätter variieren je nach Lieferant und Konzentration. Laden Sie das PDF Ihres
+        Lieferanten hoch, um die exakten Werte automatisch einzusetzen.
+      </p>
+      <SdbLivePreviewDropzone variant="next" className="mt-5" />
+      <ul className="mt-4 space-y-1 text-xs text-[#8fa4c0]" role="list">
+        <li>✓ 100 % DSGVO-konform</li>
+        <li>✓ Keine Installation</li>
+        <li>✓ Sofortige Extraktion</li>
+      </ul>
+    </aside>
+  );
+}

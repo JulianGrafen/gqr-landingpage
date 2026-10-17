@@ -1,10 +1,14 @@
+import { BETRIEBSANWEISUNG_EXPERT_EXTENSIONS } from '@/config/betriebsanweisung/expert-extensions';
+import type { BetriebsanweisungExpertExtension } from '@/config/betriebsanweisung/expert-extensions';
 import type { HazardousSubstanceSeoEntry } from '@/config/betriebsanweisung/types';
+
+type HazardousSubstanceBaseEntry = Omit<HazardousSubstanceSeoEntry, keyof BetriebsanweisungExpertExtension>;
 
 /**
  * Zentrale Datenquelle für Programmatic SEO — Betriebsanweisungen.
  * Neue Stoffe am Ende anfügen; `npm run validate:betriebsanweisung` vor dem Commit.
  */
-export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
+const BASE_HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
   {
     slug: 'aceton-trgs-555',
     substanceName: 'Aceton',
@@ -30,23 +34,6 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     storageClassTrgs510: 'LGK 3 – Entzündbare Flüssigkeiten',
     classificationBasis:
       'Harmonisierte Einstufung (CLP Anhang VI) für reines Aceton; abweichende Gemische oder Reinheitsgrade nur über das Hersteller-SDB.',
-    faqItems: [
-      {
-        question: 'Brauche ich für Aceton immer eine Betriebsanweisung?',
-        answer:
-          'Ja, wenn Aceton im Betrieb bereitgestellt wird (§ 14 GefStoffV). Der Entwurf orientiert sich an TRGS 555; Freigabe und Aktualisierung obliegen der SiFa bzw. dem Arbeitgeber.',
-      },
-      {
-        question: 'Welche Lagerklasse gilt für Aceton nach TRGS 510?',
-        answer:
-          'Typisch LGK 3 (entzündbare Flüssigkeiten). Lagerung nur in brennbaren Lagerräumen mit Zündquellenkontrolle; Abstand zu Oxidationsmitteln und Zündquellen einhalten — Details im SDB Ihres Lieferanten.',
-      },
-      {
-        question: 'Reichen Einweghandschuhe aus dem Supermarkt?',
-        answer:
-          'Selten. Für längeres Umfüllen sind Butylhandschuhe mit ausreichender Schichtdicke vorgesehen. Prüfen Sie Durchbruchzeiten und wechseln Sie Handschuhe bei Kontamination sofort.',
-      },
-    ],
   },
   {
     slug: 'isopropanol-trgs-555',
@@ -72,23 +59,6 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       'Dünne Latex- oder Vinylhandschuhe bei größeren Mengen — IPA durchdringt viele Materialien; Desinfektionsroutine ohne Augenschutz.',
     storageClassTrgs510: 'LGK 3 – Entzündbare Flüssigkeiten',
     classificationBasis: 'Harmonisierte CLP-Einstufung für reines Isopropanol (technische Qualität).',
-    faqItems: [
-      {
-        question: 'Ist Isopropanol „desinfektionsmittel-sicher“ ohne Betriebsanweisung?',
-        answer:
-          'Nein. Auch Desinfektionsmittel sind Gefahrstoffe, wenn am Arbeitsplatz verwendet. Betriebsanweisung und Unterweisung sind erforderlich; Entwurf per TRGS 555, Freigabe durch SiFa/Arbeitgeber.',
-      },
-      {
-        question: 'Darf Isopropanol neben Oxidationsmitteln stehen?',
-        answer:
-          'Nein. Entzündbare Flüssigkeiten getrennt von Oxidationsmitteln und Zündquellen lagern (TRGS 510 / Zusammenlagerung). Konkrete Abstände und LGK aus Ihrem SDB ableiten.',
-      },
-      {
-        question: 'Welche Handschuhe sind für IPA geeignet?',
-        answer:
-          'Material und Dicke hängen von Konzentration, Temperatur und Kontaktzeit ab. Butyl ist robust; Nitril nur bei kurzem Kontakt mit ausreichender Schichtdicke — Herstellerangaben im SDB Abschnitt 8 beachten.',
-      },
-    ],
   },
   {
     slug: 'bremsenreiniger-trgs-555',
@@ -115,23 +85,6 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     storageClassTrgs510: 'LGK 3 – Entzündbare Flüssigkeiten',
     classificationBasis:
       'Typische Einstufung chlorfreier Bremsenreiniger auf Kohlenwasserstoffbasis — Rezeptur und H-Sätze variieren je Hersteller (Aceton/Toluol-Anteile).',
-    faqItems: [
-      {
-        question: 'Warum unterscheiden sich H-Sätze bei Bremsenreinigern?',
-        answer:
-          'Produkte sind Gemische unterschiedlicher Lösemittel. Aspirationstoxizität (H304) ist bei vielen KW-basierten Reinigern relevant. Laden Sie Ihr Hersteller-SDB hoch, um exakte Sätze zu übernehmen.',
-      },
-      {
-        question: 'Darf ich Bremsenreiniger in geschlossenen Räumen sprühen?',
-        answer:
-          'Nur mit wirksamer Absaugung und Atemschutz. Dämpfe sind leicht entzündbar und können Benommenheit auslösen. TRGS 555-Entwurf ergänzen Sie um betriebliche Lüftungsmaßnahmen.',
-      },
-      {
-        question: 'Was ist der häufigste Unfallmechanismus?',
-        answer:
-          'Augenkontakt durch Spritznebel und Hautentfettung bei fehlenden Handschuhen. Erste-Hilfe-Angaben stammen aus dem SDB — im Entwurf vor Freigabe abgleichen.',
-      },
-    ],
   },
   {
     slug: 'schwefelsaure-trgs-555',
@@ -157,23 +110,6 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     storageClassTrgs510: 'LGK 1 – Säuren (TRGS 510)',
     classificationBasis:
       'Beispiel-Einstufung für wässrige Lösung ca. 40–50 % (H314). Höhere Konzentrationen (≥ 70 %) bleiben ätzend; unter 25 % kann die Einstufung abweichen — Konzentration im SDB prüfen.',
-    faqItems: [
-      {
-        question: 'Ab welcher Konzentration gilt Schwefelsäure als hautätzend?',
-        answer:
-          'Die CLP-Einstufung hängt von der Konzentration ab (Grenzwerte in Anhang I CLP). Diese Seite geht von ca. 40–50 % aus. Ihr Lieferanten-SDB ist maßgeblich.',
-      },
-      {
-        question: 'Welche Lagerklasse ist für Schwefelsäure vorgesehen?',
-        answer:
-          'In der Regel LGK 1 (Säuren), getrennt von Laugen (LGK 8B) und Oxidationsmitteln. Zusammenlagerung nur nach TRGS 510-Tabelle — im GQR-Tool prüfbar.',
-      },
-      {
-        question: 'Was tun bei Augenkontakt?',
-        answer:
-          'Sofort mindestens 10–15 Minuten mit viel Wasser spülen, Augenlid weit geöffnet halten, unverzüglich Arzt/S Notruf. Angaben im freigegebenen SDB Abschnitt 4 übernehmen.',
-      },
-    ],
   },
   {
     slug: 'natronlauge-trgs-555',
@@ -198,23 +134,6 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     storageClassTrgs510: 'LGK 8B – Nicht brennbare ätzende Gefahrstoffe',
     classificationBasis:
       'Beispiel für wässrige Natronlauge ca. 20 % (H314). Ab ca. 5 % können ätzende Einstufungen gelten; niedrigere Konzentrationen oft nur reizend (H315/H319).',
-    faqItems: [
-      {
-        question: 'Ist „Spülmaschinen-Entkalker“ immer Natronlauge?',
-        answer:
-          'Nicht zwingend — Produkte können unterschiedliche Laugen oder Gemische sein. Produktname und SDB entscheiden über H-Sätze und PSA.',
-      },
-      {
-        question: 'Darf Natronlauge mit Säuren gelagert werden?',
-        answer:
-          'Nein. Laugen (LGK 8B) getrennt von Säuren (LGK 1) lagern; bei Versäumen drohen gefährliche Reaktionen bei Leckagen. TRGS 510-Zusammenlagerung beachten.',
-      },
-      {
-        question: 'Welche Konzentration setzt diese Vorlage voraus?',
-        answer:
-          'Ca. 20 % NaOH in Wasser. Weicht Ihr Produkt ab, passen Sie Betriebsanweisung und PSA nach dem Hersteller-SDB an.',
-      },
-    ],
   },
   {
     slug: 'kuehlschmierstoff-trgs-555',
@@ -243,23 +162,6 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     storageClassTrgs510: 'LGK 12 – Nicht brennbare Flüssigkeiten',
     classificationBasis:
       'Typische wassermischbare KSS mit biociden/aminhaltigen Additiven — Sensibilisierung (H317) und Umweltgefährdung häufig; mineralölfreie Varianten können abweichen.',
-    faqItems: [
-      {
-        question: 'Warum riechen Kühlschmierstoffe manchmal „scharf“?',
-        answer:
-          'Biocide, pH-Puffer und Abbauprodukte können Geruch verursachen. Geruchsänderung kann auf Belastung hindeuten — SDB und betriebliche Grenzwerte (TRGS 611) beachten.',
-      },
-      {
-        question: 'Brauche ich eine Betriebsanweisung für jede Emulsion?',
-        answer:
-          'Ja, für jede bereitgestellte KSS-Qualität bzw. jedes Konzentrat, das Mitarbeitende handhaben. SDB-Upload liefert exakte H-Sätze und PSA.',
-      },
-      {
-        question: 'Wie oft muss der KSS geprüft werden?',
-        answer:
-          'Betrieblich nach Hersteller, TRGS 611 und Hygieneplan (pH, Keimzahl, Nitrit). Betriebsanweisung ergänzen Sie um Ihre Prüfintervalle.',
-      },
-    ],
   },
   {
     slug: 'adblue-trgs-555',
@@ -285,23 +187,6 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     storageClassTrgs510: 'LGK 12 – Nicht brennbare Flüssigkeiten',
     classificationBasis:
       'Typische Einstufung für AUS 32 (32,5 % Harnstoff in Wasser) nach gängigen SDBs; Reinheit nach ISO 22241 beachten.',
-    faqItems: [
-      {
-        question: 'Ist AdBlue ein Gefahrstoff?',
-        answer:
-          'Ja, wenn am Arbeitsplatz gehandhabt — auch wenn nicht entzündbar. Augenreizung und Atemwegsreizung sind typische Gefahren; Betriebsanweisung und Unterweisung sind erforderlich.',
-      },
-      {
-        question: 'Wie lagere ich AdBlue korrekt?',
-        answer:
-          'Kühl und geschützt vor direkter Sonne, saubere Schläuche/Behälter (Verunreinigung vermeidet SCR-Ausfall). LGK 12, getrennt von Diesel (LGK 3).',
-      },
-      {
-        question: 'Was passiert bei Augenkontakt?',
-        answer:
-          'Mehrere Minuten mit Wasser spülen, bei anhaltender Reizung Arzt aufsuchen — exakte Schritte aus Abschnitt 4 Ihres SDB in die freigegebene Betriebsanweisung übernehmen.',
-      },
-    ],
   },
   {
     slug: 'epoxidharz-trgs-555',
@@ -328,23 +213,6 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     storageClassTrgs510: 'LGK 10 – Nicht brennbare Flüssigkeiten (TRGS 510)',
     classificationBasis:
       'Beispiel für ungehärtetes Bisphenol-A-basiertes Epoxidharz (Komponente A); 2K-Systeme erfordern immer SDB für beide Komponenten.',
-    faqItems: [
-      {
-        question: 'Reicht eine Betriebsanweisung nur für das Harz?',
-        answer:
-          'Nein — Härter, Verdünnungsmittel und Additive sind eigene Gefahrstoffe mit eigenen SDBs. Dokumentieren Sie alle Komponenten im Verzeichnis.',
-      },
-      {
-        question: 'Warum ist Epoxidharz ein Hautsensibilisierer?',
-        answer:
-          'Ungehärtete Epoxide können allergische Kontaktdermatitis auslösen (H317). Bereits sensibilisierte Personen reagieren auch auf geringe Mengen — PSA konsequent nutzen.',
-      },
-      {
-        question: 'Wie entsorge ich Restharz?',
-        answer:
-          'Ausgehärtetes Material ist oft inert; flüssige Reste als problematischer Abfall nach EAK/SDB. Entsorgungshinweise aus Abschnitt 13 übernehmen.',
-      },
-    ],
   },
   {
     slug: 'wasserstoffperoxid-trgs-555',
@@ -371,23 +239,6 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     storageClassTrgs510: 'LGK 5.1B – Nicht brennbare oxidierende Gefahrstoffe',
     classificationBasis:
       'Beispiel für wässrige Lösung ca. 35 % (H271, H314). Handelsübliches „3-%-Wasserstoffperoxid“ ist deutlich schwächer eingestuft — Konzentration im SDB prüfen.',
-    faqItems: [
-      {
-        question: 'Ist Apotheken-Wasserstoffperoxid (3 %) genauso gefährlich?',
-        answer:
-          'Die Einstufung hängt stark von der Konzentration ab. Diese Seite bezieht sich auf ca. 35 %. Für 3 % gelten andere H-Sätze — SDB heranziehen.',
-      },
-      {
-        question: 'Warum getrennt von Brennmaterial lagern?',
-        answer:
-          'Oxidationsmittel können organische Stoffe entzünden (H271). TRGS 510: LGK 5.1 getrennt von LGK 3/LGK 4 — Zusammenlagerungstabelle nutzen.',
-      },
-      {
-        question: 'Welche Behälter sind geeignet?',
-        answer:
-          'Nur zugelassene, saubere Behälter aus kompatiblem Material (oft HDPE). Kontamination mit Metallen oder Staub kann Zersetzung/Gasentwicklung fördern — SDB Abschnitt 7.',
-      },
-    ],
   },
   {
     slug: 'dieselkraftstoff-trgs-555',
@@ -419,23 +270,6 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     storageClassTrgs510: 'LGK 3 – Entzündbare Flüssigkeiten',
     classificationBasis:
       'Typische CLP-Einstufung für Dieselkraftstoff (EN 590) — Bio-Anteile (FAME) können Zusatz-H-Sätze bringen.',
-    faqItems: [
-      {
-        question: 'Brauche ich eine Betriebsanweisung für den firmeneigenen Dieseltank?',
-        answer:
-          'Ja, wenn Mitarbeitende tanken oder Wartung am Tank durchführen. Aspirationstoxizität (H304) ist relevant — Unterweisung und PSA dokumentieren.',
-      },
-      {
-        question: 'Wie schütze ich Gewässer?',
-        answer:
-          'Rückhaltesysteme, Bindemittel vorhanden halten, LGK-3-Lager auf wasserdichtem Untergrund. Entsorgung nur über zugelassige Entsorger (SDB Abschnitt 13).',
-      },
-      {
-        question: 'Reicht der Sicherheitsdatenblatt-Abschnitt 7 für die Lagerung?',
-        answer:
-          'Abschnitt 7 ergänzt TRGS 510/LGK 3 — Betriebsanweisung fasst Verhalten am Arbeitsplatz zusammen; Freigabe durch SiFa/Arbeitgeber.',
-      },
-    ],
   },
   {
     slug: 'sanitaerreiniger-trgs-555',
@@ -466,28 +300,17 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     storageClassTrgs510: 'LGK 8B – Nicht brennbare ätzende Gefahrstoffe',
     classificationBasis:
       'Typischer salzsäurehaltiger Sanitärreiniger ca. 10–15 % HCl — surfaktanmodifizierte Produkte können abweichen; immer Hersteller-SDB verwenden.',
-    faqItems: [
-      {
-        question: 'Darf ich Sanitärreiniger mit Essig kombinieren?',
-        answer:
-          'Nein — saure Produkte nicht mischen; unvorhersehbare Reaktionen und Dämpfe. Nur ein Produkt laut Etikett; SDB Abschnitt 10 beachten.',
-      },
-      {
-        question: 'Warum ist Chlorgas ein Thema?',
-        answer:
-          'Salzsäurehaltige Reiniger reagieren mit hypochlorithaltigen Bleichmitteln zu Chlor. Betriebsanweisung muss Mischverbote und Lüftung klar benennen.',
-      },
-      {
-        question: 'Welche Konzentration gilt für diese Vorlage?',
-        answer:
-          'Ca. 10–15 % Salzsäure im Fertigprodukt. Schwächere „Eco“-Reiniger können nur reizend eingestuft sein — SDB hochladen und Werte anpassen.',
-      },
-    ],
   },
-] as const satisfies readonly HazardousSubstanceSeoEntry[];
+] as const satisfies readonly HazardousSubstanceBaseEntry[];
 
-export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
+export type HazardousSubstanceSlug = (typeof BASE_HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
 
-export const HAZARDOUS_SUBSTANCE_SLUGS: HazardousSubstanceSlug[] = HAZARDOUS_SUBSTANCE_SEO_ENTRIES.map(
+export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES: HazardousSubstanceSeoEntry[] =
+  BASE_HAZARDOUS_SUBSTANCE_SEO_ENTRIES.map((entry) => ({
+    ...entry,
+    ...BETRIEBSANWEISUNG_EXPERT_EXTENSIONS[entry.slug],
+  }));
+
+export const HAZARDOUS_SUBSTANCE_SLUGS = HAZARDOUS_SUBSTANCE_SEO_ENTRIES.map(
   (entry) => entry.slug,
-);
+) as HazardousSubstanceSlug[];

@@ -4,10 +4,17 @@ import { GHS_ASSETS } from '@/lib/ghs/ghs-assets';
 type Props = {
   codes: GhsPictogramCode[];
   size?: 'sm' | 'md';
+  variant?: 'light' | 'dark';
 };
 
-export function GhsPictogramGrid({ codes, size = 'md' }: Props) {
+export function GhsPictogramGrid({ codes, size = 'md', variant = 'light' }: Props) {
   const dim = size === 'sm' ? 40 : 52;
+  const figureClass =
+    variant === 'dark'
+      ? 'flex flex-col items-center gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-2'
+      : 'flex flex-col items-center gap-1 rounded-xl border border-slate-200 bg-white p-2 shadow-sm';
+  const captionClass =
+    variant === 'dark' ? 'text-[10px] font-bold uppercase tracking-wide text-[#8fa4c0]' : 'text-[10px] font-bold uppercase tracking-wide text-slate-500';
 
   return (
     <ul className="flex flex-wrap gap-3" role="list">
@@ -15,7 +22,7 @@ export function GhsPictogramGrid({ codes, size = 'md' }: Props) {
         const asset = GHS_ASSETS[code];
         return (
           <li key={code}>
-            <figure className="flex flex-col items-center gap-1 rounded-xl border border-slate-200 bg-white p-2 shadow-sm">
+            <figure className={figureClass}>
               <img
                 src={asset.src}
                 alt={`${code} ${asset.label}`}
@@ -23,9 +30,7 @@ export function GhsPictogramGrid({ codes, size = 'md' }: Props) {
                 height={dim}
                 loading="lazy"
               />
-              <figcaption className="text-[10px] font-bold uppercase tracking-wide text-slate-500">
-                {code}
-              </figcaption>
+              <figcaption className={captionClass}>{code}</figcaption>
             </figure>
           </li>
         );
