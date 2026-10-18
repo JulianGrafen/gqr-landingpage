@@ -10,7 +10,7 @@ export const DEFAULT_MANUAL_VS_GQR_ROWS: DeepinfoComparisonRow[] = [
  {
  criterion: 'Aktualität & Revisionen',
  manual: 'Versionen per E-Mail/Ordner — kein klarer Revisionsverlauf',
- gqr: 'Änderungen revisionssicher mit Zeitstempel und Historie',
+ gqr: 'Änderungen mit Revisionsverlauf mit Zeitstempel und Historie',
  },
  {
  criterion: 'Zusammenlagerung (TRGS 510)',

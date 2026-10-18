@@ -101,10 +101,10 @@ export function BetriebsanweisungTeaserDocument({ entry }: Props) {
           <div className="absolute inset-0 flex items-center justify-center p-4">
             <div className="max-w-sm rounded-2xl border border-white/15 bg-[#0f1e35]/95 p-6 text-center shadow-xl backdrop-blur-sm">
               <Lock className="mx-auto h-8 w-8 text-teal-300" aria-hidden />
-              <h3 className="mt-3 text-lg font-bold text-[#f0f6ff]">Vollständigen TRGS-555-Entwurf freischalten</h3>
+              <h3 className="mt-3 text-lg font-bold text-[#f0f6ff]">TRGS-555-Muster-Entwurf zur Vorprüfung freischalten</h3>
               <p className="mt-2 text-sm leading-relaxed text-[#8fa4c0]">
-                Schutzmaßnahmen, PSA-Vorgaben und Notfallmaßnahmen werden automatisiert aus dem Sicherheitsdatenblatt
-                Ihres Lieferanten ausgelesen — zur Prüfung durch die SiFa / den Arbeitgeber.
+                Relevante Abschnitte aus Ihrem SDB können KI-gestützt in den Entwurf übernommen werden — Inhalt und
+                PSA erst nach Prüfung und Freigabe durch die SiFa / den Arbeitgeber verbindlich.
               </p>
               <Link
                 href={registerUrl}

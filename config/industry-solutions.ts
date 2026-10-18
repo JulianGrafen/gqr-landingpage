@@ -89,7 +89,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  metaTitle:
  'Gefahrstoffverzeichnis Malerbetrieb & Betriebsanweisung Maler',
  metaDescription:
- 'Gefahrstoffverzeichnis Malerbetrieb: Lösemittel, 2K-Systeme, PSA – Betriebsanweisungen aus dem Sicherheitsdatenblatt, GefStoffV-konform per KI.',
+ 'Gefahrstoffverzeichnis Malerbetrieb: Lösemittel, 2K-Systeme, PSA – Betriebsanweisungen aus dem Sicherheitsdatenblatt, nach § 6 GefStoffV strukturiert per KI.',
  heroText:
  'Lösemittel, wasserverdünnbare Lacke oder 2K-Systeme: Was auf der Baustelle wirklich ankommt, muss im Verzeichnis und in der PSA nachvollziehbar sein.',
  typischeStoffe: [
@@ -127,7 +127,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  spezifischerVorteil:
  'Neue oder aktualisierte Sicherheitsdatenblätter werden in Sekunden strukturiert übernommen – weniger Fehler bei H/P-Sätzen und bessere Aktualität für Unterweisung und Genehmigungsnachweise.',
  handwerkAbsatz:
- 'Labore arbeiten mit vielen Stoffen geringer Menge aber hoher Einstufungsvielfalt. Revisionssicheres Führen des Gefahrstoffverzeichnisses und schnelle Synchronisierung bei Lieferantenupdates sind entscheidend, ohne den Fachkräfte-Alltag zu blockieren.',
+ 'Labore arbeiten mit vielen Stoffen geringer Menge aber hoher Einstufungsvielfalt. mit Revisionsverlaufes Führen des Gefahrstoffverzeichnisses und schnelle Synchronisierung bei Lieferantenupdates sind entscheidend, ohne den Fachkräfte-Alltag zu blockieren.',
  brancheGenitiv: 'Labor',
  blogPostHref: '/blog/laborbetrieb-gefahrstoff-blog.html',
  },

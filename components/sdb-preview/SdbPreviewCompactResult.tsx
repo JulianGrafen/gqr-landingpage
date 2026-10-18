@@ -28,6 +28,33 @@ export function SdbPreviewCompactResult({ variant, teaser, embedded = false }: P
     return null;
   }
 
+  const ghsBlock = embedded ? (
+    <div className="mt-2 flex items-center justify-center gap-2">
+      {teaser.ghsPictograms.map((code) => {
+        const normalized = normalizeGhsCode(code) ?? code.toUpperCase();
+        const asset = GHS_ASSETS[normalized as keyof typeof GHS_ASSETS];
+        if (!asset) return null;
+        return (
+          <img
+            key={code}
+            src={asset.src}
+            alt=""
+            width={36}
+            height={36}
+            className="rounded-sm"
+            loading="lazy"
+          />
+        );
+      })}
+    </div>
+  ) : (
+    <div className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+      {teaser.ghsPictograms.map((code) => (
+        <GhsPictogramBadge key={code} code={code} variant="next" />
+      ))}
+    </div>
+  );
+
   const extractedBody = (
     <>
       <h4 className={`font-black leading-snug text-[#f0f6ff] ${embedded ? 'text-base' : 'text-lg'}`}>
@@ -37,72 +64,55 @@ export function SdbPreviewCompactResult({ variant, teaser, embedded = false }: P
         <p className="mt-1 text-xs leading-relaxed text-[#8fa4c0]">{teaser.manufacturer}</p>
       ) : null}
 
-      {teaser.signalWord ? (
-        <p className="mt-2 text-sm">
-          Signalwort:{' '}
-          <span className="font-bold text-red-400">{teaser.signalWord}</span>
+      {ghsBlock}
+
+      {teaserLocked ? (
+        <p className="mt-2 border-t border-white/10 pt-2 text-xs leading-snug text-[#8fa4c0]">
+          Gefahrenhinweise und Signalwort — Entwurf nach Freigabe durch SiFa / Arbeitgeber in der App.
         </p>
-      ) : null}
-
-      {embedded ? (
-        <div className="mt-2 flex items-center justify-center gap-2">
-          {teaser.ghsPictograms.map((code) => {
-            const normalized = normalizeGhsCode(code) ?? code.toUpperCase();
-            const asset = GHS_ASSETS[normalized as keyof typeof GHS_ASSETS];
-            if (!asset) return null;
-            return (
-              <img
-                key={code}
-                src={asset.src}
-                alt=""
-                width={36}
-                height={36}
-                className="rounded-sm"
-                loading="lazy"
-              />
-            );
-          })}
-        </div>
       ) : (
-        <div className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
-          {teaser.ghsPictograms.map((code) => (
-            <GhsPictogramBadge key={code} code={code} variant="next" />
-          ))}
-        </div>
+        <>
+          {teaser.signalWord ? (
+            <p className="mt-2 text-sm">
+              Signalwort:{' '}
+              <span className="font-bold text-red-400">{teaser.signalWord}</span>
+            </p>
+          ) : null}
+
+          {hazardLines.length > 0 ? (
+            embedded ? (
+              <p className="mt-2 line-clamp-2 border-t border-white/10 pt-2 text-xs leading-snug text-[#c8d4e6]">
+                {hazardLines[0]}
+              </p>
+            ) : (
+              <ul className="mt-3 space-y-1 border-t border-white/10 pt-3 text-xs leading-relaxed text-[#c8d4e6]">
+                {hazardLines.map((line) => (
+                  <li key={line} className="list-none">
+                    {line}
+                  </li>
+                ))}
+              </ul>
+            )
+          ) : null}
+
+          {!embedded && detailsOpen && identification ? (
+            <pre className="mt-3 whitespace-pre-wrap rounded-lg border border-white/10 bg-[#0f1e35]/60 p-3 text-xs text-[#8fa4c0]">
+              {identification.body}
+            </pre>
+          ) : null}
+
+          {!embedded ? (
+            <button
+              type="button"
+              className="mt-3 text-xs font-semibold text-teal-300 hover:underline"
+              aria-expanded={detailsOpen}
+              onClick={() => setDetailsOpen((v) => !v)}
+            >
+              {detailsOpen ? 'Details ausblenden' : 'Details anzeigen'}
+            </button>
+          ) : null}
+        </>
       )}
-
-      {hazardLines.length > 0 ? (
-        embedded ? (
-          <p className="mt-2 line-clamp-2 border-t border-white/10 pt-2 text-xs leading-snug text-[#c8d4e6]">
-            {hazardLines[0]}
-          </p>
-        ) : (
-          <ul className="mt-3 space-y-1 border-t border-white/10 pt-3 text-xs leading-relaxed text-[#c8d4e6]">
-            {hazardLines.map((line) => (
-              <li key={line} className="list-none">
-                {line}
-              </li>
-            ))}
-          </ul>
-        )
-      ) : null}
-
-      {!embedded && detailsOpen && identification ? (
-        <pre className="mt-3 whitespace-pre-wrap rounded-lg border border-white/10 bg-[#0f1e35]/60 p-3 text-xs text-[#8fa4c0]">
-          {identification.body}
-        </pre>
-      ) : null}
-
-      {!embedded && !teaserLocked ? (
-        <button
-          type="button"
-          className="mt-3 text-xs font-semibold text-teal-300 hover:underline"
-          aria-expanded={detailsOpen}
-          onClick={() => setDetailsOpen((v) => !v)}
-        >
-          {detailsOpen ? 'Details ausblenden' : 'Details anzeigen'}
-        </button>
-      ) : null}
     </>
   );
 
@@ -116,7 +126,7 @@ export function SdbPreviewCompactResult({ variant, teaser, embedded = false }: P
       }
     >
       <div className={embedded ? 'px-3 py-3' : 'flex-1 overflow-y-auto px-4 py-4'}>
-        <p className="text-[10px] font-bold uppercase tracking-wider text-[#ff6b35]">Extraktion abgeschlossen</p>
+        <p className="text-[10px] font-bold uppercase tracking-wider text-[#ff6b35]">SDB-Vorschau (unverbindlich)</p>
 
         {teaserLocked ? (
           <div
@@ -128,7 +138,7 @@ export function SdbPreviewCompactResult({ variant, teaser, embedded = false }: P
             <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-[#0f1e35]/20 px-3 py-2">
               <p className="flex max-w-[14rem] items-center justify-center gap-1.5 rounded-full border border-white/15 bg-[#0f1e35]/95 px-3 py-1.5 text-center text-[10px] font-semibold leading-snug text-teal-300 shadow-lg">
                 <Lock className="h-3 w-3 shrink-0" strokeWidth={2.5} aria-hidden />
-                Vollständige Auswertung in der App
+                Weitere Abschnitte nach Freigabe in der App
               </p>
             </div>
           </div>

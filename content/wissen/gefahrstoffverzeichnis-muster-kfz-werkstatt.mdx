@@ -27,7 +27,7 @@ comparison:
     - criterion: Lagerprüfung (TRGS 510)
       manual: Meister muss die Kreuztabelle der TRGS 510 händisch studieren.
       gqr: Automatische Logik. Warnung bei Zusammenlagerungsverboten durch Lagerklassen.
-    - criterion: Revisionssicherheit (Audit)
+    - criterion: Nachweisführung mit Revisionsverlauf (Audit)
       manual: Überschriebene Excel-Zeilen haben keine gerichtsfeste Historie.
       gqr: Audit-Log. Jede Sicherheitsdatenblatt-Änderung und Freigabe mit unveränderbarem Zeitstempel.
 faq:
@@ -38,7 +38,7 @@ faq:
   - question: Hilft GQR bei TRGS 510 in der Werkstatt?
     answer: Ja. Das manuelle Suchen in Zusammenlagerungsmatrizen ist aufwendig. GQR erfasst die Lagerklassen direkt aus den hochgeladenen Sicherheitsdatenblätter und unterstützt die Zusammenlagerungslogik aktiv. Das bedeutet weniger Matrix-Suchen bei der Lagerplanung von Ölen, brennbaren Gasen und entzündlichen Bremsenreinigern.
   - question: Kann ich in GQR auch Produkte mit schnellem Wechsel (z. B. verschiedene Lackfarben) effizient pflegen?
-    answer: Softwarelösungen sind für Produktwechsel ausgelegt. Wird ein Produkt ausgemustert, wird es mit einem Klick revisionssicher archiviert (nicht gelöscht). Das neue Produkt wird per Sicherheitsdatenblatt-Upload in Sekunden als Ersatz angelegt, wobei die Historie für eventuelle spätere Nachfragen intakt bleibt.
+    answer: Softwarelösungen sind für Produktwechsel ausgelegt. Wird ein Produkt ausgemustert, wird es mit einem Klick mit Revisionsverlauf archiviert (nicht gelöscht). Das neue Produkt wird per Sicherheitsdatenblatt-Upload in Sekunden als Ersatz angelegt, wobei die Historie für eventuelle spätere Nachfragen intakt bleibt.
 ---
 
 ## Der Ultimate Guide: Gefahrstoffmanagement in der Kfz-Werkstatt
@@ -55,7 +55,7 @@ Viele Werkstattinhaber und Serviceleiter suchen online nach einem Muster für di
 
 Ein statisches Excel-Muster hat systembedingte Nachteile, die im Werkstattalltag schnell zu Haftungsfallen werden:
 
-- **Fehlende Revisionssicherheit:** Wenn der Lieferant die Rezeptur des Bremsenreinigers ändert, wird in der Regel die alte Excel-Zeile überschrieben. Kommt es zu einem Hautekzem bei einem Mechatroniker, kann die Werkstatt nicht mehr beweisen, auf welchem Informationsstand der Mitarbeiter vor zwei Jahren gearbeitet hat.
+- **Fehlende Nachweisführung mit Revisionsverlauf:** Wenn der Lieferant die Rezeptur des Bremsenreinigers ändert, wird in der Regel die alte Excel-Zeile überschrieben. Kommt es zu einem Hautekzem bei einem Mechatroniker, kann die Werkstatt nicht mehr beweisen, auf welchem Informationsstand der Mitarbeiter vor zwei Jahren gearbeitet hat.
 - **Keine Warnfunktion bei veralteten Sicherheitsdatenblätter:** Sicherheitsdatenblätter veralten. Ein Excel-Muster schlägt keinen Alarm, wenn ein Datenblatt seit fünf Jahren nicht erneuert wurde.
 - **Entkopplung von der Realität:** In der Tabelle steht der Stoff, doch das dazugehörige, 20-seitige Sicherheitsdatenblatt liegt ausgedruckt in einem Leitz-Ordner im Meisterbüro. Ein Mechaniker unter der Hebebühne hat im Falle einer Augenverätzung durch Bremsflüssigkeit keinen sofortigen Zugriff auf die Erste-Hilfe-Maßnahmen.
 - **Blinder Fleck für Entstehungsstoffe:** Standard-Muster listen nur gekaufte Produkte auf (Fassware, Dosen). Gefahrstoffe, die bei der Arbeit erst entstehen – wie Schweißrauche oder **Dieselmotoremissionen (DME)** – fehlen in diesen Tabellen meist komplett, obwohl sie die höchsten Gesundheitsrisiken bergen.

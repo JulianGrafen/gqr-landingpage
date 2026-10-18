@@ -23,10 +23,17 @@ export function BetriebsanweisungSdbSidebar({ substanceName }: Props) {
       {scanPhase === 'idle' ? (
         <p className="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
           Sicherheitsdatenblätter variieren je nach Lieferant und Konzentration. Laden Sie das PDF Ihres
-          Lieferanten hoch, um die exakten Werte automatisch einzusetzen.
+          Lieferanten hoch, um Angaben aus Ihrem Lieferanten-PDF als Vorschlag in den Entwurf zu
+          übernehmen — nach fachlicher Prüfung und Freigabe durch die SiFa / den Arbeitgeber.
         </p>
       ) : null}
       <SdbLivePreviewDropzone variant="next" embedded className="mt-4" onPhaseChange={setScanPhase} />
+      {scanPhase === 'idle' ? (
+        <p className="mt-3 text-[11px] leading-snug text-[#8fa4c0]">
+          KI-gestützter Entwurf (gemäß TRGS 555) · Vorprüfung zur fachlichen Freigabe durch die SiFa /
+          den Arbeitgeber (§ 14 GefStoffV)
+        </p>
+      ) : null}
       {scanPhase === 'idle' ? (
       <div className="mt-4 flex flex-col gap-1.5 text-xs text-[#8fa4c0]" role="group" aria-label="Vertrauensmerkmale">
         <span className="flex items-center gap-1.5">

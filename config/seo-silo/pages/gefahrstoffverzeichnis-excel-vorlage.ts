@@ -23,7 +23,7 @@ export const EXCEL_VORLAGE_SILO_CONFIG: SeoSiloPageConfig = {
  lead:
  'Sie suchen eine Vorlage für Ihr Gefahrstoffverzeichnis? Unsere XLSX deckt die Pflichtfelder ab, die SiFa und Prüfer typischerweise erwarten — als pragmatischer Einstieg vor dem nächsten BG-Audit.',
  proofLine:
- 'Wichtig vorab: Excel erfüllt die Informationspflicht nach § 6 GefStoffV nicht automatisch. Ohne revisionssichere Sicherheitsdatenblatt-Historie und nachvollziehbare Änderungen riskieren Betriebe Nachweise bei Behörden- und BG-Kontrollen — besonders seit der CLP-Anpassungspflicht für Gemische (Übergangsfrist bis Mai 2026).',
+ 'Wichtig vorab: Excel erfüllt die Informationspflicht nach § 6 GefStoffV nicht automatisch. Ohne mit Revisionsverlaufe Sicherheitsdatenblatt-Historie und nachvollziehbare Änderungen riskieren Betriebe Nachweise bei Behörden- und BG-Kontrollen — besonders seit der CLP-Anpassungspflicht für Gemische (Übergangsfrist bis Mai 2026).',
  primaryCta: {
  label: 'Gratis Vorlage sichern',
  href: '#vorlage-download',
@@ -31,7 +31,7 @@ export const EXCEL_VORLAGE_SILO_CONFIG: SeoSiloPageConfig = {
  },
  trustBullets: [
  'Keine Kreditkarte',
- 'Sofort in Excel nutzbar',
+ 'Direkt in Excel nutzbar',
  'Struktur für Gefährdungsbeurteilung nach TRGS 400',
  ],
  },
@@ -70,7 +70,7 @@ export const EXCEL_VORLAGE_SILO_CONFIG: SeoSiloPageConfig = {
  {
  question: 'Reicht eine Excel-Vorlage für ein Gefahrstoffverzeichnis nach Vorgaben von § 6 GefStoffV & TRGS?',
  answer:
- 'Als Übergangslösung für wenige Stoffe ja — als dauerhaftes System selten. § 6 GefStoffV verlangt aktuelle Informationen aus Sicherheitsdatenblättern. Excel speichert keine revisionssichere Historie: Wer welche Zelle wann geändert hat, lässt sich bei Audits kaum belegen. Fehlt die Sicherheitsdatenblatt-Version hinter einem Eintrag, entsteht Haftungsrisiko — nicht wegen der Vorlage, sondern wegen fehlender Nachweiskette.',
+ 'Als Übergangslösung für wenige Stoffe ja — als dauerhaftes System selten. § 6 GefStoffV verlangt aktuelle Informationen aus Sicherheitsdatenblättern. Excel speichert keine Historie mit Revisionsverlauf: Wer welche Zelle wann geändert hat, lässt sich bei Audits kaum belegen. Fehlt die Sicherheitsdatenblatt-Version hinter einem Eintrag, entsteht Haftungsrisiko — nicht wegen der Vorlage, sondern wegen fehlender Nachweiskette.',
  },
  {
  question: 'Warum scheitern Betriebe bei BG-Kontrollen trotz Excel-Liste?',
@@ -99,7 +99,7 @@ export const EXCEL_VORLAGE_SILO_CONFIG: SeoSiloPageConfig = {
  },
  ],
  closingCta: {
- headline: 'Excel war der Start — GQR hält Sie audit-sicher',
+ headline: 'Excel war der Start — GQR hält Sie nachweisorientiert',
  subline:
  'Wenn Sicherheitsdatenblatt-Revisionen, CLP-Anpassungen und BG-Nachweise mehr Zeit kosten als Ihre SiFa einplanen kann: testen Sie die automatisierte Alternative.',
  primaryCta: {
@@ -116,7 +116,7 @@ export const EXCEL_VORLAGE_COMPARISON = {
  targetAudience: 'Betriebe mit Excel-Vorlage oder Tabellenkalkulation',
  rows: [
  {
- criterion: 'Sicherheitsdatenblatt-Historie & Revisionssicherheit',
+ criterion: 'Sicherheitsdatenblatt-Historie & Nachweisführung mit Revisionsverlauf',
  manual: 'Dateiversionen auf Laufwerk — keine gerichtsfeste Änderungskette',
  gqr: 'Aktivitätsprotokoll: wer, wann, welche Sicherheitsdatenblatt-Felder geändert hat',
  },

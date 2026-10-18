@@ -9,7 +9,7 @@ const canonical = `${SITE_URL}/betriebsanweisung/`;
 export const metadata: Metadata = {
   title: 'Betriebsanweisungen nach TRGS 555 — Stoffübersicht',
   description:
-    'Betriebsanweisung-Entwürfe für typische Gefahrstoffe: Aceton, Isopropanol, Bremsenreiniger und mehr — KI-gestützter Entwurf mit SDB-Upload und SiFa-Freigabe.',
+    'Betriebsanweisung-Entwürfe für typische Gefahrstoffe: Aceton, Isopropanol, Bremsenreiniger und mehr — KI-gestützter Entwurf (gemäß TRGS 555) mit SDB-Upload. Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).',
   alternates: { canonical },
   openGraph: {
     title: 'Betriebsanweisungen nach TRGS 555 — Stoffübersicht',

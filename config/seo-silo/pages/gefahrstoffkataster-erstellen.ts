@@ -41,7 +41,7 @@ export const KATASTER_ERSTELLEN_STEPS: SeoSiloStep[] = [
  description:
  'Lagerklassen zuordnen und Zusammenlagerung prüfen. Konflikte zwischen Stoffen im selben Regal sind ein häufiger Mangel bei Feuerwehr- und Umweltbegehungen — Excel erkennt sie nicht zuverlässig.',
  gqrHint:
- 'Automatische Lagerkonflikt-Warnung pro Lagerort mit Regeltext — statt manueller Matrix.',
+ 'Hinweise zu Lagerkonflikten pro Lagerort mit Regeltext — statt manueller Matrix.',
  },
  {
  id: 'ba',
@@ -101,14 +101,14 @@ export const KATASTER_ERSTELLEN_SILO_CONFIG: SeoSiloPageConfig = {
  },
  trustBullets: [
  '6 Schritte nach TRGS-Logik',
- 'Revisionssicher von Anfang an',
+ 'mit Revisionsverlauf von Anfang an',
  'Kostenloser Einstieg ohne Kreditkarte',
  ],
  },
  features: {
  sectionTitle: 'Was in jedem Schritt dokumentiert sein muss',
  sectionSubline:
- 'Pflichtinhalte kompakt — ohne Anspruch auf Vollständigkeit aller Einzelfragen Ihrer SiFa.',
+ 'Pflichtinhalte kompakt — ohne Anspruch auf alle Einzelfragen aller Einzelfragen Ihrer SiFa.',
  items: [
  {
  id: 'sdb-bezug',
@@ -140,12 +140,12 @@ export const KATASTER_ERSTELLEN_SILO_CONFIG: SeoSiloPageConfig = {
  {
  question: 'Muss ich zuerst das Verzeichnis oder die Gefährdungsbeurteilung erstellen?',
  answer:
- 'Das Verzeichnis nach § 6 GefStoffV ist die Datenbasis — die Gefährdungsbeurteilung nach TRGS 400 baut darauf auf. Ohne vollständiges, aktuelles Verzeichnis fehlen der GB belastbare Eingangsdaten. In der Praxis parallel starten ist möglich, aber die GB darf nicht auf unvollständigen Listen basieren.',
+ 'Das Verzeichnis nach § 6 GefStoffV ist die Datenbasis — die Gefährdungsbeurteilung nach TRGS 400 baut darauf auf. Ohne aktuelles, nachvollziehbares Verzeichnis fehlen der GB belastbare Eingangsdaten. In der Praxis parallel starten ist möglich, aber die GB darf nicht auf unvollständigen Listen basieren.',
  },
  {
  question: 'Reicht Excel zum Gefahrstoffkataster erstellen?',
  answer:
- 'Als Erstaufsetzen mit wenigen Stoffen zeitweise ja — als dauerhaftes System selten. Excel ist nicht revisionssicher, warnt nicht bei Sicherheitsdatenblatt-Updates und verknüpft keine PDF-Historie. Nach dem ersten Audit mit Beanstandungen suchen viele Betriebe Software — siehe auch unsere Excel-Vorlage als Übergang.',
+ 'Als Erstaufsetzen mit wenigen Stoffen zeitweise ja — als dauerhaftes System selten. Excel ist nicht mit Revisionsverlauf, warnt nicht bei Sicherheitsdatenblatt-Updates und verknüpft keine PDF-Historie. Nach dem ersten Audit mit Beanstandungen suchen viele Betriebe Software — siehe auch unsere Excel-Vorlage als Übergang.',
  },
  {
  question: 'Was gehört mindestens ins Gefahrstoffverzeichnis?',
@@ -177,7 +177,7 @@ export const KATASTER_ERSTELLEN_SILO_CONFIG: SeoSiloPageConfig = {
  href: 'https://app.gefahrstoff-qr.de/register',
  external: true,
  },
- disclaimer: 'Unverbindlich · Keine Kreditkarte · Revisionssicheres Aktivitätsprotokoll',
+ disclaimer: 'Unverbindlich · Keine Kreditkarte · Aktivitätsprotokoll zur Nachverfolgung',
  },
 };
 
@@ -192,7 +192,7 @@ export const KATASTER_ERSTELLEN_COMPARISON = {
  {
  criterion: 'Schritt 4: TRGS 510',
  manual: 'Matrix manuell, Konflikte leicht übersehen',
- gqr: 'Automatische Warnung pro Lagerort',
+ gqr: 'Hinweise zu Konflikten pro Lagerort',
  },
  {
  criterion: 'Schritt 5: Betriebsanweisung',

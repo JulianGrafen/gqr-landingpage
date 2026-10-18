@@ -16,13 +16,13 @@
  "CLP-Übergangsfrist Gemische Mai 2026"
  ],
  "painPoints": [
- "Excel ist nicht revisionssicher — Sicherheitsdatenblatt-Historien fehlen bei BG-Audits",
+ "Excel ist nicht mit Revisionsverlauf — Sicherheitsdatenblatt-Historien fehlen bei BG-Audits",
  "Manuelle H-/P-Satz-Pflege bei CLP-Anpassungspflicht",
  "Keine Nachweiskette wer wann welche Zelle geändert hat"
  ],
  "gqrSolutionAngles": [
- "Gratis-Vorlage als Einstieg, GQR als audit-sichere Alternative",
- "Automatische Sicherheitsdatenblatt-Extraktion statt Copy-Paste",
+ "Gratis-Vorlage als Einstieg, GQR als nachweisorientierte Alternative",
+ "KI-gestützte Sicherheitsdatenblatt-Extraktion statt Copy-Paste",
  "Aktivitätsprotokoll statt Tabellen-Chaos"
  ]
  },
@@ -49,7 +49,7 @@
  ],
  "gqrSolutionAngles": [
  "ROI durch KI-Sicherheitsdatenblatt-Import",
- "One-Click-Export für Behördenkontrollen",
+ "Export für Audits und interne Nachweise",
  "Multi-Standort-Compliance-KPIs"
  ]
  },
@@ -103,7 +103,7 @@
  "gqrSolutionAngles": [
  "How-To nach TRGS-Vorgaben mit GQR als Beschleuniger",
  "Sicherheitsdatenblatt-Upload statt manueller Katalogisierung",
- "Revisionssichere Dokumentation von Anfang an"
+ "Dokumentation mit Revisionsverlauf von Anfang an"
  ]
  }
  ]

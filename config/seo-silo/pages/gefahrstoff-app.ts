@@ -54,7 +54,7 @@ export const GEFAHrstoff_APP_SILO_CONFIG: SeoSiloPageConfig = {
  },
  {
  id: 'ghs',
- title: 'GHS, H- und P-Sätze sofort',
+ title: 'GHS und Hinweise aus freigegebenem Datensatz',
  description:
  'Kennzeichnung und Handlungshinweise aus dem hinterlegten Sicherheitsdatenblatt — relevant bei CLP-Anpassungen bis Mai 2026.',
  },

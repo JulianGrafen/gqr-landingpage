@@ -29,13 +29,14 @@ export function SdbUnlockCard({ variant, previewToken, compact = false }: Props)
     return (
       <div className="text-center">
         <p className="text-[10px] leading-snug text-[#8fa4c0]">
-          KI-gestützter Entwurf — Vorprüfung zur fachlichen Freigabe durch SiFa / Arbeitgeber
+          KI-gestützter Entwurf (gemäß TRGS 555) — Vorprüfung zur fachlichen Freigabe durch die SiFa /
+          den Arbeitgeber (§ 14 GefStoffV)
         </p>
         <a
           className="gqr-cta-primary gqr-cta-primary--md mt-2 inline-flex w-full justify-center py-2.5 text-sm no-underline"
           href={href}
         >
-          Kompletten Entwurf freischalten
+          Entwurf zur Vorprüfung freischalten
         </a>
       </div>
     );
@@ -47,13 +48,14 @@ export function SdbUnlockCard({ variant, previewToken, compact = false }: Props)
         Vorprüfung zur fachlichen Freigabe
       </p>
       <h3 className={variant === 'static' ? 'sdb-live-preview-unlock__title' : 'gqr-section-title mt-2 text-xl sm:text-2xl'}>
-        Ihr TRGS-555-Entwurf &amp; Notfall-QR-Code sind vorbereitet
+        Ihr Vorschlag für TRGS-555-Entwurf &amp; QR-Notfallpass liegt bereit
       </h3>
       <p className={variant === 'static' ? 'sdb-live-preview-unlock__text' : 'gqr-section-sub mt-3 text-sm'}>
-        Schalten Sie jetzt das vollständige Dokument zur Prüfung durch die SiFa / den Arbeitgeber (§ 14 GefStoffV) frei — ohne Verkaufsgespräch.
+        Schalten Sie den Entwurf zur fachlichen Prüfung und Freigabe durch die SiFa / den Arbeitgeber (§ 14
+        GefStoffV) in der App frei — ohne Verkaufsgespräch.
       </p>
       <a className={primaryCtaClass(variant)} href={href}>
-        Kompletten Entwurf &amp; Kataster-Zugang freischalten
+        Entwurf &amp; Kataster-Zugang zur Vorprüfung freischalten
       </a>
       <p className={variant === 'static' ? 'sdb-live-preview-unlock__fine' : 'mt-3 text-xs text-[#8fa4c0]'}>
         KI-gestützter Entwurf (gemäß TRGS 555) — keine automatische Rechtsgültigkeit.

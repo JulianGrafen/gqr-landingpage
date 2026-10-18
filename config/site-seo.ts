@@ -9,12 +9,12 @@ export const SITE_URL = 'https://gefahrstoff-qr.de';
 export const HOME_SEO = {
  title: 'Cloud Gefahrstoffmanagement Software statt Excel | Gefahrstoff-QR',
  description:
- 'Cloud Gefahrstoffmanagement Software im Browser: KI-Sicherheitsdatenblatt-Import, QR-Notfallpass und revisionssicheres Verzeichnis nach § 6 — ohne Installation. Kostenlos testen.',
+ 'Cloud Gefahrstoffmanagement Software im Browser: KI-Sicherheitsdatenblatt-Import, QR-Notfallpass und Verzeichnis mit Revisionsverlauf nach § 6 — ohne Installation. Kostenlos testen.',
  h1: 'Cloud Gefahrstoffmanagement Software – die nächste Stufe nach Excel',
  heroSubline:
- 'Browserbasiert in der Cloud statt fehleranfälliger Excel-Vorlagen: KI extrahiert Daten aus dem Sicherheitsdatenblatt automatisch, führt Ihr Verzeichnis revisionssicher und spart Stunden Abtipp-Arbeit.',
+ 'Browserbasiert in der Cloud statt fehleranfälliger Excel-Vorlagen: KI extrahiert Daten aus dem Sicherheitsdatenblatt automatisch, führt Ihr Verzeichnis mit Revisionsverlauf und spart Stunden Abtipp-Arbeit.',
  softwareDescription:
- 'Cloud Gefahrstoffmanagement Software: KI extrahiert Sicherheitsdatenblätter automatisch im Browser — die nächste Stufe nach Excel mit revisionssicherem Verzeichnis, Revisionsverlauf und QR-Notfallpass inklusive.',
+ 'Cloud Gefahrstoffmanagement Software: KI extrahiert Sicherheitsdatenblätter automatisch im Browser — die nächste Stufe nach Excel mit mit Revisionsverlaufem Verzeichnis, Revisionsverlauf und QR-Notfallpass inklusive.',
 } as const;
 
 /** Lead-Magnet: Gratis Excel-Vorlage Download — siehe config/vorlage-landing.ts */
@@ -22,7 +22,7 @@ export const VORLAGE_DOWNLOAD_SEO = {
  path: '/gefahrstoffverzeichnis-excel-vorlage/',
  title: 'Excel-Vorlage Gefahrstoffverzeichnis: Gratis Download | GQR',
  description:
- 'Gratis Excel-Vorlage: Gefahrstoffverzeichnis für Audit & Gefährdungsbeurteilung. GefStoffV-konform, sofort downloaden.',
+ 'Gratis Excel-Vorlage: Gefahrstoffverzeichnis für Audit & Gefährdungsbeurteilung. Pflichtfelder-orientiert · Download ohne Registrierung.',
 } as const;
 
 /** Expert-Landing Excel-Intent — Title 2 + Description 1 */

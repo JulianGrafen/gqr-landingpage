@@ -3,8 +3,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run validate:betriebsanweisung && npm run generate:sitemap && next build",
-    "build:github-pages": "npm run build:sdb-preview && npm run validate:betriebsanweisung && npm run generate:sitemap && next build && node scripts/sync-github-pages.mjs",
+    "build": "npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run generate:sitemap && next build",
+    "build:github-pages": "npm run build:sdb-preview && npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run generate:sitemap && next build && node scripts/sync-github-pages.mjs",
+    "validate:legal-copy": "node scripts/validate-legal-copy.mjs",
     "validate:betriebsanweisung": "npx tsx scripts/validate-betriebsanweisung-entries.ts",
     "generate:sitemap": "npx tsx scripts/generate-sitemap.ts",
     "typecheck": "tsc --noEmit",
@@ -15,6 +16,7 @@
     "verify:sdb-preview": "node scripts/verify-sdb-preview.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "sync:home-faq-jsonld": "npx tsx scripts/sync-home-faq-jsonld.ts",
+    "sync:home-faq": "npm run sync:home-faq-jsonld && npx tsx scripts/sync-home-faq-visible.ts",
     "generate:kfz-werkstatt-landing": "node scripts/generate-kfz-werkstatt-landing.mjs",
     "watch:css": "tailwindcss -i ./src/tw-input.css -o ./tw.css --watch"
   },

@@ -50,7 +50,7 @@ const STRUC_DATA = {
  featureList: [
  'Sicherheitsdatenblatt Extraktion',
  'Gefahrstoffliste strukturiert pflegen',
- 'Revisionssichere Nutzung im Team',
+ 'Nachvollziehbare Nutzung im Team',
  ],
  },
  {
@@ -134,7 +134,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
  'Weniger manuelle Transferschritte reduzieren Fehlerquellen. Fachliche Endkontrolle bleibt unerlässlich.',
  },
  {
- criterion: 'Revisionssicherheit',
+ criterion: 'Nachweisführung mit Revisionsverlauf',
  excel:
  'Hängt von Datei-Disziplin, Freigaben und Nachvollziehbarkeit „wer hat wann geändert“ ab.',
  extraction:
@@ -347,7 +347,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
  liegt.
  </p>
  <p>
- Revisionssicherheit entsteht nicht durch die Dateiendung,
+ Nachweisführung mit Revisionsverlauf entsteht nicht durch die Dateiendung,
  sondern durch definierte Freigaben und nachvollziehbare
  Änderungen.
  </p>
@@ -439,7 +439,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
  aria-hidden
  />
  <span>
- Revisionssichere Dokumentation von Freigaben — wertvoll, wenn
+ Dokumentation mit Revisionsverlauf von Freigaben — wertvoll, wenn
  Behörden oder BG nach „Stand heute“ fragen.
  </span>
  </li>

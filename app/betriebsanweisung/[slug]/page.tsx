@@ -79,7 +79,7 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
             id="ba-hero-title"
             className="mt-3 text-3xl font-black leading-tight tracking-tight text-[#f0f6ff] sm:text-4xl lg:text-[2.35rem]"
           >
-            Betriebsanweisung {entry.substanceName} nach TRGS 555 – Entwurf in 15 Sekunden erstellen
+            Betriebsanweisung {entry.substanceName} nach TRGS 555 – KI-gestützter Entwurf mit SDB-Upload
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#8fa4c0]">
             KI-gestützter Entwurf (gemäß TRGS 555) mit SDB-Upload — Vorprüfung zur fachlichen Freigabe durch die
