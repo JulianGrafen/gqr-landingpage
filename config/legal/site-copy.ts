@@ -8,6 +8,6 @@ export const FOOTER_COPYRIGHT =
 
 export const REGISTER_CTA_LABEL = 'Muster-Entwurf zur Vorprüfung in der App öffnen';
 
-export const DSGVO_HOSTING_BADGE = 'Serverstandort Deutschland (DSGVO-konform)';
+export const DSGVO_HOSTING_BADGE = 'Hosting in Deutschland (inkl. AVV)';
 
-export const DSGVO_HOSTING_LONG = 'DSGVO-konformes Hosting in Deutschland (inkl. AVV)';
+export const DSGVO_HOSTING_LONG = 'Hosting in Deutschland (inkl. AVV)';

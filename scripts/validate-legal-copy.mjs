@@ -65,6 +65,17 @@ const BANNED = [
     re: /Kompletten\s+Entwurf|Vollständigen\s+TRGS-555-Entwurf|vollständige\s+Dokument/i,
   },
   { id: 'extraktion-abgeschlossen', re: /Extraktion abgeschlossen/i },
+  { id: 'nx-effizienter', re: /\d+\s*x\s*effizienter|10x\s*effizienter/i, hint: 'No numeric comparative superlatives' },
+  { id: 'effizienter-als-excel', re: /effizienter als Excel/i },
+  { id: 'prozent-weniger', re: /\d+\s*%\s*weniger|\d+\s*%\s*der administrativen/i },
+  { id: 'dsgvo-konform-badge', re: /DSGVO-konform/i, hint: 'Use "Hosting in Deutschland (inkl. AVV)"' },
+  { id: 'konform-mit', re: /Konform mit/i, hint: 'Use "Orientiert an …"' },
+  { id: 'automatisch-auslesen', re: /automatisch auslesen/i },
+  { id: 'volle-kontrolle', re: /[Vv]olle Kontrolle/ },
+  {
+    id: 'extraktion-in-sekunden',
+    re: /(extrahiert|Datenextraktion|Extraktion).{0,40}\bin Sekunden\b|\bin Sekunden parat\b/i,
+  },
 ];
 
 /**

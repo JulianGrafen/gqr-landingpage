@@ -131,7 +131,7 @@ export const KATASTER_SOFTWARE_SILO_CONFIG: SeoSiloPageConfig = {
  href: 'https://app.gefahrstoff-qr.de/register',
  external: true,
  },
- disclaimer: 'Unverbindlich · Keine Kreditkarte · DSGVO-konform · Made in Germany',
+ disclaimer: 'Unverbindlich · Keine Kreditkarte · Hosting in Deutschland (inkl. AVV) · Made in Germany',
  },
 };
 
