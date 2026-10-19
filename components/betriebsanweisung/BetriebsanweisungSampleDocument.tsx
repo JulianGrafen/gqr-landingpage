@@ -21,10 +21,7 @@ export function BetriebsanweisungSampleDocument({ entry }: Props) {
         </p>
         <h2 className="mt-2 text-xl font-black sm:text-2xl">{entry.documentDisplayName}</h2>
         <p className="mt-1 text-sm text-[#8fa4c0]">
-          CAS / Produkt: {casLabel} · Signalwort:{' '}
-          <span className={entry.signalWord === 'Gefahr' ? 'font-bold text-red-400' : 'font-bold text-amber-300'}>
-            {entry.signalWord}
-          </span>
+          CAS / Produkt: {casLabel} · Signalwort: Entwurf nach SDB-Freigabe (SiFa / Arbeitgeber)
         </p>
         <div className="mt-4">
           <GhsPictogramGrid codes={entry.ghsPictograms} size="sm" />

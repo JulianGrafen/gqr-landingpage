@@ -50,7 +50,7 @@ const STRUC_DATA = {
  featureList: [
  'Sicherheitsdatenblatt Extraktion',
  'Gefahrstoffliste strukturiert pflegen',
- 'Revisionssichere Nutzung im Team',
+ 'Nachvollziehbare Nutzung im Team',
  ],
  },
  {
@@ -134,7 +134,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
  'Weniger manuelle Transferschritte reduzieren Fehlerquellen. Fachliche Endkontrolle bleibt unerlässlich.',
  },
  {
- criterion: 'Revisionssicherheit',
+ criterion: 'Nachweisführung mit Revisionsverlauf',
  excel:
  'Hängt von Datei-Disziplin, Freigaben und Nachvollziehbarkeit „wer hat wann geändert“ ab.',
  extraction:
@@ -223,7 +223,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
  <strong className="font-semibold text-[#c8d4e6]">
  Gefahrstoffliste
  </strong>{' '}
- typischerweise in wenigen Sekunden pro Dokument vorabfüllen —
+ KI-gestützt als Entwurf vorabfüllen lassen —
  die{' '}
  <strong className="font-semibold text-[#c8d4e6]">
  Gefahrstoffliste Lösungen
@@ -347,7 +347,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
  liegt.
  </p>
  <p>
- Revisionssicherheit entsteht nicht durch die Dateiendung,
+ Nachweisführung mit Revisionsverlauf entsteht nicht durch die Dateiendung,
  sondern durch definierte Freigaben und nachvollziehbare
  Änderungen.
  </p>
@@ -413,8 +413,8 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
  aria-hidden
  />
  <span>
- <strong className="text-slate-800">Sicherheitsdatenblatt Extraktion</strong> in
- Sekunden statt handschriftlichem Übertrag — konsistentere
+ <strong className="text-slate-800">Sicherheitsdatenblatt-Extraktion</strong> statt
+ handschriftlichem Übertrag — konsistentere Entwurfsdaten
  Stammdaten für Ihr{' '}
  <strong className="text-slate-800">Gefahrstoffkataster</strong>
  .
@@ -439,7 +439,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
  aria-hidden
  />
  <span>
- Revisionssichere Dokumentation von Freigaben — wertvoll, wenn
+ Dokumentation mit Revisionsverlauf von Freigaben — wertvoll, wenn
  Behörden oder BG nach „Stand heute“ fragen.
  </span>
  </li>

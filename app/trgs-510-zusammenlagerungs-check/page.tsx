@@ -138,6 +138,13 @@ export default function Trgs510ZusammenlagerungsCheckPage() {
             </div>
           </div>
         </section>
+
+        <section className="border-t border-white/[0.07] bg-[#0a1628] px-4 py-8 sm:px-6 lg:px-8">
+          <p className="mx-auto max-w-3xl text-center text-xs leading-relaxed text-[#8fa4c0]">
+            Keine Rechtsberatung: Lagerentscheidungen trifft die SiFa / Fachkraft im Betrieb. Das Tool unterstützt
+            bei der Orientierung an TRGS 510.
+          </p>
+        </section>
       </article>
     </main>
   );

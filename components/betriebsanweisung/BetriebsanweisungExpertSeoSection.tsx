@@ -19,11 +19,12 @@ export function BetriebsanweisungExpertSeoSection({ entry }: Props) {
           <p>
             Universelle Sicherheits- und Schutzangaben aus dem Internet sind nach § 14 GefStoffV unzulässig.
             Schutzmaßnahmen (wie Atemschutz, Handschuhmaterial oder Lüftung) hängen zwingend von der konkreten
-            Konzentration Ihres Lieferanten, der Einsatzmenge und den Lüftungsverhältnissen vor Ort ab.
+            Konzentration Ihres Lieferanten, der Einsatzmenge und den Lüftungsverhältnissen vor Ort ab. Keine
+            verbindlichen Schutzmaßnahmen auf dieser Seite — maßgeblich ist das freigegebene Sicherheitsdatenblatt.
           </p>
           <p>
-            Gefahrstoff-QR liest die exakten Angaben aus dem herstellerspezifischen Sicherheitsdatenblatt Ihres
-            Produkts aus und bereitet den Entwurf zur Prüfung durch die SiFa / den Arbeitgeber vor.
+            Gefahrstoff-QR unterstützt beim Übernehmen von Angaben aus Ihrem herstellerspezifischen
+            Sicherheitsdatenblatt — SiFa / Arbeitgeber prüfen und geben frei.
           </p>
         </div>
       </section>

@@ -37,7 +37,7 @@ export const GEFAHrstoff_APP_SILO_CONFIG: SeoSiloPageConfig = {
  },
  trustBullets: [
  'Kein App-Store-Zwang — mobil im Browser',
- 'Notfallinfos in Sekunden',
+ 'Notfallinfos schnell am Einsatzort',
  'Betriebsanweisung digital am Gebinde',
  ],
  },
@@ -54,7 +54,7 @@ export const GEFAHrstoff_APP_SILO_CONFIG: SeoSiloPageConfig = {
  },
  {
  id: 'ghs',
- title: 'GHS, H- und P-Sätze sofort',
+ title: 'GHS und Hinweise aus freigegebenem Datensatz',
  description:
  'Kennzeichnung und Handlungshinweise aus dem hinterlegten Sicherheitsdatenblatt — relevant bei CLP-Anpassungen bis Mai 2026.',
  },
@@ -140,7 +140,7 @@ export const GEFAHrstoff_APP_COMPARISON = {
  {
  criterion: 'Ersthelfer-Reaktionszeit',
  manual: 'Suchen, blättern, Rückfrage an SiFa — Minuten Verzug',
- gqr: 'Notfallscreen in Sekunden nach Scan',
+ gqr: 'Notfallscreen nach QR-Scan am Einsatzort',
  },
  {
  criterion: 'Aktualität bei Sicherheitsdatenblatt-Wechsel',

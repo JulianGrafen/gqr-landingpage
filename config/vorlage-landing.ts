@@ -14,19 +14,19 @@ export const VORLAGE_LEAD_CONFIG_PATH = '/vorlage-lead-config.json';
 export const VORLAGE_LANDING_SEO = {
  title: 'Excel-Vorlage Gefahrstoffverzeichnis: Gratis Download | GQR',
  description:
- 'Gratis Excel-Vorlage: Gefahrstoffverzeichnis für Audit & Gefährdungsbeurteilung. GefStoffV-konform, sofort downloaden.',
+ 'Gratis Excel-Vorlage: Gefahrstoffverzeichnis für Audit & Gefährdungsbeurteilung. Pflichtfelder-orientiert · Download ohne Registrierung.',
  ogImageAlt:
  'Gratis Excel-Vorlage Gefahrstoffverzeichnis — audit-tauglich für Gefährdungsbeurteilung nach GefStoffV',
 } as const;
 
 export const VORLAGE_GQR_BENEFITS = [
  {
- title: 'Automatische Sicherheitsdatenblatt-Extraktion',
+ title: 'KI-gestützte Sicherheitsdatenblatt-Extraktion',
  description: 'Nie wieder manuell tippen — KI liest Sicherheitsdatenblätter und füllt Pflichtfelder.',
  },
  {
- title: 'Revisionssichere Archivierung mit Prüfsummen',
- description: 'Revisionssichere Historie: jede Sicherheitsdatenblatt-Version nachvollziehbar für Audits und BG-Prüfungen.',
+ title: 'Archivierung mit Revisionsverlauf mit Prüfsummen',
+ description: 'Historie mit Revisionsverlauf: jede Sicherheitsdatenblatt-Version nachvollziehbar für Audits und BG-Prüfungen.',
  },
  {
  title: 'QR-Code für Notfallinfos am Arbeitsplatz',

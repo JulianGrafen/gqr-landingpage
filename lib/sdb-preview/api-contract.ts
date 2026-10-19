@@ -64,6 +64,6 @@ export const sdbPreviewTokenPath = (token: string) =>
 
 export const PROCESSING_STEP_LABELS = [
   'PDF wird gelesen …',
-  'Werte werden extrahiert …',
-  'Entwurf wird vorbereitet …',
+  'SDB wird ausgewertet …',
+  'Entwurfsvorschlag wird erstellt …',
 ] as const;

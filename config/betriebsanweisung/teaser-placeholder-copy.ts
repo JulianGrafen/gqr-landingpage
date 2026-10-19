@@ -1,7 +1,7 @@
 /** Neutraler Platzhalter — kein substanzspezifischer Sicherheitsinhalt (nur visuelle Blur-Ebene). */
 
 export const TEASER_LOCKED_SECTION_PLACEHOLDER: Record<number, string> = {
-  2: 'Einstufung und Kennzeichnung gemäß Lieferanten-SDB. Angaben werden nach Upload automatisch übernommen.',
+  2: 'Einstufung und Kennzeichnung gemäß Lieferanten-SDB. Angaben aus dem Upload können als Entwurfsvorschlag übernommen werden — Freigabe erforderlich.',
   3: 'Schutzmaßnahmen und Verhaltensregeln am Arbeitsplatz. Inhalt folgt aus dem freigegebenen Entwurf.',
   4: 'Verhalten bei Störungen und Freisetzungen. Details werden aus Ihrem Sicherheitsdatenblatt ergänzt.',
   5: 'Notfall- und Erste-Hilfe-Hinweise. Maßgeblich ist Abschnitt 4 des Hersteller-PDFs nach Freigabe.',

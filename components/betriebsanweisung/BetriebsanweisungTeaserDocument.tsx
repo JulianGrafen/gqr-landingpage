@@ -30,7 +30,7 @@ function classificationDisclaimer(entry: HazardousSubstanceSeoEntry): string {
     entry.casNumber.kind === 'mixture'
       ? 'harmonisierten bzw. typischen Standardwerten'
       : 'harmonisierten Standardwerten';
-  return `Hinweis: Die angezeigten Piktogramme und das Signalwort basieren auf ${basis}. Maßgeblich für Ihren Betrieb ist stets das Sicherheitsdatenblatt Ihres konkreten Lieferanten.`;
+  return `Hinweis: Die angezeigten Piktogramme basieren auf ${basis}. Signalwort und Gefahrenhinweise werden erst nach Prüfung Ihres SDB und Freigabe durch SiFa / Arbeitgeber im Entwurf sichtbar. Maßgeblich ist stets Ihr Lieferanten-SDB.`;
 }
 
 export function BetriebsanweisungTeaserDocument({ entry }: Props) {
@@ -48,11 +48,8 @@ export function BetriebsanweisungTeaserDocument({ entry }: Props) {
         </p>
         <h2 className="mt-2 text-lg font-black sm:text-xl">{entry.documentDisplayName}</h2>
         <p className="mt-1 text-sm text-[#8fa4c0]">CAS / Produkt: {casLabel}</p>
-        <p className="mt-2 text-sm">
-          Signalwort:{' '}
-          <span className={entry.signalWord === 'Gefahr' ? 'font-bold text-red-400' : 'font-bold text-amber-300'}>
-            {entry.signalWord}
-          </span>
+        <p className="mt-2 text-sm text-[#8fa4c0]">
+          Signalwort und Gefahrenhinweise: Entwurf nach Freigabe in der App (SiFa / Arbeitgeber).
         </p>
         <div className="mt-3">
           <GhsPictogramGrid codes={entry.ghsPictograms} variant="dark" size="sm" />
@@ -101,10 +98,10 @@ export function BetriebsanweisungTeaserDocument({ entry }: Props) {
           <div className="absolute inset-0 flex items-center justify-center p-4">
             <div className="max-w-sm rounded-2xl border border-white/15 bg-[#0f1e35]/95 p-6 text-center shadow-xl backdrop-blur-sm">
               <Lock className="mx-auto h-8 w-8 text-teal-300" aria-hidden />
-              <h3 className="mt-3 text-lg font-bold text-[#f0f6ff]">Vollständigen TRGS-555-Entwurf freischalten</h3>
+              <h3 className="mt-3 text-lg font-bold text-[#f0f6ff]">TRGS-555-Muster-Entwurf zur Vorprüfung freischalten</h3>
               <p className="mt-2 text-sm leading-relaxed text-[#8fa4c0]">
-                Schutzmaßnahmen, PSA-Vorgaben und Notfallmaßnahmen werden automatisiert aus dem Sicherheitsdatenblatt
-                Ihres Lieferanten ausgelesen — zur Prüfung durch die SiFa / den Arbeitgeber.
+                Relevante Abschnitte aus Ihrem SDB können KI-gestützt in den Entwurf übernommen werden — Inhalt und
+                PSA erst nach Prüfung und Freigabe durch die SiFa / den Arbeitgeber verbindlich.
               </p>
               <Link
                 href={registerUrl}

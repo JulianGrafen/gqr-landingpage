@@ -54,7 +54,7 @@ html = html
   )
   .replace('<link rel="canonical" href="https://gefahrstoff-qr.de/" />', `<link rel="canonical" href="${CANONICAL}" />`)
   .replace(
-    '<meta property="og:title" content="Gefahrstoffkataster Software: 10x effizienter als Excel | Gefahrstoff-QR">',
+    '<meta property="og:title" content="Cloud Gefahrstoffmanagement Software: strukturierter als Excel | Gefahrstoff-QR">',
     '<meta property="og:title" content="Gefahrstoffverzeichnis Kfz-Werkstatt &amp; Betriebsanweisung Werkstatt">',
   )
   .replace(
@@ -76,11 +76,11 @@ html = html
   .replace('src="./linkedIn.png"', 'src="/linkedIn.png"');
 
 const heroOld = `<h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-center md:items-start justify-center">
- Gefahrstoffmanagement Software für Mittelstand, SiFa und Industrie - <br>
- <span class="text-center md:text-left" style="color: rgb(255, 94, 0); display: block;">10x effizienter als Excel.</span>
+ Cloud Gefahrstoffmanagement Software für Mittelstand, SiFa und Industrie - <br>
+ <span class="text-center md:text-left" style="color: rgb(255, 94, 0); display: block;">Schluss mit Excel-Listen.</span>
 </h1>
- <p class="text-2xl mt-5 sds-hero__subtitle">Sicherheitsdatenblätter automatisch auslesen - KI liest aus, die SiFa gibt frei. 
-  Volle Kontrolle bei 90 % weniger Tipparbeit.</p>
+ <p class="text-2xl mt-5 sds-hero__subtitle">Browserbasiert in der Cloud — ohne Installation. Sicherheitsdatenblätter KI-gestützt auslesen lassen — die SiFa gibt frei.
+  Weniger Abtippen, Freigabe bleibt bei der SiFa.</p>
  <div class="mt-8 flex flex-wrap justify-center gap-4">
    <a class="btn-cta-orange px-8 py-3 text-white" style="color: white !important;"href="https://app.gefahrstoff-qr.de/#preise">Jetzt kostenlos testen
 

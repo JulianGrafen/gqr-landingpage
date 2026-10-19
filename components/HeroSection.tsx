@@ -235,7 +235,7 @@ export default function HeroSection() {
 
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
                 Digitales Gefahrstoff&shy;verzeichnis,{" "}
-                <span className="text-blue-600">in 30 Sekunden.</span>
+                <span className="text-blue-600">schneller strukturieren.</span>
               </h1>
 
               <p className="max-w-xl text-lg leading-relaxed text-slate-600">

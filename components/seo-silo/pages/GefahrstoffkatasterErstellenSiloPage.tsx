@@ -19,7 +19,7 @@ export function GefahrstoffkatasterErstellenSiloPage() {
  hero={KATASTER_ERSTELLEN_SILO_CONFIG.hero}
  image={{
  src: '/images/aktivitätsprotokoll.jpeg',
- alt: 'Aktivitäten-Protokoll in Gefahrstoff-QR: revisionssichere Nachweise beim Gefahrstoffkataster erstellen',
+ alt: 'Aktivitäten-Protokoll in Gefahrstoff-QR: mit Revisionsverlaufe Nachweise beim Gefahrstoffkataster erstellen',
  width: 1180,
  height: 665,
  }}
@@ -29,7 +29,7 @@ export function GefahrstoffkatasterErstellenSiloPage() {
  <LandingStepsSection
  id="schritte"
  title="6 Schritte zum Gefahrstoffkataster — nach TRGS und GefStoffV"
- subline="Die exakte Vorgehensweise, die Auditoren und die Berufsgenossenschaft erwarten — unabhängig davon, ob Sie manuell starten oder den Prozess digitalisieren."
+ subline="Die typische Vorgehensweise, die Auditoren und die Berufsgenossenschaft erwarten — unabhängig davon, ob Sie manuell starten oder den Prozess digitalisieren."
  steps={KATASTER_ERSTELLEN_STEPS}
  />
 
@@ -40,10 +40,10 @@ export function GefahrstoffkatasterErstellenSiloPage() {
  intro="Ein Gefahrstoffkataster wird oft als bürokratische Pflichtübung missverstanden. In der juristischen und operativen Realität ist es jedoch das zentrale Fundament der betrieblichen Arbeitssicherheit und der primäre Hebel zur Minimierung der Geschäftsführerhaftung."
  >
  <p>
- Die Erstellung eines Gefahrstoffkatasters leitet sich direkt aus dem Arbeitsschutzgesetz (ArbSchG) und spezifisch aus <strong>§ 6 der Gefahrstoffverordnung (GefStoffV)</strong> ab. Der Gesetzgeber fordert hier die sogenannte "Informationsermittlung und Gefährdungsbeurteilung". Bevor ein Mitarbeiter auch nur in die Nähe eines potenziell gefährlichen Stoffes kommt, muss der Arbeitgeber Art, Ausmaß und Dauer der Exposition ermitteln. Das Gefahrstoffverzeichnis ist der zwingende erste Schritt dieser Kette. Ohne ein vollständiges, aktuelles Verzeichnis ist jede nachfolgende Gefährdungsbeurteilung nach <strong>TRGS 400</strong> rechtlich nichtig, da sie auf einer unvollständigen Datenbasis operiert.
+ Die Erstellung eines Gefahrstoffkatasters leitet sich direkt aus dem Arbeitsschutzgesetz (ArbSchG) und spezifisch aus <strong>§ 6 der Gefahrstoffverordnung (GefStoffV)</strong> ab. Der Gesetzgeber fordert hier die sogenannte "Informationsermittlung und Gefährdungsbeurteilung". Bevor ein Mitarbeiter auch nur in die Nähe eines potenziell gefährlichen Stoffes kommt, muss der Arbeitgeber Art, Ausmaß und Dauer der Exposition ermitteln. Das Gefahrstoffverzeichnis ist der zwingende erste Schritt dieser Kette. Ohne ein aktuelles, nachvollziehbares Verzeichnis ist jede nachfolgende Gefährdungsbeurteilung nach <strong>TRGS 400</strong> rechtlich nichtig, da sie auf einer unvollständigen Datenbasis operiert.
  </p>
  <p>
- Auditoren der Berufsgenossenschaften (BG) und der Gewerbeaufsicht prüfen heute nicht mehr nur das Vorhandensein eines Aktenordners. Sie prüfen die <strong>Kausalität und Revisionssicherheit</strong>. Ein rechtskonformes Verzeichnis muss zwingend folgende Parameter abbilden: Die exakte Bezeichnung des Stoffes, die Einstufung (Gefahrenklassen, H- und P-Sätze nach CLP-Verordnung), die im Betrieb verwendeten Mengenbereiche, die spezifischen Arbeitsbereiche, in denen der Stoff genutzt wird, sowie den direkten Verweis auf das entsprechende, aktuelle Sicherheitsdatenblatt .
+ Auditoren der Berufsgenossenschaften (BG) und der Gewerbeaufsicht prüfen heute nicht mehr nur das Vorhandensein eines Aktenordners. Sie prüfen die <strong>Kausalität und Nachweisführung mit Revisionsverlauf</strong>. Ein rechtskonformes Verzeichnis muss zwingend folgende Parameter abbilden: Die Bezeichnung des Stoffes, die Einstufung (Gefahrenklassen, H- und P-Sätze nach CLP-Verordnung), die im Betrieb verwendeten Mengenbereiche, die spezifischen Arbeitsbereiche, in denen der Stoff genutzt wird, sowie den direkten Verweis auf das entsprechende, aktuelle Sicherheitsdatenblatt .
  </p>
  <p>
  Das juristische Risiko für Geschäftsführer und Sicherheitsfachkräfte (SiFas) liegt in der <strong>Beweislastumkehr bei Arbeitsunfällen oder Berufskrankheiten</strong>. Erkrankt ein Mitarbeiter an einem chronischen Atemwegsleiden, wird die BG prüfen, welchen Expositionen er vor fünf oder zehn Jahren ausgesetzt war. Wenn Ihr System (z. B. eine überschriebene Excel-Tabelle) nicht mehr nachweisen kann, welche H-Sätze ein bestimmter Industriereiniger im Jahr 2021 hatte, stehen Sie in der vollen Haftung. Ein Kataster ist demnach kein statisches Dokument, sondern ein historisiertes Beweismittel.
@@ -75,8 +75,8 @@ export function GefahrstoffkatasterErstellenSiloPage() {
  intro="Ein Gefahrstoffverzeichnis ist kein starres Dokument, sondern ein lebender Compliance-Prozess. Die meisten Projekte scheitern nicht an mangelnder Fachkenntnis der SiFa, sondern an Werkzeugen, die nicht skalieren."
  >
  <p>
- <strong>1. Das Excel-Paradoxon (Fehlende Revisionssicherheit):</strong>
- § 6 GefStoffV fordert eine lückenlose Informationsermittlung. Eine Excel-Tabelle wächst zwar schnell und bietet anfänglich eine gute Übersicht, kennt aber systembedingt keine unmanipulierbare Historie. Wenn ein Lieferant das Sicherheitsdatenblatt aktualisiert und Sie die bestehende Zeile überschreiben, löschen Sie unwiederbringlich den historischen Nachweis. Kommt es Jahre später zu einem Rechtsstreit, können Sie nicht mehr gerichtsfest belegen, mit welchem Datenstand der betroffene Mitarbeiter damals gearbeitet hat. Excel ist ein Kalkulationsprogramm, kein revisionssicheres Dokumentenmanagementsystem.
+ <strong>1. Das Excel-Paradoxon (Fehlende Nachweisführung mit Revisionsverlauf):</strong>
+ § 6 GefStoffV fordert eine lückenlose Informationsermittlung. Eine Excel-Tabelle wächst zwar schnell und bietet anfänglich eine gute Übersicht, kennt aber systembedingt keine unmanipulierbare Historie. Wenn ein Lieferant das Sicherheitsdatenblatt aktualisiert und Sie die bestehende Zeile überschreiben, löschen Sie unwiederbringlich den historischen Nachweis. Kommt es Jahre später zu einem Rechtsstreit, können Sie nicht mehr gerichtsfest belegen, mit welchem Datenstand der betroffene Mitarbeiter damals gearbeitet hat. Excel ist ein Kalkulationsprogramm, kein mit Revisionsverlaufes Dokumentenmanagementsystem.
  </p>
  <p>
  <strong>2. Trennung von Verzeichnis und Gefährdungsbeurteilung (TRGS 400):</strong>
@@ -106,7 +106,7 @@ export function GefahrstoffkatasterErstellenSiloPage() {
  Ein klassisches Beispiel aus der Praxis: Die gemeinsame Lagerung von Säuren (Lagerklasse 8B) und Laugen/Basen (Lagerklasse 8A). Werden diese in derselben Auffangwanne gelagert und kommt es zu einer Havarie, entsteht eine unkontrollierbare, exotherme Reaktion. Die TRGS 510 schreibt hier eine strikte Separatlagerung vor. Ähnlich kritisch verhält es sich mit entzündbaren Flüssigkeiten (Lagerklasse 3) und oxidierenden Stoffen (Lagerklasse 5.1). Oxidationsmittel liefern im Brandfall den Sauerstoff und wirken als extremer Brandbeschleuniger – eine gemeinsame Lagerung im selben Regal ist strengstens untersagt.
  </p>
  <p>
- <strong>Die Grenze der manuellen Überwachung:</strong> Eine Sicherheitsfachkraft kann die Zusammenlagerungstabelle der TRGS 510 (die Matrix mit den grünen, gelben und roten Kreuzen) für zehn Stoffe manuell im Kopf oder auf Papier prüfen. Bei 150 oder 500 Stoffen, die über verschiedene Werkstätten, Baustellen und Hauptlager verteilt sind, bricht dieses System zusammen. Ein strukturiertes Gefahrstoffkataster muss daher zwingend den exakten Lagerort (Halle, Regal, Wanne) mit der Einstufung verknüpfen. Nur eine systemgestützte Software kann hier im Hintergrund die Konflikte der Lagerklassen (LGK) in Echtzeit berechnen und bei einer Fehlzuordnung sofort Alarm schlagen.
+ <strong>Die Grenze der manuellen Überwachung:</strong> Eine Sicherheitsfachkraft kann die Zusammenlagerungstabelle der TRGS 510 (die Matrix mit den grünen, gelben und roten Kreuzen) für zehn Stoffe manuell im Kopf oder auf Papier prüfen. Bei 150 oder 500 Stoffen, die über verschiedene Werkstätten, Baustellen und Hauptlager verteilt sind, bricht dieses System zusammen. Ein strukturiertes Gefahrstoffkataster muss daher zwingend den Lagerort (Halle, Regal, Wanne) mit der Einstufung verknüpfen. Nur eine systemgestützte Software kann hier im Hintergrund die Konflikte der Lagerklassen (LGK) in Echtzeit berechnen und bei einer Fehlzuordnung sofort Alarm schlagen.
  </p>
  </LandingProseSection>
 
@@ -151,7 +151,7 @@ export function GefahrstoffkatasterErstellenSiloPage() {
  <Link href="/gefahrstoff-app/" className="gqr-link">
  Gefahrstoff App
  </Link>{' '}
- das fundamentale Problem der Ad-hoc-Informationsbeschaffung. Tritt eine ätzende Flüssigkeit aus, scannen die Mitarbeiter den QR-Code direkt am betroffenen Gebinde und erhalten auf dem Smartphone sofort die lebensrettenden Erste-Hilfe-Maßnahmen (P-Sätze). Keine Suche nach Ordnern, kein Login-Zwang im Notfall.
+ das fundamentale Problem der Ad-hoc-Informationsbeschaffung. Tritt eine ätzende Flüssigkeit aus, scannen die Mitarbeiter den QR-Code direkt am betroffenen Gebinde und erhalten auf dem Smartphone direkt die lebensrettenden Erste-Hilfe-Maßnahmen (P-Sätze). Keine Suche nach Ordnern, kein Login-Zwang im Notfall.
  </p>
 
  <h3>4. Outtasking: Die externe Erstellung des Katasters</h3>

@@ -36,7 +36,7 @@ export function GefahrstoffAppSiloPage() {
  id="qr-scan-demo"
  eyebrow="Ad-hoc Informationsbeschaffung"
  title="Im Ernstfall entscheidet die Reaktionszeit, nicht die Ablage im Büro"
- lead="Ein Gefahrstoffaustritt wartet nicht, bis das richtige Sicherheitsdatenblatt auf dem Firmenserver gefunden ist. Der Scan am Gebinde liefert Ersthelfern sofort die überlebenswichtigen H- und P-Sätze – ohne Barriere, direkt am Gefahrenherd."
+ lead="Ein Gefahrstoffaustritt wartet nicht, bis das richtige Sicherheitsdatenblatt auf dem Firmenserver gefunden ist. Der Scan am Gebinde liefert Ersthelfern direkt die Hinweise aus dem freigegebenen Datensatz – ohne Barriere, direkt am Gefahrenherd."
  bullets={[
  'Sekundenschneller Scan an Regalen, IBC-Containern oder Werkstattwagen',
  'Direkter Zugriff auf Erste-Hilfe-Maßnahmen (Sicherheitsdatenblatt Abschnitt 4) ohne Login',
@@ -93,12 +93,12 @@ export function GefahrstoffAppSiloPage() {
  >
  <h3>Baustellen und temporäre Arbeitsplätze</h3>
  <p>
- Auf Baustellen fehlt oft die grundlegende IT-Infrastruktur für klassische Softwarelösungen. Gefahrstoffe wandern mit den Subunternehmern und Teams. QR-Labels, die direkt auf die Behälter geklebt werden, lösen die Ortsbindung auf. Die SiFa pflegt die Daten zentral und revisionssicher im Kataster; die Teams vor Ort scannen das Gebinde mit jedem handelsüblichen Smartphone, ohne dicke Excel-Mappen mitschleppen zu müssen.
+ Auf Baustellen fehlt oft die grundlegende IT-Infrastruktur für klassische Softwarelösungen. Gefahrstoffe wandern mit den Subunternehmern und Teams. QR-Labels, die direkt auf die Behälter geklebt werden, lösen die Ortsbindung auf. Die SiFa pflegt die Daten zentral und mit Revisionsverlauf im Kataster; die Teams vor Ort scannen das Gebinde mit jedem handelsüblichen Smartphone, ohne dicke Excel-Mappen mitschleppen zu müssen.
  </p>
 
  <h3>Produktion und Werkstätten</h3>
  <p>
- Im Umgang mit Schmierstoffen, Industriereinigern oder Lacken ist die Unfallwahrscheinlichkeit hoch. Eine verschmutzte Arbeitsumgebung zerstört Papierdokumente schnell. Die mobile Ansicht liefert hier nicht nur Erste-Hilfe-Maßnahmen, sondern auch die exakte <strong>Betriebsanweisung nach § 14 GefStoffV</strong>. Das eliminiert das Risiko, dass Mitarbeiter nach veralteten Word-Dokumenten arbeiten, die seit dem letzten Sicherheitsdatenblatt-Update nicht mehr manuell ausgetauscht wurden.
+ Im Umgang mit Schmierstoffen, Industriereinigern oder Lacken ist die Unfallwahrscheinlichkeit hoch. Eine verschmutzte Arbeitsumgebung zerstört Papierdokumente schnell. Die mobile Ansicht liefert hier nicht nur Erste-Hilfe-Maßnahmen, sondern auch den freigegebenen <strong>Betriebsanweisungs-Entwurf nach § 14 GefStoffV</strong>. Das reduziert das Risiko, dass Mitarbeiter nach veralteten Word-Dokumenten arbeiten, die seit dem letzten Sicherheitsdatenblatt-Update nicht mehr manuell ausgetauscht wurden.
  </p>
 
  <h3>Das Fundament: Verknüpfung zum digitalen Kataster</h3>
@@ -107,7 +107,7 @@ export function GefahrstoffAppSiloPage() {
  <Link href="/gefahrstoffkataster-software/" className="gqr-link">
  Gefahrstoffkataster
  </Link>
- . Jede Änderung, die durch den KI-gestützten Sicherheitsdatenblatt-Import vorgenommen wird, synchronisiert sich in Echtzeit auf alle QR-Codes. Dies ermöglicht zudem einen rechtskonformen, automatisierten{' '}
+ . Jede Änderung, die durch den KI-gestützten Sicherheitsdatenblatt-Import vorgenommen wird, synchronisiert sich in Echtzeit auf alle QR-Codes. Dies ermöglicht zudem einen strukturierten{' '}
  <Link href="/trgs-510-zusammenlagerungs-check/" className="gqr-link">
  TRGS-510-Check
  </Link>

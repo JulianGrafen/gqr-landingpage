@@ -32,7 +32,7 @@ export function ExcelVorlageSiloPage() {
  intro="Eine saubere Excel-Tabelle suggeriert Kontrolle. In der juristischen Realität einer BG-Inspektion oder nach einem Arbeitsunfall erweist sie sich jedoch oft als wertlos, da ihr entscheidende regulatorische Mechanismen fehlen."
  >
  <p>
- <strong>1. Fehlende Revisionssicherheit (§ 6 GefStoffV):</strong>
+ <strong>1. Fehlende Nachweisführung mit Revisionsverlauf (§ 6 GefStoffV):</strong>
  Die Informationsermittlung fordert eine lückenlose Historie. Excel ist statisch: Überschreiben Sie eine Zeile aufgrund eines neuen Sicherheitsdatenblattes , vernichten Sie den historischen Beweis. Kommt es Jahre später zu einer Berufskrankheit, können Sie nicht mehr nachvollziehbar belegen, mit welchem Datenstand (und welchen H-/P-Sätzen) der Mitarbeiter zum damaligen Zeitpunkt gearbeitet hat.
  </p>
  <p>
@@ -63,12 +63,12 @@ export function ExcelVorlageSiloPage() {
  <LandingProseSection
  id="seo-leitfaden"
  eyebrow="Realitätscheck & Leitfaden"
- title="Von der Erstaufnahme zur revisionssicheren Automatisierung"
+ title="Von der Erstaufnahme zur mit Revisionsverlaufen Automatisierung"
  variant="raised"
  >
  <h3>Der pragmatische Einstieg: Wann Excel ausreicht</h3>
  <p>
- Lassen Sie uns realistisch bleiben: Wenn Ihr Betrieb lediglich 10 Standard-Reinigungsmittel verwaltet, brauchen Sie keine komplexe Software. Nutzen Sie unsere kostenlose XLSX-Vorlage. Sie liefert Ihnen die exakte Struktur (Produktname, GHS-Kennzeichnung, Lagerklasse, Mengen, Verwendungsort), die Auditoren im ersten Schritt sehen wollen. Sie sparen sich die Formatierungsarbeit und haben ein solides Grundgerüst.
+ Lassen Sie uns realistisch bleiben: Wenn Ihr Betrieb lediglich 10 Standard-Reinigungsmittel verwaltet, brauchen Sie keine komplexe Software. Nutzen Sie unsere kostenlose XLSX-Vorlage. Sie liefert Ihnen die strukturierte Vorlage (Produktname, GHS-Kennzeichnung, Lagerklasse, Mengen, Verwendungsort), die Auditoren im ersten Schritt sehen wollen. Sie sparen sich die Formatierungsarbeit und haben ein solides Grundgerüst.
  </p>
 
  <h3>Der Tipping-Point: Versteckte Personalkosten</h3>
@@ -78,7 +78,7 @@ export function ExcelVorlageSiloPage() {
 
  <h3>Die rationale Alternative: Digitales Gefahrstoffmanagement</h3>
  <p>
- Sobald Sie Stoffe substituieren, Gefahrstoffe lagern oder externe Dienstleister auf dem Gelände haben, wird der manuelle Weg unwirtschaftlich und riskant. Ein System wie GQR extrahiert die Daten aus dem Sicherheitsdatenblatt per KI, führt das gesetzlich geforderte Aktivitätsprotokoll vollautomatisch im Hintergrund und schlägt die Brücke zum Einsatzort: <strong>Notfallinformationen werden direkt per QR-Code am Fass abgerufen</strong> – dort, wo Ersthelfer sie in Sekunden benötigen.
+ Sobald Sie Stoffe substituieren, Gefahrstoffe lagern oder externe Dienstleister auf dem Gelände haben, wird der manuelle Weg unwirtschaftlich und riskant. Ein System wie GQR extrahiert die Daten aus dem Sicherheitsdatenblatt per KI, führt das gesetzlich geforderte Aktivitätsprotokoll im Hintergrund protokolliert und schlägt die Brücke zum Einsatzort: <strong>Notfallinformationen werden direkt per QR-Code am Fass abgerufen</strong> – dort, wo Ersthelfer sie schnell benötigen.
  </p>
 
  <div
