@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
-const SKIP_DIRS = new Set(['node_modules', '.git', '_next', '.next']);
+const SKIP_DIRS = new Set(['node_modules', '.git', '_next', '.next', 'pdfjs']);
 
 const SKIP_FILES = new Set([
   path.join(ROOT, 'scripts/validate-legal-copy.mjs'),
