@@ -202,6 +202,180 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     applicationAreaWorkplace:
       'Reinigung von Sanitärräumen im Gebäudeservice — surfaktanmodifizierte Produkte weichen oft ab; Betriebsanweisung und Unterweisung beziehen sich auf das konkrete Handelsprodukt.',
   },
+  {
+    slug: 'ethanol-trgs-555',
+    substanceName: 'Ethanol',
+    documentDisplayName: 'Ethanol (Ethylalkohol)',
+    synonyms: ['Ethylalkohol', 'Alkohol', 'EtOH', 'Spiritus (industriell)'],
+    casNumber: { kind: 'substance', value: '64-17-5' },
+    ghsPictograms: ['GHS02'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Pharma & Kosmetik',
+      'Druckerei & Verpackung',
+      'Labor',
+      'Handwerk (Lösungsmittel)',
+    ],
+    applicationAreaWorkplace:
+      'Lösungsmittel, Reinigung und Prozessführung in Produktion und Werkstatt — Konzentration und Produktform (Technisch, Denaturiert) bestimmen die Betriebsanweisung und sind im SDB ausgewiesen.',
+  },
+  {
+    slug: 'methanol-trgs-555',
+    substanceName: 'Methanol',
+    documentDisplayName: 'Methanol (Methylalkohol)',
+    synonyms: ['Methylalkohol', 'Holzspiritus', 'CH₃OH'],
+    casNumber: { kind: 'substance', value: '67-56-1' },
+    ghsPictograms: ['GHS02', 'GHS06', 'GHS08'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Chemische Industrie',
+      'Labor',
+      'Kunststoffverarbeitung',
+      'Werkstatt (Speziallösungsmittel)',
+    ],
+    applicationAreaWorkplace:
+      'Technisches Lösungsmittel und Prozessrohstoff — Einsatzorte und Tätigkeiten werden aus dem herstellerspezifischen SDB und der Betriebsorganisation abgeleitet.',
+  },
+  {
+    slug: 'salzsaeure-trgs-555',
+    substanceName: 'Salzsäure',
+    documentDisplayName: 'Salzsäure (wässrige Lösung)',
+    synonyms: ['Chlorwasserstoffsäure', 'Hydrochloric acid', 'HCl-Lösung'],
+    casNumber: { kind: 'substance', value: '7647-01-0' },
+    ghsPictograms: ['GHS05', 'GHS07'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Metallverarbeitung & Galvanik',
+      'Stein- & Fliesenlegerei',
+      'Abwasser & Neutralisation',
+      'Lebensmitteltechnik (CIP, wo zutreffend)',
+    ],
+    applicationAreaWorkplace:
+      'Beizen, Reinigung und Neutralisation in Betrieben — Konzentration und Verfahren sind im Lieferanten-SDB dokumentiert und in der freigegebenen Betriebsanweisung festzuhalten.',
+  },
+  {
+    slug: 'natriumhypochlorit-trgs-555',
+    substanceName: 'Natriumhypochlorit',
+    documentDisplayName: 'Natriumhypochlorit (Lösung)',
+    synonyms: ['Natriumhypochloritlösung', 'Bleichlauge', 'Active Chlor-Lösung'],
+    casNumber: { kind: 'substance', value: '7681-52-9' },
+    ghsPictograms: ['GHS05', 'GHS09'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Gebäudereinigung & Facility',
+      'Schwimmbad & Wasseraufbereitung',
+      'Lebensmittelindustrie (Desinfektion)',
+      'Kommunale Entsorgung',
+    ],
+    applicationAreaWorkplace:
+      'Desinfektion und Bleiche in Reinigung und Prozessen — Gehalt an aktivem Chlor und Zusatzstoffe variieren je Produkt; maßgeblich ist das SDB Ihres Lieferanten.',
+  },
+  {
+    slug: 'essigsaeure-trgs-555',
+    substanceName: 'Essigsäure',
+    documentDisplayName: 'Essigsäure (wässrige Lösung)',
+    synonyms: ['Acetic acid', 'Ethansäure', 'CH₃COOH'],
+    casNumber: { kind: 'substance', value: '64-19-7' },
+    ghsPictograms: ['GHS02', 'GHS05'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Lebensmittelverarbeitung',
+      'Textil & Galvanik',
+      'Labor',
+      'Reinigungsmittelherstellung',
+    ],
+    applicationAreaWorkplace:
+      'Prozesschemie, Reinigung und Konservierung — Konzentration (Essigessenz vs. Verdünnung) bestimmt Einstufung und Vorgaben im produktspezifischen SDB.',
+  },
+  {
+    slug: 'toluol-trgs-555',
+    substanceName: 'Toluol',
+    documentDisplayName: 'Toluol (Methylbenzol)',
+    synonyms: ['Toluene', 'Methylbenzol', 'C₇H₈'],
+    casNumber: { kind: 'substance', value: '108-88-3' },
+    ghsPictograms: ['GHS02', 'GHS07', 'GHS08'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Malerbetrieb & Lackierung',
+      'Druckerei',
+      'Chemische Industrie',
+      'Klebstoff- & Dichtstoffverarbeitung',
+    ],
+    applicationAreaWorkplace:
+      'Lösungsmittel in Beschichtung, Druck und Klebtechnik — Arbeitsplätze und Verfahren werden aus SDB und Betriebskonzept für den jeweiligen Einsatz abgeleitet.',
+  },
+  {
+    slug: 'ethylenglykol-trgs-555',
+    substanceName: 'Ethylenglykol',
+    documentDisplayName: 'Ethylenglykol (1,2-Ethanediol)',
+    synonyms: ['Ethandiol', 'Glykol', 'MEG (typisch)'],
+    casNumber: { kind: 'substance', value: '107-21-1' },
+    ghsPictograms: ['GHS07'],
+    signalWord: 'Achtung',
+    typicalIndustries: [
+      'Kfz-Werkstatt & Fuhrpark',
+      'Heizungs- & Klimatechnik',
+      'Industrielle Kühlkreisläufe',
+      'Luftfahrt & Sonderfahrzeuge',
+    ],
+    applicationAreaWorkplace:
+      'Frostschutz- und Kühlflüssigkeiten in Anlagen und Fahrzeugen — Additivpakete und Konzentration sind produktspezifisch im SDB beschrieben.',
+  },
+  {
+    slug: 'ammoniakloesung-trgs-555',
+    substanceName: 'Ammoniaklösung',
+    documentDisplayName: 'Ammoniaklösung (wässrig)',
+    synonyms: ['Ammoniak wässrig', 'Ammoniumhydroxid-Lösung', 'NH₃-Lösung'],
+    casNumber: { kind: 'substance', value: '1336-21-6' },
+    ghsPictograms: ['GHS05', 'GHS09'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Kälte- & Klimatechnik',
+      'Reinigung & Industrie',
+      'Landwirtschaft',
+      'Wasser- & Abwassertechnik',
+    ],
+    applicationAreaWorkplace:
+      'Reinigung, Kühlung und Prozesschemie — Ammoniakgehalt und Temperaturführung sind im SDB des Handelsprodukts festgelegt und für die Betriebsanweisung zu übernehmen.',
+  },
+  {
+    slug: 'phosphorsaeure-trgs-555',
+    substanceName: 'Phosphorsäure',
+    documentDisplayName: 'Phosphorsäure (ortho-Phosphorsäure)',
+    synonyms: ['Orthophosphorsäure', 'Phosphoric acid', 'H₃PO₄'],
+    casNumber: { kind: 'substance', value: '7664-38-2' },
+    ghsPictograms: ['GHS05'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Metalloberflächentechnik',
+      'Lebensmittel & Getränke',
+      'Düngemittel & Agrarchemie',
+      'Reinigungsmittelherstellung',
+    ],
+    applicationAreaWorkplace:
+      'Beizen, Enthärtung und Prozessführung — Konzentration und Rezeptur sind produktspezifisch im Lieferanten-SDB beschrieben.',
+  },
+  {
+    slug: 'testbenzin-trgs-555',
+    substanceName: 'Testbenzin',
+    documentDisplayName: 'Testbenzin (White Spirit, typisch)',
+    synonyms: ['White Spirit', 'Terpenfreies Testbenzin', 'Petroleum (technisch)'],
+    casNumber: {
+      kind: 'mixture',
+      label: 'Gemisch (aliphatische Kohlenwasserstoffe C9–C12, White-Spirit-Typ)',
+      mainComponentCas: '64742-82-1',
+    },
+    ghsPictograms: ['GHS02', 'GHS07', 'GHS08', 'GHS09'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Malerbetrieb & Lackierung',
+      'Holzverarbeitung',
+      'Druckerei',
+      'Industrielle Reinigung',
+    ],
+    applicationAreaWorkplace:
+      'Verdünnung, Reinigung und Entfettung in Werkstatt und Produktion — CAS-Bezeichnungen und Aromatenanteile unterscheiden sich je Lieferant; maßgeblich ist das SDB Ihres Testbenzins.',
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
