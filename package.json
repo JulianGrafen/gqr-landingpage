@@ -4,8 +4,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run generate:sitemap && next build",
-    "build:github-pages": "npm run build:sdb-preview && npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run generate:sitemap && next build && node scripts/sync-github-pages.mjs",
+    "build:github-pages": "npm run build:sdb-preview && npm run generate:kfz-werkstatt-landing && npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run generate:sitemap && next build && node scripts/sync-github-pages.mjs && npm run validate:legal-copy-export",
     "validate:legal-copy": "node scripts/validate-legal-copy.mjs",
+    "validate:legal-copy-export": "node scripts/validate-legal-copy.mjs --export",
     "validate:betriebsanweisung": "npx tsx scripts/validate-betriebsanweisung-entries.ts",
     "generate:sitemap": "npx tsx scripts/generate-sitemap.ts",
     "typecheck": "tsc --noEmit",

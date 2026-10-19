@@ -78,7 +78,7 @@ export function ExcelVorlageSiloPage() {
 
  <h3>Die rationale Alternative: Digitales Gefahrstoffmanagement</h3>
  <p>
- Sobald Sie Stoffe substituieren, Gefahrstoffe lagern oder externe Dienstleister auf dem Gelände haben, wird der manuelle Weg unwirtschaftlich und riskant. Ein System wie GQR extrahiert die Daten aus dem Sicherheitsdatenblatt per KI, führt das gesetzlich geforderte Aktivitätsprotokoll im Hintergrund protokolliert und schlägt die Brücke zum Einsatzort: <strong>Notfallinformationen werden direkt per QR-Code am Fass abgerufen</strong> – dort, wo Ersthelfer sie in Sekunden benötigen.
+ Sobald Sie Stoffe substituieren, Gefahrstoffe lagern oder externe Dienstleister auf dem Gelände haben, wird der manuelle Weg unwirtschaftlich und riskant. Ein System wie GQR extrahiert die Daten aus dem Sicherheitsdatenblatt per KI, führt das gesetzlich geforderte Aktivitätsprotokoll im Hintergrund protokolliert und schlägt die Brücke zum Einsatzort: <strong>Notfallinformationen werden direkt per QR-Code am Fass abgerufen</strong> – dort, wo Ersthelfer sie schnell benötigen.
  </p>
 
  <div

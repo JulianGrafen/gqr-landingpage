@@ -5,7 +5,7 @@
  * Scanned: app/, components/, config/, content/, lib/, blog/*.mdx, root index.html,
  * public/static-pages/*.{json,html}
  *
- * Skipped: node_modules, .next, out, _next, exported route HTML trees (regenerated on build).
+ * Also scans committed static export HTML: betriebsanweisung/, wissen/, loesungen/, out/ (no _next).
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
-const SKIP_DIRS = new Set(['node_modules', '.git', '_next', 'out', '.next']);
+const SKIP_DIRS = new Set(['node_modules', '.git', '_next', '.next']);
 
 const SKIP_FILES = new Set([
   path.join(ROOT, 'scripts/validate-legal-copy.mjs'),
@@ -24,7 +24,7 @@ const SKIP_FILES = new Set([
 ]);
 
 /** Scan roots relative to repo root */
-const SCAN_ROOTS = [
+const SOURCE_SCAN_ROOTS = [
   'app',
   'components',
   'config',
@@ -32,6 +32,11 @@ const SCAN_ROOTS = [
   'lib',
   'public/static-pages',
 ];
+
+/** Post–GitHub-Pages sync: committed static HTML export. */
+const EXPORT_SCAN_ROOTS = ['betriebsanweisung', 'wissen', 'loesungen', 'out'];
+
+const exportOnly = process.argv.includes('--export');
 
 const SCAN_FILES = ['index.html'];
 
@@ -76,6 +81,18 @@ const BANNED = [
     id: 'extraktion-in-sekunden',
     re: /(extrahiert|Datenextraktion|Extraktion).{0,40}\bin Sekunden\b|\bin Sekunden parat\b/i,
   },
+  { id: 'wir-melden-uns', re: /Wir melden uns/i, hint: 'Self-serve only — link to app register' },
+  { id: 'termin-vereinbaren', re: /Termin vereinbaren/i },
+  {
+    id: 'in-einer-minute-product',
+    re: /\bin (?:einer Minute|30 Sekunden|\d+ Sekunden)\b/i,
+    hint: 'No fixed-duration product promises',
+  },
+  {
+    id: 'signalwort-value-public',
+    re: /Signalwort[^<]{0,40}(Gefahr|Achtung)<\/span>/i,
+    hint: 'No signal word values on public BA pages',
+  },
 ];
 
 /**
@@ -104,18 +121,28 @@ function walk(dir, out = []) {
 
 function collectFiles() {
   const files = [];
-  for (const rel of SCAN_ROOTS) {
-    files.push(...walk(path.join(ROOT, rel)));
+  if (exportOnly) {
+    for (const rel of EXPORT_SCAN_ROOTS) {
+      files.push(...walk(path.join(ROOT, rel)));
+    }
+  } else {
+    for (const rel of SOURCE_SCAN_ROOTS) {
+      files.push(...walk(path.join(ROOT, rel)));
+    }
+    const kfzLanding = path.join(ROOT, 'loesungen/kfz-werkstatt');
+    if (fs.existsSync(kfzLanding)) {
+      files.push(...walk(kfzLanding));
+    }
+    const blogDir = path.join(ROOT, 'blog');
+    if (fs.existsSync(blogDir)) {
+      for (const name of fs.readdirSync(blogDir)) {
+        if (name.endsWith('.mdx')) files.push(path.join(blogDir, name));
+      }
+    }
   }
   for (const rel of SCAN_FILES) {
     const full = path.join(ROOT, rel);
     if (fs.existsSync(full)) files.push(full);
-  }
-  const blogDir = path.join(ROOT, 'blog');
-  if (fs.existsSync(blogDir)) {
-    for (const name of fs.readdirSync(blogDir)) {
-      if (name.endsWith('.mdx')) files.push(path.join(blogDir, name));
-    }
   }
   return [...new Set(files)];
 }
@@ -153,4 +180,8 @@ if (violations.length > 0) {
   process.exit(1);
 }
 
-console.log('Legal copy validation OK (no banned terms in scanned sources).');
+console.log(
+  exportOnly
+    ? 'Legal copy export validation OK (no banned terms in synced static HTML).'
+    : 'Legal copy validation OK (no banned terms in scanned sources).',
+);

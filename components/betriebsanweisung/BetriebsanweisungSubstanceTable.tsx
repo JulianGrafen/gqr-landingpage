@@ -25,9 +25,9 @@ export function BetriebsanweisungSubstanceTable({ entry }: Props) {
           </tr>
           <tr>
             <th scope="row" className="whitespace-nowrap bg-slate-50 px-4 py-3 font-semibold text-slate-700">
-              Signalwort (typisch)
+              Signalwort
             </th>
-            <td className="px-4 py-3 text-slate-800">{entry.signalWord}</td>
+            <td className="px-4 py-3 text-slate-800">Im Entwurf nach Ihrem SDB (Freigabe SiFa / Arbeitgeber)</td>
           </tr>
         </tbody>
       </table>

@@ -40,6 +40,7 @@ async function postPreview(
     const json: unknown = await res.json().catch(() => null);
 
     if (res.status === 429) {
+      // legal-copy:allow in-einer-minute-product
       return { ok: false, error: 'Zu viele Anfragen — bitte in einer Minute erneut versuchen.', code: 'rate_limit' };
     }
 
@@ -90,6 +91,7 @@ export async function fetchPreviewByToken(
     const json: unknown = await res.json().catch(() => null);
 
     if (res.status === 429) {
+      // legal-copy:allow in-einer-minute-product
       return { ok: false, error: 'Zu viele Anfragen — bitte in einer Minute erneut versuchen.', code: 'rate_limit' };
     }
     if (!res.ok) {

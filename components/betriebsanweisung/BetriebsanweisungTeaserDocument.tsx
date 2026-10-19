@@ -30,7 +30,7 @@ function classificationDisclaimer(entry: HazardousSubstanceSeoEntry): string {
     entry.casNumber.kind === 'mixture'
       ? 'harmonisierten bzw. typischen Standardwerten'
       : 'harmonisierten Standardwerten';
-  return `Hinweis: Die angezeigten Piktogramme und das Signalwort basieren auf ${basis}. Maßgeblich für Ihren Betrieb ist stets das Sicherheitsdatenblatt Ihres konkreten Lieferanten.`;
+  return `Hinweis: Die angezeigten Piktogramme basieren auf ${basis}. Signalwort und Gefahrenhinweise werden erst nach Prüfung Ihres SDB und Freigabe durch SiFa / Arbeitgeber im Entwurf sichtbar. Maßgeblich ist stets Ihr Lieferanten-SDB.`;
 }
 
 export function BetriebsanweisungTeaserDocument({ entry }: Props) {
@@ -48,11 +48,8 @@ export function BetriebsanweisungTeaserDocument({ entry }: Props) {
         </p>
         <h2 className="mt-2 text-lg font-black sm:text-xl">{entry.documentDisplayName}</h2>
         <p className="mt-1 text-sm text-[#8fa4c0]">CAS / Produkt: {casLabel}</p>
-        <p className="mt-2 text-sm">
-          Signalwort:{' '}
-          <span className={entry.signalWord === 'Gefahr' ? 'font-bold text-red-400' : 'font-bold text-amber-300'}>
-            {entry.signalWord}
-          </span>
+        <p className="mt-2 text-sm text-[#8fa4c0]">
+          Signalwort und Gefahrenhinweise: Entwurf nach Freigabe in der App (SiFa / Arbeitgeber).
         </p>
         <div className="mt-3">
           <GhsPictogramGrid codes={entry.ghsPictograms} variant="dark" size="sm" />

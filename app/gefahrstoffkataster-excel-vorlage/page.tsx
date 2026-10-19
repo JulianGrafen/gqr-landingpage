@@ -223,7 +223,7 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
  <strong className="font-semibold text-[#c8d4e6]">
  Gefahrstoffliste
  </strong>{' '}
- typischerweise in wenigen Sekunden pro Dokument vorabfüllen —
+ KI-gestützt als Entwurf vorabfüllen lassen —
  die{' '}
  <strong className="font-semibold text-[#c8d4e6]">
  Gefahrstoffliste Lösungen
@@ -413,8 +413,8 @@ export default function GefahrstoffkatasterExcelVorlagePage() {
  aria-hidden
  />
  <span>
- <strong className="text-slate-800">Sicherheitsdatenblatt Extraktion</strong> in
- Sekunden statt handschriftlichem Übertrag — konsistentere
+ <strong className="text-slate-800">Sicherheitsdatenblatt-Extraktion</strong> statt
+ handschriftlichem Übertrag — konsistentere Entwurfsdaten
  Stammdaten für Ihr{' '}
  <strong className="text-slate-800">Gefahrstoffkataster</strong>
  .

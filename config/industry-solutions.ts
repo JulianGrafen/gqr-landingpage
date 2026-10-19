@@ -125,7 +125,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  'Spezialverbrauchsmaterialien mit CLP-Kennzeichnung',
  ],
  spezifischerVorteil:
- 'Neue oder aktualisierte Sicherheitsdatenblätter werden in Sekunden strukturiert übernommen – weniger Fehler bei H/P-Sätzen und bessere Aktualität für Unterweisung und Genehmigungsnachweise.',
+ 'Neue oder aktualisierte Sicherheitsdatenblätter können KI-gestützt strukturiert übernommen werden — Freigabe durch SiFa / Arbeitgeber; weniger Abtippen bei H/P-Sätzen.',
  handwerkAbsatz:
  'Labore arbeiten mit vielen Stoffen geringer Menge aber hoher Einstufungsvielfalt. mit Revisionsverlaufes Führen des Gefahrstoffverzeichnisses und schnelle Synchronisierung bei Lieferantenupdates sind entscheidend, ohne den Fachkräfte-Alltag zu blockieren.',
  brancheGenitiv: 'Labor',

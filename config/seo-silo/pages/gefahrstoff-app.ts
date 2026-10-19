@@ -37,7 +37,7 @@ export const GEFAHrstoff_APP_SILO_CONFIG: SeoSiloPageConfig = {
  },
  trustBullets: [
  'Kein App-Store-Zwang — mobil im Browser',
- 'Notfallinfos in Sekunden',
+ 'Notfallinfos schnell am Einsatzort',
  'Betriebsanweisung digital am Gebinde',
  ],
  },
@@ -140,7 +140,7 @@ export const GEFAHrstoff_APP_COMPARISON = {
  {
  criterion: 'Ersthelfer-Reaktionszeit',
  manual: 'Suchen, blättern, Rückfrage an SiFa — Minuten Verzug',
- gqr: 'Notfallscreen in Sekunden nach Scan',
+ gqr: 'Notfallscreen nach QR-Scan am Einsatzort',
  },
  {
  criterion: 'Aktualität bei Sicherheitsdatenblatt-Wechsel',
