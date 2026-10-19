@@ -1,13 +1,16 @@
 import {
   SDB_PREVIEW_API_PATH,
+  SDB_PREVIEW_COMPACT_SCOPE,
   SDB_PREVIEW_MAX_BYTES,
   sdbPreviewTokenPath,
   type SdbPreviewExampleId,
   type SdbPreviewPostResponse,
   type SdbPreviewTeaser,
 } from '@/lib/sdb-preview/api-contract';
+import { extractSdbSectionTextFromPdf } from '@/lib/sdb-preview/extract-pdf-sdb-sections';
 import { mapApiJsonToTeaser } from '@/lib/sdb-preview/map-teaser';
 import { runMockPreview } from '@/lib/sdb-preview/mock-preview-service';
+import { sanitizePublicTeaser } from '@/lib/sdb-preview/sanitize-public-teaser';
 
 function validatePdfFile(file: File): string | null {
   if (file.type && file.type !== 'application/pdf') {
@@ -25,9 +28,22 @@ function validatePdfFile(file: File): string | null {
   return null;
 }
 
+function networkErrorMessage(cause: unknown): string {
+  const msg = cause instanceof Error ? cause.message : String(cause);
+  if (/failed to fetch|networkerror|load failed/i.test(msg)) {
+    return 'Netzwerkfehler — Verbindung zur Extraktions-API fehlgeschlagen. Bitte Seite neu laden, Werbeblocker prüfen oder später erneut versuchen.';
+  }
+  return 'Netzwerkfehler — bitte Verbindung prüfen.';
+}
+
+function appendCompactScope(form: FormData): void {
+  form.append('previewScope', SDB_PREVIEW_COMPACT_SCOPE);
+}
+
 async function postPreview(
   apiBaseUrl: string,
   body: FormData,
+  attempt = 0,
 ): Promise<SdbPreviewPostResponse> {
   const url = `${apiBaseUrl.replace(/\/$/, '')}${SDB_PREVIEW_API_PATH}`;
   try {
@@ -35,6 +51,7 @@ async function postPreview(
       method: 'POST',
       body,
       credentials: 'omit',
+      mode: 'cors',
     });
 
     const json: unknown = await res.json().catch(() => null);
@@ -56,9 +73,13 @@ async function postPreview(
     if (!teaser) {
       return { ok: false, error: 'Ungültige Server-Antwort.', code: 'network' };
     }
-    return { ok: true, teaser };
-  } catch {
-    return { ok: false, error: 'Netzwerkfehler — bitte Verbindung prüfen.', code: 'network' };
+    return { ok: true, teaser: sanitizePublicTeaser(teaser) };
+  } catch (cause) {
+    if (attempt === 0) {
+      await new Promise((r) => setTimeout(r, 400));
+      return postPreview(apiBaseUrl, body, 1);
+    }
+    return { ok: false, error: networkErrorMessage(cause), code: 'network' };
   }
 }
 
@@ -72,11 +93,26 @@ export async function uploadPdfPreview(
   }
 
   if (options.useMock) {
-    return runMockPreview({ kind: 'file', fileName: file.name });
+    const res = await runMockPreview({ kind: 'file', fileName: file.name });
+    if (res.ok && res.teaser) {
+      return { ok: true, teaser: sanitizePublicTeaser(res.teaser) };
+    }
+    return res;
   }
 
   const form = new FormData();
   form.append('file', file, file.name);
+  appendCompactScope(form);
+
+  const sectionExtract = await extractSdbSectionTextFromPdf(file);
+  if (sectionExtract?.text) {
+    form.append('sectionExtract', sectionExtract.text);
+    form.append('sectionExtractMeta', JSON.stringify({
+      pagesUsed: sectionExtract.pagesUsed,
+      pageCount: sectionExtract.pageCount,
+    }));
+  }
+
   return postPreview(options.apiBaseUrl, form);
 }
 
@@ -87,7 +123,7 @@ export async function fetchPreviewByToken(
 ): Promise<SdbPreviewPostResponse> {
   const url = `${apiBaseUrl.replace(/\/$/, '')}${sdbPreviewTokenPath(previewToken)}`;
   try {
-    const res = await fetch(url, { method: 'GET', credentials: 'omit' });
+    const res = await fetch(url, { method: 'GET', credentials: 'omit', mode: 'cors' });
     const json: unknown = await res.json().catch(() => null);
 
     if (res.status === 429) {
@@ -106,9 +142,9 @@ export async function fetchPreviewByToken(
     if (!teaser) {
       return { ok: false, error: 'Ungültige Server-Antwort.', code: 'network' };
     }
-    return { ok: true, teaser };
-  } catch {
-    return { ok: false, error: 'Netzwerkfehler — bitte Verbindung prüfen.', code: 'network' };
+    return { ok: true, teaser: sanitizePublicTeaser(teaser) };
+  } catch (cause) {
+    return { ok: false, error: networkErrorMessage(cause), code: 'network' };
   }
 }
 
@@ -117,11 +153,16 @@ export async function runExamplePreview(
   options: { apiBaseUrl: string; useMock: boolean },
 ): Promise<SdbPreviewPostResponse> {
   if (options.useMock) {
-    return runMockPreview({ kind: 'example', exampleId });
+    const res = await runMockPreview({ kind: 'example', exampleId });
+    if (res.ok && res.teaser) {
+      return { ok: true, teaser: sanitizePublicTeaser(res.teaser) };
+    }
+    return res;
   }
 
   const form = new FormData();
   form.append('sampleKey', exampleId);
+  appendCompactScope(form);
   return postPreview(options.apiBaseUrl, form);
 }
 

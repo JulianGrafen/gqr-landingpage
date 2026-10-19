@@ -105,9 +105,19 @@ export function buildTeaserFromPrefill(p: PrefillLike, previewToken: string): Sd
 export function mapApiJsonToTeaser(json: unknown): SdbPreviewTeaser | null {
   if (!json || typeof json !== 'object') return null;
   const root = json as Record<string, unknown>;
+
   if (root.teaser && typeof root.teaser === 'object') {
-    return root.teaser as SdbPreviewTeaser;
+    const teaser = root.teaser as SdbPreviewTeaser;
+    const previewToken =
+      typeof root.previewToken === 'string'
+        ? root.previewToken
+        : typeof teaser.previewToken === 'string'
+          ? teaser.previewToken
+          : '';
+    if (!previewToken) return null;
+    return { ...teaser, previewToken };
   }
+
   if (root.ok === true && root.data && typeof root.data === 'object') {
     const token =
       typeof root.previewToken === 'string'
@@ -115,5 +125,6 @@ export function mapApiJsonToTeaser(json: unknown): SdbPreviewTeaser | null {
         : `preview-${Date.now()}`;
     return buildTeaserFromPrefill(root.data as PrefillLike, token);
   }
+
   return null;
 }

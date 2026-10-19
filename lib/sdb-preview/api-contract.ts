@@ -59,6 +59,8 @@ export type SdbPreviewConfig = {
 
 export const SDB_PREVIEW_API_PATH = '/api/public/sdb-preview';
 
+export const SDB_PREVIEW_COMPACT_SCOPE = 'landing_compact';
+
 export const sdbPreviewTokenPath = (token: string) =>
   `${SDB_PREVIEW_API_PATH}/${encodeURIComponent(token)}` as const;
 
