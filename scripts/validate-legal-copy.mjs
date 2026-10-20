@@ -21,6 +21,7 @@ const SKIP_FILES = new Set([
   path.join(ROOT, 'scripts/apply-uwg-compliance.mjs'),
   path.join(ROOT, 'scripts/apply-legal-copy-bulk.mjs'),
   path.join(ROOT, 'config/gqr-theme.ts'),
+  path.join(ROOT, 'config/betriebsanweisung/README.md'),
 ]);
 
 /** Scan roots relative to repo root */
@@ -31,10 +32,33 @@ const SOURCE_SCAN_ROOTS = [
   'content',
   'lib',
   'public/static-pages',
+  'blog',
+];
+
+/** Root-level static landing HTML (GitHub Pages). */
+const SOURCE_STATIC_DIRS = [
+  'pricing',
+  'gefahrstoffkataster-excel-vorlage',
+  'gefahrstoffverzeichnis-excel-vorlage',
+  'gefahrstoffmanagement-reinigungsfirma',
+  'gefahrstoff-software-sicherheitsfachkraft-selbstständig',
+  'trgs-510-zusammenlagerungs-check',
 ];
 
 /** Post–GitHub-Pages sync: committed static HTML export. */
-const EXPORT_SCAN_ROOTS = ['betriebsanweisung', 'wissen', 'loesungen', 'out'];
+const EXPORT_SCAN_ROOTS = [
+  'betriebsanweisung',
+  'wissen',
+  'loesungen',
+  'blog',
+  'pricing',
+  'gefahrstoffkataster-excel-vorlage',
+  'gefahrstoffverzeichnis-excel-vorlage',
+  'gefahrstoffmanagement-reinigungsfirma',
+  'gefahrstoff-software-sicherheitsfachkraft-selbstständig',
+  'trgs-510-zusammenlagerungs-check',
+  'out',
+];
 
 const exportOnly = process.argv.includes('--export');
 
@@ -93,12 +117,46 @@ const BANNED = [
     re: /Signalwort[^<]{0,40}(Gefahr|Achtung)<\/span>/i,
     hint: 'No signal word values on public BA pages',
   },
+  { id: 'pruefungssicher', re: /prüfungssicher/i },
+  { id: 'reach-konform', re: /REACH-konform/i },
+  { id: 'dguv-ready', re: /DGUV-ready/i },
+  { id: 'espr-konform', re: /ESPR-konform/i },
+  { id: 'in-15-minuten', re: /\bin 15 Minuten\b/i, hint: 'No fixed-duration promises' },
+  { id: 'in-unter-minuten', re: /\bin unter \d+ Minuten\b/i },
+  {
+    id: 'sekunden-check-brand',
+    re: /\d+-Sekunden-Check(?!-[a-z])/i,
+    hint: 'No second-based product claims (URL slugs exempt)',
+    skipInHref: true,
+  },
+  { id: 'unter-n-sekunden', re: /\bunter \d+ Sekunden\b/i },
+  { id: 'prozent-sparen', re: /\d+\s*%\s*(weniger|sparen|Kostenersparnis|Reduktion|Genauigkeit)/i },
+  { id: 'guenstiger-bussgeld', re: /Günstiger als.*Bußgeld/i },
+  { id: 'bussgeld-verhindert', re: /Bußgeld.*verhindert|verhindert.*Bußgeld/i },
+  { id: 'notfallsicher-minuten', re: /Notfallsicher in \d+ Minuten/i },
+  { id: 'volle-kontrolle-comma', re: /Volle Kontrolle,/i },
+  { id: 'agw-detail', re: /Arbeitsplatzgrenzwerte \(AGW\)/i, hint: 'No AGW/PSA detail in marketing copy' },
+  { id: 'flammpunkt-detail', re: /Flammpunkt/i, hint: 'No safety numeric detail in marketing' },
+  { id: 'psa-klammer', re: /Schutzausrüstung \(PSA\)/i },
+  { id: 'audit-sicherheit', re: /Audit-Sicherheit/i },
+  { id: 'sofortige-audit', re: /sofortige Audit/i },
+  { id: 'vollautomatisch-aus', re: /vollautomatisch aus/i },
+  { id: '90-prozent-marketing', re: /\b90\s*%\s*(weniger|sparen|Reduktion|Genauigkeit)|spart aber 90\s*%/i },
 ];
 
 /**
  * Line-level allow: `// legal-copy:allow <id>` on the line before, or same line after match.
  * File-level: first line `/* legal-copy:allow-file *\/`
  */
+function isInsideHrefOrJsonUrl(content, matchIndex) {
+  const windowStart = Math.max(0, matchIndex - 200);
+  const slice = content.slice(windowStart, matchIndex + 80);
+  if (/href=["'][^"']*$/.test(slice)) return true;
+  if (/"@id"\s*:\s*"[^"]*$/.test(slice)) return true;
+  if (/"url"\s*:\s*"[^"]*$/.test(slice)) return true;
+  return false;
+}
+
 function isAllowed(content, matchIndex, ruleId) {
   const before = content.slice(Math.max(0, matchIndex - 120), matchIndex);
   if (/\/\*\s*legal-copy:allow-file\s*\*\//.test(content.slice(0, 200))) return true;
@@ -133,11 +191,8 @@ function collectFiles() {
     if (fs.existsSync(kfzLanding)) {
       files.push(...walk(kfzLanding));
     }
-    const blogDir = path.join(ROOT, 'blog');
-    if (fs.existsSync(blogDir)) {
-      for (const name of fs.readdirSync(blogDir)) {
-        if (name.endsWith('.mdx')) files.push(path.join(blogDir, name));
-      }
+    for (const rel of SOURCE_STATIC_DIRS) {
+      files.push(...walk(path.join(ROOT, rel)));
     }
   }
   for (const rel of SCAN_FILES) {
@@ -156,6 +211,7 @@ for (const file of collectFiles()) {
     const re = new RegExp(rule.re.source, rule.re.flags.includes('g') ? rule.re.flags : `${rule.re.flags}g`);
     let m;
     while ((m = re.exec(content)) !== null) {
+      if (rule.skipInHref && isInsideHrefOrJsonUrl(content, m.index)) continue;
       if (isAllowed(content, m.index, rule.id)) continue;
       const line = content.slice(0, m.index).split('\n').length;
       violations.push({

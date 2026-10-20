@@ -5,7 +5,21 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const DIRS = ['app', 'components', 'config', 'content', 'lib', 'public/static-pages', 'blog'];
+const DIRS = [
+  'app',
+  'components',
+  'config',
+  'content',
+  'lib',
+  'public/static-pages',
+  'blog',
+  'gefahrstoffkataster-excel-vorlage',
+  'gefahrstoffverzeichnis-excel-vorlage',
+  'gefahrstoffmanagement-reinigungsfirma',
+  'gefahrstoff-software-sicherheitsfachkraft-selbstständig',
+  'trgs-510-zusammenlagerungs-check',
+  'pricing',
+];
 const EXTRA = ['index.html'];
 const EXT = new Set(['.ts', '.tsx', '.mdx', '.md', '.json', '.html']);
 const SKIP = new Set(['node_modules', '.git', 'apply-legal-copy-bulk.mjs', 'validate-legal-copy.mjs']);
