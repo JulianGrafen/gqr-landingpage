@@ -376,6 +376,180 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     applicationAreaWorkplace:
       'Verdünnung, Reinigung und Entfettung in Werkstatt und Produktion — CAS-Bezeichnungen und Aromatenanteile unterscheiden sich je Lieferant; maßgeblich ist das SDB Ihres Testbenzins.',
   },
+  {
+    slug: 'ethylacetat-trgs-555',
+    substanceName: 'Ethylacetat',
+    documentDisplayName: 'Ethylacetat (Essigsäureethylester)',
+    synonyms: ['Essigsäureethylester', 'Ethyl acetate', 'EtOAc'],
+    casNumber: { kind: 'substance', value: '141-78-6' },
+    ghsPictograms: ['GHS02', 'GHS07'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Lackierung & Beschichtung',
+      'Druckerei & Flexodruck',
+      'Klebstoffverarbeitung',
+      'Malerbetrieb',
+    ],
+    applicationAreaWorkplace:
+      'Lösungsmittel und Verdünnung in Beschichtungs- und Reinigungsprozessen — Einsatzorte und Verfahren werden aus dem herstellerspezifischen SDB und der Betriebsorganisation abgeleitet.',
+  },
+  {
+    slug: 'n-hexan-trgs-555',
+    substanceName: 'n-Hexan',
+    documentDisplayName: 'n-Hexan (Hexan)',
+    synonyms: ['Hexan', 'n-Hexane', 'C6H14'],
+    casNumber: { kind: 'substance', value: '110-54-3' },
+    ghsPictograms: ['GHS02', 'GHS07', 'GHS08', 'GHS09'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Kfz-Werkstatt & Entfettung',
+      'Malerbetrieb & Lackierung',
+      'Leder- & Textilverarbeitung',
+      'Industrielle Reinigung',
+    ],
+    applicationAreaWorkplace:
+      'Entfettung und Lösungsmitteleinsatz in Werkstatt und Produktion — technische Qualität und Zusammensetzung (z. B. Isomerenanteile) sind im SDB des bezogenen Produkts beschrieben.',
+  },
+  {
+    slug: 'kohlenmonoxid-trgs-555',
+    substanceName: 'Kohlenmonoxid',
+    documentDisplayName: 'Kohlenmonoxid (Kohlenstoffmonoxid)',
+    synonyms: ['Kohlenstoffmonoxid', 'Carbon monoxide', 'CO'],
+    casNumber: { kind: 'substance', value: '630-08-0' },
+    ghsPictograms: ['GHS02', 'GHS04', 'GHS06', 'GHS08'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Schweißen & Thermische Prozesse',
+      'Heizungs- & Kesselanlagen',
+      'Stahl- & Metallverarbeitung',
+      'Garagen & Werkstätten',
+    ],
+    applicationAreaWorkplace:
+      'Verbrennungsprozesse, Schweißrauch-Nebenszenarien und technische Gase am Arbeitsplatz — Quellen und betroffene Bereiche sind in der Gefährdungsbeurteilung und im SDB der eingesetzten Stoffe zu benennen.',
+  },
+  {
+    slug: 'tetrachlorethen-trgs-555',
+    substanceName: 'Tetrachlorethen',
+    documentDisplayName: 'Tetrachlorethen (Perchlorethylen)',
+    synonyms: ['Perchlorethylen', 'Tetrachloroethylen', 'PER'],
+    casNumber: { kind: 'substance', value: '127-18-4' },
+    ghsPictograms: ['GHS08', 'GHS09'],
+    signalWord: 'Achtung',
+    typicalIndustries: [
+      'Textilreinigung',
+      'Metallentfettung & Galvanik',
+      'Industrielle Teilewaschung',
+      'Kfz-Werkstatt',
+    ],
+    applicationAreaWorkplace:
+      'Lösungsmittel in Reinigungs- und Entfettungsanlagen — Anlagenart und Prozessführung sind produktspezifisch im Lieferanten-SDB und in der Betriebsanweisung festzuhalten.',
+  },
+  {
+    slug: 'trichlorethen-trgs-555',
+    substanceName: 'Trichlorethen',
+    documentDisplayName: 'Trichlorethen (Trichloroethylen)',
+    synonyms: ['Trichloroethylen', 'Tri', 'C2HCl3'],
+    casNumber: { kind: 'substance', value: '79-01-6' },
+    ghsPictograms: ['GHS07', 'GHS08'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Metallentfettung & Oberflächentechnik',
+      'Industrielle Teilewaschung',
+      'Kfz-Werkstatt',
+      'Maschinenbau & Instandhaltung',
+    ],
+    applicationAreaWorkplace:
+      'Entfettung und Lösungsmitteleinsatz in Wasch- und Reinigungsprozessen — Verwendungsbeschränkungen und Rezeptur können je Produkt variieren; maßgeblich ist das SDB Ihres Lieferanten.',
+  },
+  {
+    slug: 'butanol-trgs-555',
+    substanceName: '1-Butanol',
+    documentDisplayName: '1-Butanol (n-Butanol)',
+    synonyms: ['n-Butanol', 'Butylalkohol', 'Butan-1-ol'],
+    casNumber: { kind: 'substance', value: '71-36-3' },
+    ghsPictograms: ['GHS02', 'GHS05', 'GHS07'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Lackierung & Beschichtung',
+      'Druckfarben & Flexodruck',
+      'Chemische Produktion',
+      'Labor & Technik',
+    ],
+    applicationAreaWorkplace:
+      'Lösungsmittel und Zwischenprodukt in technischen Betrieben — Konzentration, Einsatzort und Tätigkeiten werden aus dem herstellerspezifischen SDB abgeleitet.',
+  },
+  {
+    slug: 'butylglykol-trgs-555',
+    substanceName: 'Butylglykol',
+    documentDisplayName: 'Butylglykol (2-Butoxyethanol)',
+    synonyms: ['2-Butoxyethanol', 'Ethylenglykolmonobutylether', 'EGBE'],
+    casNumber: { kind: 'substance', value: '111-76-2' },
+    ghsPictograms: ['GHS06'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Gebäudereinigung & Facility',
+      'Lackierung & Beschichtung',
+      'Druckerei',
+      'Industrielle Reinigung',
+    ],
+    applicationAreaWorkplace:
+      'Lösungsmittel in Reinigern, Farben und Beschichtungen — Rezeptur und Einsatzkonzentration unterscheiden sich je Handelsprodukt; maßgeblich ist das SDB des verwendeten Produkts.',
+  },
+  {
+    slug: 'methylmethacrylat-trgs-555',
+    substanceName: 'Methylmethacrylat',
+    documentDisplayName: 'Methylmethacrylat (MMA)',
+    synonyms: ['MMA', 'Methyl-2-methylpropenoat', 'Methacrylsäuremethylester'],
+    casNumber: { kind: 'substance', value: '80-62-6' },
+    ghsPictograms: ['GHS02', 'GHS07'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Zahntechnik & Medizintechnik',
+      'Kunststoffverarbeitung',
+      'Bau & Sanierung (PMMA-Systeme)',
+      'Modellbau & Prototyping',
+    ],
+    applicationAreaWorkplace:
+      'Monomer in Acryl- und PMMA-Systemen — Verarbeitungsschritte und Einsatzorte werden aus dem SDB des Handelsprodukts und der Betriebsorganisation abgeleitet.',
+  },
+  {
+    slug: 'cyclohexan-trgs-555',
+    substanceName: 'Cyclohexan',
+    documentDisplayName: 'Cyclohexan',
+    synonyms: ['Hexamethylen', 'C6H12'],
+    casNumber: { kind: 'substance', value: '110-82-7' },
+    ghsPictograms: ['GHS02', 'GHS07', 'GHS08', 'GHS09'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Chemische Produktion',
+      'Lackierung & Klebstoffe',
+      'Labor & Analytik',
+      'Industrielle Lösungsmitteleinsätze',
+    ],
+    applicationAreaWorkplace:
+      'Lösungsmittel und Ausgangsstoff in technischen Prozessen — Reinheit und Einsatzbedingungen sind im herstellerspezifischen SDB dokumentiert.',
+  },
+  {
+    slug: 'heizoel-el-trgs-555',
+    substanceName: 'Heizöl EL',
+    documentDisplayName: 'Heizöl extra leicht (Heizöl EL)',
+    synonyms: ['Heizöl extra leicht', 'EL-Heizöl', 'Schweröl (destillatbasiert, EL)'],
+    casNumber: {
+      kind: 'mixture',
+      label: 'Gemisch (mitteldestillierte Kohlenwasserstoffe, Heizöl EL)',
+      mainComponentCas: '64742-55-8',
+    },
+    ghsPictograms: ['GHS07', 'GHS08', 'GHS09'],
+    signalWord: 'Gefahr',
+    typicalIndustries: [
+      'Hausmeister & Gebäudetechnik',
+      'Handwerk & Kleingewerbe',
+      'Landwirtschaft',
+      'Kommunale Einrichtungen',
+    ],
+    applicationAreaWorkplace:
+      'Betrieb von Ölheizungen, Umfüllen und Lagerung in Betriebsstätten — Schwefelgehalt, Bioanteile und Additive können die Einstufung beeinflussen; maßgeblich ist das SDB des gelieferten Heizöls.',
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
