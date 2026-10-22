@@ -898,6 +898,180 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
         applicationAreaWorkplace:
           'Entkalkung, Reinigung und Prozessführung — Konzentration in Fertigmischungen und Pulverprodukten ist im Lieferanten-SDB ausgewiesen.',
       },
+  {
+      slug: 'benzalkoniumchlorid-trgs-555',
+      substanceName: 'Benzalkoniumchlorid',
+      documentDisplayName: 'Benzalkoniumchlorid (quaternäres Ammoniumsalz, typisch)',
+      synonyms: ['BAC', 'Alkyldimethylbenzylammoniumchlorid', 'Desinfektionsmittel (QV-Anteil)'],
+      casNumber: { kind: 'substance', value: '63449-41-2' },
+      ghsPictograms: ['GHS05', 'GHS07', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Gebäudereinigung & Desinfektion',
+        'Lebensmittelverarbeitung (Oberflächen)',
+        'Pflege & Medizintechnik (Reinigung)',
+        'Facility Management',
+      ],
+      applicationAreaWorkplace:
+        'Oberflächenreinigung und Desinfektion in Betrieben — Kettenlänge und Konzentration in Fertigprodukten variieren; maßgeblich ist das SDB Ihres Reinigers oder Desinfektionsmittels.',
+    },
+  {
+      slug: 'chlor-trgs-555',
+      substanceName: 'Chlor',
+      documentDisplayName: 'Chlor (Cl₂, verdichtetes Gas)',
+      synonyms: ['Chlorgas', 'Dichlor', 'Cl₂'],
+      casNumber: { kind: 'substance', value: '7782-50-5' },
+      ghsPictograms: ['GHS03', 'GHS04', 'GHS06', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Schwimmbad- & Wasseraufbereitung',
+        'Chemische Industrie',
+        'Textil- & Bleicherei',
+        'Kommunale Wasserversorgung',
+      ],
+      applicationAreaWorkplace:
+        'Dosierung und Umgang in geschlossenen Anlagen oder mit Druckgasflaschen — Einsatz nur im dokumentierten Verfahren; maßgeblich sind Betriebsanweisung und SDB am Einsatzort.',
+    },
+  {
+      slug: 'isopentan-trgs-555',
+      substanceName: 'Isopentan',
+      documentDisplayName: 'Isopentan (2-Methylbutan)',
+      synonyms: ['2-Methylbutan', 'Isoamylhydrid', 'Schaumtreibmittel (typisch)'],
+      casNumber: { kind: 'substance', value: '78-78-4' },
+      ghsPictograms: ['GHS02', 'GHS07', 'GHS08', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Kunststoff- & Schaumstoffherstellung',
+        'Chemische Industrie',
+        'Labor',
+        'Kältetechnik (Auszug)',
+      ],
+      applicationAreaWorkplace:
+        'Lösungsmittel und Prozessführung in Produktion — Dämpfe können sich am Boden sammeln; konkrete Freisetzung und Arbeitsplatz sind im herstellerspezifischen SDB zu dokumentieren.',
+    },
+  {
+      slug: 'methylethylketon-trgs-555',
+      substanceName: 'Methylethylketon',
+      documentDisplayName: 'Methylethylketon (MEK, Butanon)',
+      synonyms: ['MEK', 'Butanon', 'Ethylmethylketon'],
+      casNumber: { kind: 'substance', value: '78-93-3' },
+      ghsPictograms: ['GHS02', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Malerbetrieb & Lackierung',
+        'Kunststoffverarbeitung',
+        'Druckerei & Flexodruck',
+        'Kfz-Werkstatt',
+      ],
+      applicationAreaWorkplace:
+        'Lösungsmittel in Beschichtung, Klebung und Reinigung — Einsatzkonzentration und Belüftung sind im Lieferanten-SDB beschrieben und in der freigegebenen Betriebsanweisung festzuhalten.',
+    },
+  {
+      slug: 'methylisobutylketon-trgs-555',
+      substanceName: 'Methylisobutylketon',
+      documentDisplayName: 'Methylisobutylketon (MIBK, 4-Methylpentan-2-on)',
+      synonyms: ['MIBK', '4-Methylpentan-2-on', 'Isobutylmethylketon'],
+      casNumber: { kind: 'substance', value: '108-10-1' },
+      ghsPictograms: ['GHS02', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Lack- & Beschichtungsindustrie',
+        'Gummi- & Kunststoffverarbeitung',
+        'Metallveredelung',
+        'Industrielle Reinigung',
+      ],
+      applicationAreaWorkplace:
+        'Lösungsmittel und Extraktion in Produktion — Rezeptur und Expositionsbedingungen können je Produkt abweichen; maßgeblich ist das SDB am Arbeitsplatz.',
+    },
+  {
+      slug: 'monoethanolamin-trgs-555',
+      substanceName: 'Monoethanolamin',
+      documentDisplayName: 'Monoethanolamin (2-Aminoethanol)',
+      synonyms: ['2-Aminoethanol', 'Ethanolamin', 'MEA'],
+      casNumber: { kind: 'substance', value: '141-43-5' },
+      ghsPictograms: ['GHS05', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Gasaufbereitung & Rauchgasreinigung',
+        'Reinigungsmittelherstellung',
+        'Textil- & Lederindustrie',
+        'Chemische Industrie',
+      ],
+      applicationAreaWorkplace:
+        'Neutralisation, Absorption und Formulierung — Konzentration in wässrigen Lösungen bestimmt die Einstufung; maßgeblich ist das SDB Ihres Produkts.',
+    },
+  {
+      slug: 'motoroel-trgs-555',
+      substanceName: 'Motoröl',
+      documentDisplayName: 'Motoröl (Schmieröl, mineralölbasiert, typisch)',
+      synonyms: ['Schmieröl', 'Engine oil', 'Mineralöl-Schmierstoff'],
+      casNumber: {
+        kind: 'mixture',
+        label: 'Gemisch (mineralölbasiertes Schmieröl, SAE-Klassen)',
+        mainComponentCas: '8042-47-5',
+      },
+      ghsPictograms: ['GHS07', 'GHS08', 'GHS09'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Kfz-Werkstatt & Fuhrpark',
+        'Landtechnik',
+        'Maschinenbau & Instandhaltung',
+        'Motorsport & Wassersport',
+      ],
+      applicationAreaWorkplace:
+        'Wechsel, Umfüllen und Lagerung in Werkstätten — Viskositätsklasse, Additive und Synthesebasis (mineral vs. teilsynthetisch) beeinflussen die Einstufung; maßgeblich ist das SDB des verwendeten Motoröls.',
+    },
+  {
+      slug: 'natriumcarbonat-trgs-555',
+      substanceName: 'Natriumcarbonat',
+      documentDisplayName: 'Natriumcarbonat (Soda, wasserfrei)',
+      synonyms: ['Soda', 'Natron', 'Waschsoda (pulverförmig)'],
+      casNumber: { kind: 'substance', value: '497-19-8' },
+      ghsPictograms: ['GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Gebäudereinigung & Waschmittel',
+        'Glas- & Keramikindustrie',
+        'Textilwäscherei',
+        'Wasseraufbereitung',
+      ],
+      applicationAreaWorkplace:
+        'Reinigung, Neutralisation und Prozessführung — Staubexposition beim Einfüllen von Pulverprodukten ist im SDB des Lieferanten beschrieben.',
+    },
+  {
+      slug: 'natriummetasilikat-trgs-555',
+      substanceName: 'Natriummetasilikat',
+      documentDisplayName: 'Natriummetasilikat (Disodiummetasilikat, typisch)',
+      synonyms: ['Disodiummetasilikat', 'Wasserglas (fest, alkalisch)', 'Spülmaschinenreiniger (Säurebinder)'],
+      casNumber: { kind: 'substance', value: '6834-92-0' },
+      ghsPictograms: ['GHS05', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Gewerbliche Spültechnik',
+        'Gebäudereinigung (Alkali-Reiniger)',
+        'Papier- & Zellstoffindustrie',
+        'Waschmittelherstellung',
+      ],
+      applicationAreaWorkplace:
+        'Alkalische Reinigung und Spülprozesse — Hydratstufe (Pentahydrat vs. wasserfrei) und Konzentration in Tabs oder Pulver variieren; maßgeblich ist das SDB Ihres Produkts.',
+    },
+  {
+      slug: 'peressigsaeure-trgs-555',
+      substanceName: 'Peressigsäure',
+      documentDisplayName: 'Peressigsäure (Peroxyessigsäure, Lösung)',
+      synonyms: ['Peroxyessigsäure', 'PAA', 'Desinfektionsmittel (Oxidationsmittel)'],
+      casNumber: { kind: 'substance', value: '79-21-0' },
+      ghsPictograms: ['GHS02', 'GHS05', 'GHS07', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Lebensmittelverarbeitung (Oberfläche)',
+        'Getränke- & Brauindustrie',
+        'Klinische Aufbereitung (Auszug)',
+        'Gebäudereinigung (Desinfektion)',
+      ],
+      applicationAreaWorkplace:
+        'Desinfektion und Prozessführung in wässrigen Lösungen — Gehalt und Stabilisatoren sind im SDB ausgewiesen; Konzentration auf dem Etikett ist maßgeblich für die Einstufung.',
+    },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
