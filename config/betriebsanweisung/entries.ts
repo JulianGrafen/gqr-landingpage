@@ -898,6 +898,176 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
         applicationAreaWorkplace:
           'Entkalkung, Reinigung und Prozessführung — Konzentration in Fertigmischungen und Pulverprodukten ist im Lieferanten-SDB ausgewiesen.',
       },
+  {
+      slug: 'stickstoff-trgs-555',
+      substanceName: 'Stickstoff',
+      documentDisplayName: 'Stickstoff (N₂, verdichtetes Gas)',
+      synonyms: ['N₂', 'Schutzgas Stickstoff', 'Druckgas Stickstoff'],
+      casNumber: { kind: 'substance', value: '7727-37-9' },
+      ghsPictograms: ['GHS04'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Metallbau & Schweißtechnik',
+        'Lebensmittelverpackung (Schutzgas)',
+        'Elektronik & Löttechnik',
+        'Chemische Industrie',
+      ],
+      applicationAreaWorkplace:
+        'Inertisierung, Schutzgas und Prozessführung aus Druckgasflaschen oder Generatoren — Anlagen und Arbeitsplätze sind im SDB des Gaslieferanten und in der freigegebenen Betriebsanweisung zu benennen.',
+    },
+  {
+      slug: 'wasserstoff-trgs-555',
+      substanceName: 'Wasserstoff',
+      documentDisplayName: 'Wasserstoff (H₂, verdichtetes Gas)',
+      synonyms: ['H₂', 'Wasserstoffgas', 'Formiergas (Anteil H₂)'],
+      casNumber: { kind: 'substance', value: '1333-74-0' },
+      ghsPictograms: ['GHS02', 'GHS04'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Metallverarbeitung & Wärmebehandlung',
+        'Chemische Industrie',
+        'Labor',
+        'Energietechnik (Wasserstoffinfrastruktur)',
+      ],
+      applicationAreaWorkplace:
+        'Reduktions- und Schutzgasprozesse sowie Befüllung von Druckbehältern — Leckageüberwachung und Anlagen sind im herstellerspezifischen SDB und in der Betriebsorganisation dokumentiert.',
+    },
+  {
+      slug: 'kohlendioxid-trgs-555',
+      substanceName: 'Kohlendioxid',
+      documentDisplayName: 'Kohlendioxid (CO₂, verdichtetes Gas)',
+      synonyms: ['CO₂', 'Kohlensäure (Gas)', 'Trockeneis (fest, Ausgang)'],
+      casNumber: { kind: 'substance', value: '124-38-9' },
+      ghsPictograms: ['GHS04'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Gastronomie & Getränketechnik',
+        'Schweißtechnik (MIG/MAG-Schutzgasanteil)',
+        'Feuerlöscher & Brandschutz',
+        'Lebensmittelverarbeitung',
+      ],
+      applicationAreaWorkplace:
+        'Schutzgas, Kühlung und Prozessführung — Aggregatzustand (flüssig, fest, gasförmig) und Anlage am Arbeitsplatz sind im SDB des bezogenen Produkts beschrieben.',
+    },
+  {
+      slug: 'n-pentan-trgs-555',
+      substanceName: 'n-Pentan',
+      documentDisplayName: 'n-Pentan (Pentan)',
+      synonyms: ['Pentan', 'n-C₅H₁₂', 'Schaumtreibmittel (typisch)'],
+      casNumber: { kind: 'substance', value: '109-66-0' },
+      ghsPictograms: ['GHS02', 'GHS07', 'GHS08', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Kunststoff- & Schaumstoffherstellung',
+        'Chemische Industrie',
+        'Labor',
+        'Industrielle Reinigung (Auszug)',
+      ],
+      applicationAreaWorkplace:
+        'Lösungsmittel und Prozessführung in Produktion — Dämpfe können sich am Boden sammeln; maßgeblich ist das SDB Ihres Lieferanten und die freigegebene Betriebsanweisung am Einsatzort.',
+    },
+  {
+      slug: 'heptan-trgs-555',
+      substanceName: 'Heptan',
+      documentDisplayName: 'Heptan (n-Heptan)',
+      synonyms: ['n-Heptan', 'Normalheptan', 'Lösungsmittel n-C₇H₁₆'],
+      casNumber: { kind: 'substance', value: '142-82-5' },
+      ghsPictograms: ['GHS02', 'GHS07', 'GHS08', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Labor & Analytik',
+        'Kunststoff- & Beschichtungsindustrie',
+        'Druckerei & Flexodruck',
+        'Industrielle Entfettung',
+      ],
+      applicationAreaWorkplace:
+        'Lösungsmittel in Analytik, Beschichtung und Reinigung — Isomerenanteile und Reinheit können je Produkt variieren; maßgeblich ist das SDB am Arbeitsplatz.',
+    },
+  {
+      slug: 'triethylamin-trgs-555',
+      substanceName: 'Triethylamin',
+      documentDisplayName: 'Triethylamin (TEA)',
+      synonyms: ['TEA', 'N,N-Diethylethanamin', 'Epoxidharz-Härter (Anteil)'],
+      casNumber: { kind: 'substance', value: '121-44-8' },
+      ghsPictograms: ['GHS02', 'GHS05', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Kunststoffverarbeitung & Epoxidharze',
+        'Textil- & Lederindustrie',
+        'Gummiindustrie',
+        'Chemische Industrie',
+      ],
+      applicationAreaWorkplace:
+        'Neutralisation, Härtung und Formulierung in Produktion — Konzentration in Gemischen und Belüftung sind im herstellerspezifischen SDB ausgewiesen.',
+    },
+  {
+      slug: 'diethylenglykol-trgs-555',
+      substanceName: 'Diethylenglykol',
+      documentDisplayName: 'Diethylenglykol (DEG)',
+      synonyms: ['DEG', '2,2′-Oxydiethanol', 'Glykol (Diethylen)'],
+      casNumber: { kind: 'substance', value: '111-46-6' },
+      ghsPictograms: ['GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Gebäudetechnik & Frostschutz',
+        'Textil- & Lederindustrie',
+        'Druckerei & Flexodruck',
+        'Chemische Industrie',
+      ],
+      applicationAreaWorkplace:
+        'Frostschutz, Feuchtemittel und Prozessführung — Einsatzkonzentration in wässrigen Systemen ist im SDB des Handelsprodukts dokumentiert.',
+    },
+  {
+      slug: 'propanol-trgs-555',
+      substanceName: '1-Propanol',
+      documentDisplayName: '1-Propanol (n-Propanol)',
+      synonyms: ['n-Propanol', 'Propylalkohol', '1-Propylalkohol'],
+      casNumber: { kind: 'substance', value: '71-23-8' },
+      ghsPictograms: ['GHS02', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Druckerei & Flexodruck',
+        'Malerbetrieb & Lackierung',
+        'Pharma & Kosmetik (Prozess)',
+        'Industrielle Reinigung',
+      ],
+      applicationAreaWorkplace:
+        'Lösungsmittel in Beschichtung, Druck und Reinigung — Rezeptur und Belüftung können je Lieferant abweichen; maßgeblich ist das SDB Ihres Produkts.',
+    },
+  {
+      slug: 'milchsaeure-trgs-555',
+      substanceName: 'Milchsäure',
+      documentDisplayName: 'Milchsäure (Lactic acid, Lösung)',
+      synonyms: ['Lactic acid', '2-Hydroxypropionsäure', 'Milchsäurelösung'],
+      casNumber: { kind: 'substance', value: '50-21-5' },
+      ghsPictograms: ['GHS05', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Gebäudereinigung & Sanitär',
+        'Lebensmittel- & Getränkeindustrie',
+        'Kosmetik & Pharma',
+        'Textil- & Lederindustrie',
+      ],
+      applicationAreaWorkplace:
+        'Reinigung, Entkalkung und Prozessführung — Gehalt und pH-Wert in Fertigmischungen bestimmen die Einstufung und sind im Lieferanten-SDB ausgewiesen.',
+    },
+  {
+      slug: 'zinkchlorid-trgs-555',
+      substanceName: 'Zinkchlorid',
+      documentDisplayName: 'Zinkchlorid (wasserfrei, technisch)',
+      synonyms: ['ZnCl₂', 'Lötflux (Zinkchlorid-Anteil)', 'Galvanik-Elektrolyt (Auszug)'],
+      casNumber: { kind: 'substance', value: '7646-85-7' },
+      ghsPictograms: ['GHS05', 'GHS07', 'GHS08', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Elektronik & Löttechnik',
+        'Galvanik & Oberflächentechnik',
+        'Holzverarbeitung (Konservierung, Auszug)',
+        'Chemische Industrie',
+      ],
+      applicationAreaWorkplace:
+        'Flux, Aktivierung und Prozesschemie — Form (fest, Lösung, in Pasten) und Konzentration variieren stark; maßgeblich ist das SDB des verwendeten Produkts.',
+    },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
