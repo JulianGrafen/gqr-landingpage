@@ -898,6 +898,176 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
         applicationAreaWorkplace:
           'Entkalkung, Reinigung und Prozessführung — Konzentration in Fertigmischungen und Pulverprodukten ist im Lieferanten-SDB ausgewiesen.',
       },
+  {
+      slug: 'methylacetat-trgs-555',
+      substanceName: 'Methylacetat',
+      documentDisplayName: 'Methylacetat (Essigsäuremethylester)',
+      synonyms: ['Essigsäuremethylester', 'Methyl ethanoate', 'CH₃COOCH₃'],
+      casNumber: { kind: 'substance', value: '79-20-9' },
+      ghsPictograms: ['GHS02', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Malerbetrieb & Lackierung',
+        'Druckerei & Flexodruck',
+        'Kunststoffverarbeitung',
+        'Industrielle Reinigung',
+      ],
+      applicationAreaWorkplace:
+        'Lösungsmittel in Beschichtung, Druck und Entfettung — Dämpfe können müde machen; maßgeblich ist das SDB Ihres Produkts und die freigegebene Betriebsanweisung am Einsatzort.',
+    },
+  {
+      slug: 'isopropylacetat-trgs-555',
+      substanceName: 'Isopropylacetat',
+      documentDisplayName: 'Isopropylacetat (Essigsäureisopropylester)',
+      synonyms: ['Essigsäureisopropylester', 'Isopropyl ethanoate', '2-Propylacetat'],
+      casNumber: { kind: 'substance', value: '108-21-4' },
+      ghsPictograms: ['GHS02', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Malerbetrieb & Lackierung',
+        'Druckerei & Flexodruck',
+        'Kunststoff- & Beschichtungsindustrie',
+        'Industrielle Entfettung',
+      ],
+      applicationAreaWorkplace:
+        'Lösungsmittel in Lack, Klebstoff und Reinigung — Rezeptur und Belüftung können je Lieferant abweichen; maßgeblich ist das herstellerspezifische SDB.',
+    },
+  {
+      slug: 'acrylsaeure-trgs-555',
+      substanceName: 'Acrylsäure',
+      documentDisplayName: 'Acrylsäure (Acrylic acid, Monomer)',
+      synonyms: ['Acrylic acid', 'Propenoic acid', 'Acrylsäuremonomer'],
+      casNumber: { kind: 'substance', value: '79-10-7' },
+      ghsPictograms: ['GHS02', 'GHS05', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Kunststoff- & Polymerchemie',
+        'Klebstoff- & Dichtstoffherstellung',
+        'Wasseraufbereitung (Polymerisat)',
+        'Labor & Technik',
+      ],
+      applicationAreaWorkplace:
+        'Monomer und Zwischenprodukt in Polymerisation — Stabilisierung, Gehalt und Arbeitsplatz sind im SDB des bezogenen Produkts beschrieben.',
+    },
+  {
+      slug: 'morpholin-trgs-555',
+      substanceName: 'Morpholin',
+      documentDisplayName: 'Morpholin (Tetrahydro-1,4-oxazin)',
+      synonyms: ['Tetrahydro-1,4-oxazin', 'Diethylenimide oxide', 'Korrosionsschutz (Anteil)'],
+      casNumber: { kind: 'substance', value: '110-91-8' },
+      ghsPictograms: ['GHS02', 'GHS05', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Metallverarbeitung & Kühlschmierstoffe',
+        'Chemische Industrie',
+        'Papier- & Textilindustrie',
+        'Industrielle Wasserbehandlung',
+      ],
+      applicationAreaWorkplace:
+        'pH-Regulation und Formulierung in Prozessmedien — Konzentration in Fertigmischungen ist im Lieferanten-SDB ausgewiesen.',
+    },
+  {
+      slug: 'triethanolamin-trgs-555',
+      substanceName: 'Triethanolamin',
+      documentDisplayName: 'Triethanolamin (TEA)',
+      synonyms: ['TEA', 'Trolamine', '2,2′,2′′-Nitrilotriethanol'],
+      casNumber: { kind: 'substance', value: '102-71-6' },
+      ghsPictograms: ['GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Gebäudereinigung & Waschmittel',
+        'Metallbearbeitung (Emulsionen)',
+        'Kosmetik & Pharma (Prozess)',
+        'Textil- & Lederindustrie',
+      ],
+      applicationAreaWorkplace:
+        'Neutralisation und Formulierung in Reinigern und Emulsionen — Gehalt und pH-Wert im Handelsprodukt sind im SDB dokumentiert.',
+    },
+  {
+      slug: 'diethanolamin-trgs-555',
+      substanceName: 'Diethanolamin',
+      documentDisplayName: 'Diethanolamin (DEA)',
+      synonyms: ['DEA', '2,2′-Iminodiethanol', 'Bis(2-hydroxyethyl)amin'],
+      casNumber: { kind: 'substance', value: '111-42-2' },
+      ghsPictograms: ['GHS07', 'GHS08'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Gebäudereinigung & Waschmittel',
+        'Gasaufbereitung (Scrubber)',
+        'Chemische Industrie',
+        'Metallbearbeitung (Emulsionen)',
+      ],
+      applicationAreaWorkplace:
+        'Neutralisation und Formulierung in Reinigern und Prozessmedien — Konzentration und Rezeptur können die Einstufung beeinflussen; maßgeblich ist das SDB Ihres Produkts.',
+    },
+  {
+      slug: 'ammoniumchlorid-trgs-555',
+      substanceName: 'Ammoniumchlorid',
+      documentDisplayName: 'Ammoniumchlorid (Salmiak, technisch)',
+      synonyms: ['Salmiak', 'Ammonium chloride', 'NH₄Cl'],
+      casNumber: { kind: 'substance', value: '12125-02-9' },
+      ghsPictograms: ['GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Metallverarbeitung & Löttechnik (Flux)',
+        'Galvanik & Oberflächentechnik',
+        'Lebensmittel- & Futtermittel (Prozess)',
+        'Labor & Technik',
+      ],
+      applicationAreaWorkplace:
+        'Flux, Puffer und Prozesschemie — Staubexposition und Feuchte können je Anwendung variieren; maßgeblich ist das SDB am Arbeitsplatz.',
+    },
+  {
+      slug: 'vinylacetat-trgs-555',
+      substanceName: 'Vinylacetat',
+      documentDisplayName: 'Vinylacetat (Monomer)',
+      synonyms: ['Vinyl acetate', 'Essigsäurevinylester', 'VAM (Monomer)'],
+      casNumber: { kind: 'substance', value: '108-05-4' },
+      ghsPictograms: ['GHS02', 'GHS07', 'GHS08'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Klebstoff- & Dispersionsherstellung',
+        'Malerbetrieb & Beschichtung',
+        'Verpackungsindustrie',
+        'Chemische Industrie',
+      ],
+      applicationAreaWorkplace:
+        'Monomer und Ausgang für Dispersionen — Stabilisierung und Restmonomer in Fertigprodukten sind im herstellerspezifischen SDB ausgewiesen.',
+    },
+  {
+      slug: 'n-methylpyrrolidon-trgs-555',
+      substanceName: 'N-Methylpyrrolidon',
+      documentDisplayName: 'N-Methylpyrrolidon (NMP, 1-Methyl-2-pyrrolidon)',
+      synonyms: ['NMP', '1-Methyl-2-pyrrolidon', 'Methylpyrrolidon'],
+      casNumber: { kind: 'substance', value: '872-50-4' },
+      ghsPictograms: ['GHS07', 'GHS08'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Elektronikfertigung & Löttechnik',
+        'Kunststoff- & Beschichtungsindustrie',
+        'Industrielle Reinigung & Entlackung',
+        'Labor & Technik',
+      ],
+      applicationAreaWorkplace:
+        'Lösungsmittel in Beschichtung, Reinigung und Prozessführung — Gehalt in Fertigmischungen und Arbeitsplatz sind im SDB des Handelsprodukts dokumentiert.',
+    },
+  {
+      slug: 'kalziumchlorid-trgs-555',
+      substanceName: 'Kalziumchlorid',
+      documentDisplayName: 'Kalziumchlorid (Calcium chloride, wasserfrei/technisch)',
+      synonyms: ['Calcium chloride', 'CaCl₂', 'Streusalz (Calciumchlorid-Anteil)'],
+      casNumber: { kind: 'substance', value: '10043-52-4' },
+      ghsPictograms: ['GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Facility Management & Winterdienst',
+        'Gebäudereinigung (Entfeuchtung)',
+        'Lebensmittel- & Getränkeindustrie',
+        'Bau & Betonbeschleuniger (Prozess)',
+      ],
+      applicationAreaWorkplace:
+        'Entfeuchtung, Streumittel und Prozessführung — Hydratationsgrad und Form (fest, flüssig) sind im Lieferanten-SDB beschrieben.',
+    },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
