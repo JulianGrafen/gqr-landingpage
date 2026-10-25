@@ -898,6 +898,192 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
         applicationAreaWorkplace:
           'Entkalkung, Reinigung und Prozessführung — Konzentration in Fertigmischungen und Pulverprodukten ist im Lieferanten-SDB ausgewiesen.',
       },
+  {
+      slug: 'propylenglykol-trgs-555',
+      substanceName: 'Propylenglykol',
+      documentDisplayName: 'Propylenglykol (1,2-Propandiol)',
+      synonyms: ['1,2-Propandiol', 'Propylene glycol', 'PG (technisch)'],
+      casNumber: { kind: 'substance', value: '57-55-6' },
+      ghsPictograms: ['GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Kälte- & Klimatechnik',
+        'Sanitär- & Heizungsbau',
+        'Lebensmittel- & Getränkeindustrie (Prozess)',
+        'Facility Management',
+      ],
+      applicationAreaWorkplace:
+        'Frostschutz, Wärmeübertragung und Formulierung in Klima- und Prozessanlagen — Konzentration und Zusatzstoffe im Handelsprodukt sind im SDB des Lieferanten beschrieben.',
+    },
+  {
+      slug: 'helium-trgs-555',
+      substanceName: 'Helium',
+      documentDisplayName: 'Helium (verdichtet, technisches Gas)',
+      synonyms: ['He', 'Helium-Gas', 'Schutzgas Helium'],
+      casNumber: { kind: 'substance', value: '7440-59-7' },
+      ghsPictograms: ['GHS04'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Metallbau & Schweißtechnik',
+        'Labor & Analytik',
+        'Medizintechnik & Leckprüfung',
+        'Industrielle Instandhaltung',
+      ],
+      applicationAreaWorkplace:
+        'Schutzgas, Spülung und Leckprüfung aus Druckgasflaschen oder Zentralversorgung — Gasqualität und Anschluss sind im SDB des Gaslieferanten und in der freigegebenen Betriebsanweisung zu dokumentieren.',
+    },
+  {
+      slug: 'benzol-trgs-555',
+      substanceName: 'Benzol',
+      documentDisplayName: 'Benzol (Benzene)',
+      synonyms: ['Benzene', 'Benzen', 'C₆H₆'],
+      casNumber: { kind: 'substance', value: '71-43-2' },
+      ghsPictograms: ['GHS02', 'GHS07', 'GHS08', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Chemische Industrie',
+        'Petrochemie & Raffinerie',
+        'Labor & Technik',
+        'Kunststoff- & Polymerchemie',
+      ],
+      applicationAreaWorkplace:
+        'Ausgangsstoff und Lösungsmittel in der chemischen Produktion — Restriktionen und Arbeitsplatzbezug sind im herstellerspezifischen SDB und in der freigegebenen Betriebsanweisung festzuhalten.',
+    },
+  {
+      slug: 'natriumlaurylsulfat-trgs-555',
+      substanceName: 'Natriumlaurylsulfat',
+      documentDisplayName: 'Natriumlaurylsulfat (SDS, Natriumdodecylsulfat)',
+      synonyms: ['SDS', 'SLS', 'Natriumdodecylsulfat', 'Texapon (Handelsname, Beispiel)'],
+      casNumber: { kind: 'substance', value: '151-21-3' },
+      ghsPictograms: ['GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Gebäudereinigung & Waschmittel',
+        'Kosmetik- & Körperpflegeproduktion',
+        'Textil- & Lederindustrie',
+        'Druckerei & Galvanik (Reinigung)',
+      ],
+      applicationAreaWorkplace:
+        'Tensid in Reinigern, Emulsionen und Prozessbädern — Konzentration und pH-Wert im Fertigprodukt bestimmen die Einstufung und sind im SDB ausgewiesen.',
+    },
+  {
+      slug: 'dimethylformamid-trgs-555',
+      substanceName: 'Dimethylformamid',
+      documentDisplayName: 'Dimethylformamid (DMF, N,N-Dimethylformamid)',
+      synonyms: ['DMF', 'N,N-Dimethylformamid', 'Formdimethylamid'],
+      casNumber: { kind: 'substance', value: '68-12-2' },
+      ghsPictograms: ['GHS07', 'GHS08'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Kunststoff- & Faserindustrie',
+        'Pharma- & Feinchemie',
+        'Batterie- & Elektrodenproduktion',
+        'Labor & Technik',
+      ],
+      applicationAreaWorkplace:
+        'Polar Lösungsmittel in Synthese, Beschichtung und Prozessführung — Gehalt in Fertigmischungen und Arbeitsplatz sind im SDB des bezogenen Produkts dokumentiert.',
+    },
+  {
+      slug: 'amidosulfonsaeure-trgs-555',
+      substanceName: 'Amidosulfonsäure',
+      documentDisplayName: 'Amidosulfonsäure (Sulfaminsäure)',
+      synonyms: ['Sulfaminsäure', 'Aminosulfonsäure', 'Entkalker (Säurekomponente)'],
+      casNumber: { kind: 'substance', value: '5329-14-6' },
+      ghsPictograms: ['GHS05', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Gebäudereinigung & Entkalkung',
+        'Metallverarbeitung (Beizen, Reinigung)',
+        'Kälte- & Klimatechnik (Kreislaufreinigung)',
+        'Facility Management',
+      ],
+      applicationAreaWorkplace:
+        'Entkalkung und saure Reinigung in Formulierungen oder Konzentraten — Konzentration und Mischung im Handelsprodukt sind im Lieferanten-SDB beschrieben.',
+    },
+  {
+      slug: 'toluendiisocyanat-trgs-555',
+      substanceName: 'Toluendiisocyanat',
+      documentDisplayName: 'Toluendiisocyanat (TDI, Isomerengemisch)',
+      synonyms: ['TDI', 'Toluylendiisocyanat', 'Isocyanate (TDI-Typ)'],
+      casNumber: {
+        kind: 'mixture',
+        label: 'Gemisch (2,4- und 2,6-Toluendiisocyanat)',
+        mainComponentCas: '584-84-9',
+      },
+      ghsPictograms: ['GHS05', 'GHS07', 'GHS08', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Schaumstoff- & Matratzenproduktion',
+        'Beschichtung & Lackierung (PU-Systeme)',
+        'Dichtstoff- & Klebstoffherstellung',
+        'Industrielle Instandhaltung (PU-Reparatur)',
+      ],
+      applicationAreaWorkplace:
+        'Isocyanat-Komponente in Polyurethan-Systemen — Isomerenanteil und Vorpolymer-Gehalt variieren je Produkt; maßgeblich ist das SDB Ihres Handelsprodukts.',
+    },
+  {
+      slug: 'lackverduenner-trgs-555',
+      substanceName: 'Lackverdünner',
+      documentDisplayName: 'Lackverdünner (Verdünnungsmittel)',
+      synonyms: ['Verdünner', 'Paint thinner', 'Lösemittelgemisch (Lack)'],
+      casNumber: {
+        kind: 'mixture',
+        label: 'Gemisch (aromatische und aliphatische Kohlenwasserstoffe, Ester)',
+        mainComponentCas: '1330-20-7',
+      },
+      ghsPictograms: ['GHS02', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Malerbetrieb & Lackierung',
+        'Karosseriebau & Kfz-Lackierung',
+        'Industrielle Beschichtung',
+        'Holzverarbeitung & Möbelproduktion',
+      ],
+      applicationAreaWorkplace:
+        'Verdünnung und Reinigung von Beschichtungsstoffen in Werkstatt und Produktion — Rezeptur und Aromatengehalt können je Hersteller abweichen; maßgeblich ist das SDB Ihres Produkts.',
+    },
+  {
+      slug: 'rostloeser-trgs-555',
+      substanceName: 'Rostlöser',
+      documentDisplayName: 'Rostlöser (Korrosionsschutz-Spray)',
+      synonyms: ['Rust remover', 'Korrosionsschutz-Spray', 'Penetrating oil (Typ)'],
+      casNumber: {
+        kind: 'mixture',
+        label: 'Gemisch (Lösemittel, Schmier- und Korrosionsschutzkomponenten)',
+        mainComponentCas: '64742-47-8',
+      },
+      ghsPictograms: ['GHS02', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Kfz-Werkstatt',
+        'Metallbau & Instandhaltung',
+        'Maschinenbau & Service',
+        'Landtechnik & Forst',
+      ],
+      applicationAreaWorkplace:
+        'Lösen festsitzender Verbindungen und kurzfristiger Korrosionsschutz in Werkstätten — Zusammensetzung und Einstufung variieren stark je Marke; maßgeblich ist das SDB Ihres Sprays oder Öls.',
+    },
+  {
+      slug: 'hydraulikoel-trgs-555',
+      substanceName: 'Hydrauliköl',
+      documentDisplayName: 'Hydrauliköl (HLP, mineralölbasiert)',
+      synonyms: ['HLP-Hydrauliköl', 'Hydraulic fluid', 'Hydraulikflüssigkeit'],
+      casNumber: {
+        kind: 'mixture',
+        label: 'Gemisch (Mineralöl, Additive, HLP)',
+        mainComponentCas: '8042-47-5',
+      },
+      ghsPictograms: ['GHS07', 'GHS08'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Maschinenbau & Werkzeugmaschinen',
+        'Land- & Baumaschinenservice',
+        'Industrielle Pressen & Antriebe',
+        'Kfz-Werkstatt (Hebebühnen, Pressen)',
+      ],
+      applicationAreaWorkplace:
+        'Hydrauliksysteme in Maschinen, Pressen und Hebebühnen — Viskositätsklasse und Zusatzstoffe sind im SDB des eingesetzten HLP-Produkts ausgewiesen.',
+    },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
