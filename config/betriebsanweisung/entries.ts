@@ -898,6 +898,184 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
         applicationAreaWorkplace:
           'Entkalkung, Reinigung und Prozessführung — Konzentration in Fertigmischungen und Pulverprodukten ist im Lieferanten-SDB ausgewiesen.',
       },
+  {
+      slug: '2-butanone-trgs-555',
+      substanceName: '2-Butanone',
+      documentDisplayName: '2-Butanone (Methylethylketon, MEK)',
+      synonyms: ['MEK', 'Methylethylketon', 'Butanon'],
+      casNumber: { kind: 'substance', value: '78-93-3' },
+      ghsPictograms: ['GHS02', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Lackierung & Beschichtung',
+        'Kunststoffverarbeitung',
+        'Druckerei & Flexodruck',
+        'Industrielle Reinigung',
+      ],
+      applicationAreaWorkplace:
+        'Lösungsmittel und Verdünnung in Beschichtungs- und Reinigungsprozessen — Einsatzort und Produktqualität werden aus dem herstellerspezifischen SDB abgeleitet.',
+    },
+  {
+      slug: 'methylisobutylketon-trgs-555',
+      substanceName: 'Methylisobutylketon',
+      documentDisplayName: 'Methylisobutylketon (MIBK, 4-Methylpentan-2-on)',
+      synonyms: ['MIBK', '4-Methylpentan-2-on', 'Isopropylacetone'],
+      casNumber: { kind: 'substance', value: '108-10-1' },
+      ghsPictograms: ['GHS02', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Lackierung & Beschichtung',
+        'Chemische Produktion',
+        'Gummi- & Kunststoffindustrie',
+        'Industrielle Reinigung',
+      ],
+      applicationAreaWorkplace:
+        'Lösungsmittel und Extraktionsmittel in technischen Betrieben — Konzentration und Prozessführung sind im SDB des eingesetzten Produkts dokumentiert.',
+    },
+  {
+      slug: 'cyclohexanon-trgs-555',
+      substanceName: 'Cyclohexanon',
+      documentDisplayName: 'Cyclohexanon (Cyclohexan-1-on)',
+      synonyms: ['Cyclohexan-1-on', 'Ketocyclohexan', 'CH2(CH2)4CO'],
+      casNumber: { kind: 'substance', value: '108-94-1' },
+      ghsPictograms: ['GHS02', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Kunststoff- & Nylonproduktion',
+        'Lackierung & Beschichtung',
+        'Chemische Produktion',
+        'Labor & Technik',
+      ],
+      applicationAreaWorkplace:
+        'Zwischenprodukt und Lösungsmittel in chemischen und beschichtungstechnischen Prozessen — Einsatzbedingungen werden aus dem herstellerspezifischen SDB übernommen.',
+    },
+  {
+      slug: '1-methoxy-2-propanol-trgs-555',
+      substanceName: '1-Methoxy-2-propanol',
+      documentDisplayName: '1-Methoxy-2-propanol (PGME)',
+      synonyms: ['PGME', 'Propylenglykolmonomethylether', '1-Methoxypropan-2-ol'],
+      casNumber: { kind: 'substance', value: '107-98-2' },
+      ghsPictograms: ['GHS02', 'GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Gebäudereinigung & Facility',
+        'Lackierung & Beschichtung',
+        'Druckerei',
+        'Industrielle Reinigung',
+      ],
+      applicationAreaWorkplace:
+        'Lösungsmittel in Reinigern, Farben und Beschichtungen — Rezeptur und Einstufung unterscheiden sich je Handelsprodukt; maßgeblich ist das Lieferanten-SDB.',
+    },
+  {
+      slug: 'natriumcarbonat-trgs-555',
+      substanceName: 'Natriumcarbonat',
+      documentDisplayName: 'Natriumcarbonat (Soda, wasserfrei)',
+      synonyms: ['Soda', 'Waschsoda', 'Natriumcarbonat wasserfrei', 'Na2CO3'],
+      casNumber: { kind: 'substance', value: '497-19-8' },
+      ghsPictograms: ['GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Gebäudereinigung & Facility',
+        'Textil- & Waschmittelindustrie',
+        'Glas- & Keramikproduktion',
+        'Lebensmittel- & Getränkeindustrie (Technik)',
+      ],
+      applicationAreaWorkplace:
+        'Reinigung, Wasseraufbereitung und Prozesschemie — Staubexposition und Produktform (Pulver, Lösung) sind im SDB des Handelsprodukts beschrieben.',
+    },
+  {
+      slug: 'natriummetasilikat-trgs-555',
+      substanceName: 'Natriummetasilikat',
+      documentDisplayName: 'Natriummetasilikat (Pentahydrat)',
+      synonyms: ['Natriumsilikat Pentahydrat', 'Wasserglas (fest)', 'Silikatpulver (Reinigung)'],
+      casNumber: { kind: 'substance', value: '6834-92-0' },
+      ghsPictograms: ['GHS05', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Gebäudereinigung & Spülmaschinenreiniger',
+        'Textil- & Waschmittelindustrie',
+        'Papier- & Zellstoffindustrie',
+        'Facility Management',
+      ],
+      applicationAreaWorkplace:
+        'Alkalische Reiniger und Spülmaschinentabs — Gehalt an Silikat und Hydratationsstadium können je Lieferant variieren; maßgeblich ist das SDB Ihres Produkts.',
+    },
+  {
+      slug: 'peressigsaeure-trgs-555',
+      substanceName: 'Peressigsäure',
+      documentDisplayName: 'Peressigsäure (PAA, Lösung)',
+      synonyms: ['PAA', 'Peroxyacetic acid', 'Essigsäureperoxid'],
+      casNumber: { kind: 'substance', value: '79-21-0' },
+      ghsPictograms: ['GHS03', 'GHS05', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Lebensmittel- & Getränkeindustrie',
+        'Klinische & industrielle Desinfektion',
+        'Papier- & Zellstoffbleiche',
+        'Wasseraufbereitung',
+      ],
+      applicationAreaWorkplace:
+        'Desinfektion und Oxidationsprozesse — Konzentration und Stabilisatoren im Handelsprodukt bestimmen die Einstufung und sind im Lieferanten-SDB ausgewiesen.',
+    },
+  {
+      slug: 'chlor-trgs-555',
+      substanceName: 'Chlor',
+      documentDisplayName: 'Chlor (Cl2, verdichtetes Gas)',
+      synonyms: ['Cl2', 'Chlorgas', 'Elementares Chlor'],
+      casNumber: { kind: 'substance', value: '7782-50-5' },
+      ghsPictograms: ['GHS03', 'GHS04', 'GHS05', 'GHS06', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Wasser- & Schwimmbadtechnik',
+        'Chemische Produktion',
+        'Textil- & Bleicherei',
+        'Metalloberflächenbehandlung',
+      ],
+      applicationAreaWorkplace:
+        'Desinfektion, Bleiche und Prozesschemie mit Druckgasflaschen oder Dosieranlagen — Anlagen und Betriebsorganisation sind im SDB und in der freigegebenen Betriebsanweisung zu dokumentieren.',
+    },
+  {
+      slug: 'motoroel-trgs-555',
+      substanceName: 'Motoröl',
+      documentDisplayName: 'Motoröl (Schmieröl, mineralölbasiert)',
+      synonyms: ['Engine oil', 'Schmieröl', 'Mineralöl-Schmierstoff'],
+      casNumber: {
+        kind: 'mixture',
+        label: 'Gemisch (Mineralöl, Additive, Schmieröl)',
+        mainComponentCas: '8042-47-5',
+      },
+      ghsPictograms: ['GHS07', 'GHS08'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Kfz-Werkstatt',
+        'Logistik & Fuhrpark',
+        'Land- & Baumaschinenservice',
+        'Industrielle Instandhaltung',
+      ],
+      applicationAreaWorkplace:
+        'Schmierung von Verbrennungsmotoren und Getrieben in Werkstätten und Fuhrparks — Viskositätsklasse und Zusatzstoffe sind im SDB des eingesetzten Schmieröls ausgewiesen.',
+    },
+  {
+      slug: 'bremsfluessigkeit-trgs-555',
+      substanceName: 'Bremsflüssigkeit',
+      documentDisplayName: 'Bremsflüssigkeit (DOT, glycolbasiert)',
+      synonyms: ['Brake fluid', 'DOT 4', 'Polyglykol-Ether (Typ)'],
+      casNumber: {
+        kind: 'mixture',
+        label: 'Gemisch (Polyglykolether, Additive, DOT)',
+        mainComponentCas: '111-46-6',
+      },
+      ghsPictograms: ['GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Kfz-Werkstatt',
+        'Karosseriebau & Instandhaltung',
+        'Fuhrpark & Logistik',
+        'Zweirad- & Motorradwerkstatt',
+      ],
+      applicationAreaWorkplace:
+        'Befüllung und Wartung von hydraulischen Brems- und Kupplungssystemen — DOT-Spezifikation und Rezeptur sind im SDB des Handelsprodukts festgelegt.',
+    },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
