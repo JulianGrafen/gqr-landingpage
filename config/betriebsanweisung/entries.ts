@@ -898,6 +898,184 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
         applicationAreaWorkplace:
           'Entkalkung, Reinigung und Prozessführung — Konzentration in Fertigmischungen und Pulverprodukten ist im Lieferanten-SDB ausgewiesen.',
       },
+  {
+      slug: 'ethylendiamin-trgs-555',
+      substanceName: 'Ethylendiamin',
+      documentDisplayName: 'Ethylendiamin (1,2-Diaminoethan, EDA)',
+      synonyms: ['1,2-Diaminoethan', 'EDA', 'Ethylendiamine'],
+      casNumber: { kind: 'substance', value: '107-15-3' },
+      ghsPictograms: ['GHS05', 'GHS07', 'GHS08'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Bodenbeschichtung & Epoxidharze',
+        'Chemische Produktion',
+        'Textil- & Lederindustrie',
+        'Kunststoffverarbeitung',
+      ],
+      applicationAreaWorkplace:
+        'Härtungskomponente und Prozesschemie in Beschichtung und Produktion — Konzentration und Form (rein, gelöst) sind im SDB des eingesetzten Produkts beschrieben.',
+    },
+  {
+      slug: 'glutaraldehyd-trgs-555',
+      substanceName: 'Glutaraldehyd',
+      documentDisplayName: 'Glutaraldehyd (Pentandial, Lösung)',
+      synonyms: ['Pentandial', 'Glutaral', '1,5-Pentandial'],
+      casNumber: { kind: 'substance', value: '111-30-8' },
+      ghsPictograms: ['GHS05', 'GHS06', 'GHS07', 'GHS08', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Medizinische Gerätetechnik (Aufbereitung)',
+        'Wasseraufbereitung & Kühlkreisläufe',
+        'Labor & Diagnostik',
+        'Lebensmittel- & Getränkeindustrie (Prozess)',
+      ],
+      applicationAreaWorkplace:
+        'Desinfektions- und Konservierungsprozesse in technischen Anlagen — Gehalt in Handelslösungen und Freisetzung an Dampf-/Aerosolquellen sind im Lieferanten-SDB ausgewiesen.',
+    },
+  {
+      slug: 'kaliumpermanganat-trgs-555',
+      substanceName: 'Kaliumpermanganat',
+      documentDisplayName: 'Kaliumpermanganat (KMnO₄)',
+      synonyms: ['Kaliummanganat(VII)', 'Permanganat', 'KMnO₄'],
+      casNumber: { kind: 'substance', value: '7722-64-7' },
+      ghsPictograms: ['GHS03', 'GHS05', 'GHS07', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Wasser- & Abwassertechnik',
+        'Chemische Produktion',
+        'Labor',
+        'Metalloberflächenbehandlung',
+      ],
+      applicationAreaWorkplace:
+        'Oxidations- und Aufbereitungsprozesse — Form (fest, gelöst) und Konzentration im Handelsprodukt bestimmen die Einstufung und sind im SDB zu übernehmen.',
+    },
+  {
+      slug: 'calciumhydroxid-trgs-555',
+      substanceName: 'Calciumhydroxid',
+      documentDisplayName: 'Calciumhydroxid (Gebrannter Kalk, gelöscht)',
+      synonyms: ['Gebrannter Kalk', 'Kalkmilch', 'Ca(OH)₂', 'Slaked lime'],
+      casNumber: { kind: 'substance', value: '1305-62-0' },
+      ghsPictograms: ['GHS05', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Maurer- & Betonbau',
+        'Straßen- & Tiefbau',
+        'Abwasser- & Kläranlagen',
+        'Landwirtschaft (pH-Regulierung)',
+      ],
+      applicationAreaWorkplace:
+        'Mörtelherstellung, Bodenstabilisierung und technische Kalksuspensionen — Feinheit, Feuchte und Staubexposition am Arbeitsplatz ergeben sich aus Produkt und Einsatzart im SDB.',
+    },
+  {
+      slug: 'phenol-trgs-555',
+      substanceName: 'Phenol',
+      documentDisplayName: 'Phenol (Carbolsäure, monomer)',
+      synonyms: ['Carbolsäure', 'Hydroxybenzol', 'Monomer-Phenol'],
+      casNumber: { kind: 'substance', value: '108-95-2' },
+      ghsPictograms: ['GHS05', 'GHS06', 'GHS08', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Harz- & Kunststoffproduktion',
+        'Chemische Produktion',
+        'Holzschutzmittel (Industrie)',
+        'Labor',
+      ],
+      applicationAreaWorkplace:
+        'Synthese und Formulierung in der chemischen Produktion — reines Phenol vs. verdünnte Lösungen können sich in der Einstufung unterscheiden; maßgeblich ist das SDB Ihres Lieferanten.',
+    },
+  {
+      slug: 'borsaeure-trgs-555',
+      substanceName: 'Borsäure',
+      documentDisplayName: 'Borsäure (Orthoborsäure)',
+      synonyms: ['Orthoborsäure', 'Boric acid', 'H₃BO₃'],
+      casNumber: { kind: 'substance', value: '10043-35-3' },
+      ghsPictograms: ['GHS08'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Glas- & Keramikindustrie',
+        'Galvanik & Oberflächentechnik',
+        'Holzschutzmittel (Industrie)',
+        'Reinigungs- & Pflegemittel (Industrie)',
+      ],
+      applicationAreaWorkplace:
+        'Pufferung, Flussmittel und Formulierungsbestandteil in technischen Prozessen — Gehalt in Pulver, Granulat oder Lösung ist im produktspezifischen SDB dokumentiert.',
+    },
+  {
+      slug: 'trisodiumphosphat-trgs-555',
+      substanceName: 'Trisodiumphosphat',
+      documentDisplayName: 'Trisodiumphosphat (Natriumorthophosphat, TSP)',
+      synonyms: ['TSP', 'Natriumorthophosphat', 'Tri-Natrium-Phosphat'],
+      casNumber: { kind: 'substance', value: '7601-54-9' },
+      ghsPictograms: ['GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Industrielle Gebäudereinigung',
+        'Lebensmittel- & Getränkeindustrie (Prozess)',
+        'Textil- & Papierindustrie',
+        'Wasseraufbereitung',
+      ],
+      applicationAreaWorkplace:
+        'Grundreinigung und Prozessführung — Hydratstufe (wasserfrei vs. Hydrat) und Staubentwicklung bei Pulverprodukten können die Exposition am Arbeitsplatz beeinflussen; SDB des Handelsprodukts ist maßgeblich.',
+    },
+  {
+      slug: 'ammoniumbifluorid-trgs-555',
+      substanceName: 'Ammoniumbifluorid',
+      documentDisplayName: 'Ammoniumbifluorid (Ammonium-hydrogendifluorid)',
+      synonyms: ['Ammonium-hydrogendifluorid', 'ABF', 'NH₄HF₂'],
+      casNumber: { kind: 'substance', value: '1341-49-7' },
+      ghsPictograms: ['GHS05', 'GHS06', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Glas- & Fensterreinigung (Industrie)',
+        'Metalloberflächenbehandlung',
+        'Stein- & Keramikbearbeitung',
+        'Chemische Produktion',
+      ],
+      applicationAreaWorkplace:
+        'Frostschutz- und Beizeprozesse in der Oberflächentechnik — Konzentration in Beizpasten und Lösungen variiert; Betriebsanweisung orientiert sich am SDB des konkreten Produkts.',
+    },
+  {
+      slug: 'montageschaum-trgs-555',
+      substanceName: 'Montageschaum',
+      documentDisplayName: 'Montageschaum (PU-Einkomponentenschaum, B2)',
+      synonyms: ['PU-Schaum', 'Einkomponentenschaum', 'Bauschaum (PU)'],
+      casNumber: {
+        kind: 'mixture',
+        label: 'Gemisch (Polyurethan-Vorprodukt mit Isocyanat-Anteil)',
+        mainComponentCas: '101-68-8',
+      },
+      ghsPictograms: ['GHS02', 'GHS07', 'GHS08'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Fenster- & Türenbau',
+        'Trockenbau & Innenausbau',
+        'Dachdecker & Fassadenbau',
+        'SHK- & Elektroinstallation',
+      ],
+      applicationAreaWorkplace:
+        'Fugenfüllung und Montage im Ausbau — Brandklassen, Treibmittel und Isocyanat-Freisetzung beim Auspressen können je Produkt variieren; maßgeblich ist das SDB der verwendeten Kartusche.',
+    },
+  {
+      slug: 'silikondichtstoff-trgs-555',
+      substanceName: 'Silikondichtstoff',
+      documentDisplayName: 'Silikondichtstoff (RTV-Silikon, Acetat)',
+      synonyms: ['RTV-Silikon', 'Sanitärsilikon', 'Silikon (Kartusche)'],
+      casNumber: {
+        kind: 'mixture',
+        label: 'Gemisch (Silan-vernetzendes Silikonpolymer mit Füllstoffen)',
+        mainComponentCas: '70131-67-8',
+      },
+      ghsPictograms: ['GHS02', 'GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Sanitär & Heizung (SHK)',
+        'Fenster- & Glasbau',
+        'Elektroinstallation',
+        'Fassaden- & Abdichtungsbetrieb',
+      ],
+      applicationAreaWorkplace:
+        'Abdichtung und Verfugung im Innen- und Außenbereich — Acetat- vs. Neutralvernetzer und Freisetzung von Nebenprodukten beim Aushärten sind im SDB des Dichtstoffs beschrieben.',
+    },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
