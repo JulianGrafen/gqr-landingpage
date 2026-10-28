@@ -6,6 +6,28 @@ import type { HazardousSubstanceSeoEntry } from '@/config/betriebsanweisung/type
  */
 export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
   {
+    slug: '1-methoxy-2-propanol-trgs-555',
+    substanceName: "1-Methoxy-2-propanol",
+    metaDescription: "Betriebsanweisung 1-Methoxy-2-propanol: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Lackierung & Beschichtung",
+      "Druckerei",
+      "Industrielle Reinigung",
+    ],
+  },
+  {
+    slug: '2-butanone-trgs-555',
+    substanceName: "2-Butanone",
+    metaDescription: "Betriebsanweisung 2-Butanone: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Lackierung & Beschichtung",
+      "Kunststoffverarbeitung",
+      "Druckerei & Flexodruck",
+      "Industrielle Reinigung",
+    ],
+  },
+  {
     slug: 'aceton-trgs-555',
     substanceName: "Aceton",
     metaDescription: "Betriebsanweisung Aceton: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -28,6 +50,28 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'acrylamid-trgs-555',
+    substanceName: "Acrylamid",
+    metaDescription: "Betriebsanweisung Acrylamid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Wasseraufbereitung & Kläranlage",
+      "Papier- & Zellstoffindustrie",
+      "Chemische Produktion",
+      "Labor & Technik",
+    ],
+  },
+  {
+    slug: 'acrylsaeure-trgs-555',
+    substanceName: "Acrylsäure",
+    metaDescription: "Betriebsanweisung Acrylsäure: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kunststoff- & Polymerchemie",
+      "Klebstoff- & Dichtstoffherstellung",
+      "Wasseraufbereitung (Polymerisat)",
+      "Labor & Technik",
+    ],
+  },
+  {
     slug: 'adblue-trgs-555',
     substanceName: "AdBlue",
     metaDescription: "Betriebsanweisung AdBlue: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -36,6 +80,17 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Landwirtschaft",
       "Baustellenfahrzeuge",
       "Werkstatt (SCR-Systeme)",
+    ],
+  },
+  {
+    slug: 'amidosulfonsaeure-trgs-555',
+    substanceName: "Amidosulfonsäure",
+    metaDescription: "Betriebsanweisung Amidosulfonsäure: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Entkalkung",
+      "Metallverarbeitung (Beizen, Reinigung)",
+      "Kälte- & Klimatechnik (Kreislaufreinigung)",
+      "Facility Management",
     ],
   },
   {
@@ -50,6 +105,50 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'ammoniumbifluorid-trgs-555',
+    substanceName: "Ammoniumbifluorid",
+    metaDescription: "Betriebsanweisung Ammoniumbifluorid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Glas- & Fensterreinigung (Industrie)",
+      "Metalloberflächenbehandlung",
+      "Stein- & Keramikbearbeitung",
+      "Chemische Produktion",
+    ],
+  },
+  {
+    slug: 'ammoniumchlorid-trgs-555',
+    substanceName: "Ammoniumchlorid",
+    metaDescription: "Betriebsanweisung Ammoniumchlorid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallverarbeitung & Löttechnik (Flux)",
+      "Galvanik & Oberflächentechnik",
+      "Lebensmittel- & Futtermittel (Prozess)",
+      "Labor & Technik",
+    ],
+  },
+  {
+    slug: 'ammoniumnitrat-trgs-555',
+    substanceName: "Ammoniumnitrat",
+    metaDescription: "Betriebsanweisung Ammoniumnitrat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Landwirtschaft & Gartenbau",
+      "Baustoffhandel & Baustellenversorgung",
+      "Chemische Produktion",
+      "Sprengstoff- & Pyrotechnik (industriell)",
+    ],
+  },
+  {
+    slug: 'anilin-trgs-555',
+    substanceName: "Anilin",
+    metaDescription: "Betriebsanweisung Anilin: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Chemische Produktion",
+      "Kunststoff- & Gummiindustrie",
+      "Farben- & Lackrohstoffe",
+      "Labor & Analytik",
+    ],
+  },
+  {
     slug: 'argon-trgs-555',
     substanceName: "Argon",
     metaDescription: "Betriebsanweisung Argon: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -58,6 +157,17 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Edelstahlverarbeitung",
       "Kfz-Karosseriebau",
       "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'benzalkoniumchlorid-trgs-555',
+    substanceName: "Benzalkoniumchlorid",
+    metaDescription: "Betriebsanweisung Benzalkoniumchlorid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Desinfektion",
+      "Lebensmittelverarbeitung (Oberflächen)",
+      "Pflege & Medizintechnik (Reinigung)",
+      "Facility Management",
     ],
   },
   {
@@ -72,6 +182,28 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'benzol-trgs-555',
+    substanceName: "Benzol",
+    metaDescription: "Betriebsanweisung Benzol: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Chemische Industrie",
+      "Petrochemie & Raffinerie",
+      "Labor & Technik",
+      "Kunststoff- & Polymerchemie",
+    ],
+  },
+  {
+    slug: 'borsaeure-trgs-555',
+    substanceName: "Borsäure",
+    metaDescription: "Betriebsanweisung Borsäure: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Glas- & Keramikindustrie",
+      "Galvanik & Oberflächentechnik",
+      "Holzschutzmittel (Industrie)",
+      "Reinigungs- & Pflegemittel (Industrie)",
+    ],
+  },
+  {
     slug: 'bremsenreiniger-trgs-555',
     substanceName: "Bremsenreiniger",
     metaDescription: "Betriebsanweisung Bremsenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -79,6 +211,17 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Kfz-Werkstatt",
       "Karosseriebau",
       "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'bremsfluessigkeit-trgs-555',
+    substanceName: "Bremsflüssigkeit",
+    metaDescription: "Betriebsanweisung Bremsflüssigkeit: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt",
+      "Karosseriebau & Instandhaltung",
+      "Fuhrpark & Logistik",
+      "Zweirad- & Motorradwerkstatt",
     ],
   },
   {
@@ -126,6 +269,28 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'calciumhydroxid-trgs-555',
+    substanceName: "Calciumhydroxid",
+    metaDescription: "Betriebsanweisung Calciumhydroxid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Maurer- & Betonbau",
+      "Straßen- & Tiefbau",
+      "Abwasser- & Kläranlagen",
+      "Landwirtschaft (pH-Regulierung)",
+    ],
+  },
+  {
+    slug: 'chlor-trgs-555',
+    substanceName: "Chlor",
+    metaDescription: "Betriebsanweisung Chlor: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Schwimmbad- & Wasseraufbereitung",
+      "Chemische Industrie",
+      "Textil- & Bleicherei",
+      "Kommunale Wasserversorgung",
+    ],
+  },
+  {
     slug: 'cyclohexan-trgs-555',
     substanceName: "Cyclohexan",
     metaDescription: "Betriebsanweisung Cyclohexan: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -134,6 +299,17 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Lackierung & Klebstoffe",
       "Labor & Analytik",
       "Industrielle Lösungsmitteleinsätze",
+    ],
+  },
+  {
+    slug: 'cyclohexanon-trgs-555',
+    substanceName: "Cyclohexanon",
+    metaDescription: "Betriebsanweisung Cyclohexanon: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kunststoff- & Nylonproduktion",
+      "Lackierung & Beschichtung",
+      "Chemische Produktion",
+      "Labor & Technik",
     ],
   },
   {
@@ -159,6 +335,39 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'diethanolamin-trgs-555',
+    substanceName: "Diethanolamin",
+    metaDescription: "Betriebsanweisung Diethanolamin: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Waschmittel",
+      "Gasaufbereitung (Scrubber)",
+      "Chemische Industrie",
+      "Metallbearbeitung (Emulsionen)",
+    ],
+  },
+  {
+    slug: 'diethylenglykol-trgs-555',
+    substanceName: "Diethylenglykol",
+    metaDescription: "Betriebsanweisung Diethylenglykol: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudetechnik & Frostschutz",
+      "Textil- & Lederindustrie",
+      "Druckerei & Flexodruck",
+      "Chemische Industrie",
+    ],
+  },
+  {
+    slug: 'dimethylformamid-trgs-555',
+    substanceName: "Dimethylformamid",
+    metaDescription: "Betriebsanweisung Dimethylformamid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kunststoff- & Faserindustrie",
+      "Pharma- & Feinchemie",
+      "Batterie- & Elektrodenproduktion",
+      "Labor & Technik",
+    ],
+  },
+  {
     slug: 'diphenylmethandiisocyanat-trgs-555',
     substanceName: "Diphenylmethandiisocyanat",
     metaDescription: "Betriebsanweisung Diphenylmethandiisocyanat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -167,6 +376,17 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Metallbau (PU-Klebstoffe)",
       "Fahrzeugbau",
       "Möbel- & Holzverarbeitung",
+    ],
+  },
+  {
+    slug: 'eiseniii-chlorid-trgs-555',
+    substanceName: "Eisen(III)-chlorid",
+    metaDescription: "Betriebsanweisung Eisen(III)-chlorid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Abwasser- & Trinkwasseraufbereitung",
+      "Galvanik & Leiterplattenfertigung",
+      "Bauwirtschaft (Betonzusatz)",
+      "Labor & Technik",
     ],
   },
   {
@@ -214,6 +434,17 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'ethylendiamin-trgs-555',
+    substanceName: "Ethylendiamin",
+    metaDescription: "Betriebsanweisung Ethylendiamin: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Bodenbeschichtung & Epoxidharze",
+      "Chemische Produktion",
+      "Textil- & Lederindustrie",
+      "Kunststoffverarbeitung",
+    ],
+  },
+  {
     slug: 'ethylenglykol-trgs-555',
     substanceName: "Ethylenglykol",
     metaDescription: "Betriebsanweisung Ethylenglykol: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -247,6 +478,28 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'furfurylalkohol-trgs-555',
+    substanceName: "Furfurylalkohol",
+    metaDescription: "Betriebsanweisung Furfurylalkohol: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gießerei & Formenbau",
+      "Harz- & Kunstharzindustrie",
+      "Chemische Produktion",
+      "Holzverarbeitung (Harze)",
+    ],
+  },
+  {
+    slug: 'glutaraldehyd-trgs-555',
+    substanceName: "Glutaraldehyd",
+    metaDescription: "Betriebsanweisung Glutaraldehyd: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Medizinische Gerätetechnik (Aufbereitung)",
+      "Wasseraufbereitung & Kühlkreisläufe",
+      "Labor & Diagnostik",
+      "Lebensmittel- & Getränkeindustrie (Prozess)",
+    ],
+  },
+  {
     slug: 'heizoel-el-trgs-555',
     substanceName: "Heizöl EL",
     metaDescription: "Betriebsanweisung Heizöl EL: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -255,6 +508,61 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Handwerk & Kleingewerbe",
       "Landwirtschaft",
       "Kommunale Einrichtungen",
+    ],
+  },
+  {
+    slug: 'helium-trgs-555',
+    substanceName: "Helium",
+    metaDescription: "Betriebsanweisung Helium: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbau & Schweißtechnik",
+      "Labor & Analytik",
+      "Medizintechnik & Leckprüfung",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'heptan-trgs-555',
+    substanceName: "Heptan",
+    metaDescription: "Betriebsanweisung Heptan: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Labor & Analytik",
+      "Kunststoff- & Beschichtungsindustrie",
+      "Druckerei & Flexodruck",
+      "Industrielle Entfettung",
+    ],
+  },
+  {
+    slug: 'hydraulikoel-trgs-555',
+    substanceName: "Hydrauliköl",
+    metaDescription: "Betriebsanweisung Hydrauliköl: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Maschinenbau & Werkzeugmaschinen",
+      "Land- & Baumaschinenservice",
+      "Industrielle Pressen & Antriebe",
+      "Kfz-Werkstatt (Hebebühnen, Pressen)",
+    ],
+  },
+  {
+    slug: 'hydrochinon-trgs-555',
+    substanceName: "Hydrochinon",
+    metaDescription: "Betriebsanweisung Hydrochinon: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Fotografie & Bildtechnik",
+      "Galvanik & Oberflächentechnik",
+      "Kunststoff- & Harzverarbeitung",
+      "Labor & Analytik",
+    ],
+  },
+  {
+    slug: 'isopentan-trgs-555',
+    substanceName: "Isopentan",
+    metaDescription: "Betriebsanweisung Isopentan: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kunststoff- & Schaumstoffherstellung",
+      "Chemische Industrie",
+      "Labor",
+      "Kältetechnik (Auszug)",
     ],
   },
   {
@@ -269,6 +577,17 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'isopropylacetat-trgs-555',
+    substanceName: "Isopropylacetat",
+    metaDescription: "Betriebsanweisung Isopropylacetat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Druckerei & Flexodruck",
+      "Kunststoff- & Beschichtungsindustrie",
+      "Industrielle Entfettung",
+    ],
+  },
+  {
     slug: 'kaliumhydroxid-trgs-555',
     substanceName: "Kaliumhydroxid",
     metaDescription: "Betriebsanweisung Kaliumhydroxid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -280,6 +599,28 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'kaliumpermanganat-trgs-555',
+    substanceName: "Kaliumpermanganat",
+    metaDescription: "Betriebsanweisung Kaliumpermanganat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Wasser- & Abwassertechnik",
+      "Chemische Produktion",
+      "Labor",
+      "Metalloberflächenbehandlung",
+    ],
+  },
+  {
+    slug: 'kalziumchlorid-trgs-555',
+    substanceName: "Kalziumchlorid",
+    metaDescription: "Betriebsanweisung Kalziumchlorid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Facility Management & Winterdienst",
+      "Gebäudereinigung (Entfeuchtung)",
+      "Lebensmittel- & Getränkeindustrie",
+      "Bau & Betonbeschleuniger (Prozess)",
+    ],
+  },
+  {
     slug: 'kalziumhypochlorit-trgs-555',
     substanceName: "Kalziumhypochlorit",
     metaDescription: "Betriebsanweisung Kalziumhypochlorit: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -288,6 +629,17 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Kommunale Wasseraufbereitung",
       "Gebäudereinigung (Desinfektion)",
       "Landwirtschaft & Stallhygiene",
+    ],
+  },
+  {
+    slug: 'kohlendioxid-trgs-555',
+    substanceName: "Kohlendioxid",
+    metaDescription: "Betriebsanweisung Kohlendioxid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gastronomie & Getränketechnik",
+      "Schweißtechnik (MIG/MAG-Schutzgasanteil)",
+      "Feuerlöscher & Brandschutz",
+      "Lebensmittelverarbeitung",
     ],
   },
   {
@@ -312,6 +664,28 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'kupfersulfat-trgs-555',
+    substanceName: "Kupfer(II)-sulfat",
+    metaDescription: "Betriebsanweisung Kupfer(II)-sulfat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Landwirtschaft & Weinbau",
+      "Galvanik & Oberflächentechnik",
+      "Abwasser- & Trinkwassertechnik",
+      "Holzschutz & Materialschutz",
+    ],
+  },
+  {
+    slug: 'lackverduenner-trgs-555',
+    substanceName: "Lackverdünner",
+    metaDescription: "Betriebsanweisung Lackverdünner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Karosseriebau & Kfz-Lackierung",
+      "Industrielle Beschichtung",
+      "Holzverarbeitung & Möbelproduktion",
+    ],
+  },
+  {
     slug: 'methanol-trgs-555',
     substanceName: "Methanol",
     metaDescription: "Betriebsanweisung Methanol: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -320,6 +694,39 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Labor",
       "Kunststoffverarbeitung",
       "Werkstatt (Speziallösungsmittel)",
+    ],
+  },
+  {
+    slug: 'methylacetat-trgs-555',
+    substanceName: "Methylacetat",
+    metaDescription: "Betriebsanweisung Methylacetat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Druckerei & Flexodruck",
+      "Kunststoffverarbeitung",
+      "Industrielle Reinigung",
+    ],
+  },
+  {
+    slug: 'methylethylketon-trgs-555',
+    substanceName: "Methylethylketon",
+    metaDescription: "Betriebsanweisung Methylethylketon: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Kunststoffverarbeitung",
+      "Druckerei & Flexodruck",
+      "Kfz-Werkstatt",
+    ],
+  },
+  {
+    slug: 'methylisobutylketon-trgs-555',
+    substanceName: "Methylisobutylketon",
+    metaDescription: "Betriebsanweisung Methylisobutylketon: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Lack- & Beschichtungsindustrie",
+      "Gummi- & Kunststoffverarbeitung",
+      "Metallveredelung",
+      "Industrielle Reinigung",
     ],
   },
   {
@@ -334,6 +741,61 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'milchsaeure-trgs-555',
+    substanceName: "Milchsäure",
+    metaDescription: "Betriebsanweisung Milchsäure: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Sanitär",
+      "Lebensmittel- & Getränkeindustrie",
+      "Kosmetik & Pharma",
+      "Textil- & Lederindustrie",
+    ],
+  },
+  {
+    slug: 'monoethanolamin-trgs-555',
+    substanceName: "Monoethanolamin",
+    metaDescription: "Betriebsanweisung Monoethanolamin: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gasaufbereitung & Rauchgasreinigung",
+      "Reinigungsmittelherstellung",
+      "Textil- & Lederindustrie",
+      "Chemische Industrie",
+    ],
+  },
+  {
+    slug: 'montageschaum-trgs-555',
+    substanceName: "Montageschaum",
+    metaDescription: "Betriebsanweisung Montageschaum: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Fenster- & Türenbau",
+      "Trockenbau & Innenausbau",
+      "Dachdecker & Fassadenbau",
+      "SHK- & Elektroinstallation",
+    ],
+  },
+  {
+    slug: 'morpholin-trgs-555',
+    substanceName: "Morpholin",
+    metaDescription: "Betriebsanweisung Morpholin: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallverarbeitung & Kühlschmierstoffe",
+      "Chemische Industrie",
+      "Papier- & Textilindustrie",
+      "Industrielle Wasserbehandlung",
+    ],
+  },
+  {
+    slug: 'motoroel-trgs-555',
+    substanceName: "Motoröl",
+    metaDescription: "Betriebsanweisung Motoröl: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fuhrpark",
+      "Landtechnik",
+      "Maschinenbau & Instandhaltung",
+      "Motorsport & Wassersport",
+    ],
+  },
+  {
     slug: 'n-hexan-trgs-555',
     substanceName: "n-Hexan",
     metaDescription: "Betriebsanweisung n-Hexan: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -345,6 +807,50 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'n-methylpyrrolidon-trgs-555',
+    substanceName: "N-Methylpyrrolidon",
+    metaDescription: "Betriebsanweisung N-Methylpyrrolidon: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Elektronikfertigung & Löttechnik",
+      "Kunststoff- & Beschichtungsindustrie",
+      "Industrielle Reinigung & Entlackung",
+      "Labor & Technik",
+    ],
+  },
+  {
+    slug: 'n-pentan-trgs-555',
+    substanceName: "n-Pentan",
+    metaDescription: "Betriebsanweisung n-Pentan: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kunststoff- & Schaumstoffherstellung",
+      "Chemische Industrie",
+      "Labor",
+      "Industrielle Reinigung (Auszug)",
+    ],
+  },
+  {
+    slug: 'natriumcarbonat-trgs-555',
+    substanceName: "Natriumcarbonat",
+    metaDescription: "Betriebsanweisung Natriumcarbonat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Waschmittel",
+      "Glas- & Keramikindustrie",
+      "Textilwäscherei",
+      "Wasseraufbereitung",
+    ],
+  },
+  {
+    slug: 'natriumdichlorisocyanurat-trgs-555',
+    substanceName: "Natriumdichlorisocyanurat",
+    metaDescription: "Betriebsanweisung Natriumdichlorisocyanurat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Schwimmbad- & Badebetrieb",
+      "Gebäudereinigung & Desinfektion",
+      "Landwirtschaft & Tierhaltung",
+      "Wasseraufbereitung",
+    ],
+  },
+  {
     slug: 'natriumhypochlorit-trgs-555',
     substanceName: "Natriumhypochlorit",
     metaDescription: "Betriebsanweisung Natriumhypochlorit: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -353,6 +859,28 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Schwimmbad & Wasseraufbereitung",
       "Lebensmittelindustrie (Desinfektion)",
       "Kommunale Entsorgung",
+    ],
+  },
+  {
+    slug: 'natriumlaurylsulfat-trgs-555',
+    substanceName: "Natriumlaurylsulfat",
+    metaDescription: "Betriebsanweisung Natriumlaurylsulfat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Waschmittel",
+      "Kosmetik- & Körperpflegeproduktion",
+      "Textil- & Lederindustrie",
+      "Druckerei & Galvanik (Reinigung)",
+    ],
+  },
+  {
+    slug: 'natriummetasilikat-trgs-555',
+    substanceName: "Natriummetasilikat",
+    metaDescription: "Betriebsanweisung Natriummetasilikat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gewerbliche Spültechnik",
+      "Gebäudereinigung (Alkali-Reiniger)",
+      "Papier- & Zellstoffindustrie",
+      "Waschmittelherstellung",
     ],
   },
   {
@@ -378,6 +906,28 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'peressigsaeure-trgs-555',
+    substanceName: "Peressigsäure",
+    metaDescription: "Betriebsanweisung Peressigsäure: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Lebensmittelverarbeitung (Oberfläche)",
+      "Getränke- & Brauindustrie",
+      "Klinische Aufbereitung (Auszug)",
+      "Gebäudereinigung (Desinfektion)",
+    ],
+  },
+  {
+    slug: 'phenol-trgs-555',
+    substanceName: "Phenol",
+    metaDescription: "Betriebsanweisung Phenol: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Harz- & Kunststoffproduktion",
+      "Chemische Produktion",
+      "Holzschutzmittel (Industrie)",
+      "Labor",
+    ],
+  },
+  {
     slug: 'phosphorsaeure-trgs-555',
     substanceName: "Phosphorsäure",
     metaDescription: "Betriebsanweisung Phosphorsäure: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -397,6 +947,39 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Dachdecker & Klempner",
       "Gastronomie & Außengastronomie",
       "Landwirtschaft & Hoftechnik",
+    ],
+  },
+  {
+    slug: 'propanol-trgs-555',
+    substanceName: "1-Propanol",
+    metaDescription: "Betriebsanweisung 1-Propanol: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Druckerei & Flexodruck",
+      "Malerbetrieb & Lackierung",
+      "Pharma & Kosmetik (Prozess)",
+      "Industrielle Reinigung",
+    ],
+  },
+  {
+    slug: 'propylenglykol-trgs-555',
+    substanceName: "Propylenglykol",
+    metaDescription: "Betriebsanweisung Propylenglykol: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kälte- & Klimatechnik",
+      "Sanitär- & Heizungsbau",
+      "Lebensmittel- & Getränkeindustrie (Prozess)",
+      "Facility Management",
+    ],
+  },
+  {
+    slug: 'rostloeser-trgs-555',
+    substanceName: "Rostlöser",
+    metaDescription: "Betriebsanweisung Rostlöser: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt",
+      "Metallbau & Instandhaltung",
+      "Maschinenbau & Service",
+      "Landtechnik & Forst",
     ],
   },
   {
@@ -444,6 +1027,17 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'schwefeldioxid-trgs-555',
+    substanceName: "Schwefeldioxid",
+    metaDescription: "Betriebsanweisung Schwefeldioxid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kälte- & Klimatechnik",
+      "Getränke- & Lebensmitteltechnik",
+      "Chemische Produktion",
+      "Wasseraufbereitung",
+    ],
+  },
+  {
     slug: 'schwefelsaure-trgs-555',
     substanceName: "Schwefelsäure",
     metaDescription: "Betriebsanweisung Schwefelsäure: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -463,6 +1057,28 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Modellbau & Prototyping",
       "Schreinerei & Innenausbau",
       "Kfz-Werkstatt (Kunststoffreparatur)",
+    ],
+  },
+  {
+    slug: 'silikondichtstoff-trgs-555',
+    substanceName: "Silikondichtstoff",
+    metaDescription: "Betriebsanweisung Silikondichtstoff: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Sanitär & Heizung (SHK)",
+      "Fenster- & Glasbau",
+      "Elektroinstallation",
+      "Fassaden- & Abdichtungsbetrieb",
+    ],
+  },
+  {
+    slug: 'stickstoff-trgs-555',
+    substanceName: "Stickstoff",
+    metaDescription: "Betriebsanweisung Stickstoff: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbau & Schweißtechnik",
+      "Lebensmittelverpackung (Schutzgas)",
+      "Elektronik & Löttechnik",
+      "Chemische Industrie",
     ],
   },
   {
@@ -510,6 +1126,17 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'toluendiisocyanat-trgs-555',
+    substanceName: "Toluendiisocyanat",
+    metaDescription: "Betriebsanweisung Toluendiisocyanat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Schaumstoff- & Matratzenproduktion",
+      "Beschichtung & Lackierung (PU-Systeme)",
+      "Dichtstoff- & Klebstoffherstellung",
+      "Industrielle Instandhaltung (PU-Reparatur)",
+    ],
+  },
+  {
     slug: 'toluol-trgs-555',
     substanceName: "Toluol",
     metaDescription: "Betriebsanweisung Toluol: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -532,6 +1159,72 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
     ],
   },
   {
+    slug: 'trichlorisocyanursaeure-trgs-555',
+    substanceName: "Trichlorisocyanursäure",
+    metaDescription: "Betriebsanweisung Trichlorisocyanursäure: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Schwimmbad- & Badebetrieb",
+      "Gebäudereinigung & Desinfektion",
+      "Landwirtschaft",
+      "Kommunale Wasserversorgung",
+    ],
+  },
+  {
+    slug: 'triethanolamin-trgs-555',
+    substanceName: "Triethanolamin",
+    metaDescription: "Betriebsanweisung Triethanolamin: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Waschmittel",
+      "Metallbearbeitung (Emulsionen)",
+      "Kosmetik & Pharma (Prozess)",
+      "Textil- & Lederindustrie",
+    ],
+  },
+  {
+    slug: 'triethylamin-trgs-555',
+    substanceName: "Triethylamin",
+    metaDescription: "Betriebsanweisung Triethylamin: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kunststoffverarbeitung & Epoxidharze",
+      "Textil- & Lederindustrie",
+      "Gummiindustrie",
+      "Chemische Industrie",
+    ],
+  },
+  {
+    slug: 'trisodiumphosphat-trgs-555',
+    substanceName: "Trisodiumphosphat",
+    metaDescription: "Betriebsanweisung Trisodiumphosphat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Industrielle Gebäudereinigung",
+      "Lebensmittel- & Getränkeindustrie (Prozess)",
+      "Textil- & Papierindustrie",
+      "Wasseraufbereitung",
+    ],
+  },
+  {
+    slug: 'vinylacetat-trgs-555',
+    substanceName: "Vinylacetat",
+    metaDescription: "Betriebsanweisung Vinylacetat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Klebstoff- & Dispersionsherstellung",
+      "Malerbetrieb & Beschichtung",
+      "Verpackungsindustrie",
+      "Chemische Industrie",
+    ],
+  },
+  {
+    slug: 'wasserstoff-trgs-555',
+    substanceName: "Wasserstoff",
+    metaDescription: "Betriebsanweisung Wasserstoff: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallverarbeitung & Wärmebehandlung",
+      "Chemische Industrie",
+      "Labor",
+      "Energietechnik (Wasserstoffinfrastruktur)",
+    ],
+  },
+  {
     slug: 'wasserstoffperoxid-trgs-555',
     substanceName: "Wasserstoffperoxid",
     metaDescription: "Betriebsanweisung Wasserstoffperoxid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
@@ -551,6 +1244,17 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Druckerei & Flexodruck",
       "Chemische Industrie",
       "Industrielle Reinigung",
+    ],
+  },
+  {
+    slug: 'zinkchlorid-trgs-555',
+    substanceName: "Zinkchlorid",
+    metaDescription: "Betriebsanweisung Zinkchlorid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Elektronik & Löttechnik",
+      "Galvanik & Oberflächentechnik",
+      "Holzverarbeitung (Konservierung, Auszug)",
+      "Chemische Industrie",
     ],
   },
   {

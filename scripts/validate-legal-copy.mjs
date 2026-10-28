@@ -157,7 +157,29 @@ function isInsideHrefOrJsonUrl(content, matchIndex) {
   return false;
 }
 
+/** Julian-approved overlay copy on BA skeleton teaser (exact wording). */
+const ALLOWED_SUBSTRINGS = [
+  'Schutzmaßnahmen, GHS-Einstufung und Notfall-Regeln hängen zwingend von der Konzentration Ihres Lieferanten ab. Laden Sie Ihr SDB hoch, um die exakten Daten rechtssicher in diesen Entwurf zu extrahieren.',
+];
+
+function allowedPhraseRegex(phrase) {
+  const parts = phrase.trim().split(/\s+/).map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  return new RegExp(parts.join('\\s+'), 'g');
+}
+
+function isInAllowedSubstring(content, matchIndex) {
+  for (const phrase of ALLOWED_SUBSTRINGS) {
+    const re = allowedPhraseRegex(phrase);
+    let m;
+    while ((m = re.exec(content)) !== null) {
+      if (matchIndex >= m.index && matchIndex < m.index + m[0].length) return true;
+    }
+  }
+  return false;
+}
+
 function isAllowed(content, matchIndex, ruleId) {
+  if (isInAllowedSubstring(content, matchIndex)) return true;
   const before = content.slice(Math.max(0, matchIndex - 120), matchIndex);
   if (/\/\*\s*legal-copy:allow-file\s*\*\//.test(content.slice(0, 200))) return true;
   if (new RegExp(`legal-copy:allow\\s+${ruleId}`, 'i').test(before)) return true;

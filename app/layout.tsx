@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { GqrChatbotLoader } from '@/components/GqrChatbotLoader';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
 import { SITE_DEFAULT_SEO, SITE_URL } from '@/config/site-seo';
@@ -34,7 +33,6 @@ export default function RootLayout({
         <SiteHeader />
         <div className="flex-1">{children}</div>
         <SiteFooter />
-        <GqrChatbotLoader />
       </body>
     </html>
   );

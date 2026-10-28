@@ -67,9 +67,8 @@ export function BetriebsanweisungTeaserDocument({ entry }: Props) {
           <div className="max-w-sm text-center">
             <p className="text-lg font-bold text-slate-900">Wartet auf Ihr Sicherheitsdatenblatt</p>
             <p className="mt-3 text-sm leading-relaxed text-slate-600">
-              Schutzmaßnahmen, Kennzeichnung und Notfall-Regeln hängen zwingend von der Konzentration Ihres Lieferanten
-              ab. Laden Sie Ihr SDB hoch, um die exakten Daten aus Ihrem Lieferanten-PDF in diesen Entwurf zu
-              extrahieren.
+              Schutzmaßnahmen, GHS-Einstufung und Notfall-Regeln hängen zwingend von der Konzentration Ihres Lieferanten
+              ab. Laden Sie Ihr SDB hoch, um die exakten Daten rechtssicher in diesen Entwurf zu extrahieren.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <Link href={registerUrl} className="gqr-cta-primary gqr-cta-primary--md inline-flex justify-center">
