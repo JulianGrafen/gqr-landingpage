@@ -4477,3 +4477,79 @@ body.trial-modal-open {
     max-width: none;
   }
 }
+
+/* Wartungsmodus (/maintenance/) */
+.maintenance-page {
+  min-height: 100vh;
+  background: #0a1628;
+  color: #f0f6ff;
+}
+
+.maintenance-page__main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+  text-align: center;
+}
+
+.maintenance-page__logo {
+  margin-bottom: 2.5rem;
+}
+
+.maintenance-page__logo img {
+  display: block;
+  width: 180px;
+  height: auto;
+}
+
+.maintenance-page__kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ff6b35;
+}
+
+.maintenance-page__title {
+  margin: 0;
+  max-width: 28rem;
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 900;
+  line-height: 1.2;
+  color: #f0f6ff;
+}
+
+.maintenance-page__lead {
+  margin: 1.25rem auto 0;
+  max-width: 26rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #8fa4c0;
+}
+
+.maintenance-page__cta {
+  margin-top: 2rem;
+  min-height: 48px;
+  padding-inline: 2rem;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.maintenance-page__contact {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  color: #8fa4c0;
+}
+
+.maintenance-page__contact a {
+  color: #5eead4;
+  text-decoration: none;
+}
+
+.maintenance-page__contact a:hover {
+  text-decoration: underline;
+}
