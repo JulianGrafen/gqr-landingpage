@@ -898,6 +898,176 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
         applicationAreaWorkplace:
           'Entkalkung, Reinigung und Prozessführung — Konzentration in Fertigmischungen und Pulverprodukten ist im Lieferanten-SDB ausgewiesen.',
       },
+  {
+      slug: 'schwefeldioxid-trgs-555',
+      substanceName: 'Schwefeldioxid',
+      documentDisplayName: 'Schwefeldioxid (SO₂, verdichtet)',
+      synonyms: ['SO₂', 'Schweflige Säure (Gasform)', 'R744'],
+      casNumber: { kind: 'substance', value: '7446-09-5' },
+      ghsPictograms: ['GHS04', 'GHS05', 'GHS06', 'GHS08'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Kälte- & Klimatechnik',
+        'Getränke- & Lebensmitteltechnik',
+        'Chemische Produktion',
+        'Wasseraufbereitung',
+      ],
+      applicationAreaWorkplace:
+        'Konservierung, Kühlung und Prozessführung in Druckgasflaschen oder Anlagen — Aggregatzustand und Reinheit sind im SDB des bezogenen Produkts beschrieben.',
+    },
+  {
+      slug: 'acrylamid-trgs-555',
+      substanceName: 'Acrylamid',
+      documentDisplayName: 'Acrylamid (Prop-2-enamid)',
+      synonyms: ['Prop-2-enamid', '2-Propenamid', 'Acrylamide'],
+      casNumber: { kind: 'substance', value: '79-06-1' },
+      ghsPictograms: ['GHS06', 'GHS08'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Wasseraufbereitung & Kläranlage',
+        'Papier- & Zellstoffindustrie',
+        'Chemische Produktion',
+        'Labor & Technik',
+      ],
+      applicationAreaWorkplace:
+        'Polymerisation und Flockung in technischen Anlagen — Monomer vs. wässrige Lösung und Restgehalte in Fertigprodukten sind im herstellerspezifischen SDB zu prüfen.',
+    },
+  {
+      slug: 'natriumdichlorisocyanurat-trgs-555',
+      substanceName: 'Natriumdichlorisocyanurat',
+      documentDisplayName: 'Natriumdichlorisocyanurat (SDIC)',
+      synonyms: ['SDIC', 'Dichlorisocyanursäure-Natriumsalz', 'Chlor-Tabletten (Wirkstoff)'],
+      casNumber: { kind: 'substance', value: '2893-78-9' },
+      ghsPictograms: ['GHS03', 'GHS07', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Schwimmbad- & Badebetrieb',
+        'Gebäudereinigung & Desinfektion',
+        'Landwirtschaft & Tierhaltung',
+        'Wasseraufbereitung',
+      ],
+      applicationAreaWorkplace:
+        'Chlorierung und Desinfektion in Festform oder als wässrige Lösung — Hydratstufe, verfügbares Chlor und pH-Wert im SDB des Handelsprodukts sind für die Betriebsanweisung maßgeblich.',
+    },
+  {
+      slug: 'trichlorisocyanursaeure-trgs-555',
+      substanceName: 'Trichlorisocyanursäure',
+      documentDisplayName: 'Trichlorisocyanursäure (TCICA)',
+      synonyms: ['TCICA', 'Symclosene', '1,3,5-Trichlor-1,3,5-triazin-2,4,6-trion'],
+      casNumber: { kind: 'substance', value: '87-90-1' },
+      ghsPictograms: ['GHS03', 'GHS07', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Schwimmbad- & Badebetrieb',
+        'Gebäudereinigung & Desinfektion',
+        'Landwirtschaft',
+        'Kommunale Wasserversorgung',
+      ],
+      applicationAreaWorkplace:
+        'Langsamchlor in Pools und technischen Wasserkreisläufen — Dosierform (Tabletten, Granulat) und Stabilisatoren können die Handhabung im SDB unterscheiden.',
+    },
+  {
+      slug: 'kupfersulfat-trgs-555',
+      substanceName: 'Kupfer(II)-sulfat',
+      documentDisplayName: 'Kupfer(II)-sulfat (Kupfersulfat)',
+      synonyms: ['Kupfersulfat', 'Blauvitriol', 'CuSO₄'],
+      casNumber: { kind: 'substance', value: '7758-98-7' },
+      ghsPictograms: ['GHS07', 'GHS09'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Landwirtschaft & Weinbau',
+        'Galvanik & Oberflächentechnik',
+        'Abwasser- & Trinkwassertechnik',
+        'Holzschutz & Materialschutz',
+      ],
+      applicationAreaWorkplace:
+        'Fungizid, Prozesschemie und Wasserbehandlung — Pentahydrat vs. wasserfrei und Lösungskonzentration können die Einstufung im SDB beeinflussen.',
+    },
+  {
+      slug: 'eiseniii-chlorid-trgs-555',
+      substanceName: 'Eisen(III)-chlorid',
+      documentDisplayName: 'Eisen(III)-chlorid (Eisenchlorid)',
+      synonyms: ['Eisenchlorid', 'Ferric chloride', 'FeCl₃'],
+      casNumber: { kind: 'substance', value: '7705-08-0' },
+      ghsPictograms: ['GHS05', 'GHS07'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Abwasser- & Trinkwasseraufbereitung',
+        'Galvanik & Leiterplattenfertigung',
+        'Bauwirtschaft (Betonzusatz)',
+        'Labor & Technik',
+      ],
+      applicationAreaWorkplace:
+        'Flockung, Ätzung und Prozesswasser — Konzentration in wässrigen Lösungen und Freisetzung von Dämpfen sind im SDB des bezogenen Produkts dokumentiert.',
+    },
+  {
+      slug: 'anilin-trgs-555',
+      substanceName: 'Anilin',
+      documentDisplayName: 'Anilin (Phenylamin)',
+      synonyms: ['Phenylamin', 'Aminobenzol', 'C₆H₅NH₂'],
+      casNumber: { kind: 'substance', value: '62-53-3' },
+      ghsPictograms: ['GHS05', 'GHS06', 'GHS08', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Chemische Produktion',
+        'Kunststoff- & Gummiindustrie',
+        'Farben- & Lackrohstoffe',
+        'Labor & Analytik',
+      ],
+      applicationAreaWorkplace:
+        'Zwischenprodukt und Ausgangsstoff in Synthesen — Reinheit, Temperaturführung und Prozessintegration sind im herstellerspezifischen SDB und in der Betriebsorganisation abzubilden.',
+    },
+  {
+      slug: 'ammoniumnitrat-trgs-555',
+      substanceName: 'Ammoniumnitrat',
+      documentDisplayName: 'Ammoniumnitrat (Düngemittelqualität, typisch)',
+      synonyms: ['Salpeter ammonium', 'NH₄NO₃', 'Kalkammonsalpeter (Anteil)'],
+      casNumber: { kind: 'substance', value: '6484-52-2' },
+      ghsPictograms: ['GHS03', 'GHS07'],
+      signalWord: 'Achtung',
+      typicalIndustries: [
+        'Landwirtschaft & Gartenbau',
+        'Baustoffhandel & Baustellenversorgung',
+        'Chemische Produktion',
+        'Sprengstoff- & Pyrotechnik (industriell)',
+      ],
+      applicationAreaWorkplace:
+        'Düngung und technische Anwendungen in Festform — Stickstoffgehalt, Feuchte und Beimengungen können die betriebliche Handhabung im SDB und in den Herstellerangaben unterscheiden.',
+    },
+  {
+      slug: 'hydrochinon-trgs-555',
+      substanceName: 'Hydrochinon',
+      documentDisplayName: 'Hydrochinon (1,4-Dihydroxybenzol)',
+      synonyms: ['1,4-Dihydroxybenzol', 'Quinol', 'Hydroquinone'],
+      casNumber: { kind: 'substance', value: '123-31-9' },
+      ghsPictograms: ['GHS05', 'GHS07', 'GHS08', 'GHS09'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Fotografie & Bildtechnik',
+        'Galvanik & Oberflächentechnik',
+        'Kunststoff- & Harzverarbeitung',
+        'Labor & Analytik',
+      ],
+      applicationAreaWorkplace:
+        'Entwickler, Stabilisator und Prozesschemikalie — Konzentration in Lösungen und Staubexposition bei Feststoff sind im Lieferanten-SDB ausgewiesen.',
+    },
+  {
+      slug: 'furfurylalkohol-trgs-555',
+      substanceName: 'Furfurylalkohol',
+      documentDisplayName: 'Furfurylalkohol (2-Furylmethanol)',
+      synonyms: ['2-Furylmethanol', 'Furfuryl alcohol', 'Furfurolalkohol'],
+      casNumber: { kind: 'substance', value: '98-00-0' },
+      ghsPictograms: ['GHS06', 'GHS08'],
+      signalWord: 'Gefahr',
+      typicalIndustries: [
+        'Gießerei & Formenbau',
+        'Harz- & Kunstharzindustrie',
+        'Chemische Produktion',
+        'Holzverarbeitung (Harze)',
+      ],
+      applicationAreaWorkplace:
+        'Bindemittel in Gießereiharfen und Harzsystemen — Dämpfe bei der Verarbeitung und Restmonomere sind im SDB des verwendeten Harzsystems zu berücksichtigen.',
+    },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
