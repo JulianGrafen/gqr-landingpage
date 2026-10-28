@@ -1,4 +1,4 @@
-import type { GhsPictogramCode } from '@/config/betriebsanweisung/types';
+import type { GhsPictogramCode } from '@/lib/ghs/ghs-types';
 import { GHS_ASSETS } from '@/lib/ghs/ghs-assets';
 
 type Props = {

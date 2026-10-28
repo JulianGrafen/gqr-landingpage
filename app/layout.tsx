@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import './globals.css';
 import { MaintenancePage } from '@/components/MaintenancePage';
+import { GqrChatbotLoader } from '@/components/GqrChatbotLoader';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
 import { SITE_DEFAULT_SEO, SITE_URL } from '@/config/site-seo';
@@ -51,7 +52,7 @@ export default function RootLayout({
         <SiteHeader />
         <div className="flex-1">{children}</div>
         <SiteFooter />
-        <script src="/scripts/gqr-chatbot.js" defer />
+        <GqrChatbotLoader />
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllBetriebsanweisungEntries } from '@/config/betriebsanweisung/registry';
-import { formatCasDisplay } from '@/config/betriebsanweisung/registry';
+import { BETRIEBSANWEISUNG_HERO_DISCLAIMER } from '@/config/legal/site-copy';
 import { SITE_URL } from '@/config/site-seo';
 
 const canonical = `${SITE_URL}/betriebsanweisung/`;
@@ -9,12 +9,12 @@ const canonical = `${SITE_URL}/betriebsanweisung/`;
 export const metadata: Metadata = {
   title: 'Betriebsanweisungen nach TRGS 555 — Stoffübersicht',
   description:
-    'Betriebsanweisung-Entwürfe für typische Gefahrstoffe: Aceton, Isopropanol, Bremsenreiniger und mehr — KI-gestützter Entwurf (gemäß TRGS 555) mit SDB-Upload. Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).',
+    'Betriebsanweisung-Entwürfe für typische Gefahrstoffe: Aceton, Isopropanol, Bremsenreiniger und mehr — KI-gestützter TRGS-555-Entwurf mit SDB-Upload in Gefahrstoff-QR.',
   alternates: { canonical },
   openGraph: {
     title: 'Betriebsanweisungen nach TRGS 555 — Stoffübersicht',
     description:
-      'Programmatic SEO-Übersicht: Betriebsanweisung-Entwürfe für häufige Stoffe und Produkte — Vorprüfung zur fachlichen Freigabe durch SiFa / Arbeitgeber.',
+      'Programmatic SEO-Übersicht: Betriebsanweisung-Entwürfe für häufige Stoffe und Produkte — Struktur im Web, Inhalte aus Ihrem Lieferanten-SDB.',
     url: canonical,
     siteName: 'Gefahrstoff-QR',
     locale: 'de_DE',
@@ -33,9 +33,10 @@ export default function BetriebsanweisungIndexPage() {
           <h1 className="mt-3 text-3xl font-black leading-tight text-[#f0f6ff] sm:text-4xl">
             Betriebsanweisungen für typische Gefahrstoffe
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-[#8fa4c0]">
-            KI-gestützter Entwurf (gemäß TRGS 555) für häufige Stoffe und Produkte — mit SDB-Live-Vorschau.
-            Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).
+          <p className="mt-4 text-sm leading-relaxed text-[#8fa4c0]">{BETRIEBSANWEISUNG_HERO_DISCLAIMER}</p>
+          <p className="mt-4 text-lg leading-relaxed text-[#8fa4c0]">
+            KI-gestützter TRGS-555-Entwurf mit SDB-Live-Vorschau — ohne veröffentlichte CAS-, GHS- oder H/P-Angaben auf
+            dieser Übersicht.
           </p>
         </div>
       </section>
@@ -51,7 +52,6 @@ export default function BetriebsanweisungIndexPage() {
                   className="flex flex-col rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-4 transition hover:border-[#ff6b35]/40 hover:bg-white hover:shadow-sm"
                 >
                   <span className="font-semibold text-slate-900">{entry.substanceName}</span>
-                  <span className="mt-1 text-xs text-slate-500">{formatCasDisplay(entry.casNumber)}</span>
                   <span className="mt-2 text-sm text-[#ff6b35]">Entwurf ansehen →</span>
                 </Link>
               </li>

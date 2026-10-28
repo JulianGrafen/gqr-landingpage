@@ -7,7 +7,10 @@ import { BetriebsanweisungTeaserDocument } from '@/components/betriebsanweisung/
 import { HAZARDOUS_SUBSTANCE_SLUGS } from '@/config/betriebsanweisung/entries';
 import type { HazardousSubstanceSlug } from '@/config/betriebsanweisung/entries';
 import { getAllBetriebsanweisungEntries, getBetriebsanweisungEntry } from '@/config/betriebsanweisung/registry';
-import { REGISTER_CTA_LABEL } from '@/config/legal/site-copy';
+import {
+  BETRIEBSANWEISUNG_HERO_DISCLAIMER,
+  BETRIEBSANWEISUNG_REGISTER_CTA,
+} from '@/config/legal/site-copy';
 import { SITE_URL } from '@/config/site-seo';
 import { buildBetriebsanweisungRegisterUrl } from '@/lib/betriebsanweisung/build-register-url';
 import { buildBetriebsanweisungFaqItems } from '@/lib/betriebsanweisung/build-substance-faq';
@@ -21,16 +24,12 @@ export function generateStaticParams(): { slug: HazardousSubstanceSlug }[] {
   return HAZARDOUS_SUBSTANCE_SLUGS.map((slug) => ({ slug }));
 }
 
-function buildMetaDescription(substanceName: string): string {
-  return `Betriebsanweisung ${substanceName}: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt — Vorprüfung zur fachlichen Freigabe durch SiFa / Arbeitgeber (§ 14 GefStoffV).`;
-}
-
 export function generateMetadata({ params }: PageProps): Metadata {
   const entry = getBetriebsanweisungEntry(params.slug);
   if (!entry) return { title: 'Seite nicht gefunden' };
 
   const title = `Betriebsanweisung ${entry.substanceName} nach TRGS 555`;
-  const description = buildMetaDescription(entry.substanceName);
+  const description = entry.metaDescription;
   const canonical = `${SITE_URL}/betriebsanweisung/${entry.slug}/`;
 
   return {
@@ -81,10 +80,7 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
           >
             Betriebsanweisung {entry.substanceName} nach TRGS 555 – KI-gestützter Entwurf mit SDB-Upload
           </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#8fa4c0]">
-            KI-gestützter Entwurf (gemäß TRGS 555) mit SDB-Upload — Vorprüfung zur fachlichen Freigabe durch die
-            SiFa / den Arbeitgeber (§ 14 GefStoffV).
-          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-[#8fa4c0]">{BETRIEBSANWEISUNG_HERO_DISCLAIMER}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             {entry.typicalIndustries.map((industry) => (
               <span
@@ -104,7 +100,7 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
             <BetriebsanweisungTeaserDocument entry={entry} />
           </div>
           <div className="lg:col-span-5">
-            <BetriebsanweisungSdbSidebar substanceName={entry.substanceName} />
+            <BetriebsanweisungSdbSidebar substanceName={entry.substanceName} registerUrl={registerUrl} />
           </div>
         </div>
       </section>
@@ -141,11 +137,8 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
       <section className="border-t border-white/[0.07] bg-[#0f1e35] px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <Link href={registerUrl} className="gqr-cta-primary gqr-cta-primary--lg">
-            {REGISTER_CTA_LABEL}
+            {BETRIEBSANWEISUNG_REGISTER_CTA}
           </Link>
-          <p className="mt-4 text-sm text-[#8fa4c0]">
-            KI-gestützter Entwurf (gemäß TRGS 555) — Vorprüfung zur fachlichen Freigabe durch SiFa / Arbeitgeber.
-          </p>
         </div>
       </section>
     </main>

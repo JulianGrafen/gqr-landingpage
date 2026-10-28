@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 const FOOTER_COPYRIGHT =
-  '© 2026 Gefahrstoff-QR · Das Angebot richtet sich ausschließlich an Unternehmen, Gewerbetreibende, Freiberufler und juristische Personen des öffentlichen Rechts im Sinne des § 14 BGB.';
+  '© 2026 Gefahrstoff-QR · Das Angebot richtet sich ausschließlich an Unternehmen und Gewerbetreibende (§ 14 BGB).';
 
 const REPLACEMENTS = [
   ['Rechtssicheres Gefahrstoffverzeichnis nach §&nbsp;6 GefStoffV', 'Gefahrstoffverzeichnis nach Vorgaben von §&nbsp;6 GefStoffV &amp; TRGS'],

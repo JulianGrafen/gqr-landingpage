@@ -18,11 +18,3 @@ export function getBetriebsanweisungEntry(slug: string): HazardousSubstanceSeoEn
     ? HAZARDOUS_SUBSTANCE_SEO_ENTRIES.find((entry) => entry.slug === slug)
     : undefined;
 }
-
-export function formatCasDisplay(casNumber: HazardousSubstanceSeoEntry['casNumber']): string {
-  if (casNumber.kind === 'substance') return casNumber.value;
-  if (casNumber.mainComponentCas) {
-    return `${casNumber.label} (Referenz-CAS ${casNumber.mainComponentCas})`;
-  }
-  return casNumber.label;
-}

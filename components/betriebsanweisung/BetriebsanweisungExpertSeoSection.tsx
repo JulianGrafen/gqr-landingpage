@@ -24,7 +24,7 @@ export function BetriebsanweisungExpertSeoSection({ entry }: Props) {
           </p>
           <p>
             Gefahrstoff-QR unterstützt beim Übernehmen von Angaben aus Ihrem herstellerspezifischen
-            Sicherheitsdatenblatt — SiFa / Arbeitgeber prüfen und geben frei.
+            Sicherheitsdatenblatt in einen strukturierten TRGS-555-Entwurf.
           </p>
         </div>
       </section>
@@ -41,8 +41,8 @@ export function BetriebsanweisungExpertSeoSection({ entry }: Props) {
           </p>
           <p>
             Der KI-gestützte Entwurf (gemäß TRGS 555) unterstützt bei der Erstellung — ersetzt aber nicht die
-            fachliche Prüfung und Freigabe durch den Arbeitgeber bzw. die SiFa. Die Vorprüfung dokumentieren
-            Sie im Gefahrstoffverzeichnis und in der Unterweisung.
+            Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV). Freigabe,
+            Unterweisung und Dokumentation im Gefahrstoffverzeichnis bleiben betriebliche Pflichten.
           </p>
         </div>
       </section>

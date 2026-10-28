@@ -6,6 +6,7 @@
   'use strict';
 
   if (window.__gqrChatbotLoaded) return;
+  if (/^\/betriebsanweisung(\/|$)/.test(window.location.pathname || '')) return;
   window.__gqrChatbotLoaded = true;
 
   var FORM_ENDPOINT = 'https://formsubmit.co/ajax/info@gefahrstoff-qr.de';
