@@ -11,8 +11,6 @@
     "generate:sitemap": "npx tsx scripts/generate-sitemap.ts",
     "validate:sitemap": "npx tsx scripts/validate-sitemap.ts",
     "typecheck": "tsc --noEmit",
-    "maintenance:on": "node scripts/maintenance-mode.mjs on",
-    "maintenance:off": "node scripts/maintenance-mode.mjs off",
     "start": "next start",
     "build:css": "tailwindcss -i ./src/tw-input.css -o ./tw.css --minify",
     "build:feature-accordion": "node scripts/build-feature-accordion.mjs",
