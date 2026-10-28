@@ -12,13 +12,34 @@ type Props = {
   variant: SdbPreviewVariant;
   teaser: SdbPreviewTeaser;
   embedded?: boolean;
+  /** Öffentliche LP: keine Einstufungsdaten aus dem PDF anzeigen. */
+  omitPublishedHazardData?: boolean;
 };
 
 /** Filter blur on content (not backdrop-blur); strength aligned with teaser sections. */
 const TEASER_DATA_BLUR_CLASS =
   'pointer-events-none select-none opacity-40 blur-[5px] [transform:translateZ(0)]';
 
-export function SdbPreviewCompactResult({ variant, teaser, embedded = false }: Props) {
+function SkeletonBars() {
+  return (
+    <div className="mt-3 space-y-2" aria-hidden>
+      <div className="h-3 w-full animate-pulse rounded bg-slate-200/80" />
+      <div className="h-3 w-[88%] animate-pulse rounded bg-slate-200/80" />
+      <div className="mt-3 flex gap-2">
+        {Array.from({ length: 3 }).map((_, i) => (
+          <div key={i} className="h-9 w-9 animate-pulse rounded bg-slate-200/80" />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function SdbPreviewCompactResult({
+  variant,
+  teaser,
+  embedded = false,
+  omitPublishedHazardData = false,
+}: Props) {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const identification = teaser.sections.find((s) => s.key === 'identification');
   const hazardLines = teaser.hazardStatements.slice(0, embedded ? 1 : 3);
@@ -26,6 +47,32 @@ export function SdbPreviewCompactResult({ variant, teaser, embedded = false }: P
 
   if (variant === 'static') {
     return null;
+  }
+
+  if (omitPublishedHazardData) {
+    return (
+      <div
+        data-sdb-compact-result={embedded ? 'embedded' : 'default'}
+        className={
+          embedded
+            ? 'flex flex-col overflow-hidden rounded-xl border border-white/10 bg-[#162340]/90 shadow-lg'
+            : 'mt-4 flex max-h-[min(28rem,calc(100vh-11rem))] flex-col overflow-hidden rounded-xl border border-white/10 bg-[#162340]/90 shadow-lg'
+        }
+      >
+        <div className={embedded ? 'px-3 py-3' : 'flex-1 overflow-y-auto px-4 py-4'}>
+          <p className="text-[10px] font-bold uppercase tracking-wider text-[#ff6b35]">SDB verarbeitet</p>
+          <p className="mt-2 text-sm font-semibold text-[#f0f6ff]">{teaser.tradeName || 'PDF erkannt'}</p>
+          <p className="mt-2 text-xs leading-relaxed text-[#8fa4c0]">
+            Kennzeichnung, CAS und Gefahrenhinweise werden nicht auf dieser Seite angezeigt. Im Entwurf in der App
+            nach Registrierung einsehen und freigeben.
+          </p>
+          <SkeletonBars />
+        </div>
+        <div className={`shrink-0 border-t border-white/10 bg-[#0f1e35]/95 ${embedded ? 'p-2.5' : 'p-3'}`}>
+          <SdbUnlockCard variant={variant} previewToken={teaser.previewToken} compact />
+        </div>
+      </div>
+    );
   }
 
   const ghsBlock = embedded ? (

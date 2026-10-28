@@ -18,7 +18,7 @@ export async function extractSdbSectionTextFromPdf(file: File): Promise<PdfSecti
   if (typeof window === 'undefined') return null;
 
   try {
-    const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
+    const pdfjs = await import('pdfjs-dist/build/pdf.mjs');
     pdfjs.GlobalWorkerOptions.workerSrc = '/pdfjs/pdf.worker.min.mjs';
 
     const data = new Uint8Array(await file.arrayBuffer());
@@ -30,7 +30,7 @@ export async function extractSdbSectionTextFromPdf(file: File): Promise<PdfSecti
       const page = await doc.getPage(pageNum);
       const content = await page.getTextContent();
       const pageText = content.items
-        .map((item) => ('str' in item ? item.str : ''))
+        .map((item: { str?: string }) => ('str' in item ? item.str : ''))
         .join(' ')
         .replace(/\s+/g, ' ')
         .trim();

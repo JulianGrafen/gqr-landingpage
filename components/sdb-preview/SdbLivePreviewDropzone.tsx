@@ -18,6 +18,8 @@ export type SdbLivePreviewDropzoneProps = {
   uploadIntro?: string;
   /** Engere Einbettung in Sidebars (ohne doppelte Schatten). */
   embedded?: boolean;
+  /** Keine GHS/CAS/H-Sätze in der Vorschau (öffentliche Betriebsanweisungs-LPs). */
+  omitPublishedHazardData?: boolean;
   onPhaseChange?: (phase: SdbPreviewPhase) => void;
 };
 
@@ -26,6 +28,7 @@ export function SdbLivePreviewDropzone({
   className = '',
   uploadIntro,
   embedded = false,
+  omitPublishedHazardData = false,
   onPhaseChange,
 }: SdbLivePreviewDropzoneProps) {
   const {
@@ -93,7 +96,12 @@ export function SdbLivePreviewDropzone({
       variant === 'static' ? (
         <Trgs555PreviewDocument variant={variant} teaser={teaser} />
       ) : (
-        <SdbPreviewCompactResult variant={variant} teaser={teaser} embedded={embedded} />
+        <SdbPreviewCompactResult
+          variant={variant}
+          teaser={teaser}
+          embedded={embedded}
+          omitPublishedHazardData={omitPublishedHazardData}
+        />
       )
     ) : null;
 

@@ -32,7 +32,13 @@ export function BetriebsanweisungSdbSidebar({ substanceName, registerUrl }: Prop
           hoch — relevante Abschnitte können als Vorschlag in den TRGS-555-Entwurf übernommen werden.
         </p>
       ) : null}
-      <SdbLivePreviewDropzone variant="next" embedded className="mt-4" onPhaseChange={setScanPhase} />
+      <SdbLivePreviewDropzone
+        variant="next"
+        embedded
+        omitPublishedHazardData
+        className="mt-4"
+        onPhaseChange={setScanPhase}
+      />
       {scanPhase === 'idle' ? (
         <p className="mt-3 text-center text-xs text-[#8fa4c0]">{BETRIEBSANWEISUNG_NO_PDF_STORAGE}</p>
       ) : null}

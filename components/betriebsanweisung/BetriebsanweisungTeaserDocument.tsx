@@ -67,7 +67,7 @@ export function BetriebsanweisungTeaserDocument({ entry }: Props) {
           <div className="max-w-sm text-center">
             <p className="text-lg font-bold text-slate-900">Wartet auf Ihr Sicherheitsdatenblatt</p>
             <p className="mt-3 text-sm leading-relaxed text-slate-600">
-              Schutzmaßnahmen, GHS-Einstufung und Notfall-Regeln hängen zwingend von der Konzentration Ihres Lieferanten
+              Schutzmaßnahmen, Kennzeichnung und Notfall-Regeln hängen zwingend von der Konzentration Ihres Lieferanten
               ab. Laden Sie Ihr SDB hoch, um die exakten Daten aus Ihrem Lieferanten-PDF in diesen Entwurf zu
               extrahieren.
             </p>
