@@ -20,6 +20,7 @@
     "sync:home-faq-jsonld": "npx tsx scripts/sync-home-faq-jsonld.ts",
     "sync:home-faq": "npm run sync:home-faq-jsonld && npx tsx scripts/sync-home-faq-visible.ts",
     "generate:kfz-werkstatt-landing": "node scripts/generate-kfz-werkstatt-landing.mjs",
+    "generate:logo-wordmark": "node scripts/trim-logo-wordmark.mjs",
     "watch:css": "tailwindcss -i ./src/tw-input.css -o ./tw.css --watch"
   },
   "dependencies": {
