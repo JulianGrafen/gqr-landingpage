@@ -10,7 +10,6 @@ import { BetriebsanweisungSdbUploadProvider } from '@/components/betriebsanweisu
 import { HAZARDOUS_SUBSTANCE_SLUGS } from '@/config/betriebsanweisung/entries';
 import type { HazardousSubstanceSlug } from '@/config/betriebsanweisung/entries';
 import { getAllBetriebsanweisungEntries, getBetriebsanweisungEntry } from '@/config/betriebsanweisung/registry';
-import { BETRIEBSANWEISUNG_HERO_DISCLAIMER } from '@/config/legal/site-copy';
 import { SITE_URL } from '@/config/site-seo';
 import { buildBetriebsanweisungRegisterUrl } from '@/lib/betriebsanweisung/build-register-url';
 import { buildBetriebsanweisungFaqItems } from '@/lib/betriebsanweisung/build-substance-faq';
@@ -80,13 +79,13 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
           >
             Betriebsanweisung {entry.substanceName} nach TRGS 555 – Entwurf aus Ihrem Sicherheitsdatenblatt
           </h1>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-[#8fa4c0] sm:text-base">
+          <p
+            id="ba-hero-subheadline"
+            className="mt-4 max-w-3xl text-sm leading-relaxed text-[#8fa4c0] sm:text-base"
+          >
             Weniger manuelles Abtippen: Laden Sie das Lieferanten-SDB für {entry.substanceName} hoch. Die Software
             unterstützt dabei, relevante Angaben aus Ihrem PDF als strukturierten Textvorschlag in einen TRGS-555-Entwurf
             zu übernehmen — zur Vorprüfung und Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).
-          </p>
-          <p className="mt-3 max-w-3xl text-xs leading-relaxed text-[#8fa4c0] sm:text-sm">
-            {BETRIEBSANWEISUNG_HERO_DISCLAIMER}
           </p>
           {entry.typicalIndustries.length > 0 ? (
             <div className="mt-6">
@@ -129,23 +128,24 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
         <section className="border-t border-white/[0.07] px-4 py-10 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-lg font-bold text-[#f0f6ff]">Weitere Betriebsanweisungen</h2>
-            <ul className="mt-4 flex flex-wrap gap-2" role="list">
-              <li>
-                <Link href="/betriebsanweisung/" className="text-sm font-semibold text-[#ff6b35] hover:underline">
-                  Alle Stoffe
-                </Link>
-              </li>
+            <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2">
+              <Link href="/betriebsanweisung/" className="text-sm font-semibold text-[#ff6b35] hover:underline">
+                Alle Stoffe
+              </Link>
               {related.map((rel) => (
-                <li key={rel.slug}>
+                <span key={rel.slug} className="inline-flex items-center gap-2">
+                  <span className="text-[#8fa4c0]" aria-hidden="true">
+                    ·
+                  </span>
                   <Link
                     href={`/betriebsanweisung/${rel.slug}/`}
                     className="rounded-full border border-white/15 px-3 py-1 text-sm text-[#c8d4e6] hover:border-[#ff6b35]/40"
                   >
                     {rel.substanceName}
                   </Link>
-                </li>
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
 
