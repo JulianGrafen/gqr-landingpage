@@ -1,1 +1,4 @@
-export { SdbLivePreviewDropzone } from '@/components/sdb-preview/SdbLivePreviewDropzone';
+export {
+  SdbLivePreviewDropzone,
+  type SdbLivePreviewDropzoneHandle,
+} from '@/components/sdb-preview/SdbLivePreviewDropzone';

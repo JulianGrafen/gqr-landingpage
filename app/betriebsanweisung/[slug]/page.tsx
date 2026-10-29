@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { BetriebsanweisungClosingCtaCard } from '@/components/betriebsanweisung/BetriebsanweisungClosingCtaCard';
+import { BetriebsanweisungContrastSection } from '@/components/betriebsanweisung/BetriebsanweisungContrastSection';
 import { BetriebsanweisungExpertSeoSection } from '@/components/betriebsanweisung/BetriebsanweisungExpertSeoSection';
 import { BetriebsanweisungSdbSidebar } from '@/components/betriebsanweisung/BetriebsanweisungSdbSidebar';
 import { BetriebsanweisungTeaserDocument } from '@/components/betriebsanweisung/BetriebsanweisungTeaserDocument';
+import { BetriebsanweisungSdbUploadProvider } from '@/components/betriebsanweisung/betriebsanweisung-sdb-upload-context';
 import { HAZARDOUS_SUBSTANCE_SLUGS } from '@/config/betriebsanweisung/entries';
 import type { HazardousSubstanceSlug } from '@/config/betriebsanweisung/entries';
 import { getAllBetriebsanweisungEntries, getBetriebsanweisungEntry } from '@/config/betriebsanweisung/registry';
-import {
-  BETRIEBSANWEISUNG_HERO_DISCLAIMER,
-  BETRIEBSANWEISUNG_REGISTER_CTA,
-} from '@/config/legal/site-copy';
+import { BETRIEBSANWEISUNG_HERO_DISCLAIMER } from '@/config/legal/site-copy';
 import { SITE_URL } from '@/config/site-seo';
 import { buildBetriebsanweisungRegisterUrl } from '@/lib/betriebsanweisung/build-register-url';
 import { buildBetriebsanweisungFaqItems } from '@/lib/betriebsanweisung/build-substance-faq';
@@ -73,74 +73,84 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
         aria-labelledby="ba-hero-title"
       >
         <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-bold uppercase tracking-wider text-[#ff6b35]">Betriebsanweisung · TRGS 555</p>
+          <p className="gqr-kicker">TRGS 555 · KI-gestützter Entwurf</p>
           <h1
             id="ba-hero-title"
             className="mt-3 text-3xl font-black leading-tight tracking-tight text-[#f0f6ff] sm:text-4xl lg:text-[2.35rem]"
           >
-            Betriebsanweisung {entry.substanceName} nach TRGS 555 – KI-gestützter Entwurf mit SDB-Upload
+            Betriebsanweisung {entry.substanceName} nach TRGS 555 – Entwurf aus Ihrem Sicherheitsdatenblatt
           </h1>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-[#8fa4c0]">{BETRIEBSANWEISUNG_HERO_DISCLAIMER}</p>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {entry.typicalIndustries.map((industry) => (
-              <span
-                key={industry}
-                className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-xs font-medium text-[#c8d4e6]"
-              >
-                {industry}
-              </span>
-            ))}
-          </div>
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-[#8fa4c0] sm:text-base">
+            Weniger manuelles Abtippen: Laden Sie das Lieferanten-SDB für {entry.substanceName} hoch. Die Software
+            unterstützt dabei, relevante Angaben aus Ihrem PDF als strukturierten Textvorschlag in einen TRGS-555-Entwurf
+            zu übernehmen — zur Vorprüfung und Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).
+          </p>
+          <p className="mt-3 max-w-3xl text-xs leading-relaxed text-[#8fa4c0] sm:text-sm">
+            {BETRIEBSANWEISUNG_HERO_DISCLAIMER}
+          </p>
+          {entry.typicalIndustries.length > 0 ? (
+            <div className="mt-6">
+              <p className="text-xs font-medium text-[#8fa4c0]">Typische Branchen:</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {entry.typicalIndustries.map((industry) => (
+                  <span
+                    key={industry}
+                    className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-xs font-medium text-[#c8d4e6]"
+                  >
+                    {industry}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </div>
       </section>
 
-      <section className="border-b border-white/[0.07] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-8 lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <BetriebsanweisungTeaserDocument entry={entry} />
+      <BetriebsanweisungSdbUploadProvider>
+        <section className="border-b border-white/[0.07] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-8 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <BetriebsanweisungTeaserDocument entry={entry} />
+            </div>
+            <div className="lg:col-span-5">
+              <BetriebsanweisungSdbSidebar substanceName={entry.substanceName} registerUrl={registerUrl} />
+            </div>
           </div>
-          <div className="lg:col-span-5">
-            <BetriebsanweisungSdbSidebar substanceName={entry.substanceName} registerUrl={registerUrl} />
+        </section>
+
+        <BetriebsanweisungContrastSection entry={entry} />
+
+        <section className="border-b border-white/[0.07] bg-[#0f1e35]/50 px-4 py-14 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            <BetriebsanweisungExpertSeoSection entry={entry} />
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="border-b border-white/[0.07] bg-[#0f1e35]/50 px-4 py-14 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <BetriebsanweisungExpertSeoSection entry={entry} />
-        </div>
-      </section>
-
-      <section className="border-t border-white/[0.07] px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-lg font-bold text-[#f0f6ff]">Weitere Betriebsanweisungen</h2>
-          <ul className="mt-4 flex flex-wrap gap-2" role="list">
-            <li>
-              <Link href="/betriebsanweisung/" className="text-sm font-semibold text-[#ff6b35] hover:underline">
-                Alle Stoffe
-              </Link>
-            </li>
-            {related.map((rel) => (
-              <li key={rel.slug}>
-                <Link
-                  href={`/betriebsanweisung/${rel.slug}/`}
-                  className="rounded-full border border-white/15 px-3 py-1 text-sm text-[#c8d4e6] hover:border-[#ff6b35]/40"
-                >
-                  {rel.substanceName}
+        <section className="border-t border-white/[0.07] px-4 py-10 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-lg font-bold text-[#f0f6ff]">Weitere Betriebsanweisungen</h2>
+            <ul className="mt-4 flex flex-wrap gap-2" role="list">
+              <li>
+                <Link href="/betriebsanweisung/" className="text-sm font-semibold text-[#ff6b35] hover:underline">
+                  Alle Stoffe
                 </Link>
               </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+              {related.map((rel) => (
+                <li key={rel.slug}>
+                  <Link
+                    href={`/betriebsanweisung/${rel.slug}/`}
+                    className="rounded-full border border-white/15 px-3 py-1 text-sm text-[#c8d4e6] hover:border-[#ff6b35]/40"
+                  >
+                    {rel.substanceName}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
-      <section className="border-t border-white/[0.07] bg-[#0f1e35] px-4 py-14 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <Link href={registerUrl} className="gqr-cta-primary gqr-cta-primary--lg">
-            {BETRIEBSANWEISUNG_REGISTER_CTA}
-          </Link>
-        </div>
-      </section>
+        <BetriebsanweisungClosingCtaCard substanceName={entry.substanceName} registerUrl={registerUrl} />
+      </BetriebsanweisungSdbUploadProvider>
     </main>
   );
 }

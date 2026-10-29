@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
-import { SdbDropzoneInput } from '@/components/sdb-preview/SdbDropzoneInput';
+import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
+import { SdbDropzoneInput, type SdbDropzoneInputHandle } from '@/components/sdb-preview/SdbDropzoneInput';
 import { SdbExampleChips } from '@/components/sdb-preview/SdbExampleChips';
 import { SdbProcessingProgressBar } from '@/components/sdb-preview/SdbProcessingProgressBar';
 import { SdbProcessingTimeline } from '@/components/sdb-preview/SdbProcessingTimeline';
@@ -23,14 +23,35 @@ export type SdbLivePreviewDropzoneProps = {
   onPhaseChange?: (phase: SdbPreviewPhase) => void;
 };
 
-export function SdbLivePreviewDropzone({
-  variant = 'next',
-  className = '',
-  uploadIntro,
-  embedded = false,
-  omitPublishedHazardData = false,
-  onPhaseChange,
-}: SdbLivePreviewDropzoneProps) {
+export type SdbLivePreviewDropzoneHandle = {
+  openFilePicker: () => void;
+  scrollToDropzone: () => void;
+};
+
+export const SdbLivePreviewDropzone = forwardRef<SdbLivePreviewDropzoneHandle, SdbLivePreviewDropzoneProps>(
+  function SdbLivePreviewDropzone(
+    {
+      variant = 'next',
+      className = '',
+      uploadIntro,
+      embedded = false,
+      omitPublishedHazardData = false,
+      onPhaseChange,
+    },
+    ref,
+  ) {
+  const dropzoneInputRef = useRef<SdbDropzoneInputHandle>(null);
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      openFilePicker: () => dropzoneInputRef.current?.openFilePicker(),
+      scrollToDropzone: () => {
+        document.getElementById('ba-sdb-dropzone')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      },
+    }),
+    [],
+  );
   const {
     phase,
     processingStepIndex,
@@ -110,6 +131,7 @@ export function SdbLivePreviewDropzone({
   const dropzoneBlock = (
     <>
       <SdbDropzoneInput
+        ref={dropzoneInputRef}
         variant={variant}
         disabled={busy}
         compact={dropzoneCompact}
@@ -166,4 +188,4 @@ export function SdbLivePreviewDropzone({
       )}
     </div>
   );
-}
+});

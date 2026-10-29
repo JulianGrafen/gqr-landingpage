@@ -15,6 +15,10 @@ export const BETRIEBSANWEISUNG_REGISTER_CTA = 'Entwurf jetzt in der App erstelle
 
 export const BETRIEBSANWEISUNG_SDB_CTA = 'Eigenes SDB jetzt auslesen';
 
+export const BETRIEBSANWEISUNG_OVERLAY_SDB_CTA = 'Eigenes SDB-PDF auswählen →';
+
+export const BETRIEBSANWEISUNG_CLOSING_REGISTER_CTA = 'Kostenlos in der App registrieren →';
+
 export const BETRIEBSANWEISUNG_NO_PDF_STORAGE = 'Keine Speicherung Ihres PDFs ohne Account.';
 
 export const DSGVO_HOSTING_BADGE = 'Hosting in Deutschland (inkl. AVV)';

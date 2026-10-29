@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
-import { SdbLivePreviewDropzone } from '@/components/sdb-preview';
+import { useEffect, useRef, useState } from 'react';
+import { useBetriebsanweisungSdbUpload } from '@/components/betriebsanweisung/betriebsanweisung-sdb-upload-context';
+import { SdbLivePreviewDropzone, type SdbLivePreviewDropzoneHandle } from '@/components/sdb-preview';
 import {
   BETRIEBSANWEISUNG_NO_PDF_STORAGE,
-  BETRIEBSANWEISUNG_REGISTER_CTA,
   DSGVO_HOSTING_BADGE,
 } from '@/config/legal/site-copy';
 import type { SdbPreviewPhase } from '@/lib/sdb-preview/useSdbPreview';
@@ -17,22 +17,31 @@ type Props = {
 
 export function BetriebsanweisungSdbSidebar({ substanceName, registerUrl }: Props) {
   const [scanPhase, setScanPhase] = useState<SdbPreviewPhase>('idle');
+  const dropzoneRef = useRef<SdbLivePreviewDropzoneHandle>(null);
+  const { registerSdbUploadSurface } = useBetriebsanweisungSdbUpload();
+
+  useEffect(() => {
+    registerSdbUploadSurface({
+      openFilePicker: () => dropzoneRef.current?.openFilePicker(),
+      scrollToDropzone: () => dropzoneRef.current?.scrollToDropzone(),
+    });
+    return () => registerSdbUploadSurface(null);
+  }, [registerSdbUploadSurface]);
 
   return (
     <aside
       id="ba-sdb-dropzone"
       className="scroll-mt-24 rounded-2xl border border-white/10 bg-[#162340]/80 p-5 shadow-xl shadow-black/20 sm:p-6 lg:sticky lg:top-8"
     >
-      <h2 className="text-xl font-bold text-[#f0f6ff]">
-        Nutzen Sie {substanceName} eines bestimmten Herstellers?
-      </h2>
+      <h2 className="text-xl font-bold text-[#f0f6ff]">Lieferanten-SDB für {substanceName} hochladen</h2>
       {scanPhase === 'idle' ? (
         <p className="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
-          Sicherheitsdatenblätter variieren je nach Lieferant und Konzentration. Laden Sie das PDF Ihres Lieferanten
-          hoch — relevante Abschnitte können als Vorschlag in den TRGS-555-Entwurf übernommen werden.
+          Die Live-Vorschau liest im Browser erste Basisangaben (Abschnitt 1 &amp; 2) aus Ihrem PDF aus. Die
+          vollständige Bearbeitung und fachliche Vorprüfung erfolgt im Account.
         </p>
       ) : null}
       <SdbLivePreviewDropzone
+        ref={dropzoneRef}
         variant="next"
         embedded
         omitPublishedHazardData
@@ -43,9 +52,11 @@ export function BetriebsanweisungSdbSidebar({ substanceName, registerUrl }: Prop
         <p className="mt-3 text-center text-xs text-[#8fa4c0]">{BETRIEBSANWEISUNG_NO_PDF_STORAGE}</p>
       ) : null}
       {scanPhase === 'idle' ? (
-        <Link href={registerUrl} className="gqr-cta-primary gqr-cta-primary--md mt-4 inline-flex w-full justify-center">
-          {BETRIEBSANWEISUNG_REGISTER_CTA}
-        </Link>
+        <p className="mt-4 text-center text-sm">
+          <Link href={registerUrl} className="gqr-link font-semibold text-[#8fa4c0] hover:text-[#ff6b35]">
+            Kein SDB-PDF zur Hand? → Direkt in der App registrieren
+          </Link>
+        </p>
       ) : null}
       {scanPhase === 'idle' ? (
         <div className="mt-4 flex flex-col gap-1.5 text-xs text-[#8fa4c0]" role="group" aria-label="Vertrauensmerkmale">

@@ -1,7 +1,11 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 import { dropzoneClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
+
+export type SdbDropzoneInputHandle = {
+  openFilePicker: () => void;
+};
 
 type Props = {
   variant: SdbPreviewVariant;
@@ -10,13 +14,18 @@ type Props = {
   onFile: (file: File) => void;
 };
 
-export function SdbDropzoneInput({ variant, disabled, compact = false, onFile }: Props) {
+export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(function SdbDropzoneInput(
+  { variant, disabled, compact = false, onFile },
+  ref,
+) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragOver, setDragOver] = useState(false);
 
   const pick = () => {
     if (!disabled) inputRef.current?.click();
   };
+
+  useImperativeHandle(ref, () => ({ openFilePicker: pick }), [disabled]);
 
   const handleFiles = (files: FileList | null) => {
     const file = files?.[0];
@@ -115,4 +124,4 @@ export function SdbDropzoneInput({ variant, disabled, compact = false, onFile }:
       </span>
     </div>
   );
-}
+});

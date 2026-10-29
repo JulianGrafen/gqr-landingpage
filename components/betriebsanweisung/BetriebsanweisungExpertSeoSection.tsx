@@ -1,6 +1,7 @@
 import type { HazardousSubstanceSeoEntry } from '@/config/betriebsanweisung/types';
 import { BetriebsanweisungFaqSection } from '@/components/betriebsanweisung/BetriebsanweisungFaqSection';
 import { buildBetriebsanweisungFaqItems } from '@/lib/betriebsanweisung/build-substance-faq';
+import { buildWorkplaceConditionsParagraph } from '@/lib/betriebsanweisung/format-workplace-context';
 
 type Props = {
   entry: HazardousSubstanceSeoEntry;
@@ -8,6 +9,7 @@ type Props = {
 
 export function BetriebsanweisungExpertSeoSection({ entry }: Props) {
   const faqItems = buildBetriebsanweisungFaqItems(entry.substanceName);
+  const workplaceParagraph = buildWorkplaceConditionsParagraph(entry.substanceName, entry.typicalIndustries);
 
   return (
     <div className="space-y-12">
@@ -16,6 +18,7 @@ export function BetriebsanweisungExpertSeoSection({ entry }: Props) {
           Warum eine Betriebsanweisung immer hersteller- und arbeitsplatzbezogen sein muss
         </h2>
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-[#c8d4e6]">
+          <p>{workplaceParagraph}</p>
           <p>
             Universelle Sicherheits- und Schutzangaben aus dem Internet sind nach § 14 GefStoffV unzulässig.
             Schutzmaßnahmen (wie Atemschutz, Handschuhmaterial oder Lüftung) hängen zwingend von der konkreten
@@ -34,6 +37,7 @@ export function BetriebsanweisungExpertSeoSection({ entry }: Props) {
           Rechtlicher Rahmen (§ 14 GefStoffV)
         </h2>
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-[#c8d4e6]">
+          <p>{workplaceParagraph}</p>
           <p>
             Für Tätigkeiten mit {entry.substanceName} muss vor Aufnahme der Arbeit eine schriftliche
             Betriebsanweisung vorliegen. Sie muss verständlich sein, den Arbeitsplatz berücksichtigen und auf

@@ -1,82 +1,82 @@
-import Link from 'next/link';
+'use client';
+
 import type { HazardousSubstanceSeoEntry } from '@/config/betriebsanweisung/types';
-import {
-  BETRIEBSANWEISUNG_REGISTER_CTA,
-  BETRIEBSANWEISUNG_SDB_CTA,
-} from '@/config/legal/site-copy';
-import { buildBetriebsanweisungRegisterUrl } from '@/lib/betriebsanweisung/build-register-url';
+import { useBetriebsanweisungSdbUpload } from '@/components/betriebsanweisung/betriebsanweisung-sdb-upload-context';
+import { BETRIEBSANWEISUNG_OVERLAY_SDB_CTA } from '@/config/legal/site-copy';
 
 type Props = {
   entry: HazardousSubstanceSeoEntry;
 };
 
 const SKELETON_SECTIONS = [
-  '1. Anwendungsbereich & Arbeitsplatz',
-  '2. Gefahren für Mensch und Umwelt',
-  '3. Schutzmaßnahmen & PSA',
-  '4. Verhalten im Gefahrfall',
-  '5. Erste Hilfe',
-  '6. Sachgerechte Entsorgung',
+  {
+    title: '1. Anwendungsbereich & Arbeitsplatz',
+    placeholder: '[Zuordnung aus SDB Abschnitt 1.2 & betrieblicher Arbeitsbereich]',
+  },
+  {
+    title: '2. Gefahren für Mensch und Umwelt',
+    placeholder: '[Zuordnung aus SDB Abschnitt 2: Einstufung & Kennzeichnung]',
+  },
+  {
+    title: '3. Schutzmaßnahmen & Verhaltensregeln',
+    placeholder: '[Zuordnung aus SDB Abschnitt 7 & 8: Handhabung & Expositionsbegrenzung]',
+  },
+  {
+    title: '4. Verhalten im Gefahrfall',
+    placeholder: '[Zuordnung aus SDB Abschnitt 5 & 6: Maßnahmen bei Brand / Freisetzung]',
+  },
+  {
+    title: '5. Erste Hilfe',
+    placeholder: '[Zuordnung aus SDB Abschnitt 4: Erste-Hilfe-Maßnahmen]',
+  },
+  {
+    title: '6. Sachgerechte Entsorgung',
+    placeholder: '[Zuordnung aus SDB Abschnitt 13: Hinweise zur Entsorgung]',
+  },
 ] as const;
 
-function SkeletonBar({ className }: { className?: string }) {
-  return <div className={`animate-pulse rounded bg-slate-200/90 ${className ?? 'h-3 w-full'}`} aria-hidden />;
-}
-
 export function BetriebsanweisungTeaserDocument({ entry }: Props) {
-  const registerUrl = buildBetriebsanweisungRegisterUrl(entry.slug);
+  const { requestSdbUploadFromOverlay } = useBetriebsanweisungSdbUpload();
 
   return (
     <article
       className="relative mx-auto max-w-[520px] overflow-hidden rounded-2xl border border-white/10 bg-white shadow-2xl shadow-black/30"
-      aria-label={`Muster-Struktur Betriebsanweisung ${entry.substanceName}`}
+      aria-label={`Struktur-Vorschau Betriebsanweisung ${entry.substanceName}`}
     >
       <div className="relative">
         <header className="border-b-4 border-[#ff6b35] bg-gradient-to-r from-[#0f1e35] to-[#162340] px-5 py-4 text-[#f0f6ff]">
           <p className="text-[11px] font-bold uppercase leading-snug tracking-wide text-teal-300">
-            TRGS 555 · Muster-Struktur (ohne Lieferanten-SDB)
+            TRGS 555 · Struktur-Vorschau für {entry.substanceName}
           </p>
-          <h2 className="mt-2 text-lg font-black leading-snug sm:text-xl">
-            Betriebsanweisung (Muster-Struktur) für {entry.substanceName}
-          </h2>
         </header>
 
         <div className="space-y-0 bg-white px-5 py-4 text-slate-800">
-          <div className="flex gap-2 pb-4" aria-hidden>
-            {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="h-12 w-12 animate-pulse rounded-lg bg-slate-200" />
-            ))}
-          </div>
-          <SkeletonBar className="mb-2 h-4 w-3/4" />
-          <SkeletonBar className="mb-6 h-3 w-full" />
-          <SkeletonBar className="mb-2 h-3 w-5/6" />
-
-          {SKELETON_SECTIONS.map((title) => (
-            <section key={title} className="border-t border-slate-100 py-4" aria-hidden>
+          {SKELETON_SECTIONS.map(({ title, placeholder }) => (
+            <section key={title} className="border-t border-slate-100 py-4 first:border-t-0">
               <p className="text-xs font-bold uppercase tracking-wide text-[#ff6b35]">{title}</p>
-              <div className="mt-3 space-y-2">
-                <SkeletonBar className="h-3 w-full" />
-                <SkeletonBar className="h-3 w-[92%]" />
-                <SkeletonBar className="h-3 w-[78%]" />
-              </div>
+              <p className="mt-2 text-sm italic leading-relaxed text-slate-500">{placeholder}</p>
             </section>
           ))}
         </div>
 
         <div className="absolute inset-0 flex items-center justify-center bg-white/80 p-6 backdrop-blur-sm">
           <div className="max-w-sm text-center">
-            <p className="text-lg font-bold text-slate-900">Wartet auf Ihr Sicherheitsdatenblatt</p>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600">
-              Schutzmaßnahmen, GHS-Einstufung und Notfall-Regeln hängen zwingend von der Konzentration Ihres Lieferanten
-              ab. Laden Sie Ihr SDB hoch, um die exakten Daten rechtssicher in diesen Entwurf zu extrahieren.
+            <p className="text-lg font-bold text-slate-900">
+              Wartet auf Ihr Lieferanten-SDB für {entry.substanceName}
             </p>
-            <div className="mt-6 flex flex-col gap-3">
-              <Link href={registerUrl} className="gqr-cta-primary gqr-cta-primary--md inline-flex justify-center">
-                {BETRIEBSANWEISUNG_REGISTER_CTA}
-              </Link>
-              <a href="#ba-sdb-dropzone" className="gqr-cta-secondary gqr-cta-secondary--md inline-flex justify-center">
-                {BETRIEBSANWEISUNG_SDB_CTA}
-              </a>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600">
+              Angaben zu Einstufung, Schutzmaßnahmen und Notfallverhalten hängen vom konkreten Produkt Ihres Herstellers
+              ab. Laden Sie Ihr PDF in der Dropzone hoch, um eine Live-Vorschau (Abschnitt 1 &amp; 2) zu generieren, oder
+              bearbeiten Sie den gesamten Entwurf in der App.
+            </p>
+            <div className="mt-6">
+              <button
+                type="button"
+                className="gqr-cta-secondary gqr-cta-secondary--md inline-flex w-full justify-center"
+                onClick={requestSdbUploadFromOverlay}
+              >
+                {BETRIEBSANWEISUNG_OVERLAY_SDB_CTA}
+              </button>
             </div>
           </div>
         </div>
