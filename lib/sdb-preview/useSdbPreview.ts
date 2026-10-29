@@ -6,6 +6,7 @@ import { PROCESSING_STEP_LABELS } from '@/lib/sdb-preview/api-contract';
 import { loadSdbPreviewConfig } from '@/lib/sdb-preview/load-config';
 import {
   persistPreviewToken,
+  prepareCompactUpload,
   runExamplePreview,
   uploadPdfPreview,
   type SdbPreviewTeaser,
@@ -19,11 +20,12 @@ export function useSdbPreview() {
   const [teaser, setTeaser] = useState<SdbPreviewTeaser | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [fileLabel, setFileLabel] = useState<string | null>(null);
+  const [earlyTradeName, setEarlyTradeName] = useState<string | null>(null);
   const abortRef = useRef(false);
 
-  /** Hero zeigt initial keine Teaser — Animation dauert fest 2,5 s (CRO). */
-  const runProcessingAnimation = useCallback(async () => {
-    const totalMs = 2500;
+  /** Mindest-Feedback; endet früher wenn die API schneller antwortet als die Schrittanzeige. */
+  const runProcessingAnimation = useCallback(async (minMs: number) => {
+    const totalMs = Math.max(minMs, 900);
     const stepMs = Math.ceil(totalMs / PROCESSING_STEP_LABELS.length);
     setProcessingStepIndex(0);
     for (let i = 0; i < PROCESSING_STEP_LABELS.length; i += 1) {
@@ -33,13 +35,13 @@ export function useSdbPreview() {
     }
   }, []);
 
-  const finishWithResult = useCallback(async (run: () => Promise<{ ok: boolean; teaser?: SdbPreviewTeaser; error?: string }>) => {
+  const finishWithResult = useCallback(async (run: () => Promise<{ ok: boolean; teaser?: SdbPreviewTeaser; error?: string }>, minAnimationMs = 1200) => {
     abortRef.current = false;
     setPhase('processing');
     setError(null);
     setTeaser(null);
 
-    const animation = runProcessingAnimation();
+    const animation = runProcessingAnimation(minAnimationMs);
     const result = await run();
     await animation;
 
@@ -59,15 +61,24 @@ export function useSdbPreview() {
   const uploadFile = useCallback(
     async (file: File) => {
       setFileLabel(file.name);
+      setEarlyTradeName(null);
       const config = await loadSdbPreviewConfig();
       await finishWithResult(async () => {
-        const res = await uploadPdfPreview(file, {
-          apiBaseUrl: config.apiBaseUrl,
-          useMock: Boolean(config.useMock),
-        });
+        const prepared = await prepareCompactUpload(file);
+        if (prepared.earlyTradeName) {
+          setEarlyTradeName(prepared.earlyTradeName);
+        }
+        const res = await uploadPdfPreview(
+          file,
+          {
+            apiBaseUrl: config.apiBaseUrl,
+            useMock: Boolean(config.useMock),
+          },
+          prepared,
+        );
         if (!res.ok) return { ok: false, error: res.error };
         return { ok: true, teaser: res.teaser };
-      });
+      }, 900);
     },
     [finishWithResult],
   );
@@ -94,6 +105,7 @@ export function useSdbPreview() {
     setTeaser(null);
     setError(null);
     setFileLabel(null);
+    setEarlyTradeName(null);
     setProcessingStepIndex(0);
   }, []);
 
@@ -107,5 +119,6 @@ export function useSdbPreview() {
     uploadFile,
     runExample,
     reset,
+    earlyTradeName,
   };
 }

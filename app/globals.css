@@ -102,6 +102,14 @@
     @apply inline-flex min-h-[52px] items-center justify-center rounded-xl border border-white/20 px-6 py-3 text-sm font-bold text-gqr-text no-underline transition hover:border-white/35 hover:bg-white/[0.06];
   }
 
+  .gqr-brand-logo {
+    height: 2.25rem;
+    width: auto;
+    max-height: 2.5rem;
+    object-fit: contain;
+    object-position: left center;
+  }
+
   .gqr-cta-primary {
     display: inline-flex;
     align-items: center;
@@ -112,7 +120,7 @@
     font-weight: 800;
     line-height: 1.25;
     text-decoration: none !important;
-    color: #051018 !important;
+    color: #ffffff !important;
     border: 2px solid rgba(255, 255, 255, 0.92);
     background: linear-gradient(135deg, #ff9a6b 0%, #ff6b35 42%, #ffb88c 100%);
     box-shadow:

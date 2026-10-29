@@ -11,6 +11,8 @@ type Props = {
   progressPercent?: number;
   /** Sidebar: nur Label + Balken, ohne Schrittliste. */
   compact?: boolean;
+  /** Clientseitig erkannter Produktname (Abschnitt 1) während die API läuft. */
+  earlyHint?: string | null;
 };
 
 export function SdbProcessingProgressBar({
@@ -19,6 +21,7 @@ export function SdbProcessingProgressBar({
   label,
   progressPercent,
   compact = false,
+  earlyHint = null,
 }: Props) {
   const stepCount = PROCESSING_STEP_LABELS.length;
   const determinate =
@@ -39,6 +42,11 @@ export function SdbProcessingProgressBar({
         <span className="text-teal-300">{label}</span>
         <span>{determinate}%</span>
       </div>
+      {earlyHint ? (
+        <p className="mt-2 truncate text-sm font-semibold text-[#f0f6ff]" title={earlyHint}>
+          Erkannt: {earlyHint}
+        </p>
+      ) : null}
       <div
         className={
           variant === 'static'

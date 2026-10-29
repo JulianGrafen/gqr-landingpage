@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { GqrBrandLogo } from '@/components/GqrBrandLogo';
 
 const nav = [
   { href: '/#produkt', label: 'Produkt' },
@@ -12,12 +13,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-[100] border-b border-white/[0.07] bg-gqr-bg/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1160px] items-center gap-6 px-4 py-3.5 sm:px-6 lg:px-10">
-        <Link
-          href="/"
-          className="shrink-0 text-lg font-black text-gqr-text no-underline"
-        >
-          Gefahrstoff-QR
-        </Link>
+        <GqrBrandLogo priority />
 
         <nav
           className="ml-auto hidden items-center gap-1 lg:flex"

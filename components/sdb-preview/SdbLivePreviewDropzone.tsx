@@ -41,6 +41,7 @@ export function SdbLivePreviewDropzone({
     uploadFile,
     runExample,
     reset,
+    earlyTradeName,
   } = useSdbPreview();
 
   const busy = phase === 'processing';
@@ -70,6 +71,7 @@ export function SdbLivePreviewDropzone({
           label={processingLabel}
           progressPercent={progressPercent}
           compact={embedded}
+          earlyHint={earlyTradeName}
         />
       )
     ) : null;

@@ -12,27 +12,13 @@ type Props = {
   variant: SdbPreviewVariant;
   teaser: SdbPreviewTeaser;
   embedded?: boolean;
-  /** Öffentliche LP: keine Einstufungsdaten aus dem PDF anzeigen. */
+  /** Öffentliche BA-LPs: Nutzer-SDB-Daten nur geblurrt (kein SEO-Stoffdaten-Bezug). */
   omitPublishedHazardData?: boolean;
 };
 
-/** Filter blur on content (not backdrop-blur); strength aligned with teaser sections. */
+/** Filter blur on extracted user PDF data (not backdrop-blur). */
 const TEASER_DATA_BLUR_CLASS =
-  'pointer-events-none select-none opacity-40 blur-[5px] [transform:translateZ(0)]';
-
-function SkeletonBars() {
-  return (
-    <div className="mt-3 space-y-2" aria-hidden>
-      <div className="h-3 w-full animate-pulse rounded bg-slate-200/80" />
-      <div className="h-3 w-[88%] animate-pulse rounded bg-slate-200/80" />
-      <div className="mt-3 flex gap-2">
-        {Array.from({ length: 3 }).map((_, i) => (
-          <div key={i} className="h-9 w-9 animate-pulse rounded bg-slate-200/80" />
-        ))}
-      </div>
-    </div>
-  );
-}
+  'pointer-events-none select-none opacity-50 blur-[5px] [transform:translateZ(0)]';
 
 export function SdbPreviewCompactResult({
   variant,
@@ -42,37 +28,11 @@ export function SdbPreviewCompactResult({
 }: Props) {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const identification = teaser.sections.find((s) => s.key === 'identification');
-  const hazardLines = teaser.hazardStatements.slice(0, embedded ? 1 : 3);
-  const teaserLocked = variant === 'next';
+  const hazardLines = teaser.hazardStatements.slice(0, embedded ? 2 : 3);
+  const blurExtractedData = variant === 'next';
 
   if (variant === 'static') {
     return null;
-  }
-
-  if (omitPublishedHazardData) {
-    return (
-      <div
-        data-sdb-compact-result={embedded ? 'embedded' : 'default'}
-        className={
-          embedded
-            ? 'flex flex-col overflow-hidden rounded-xl border border-white/10 bg-[#162340]/90 shadow-lg'
-            : 'mt-4 flex max-h-[min(28rem,calc(100vh-11rem))] flex-col overflow-hidden rounded-xl border border-white/10 bg-[#162340]/90 shadow-lg'
-        }
-      >
-        <div className={embedded ? 'px-3 py-3' : 'flex-1 overflow-y-auto px-4 py-4'}>
-          <p className="text-[10px] font-bold uppercase tracking-wider text-[#ff6b35]">SDB verarbeitet</p>
-          <p className="mt-2 text-sm font-semibold text-[#f0f6ff]">{teaser.tradeName || 'PDF erkannt'}</p>
-          <p className="mt-2 text-xs leading-relaxed text-[#8fa4c0]">
-            Kennzeichnung, CAS und Gefahrenhinweise werden nicht auf dieser Seite angezeigt. Im Entwurf in der App
-            nach Registrierung einsehen und freigeben.
-          </p>
-          <SkeletonBars />
-        </div>
-        <div className={`shrink-0 border-t border-white/10 bg-[#0f1e35]/95 ${embedded ? 'p-2.5' : 'p-3'}`}>
-          <SdbUnlockCard variant={variant} previewToken={teaser.previewToken} compact />
-        </div>
-      </div>
-    );
   }
 
   const ghsBlock = embedded ? (
@@ -107,60 +67,67 @@ export function SdbPreviewCompactResult({
       <h4 className={`font-black leading-snug text-[#f0f6ff] ${embedded ? 'text-base' : 'text-lg'}`}>
         {teaser.tradeName}
       </h4>
-      {!embedded ? (
+      {!embedded && !omitPublishedHazardData ? (
         <p className="mt-1 text-xs leading-relaxed text-[#8fa4c0]">{teaser.manufacturer}</p>
       ) : null}
 
       {ghsBlock}
 
-      {teaserLocked ? (
-        <p className="mt-2 border-t border-white/10 pt-2 text-xs leading-snug text-[#8fa4c0]">
-          Gefahrenhinweise und Signalwort — Entwurf nach Freigabe durch SiFa / Arbeitgeber in der App.
+      {teaser.signalWord ? (
+        <p className="mt-2 text-sm">
+          Signalwort:{' '}
+          <span className="font-bold text-red-400">{teaser.signalWord}</span>
         </p>
-      ) : (
-        <>
-          {teaser.signalWord ? (
-            <p className="mt-2 text-sm">
-              Signalwort:{' '}
-              <span className="font-bold text-red-400">{teaser.signalWord}</span>
-            </p>
-          ) : null}
+      ) : null}
 
-          {hazardLines.length > 0 ? (
-            embedded ? (
-              <p className="mt-2 line-clamp-2 border-t border-white/10 pt-2 text-xs leading-snug text-[#c8d4e6]">
-                {hazardLines[0]}
-              </p>
-            ) : (
-              <ul className="mt-3 space-y-1 border-t border-white/10 pt-3 text-xs leading-relaxed text-[#c8d4e6]">
-                {hazardLines.map((line) => (
-                  <li key={line} className="list-none">
-                    {line}
-                  </li>
-                ))}
-              </ul>
-            )
-          ) : null}
+      {hazardLines.length > 0 ? (
+        embedded ? (
+          <ul className="mt-2 space-y-1 border-t border-white/10 pt-2 text-xs leading-snug text-[#c8d4e6]">
+            {hazardLines.map((line) => (
+              <li key={line} className="line-clamp-2 list-none">
+                {line}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <ul className="mt-3 space-y-1 border-t border-white/10 pt-3 text-xs leading-relaxed text-[#c8d4e6]">
+            {hazardLines.map((line) => (
+              <li key={line} className="list-none">
+                {line}
+              </li>
+            ))}
+          </ul>
+        )
+      ) : null}
 
-          {!embedded && detailsOpen && identification ? (
-            <pre className="mt-3 whitespace-pre-wrap rounded-lg border border-white/10 bg-[#0f1e35]/60 p-3 text-xs text-[#8fa4c0]">
-              {identification.body}
-            </pre>
-          ) : null}
+      {!embedded && !omitPublishedHazardData && detailsOpen && identification ? (
+        <pre className="mt-3 whitespace-pre-wrap rounded-lg border border-white/10 bg-[#0f1e35]/60 p-3 text-xs text-[#8fa4c0]">
+          {identification.body}
+        </pre>
+      ) : null}
 
-          {!embedded ? (
-            <button
-              type="button"
-              className="mt-3 text-xs font-semibold text-teal-300 hover:underline"
-              aria-expanded={detailsOpen}
-              onClick={() => setDetailsOpen((v) => !v)}
-            >
-              {detailsOpen ? 'Details ausblenden' : 'Details anzeigen'}
-            </button>
-          ) : null}
-        </>
-      )}
+      {!embedded && !omitPublishedHazardData ? (
+        <button
+          type="button"
+          className="mt-3 text-xs font-semibold text-teal-300 hover:underline"
+          aria-expanded={detailsOpen}
+          onClick={() => setDetailsOpen((v) => !v)}
+        >
+          {detailsOpen ? 'Details ausblenden' : 'Details anzeigen'}
+        </button>
+      ) : null}
     </>
+  );
+
+  const lockOverlay = (
+    <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-[#0f1e35]/25 px-3 py-2">
+      <p className="flex max-w-[14rem] items-center justify-center gap-1.5 rounded-full border border-white/15 bg-[#0f1e35]/95 px-3 py-1.5 text-center text-[10px] font-semibold leading-snug text-teal-300 shadow-lg">
+        <Lock className="h-3 w-3 shrink-0" strokeWidth={2.5} aria-hidden />
+        {omitPublishedHazardData
+          ? 'Freischaltung in der App für klare Ansicht'
+          : 'Weitere Abschnitte nach Freigabe in der App'}
+      </p>
+    </div>
   );
 
   return (
@@ -175,19 +142,14 @@ export function SdbPreviewCompactResult({
       <div className={embedded ? 'px-3 py-3' : 'flex-1 overflow-y-auto px-4 py-4'}>
         <p className="text-[10px] font-bold uppercase tracking-wider text-[#ff6b35]">SDB-Vorschau (unverbindlich)</p>
 
-        {teaserLocked ? (
+        {blurExtractedData ? (
           <div
             className={`relative overflow-hidden rounded-lg ${embedded ? 'mt-1.5 min-h-[6.25rem]' : 'mt-2 min-h-[7.5rem]'}`}
           >
             <div className={TEASER_DATA_BLUR_CLASS} aria-hidden="true">
               {extractedBody}
             </div>
-            <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-[#0f1e35]/20 px-3 py-2">
-              <p className="flex max-w-[14rem] items-center justify-center gap-1.5 rounded-full border border-white/15 bg-[#0f1e35]/95 px-3 py-1.5 text-center text-[10px] font-semibold leading-snug text-teal-300 shadow-lg">
-                <Lock className="h-3 w-3 shrink-0" strokeWidth={2.5} aria-hidden />
-                Weitere Abschnitte nach Freigabe in der App
-              </p>
-            </div>
+            {lockOverlay}
           </div>
         ) : (
           <div className="mt-1">{extractedBody}</div>

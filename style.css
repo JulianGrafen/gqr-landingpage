@@ -149,7 +149,7 @@ ul { list-style: none; }
 
 .btn-primary {
   background: linear-gradient(135deg, #ff9a6b 0%, #ff6b35 42%, #ffb88c 100%);
-  color: #051018;
+  color: #ffffff;
   border: 2px solid rgba(255, 255, 255, 0.92);
   box-shadow:
     0 6px 24px rgba(0, 0, 0, 0.4),
@@ -179,7 +179,7 @@ ul { list-style: none; }
   font-size: 0.875rem;
   line-height: 1.25;
   text-decoration: none !important;
-  color: #051018 !important;
+  color: #ffffff !important;
   border: 2px solid rgba(255, 255, 255, 0.92);
   background: linear-gradient(135deg, #ff9a6b 0%, #ff6b35 42%, #ffb88c 100%);
   box-shadow:
@@ -796,6 +796,14 @@ ul { list-style: none; }
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+.gqr-brand-logo {
+  height: 2.25rem;
+  width: auto;
+  max-height: 2.5rem;
+  object-fit: contain;
+  object-position: left center;
 }
 
 /* Desktop nav */
@@ -4371,9 +4379,9 @@ body.trial-modal-open {
     padding-block: 10px;
   }
 
-  .site-header .logo img {
-    width: 3.25rem;
-    height: 3.25rem;
+  .site-header .logo img.gqr-brand-logo {
+    height: 2rem;
+    max-height: 2rem;
   }
 
   .sds-hero {

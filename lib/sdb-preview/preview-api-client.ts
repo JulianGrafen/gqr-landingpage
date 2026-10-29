@@ -7,8 +7,8 @@ import {
   type SdbPreviewPostResponse,
   type SdbPreviewTeaser,
 } from '@/lib/sdb-preview/api-contract';
-import { extractSdbSectionTextFromPdf } from '@/lib/sdb-preview/extract-pdf-sdb-sections';
 import { mapApiJsonToTeaser } from '@/lib/sdb-preview/map-teaser';
+import { prepareCompactUpload, type CompactUploadPayload } from '@/lib/sdb-preview/prepare-compact-upload';
 import { runMockPreview } from '@/lib/sdb-preview/mock-preview-service';
 import { sanitizePublicTeaser } from '@/lib/sdb-preview/sanitize-public-teaser';
 
@@ -83,9 +83,38 @@ async function postPreview(
   }
 }
 
+function appendCompactUploadFields(form: FormData, prepared: CompactUploadPayload, originalFileName: string): void {
+  form.append('file', prepared.uploadFile, prepared.uploadFile.name);
+  appendCompactScope(form);
+  form.append('originalFileName', originalFileName);
+  form.append(
+    'compactUploadMeta',
+    JSON.stringify({
+      originalBytes: prepared.trim.originalBytes,
+      uploadBytes: prepared.trim.uploadBytes,
+      pdfTrimmed: prepared.trim.trimmed,
+      pdfPageCount: prepared.trim.pageCount,
+      pdfPagesUploaded: prepared.trim.pagesUsed,
+    }),
+  );
+
+  if (prepared.sectionExtract?.text) {
+    form.append('sectionExtract', prepared.sectionExtract.text);
+    form.append(
+      'sectionExtractMeta',
+      JSON.stringify({
+        pagesUsed: prepared.sectionExtract.pagesUsed,
+        pageCount: prepared.sectionExtract.pageCount,
+        charCount: prepared.sectionExtract.text.length,
+      }),
+    );
+  }
+}
+
 export async function uploadPdfPreview(
   file: File,
   options: { apiBaseUrl: string; useMock: boolean },
+  prepared?: CompactUploadPayload,
 ): Promise<SdbPreviewPostResponse> {
   const validationError = validatePdfFile(file);
   if (validationError) {
@@ -100,21 +129,15 @@ export async function uploadPdfPreview(
     return res;
   }
 
+  const payload = prepared ?? (await prepareCompactUpload(file));
   const form = new FormData();
-  form.append('file', file, file.name);
-  appendCompactScope(form);
-
-  const sectionExtract = await extractSdbSectionTextFromPdf(file);
-  if (sectionExtract?.text) {
-    form.append('sectionExtract', sectionExtract.text);
-    form.append('sectionExtractMeta', JSON.stringify({
-      pagesUsed: sectionExtract.pagesUsed,
-      pageCount: sectionExtract.pageCount,
-    }));
-  }
+  appendCompactUploadFields(form, payload, file.name);
 
   return postPreview(options.apiBaseUrl, form);
 }
+
+/** Für UI: Vorbereitung + Upload-Metriken (Größe/Dauer messbar). */
+export { prepareCompactUpload, type CompactUploadPayload };
 
 /** Token für Unlock-CTA nach erfolgreicher Preview (kein Auto-Restore beim Seitenaufruf). */
 export async function fetchPreviewByToken(
