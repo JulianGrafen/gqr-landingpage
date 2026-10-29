@@ -1268,6 +1268,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Facility Management",
     ],
   },
+  {
+    slug: 'acrylnitril-trgs-555',
+    substanceName: "Acrylnitril",
+    metaDescription: "Betriebsanweisung Acrylnitril: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kunststoff- & Polymerchemie",
+      "Chemische Produktion",
+      "Fasern & Textilchemie",
+      "Labor & Technik",
+    ],
+  },
+  {
+    slug: 'entfetter-trgs-555',
+    substanceName: "Entfetter",
+    metaDescription: "Betriebsanweisung Entfetter: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Metallbearbeitung & Instandhaltung",
+      "Industrielle Reinigung",
+      "Werkstatt & Produktion",
+    ],
+  },
+  {
+    slug: 'holzschutzmittel-trgs-555',
+    substanceName: "Holzschutzmittel",
+    metaDescription: "Betriebsanweisung Holzschutzmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Schreinerei & Holzverarbeitung",
+      "Bau & Tischlerei",
+      "Denkmalpflege & Restaurierung",
+      "Garten- & Landschaftsbau",
+    ],
+  },
+  {
+    slug: 'kuehlerfrostschutz-trgs-555',
+    substanceName: "Kühlerfrostschutz",
+    metaDescription: "Betriebsanweisung Kühlerfrostschutz: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Kundendienst",
+      "Land- & Baumaschinen",
+      "Heizungs- & Klimatechnik",
+      "Fuhrpark & Flottenbetrieb",
+    ],
+  },
+  {
+    slug: 'rohrreiniger-trgs-555',
+    substanceName: "Rohrreiniger",
+    metaDescription: "Betriebsanweisung Rohrreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Sanitär & Haustechnik",
+      "Gastronomie & Hotellerie",
+      "Hausmeisterdienst & Objektbetreuung",
+    ],
+  },
+  {
+    slug: 'scheibenreiniger-trgs-555',
+    substanceName: "Scheibenreiniger",
+    metaDescription: "Betriebsanweisung Scheibenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Aufbereitung",
+      "Gebäudereinigung & Glasreinigung",
+      "Facility Management",
+      "Transport & Logistik (Fuhrpark)",
+    ],
+  },
+  {
+    slug: 'schmierfett-trgs-555',
+    substanceName: "Schmierfett",
+    metaDescription: "Betriebsanweisung Schmierfett: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Maschinenbau & Anlagenbau",
+      "Kfz-Werkstatt & Instandhaltung",
+      "Industrielle Produktion",
+      "Werkstatt & Montage",
+    ],
+  },
+  {
+    slug: 'silikonentferner-trgs-555',
+    substanceName: "Silikonentferner",
+    metaDescription: "Betriebsanweisung Silikonentferner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Sanitär & Haustechnik",
+      "Malerbetrieb & Beschichtung",
+      "Kfz-Aufbereitung & Karosserie",
+      "Fenster- & Glasbau",
+    ],
+  },
+  {
+    slug: 'spachtelmasse-trgs-555',
+    substanceName: "Spachtelmasse",
+    metaDescription: "Betriebsanweisung Spachtelmasse: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Karosserie- & Fahrzeugbau",
+      "Trockenbau & Innenausbau",
+      "Bodenbeläge & Oberflächentechnik",
+    ],
+  },
+  {
+    slug: 'waschbenzin-trgs-555',
+    substanceName: "Waschbenzin",
+    metaDescription: "Betriebsanweisung Waschbenzin: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Schreinerei & Holzverarbeitung",
+      "Reinigung & Entfettung",
+      "Kunststoff- & Gummiverarbeitung",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
