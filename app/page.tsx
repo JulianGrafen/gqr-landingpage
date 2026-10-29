@@ -28,7 +28,7 @@ export default function NextHomePage() {
           <li key={i.slug}>
             <Link
               href={`/loesungen/${i.slug}/`}
-              className="font-semibold text-teal-300 no-underline hover:underline"
+              className="font-semibold text-[#8fa4c0] no-underline transition hover:text-[#ff6b35]"
             >
               {i.label}
             </Link>

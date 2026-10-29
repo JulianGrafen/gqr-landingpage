@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-/** Wortmarke aus `/logo.png` (Root-Landing + GitHub Pages). */
-export const GQR_BRAND_LOGO_SRC = '/logo.png';
+/** Getrimmte Wortmarke (ohne transparenten 500×500-Rand). */
+export const GQR_BRAND_LOGO_SRC = '/logo-wordmark.png';
 
 type Props = {
   className?: string;
@@ -20,8 +20,8 @@ export function GqrBrandLogo({ className = '', priority = false }: Props) {
       <img
         src={GQR_BRAND_LOGO_SRC}
         alt="Gefahrstoff-QR"
-        width={500}
-        height={500}
+        width={431}
+        height={108}
         className="gqr-brand-logo"
         decoding="async"
         fetchPriority={priority ? 'high' : 'auto'}

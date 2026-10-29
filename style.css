@@ -799,9 +799,9 @@ ul { list-style: none; }
 }
 
 .gqr-brand-logo {
-  height: 2.25rem;
+  height: 2.75rem;
   width: auto;
-  max-height: 2.5rem;
+  max-height: 2.75rem;
   object-fit: contain;
   object-position: left center;
 }
@@ -4380,8 +4380,8 @@ body.trial-modal-open {
   }
 
   .site-header .logo img.gqr-brand-logo {
-    height: 2rem;
-    max-height: 2rem;
+    height: 1.875rem;
+    max-height: 1.875rem;
   }
 
   .sds-hero {

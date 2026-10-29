@@ -74,10 +74,7 @@ export function BetriebsanweisungTeaserDocument({ entry }: Props) {
               <Link href={registerUrl} className="gqr-cta-primary gqr-cta-primary--md inline-flex justify-center">
                 {BETRIEBSANWEISUNG_REGISTER_CTA}
               </Link>
-              <a
-                href="#ba-sdb-dropzone"
-                className="inline-flex justify-center rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-[#ff6b35]/40"
-              >
+              <a href="#ba-sdb-dropzone" className="gqr-cta-secondary gqr-cta-secondary--md inline-flex justify-center">
                 {BETRIEBSANWEISUNG_SDB_CTA}
               </a>
             </div>

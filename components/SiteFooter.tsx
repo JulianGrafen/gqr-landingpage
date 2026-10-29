@@ -14,22 +14,22 @@ export function SiteFooter() {
             className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-gqr-muted"
             aria-label="Footer-Navigation"
           >
-            <Link href="/gefahrstoffverzeichnis-excel-vorlage/" className="no-underline hover:text-gqr-text">
+            <Link href="/gefahrstoffverzeichnis-excel-vorlage/" className="gqr-footer-link">
               Excel-Vorlage
             </Link>
-            <Link href="/trgs-510-zusammenlagerungs-check/" className="no-underline hover:text-gqr-text">
+            <Link href="/trgs-510-zusammenlagerungs-check/" className="gqr-footer-link">
               TRGS-510-Checker
             </Link>
-            <Link href="/blog/" className="no-underline hover:text-gqr-text">
+            <Link href="/blog/" className="gqr-footer-link">
               Blog
             </Link>
-            <Link href="/impressum" className="no-underline hover:text-gqr-text">
+            <Link href="/impressum" className="gqr-footer-link">
               Impressum
             </Link>
-            <Link href="/datenschutz" className="no-underline hover:text-gqr-text">
+            <Link href="/datenschutz" className="gqr-footer-link">
               Datenschutz
             </Link>
-            <Link href="/agb" className="no-underline hover:text-gqr-text">
+            <Link href="/agb" className="gqr-footer-link">
               AGB
             </Link>
           </nav>

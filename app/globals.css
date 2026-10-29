@@ -103,11 +103,56 @@
   }
 
   .gqr-brand-logo {
-    height: 2.25rem;
+    height: 2.75rem;
     width: auto;
-    max-height: 2.5rem;
+    max-height: 2.75rem;
     object-fit: contain;
     object-position: left center;
+  }
+
+  @media (max-width: 1023px) {
+    .gqr-brand-logo {
+      height: 1.875rem;
+      max-height: 1.875rem;
+    }
+  }
+
+  .gqr-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-decoration: none !important;
+    color: #ffffff !important;
+    background: #0f1e35;
+    border: 2px solid rgba(255, 107, 53, 0.45);
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .gqr-cta-secondary:hover {
+    background: #162340;
+    border-color: rgba(255, 107, 53, 0.75);
+  }
+
+  .gqr-cta-secondary--md {
+    min-height: 48px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .gqr-footer-link {
+    color: #8fa4c0 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+  }
+
+  .gqr-footer-link:hover {
+    color: #ff6b35 !important;
   }
 
   .gqr-cta-primary {

@@ -18,7 +18,7 @@ type Props = {
 
 /** Filter blur on extracted user PDF data (not backdrop-blur). */
 const TEASER_DATA_BLUR_CLASS =
-  'pointer-events-none select-none opacity-50 blur-[5px] [transform:translateZ(0)]';
+  'pointer-events-none select-none opacity-[0.88] blur-[2px] contrast-[0.92] [transform:translateZ(0)]';
 
 export function SdbPreviewCompactResult({
   variant,
@@ -120,7 +120,7 @@ export function SdbPreviewCompactResult({
   );
 
   const lockOverlay = (
-    <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-[#0f1e35]/25 px-3 py-2">
+    <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-white/5 px-3 py-2">
       <p className="flex max-w-[14rem] items-center justify-center gap-1.5 rounded-full border border-white/15 bg-[#0f1e35]/95 px-3 py-1.5 text-center text-[10px] font-semibold leading-snug text-teal-300 shadow-lg">
         <Lock className="h-3 w-3 shrink-0" strokeWidth={2.5} aria-hidden />
         {omitPublishedHazardData
