@@ -9,7 +9,17 @@ const ROOT = process.cwd();
 const OUT = path.join(ROOT, 'out');
 
 /** Pfade relativ zu out/ → Repo-Root (kein index.html — Homepage bleibt statisch). */
-const SYNC_PATHS = ['wissen', 'loesungen', 'betriebsanweisung', '_next'];
+const SYNC_PATHS = [
+  'wissen',
+  'loesungen',
+  'betriebsanweisung',
+  'gefahrstoff-app',
+  'gefahrstoffkataster-excel-vorlage',
+  'gefahrstoffkataster-software',
+  'gefahrstoffverzeichnis-excel-vorlage',
+  'trgs-510-zusammenlagerungs-check',
+  '_next',
+];
 
 if (!fs.existsSync(OUT)) {
   console.error('out/ fehlt. Zuerst: npm run build');

@@ -80,6 +80,17 @@ export function defaultLocFromFile(root: string, filePath: string): string | nul
   return null;
 }
 
+function fsPathFromUrlPathname(root: string, pathname: string, fileName: string): string {
+  const segments = pathname.split('/').filter(Boolean).map((segment) => {
+    try {
+      return decodeURIComponent(segment);
+    } catch {
+      return segment;
+    }
+  });
+  return path.join(root, ...segments, fileName);
+}
+
 function resolveDeployFile(root: string, loc: string): string | null {
   const url = new URL(loc);
   let pathname = url.pathname;
@@ -90,7 +101,7 @@ function resolveDeployFile(root: string, loc: string): string | null {
     return fs.existsSync(home) ? home : null;
   }
 
-  const indexPath = path.join(root, pathname.slice(1), 'index.html');
+  const indexPath = fsPathFromUrlPathname(root, pathname, 'index.html');
   if (fs.existsSync(indexPath)) return indexPath;
 
   if (pathname.startsWith('/blog/')) {
@@ -148,17 +159,18 @@ export function discoverSitemapEntries(root: string = process.cwd()): SitemapUrl
     }
   }
 
+  /** Programmatic SEO: jeder Eintrag in entries.ts mit exportiertem HTML gehört in die Sitemap. */
   for (const slug of HAZARDOUS_SUBSTANCE_SLUGS) {
     const loc = pathnameToLoc(`/betriebsanweisung/${slug}/`);
     const deployRel = `betriebsanweisung/${slug}/index.html`;
     const deployPath = path.join(root, deployRel);
     if (!fs.existsSync(deployPath)) continue;
-    if (byLoc.has(loc)) continue;
-    byLoc.set(loc, {
-      loc,
-      lastmod: gitLastmodIsoDate(root, deployRel, FALLBACK_LASTMOD),
-      sourceFile: deployRel,
-    });
+
+    const entryLastmod = gitLastmodIsoDate(root, deployRel, FALLBACK_LASTMOD);
+    const existing = byLoc.get(loc);
+    if (!existing || entryLastmod > existing.lastmod) {
+      byLoc.set(loc, { loc, lastmod: entryLastmod, sourceFile: deployRel });
+    }
   }
 
   const indexLoc = pathnameToLoc('/betriebsanweisung/');
