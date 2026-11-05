@@ -1378,6 +1378,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Kunststoff- & Gummiverarbeitung",
     ],
   },
+  {
+    slug: 'universalreiniger-trgs-555',
+    substanceName: "Universalreiniger",
+    metaDescription: "Betriebsanweisung Universalreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Gastronomie & Hotellerie",
+      "Hausmeisterdienst & Objektbetreuung",
+      "Büro & Verwaltung",
+    ],
+  },
+  {
+    slug: 'backofenreiniger-trgs-555',
+    substanceName: "Backofenreiniger",
+    metaDescription: "Betriebsanweisung Backofenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gastronomie & Großküche",
+      "Gebäudereinigung & Facility",
+      "Bäckerei & Lebensmittelproduktion",
+      "Catering & Gemeinschaftsverpflegung",
+    ],
+  },
+  {
+    slug: 'desinfektionsmittel-trgs-555',
+    substanceName: "Desinfektionsmittel",
+    metaDescription: "Betriebsanweisung Desinfektionsmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Gesundheitswesen & Pflege",
+      "Lebensmittelverarbeitung & Hygiene",
+      "Labor & Technik",
+    ],
+  },
+  {
+    slug: 'abbeizmittel-trgs-555',
+    substanceName: "Abbeizmittel",
+    metaDescription: "Betriebsanweisung Abbeizmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Möbelrestaurierung & Antiquitäten",
+      "Metallbearbeitung & Oberflächentechnik",
+      "Denkmalpflege & Restaurierung",
+    ],
+  },
+  {
+    slug: 'graffitientferner-trgs-555',
+    substanceName: "Graffitientferner",
+    metaDescription: "Betriebsanweisung Graffitientferner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Fassadenpflege",
+      "Kommunale Dienstleister",
+      "Facility Management",
+      "Verkehrsbetriebe & Bahnhöfe",
+    ],
+  },
+  {
+    slug: 'kraftreiniger-trgs-555',
+    substanceName: "Kraftreiniger",
+    metaDescription: "Betriebsanweisung Kraftreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Industrielle Reinigung",
+      "Maschinenbau & Anlagenbau",
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Werkstatt & Produktion",
+    ],
+  },
+  {
+    slug: 'getriebeoel-trgs-555',
+    substanceName: "Getriebeöl",
+    metaDescription: "Betriebsanweisung Getriebeöl: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Kundendienst",
+      "Land- & Baumaschinen",
+      "Windenergie & Antriebstechnik",
+      "Fuhrpark & Flottenbetrieb",
+    ],
+  },
+  {
+    slug: 'korrosionsschutzoel-trgs-555',
+    substanceName: "Korrosionsschutzöl",
+    metaDescription: "Betriebsanweisung Korrosionsschutzöl: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbearbeitung & Instandhaltung",
+      "Maschinenbau & Anlagenbau",
+      "Kfz-Werkstatt & Korrosionsschutz",
+      "Schiffbau & Offshore",
+    ],
+  },
+  {
+    slug: 'flussmittel-trgs-555',
+    substanceName: "Flussmittel",
+    metaDescription: "Betriebsanweisung Flussmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbau & Schweißtechnik",
+      "Elektronikfertigung & Löttechnik",
+      "Sanitär- & Heizungsinstallation",
+      "Kfz-Instandhaltung & Reparatur",
+    ],
+  },
+  {
+    slug: 'nitroverduenner-trgs-555',
+    substanceName: "Nitroverdünner",
+    metaDescription: "Betriebsanweisung Nitroverdünner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Karosserie- & Fahrzeuglackierung",
+      "Möbel- & Holzlackierung",
+      "Industrielle Beschichtung",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
