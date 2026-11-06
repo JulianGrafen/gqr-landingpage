@@ -1378,6 +1378,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Kunststoff- & Gummiverarbeitung",
     ],
   },
+  {
+    slug: 'acrylverduenner-trgs-555',
+    substanceName: "Acrylverdünner",
+    metaDescription: "Betriebsanweisung Acrylverdünner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Karosserie- & Fahrzeuglackierung",
+      "Möbel- & Holzlackierung",
+      "Industrielle Beschichtung",
+    ],
+  },
+  {
+    slug: 'pinselreiniger-trgs-555',
+    substanceName: "Pinselreiniger",
+    metaDescription: "Betriebsanweisung Pinselreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Möbel- & Holzlackierung",
+      "Denkmalpflege & Restaurierung",
+      "Kunst & Kreativwerkstatt",
+    ],
+  },
+  {
+    slug: 'grundreiniger-trgs-555',
+    substanceName: "Grundreiniger",
+    metaDescription: "Betriebsanweisung Grundreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Industrielle Reinigung",
+      "Gastronomie & Hotellerie",
+      "Hausmeisterdienst & Objektbetreuung",
+    ],
+  },
+  {
+    slug: 'fleckenentferner-trgs-555',
+    substanceName: "Fleckenentferner",
+    metaDescription: "Betriebsanweisung Fleckenentferner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Textilreinigung & Wäscherei",
+      "Gastronomie & Hotellerie",
+      "Hausmeisterdienst & Objektbetreuung",
+    ],
+  },
+  {
+    slug: 'kalkloeser-trgs-555',
+    substanceName: "Kalklöser",
+    metaDescription: "Betriebsanweisung Kalklöser: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Sanitär & Haustechnik",
+      "Gebäudereinigung & Facility",
+      "Gastronomie & Großküche",
+      "Hausmeisterdienst & Objektbetreuung",
+    ],
+  },
+  {
+    slug: 'fliesenreiniger-trgs-555',
+    substanceName: "Fliesenreiniger",
+    metaDescription: "Betriebsanweisung Fliesenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Bau & Fliesenleger",
+      "Gastronomie & Hotellerie",
+      "Schwimmbad & Freizeitanlagen",
+    ],
+  },
+  {
+    slug: 'kontaktreiniger-trgs-555',
+    substanceName: "Kontaktreiniger",
+    metaDescription: "Betriebsanweisung Kontaktreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Elektronikfertigung & Montage",
+      "Kfz-Werkstatt & Elektrik",
+      "Industrielle Instandhaltung",
+      "IT & Technikservice",
+    ],
+  },
+  {
+    slug: 'pu-kleber-trgs-555',
+    substanceName: "PU-Kleber",
+    metaDescription: "Betriebsanweisung PU-Kleber: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Bau & Trockenbau",
+      "Bodenbeläge & Parkett",
+      "Fenster- & Türenbau",
+      "Möbelbau & Innenausbau",
+    ],
+  },
+  {
+    slug: 'petroleum-trgs-555',
+    substanceName: "Petroleum",
+    metaDescription: "Betriebsanweisung Petroleum: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Heizungs- & Klimatechnik",
+      "Landwirtschaft & Forst",
+      "Event & Beleuchtungstechnik",
+      "Werkstatt & Instandhaltung",
+    ],
+  },
+  {
+    slug: 'handreiniger-trgs-555',
+    substanceName: "Handreiniger",
+    metaDescription: "Betriebsanweisung Handreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Metallbearbeitung & Instandhaltung",
+      "Industrielle Produktion",
+      "Bau & Handwerk",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
