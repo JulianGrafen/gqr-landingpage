@@ -1,0 +1,54 @@
+# Gefahrstoff-QR
+
+> Gefahrstoff-QR ist eine browserbasierte Gefahrstoffmanagement Software für Handwerksbetriebe, KMU, Sicherheitsfachkräfte (SiFa) und Industrie in Deutschland. Die Software liest Sicherheitsdatenblätter KI-gestützt aus und erstellt daraus einen Entwurf für das Gefahrstoffverzeichnis nach § 6 GefStoffV, den Zusammenlagerungscheck nach TRGS 510 und Betriebsanweisungen als KI-gestützter Entwurf (gemäß TRGS 555). Jeder Entwurf ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).
+
+Wichtige Fakten:
+
+- Kategorie: Gefahrstoffmanagement Software, Gefahrstoffverzeichnis Software, Gefahrstoff App (SaaS, Browser, keine Installation)
+- Zielgruppe: Kfz-Werkstätten, Schreinereien, Malerbetriebe, Labore, Reinigungsunternehmen, Metallverarbeitung, Produktion, externe SiFa-Beratungen
+- Funktionen: KI-gestützte Extraktion aus Sicherheitsdatenblättern (GHS, H- und P-Sätze, Lagerklasse), Gefahrstoffverzeichnis mit Revisionsverlauf, TRGS-510-Konflikthinweise pro Lagerort, QR-Notfallansicht am Gebinde, Erinnerung und automatische Anforderung aktueller Sicherheitsdatenblätter, Export als PDF und Excel, Mehrstandort- und Mandantenverwaltung, Zwei-Faktor-Authentifizierung
+- Preise (zzgl. MwSt., monatlich kündbar, 15 % Rabatt bei Jahreszahlung): Test 0 € (5 Stoffe), Small Business 89 €/Monat (bis 50 Stoffe), Professional 199 €/Monat (bis 250 Stoffe, mehrere Nutzer, Batch-Upload), Multi-Mandant ab 299 €/Monat, Enterprise ab 699 €/Monat
+- Datenschutz: Hosting in Deutschland, AVV inklusive, SSL-verschlüsselt
+- Start: Self-Service-Registrierung ohne Kreditkarte unter https://app.gefahrstoff-qr.de/register
+- Angebot richtet sich ausschließlich an Unternehmen (§ 14 BGB)
+
+## Produkt
+
+- [Startseite](https://gefahrstoff-qr.de/): Überblick, Funktionen, Preise, FAQ
+- [Preise als Markdown](https://gefahrstoff-qr.de/pricing.md): Pakete, Limits und Leistungen maschinenlesbar
+- [Gefahrstoff App](https://gefahrstoff-qr.de/gefahrstoff-app/): mobile Nutzung und QR-Notfallansicht
+- [Gefahrstoffkataster Software](https://gefahrstoff-qr.de/gefahrstoffkataster-software/): Kataster digital führen
+- [Software für selbstständige Sicherheitsfachkräfte](https://gefahrstoff-qr.de/gefahrstoff-software-sicherheitsfachkraft-selbstst%C3%A4ndig/): Mandantenverwaltung für externe SiFa
+
+## Kostenlose Werkzeuge
+
+- [TRGS-510-Zusammenlagerungs-Check](https://gefahrstoff-qr.de/trgs-510-zusammenlagerungs-check/): Lagerklassen gegeneinander prüfen
+- [Gefahrstoffverzeichnis Excel-Vorlage](https://gefahrstoff-qr.de/gefahrstoffverzeichnis-excel-vorlage/): Vorlage mit Pflichtspalten nach § 6 GefStoffV
+- [Gefahrstoffkataster: Excel vs. Software](https://gefahrstoff-qr.de/gefahrstoffkataster-excel-vorlage/): Vergleich und Vorlage
+
+## Branchenlösungen
+
+- [Kfz-Werkstatt](https://gefahrstoff-qr.de/loesungen/kfz-werkstatt/)
+- [Schreinerei](https://gefahrstoff-qr.de/loesungen/schreinerei/)
+- [Malerbetrieb](https://gefahrstoff-qr.de/loesungen/malerbetrieb/)
+- [Laborbetrieb](https://gefahrstoff-qr.de/loesungen/laborbetrieb/)
+- [Reinigungsunternehmen](https://gefahrstoff-qr.de/loesungen/reinigungsunternehmen/)
+
+## Wissen
+
+- [Wissensübersicht](https://gefahrstoff-qr.de/wissen/)
+- [Was muss ins Gefahrstoffkataster?](https://gefahrstoff-qr.de/wissen/gefahrstoffkataster-was-muss-rein/)
+- [Gefahrstoffkataster erstellen](https://gefahrstoff-qr.de/wissen/gefahrstoffkataster-erstellen/)
+- [Gefahrstoffkataster erstellen lassen](https://gefahrstoff-qr.de/wissen/gefahrstoffkataster-erstellen-lassen/)
+- [Gefahrstoffmanagement Software](https://gefahrstoff-qr.de/wissen/gefahrstoffmanagement-software/)
+- [Gefahrstoffverzeichnis online erstellen](https://gefahrstoff-qr.de/wissen/gefahrstoffverzeichnis-online-erstellen/)
+- [Muster Gefahrstoffverzeichnis Kfz-Werkstatt](https://gefahrstoff-qr.de/wissen/gefahrstoffverzeichnis-muster-kfz-werkstatt/)
+- [Muster Gefahrstoffverzeichnis Arztpraxis](https://gefahrstoff-qr.de/wissen/gefahrstoffverzeichnis-arztpraxis-muster/)
+- [Betriebsanweisungen nach Stoff (TRGS 555)](https://gefahrstoff-qr.de/betriebsanweisung/): über 100 Stoffe, z. B. Aceton, Isopropanol, Bremsenreiniger
+
+## Optional
+
+- [Blog](https://gefahrstoff-qr.de/blog/): Praxisartikel zu Gefahrstoffverzeichnis, Betriebsprüfung und Sicherheitsdatenblättern
+- [YouTube](https://www.youtube.com/@gefahrstoff-qr): Video-Demos
+- [LinkedIn](https://www.linkedin.com/showcase/gefahrstoff-qr/)
+- Kontakt: info@gefahrstoff-qr.de

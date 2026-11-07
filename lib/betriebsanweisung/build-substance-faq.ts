@@ -1,23 +1,34 @@
-import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
-import type { SubstanceFaqTuple } from '@/config/betriebsanweisung/types';
+import type { SubstanceFaqItems } from '@/config/betriebsanweisung/types';
 
-export function buildBetriebsanweisungFaqItems(substanceName: string): SubstanceFaqTuple {
-  const items: [SeoFaqItem, SeoFaqItem, SeoFaqItem] = [
+/**
+ * FAQ pro Stoffseite. Antworten beginnen mit der Kernaussage (AEO) und bleiben stoffneutral:
+ * keine Einstufung, Schutzmaßnahmen oder Grenzwerte, maßgeblich ist das Lieferanten-SDB.
+ */
+export function buildBetriebsanweisungFaqItems(substanceName: string): SubstanceFaqItems {
+  return [
     {
-      question: `Gilt für ${substanceName} eine Pflicht zur Betriebsanweisung?`,
+      question: `Brauche ich eine Betriebsanweisung für ${substanceName}?`,
+      answer: `Ja, sofern ${substanceName} im Betrieb als Gefahrstoff verwendet wird. Nach § 14 GefStoffV muss vor Aufnahme der Tätigkeit eine schriftliche, arbeitsplatzbezogene Betriebsanweisung vorliegen, die auf dem Sicherheitsdatenblatt des tatsächlich verwendeten Produkts beruht.`,
+    },
+    {
+      question: `Was muss in einer Betriebsanweisung für ${substanceName} stehen?`,
       answer:
-        'Ja, sobald Tätigkeiten mit Gefahrstoffen nach § 14 GefStoffV ausgeübt werden, muss vor Aufnahme der Arbeit eine schriftliche Betriebsanweisung vorliegen.',
+        'Eine Betriebsanweisung nach TRGS 555 gliedert sich in sechs Abschnitte: Anwendungsbereich, Gefahren für Mensch und Umwelt, Schutzmaßnahmen und Verhaltensregeln, Verhalten im Gefahrfall, Erste Hilfe sowie sachgerechte Entsorgung. Die Inhalte stammen aus dem Sicherheitsdatenblatt Ihres Lieferanten und werden an die Bedingungen am Arbeitsplatz angepasst.',
     },
     {
       question: 'Darf ich eine universelle Mustervorlage aus dem Internet verwenden?',
       answer:
-        'Nein. Die Gewerbeaufsicht und Berufsgenossenschaften fordern einen direkten Bezug zum Sicherheitsdatenblatt des verwendeten Produkts und zu den Bedingungen am Arbeitsplatz.',
+        'Nein, nicht ungeprüft. Gewerbeaufsicht und Berufsgenossenschaften erwarten einen direkten Bezug zum Sicherheitsdatenblatt des verwendeten Produkts und zu den Bedingungen am Arbeitsplatz. Konzentration, Menge und Lüftung vor Ort bestimmen die Schutzmaßnahmen.',
     },
     {
-      question: 'Wer muss den Entwurf freigeben?',
+      question: `Wie oft muss zu ${substanceName} unterwiesen werden?`,
       answer:
-        'Die fachliche Prüfung und Freigabe obliegt dem Arbeitgeber bzw. der beauftragten Fachkraft für Arbeitssicherheit (SiFa).',
+        'Vor Aufnahme der Tätigkeit und danach mindestens einmal jährlich, mündlich und arbeitsplatzbezogen auf Grundlage der Betriebsanweisung (§ 14 Abs. 2 GefStoffV). Inhalt und Zeitpunkt der Unterweisung sind schriftlich festzuhalten und von den Unterwiesenen zu bestätigen.',
+    },
+    {
+      question: 'Wer muss den KI-gestützten Entwurf freigeben?',
+      answer:
+        'Die fachliche Prüfung und Freigabe liegt beim Arbeitgeber bzw. bei der beauftragten Fachkraft für Arbeitssicherheit (SiFa). Gefahrstoff-QR liefert einen KI-gestützten Entwurf (gemäß TRGS 555) als Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).',
     },
   ];
-  return items;
 }

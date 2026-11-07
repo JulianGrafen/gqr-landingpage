@@ -120,7 +120,7 @@ export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(functi
         Sicherheitsdatenblatt hier ablegen
       </strong>
       <span className={variant === 'static' ? '' : 'text-sm text-[#8fa4c0]'}>
-        PDF, max. 10 MB — ohne Login · KI-gestützter Entwurf (gemäß TRGS 555)
+        PDF, max. 10 MB, ohne Login · KI-gestützter Entwurf (gemäß TRGS 555)
       </span>
     </div>
   );

@@ -75,17 +75,9 @@ html = html
   .replace('src="logo.png"', 'src="/logo.png"')
   .replace('src="./linkedIn.png"', 'src="/linkedIn.png"');
 
-const heroOld = `<h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-center md:items-start justify-center">
- Cloud Gefahrstoffmanagement Software für Mittelstand, SiFa und Industrie - <br>
- <span class="text-center md:text-left" style="color: rgb(255, 94, 0); display: block;">Schluss mit Excel-Listen.</span>
-</h1>
- <p class="text-2xl mt-5 sds-hero__subtitle">Browserbasiert in der Cloud — ohne Installation. Sicherheitsdatenblätter KI-gestützt auslesen lassen — die SiFa gibt frei.
-  Weniger Abtippen, Freigabe bleibt bei der SiFa.</p>
- <div class="mt-8 flex flex-wrap justify-center gap-4">
-   <a class="btn-cta-orange px-8 py-3 text-white" style="color: white !important;"href="https://app.gefahrstoff-qr.de/#preise">Jetzt kostenlos testen
-
-   </a>
- </div>`;
+/** Hero der Startseite: von der H1 bis einschließlich Microcopy unter den CTAs (textunabhängig). */
+const heroOldPattern =
+  /<h1 id="heroHeadline"[\s\S]*?<\/h1>[\s\S]*?<div class="mt-8 flex flex-wrap justify-center gap-4">[\s\S]*?<\/div>\s*<p class="mt-4 w-full[^"]*">[\s\S]*?<\/p>/;
 
 const heroNew = `<p class="mb-3 w-full text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm text-center md:text-left">Branchenlösung</p>
 <h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-center md:items-start justify-center text-center md:text-left">
@@ -97,12 +89,12 @@ const heroNew = `<p class="mb-3 w-full text-xs font-bold uppercase tracking-wide
    <a class="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 px-6 py-3 text-sm font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.06]" href="/">Zur Startseite</a>
  </div>`;
 
-if (!html.includes(heroOld)) {
-  console.error('Hero-Block in index.html nicht gefunden — Generator anpassen.');
+if (!heroOldPattern.test(html)) {
+  console.error('Hero-Block in index.html nicht gefunden: Generator anpassen.');
   process.exit(1);
 }
 
-html = html.replace(heroOld, heroNew);
+html = html.replace(heroOldPattern, heroNew);
 html = html.replace(' <!-- EINSTIEGE -->', `${INDUSTRY_SECTION}\n\n <!-- EINSTIEGE -->`);
 
 // Branchen-Karte Kfz hervorheben

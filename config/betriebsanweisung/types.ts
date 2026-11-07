@@ -1,9 +1,7 @@
-/** Genau drei FAQs (Programmatic SEO + JSON-LD) — werden im Template generiert. */
-export type SubstanceFaqTuple = [
-  { question: string; answer: string },
-  { question: string; answer: string },
-  { question: string; answer: string },
-];
+import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
+
+/** FAQs pro Stoffseite (UI + FAQPage JSON-LD), generiert im Template. Ohne stoffspezifische Gefahrendaten. */
+export type SubstanceFaqItems = readonly SeoFaqItem[];
 
 /**
  * Öffentliche Stoffdaten für Betriebsanweisungs-Landingpages.
