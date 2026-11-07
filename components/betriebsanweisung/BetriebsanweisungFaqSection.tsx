@@ -1,7 +1,7 @@
-import type { SubstanceFaqTuple } from '@/config/betriebsanweisung/types';
+import type { SubstanceFaqItems } from '@/config/betriebsanweisung/types';
 
 type Props = {
-  items: SubstanceFaqTuple;
+  items: SubstanceFaqItems;
   variant?: 'light' | 'dark';
 };
 

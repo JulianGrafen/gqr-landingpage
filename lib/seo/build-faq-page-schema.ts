@@ -1,7 +1,7 @@
 import type { FaqPageJsonLd, SeoFaqItem } from '@/lib/seo/seo-faq-types';
 
 /** Baut valides FAQPage JSON-LD aus einem FAQ-Array. */
-export function buildFaqPageSchema(items: SeoFaqItem[]): FaqPageJsonLd {
+export function buildFaqPageSchema(items: readonly SeoFaqItem[]): FaqPageJsonLd {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -17,6 +17,6 @@ export function buildFaqPageSchema(items: SeoFaqItem[]): FaqPageJsonLd {
 }
 
 /** Serialisiert FAQPage JSON-LD für statische HTML-Einbettung oder Tests. */
-export function serializeFaqPageSchema(items: SeoFaqItem[], indent = 2): string {
+export function serializeFaqPageSchema(items: readonly SeoFaqItem[], indent = 2): string {
   return JSON.stringify(buildFaqPageSchema(items), null, indent);
 }

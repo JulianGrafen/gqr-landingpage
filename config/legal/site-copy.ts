@@ -1,7 +1,7 @@
 /** Zentralisierte Compliance-Texte (UWG, B2B-Hinweis). */
 
 export const FOOTER_TAGLINE =
-  'Gefahrstoffverzeichnis nach Vorgaben von § 6 GefStoffV & TRGS — mit KI aus dem Sicherheitsdatenblatt.';
+  'Gefahrstoffverzeichnis nach Vorgaben von § 6 GefStoffV & TRGS, KI-gestützt aus dem Sicherheitsdatenblatt.';
 
 export const FOOTER_COPYRIGHT =
   '© 2026 Gefahrstoff-QR · Das Angebot richtet sich ausschließlich an Unternehmen und Gewerbetreibende (§ 14 BGB).';
@@ -9,7 +9,7 @@ export const FOOTER_COPYRIGHT =
 export const REGISTER_CTA_LABEL = 'Muster-Entwurf zur Vorprüfung in der App öffnen';
 
 export const BETRIEBSANWEISUNG_HERO_DISCLAIMER =
-  'KI-gestützter Entwurf (gemäß TRGS 555) — Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).';
+  'KI-gestützter Entwurf (gemäß TRGS 555): Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).';
 
 export const BETRIEBSANWEISUNG_REGISTER_CTA = 'Entwurf jetzt in der App erstellen';
 
