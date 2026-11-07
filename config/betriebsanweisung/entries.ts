@@ -1598,6 +1598,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Bau & Handwerk",
     ],
   },
+  {
+    slug: 'tetrahydrofuran-trgs-555',
+    substanceName: "Tetrahydrofuran",
+    metaDescription: "Betriebsanweisung Tetrahydrofuran: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Labor & Technik",
+      "Chemische Produktion",
+      "Kunststoffverarbeitung",
+      "Pharma & Feinchemie",
+    ],
+  },
+  {
+    slug: 'glasreiniger-trgs-555',
+    substanceName: "Glasreiniger",
+    metaDescription: "Betriebsanweisung Glasreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Fenster- & Glasbau",
+      "Gastronomie & Hotellerie",
+      "Hausmeisterdienst & Objektbetreuung",
+    ],
+  },
+  {
+    slug: 'toilettenreiniger-trgs-555',
+    substanceName: "Toilettenreiniger",
+    metaDescription: "Betriebsanweisung Toilettenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Sanitär & Haustechnik",
+      "Gastronomie & Hotellerie",
+      "Hausmeisterdienst & Objektbetreuung",
+    ],
+  },
+  {
+    slug: 'kerosin-trgs-555',
+    substanceName: "Kerosin",
+    metaDescription: "Betriebsanweisung Kerosin: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Heizungs- & Klimatechnik",
+      "Aviation & Flugbetrieb",
+      "Werkstatt & Instandhaltung",
+      "Event & Beleuchtungstechnik",
+    ],
+  },
+  {
+    slug: 'fliesenkleber-trgs-555',
+    substanceName: "Fliesenkleber",
+    metaDescription: "Betriebsanweisung Fliesenkleber: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Bau & Fliesenleger",
+      "Sanitär & Badausbau",
+      "Trockenbau & Innenausbau",
+      "Denkmalpflege & Restaurierung",
+    ],
+  },
+  {
+    slug: 'zement-trgs-555',
+    substanceName: "Zement",
+    metaDescription: "Betriebsanweisung Zement: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Bau & Hochbau",
+      "Betonwerk & Fertigteilbau",
+      "Tiefbau & Straßenbau",
+      "Maurer- & Betonbearbeitung",
+    ],
+  },
+  {
+    slug: 'polyesterharz-trgs-555',
+    substanceName: "Polyesterharz",
+    metaDescription: "Betriebsanweisung Polyesterharz: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Bootsbau & GFK",
+      "Karosserie- & Fahrzeugbau",
+      "Schreinerei & Holzverarbeitung",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'silikonoel-trgs-555',
+    substanceName: "Silikonöl",
+    metaDescription: "Betriebsanweisung Silikonöl: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Maschinenbau & Anlagenbau",
+      "Labor & Technik",
+      "Gummi- & Kunststoffverarbeitung",
+      "Druckerei & Beschichtung",
+    ],
+  },
+  {
+    slug: 'schneidoel-trgs-555',
+    substanceName: "Schneidöl",
+    metaDescription: "Betriebsanweisung Schneidöl: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbearbeitung & Zerspanung",
+      "Maschinenbau & Werkzeugbau",
+      "Kfz-Werkstatt & Instandhaltung",
+      "Industrielle Produktion",
+    ],
+  },
+  {
+    slug: 'zementschleierentferner-trgs-555',
+    substanceName: "Zementschleierentferner",
+    metaDescription: "Betriebsanweisung Zementschleierentferner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Bau & Fliesenleger",
+      "Gebäudereinigung & Facility",
+      "Sanitär & Badausbau",
+      "Bauabschluss & Oberflächentechnik",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
