@@ -1598,6 +1598,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Bau & Handwerk",
     ],
   },
+  {
+    slug: 'weissspiritus-trgs-555',
+    substanceName: "Weißspiritus",
+    metaDescription: "Betriebsanweisung Weißspiritus: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Schreinerei & Holzverarbeitung",
+      "Kfz-Werkstatt & Instandhaltung",
+      "Bau & Handwerk",
+    ],
+  },
+  {
+    slug: 'brennspiritus-trgs-555',
+    substanceName: "Brennspiritus",
+    metaDescription: "Betriebsanweisung Brennspiritus: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Labor & Technik",
+      "Gastronomie & Großküche",
+      "Hygienereinigung & Desinfektion",
+      "Hausmeisterdienst & Objektbetreuung",
+    ],
+  },
+  {
+    slug: 'chloroform-trgs-555',
+    substanceName: "Chloroform",
+    metaDescription: "Betriebsanweisung Chloroform: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Labor & Technik",
+      "Pharma & Feinchemie",
+      "Kunststoffverarbeitung",
+      "Chemische Produktion",
+    ],
+  },
+  {
+    slug: 'mineraloel-trgs-555',
+    substanceName: "Mineralöl",
+    metaDescription: "Betriebsanweisung Mineralöl: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Maschinenbau & Anlagenbau",
+      "Metallbearbeitung & Instandhaltung",
+      "Land- & Baumaschinen",
+      "Industrielle Produktion",
+    ],
+  },
+  {
+    slug: 'loesemittel-trgs-555',
+    substanceName: "Lösemittel",
+    metaDescription: "Betriebsanweisung Lösemittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Industrielle Reinigung",
+      "Druckerei & Beschichtung",
+      "Kfz-Werkstatt & Instandhaltung",
+    ],
+  },
+  {
+    slug: 'maschinenreiniger-trgs-555',
+    substanceName: "Maschinenreiniger",
+    metaDescription: "Betriebsanweisung Maschinenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbearbeitung & Zerspanung",
+      "Maschinenbau & Werkzeugbau",
+      "Kfz-Werkstatt & Instandhaltung",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'teppichreiniger-trgs-555',
+    substanceName: "Teppichreiniger",
+    metaDescription: "Betriebsanweisung Teppichreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Textilreinigung & Wäscherei",
+      "Hotellerie & Gastgewerbe",
+      "Hausmeisterdienst & Objektbetreuung",
+    ],
+  },
+  {
+    slug: 'holzleim-trgs-555',
+    substanceName: "Holzleim",
+    metaDescription: "Betriebsanweisung Holzleim: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Schreinerei & Holzverarbeitung",
+      "Möbelbau & Innenausbau",
+      "Bau & Tischlerei",
+      "Parkett- & Bodenbelagsarbeiten",
+    ],
+  },
+  {
+    slug: 'bleichmittel-trgs-555',
+    substanceName: "Bleichmittel",
+    metaDescription: "Betriebsanweisung Bleichmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Textilreinigung & Wäscherei",
+      "Gebäudereinigung & Facility",
+      "Gastronomie & Großküche",
+      "Hygiene & Desinfektion",
+    ],
+  },
+  {
+    slug: 'oelfleckenentferner-trgs-555',
+    substanceName: "Ölfleckenentferner",
+    metaDescription: "Betriebsanweisung Ölfleckenentferner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Gebäudereinigung & Facility",
+      "Bau & Tiefbau",
+      "Industrielle Reinigung",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
