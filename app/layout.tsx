@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     template: '%s | Gefahrstoff-QR',
   },
   description: SITE_DEFAULT_SEO.description,
+  other: {
+    'trustmarkt-verification': '8a22b157',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '48x48' },
