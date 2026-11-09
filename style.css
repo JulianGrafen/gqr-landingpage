@@ -553,7 +553,7 @@ ul { list-style: none; }
 
 .pricing-tier-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
   justify-content: start;
   gap: 1rem;
   align-items: stretch;
@@ -4484,4 +4484,27 @@ body.trial-modal-open {
   .pricing-tier-grid > article {
     max-width: none;
   }
+}
+
+/* ── Sticky Mobile-CTA (nur < 768px; nutzt bestehende Tokens + .btn-cta-orange) ── */
+.mobile-sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: var(--color-bg-raised);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
+}
+.mobile-sticky-cta[hidden] { display: none; }
+.mobile-sticky-cta__hint {
+  margin: 6px 0 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+@media (min-width: 768px) {
+  .mobile-sticky-cta { display: none !important; }
 }

@@ -29,7 +29,7 @@ export function SdbUnlockCard({ variant, previewToken, compact = false }: Props)
     return (
       <div className="text-center">
         <p className="text-[10px] leading-snug text-[#8fa4c0]">
-          KI-gestützter Entwurf (gemäß TRGS 555) — Vorprüfung zur fachlichen Freigabe durch die SiFa /
+          KI-gestützter Entwurf (gemäß TRGS 555): Vorprüfung zur fachlichen Freigabe durch die SiFa /
           den Arbeitgeber (§ 14 GefStoffV)
         </p>
         <a
@@ -52,13 +52,13 @@ export function SdbUnlockCard({ variant, previewToken, compact = false }: Props)
       </h3>
       <p className={variant === 'static' ? 'sdb-live-preview-unlock__text' : 'gqr-section-sub mt-3 text-sm'}>
         Schalten Sie den Entwurf zur fachlichen Prüfung und Freigabe durch die SiFa / den Arbeitgeber (§ 14
-        GefStoffV) in der App frei — ohne Verkaufsgespräch.
+        GefStoffV) in der App frei, ohne Verkaufsgespräch.
       </p>
       <a className={primaryCtaClass(variant)} href={href}>
         Entwurf &amp; Kataster-Zugang zur Vorprüfung freischalten
       </a>
       <p className={variant === 'static' ? 'sdb-live-preview-unlock__fine' : 'mt-3 text-xs text-[#8fa4c0]'}>
-        KI-gestützter Entwurf (gemäß TRGS 555) — keine automatische Rechtsgültigkeit.
+        KI-gestützter Entwurf (gemäß TRGS 555), keine automatische Rechtsgültigkeit.
       </p>
     </div>
   );

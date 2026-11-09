@@ -75,17 +75,9 @@ html = html
   .replace('src="logo.png"', 'src="/logo.png"')
   .replace('src="./linkedIn.png"', 'src="/linkedIn.png"');
 
-const heroOld = `<h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-center md:items-start justify-center">
- Cloud Gefahrstoffmanagement Software für Mittelstand, SiFa und Industrie - <br>
- <span class="text-center md:text-left" style="color: rgb(255, 94, 0); display: block;">Schluss mit Excel-Listen.</span>
-</h1>
- <p class="text-2xl mt-5 sds-hero__subtitle">Browserbasiert in der Cloud — ohne Installation. Sicherheitsdatenblätter KI-gestützt auslesen lassen — die SiFa gibt frei.
-  Weniger Abtippen, Freigabe bleibt bei der SiFa.</p>
- <div class="mt-8 flex flex-wrap justify-center gap-4">
-   <a class="btn-cta-orange px-8 py-3 text-white" style="color: white !important;"href="https://app.gefahrstoff-qr.de/#preise">Jetzt kostenlos testen
-
-   </a>
- </div>`;
+/** Hero der Startseite: von der H1 bis einschließlich Microcopy unter den CTAs (textunabhängig). */
+const heroOldPattern =
+  /<h1 id="heroHeadline"[\s\S]*?<\/h1>[\s\S]*?<div class="mt-8 flex flex-wrap justify-center gap-4">[\s\S]*?<\/div>\s*<p class="mt-4 w-full[^"]*">[\s\S]*?<\/p>/;
 
 const heroNew = `<p class="mb-3 w-full text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm text-center md:text-left">Branchenlösung</p>
 <h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-center md:items-start justify-center text-center md:text-left">
@@ -97,12 +89,12 @@ const heroNew = `<p class="mb-3 w-full text-xs font-bold uppercase tracking-wide
    <a class="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 px-6 py-3 text-sm font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.06]" href="/">Zur Startseite</a>
  </div>`;
 
-if (!html.includes(heroOld)) {
-  console.error('Hero-Block in index.html nicht gefunden — Generator anpassen.');
+if (!heroOldPattern.test(html)) {
+  console.error('Hero-Block in index.html nicht gefunden: Generator anpassen.');
   process.exit(1);
 }
 
-html = html.replace(heroOld, heroNew);
+html = html.replace(heroOldPattern, heroNew);
 html = html.replace(' <!-- EINSTIEGE -->', `${INDUSTRY_SECTION}\n\n <!-- EINSTIEGE -->`);
 
 // Branchen-Karte Kfz hervorheben
@@ -111,45 +103,44 @@ html = html.replace(
   '<a href="/loesungen/kfz-werkstatt/" aria-current="page" class="group flex h-full flex-col rounded-2xl border-2 border-[#ff6b35]/50 bg-[#162340] p-5 shadow-lg ring-1 ring-orange-400/20 no-underline">',
 );
 
-html = trimPricingToProfessional(html);
+const KFZ_PACKAGE_HINT = `<p class="mx-auto mb-8 max-w-3xl text-center text-sm leading-relaxed text-[#8fa4c0]">
+ <strong class="text-[#f0f6ff]">Welches Paket passt in der Werkstatt?</strong>
+ Funktionstest: <strong class="text-[#c5d0e2]">TarifVorschau</strong> ·
+ bis 30 Stoffe, ein Betrieb: <strong class="text-[#c5d0e2]">KMU Basis</strong> ·
+ viele Stoffe &amp; Batch: <strong class="text-[#c5d0e2]">KMU Pro</strong>
+ </p>`;
 
 function trimPricingToProfessional(pageHtml) {
   let out = pageHtml.replace(
-    'Vom unverbindlichen Testlauf bis zur professionellen Mandantenverwaltung.',
-    'Vom unverbindlichen Testlauf bis zum Professional-Paket für Ihre Werkstatt.',
+    /<p class="mx-auto mb-8 max-w-3xl[\s\S]*?SiFa Multi-Mandant<\/strong>\s*<\/p>/,
+    KFZ_PACKAGE_HINT,
   );
 
   out = out.replace(
     /(<div class="pricing-tier-grid"[^>]*>)([\s\S]*?)(<\/div>\s*\n\s*<details class="pricing-compare)/,
     (_, open, content, close) => {
       const articles = content.match(/\n <article[\s\S]*?<\/article>/g) || [];
-      const kept = articles.filter(
-        (article) =>
-          !article.includes('>Multi-Mandant</p>') && !article.includes('>Enterprise</p>'),
+      const kept = articles.filter((article) => !article.includes('>SiFa Multi-Mandant</p>'));
+      const gridOpen = open.replace(
+        '<div class="pricing-tier-grid">',
+        '<div class="pricing-tier-grid" style="grid-template-columns: repeat(3, minmax(240px, 1fr));">',
       );
-      const gridOpen = open.includes('style=')
-        ? open
-        : open.replace(
-            '<div class="pricing-tier-grid">',
-            '<div class="pricing-tier-grid" style="grid-template-columns: repeat(3, minmax(240px, 1fr));">',
-          );
       return `${gridOpen}${kept.join('')}\n\n ${close}`;
     },
   );
 
   out = out.replace(
-    /<table class="pricing-compare__table">[\s\S]*?<\/table>/,
-    (table) => {
-      let t = table
+    /(<section id="preise"[\s\S]*?<table class="pricing-compare__table">)([\s\S]*?)(<\/table>)/,
+    (_, tableOpen, tableInner, tableClose) => {
+      let t = tableInner
         .replace(
-          /<caption>[^<]*<\/caption>/,
-          '<caption>Vergleich der Pakete Test, Small Business und Professional</caption>',
+          /<caption>[\s\S]*?<\/caption>/,
+          '<caption>Vergleich der Pakete TarifVorschau, KMU Basis und KMU Pro</caption>',
         )
-        .replace(/\s*<th scope="col">Multi-Mandant<\/th>/, '')
-        .replace(
-          /\s*<tr>\s*<th scope="row">Multi-Mandanten &amp; Werkstrennung<\/th>[\s\S]*?<\/tr>/,
-          '',
-        );
+        .replace(/\s*<th scope="col">SiFa Multi-Mandant<\/th>/, '')
+        .replace(/\s*<tr>\s*<th scope="row">PDF-Rechnung \(Direktkauf\)<\/th>[\s\S]*?<\/tr>/, '')
+        .replace(/\s*<tr>\s*<th scope="row">Mandanten- &amp; Werkstrennung<\/th>[\s\S]*?<\/tr>/, '')
+        .replace(/\s*<tr>\s*<th scope="row">Begehungs-Modus \(ohne SDB\)<\/th>[\s\S]*?<\/tr>/, '');
 
       t = t.replace(/<tr>([\s\S]*?)<\/tr>/g, (rowMatch, inner) => {
         if (!inner.includes('<td')) return rowMatch;
@@ -158,12 +149,14 @@ function trimPricingToProfessional(pageHtml) {
         return `<tr>${inner.slice(0, lastTdIndex).trimEnd()}</tr>`;
       });
 
-      return t;
+      return `${tableOpen}${t}${tableClose}`;
     },
   );
 
   return out;
 }
+
+html = trimPricingToProfessional(html);
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(OUT_FILE, html, 'utf8');
