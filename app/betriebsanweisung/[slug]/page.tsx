@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { notFound } from 'next/navigation';
 import { BetriebsanweisungClosingCtaCard } from '@/components/betriebsanweisung/BetriebsanweisungClosingCtaCard';
 import { BetriebsanweisungContrastSection } from '@/components/betriebsanweisung/BetriebsanweisungContrastSection';
@@ -72,13 +73,7 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
 
   return (
     <main className="bg-[#0a1628]">
-      {schemas.map((schema, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
+      <JsonLd data={schemas} />
 
       <section
         className="border-b border-white/[0.07] bg-gradient-to-b from-[#0f1e35]/90 to-[#0a1628] px-4 py-12 sm:px-6 lg:px-8 lg:py-16"

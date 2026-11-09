@@ -6,7 +6,7 @@ import { LandingCtaBand } from '@/components/seo-silo/LandingCtaBand';
 import { LandingFaqSection } from '@/components/seo-silo/LandingFaqSection';
 import { LandingFeatureGrid } from '@/components/seo-silo/LandingFeatureGrid';
 import { LandingHeroSection } from '@/components/seo-silo/LandingHeroSection';
-import { LandingSeoJsonLd } from '@/components/seo-silo/LandingSeoJsonLd';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 type LandingPageWrapperProps = {
   config: SeoSiloPageConfig;
@@ -14,8 +14,6 @@ type LandingPageWrapperProps = {
   heroSlot?: ReactNode;
   /** Zusätzliche Sektionen zwischen Features und FAQ (z. B. Vergleichstabelle, Download-Form) */
   children?: ReactNode;
-  /** Optionale Schema-Ergänzung für SoftwareApplication */
-  softwareSchemaOverrides?: Parameters<typeof buildLandingSchemaBundle>[1];
 };
 
 /**
@@ -26,17 +24,12 @@ export function LandingPageWrapper({
   config,
   heroSlot,
   children,
-  softwareSchemaOverrides,
 }: LandingPageWrapperProps) {
-  const schema = buildLandingSchemaBundle(config.faq, {
-    pageUrl: config.seo.canonicalPath,
-    pageDescription: config.seo.description,
-    ...softwareSchemaOverrides,
-  });
+  const schemas = buildLandingSchemaBundle(config.faq);
 
   return (
     <main className="pb-8">
-      <LandingSeoJsonLd schema={schema} />
+      <JsonLd data={schemas} />
 
       {config.breadcrumb.length > 1 ? (
         <nav

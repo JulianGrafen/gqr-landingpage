@@ -93,65 +93,6 @@ export interface SeoSiloPageConfig {
   closingCta: SeoSiloClosingCta;
 }
 
-/** Basis-SoftwareApplication — page-spezifische Ergänzungen via merge */
-export interface SoftwareApplicationSchemaConfig {
-  name: string;
-  applicationCategory: string;
-  operatingSystem: string[];
-  description: string;
-  url: string;
-  offers: {
-    price: string;
-    priceCurrency: string;
-    description: string;
-  };
-  featureList?: string[];
-  audience?: {
-    audienceType: string;
-    geographicArea: string;
-  };
-}
-
-/** JSON-LD Payload für eine Silo-Seite */
-export interface SeoSiloSchemaBundle {
-  faqPage: {
-    '@context': 'https://schema.org';
-    '@type': 'FAQPage';
-    mainEntity: Array<{
-      '@type': 'Question';
-      name: string;
-      acceptedAnswer: {
-        '@type': 'Answer';
-        text: string;
-      };
-    }>;
-  };
-  softwareApplication: {
-    '@context': 'https://schema.org';
-    '@type': 'SoftwareApplication';
-    name: string;
-    applicationCategory: string;
-    operatingSystem: string;
-    description: string;
-    url: string;
-    offers: {
-      '@type': 'Offer';
-      price: string;
-      priceCurrency: string;
-      description: string;
-    };
-    featureList?: string;
-    audience?: {
-      '@type': 'Audience';
-      audienceType: string;
-      geographicArea: {
-        '@type': 'AdministrativeArea';
-        name: string;
-      };
-    };
-  };
-}
-
 /** Silo-Registry: 4 Ziel-URLs (Metadaten, keine Volltexte) */
 export interface SeoSiloRegistryEntry {
   slug: string;

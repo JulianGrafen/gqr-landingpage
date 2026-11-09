@@ -553,7 +553,7 @@ ul { list-style: none; }
 
 .pricing-tier-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
   justify-content: start;
   gap: 1rem;
   align-items: stretch;

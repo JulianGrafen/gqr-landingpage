@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { ComparisonTable, type ComparisonRow } from '@/components/expert-blog/ComparisonTable';
 import { ExpertCallout } from '@/components/expert-blog/ExpertCallout';
 import { ExpertCard } from '@/components/expert-blog/ExpertCard';
@@ -154,10 +155,7 @@ const REGISTER_HREF = 'https://app.gefahrstoff-qr.de/register';
 export default function GefahrstoffkatasterExcelVorlagePage() {
  return (
  <>
- <script
- type="application/ld+json"
- dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUC_DATA) }}
- />
+ <JsonLd data={STRUC_DATA} />
  <article>
  <section
  className="border-b border-white/[0.07] bg-gradient-to-b from-[#0f1e35]/90 to-[#0a1628] px-4 py-16 sm:px-6 lg:px-8 lg:py-24"

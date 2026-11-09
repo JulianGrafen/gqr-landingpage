@@ -103,45 +103,44 @@ html = html.replace(
   '<a href="/loesungen/kfz-werkstatt/" aria-current="page" class="group flex h-full flex-col rounded-2xl border-2 border-[#ff6b35]/50 bg-[#162340] p-5 shadow-lg ring-1 ring-orange-400/20 no-underline">',
 );
 
-html = trimPricingToProfessional(html);
+const KFZ_PACKAGE_HINT = `<p class="mx-auto mb-8 max-w-3xl text-center text-sm leading-relaxed text-[#8fa4c0]">
+ <strong class="text-[#f0f6ff]">Welches Paket passt in der Werkstatt?</strong>
+ Funktionstest: <strong class="text-[#c5d0e2]">TarifVorschau</strong> ·
+ bis 30 Stoffe, ein Betrieb: <strong class="text-[#c5d0e2]">KMU Basis</strong> ·
+ viele Stoffe &amp; Batch: <strong class="text-[#c5d0e2]">KMU Pro</strong>
+ </p>`;
 
 function trimPricingToProfessional(pageHtml) {
   let out = pageHtml.replace(
-    'Vom unverbindlichen Testlauf bis zur professionellen Mandantenverwaltung.',
-    'Vom unverbindlichen Testlauf bis zum Professional-Paket für Ihre Werkstatt.',
+    /<p class="mx-auto mb-8 max-w-3xl[\s\S]*?SiFa Multi-Mandant<\/strong>\s*<\/p>/,
+    KFZ_PACKAGE_HINT,
   );
 
   out = out.replace(
     /(<div class="pricing-tier-grid"[^>]*>)([\s\S]*?)(<\/div>\s*\n\s*<details class="pricing-compare)/,
     (_, open, content, close) => {
       const articles = content.match(/\n <article[\s\S]*?<\/article>/g) || [];
-      const kept = articles.filter(
-        (article) =>
-          !article.includes('>Multi-Mandant</p>') && !article.includes('>Enterprise</p>'),
+      const kept = articles.filter((article) => !article.includes('>SiFa Multi-Mandant</p>'));
+      const gridOpen = open.replace(
+        '<div class="pricing-tier-grid">',
+        '<div class="pricing-tier-grid" style="grid-template-columns: repeat(3, minmax(240px, 1fr));">',
       );
-      const gridOpen = open.includes('style=')
-        ? open
-        : open.replace(
-            '<div class="pricing-tier-grid">',
-            '<div class="pricing-tier-grid" style="grid-template-columns: repeat(3, minmax(240px, 1fr));">',
-          );
       return `${gridOpen}${kept.join('')}\n\n ${close}`;
     },
   );
 
   out = out.replace(
-    /<table class="pricing-compare__table">[\s\S]*?<\/table>/,
-    (table) => {
-      let t = table
+    /(<section id="preise"[\s\S]*?<table class="pricing-compare__table">)([\s\S]*?)(<\/table>)/,
+    (_, tableOpen, tableInner, tableClose) => {
+      let t = tableInner
         .replace(
-          /<caption>[^<]*<\/caption>/,
-          '<caption>Vergleich der Pakete Test, Small Business und Professional</caption>',
+          /<caption>[\s\S]*?<\/caption>/,
+          '<caption>Vergleich der Pakete TarifVorschau, KMU Basis und KMU Pro</caption>',
         )
-        .replace(/\s*<th scope="col">Multi-Mandant<\/th>/, '')
-        .replace(
-          /\s*<tr>\s*<th scope="row">Multi-Mandanten &amp; Werkstrennung<\/th>[\s\S]*?<\/tr>/,
-          '',
-        );
+        .replace(/\s*<th scope="col">SiFa Multi-Mandant<\/th>/, '')
+        .replace(/\s*<tr>\s*<th scope="row">PDF-Rechnung \(Direktkauf\)<\/th>[\s\S]*?<\/tr>/, '')
+        .replace(/\s*<tr>\s*<th scope="row">Mandanten- &amp; Werkstrennung<\/th>[\s\S]*?<\/tr>/, '')
+        .replace(/\s*<tr>\s*<th scope="row">Begehungs-Modus \(ohne SDB\)<\/th>[\s\S]*?<\/tr>/, '');
 
       t = t.replace(/<tr>([\s\S]*?)<\/tr>/g, (rowMatch, inner) => {
         if (!inner.includes('<td')) return rowMatch;
@@ -150,12 +149,14 @@ function trimPricingToProfessional(pageHtml) {
         return `<tr>${inner.slice(0, lastTdIndex).trimEnd()}</tr>`;
       });
 
-      return t;
+      return `${tableOpen}${t}${tableClose}`;
     },
   );
 
   return out;
 }
+
+html = trimPricingToProfessional(html);
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(OUT_FILE, html, 'utf8');

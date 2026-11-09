@@ -8,7 +8,6 @@ export { LandingFeatureGrid } from '@/components/seo-silo/LandingFeatureGrid';
 export { LandingFaqSection } from '@/components/seo-silo/LandingFaqSection';
 export { LandingCtaBand } from '@/components/seo-silo/LandingCtaBand';
 export { LandingProseSection } from '@/components/seo-silo/LandingProseSection';
-export { LandingSeoJsonLd } from '@/components/seo-silo/LandingSeoJsonLd';
 export { ExcelVorlageSiloPage } from '@/components/seo-silo/pages/ExcelVorlageSiloPage';
 export { GefahrstoffkatasterSoftwareSiloPage } from '@/components/seo-silo/pages/GefahrstoffkatasterSoftwareSiloPage';
 export { GefahrstoffAppSiloPage } from '@/components/seo-silo/pages/GefahrstoffAppSiloPage';
@@ -24,14 +23,8 @@ export type {
   SeoSiloHero,
   SeoSiloClosingCta,
   SeoSiloIntent,
-  SeoSiloSchemaBundle,
-  SoftwareApplicationSchemaConfig,
 } from '@/config/seo-silo/types';
 
-export {
-  buildFaqPageSchema,
-  buildSoftwareApplicationSchema,
-  buildLandingSchemaBundle,
-} from '@/lib/seo/build-landing-schema';
+export { buildLandingSchemaBundle } from '@/lib/seo/build-landing-schema';
 
 export { getSiloRegistry, getSiloBySlug, getSiloByPath } from '@/lib/seo/silo-registry';

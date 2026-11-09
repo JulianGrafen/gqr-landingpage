@@ -1,37 +1,31 @@
 # Preise: Gefahrstoff-QR
 
-Stand: November 2026. Alle Preise zzgl. MwSt. Monatliche Abrechnung, monatlich kündbar. Bei jährlicher Vorauszahlung 15 % Rabatt. Angebot ausschließlich für Unternehmen (§ 14 BGB).
+Stand: November 2026. Alle Preise zzgl. MwSt. Monatliche Abrechnung, monatlich kündbar. Standard-Ansicht: jährliche Vorauszahlung zum reduzierten Monatspreis (49 / 99 / 159 €). Angebot ausschließlich für Unternehmen, Gewerbetreibende und freiberufliche Sicherheitsfachkräfte (§ 14 BGB).
 Registrierung ohne Kreditkarte: https://app.gefahrstoff-qr.de/register
 
 Hinweis: KI-Funktionen liefern Entwürfe. Jeder KI-gestützte Entwurf (gemäß TRGS 555) ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).
 
-## Test
+## TarifVorschau
 - Preis: 0 €
-- Limits: 5 Stoffe
-- Leistungen: KI-Extraktion aus Sicherheitsdatenblättern, KI-Betriebsanweisung-Erstellung (Entwurf), Verzeichnis als PDF, QR-Notfallansicht
+- Limits: bis zu 3 SDB-Uploads
+- Leistungen: KI-Auswertung im Browser ansehen, PDF-Vorschau nur mit „MUSTER“-Wasserzeichen, Kein Excel-Export, keine dauerhaften QR-Links
 
-## Small Business
-- Preis: 89 €/Monat (bei Jahreszahlung 75,65 €/Monat, 908 €/Jahr)
-- Limits: bis 50 Stoffe, 1 Nutzer
-- Leistungen: alles aus Test, Alerts und automatische Sicherheitsdatenblatt-Anforderung, E-Mail-Support
+## KMU Basis
+- Preis: 59 €/Monat (bei Jahreszahlung 49 €/Monat, 588 €/Jahr)
+- Limits: bis 30 Gefahrstoffe, 1 Werk, unbegrenzt Lagerorte
+- Leistungen: KI-gestützte BA-Entwürfe, PDF- & Excel-Export (ohne Wasserzeichen), Aktive QR-Notfallansicht am Arbeitsplatz
 
-## Professional (empfohlen)
-- Preis: 199 €/Monat (bei Jahreszahlung 169,15 €/Monat, 2.030 €/Jahr)
-- Limits: bis 250 Stoffe, mehrere Nutzer
-- Leistungen: alles aus Small Business, Batch-Upload mehrerer Sicherheitsdatenblätter, Verzeichnis als Excel, priorisierter Support
+## KMU Pro (empfohlen)
+- Preis: 119 €/Monat (bei Jahreszahlung 99 €/Monat, 1.188 €/Jahr)
+- Limits: bis 250 Gefahrstoffe, bis 3 Werke, unbegrenzt Lagerorte
+- Leistungen: Batch-Upload (mehrere SDBs gleichzeitig), Mehrere Nutzer-Logins, KI-gestützte BA-Entwürfe & PDF/Excel-Export, SDB-Aktualitäts-Alerts
 
-## Multi-Mandant
-- Preis: ab 299 €/Monat
-- Limits: bis 50 Werke, Stoffanzahl individuell
-- Leistungen: alles aus Professional, Multi-Mandanten-Fähigkeit und Werkstrennung für externe SiFa-Beratungen
+## SiFa Multi-Mandant
+- Preis: 189 €/Monat (bei Jahreszahlung 159 €/Monat, 1.908 €/Jahr)
+- Limits: unbegrenzte Mandanten & Werke (Fair-Use)
+- Leistungen: Saubere Mandanten-, Werks- & Tätigkeitstrennung, Erfassung auch ohne SDB (Begehungs-Modus), Batch-Upload & alle PDF/Excel-Exporte inkl. GHS, Direktkauf auf monatliche PDF-Rechnung möglich
 
-## Enterprise
-- Preis: ab 699 €/Monat
-- Limits: unbegrenzte Stoffe, Standorte und Nutzer
-- Leistungen: Single Sign-On (SSO), Audit-Log, dedizierte Datenisolierung, individuelle SLAs, Enterprise-Onboarding
-- Kontakt: info@gefahrstoff-qr.de
-
-## In allen Paketen
-- QR-Scan-Zugriff (Notfallansicht am Gebinde)
-- Hosting in Deutschland inkl. AVV, SSL-Verschlüsselung
+## In allen bezahlten Paketen
+- Aktive QR-Notfallansicht am Arbeitsplatz
+- Serverstandort Deutschland (Frankfurt am Main) inkl. Auftragsverarbeitungsvertrag (AVV), SSL-Verschlüsselung
 - Browserbasiert, keine Installation

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { SiteBreadcrumb } from '@/components/seo/SiteBreadcrumb';
 import { getAllBetriebsanweisungEntries } from '@/config/betriebsanweisung/registry';
 import { BETRIEBSANWEISUNG_HERO_DISCLAIMER } from '@/config/legal/site-copy';
@@ -57,9 +58,7 @@ export default function BetriebsanweisungIndexPage() {
 
   return (
     <main>
-      {schemas.map((schema, index) => (
-        <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      ))}
+      <JsonLd data={schemas} />
 
       <section className="border-b border-white/[0.07] bg-gradient-to-b from-[#0f1e35]/90 to-[#0a1628] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-3xl">
