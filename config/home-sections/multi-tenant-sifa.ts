@@ -1,4 +1,8 @@
-import { APP_REGISTER_URL, CONTACT_EMAIL } from '@/config/aeo-config';
+import {
+  APP_REGISTER_URL,
+  SIFA_INVOICE_REQUEST_CTA_LABEL,
+  SIFA_INVOICE_REQUEST_MAILTO,
+} from '@/config/aeo-config';
 
 /**
  * Conversion-Sektion für externe SiFas und Arbeitsschutz-Büros (Multi-Mandant).
@@ -9,8 +13,6 @@ export interface SellingPoint {
   title: string;
   description: string;
 }
-
-const INVOICE_REQUEST_SUBJECT = 'Multi-Mandanten-Zugang auf Rechnung';
 
 export const MULTI_TENANT_SIFA = {
   sectionId: 'fuer-sifas',
@@ -42,7 +44,7 @@ export const MULTI_TENANT_SIFA = {
   ] satisfies SellingPoint[],
   primaryCta: { label: 'Multi-Mandanten-Zugang anfragen / testen →', href: APP_REGISTER_URL },
   secondaryCta: {
-    label: 'Kauf auf Rechnung per E-Mail anfragen',
-    href: `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(INVOICE_REQUEST_SUBJECT)}`,
+    label: SIFA_INVOICE_REQUEST_CTA_LABEL,
+    href: SIFA_INVOICE_REQUEST_MAILTO,
   },
 } as const;

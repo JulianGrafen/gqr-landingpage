@@ -14,6 +14,11 @@ export const APP_REGISTER_URL = `${APP_URL}/register`;
 export const APP_LOGIN_URL = `${APP_URL}/login`;
 export const CONTACT_EMAIL = 'info@gefahrstoff-qr.de';
 
+/** Betreff für SiFa-/Firmenkunden: Kauf auf monatliche PDF-Rechnung */
+export const SIFA_INVOICE_REQUEST_SUBJECT = 'Multi-Mandanten-Zugang auf Rechnung';
+export const SIFA_INVOICE_REQUEST_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(SIFA_INVOICE_REQUEST_SUBJECT)}`;
+export const SIFA_INVOICE_REQUEST_CTA_LABEL = 'Kauf auf Rechnung per E-Mail anfragen';
+
 /** Stand der AEO-Inhalte (dateModified, llms.txt); bei inhaltlichen Änderungen anpassen. */
 export const AEO_CONTENT_UPDATED = '2026-11-09';
 
