@@ -2,7 +2,7 @@ import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
 
 /**
  * Homepage FAQPage (AEO): jede Antwort beginnt mit einer direkten, zitierfähigen Kernaussage.
- * Sync mit index.html (#faq + FAQPage JSON-LD im <head>) via `npm run sync:home-faq`.
+ * Wird per `npm run sync:home` in index.html gerendert (sichtbare #faq und FAQPage JSON-LD aus derselben Quelle).
  * Copy-Regeln: keine Gedankenstriche; Compliance-Begriffe laut AGENTS.md.
  */
 export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [

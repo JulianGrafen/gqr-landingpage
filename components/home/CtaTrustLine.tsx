@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { CTA_TRUST_SIGNALS } from '@/config/aeo-config';
 
 type CtaTrustLineProps = {
@@ -10,13 +11,15 @@ export function CtaTrustLine({ className = '' }: CtaTrustLineProps) {
   return (
     <p className={`text-xs leading-relaxed text-[#8fa4c0] ${className}`.trim()}>
       {CTA_TRUST_SIGNALS.map((signal, index) => (
-        <span key={signal} className="whitespace-nowrap">
+        <Fragment key={signal}>
           {index > 0 ? ' · ' : null}
-          <span className="text-teal-300" aria-hidden="true">
-            ✓
-          </span>{' '}
-          {signal}
-        </span>
+          <span className="whitespace-nowrap">
+            <span className="text-teal-300" aria-hidden="true">
+              ✓
+            </span>{' '}
+            {signal}
+          </span>
+        </Fragment>
       ))}
     </p>
   );

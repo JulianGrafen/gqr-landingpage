@@ -1,5 +1,85 @@
-User-agent: *
+User-Agent: *
 Allow: /
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /settings
+Disallow: /register
+
+User-Agent: Googlebot
+Allow: /
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /settings
+Disallow: /register
+
+User-Agent: Bingbot
+Allow: /
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /settings
+Disallow: /register
+
+User-Agent: OAI-SearchBot
+Allow: /
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /settings
+Disallow: /register
+
+User-Agent: ChatGPT-User
+Allow: /
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /settings
+Disallow: /register
+
+User-Agent: PerplexityBot
+Allow: /
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /settings
+Disallow: /register
+
+User-Agent: Perplexity-User
+Allow: /
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /settings
+Disallow: /register
+
+User-Agent: ClaudeBot
+Allow: /
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /settings
+Disallow: /register
+
+User-Agent: Claude-SearchBot
+Allow: /
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /settings
+Disallow: /register
+
+User-Agent: Claude-User
+Allow: /
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /settings
+Disallow: /register
+
+User-Agent: Applebot-Extended
+Allow: /
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /settings
+Disallow: /register
+
+User-Agent: Google-Extended
+Allow: /
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /settings
 Disallow: /register
 
 Sitemap: https://gefahrstoff-qr.de/sitemap.xml

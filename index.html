@@ -62,84 +62,97 @@
  }
  </script>
 
+ <!--AEO:SOFTWARE_APPLICATION_JSONLD-->
  <script type="application/ld+json">
- {
+{
  "@context": "https://schema.org",
  "@type": "SoftwareApplication",
  "@id": "https://gefahrstoff-qr.de/#software",
  "name": "Gefahrstoff-QR",
+ "alternateName": [
+  "Gefahrstoffmanagement Software",
+  "Gefahrstoffverzeichnis Software",
+  "Gefahrstoff App",
+  "Cloud Gefahrstoffmanagement Software"
+ ],
  "url": "https://gefahrstoff-qr.de/",
  "inLanguage": "de-DE",
  "applicationCategory": "BusinessApplication",
- "applicationSubCategory": "Cloud Gefahrstoffmanagement Software",
- "applicationSuite": "Gefahrstoff-QR",
- "operatingSystem": "Web, iOS, Android",
- "alternateName": ["Cloud Gefahrstoffmanagement Software", "Gefahrstoff App", "Gefahrstoffmanagement Software", "Gefahrstoffverzeichnis Software"],
- "description": "Gefahrstoffmanagement Software und Gefahrstoff App im Browser, ohne Installation: KI-gestützte Extraktion aus Sicherheitsdatenblättern, Gefahrstoffverzeichnis nach § 6 GefStoffV mit Revisionsverlauf, TRGS-510-Zusammenlagerungscheck und QR-Notfallansicht. Ergebnisse sind Entwürfe zur fachlichen Freigabe durch die SiFa / den Arbeitgeber.",
+ "applicationSubCategory": "Gefahrstoffmanagement Software",
+ "operatingSystem": "Web, Browser-based",
+ "description": "Gefahrstoff-QR ist eine browserbasierte B2B-Webanwendung zur Digitalisierung des Gefahrstoffverzeichnisses nach § 6 GefStoffV. Die Software wertet Sicherheitsdatenblätter (SDB) KI-gestützt aus, erstellt Entwürfe für Betriebsanweisungen nach TRGS 555 und stellt Notfallinformationen per QR-Code am Arbeitsplatz bereit. Jeder KI-gestützte Entwurf (gemäß TRGS 555) ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).",
  "featureList": [
- "Browserbasierte Cloud-Gefahrstoffverwaltung ohne Installation",
- "Gefahrstoffverzeichnis nach § 6 GefStoffV mit Revisionsverlauf",
- "KI-Extraktion aus Sicherheitsdatenblättern (GHS, H/P-Sätze, Schutzmaßnahmen)",
- "Digitales GHS-Piktogramm-Management",
- "Mengenüberwachung und Alerts",
- "QR-Notfallansicht am Einsatzort",
- "TRGS 510 Lagerklasse und TRGS 600 Substitutionshinweise"
+  "Gefahrstoffverzeichnis nach § 6 GefStoffV",
+  "TRGS 555 Entwurfs-Generator",
+  "SDB-PDF-Datenextraktion",
+  "Multi-Mandanten- und Werksverwaltung für SiFas",
+  "PDF- und Excel-Export mit GHS-Piktogrammen",
+  "QR-Code-Notfallabruf",
+  "Erfassung ohne vorliegendes SDB",
+  "TRGS-510-Zusammenlagerungshinweise"
  ],
- "provider": { "@id": "https://gefahrstoff-qr.de/#organization" },
  "audience": {
- "@type": "BusinessAudience",
- "audienceType": "Handwerksbetriebe, Werkstätten, KMU, Sicherheitsfachkräfte, Labore"
+  "@type": "BusinessAudience",
+  "audienceType": "Fachkräfte für Arbeitssicherheit, SiFas, KMU, Produktionsbetriebe, Handwerksbetriebe",
+  "geographicArea": {
+   "@type": "Country",
+   "name": "Deutschland"
+  }
+ },
+ "provider": {
+  "@id": "https://gefahrstoff-qr.de/#organization"
  },
  "offers": [
- {
- "@type": "Offer",
- "name": "TarifVorschau",
- "description": "Bis zu 3 SDB-Uploads, KI-Auswertung im Browser, PDF mit MUSTER-Wasserzeichen",
- "price": "0",
- "priceCurrency": "EUR"
- },
- {
- "@type": "Offer",
- "name": "KMU Basis",
- "description": "Bis 30 Gefahrstoffe, 1 Werk, KI-gestützte BA-Entwürfe, PDF/Excel-Export, QR-Notfallansicht",
- "price": "59",
- "priceCurrency": "EUR",
- "priceSpecification": {
- "@type": "UnitPriceSpecification",
- "price": "59",
- "priceCurrency": "EUR",
- "unitText": "MONTH"
- }
- },
- {
- "@type": "Offer",
- "name": "KMU Pro",
- "description": "Bis 250 Gefahrstoffe, bis 3 Werke, Batch-Upload, mehrere Nutzer, SDB-Aktualitäts-Alerts",
- "price": "119",
- "priceCurrency": "EUR",
- "priceSpecification": {
- "@type": "UnitPriceSpecification",
- "price": "119",
- "priceCurrency": "EUR",
- "unitText": "MONTH"
- }
- },
- {
- "@type": "Offer",
- "name": "SiFa Multi-Mandant",
- "description": "Mandanten- und Werkstrennung für externe SiFas, Begehungs-Modus, PDF-Rechnung möglich",
- "price": "189",
- "priceCurrency": "EUR",
- "priceSpecification": {
- "@type": "UnitPriceSpecification",
- "price": "189",
- "priceCurrency": "EUR",
- "unitText": "MONTH"
- }
- }
+  {
+   "@type": "Offer",
+   "name": "TarifVorschau",
+   "description": "bis zu 3 SDB-Uploads. KI-Auswertung im Browser ansehen, PDF-Vorschau nur mit „MUSTER“-Wasserzeichen, Kein Excel-Export, keine dauerhaften QR-Links",
+   "price": "0",
+   "priceCurrency": "EUR"
+  },
+  {
+   "@type": "Offer",
+   "name": "KMU Basis",
+   "description": "bis 30 Gefahrstoffe, 1 Werk, unbegrenzt Lagerorte. KI-gestützte BA-Entwürfe, PDF- & Excel-Export (ohne Wasserzeichen), Aktive QR-Notfallansicht am Arbeitsplatz",
+   "price": "59",
+   "priceCurrency": "EUR",
+   "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "price": "59",
+    "priceCurrency": "EUR",
+    "unitText": "MONTH"
+   }
+  },
+  {
+   "@type": "Offer",
+   "name": "KMU Pro",
+   "description": "bis 250 Gefahrstoffe, bis 3 Werke, unbegrenzt Lagerorte. Batch-Upload (mehrere SDBs gleichzeitig), Mehrere Nutzer-Logins, KI-gestützte BA-Entwürfe & PDF/Excel-Export, SDB-Aktualitäts-Alerts",
+   "price": "119",
+   "priceCurrency": "EUR",
+   "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "price": "119",
+    "priceCurrency": "EUR",
+    "unitText": "MONTH"
+   }
+  },
+  {
+   "@type": "Offer",
+   "name": "SiFa Multi-Mandant",
+   "description": "unbegrenzte Mandanten & Werke (Fair-Use). Saubere Mandanten-, Werks- & Tätigkeitstrennung, Erfassung auch ohne SDB (Begehungs-Modus), Batch-Upload & alle PDF/Excel-Exporte inkl. GHS, Direktkauf auf monatliche PDF-Rechnung möglich",
+   "price": "189",
+   "priceCurrency": "EUR",
+   "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "price": "189",
+    "priceCurrency": "EUR",
+    "unitText": "MONTH"
+   }
+  }
  ]
- }
+}
  </script>
+<!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
 
  <script type="application/ld+json">
  {
@@ -199,127 +212,128 @@
  }
  </script>
 
-<!-- FAQPage JSON-LD: sync with config/landing-home-seo-faq.ts -->
+<!--AEO:FAQ_JSONLD-->
  <script type="application/ld+json">
- {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-   {
-    "@type": "Question",
-    "name": "Wie unterstützt Gefahrstoff-QR beim Gefahrstoffverzeichnis nach § 6 GefStoffV?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Gefahrstoff-QR ist eine browserbasierte Software, die aus Sicherheitsdatenblättern einen KI-gestützten Entwurf für das Gefahrstoffverzeichnis nach § 6 GefStoffV erstellt. Die Angaben werden mit Verweis auf den jeweiligen SDB-Abschnitt ausgelesen, den Tätigkeiten und Arbeitsbereichen zugeordnet und als PDF oder Excel inklusive GHS-Piktogrammen exportiert. Die SiFa bzw. der Arbeitgeber prüft den Entwurf und gibt ihn fachlich frei."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Eignet sich Gefahrstoff-QR für externe Fachkräfte für Arbeitssicherheit (SiFas) mit mehreren Mandanten?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Ja, Gefahrstoff-QR bietet für externe SiFas und Ingenieurbüros eine Multi-Mandanten-Verwaltung, in der Kundenbetriebe als Mandanten, darunter Werke und Arbeitsbereiche bzw. Tätigkeiten strikt getrennt geführt werden. Bei der Begehung lassen sich Gefahrstoffe auch ohne vorliegendes Sicherheitsdatenblatt oder Mengenangabe vorab erfassen. Fehlende Angaben werden im Export farblich markiert und können später nachgepflegt werden."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Ersetzt die KI-Auswertung die fachliche Prüfung nach TRGS 555 und § 14 GefStoffV?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Nein, Gefahrstoff-QR erstellt aus dem Sicherheitsdatenblatt des Lieferanten strukturierte Entwürfe, die fachliche Prüfung bleibt beim Menschen. Jeder KI-gestützte Entwurf (gemäß TRGS 555) ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV). Die Anpassung an die Bedingungen am Arbeitsplatz und die Freigabe erfolgen durch die verantwortliche Person."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Können Unternehmen und SiFas Gefahrstoff-QR auf Rechnung beziehen?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Ja, neben der direkten Online-Buchung können Geschäftskunden und SiFas im Multi-Mandanten-Tarif per monatlicher PDF-Rechnung und Überweisung zahlen. Eine langfristige Vertragsbindung besteht nicht, die Pakete sind monatlich kündbar. Das Angebot richtet sich ausschließlich an Unternehmen, Gewerbetreibende und freiberufliche Sicherheitsfachkräfte (§ 14 BGB)."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Was ist eine Gefahrstoffmanagement Software?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Eine Gefahrstoffmanagement Software ist ein digitales System, mit dem Betriebe ihr Gefahrstoffverzeichnis nach § 6 GefStoffV, die zugehörigen Sicherheitsdatenblätter, Betriebsanweisungen und Lagerinformationen an einer Stelle führen. Gegenüber Excel-Listen bietet sie Versionierung, Erinnerungen an SDB-Aktualisierungen und einen Revisionsverlauf. Gefahrstoff-QR läuft im Browser und erstellt aus dem Sicherheitsdatenblatt einen KI-gestützten Entwurf zur fachlichen Freigabe durch die SiFa / den Arbeitgeber."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Welche Pflichtangaben muss ein Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthalten?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Ein Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthält mindestens die Bezeichnung des Gefahrstoffs, die Einstufung bzw. die gefährlichen Eigenschaften (GHS-Gefahrenklassen und -kategorien), die verwendeten Mengenbereiche im Betrieb, die betroffenen Arbeitsbereiche und einen Verweis auf das aktuelle Sicherheitsdatenblatt. In Excel fehlen häufig die Verknüpfung zur gültigen SDB-Version und Zeitstempel pro Änderung. Gefahrstoff-QR strukturiert diese Pflichtfelder aus dem SDB-PDF als Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber und führt einen Revisionsverlauf."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Wie oft muss das Gefahrstoffverzeichnis aktualisiert werden?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Das Gefahrstoffverzeichnis muss bei wesentlichen Änderungen fortgeschrieben und mindestens einmal jährlich überprüft werden. Wesentliche Änderungen sind zum Beispiel neue Stoffe, geänderte Mengen oder Arbeitsbereiche und neue Versionen des Sicherheitsdatenblatts. Gefahrstoff-QR erinnert an fällige SDB-Aktualisierungen und dokumentiert jede Änderung mit Zeitstempel und Nutzer."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Reicht Excel als Gefahrstoffverzeichnis aus?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Excel kann die Pflichtfelder abbilden, deckt aber laufende Aktualität, Versionierung der Sicherheitsdatenblätter und den Nachweis von Änderungen nur mit viel Handarbeit ab. Genau diese Punkte prüfen SiFa und Aufsichtsbehörden bei Betriebsprüfungen. Gefahrstoff-QR führt KI-gestützte Extraktion, fachliche Freigabe und den PDF-Export des Verzeichnisses in einer Datenbasis zusammen, ohne Abtipp-Marathon."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Wie dokumentiere ich die Zusammenlagerungsprüfung nach TRGS 510?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Nach TRGS 510 gleichen Sie die Lagerklassen (LGK) der Stoffe über die Zusammenlagerungstabelle ab, und zwar bei jeder neuen Charge oder Lagerplatzänderung erneut. Ein Screenshot oder Excel-Hinweis zeigt bei Audits selten, welche Kombination zum Prüfzeitpunkt bewertet wurde. Gefahrstoff-QR ordnet Stoffe ihrer Lagerklasse zu und weist pro Lagerort auf mögliche Konflikte hin. Die Lagerentscheidung trifft die SiFa / Fachkraft, die Verantwortung liegt beim Arbeitgeber."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Woran erkennt eine Betriebsprüfung, dass das Gefahrstoffverzeichnis veraltet ist?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Prüfer vergleichen Verzeichnisstand, SDB-Versionen und Arbeitsbereiche mit der Situation vor Ort. Abweichungen zwischen Etikett, Lagerort und dokumentiertem Eintrag gelten als Organisationsverschulden. Ordner mit PDFs oder unversionierte Excel-Listen zeigen selten, wer wann welches Feld geändert hat. Gefahrstoff-QR protokolliert Revisionen, fordert SDB-Updates zyklisch an und verknüpft jeden Eintrag mit der gültigen SDB-Version."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Was kostet Gefahrstoff-QR?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Die TarifVorschau ist kostenlos (bis zu 3 SDB-Uploads, PDF nur mit „MUSTER“-Wasserzeichen). KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, Mandanten-Trennung für externe SiFas, PDF-Rechnung möglich). Alle Preise zzgl. MwSt., monatlich kündbar."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Wo werden die Daten gehostet?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Die Daten werden in Deutschland gehostet, ein Auftragsverarbeitungsvertrag (AVV) ist inklusive. Die Verbindung ist SSL-verschlüsselt, Konten lassen sich mit Zwei-Faktor-Authentifizierung schützen. Details zu Zweckbindung und Löschfristen stehen in der Datenschutzerklärung."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Unterstützt Gefahrstoff-QR auch TRGS 555, TRGS 600 und REACH?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Ja, im Rahmen der Vorprüfung. Die Einstufung erfolgt nach CLP-Verordnung, REACH-relevante Daten wie die UFI können geführt werden. Gefahrstoff-QR unterstützt bei TRGS 510 (Lagerung), TRGS 555 (Betriebsanweisung als KI-gestützter Entwurf) und TRGS 600 (Hinweise zur Substitutionsprüfung bei KMR-Stoffen). Die fachliche Bewertung bleibt bei der SiFa / dem Arbeitgeber."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Wie aufwendig ist der Umstieg von Excel auf Gefahrstoff-QR?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Der Umstieg braucht kein IT-Projekt, weil Gefahrstoff-QR im Browser läuft. Vorhandene Sicherheitsdatenblätter laden Sie ab dem Professional-Paket per Batch-Upload in einem Rutsch hoch. Alternativ begleitet Sie der Umzugsservice persönlich beim Erstimport."
-    }
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Wie unterstützt Gefahrstoff-QR beim Gefahrstoffverzeichnis nach § 6 GefStoffV?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Gefahrstoff-QR ist eine browserbasierte Software, die aus Sicherheitsdatenblättern einen KI-gestützten Entwurf für das Gefahrstoffverzeichnis nach § 6 GefStoffV erstellt. Die Angaben werden mit Verweis auf den jeweiligen SDB-Abschnitt ausgelesen, den Tätigkeiten und Arbeitsbereichen zugeordnet und als PDF oder Excel inklusive GHS-Piktogrammen exportiert. Die SiFa bzw. der Arbeitgeber prüft den Entwurf und gibt ihn fachlich frei."
    }
-  ]
- }
+  },
+  {
+   "@type": "Question",
+   "name": "Eignet sich Gefahrstoff-QR für externe Fachkräfte für Arbeitssicherheit (SiFas) mit mehreren Mandanten?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ja, Gefahrstoff-QR bietet für externe SiFas und Ingenieurbüros eine Multi-Mandanten-Verwaltung, in der Kundenbetriebe als Mandanten, darunter Werke und Arbeitsbereiche bzw. Tätigkeiten strikt getrennt geführt werden. Bei der Begehung lassen sich Gefahrstoffe auch ohne vorliegendes Sicherheitsdatenblatt oder Mengenangabe vorab erfassen. Fehlende Angaben werden im Export farblich markiert und können später nachgepflegt werden."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Ersetzt die KI-Auswertung die fachliche Prüfung nach TRGS 555 und § 14 GefStoffV?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Nein, Gefahrstoff-QR erstellt aus dem Sicherheitsdatenblatt des Lieferanten strukturierte Entwürfe, die fachliche Prüfung bleibt beim Menschen. Jeder KI-gestützte Entwurf (gemäß TRGS 555) ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV). Die Anpassung an die Bedingungen am Arbeitsplatz und die Freigabe erfolgen durch die verantwortliche Person."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Können Unternehmen und SiFas Gefahrstoff-QR auf Rechnung beziehen?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ja, neben der direkten Online-Buchung können Geschäftskunden und SiFas im Multi-Mandanten-Tarif per monatlicher PDF-Rechnung und Überweisung zahlen. Eine langfristige Vertragsbindung besteht nicht, die Pakete sind monatlich kündbar. Das Angebot richtet sich ausschließlich an Unternehmen, Gewerbetreibende und freiberufliche Sicherheitsfachkräfte (§ 14 BGB)."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Was ist eine Gefahrstoffmanagement Software?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Eine Gefahrstoffmanagement Software ist ein digitales System, mit dem Betriebe ihr Gefahrstoffverzeichnis nach § 6 GefStoffV, die zugehörigen Sicherheitsdatenblätter, Betriebsanweisungen und Lagerinformationen an einer Stelle führen. Gegenüber Excel-Listen bietet sie Versionierung, Erinnerungen an SDB-Aktualisierungen und einen Revisionsverlauf. Gefahrstoff-QR läuft im Browser und erstellt aus dem Sicherheitsdatenblatt einen KI-gestützten Entwurf zur fachlichen Freigabe durch die SiFa / den Arbeitgeber."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Welche Pflichtangaben muss ein Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthalten?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ein Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthält mindestens die Bezeichnung des Gefahrstoffs, die Einstufung bzw. die gefährlichen Eigenschaften (GHS-Gefahrenklassen und -kategorien), die verwendeten Mengenbereiche im Betrieb, die betroffenen Arbeitsbereiche und einen Verweis auf das aktuelle Sicherheitsdatenblatt. In Excel fehlen häufig die Verknüpfung zur gültigen SDB-Version und Zeitstempel pro Änderung. Gefahrstoff-QR strukturiert diese Pflichtfelder aus dem SDB-PDF als Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber und führt einen Revisionsverlauf."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wie oft muss das Gefahrstoffverzeichnis aktualisiert werden?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Das Gefahrstoffverzeichnis muss bei wesentlichen Änderungen fortgeschrieben und mindestens einmal jährlich überprüft werden. Wesentliche Änderungen sind zum Beispiel neue Stoffe, geänderte Mengen oder Arbeitsbereiche und neue Versionen des Sicherheitsdatenblatts. Gefahrstoff-QR erinnert an fällige SDB-Aktualisierungen und dokumentiert jede Änderung mit Zeitstempel und Nutzer."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Reicht Excel als Gefahrstoffverzeichnis aus?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Excel kann die Pflichtfelder abbilden, deckt aber laufende Aktualität, Versionierung der Sicherheitsdatenblätter und den Nachweis von Änderungen nur mit viel Handarbeit ab. Genau diese Punkte prüfen SiFa und Aufsichtsbehörden bei Betriebsprüfungen. Gefahrstoff-QR führt KI-gestützte Extraktion, fachliche Freigabe und den PDF-Export des Verzeichnisses in einer Datenbasis zusammen, ohne Abtipp-Marathon."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wie dokumentiere ich die Zusammenlagerungsprüfung nach TRGS 510?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Nach TRGS 510 gleichen Sie die Lagerklassen (LGK) der Stoffe über die Zusammenlagerungstabelle ab, und zwar bei jeder neuen Charge oder Lagerplatzänderung erneut. Ein Screenshot oder Excel-Hinweis zeigt bei Audits selten, welche Kombination zum Prüfzeitpunkt bewertet wurde. Gefahrstoff-QR ordnet Stoffe ihrer Lagerklasse zu und weist pro Lagerort auf mögliche Konflikte hin. Die Lagerentscheidung trifft die SiFa / Fachkraft, die Verantwortung liegt beim Arbeitgeber."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Woran erkennt eine Betriebsprüfung, dass das Gefahrstoffverzeichnis veraltet ist?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Prüfer vergleichen Verzeichnisstand, SDB-Versionen und Arbeitsbereiche mit der Situation vor Ort. Abweichungen zwischen Etikett, Lagerort und dokumentiertem Eintrag gelten als Organisationsverschulden. Ordner mit PDFs oder unversionierte Excel-Listen zeigen selten, wer wann welches Feld geändert hat. Gefahrstoff-QR protokolliert Revisionen, fordert SDB-Updates zyklisch an und verknüpft jeden Eintrag mit der gültigen SDB-Version."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Was kostet Gefahrstoff-QR?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Die TarifVorschau ist kostenlos (bis zu 3 SDB-Uploads, PDF nur mit „MUSTER“-Wasserzeichen). KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, Mandanten-Trennung für externe SiFas, PDF-Rechnung möglich). Alle Preise zzgl. MwSt., monatlich kündbar."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wo werden die Daten gehostet?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Die Daten werden in Deutschland gehostet, ein Auftragsverarbeitungsvertrag (AVV) ist inklusive. Die Verbindung ist SSL-verschlüsselt, Konten lassen sich mit Zwei-Faktor-Authentifizierung schützen. Details zu Zweckbindung und Löschfristen stehen in der Datenschutzerklärung."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Unterstützt Gefahrstoff-QR auch TRGS 555, TRGS 600 und REACH?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ja, im Rahmen der Vorprüfung. Die Einstufung erfolgt nach CLP-Verordnung, REACH-relevante Daten wie die UFI können geführt werden. Gefahrstoff-QR unterstützt bei TRGS 510 (Lagerung), TRGS 555 (Betriebsanweisung als KI-gestützter Entwurf) und TRGS 600 (Hinweise zur Substitutionsprüfung bei KMR-Stoffen). Die fachliche Bewertung bleibt bei der SiFa / dem Arbeitgeber."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wie aufwendig ist der Umstieg von Excel auf Gefahrstoff-QR?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Der Umstieg braucht kein IT-Projekt, weil Gefahrstoff-QR im Browser läuft. Vorhandene Sicherheitsdatenblätter laden Sie ab dem Professional-Paket per Batch-Upload in einem Rutsch hoch. Alternativ begleitet Sie der Umzugsservice persönlich beim Erstimport."
+   }
+  }
+ ]
+}
  </script>
+<!--/AEO:FAQ_JSONLD-->
  </head>
 <body>
 
@@ -329,6 +343,7 @@
  <nav class="nav-desktop" aria-label="Hauptnavigation">
  <a class="nav-link" href="#produkt">Produkt</a>
  <a class="nav-link" href="#funktionen">Funktionen</a>
+ <a class="nav-link" href="#fuer-sifas">Für SiFas</a>
  <a class="nav-link" href="#preise">Preise</a>
  <a class="nav-link" href="#faq">FAQ</a>
 <a class="nav-link" href="/blog/">Blog</a>
@@ -347,6 +362,7 @@
  <nav class="mobile-links">
  <a class="nav-link" href="#produkt">Produkt</a>
  <a class="nav-link" href="#funktionen">Funktionen</a>
+ <a class="nav-link" href="#fuer-sifas">Für SiFas</a>
  <a class="nav-link" href="#preise">Preise</a>
  <a class="nav-link" href="#faq">FAQ</a>
 <a class="nav-link" href="/blog/">Blog</a>
@@ -371,6 +387,9 @@
    <a class="sds-secondary-link" href="#so-funktionierts">So funktioniert es ↓</a>
  </div>
  <p class="mt-4 w-full text-center text-sm text-[#8fa4c0] md:text-left">TarifVorschau im Browser · ohne Kreditkarte · ohne Verkaufsgespräch</p>
+<!--AEO:CTA_TRUST_LINE_HERO-->
+<p class="text-xs leading-relaxed text-[#8fa4c0] mt-2 w-full text-center md:text-left"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Deutschland (inkl. AVV)</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> PDF- &amp; Excel-Export inkl. GHS-Symbolen</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Auf Rechnung für SiFas &amp; Firmenkunden möglich</span></p>
+<!--/AEO:CTA_TRUST_LINE_HERO-->
  </div>
 
  <div class="container sds-hero__preview w-full" id="sdb-live-preview-root">
@@ -563,58 +582,13 @@ Mit Excel
  </article>
  </div>
 
- <h3 class="mx-auto mb-6 mt-14 max-w-2xl text-center text-xl font-black text-[#f0f6ff] sm:text-2xl">Excel-Liste und Gefahrstoff-QR im direkten Vergleich</h3>
- <div class="pricing-compare__scroll" tabindex="0" role="region" aria-label="Vergleich Excel-Liste und Gefahrstoff-QR als Tabelle">
- <table class="pricing-compare__table">
- <caption>Vergleich: Gefahrstoffverzeichnis in Excel und in Gefahrstoff-QR</caption>
- <thead>
- <tr>
- <th scope="col">Aufgabe</th>
- <th scope="col">Excel-Liste &amp; PDF-Ordner</th>
- <th scope="col" class="pricing-compare__col--highlight">Gefahrstoff-QR</th>
- </tr>
- </thead>
- <tbody>
- <tr>
- <th scope="row">Daten aus dem Sicherheitsdatenblatt erfassen</th>
- <td>H- und P-Sätze, GHS und Lagerklasse von Hand abtippen</td>
- <td class="pricing-compare__col--highlight">KI-gestützter Entwurf aus dem PDF, Prüfung und Freigabe durch die SiFa</td>
- </tr>
- <tr>
- <th scope="row">Aktualität der Sicherheitsdatenblätter</th>
- <td>Manuell nachhalten und beim Lieferanten anfragen</td>
- <td class="pricing-compare__col--highlight">Erinnerungen und automatische SDB-Anforderung</td>
- </tr>
- <tr>
- <th scope="row">Nachweis von Änderungen</th>
- <td>Keine Historie, wer wann welches Feld geändert hat</td>
- <td class="pricing-compare__col--highlight">Revisionsverlauf mit Zeitstempel und Nutzer</td>
- </tr>
- <tr>
- <th scope="row">Zusammenlagerung nach TRGS 510</th>
- <td>Lagerklassen-Matrix im Ordner abgleichen</td>
- <td class="pricing-compare__col--highlight">Konflikthinweise pro Lagerort zur Bewertung durch die Fachkraft</td>
- </tr>
- <tr>
- <th scope="row">Betriebsanweisung</th>
- <td>Word-Vorlage pro Stoff pflegen</td>
- <td class="pricing-compare__col--highlight">KI-gestützter Entwurf (gemäß TRGS 555) zur Freigabe</td>
- </tr>
- <tr>
- <th scope="row">Notfallinfos am Arbeitsplatz</th>
- <td>Ordner im Büro oder Netzlaufwerk</td>
- <td class="pricing-compare__col--highlight">QR-Code am Gebinde, Ansicht auf dem Smartphone</td>
- </tr>
- <tr>
- <th scope="row">Mehrere Standorte</th>
- <td>Getrennte Dateien pro Werk</td>
- <td class="pricing-compare__col--highlight">Werk, Abteilung und Lagerort in einer Datenbasis</td>
- </tr>
- </tbody>
- </table>
- </div>
  </div>
  </section>
+
+ <!-- VERGLEICH (AEO): Excel vs. Gefahrstoff-QR, generiert aus config/home-sections/excel-comparison.ts -->
+<!--AEO:EXCEL_COMPARISON-->
+<section id="vergleich-excel" class="border-t border-white/[0.07] py-14 lg:py-24" aria-labelledby="excelComparisonHeadline"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><header class="mx-auto mb-12 max-w-2xl text-center"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Vergleich</p><h2 id="excelComparisonHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Vergleich: Klassische Excel-Gefahrstoffliste vs. Gefahrstoff-QR</h2><p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">Die Pflichtangaben nach § 6 GefStoffV lassen sich in Excel abbilden. Der Unterschied liegt im Aufwand für Erfassung, Aktualisierung und Nachweis gegenüber der Betriebsprüfung.</p></header><div class="pricing-compare__scroll" tabindex="0" role="region" aria-labelledby="excelComparisonHeadline"><table class="pricing-compare__table"><caption>Manuelle Pflege in Excel und Word im Vergleich zum digitalen Workflow mit Gefahrstoff-QR</caption><thead><tr><th scope="col">Kriterium</th><th scope="col">Manuelle Pflege (Excel &amp; Word)</th><th scope="col" class="pricing-compare__col--highlight">Digitaler Workflow mit Gefahrstoff-QR</th></tr></thead><tbody><tr><th scope="row">Datenerfassung aus SDB</th><td>Manuelles Suchen und Abtippen aus 16 SDB-Abschnitten</td><td class="pricing-compare__col--highlight">KI-gestütztes Auslesen mit direkter SDB-Abschnittsreferenz (z. B. SDB 1.1, 2.2, 8.2)</td></tr><tr><th scope="row">Fehlende SDBs / Mengenangaben bei Begehung</th><td>Unübersichtliche Lücken in Tabellen</td><td class="pricing-compare__col--highlight">Vorab-Erfassung ohne SDB möglich; fehlende Angaben werden im PDF und Excel rot markiert</td></tr><tr><th scope="row">GHS-Piktogramme im Export</th><td>Mühsames manuelles Einfügen von Bilddateien</td><td class="pricing-compare__col--highlight">Originalgetreue GHS-Piktogramme direkt im Gefahrstoffverzeichnis-PDF und Excel-Export</td></tr><tr><th scope="row">Mehrere Kunden / Standorte (für SiFas)</th><td>Dutzende getrennte Excel-Dateien und Ordner</td><td class="pricing-compare__col--highlight">Zentrale Multi-Mandanten-Verwaltung mit Unterteilung nach Mandant, Werk und Tätigkeit</td></tr><tr><th scope="row">Zugriff am Arbeitsplatz (§ 14 GefStoffV)</th><td>Statische Papierordner, oft veraltet</td><td class="pricing-compare__col--highlight">Smartphone-Abruf von Erste-Hilfe- und Schutzmaßnahmen per QR-Code am Gebinde</td></tr><tr><th scope="row">Fachliche Freigabe</th><td>Keine strukturierte Status-Verfolgung</td><td class="pricing-compare__col--highlight">Klare Trennung zwischen KI-gestütztem Entwurf und fachlicher Freigabe durch SiFa / Arbeitgeber</td></tr></tbody></table></div></div></section>
+<!--/AEO:EXCEL_COMPARISON-->
 
  <!-- SO FUNKTIONIERT ES: 3 Schritte -->
  <section id="so-funktionierts" class="border-t border-white/[0.07] py-14 lg:py-24" aria-labelledby="stepsHeadline">
@@ -644,6 +618,9 @@ Mit Excel
  <div class="mt-10 flex flex-col items-center gap-3">
  <a class="btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base" href="https://app.gefahrstoff-qr.de/register">Erstes Sicherheitsdatenblatt kostenlos hochladen</a>
  <p class="text-sm text-[#8fa4c0]">TarifVorschau im Browser · ohne Kreditkarte</p>
+<!--AEO:CTA_TRUST_LINE-->
+<p class="text-xs leading-relaxed text-[#8fa4c0] mx-auto mt-3 max-w-xl text-center"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Deutschland (inkl. AVV)</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> PDF- &amp; Excel-Export inkl. GHS-Symbolen</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Auf Rechnung für SiFas &amp; Firmenkunden möglich</span></p>
+<!--/AEO:CTA_TRUST_LINE-->
  </div>
  </div>
  </section>
@@ -1183,7 +1160,7 @@ Mit Excel
 
  <strong class="kataster-prose__subhead">Praxiserprobt für KMU</strong>
  <p>
- Ob Werkstatt, Handwerk oder Labor: GQR liefert einen durchgängigen Workflow – von der KI-gestützten Erfassung
+ Ob Werkstatt, Handwerk oder Labor: GQR liefert einen durchgängigen Workflow: von der KI-gestützten Erfassung
  bis zur <strong>QR-Notfallansicht am Gebinde</strong>.
  <a href="https://app.gefahrstoff-qr.de/register">Testen Sie jetzt</a>,
  ob Ihr aktuelles System den harten Anforderungen der Aufsichtsbehörden standhält.
@@ -1314,6 +1291,11 @@ Mit Excel
 
  </div>
  </section>
+
+ <!-- SIFA MULTI-MANDANT (CRO): generiert aus config/home-sections/multi-tenant-sifa.ts -->
+<!--AEO:MULTI_TENANT_SIFA-->
+<section id="fuer-sifas" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="multiTenantSifaHeadline"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><header class="mx-auto mb-12 max-w-2xl text-center"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Für externe SiFas &amp; Arbeitsschutz-Büros (Multi-Mandant)</p><h2 id="multiTenantSifaHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Betreuen Sie mehrere Betriebe? Alle Mandanten und Werke in einem Zugang.</h2><p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">Für freiberufliche Fachkräfte für Arbeitssicherheit und Ingenieurbüros, die Gefahrstoffverzeichnisse für mehrere Kundenbetriebe führen.</p></header><ul class="grid list-none gap-6 p-0 sm:grid-cols-2"><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Saubere Mandanten- &amp; Werkstrennung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Verwalten Sie mehrere Kundenbetriebe, Standorte (Werke) und spezifische Tätigkeiten strikt getrennt in einem Account.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Begehungs-Modus (Erfassung ohne SDB)</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Nehmen Sie Gefahrstoffe schon beim Rundgang ohne SDB oder Mengenangabe auf. Offene Felder markiert das System im Export farblich zur späteren Nachpflege.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Exporte für die Betriebsprüfung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Exportieren Sie das Gefahrstoffverzeichnis nach § 6 GefStoffV inkl. echter GHS-Piktogramme und Tätigkeitenzuordnung als PDF oder Excel.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Klassischer Kauf auf Rechnung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Für SiFas, Ingenieurbüros und Firmenkunden bieten wir im Multi-Mandanten-Tarif die gewohnte Abrechnung per monatlicher PDF-Rechnung und Überweisung an.</p></li></ul><div class="mt-10 flex flex-col items-center gap-3"><a class="btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base" href="https://app.gefahrstoff-qr.de/register">Multi-Mandanten-Zugang anfragen / testen →</a><a class="sds-secondary-link" href="mailto:info@gefahrstoff-qr.de?subject=Multi-Mandanten-Zugang%20auf%20Rechnung">Kauf auf Rechnung per E-Mail anfragen</a><p class="text-xs leading-relaxed text-[#8fa4c0] text-center"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Deutschland (inkl. AVV)</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> PDF- &amp; Excel-Export inkl. GHS-Symbolen</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Auf Rechnung für SiFas &amp; Firmenkunden möglich</span></p></div></div></section>
+<!--/AEO:MULTI_TENANT_SIFA-->
 
  <!-- PRICING -->
  <section id="preise" class="border-t mt-8 border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="pricingHeadline">
@@ -1538,6 +1520,9 @@ Mit Excel
  <a href="https://app.gefahrstoff-qr.de/register" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Kostenlos starten</a>,
  ohne Kreditkarte.
  </p>
+<!--AEO:CTA_TRUST_LINE-->
+<p class="text-xs leading-relaxed text-[#8fa4c0] mx-auto mt-3 max-w-xl text-center"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Deutschland (inkl. AVV)</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> PDF- &amp; Excel-Export inkl. GHS-Symbolen</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Auf Rechnung für SiFas &amp; Firmenkunden möglich</span></p>
+<!--/AEO:CTA_TRUST_LINE-->
  </div>
  </section>
 
@@ -1550,98 +1535,11 @@ Mit Excel
  <p class="mt-3 text-sm text-[#8fa4c0] sm:text-base">Kurz, sachlich und praxisnah. Für SiFa, Geschäftsführung und IT. <time datetime="2026-11">Stand: November 2026</time></p>
  </div>
 
- <!-- FAQ: Antworten synchron mit config/landing-home-seo-faq.ts (npm run sync:home-faq) -->
+ <!-- FAQ: generiert aus config/landing-home-seo-faq.ts (npm run sync:home) -->
  <div id="sifa-faq" class="divide-y divide-white/10 rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 px-4 sm:px-6">
-<!--FAQ_ITEMS_START-->
- <details class="gqr-faq group py-5" open>
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
- Was ist eine Gefahrstoffmanagement Software?
- </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
- <p>Eine Gefahrstoffmanagement Software ist ein digitales System, mit dem Betriebe ihr Gefahrstoffverzeichnis nach § 6 GefStoffV, die zugehörigen Sicherheitsdatenblätter, Betriebsanweisungen und Lagerinformationen an einer Stelle führen. Gegenüber Excel-Listen bietet sie Versionierung, Erinnerungen an SDB-Aktualisierungen und einen Revisionsverlauf. Gefahrstoff-QR läuft im Browser und erstellt aus dem Sicherheitsdatenblatt einen KI-gestützten Entwurf zur fachlichen Freigabe durch die SiFa / den Arbeitgeber.</p>
- </div>
- </details>
- <details class="gqr-faq group py-5">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
- Welche Pflichtangaben muss ein Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthalten?
- </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
- <p>Ein Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthält mindestens die Bezeichnung des Gefahrstoffs, die Einstufung bzw. die gefährlichen Eigenschaften (GHS-Gefahrenklassen und -kategorien), die verwendeten Mengenbereiche im Betrieb, die betroffenen Arbeitsbereiche und einen Verweis auf das aktuelle Sicherheitsdatenblatt. In Excel fehlen häufig die Verknüpfung zur gültigen SDB-Version und Zeitstempel pro Änderung. Gefahrstoff-QR strukturiert diese Pflichtfelder aus dem SDB-PDF als Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber und führt einen Revisionsverlauf.</p>
- </div>
- </details>
- <details class="gqr-faq group py-5">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
- Wie oft muss das Gefahrstoffverzeichnis aktualisiert werden?
- </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
- <p>Das Gefahrstoffverzeichnis muss bei wesentlichen Änderungen fortgeschrieben und mindestens einmal jährlich überprüft werden. Wesentliche Änderungen sind zum Beispiel neue Stoffe, geänderte Mengen oder Arbeitsbereiche und neue Versionen des Sicherheitsdatenblatts. Gefahrstoff-QR erinnert an fällige SDB-Aktualisierungen und dokumentiert jede Änderung mit Zeitstempel und Nutzer.</p>
- </div>
- </details>
- <details class="gqr-faq group py-5">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
- Reicht Excel als Gefahrstoffverzeichnis aus?
- </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
- <p>Excel kann die Pflichtfelder abbilden, deckt aber laufende Aktualität, Versionierung der Sicherheitsdatenblätter und den Nachweis von Änderungen nur mit viel Handarbeit ab. Genau diese Punkte prüfen SiFa und Aufsichtsbehörden bei Betriebsprüfungen. Gefahrstoff-QR führt KI-gestützte Extraktion, fachliche Freigabe und den PDF-Export des Verzeichnisses in einer Datenbasis zusammen, ohne Abtipp-Marathon.</p>
- </div>
- </details>
- <details class="gqr-faq group py-5">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
- Wer gibt die KI-Entwürfe frei?
- </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
- <p>Die fachliche Freigabe liegt immer bei der Sicherheitsfachkraft (SiFa) oder dem Arbeitgeber. Gefahrstoff-QR liefert einen KI-gestützten Entwurf (gemäß TRGS 555) als Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV). Die KI übernimmt das Auslesen und Strukturieren der Daten aus dem Sicherheitsdatenblatt, die Bewertung bleibt beim Menschen.</p>
- </div>
- </details>
- <details class="gqr-faq group py-5">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
- Wie dokumentiere ich die Zusammenlagerungsprüfung nach TRGS 510?
- </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
- <p>Nach TRGS 510 gleichen Sie die Lagerklassen (LGK) der Stoffe über die Zusammenlagerungstabelle ab, und zwar bei jeder neuen Charge oder Lagerplatzänderung erneut. Ein Screenshot oder Excel-Hinweis zeigt bei Audits selten, welche Kombination zum Prüfzeitpunkt bewertet wurde. Gefahrstoff-QR ordnet Stoffe ihrer Lagerklasse zu und weist pro Lagerort auf mögliche Konflikte hin. Die Lagerentscheidung trifft die SiFa / Fachkraft, die Verantwortung liegt beim Arbeitgeber.</p>
- </div>
- </details>
- <details class="gqr-faq group py-5">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
- Woran erkennt eine Betriebsprüfung, dass das Gefahrstoffverzeichnis veraltet ist?
- </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
- <p>Prüfer vergleichen Verzeichnisstand, SDB-Versionen und Arbeitsbereiche mit der Situation vor Ort. Abweichungen zwischen Etikett, Lagerort und dokumentiertem Eintrag gelten als Organisationsverschulden. Ordner mit PDFs oder unversionierte Excel-Listen zeigen selten, wer wann welches Feld geändert hat. Gefahrstoff-QR protokolliert Revisionen, fordert SDB-Updates zyklisch an und verknüpft jeden Eintrag mit der gültigen SDB-Version.</p>
- </div>
- </details>
- <details class="gqr-faq group py-5">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
- Was kostet Gefahrstoff-QR?
- </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
- <p>Die TarifVorschau ist kostenlos (bis zu 3 SDB-Uploads, PDF nur mit „MUSTER“-Wasserzeichen). KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, Mandanten-Trennung für externe SiFas, PDF-Rechnung möglich). Alle Preise zzgl. MwSt., monatlich kündbar.</p>
- </div>
- </details>
- <details class="gqr-faq group py-5">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
- Wo werden die Daten gehostet?
- </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
- <p>Die Daten werden in Deutschland gehostet, ein Auftragsverarbeitungsvertrag (AVV) ist inklusive. Die Verbindung ist SSL-verschlüsselt, Konten lassen sich mit Zwei-Faktor-Authentifizierung schützen. Details zu Zweckbindung und Löschfristen stehen in der Datenschutzerklärung.</p>
- </div>
- </details>
- <details class="gqr-faq group py-5">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
- Unterstützt Gefahrstoff-QR auch TRGS 555, TRGS 600 und REACH?
- </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
- <p>Ja, im Rahmen der Vorprüfung. Die Einstufung erfolgt nach CLP-Verordnung, REACH-relevante Daten wie die UFI können geführt werden. Gefahrstoff-QR unterstützt bei TRGS 510 (Lagerung), TRGS 555 (Betriebsanweisung als KI-gestützter Entwurf) und TRGS 600 (Hinweise zur Substitutionsprüfung bei KMR-Stoffen). Die fachliche Bewertung bleibt bei der SiFa / dem Arbeitgeber.</p>
- </div>
- </details>
- <details class="gqr-faq group py-5">
- <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">
- Wie aufwendig ist der Umstieg von Excel auf Gefahrstoff-QR?
- </summary>
- <div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
- <p>Der Umstieg braucht kein IT-Projekt, weil Gefahrstoff-QR im Browser läuft. Vorhandene Sicherheitsdatenblätter laden Sie ab dem Professional-Paket per Batch-Upload in einem Rutsch hoch. Alternativ begleitet Sie der Umzugsservice persönlich beim Erstimport.</p>
- </div>
- </details>
-<!--FAQ_ITEMS_END-->
+<!--AEO:FAQ_ITEMS-->
+<details class="gqr-faq group py-5" open=""><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Wie unterstützt Gefahrstoff-QR beim Gefahrstoffverzeichnis nach § 6 GefStoffV?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Gefahrstoff-QR ist eine browserbasierte Software, die aus Sicherheitsdatenblättern einen KI-gestützten Entwurf für das Gefahrstoffverzeichnis nach § 6 GefStoffV erstellt. Die Angaben werden mit Verweis auf den jeweiligen SDB-Abschnitt ausgelesen, den Tätigkeiten und Arbeitsbereichen zugeordnet und als PDF oder Excel inklusive GHS-Piktogrammen exportiert. Die SiFa bzw. der Arbeitgeber prüft den Entwurf und gibt ihn fachlich frei.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Eignet sich Gefahrstoff-QR für externe Fachkräfte für Arbeitssicherheit (SiFas) mit mehreren Mandanten?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Ja, Gefahrstoff-QR bietet für externe SiFas und Ingenieurbüros eine Multi-Mandanten-Verwaltung, in der Kundenbetriebe als Mandanten, darunter Werke und Arbeitsbereiche bzw. Tätigkeiten strikt getrennt geführt werden. Bei der Begehung lassen sich Gefahrstoffe auch ohne vorliegendes Sicherheitsdatenblatt oder Mengenangabe vorab erfassen. Fehlende Angaben werden im Export farblich markiert und können später nachgepflegt werden.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Ersetzt die KI-Auswertung die fachliche Prüfung nach TRGS 555 und § 14 GefStoffV?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Nein, Gefahrstoff-QR erstellt aus dem Sicherheitsdatenblatt des Lieferanten strukturierte Entwürfe, die fachliche Prüfung bleibt beim Menschen. Jeder KI-gestützte Entwurf (gemäß TRGS 555) ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV). Die Anpassung an die Bedingungen am Arbeitsplatz und die Freigabe erfolgen durch die verantwortliche Person.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Können Unternehmen und SiFas Gefahrstoff-QR auf Rechnung beziehen?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Ja, neben der direkten Online-Buchung können Geschäftskunden und SiFas im Multi-Mandanten-Tarif per monatlicher PDF-Rechnung und Überweisung zahlen. Eine langfristige Vertragsbindung besteht nicht, die Pakete sind monatlich kündbar. Das Angebot richtet sich ausschließlich an Unternehmen, Gewerbetreibende und freiberufliche Sicherheitsfachkräfte (§ 14 BGB).</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Was ist eine Gefahrstoffmanagement Software?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Eine Gefahrstoffmanagement Software ist ein digitales System, mit dem Betriebe ihr Gefahrstoffverzeichnis nach § 6 GefStoffV, die zugehörigen Sicherheitsdatenblätter, Betriebsanweisungen und Lagerinformationen an einer Stelle führen. Gegenüber Excel-Listen bietet sie Versionierung, Erinnerungen an SDB-Aktualisierungen und einen Revisionsverlauf. Gefahrstoff-QR läuft im Browser und erstellt aus dem Sicherheitsdatenblatt einen KI-gestützten Entwurf zur fachlichen Freigabe durch die SiFa / den Arbeitgeber.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Welche Pflichtangaben muss ein Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthalten?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Ein Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthält mindestens die Bezeichnung des Gefahrstoffs, die Einstufung bzw. die gefährlichen Eigenschaften (GHS-Gefahrenklassen und -kategorien), die verwendeten Mengenbereiche im Betrieb, die betroffenen Arbeitsbereiche und einen Verweis auf das aktuelle Sicherheitsdatenblatt. In Excel fehlen häufig die Verknüpfung zur gültigen SDB-Version und Zeitstempel pro Änderung. Gefahrstoff-QR strukturiert diese Pflichtfelder aus dem SDB-PDF als Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber und führt einen Revisionsverlauf.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Wie oft muss das Gefahrstoffverzeichnis aktualisiert werden?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Das Gefahrstoffverzeichnis muss bei wesentlichen Änderungen fortgeschrieben und mindestens einmal jährlich überprüft werden. Wesentliche Änderungen sind zum Beispiel neue Stoffe, geänderte Mengen oder Arbeitsbereiche und neue Versionen des Sicherheitsdatenblatts. Gefahrstoff-QR erinnert an fällige SDB-Aktualisierungen und dokumentiert jede Änderung mit Zeitstempel und Nutzer.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Reicht Excel als Gefahrstoffverzeichnis aus?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Excel kann die Pflichtfelder abbilden, deckt aber laufende Aktualität, Versionierung der Sicherheitsdatenblätter und den Nachweis von Änderungen nur mit viel Handarbeit ab. Genau diese Punkte prüfen SiFa und Aufsichtsbehörden bei Betriebsprüfungen. Gefahrstoff-QR führt KI-gestützte Extraktion, fachliche Freigabe und den PDF-Export des Verzeichnisses in einer Datenbasis zusammen, ohne Abtipp-Marathon.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Wie dokumentiere ich die Zusammenlagerungsprüfung nach TRGS 510?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Nach TRGS 510 gleichen Sie die Lagerklassen (LGK) der Stoffe über die Zusammenlagerungstabelle ab, und zwar bei jeder neuen Charge oder Lagerplatzänderung erneut. Ein Screenshot oder Excel-Hinweis zeigt bei Audits selten, welche Kombination zum Prüfzeitpunkt bewertet wurde. Gefahrstoff-QR ordnet Stoffe ihrer Lagerklasse zu und weist pro Lagerort auf mögliche Konflikte hin. Die Lagerentscheidung trifft die SiFa / Fachkraft, die Verantwortung liegt beim Arbeitgeber.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Woran erkennt eine Betriebsprüfung, dass das Gefahrstoffverzeichnis veraltet ist?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Prüfer vergleichen Verzeichnisstand, SDB-Versionen und Arbeitsbereiche mit der Situation vor Ort. Abweichungen zwischen Etikett, Lagerort und dokumentiertem Eintrag gelten als Organisationsverschulden. Ordner mit PDFs oder unversionierte Excel-Listen zeigen selten, wer wann welches Feld geändert hat. Gefahrstoff-QR protokolliert Revisionen, fordert SDB-Updates zyklisch an und verknüpft jeden Eintrag mit der gültigen SDB-Version.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Was kostet Gefahrstoff-QR?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Die TarifVorschau ist kostenlos (bis zu 3 SDB-Uploads, PDF nur mit „MUSTER“-Wasserzeichen). KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, Mandanten-Trennung für externe SiFas, PDF-Rechnung möglich). Alle Preise zzgl. MwSt., monatlich kündbar.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Wo werden die Daten gehostet?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Die Daten werden in Deutschland gehostet, ein Auftragsverarbeitungsvertrag (AVV) ist inklusive. Die Verbindung ist SSL-verschlüsselt, Konten lassen sich mit Zwei-Faktor-Authentifizierung schützen. Details zu Zweckbindung und Löschfristen stehen in der Datenschutzerklärung.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Unterstützt Gefahrstoff-QR auch TRGS 555, TRGS 600 und REACH?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Ja, im Rahmen der Vorprüfung. Die Einstufung erfolgt nach CLP-Verordnung, REACH-relevante Daten wie die UFI können geführt werden. Gefahrstoff-QR unterstützt bei TRGS 510 (Lagerung), TRGS 555 (Betriebsanweisung als KI-gestützter Entwurf) und TRGS 600 (Hinweise zur Substitutionsprüfung bei KMR-Stoffen). Die fachliche Bewertung bleibt bei der SiFa / dem Arbeitgeber.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Wie aufwendig ist der Umstieg von Excel auf Gefahrstoff-QR?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Der Umstieg braucht kein IT-Projekt, weil Gefahrstoff-QR im Browser läuft. Vorhandene Sicherheitsdatenblätter laden Sie ab dem Professional-Paket per Batch-Upload in einem Rutsch hoch. Alternativ begleitet Sie der Umzugsservice persönlich beim Erstimport.</p></div></details>
+<!--/AEO:FAQ_ITEMS-->
  </div>
 
  <nav class="mt-8 text-center text-sm text-[#8fa4c0]" aria-label="Weiterführende Inhalte">
@@ -1674,6 +1572,9 @@ Mit Excel
  <div class="mt-8 flex justify-center">
  <a class="btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base" href="https://app.gefahrstoff-qr.de/register">Jetzt kostenlos starten</a>
  </div>
+<!--AEO:CTA_TRUST_LINE-->
+<p class="text-xs leading-relaxed text-[#8fa4c0] mx-auto mt-3 max-w-xl text-center"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Deutschland (inkl. AVV)</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> PDF- &amp; Excel-Export inkl. GHS-Symbolen</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Auf Rechnung für SiFas &amp; Firmenkunden möglich</span></p>
+<!--/AEO:CTA_TRUST_LINE-->
 
  <p class="mx-auto mt-5 max-w-md text-xs leading-relaxed text-[#8fa4c0]">
  TarifVorschau im Browser. Upgrade nur, wenn Sie es wollen. Details in unserer <a href="/datenschutz/" class="text-teal-300 underline-offset-2 hover:underline">Datenschutzerklärung</a>.

@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run validate:legal-copy && npm run validate:betriebsanweisung && next build",
-    "build:github-pages": "npm run build:sdb-preview && npm run sync:silo-pricing && npm run generate:kfz-werkstatt-landing && npm run validate:legal-copy && npm run validate:betriebsanweisung && next build && node scripts/sync-github-pages.mjs && npm run generate:sitemap && npm run validate:sitemap && npm run validate:legal-copy-export",
+    "build:github-pages": "npm run build:sdb-preview && npm run sync:home && npm run sync:silo-pricing && npm run generate:kfz-werkstatt-landing && npm run validate:legal-copy && npm run validate:betriebsanweisung && next build && node scripts/sync-github-pages.mjs && npm run generate:sitemap && npm run validate:sitemap && npm run validate:legal-copy-export",
     "validate:legal-copy": "node scripts/validate-legal-copy.mjs",
     "validate:legal-copy-export": "node scripts/validate-legal-copy.mjs --export",
     "validate:betriebsanweisung": "npx tsx scripts/validate-betriebsanweisung-entries.ts",
@@ -17,8 +17,7 @@
     "build:sdb-preview": "node scripts/build-sdb-preview.mjs",
     "verify:sdb-preview": "node scripts/verify-sdb-preview.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
-    "sync:home-faq-jsonld": "npx tsx scripts/sync-home-faq-jsonld.ts",
-    "sync:home-faq": "npm run sync:home-faq-jsonld && npx tsx scripts/sync-home-faq-visible.ts",
+    "sync:home": "npx tsx --tsconfig tsconfig.scripts.json scripts/sync-home-aeo.tsx",
     "generate:kfz-werkstatt-landing": "node scripts/generate-kfz-werkstatt-landing.mjs",
     "sync:silo-pricing": "node scripts/sync-silo-pricing-from-home.mjs",
     "generate:logo-wordmark": "node scripts/trim-logo-wordmark.mjs",

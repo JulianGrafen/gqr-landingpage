@@ -69,6 +69,22 @@ for (const name of FAVICON_FILES) {
   console.log(`✓ ${name}`);
 }
 
+/**
+ * Aus der zentralen Konfiguration generierte Root-Dateien (app/robots.ts, app/llms.txt, app/pricing.md).
+ * Pflicht: Fehlen sie im Export, ist der Build defekt.
+ */
+const GENERATED_ROOT_FILES = ['robots.txt', 'llms.txt', 'pricing.md'];
+
+for (const name of GENERATED_ROOT_FILES) {
+  const src = path.join(OUT, name);
+  if (!fs.existsSync(src) || !fs.statSync(src).isFile()) {
+    console.error(`Generierte Datei fehlt in out/: ${name}`);
+    process.exit(1);
+  }
+  fs.copyFileSync(src, path.join(ROOT, name));
+  console.log(`✓ ${name} (generiert)`);
+}
+
 const STATIC_LOESUNGEN = path.join(ROOT, 'static-loesungen');
 if (fs.existsSync(STATIC_LOESUNGEN)) {
   for (const name of fs.readdirSync(STATIC_LOESUNGEN)) {

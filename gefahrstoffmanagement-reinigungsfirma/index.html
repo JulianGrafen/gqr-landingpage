@@ -80,53 +80,119 @@
  "audienceType": "Handwerksbetriebe, Werkstätten, KMU, Sicherheitsfachkräfte, Labore"
  },
  "offers": [
- {
- "@type": "Offer",
- "name": "TarifVorschau",
- "description": "Bis zu 3 SDB-Uploads, KI-Auswertung im Browser, PDF mit MUSTER-Wasserzeichen",
- "price": "0",
- "priceCurrency": "EUR"
- },
- {
- "@type": "Offer",
- "name": "KMU Basis",
- "description": "Bis 30 Gefahrstoffe, 1 Werk, KI-gestützte BA-Entwürfe, PDF/Excel-Export, QR-Notfallansicht",
- "price": "59",
- "priceCurrency": "EUR",
- "priceSpecification": {
- "@type": "UnitPriceSpecification",
- "price": "59",
- "priceCurrency": "EUR",
- "unitText": "MONTH"
- }
- },
- {
- "@type": "Offer",
- "name": "KMU Pro",
- "description": "Bis 250 Gefahrstoffe, bis 3 Werke, Batch-Upload, mehrere Nutzer, SDB-Aktualitäts-Alerts",
- "price": "119",
- "priceCurrency": "EUR",
- "priceSpecification": {
- "@type": "UnitPriceSpecification",
- "price": "119",
- "priceCurrency": "EUR",
- "unitText": "MONTH"
- }
- },
- {
- "@type": "Offer",
- "name": "SiFa Multi-Mandant",
- "description": "Mandanten- und Werkstrennung für externe SiFas, Begehungs-Modus, PDF-Rechnung möglich",
- "price": "189",
- "priceCurrency": "EUR",
- "priceSpecification": {
- "@type": "UnitPriceSpecification",
- "price": "189",
- "priceCurrency": "EUR",
- "unitText": "MONTH"
- }
- }
+  {
+   "@type": "Offer",
+   "name": "TarifVorschau",
+   "description": "bis zu 3 SDB-Uploads. KI-Auswertung im Browser ansehen, PDF-Vorschau nur mit „MUSTER“-Wasserzeichen, Kein Excel-Export, keine dauerhaften QR-Links",
+   "price": "0",
+   "priceCurrency": "EUR"
+  },
+  {
+   "@type": "Offer",
+   "name": "KMU Basis",
+   "description": "bis 30 Gefahrstoffe, 1 Werk, unbegrenzt Lagerorte. KI-gestützte BA-Entwürfe, PDF- & Excel-Export (ohne Wasserzeichen), Aktive QR-Notfallansicht am Arbeitsplatz",
+   "price": "59",
+   "priceCurrency": "EUR",
+   "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "price": "59",
+    "priceCurrency": "EUR",
+    "unitText": "MONTH"
+   }
+  },
+  {
+   "@type": "Offer",
+   "name": "KMU Pro",
+   "description": "bis 250 Gefahrstoffe, bis 3 Werke, unbegrenzt Lagerorte. Batch-Upload (mehrere SDBs gleichzeitig), Mehrere Nutzer-Logins, KI-gestützte BA-Entwürfe & PDF/Excel-Export, SDB-Aktualitäts-Alerts",
+   "price": "119",
+   "priceCurrency": "EUR",
+   "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "price": "119",
+    "priceCurrency": "EUR",
+    "unitText": "MONTH"
+   }
+  },
+  {
+   "@type": "Offer",
+   "name": "SiFa Multi-Mandant",
+   "description": "unbegrenzte Mandanten & Werke (Fair-Use). Saubere Mandanten-, Werks- & Tätigkeitstrennung, Erfassung auch ohne SDB (Begehungs-Modus), Batch-Upload & alle PDF/Excel-Exporte inkl. GHS, Direktkauf auf monatliche PDF-Rechnung möglich",
+   "price": "189",
+   "priceCurrency": "EUR",
+   "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "price": "189",
+    "priceCurrency": "EUR",
+    "unitText": "MONTH"
+   }
+  }
  ]
+}
+ </script>
+<!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Gefahrstoff-QR",
+ "url": "https://gefahrstoff-qr.de/",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://gefahrstoff-qr.de/logo.png",
+ "width": 200,
+ "height": 60
+ },
+ "@id": "https://gefahrstoff-qr.de/#organization",
+ "description": "Gefahrstoff-QR ist eine browserbasierte Software für das Gefahrstoffverzeichnis nach § 6 GefStoffV. Sie erstellt aus Sicherheitsdatenblättern KI-gestützte Entwürfe zur fachlichen Freigabe durch die SiFa oder den Arbeitgeber. Hosting in Deutschland.",
+ "email": "info@gefahrstoff-qr.de",
+ "areaServed": { "@type": "Country", "name": "Deutschland" },
+ "knowsAbout": ["Gefahrstoffverordnung (GefStoffV)", "Gefahrstoffverzeichnis", "TRGS 510", "TRGS 555", "TRGS 600", "Sicherheitsdatenblatt", "GHS/CLP-Kennzeichnung"],
+ "sameAs": ["https://www.linkedin.com/showcase/gefahrstoff-qr/", "https://www.youtube.com/@gefahrstoff-qr"]
+}
+ </script>
+<!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Gefahrstoff-QR",
+ "url": "https://gefahrstoff-qr.de/",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://gefahrstoff-qr.de/logo.png",
+ "width": 200,
+ "height": 60
+ },
+ "@id": "https://gefahrstoff-qr.de/#organization",
+ "description": "Gefahrstoff-QR ist eine browserbasierte Software für das Gefahrstoffverzeichnis nach § 6 GefStoffV. Sie erstellt aus Sicherheitsdatenblättern KI-gestützte Entwürfe zur fachlichen Freigabe durch die SiFa oder den Arbeitgeber. Hosting in Deutschland.",
+ "email": "info@gefahrstoff-qr.de",
+ "areaServed": { "@type": "Country", "name": "Deutschland" },
+ "knowsAbout": ["Gefahrstoffverordnung (GefStoffV)", "Gefahrstoffverzeichnis", "TRGS 510", "TRGS 555", "TRGS 600", "Sicherheitsdatenblatt", "GHS/CLP-Kennzeichnung"],
+ "sameAs": ["https://www.linkedin.com/showcase/gefahrstoff-qr/", "https://www.youtube.com/@gefahrstoff-qr"]
+}
+ </script>
+<!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Gefahrstoff-QR",
+ "url": "https://gefahrstoff-qr.de/",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://gefahrstoff-qr.de/logo.png",
+ "width": 200,
+ "height": 60
+ },
+ "@id": "https://gefahrstoff-qr.de/#organization",
+ "description": "Gefahrstoff-QR ist eine browserbasierte Software für das Gefahrstoffverzeichnis nach § 6 GefStoffV. Sie erstellt aus Sicherheitsdatenblättern KI-gestützte Entwürfe zur fachlichen Freigabe durch die SiFa oder den Arbeitgeber. Hosting in Deutschland.",
+ "email": "info@gefahrstoff-qr.de",
+ "areaServed": { "@type": "Country", "name": "Deutschland" },
+ "knowsAbout": ["Gefahrstoffverordnung (GefStoffV)", "Gefahrstoffverzeichnis", "TRGS 510", "TRGS 555", "TRGS 600", "Sicherheitsdatenblatt", "GHS/CLP-Kennzeichnung"],
+ "sameAs": ["https://www.linkedin.com/showcase/gefahrstoff-qr/", "https://www.youtube.com/@gefahrstoff-qr"]
  }
  </script>
 
@@ -1313,6 +1379,9 @@
  <a href="https://app.gefahrstoff-qr.de/register" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Kostenlos starten</a>,
  ohne Kreditkarte.
  </p>
+<!--AEO:CTA_TRUST_LINE-->
+<p class="text-xs leading-relaxed text-[#8fa4c0] mx-auto mt-3 max-w-xl text-center"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Deutschland (inkl. AVV)</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> PDF- &amp; Excel-Export inkl. GHS-Symbolen</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Auf Rechnung für SiFas &amp; Firmenkunden möglich</span></p>
+<!--/AEO:CTA_TRUST_LINE-->
  </div>
  </section>
 
