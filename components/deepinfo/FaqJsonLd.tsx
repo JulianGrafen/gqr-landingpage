@@ -1,27 +1,12 @@
+import { JsonLd } from '@/components/seo/JsonLd';
 import type { DeepinfoFaqItem } from '@/lib/wissen/types';
+import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
 
 type FaqJsonLdProps = {
   faq: DeepinfoFaqItem[];
 };
 
+/** FAQPage JSON-LD für Wissensartikel, gekoppelt an die sichtbaren FAQ-Einträge. */
 export function FaqJsonLd({ faq }: FaqJsonLdProps) {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faq.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  return <JsonLd data={buildFaqPageSchema(faq)} />;
 }

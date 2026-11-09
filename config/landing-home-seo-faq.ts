@@ -7,6 +7,27 @@ import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
  */
 export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
   {
+    question: 'Wie unterstützt Gefahrstoff-QR beim Gefahrstoffverzeichnis nach § 6 GefStoffV?',
+    answer:
+      'Gefahrstoff-QR ist eine browserbasierte Software, die aus Sicherheitsdatenblättern einen KI-gestützten Entwurf für das Gefahrstoffverzeichnis nach § 6 GefStoffV erstellt. Die Angaben werden mit Verweis auf den jeweiligen SDB-Abschnitt ausgelesen, den Tätigkeiten und Arbeitsbereichen zugeordnet und als PDF oder Excel inklusive GHS-Piktogrammen exportiert. Die SiFa bzw. der Arbeitgeber prüft den Entwurf und gibt ihn fachlich frei.',
+  },
+  {
+    question:
+      'Eignet sich Gefahrstoff-QR für externe Fachkräfte für Arbeitssicherheit (SiFas) mit mehreren Mandanten?',
+    answer:
+      'Ja, Gefahrstoff-QR bietet für externe SiFas und Ingenieurbüros eine Multi-Mandanten-Verwaltung, in der Kundenbetriebe als Mandanten, darunter Werke und Arbeitsbereiche bzw. Tätigkeiten strikt getrennt geführt werden. Bei der Begehung lassen sich Gefahrstoffe auch ohne vorliegendes Sicherheitsdatenblatt oder Mengenangabe vorab erfassen. Fehlende Angaben werden im Export farblich markiert und können später nachgepflegt werden.',
+  },
+  {
+    question: 'Ersetzt die KI-Auswertung die fachliche Prüfung nach TRGS 555 und § 14 GefStoffV?',
+    answer:
+      'Nein, Gefahrstoff-QR erstellt aus dem Sicherheitsdatenblatt des Lieferanten strukturierte Entwürfe, die fachliche Prüfung bleibt beim Menschen. Jeder KI-gestützte Entwurf (gemäß TRGS 555) ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV). Die Anpassung an die Bedingungen am Arbeitsplatz und die Freigabe erfolgen durch die verantwortliche Person.',
+  },
+  {
+    question: 'Können Unternehmen und SiFas Gefahrstoff-QR auf Rechnung beziehen?',
+    answer:
+      'Ja, neben der direkten Online-Buchung können Geschäftskunden und SiFas im Multi-Mandanten-Tarif per monatlicher PDF-Rechnung und Überweisung zahlen. Eine langfristige Vertragsbindung besteht nicht, die Pakete sind monatlich kündbar. Das Angebot richtet sich ausschließlich an Unternehmen, Gewerbetreibende und freiberufliche Sicherheitsfachkräfte (§ 14 BGB).',
+  },
+  {
     question: 'Was ist eine Gefahrstoffmanagement Software?',
     answer:
       'Eine Gefahrstoffmanagement Software ist ein digitales System, mit dem Betriebe ihr Gefahrstoffverzeichnis nach § 6 GefStoffV, die zugehörigen Sicherheitsdatenblätter, Betriebsanweisungen und Lagerinformationen an einer Stelle führen. Gegenüber Excel-Listen bietet sie Versionierung, Erinnerungen an SDB-Aktualisierungen und einen Revisionsverlauf. Gefahrstoff-QR läuft im Browser und erstellt aus dem Sicherheitsdatenblatt einen KI-gestützten Entwurf zur fachlichen Freigabe durch die SiFa / den Arbeitgeber.',
@@ -28,11 +49,6 @@ export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
       'Excel kann die Pflichtfelder abbilden, deckt aber laufende Aktualität, Versionierung der Sicherheitsdatenblätter und den Nachweis von Änderungen nur mit viel Handarbeit ab. Genau diese Punkte prüfen SiFa und Aufsichtsbehörden bei Betriebsprüfungen. Gefahrstoff-QR führt KI-gestützte Extraktion, fachliche Freigabe und den PDF-Export des Verzeichnisses in einer Datenbasis zusammen, ohne Abtipp-Marathon.',
   },
   {
-    question: 'Wer gibt die KI-Entwürfe frei?',
-    answer:
-      'Die fachliche Freigabe liegt immer bei der Sicherheitsfachkraft (SiFa) oder dem Arbeitgeber. Gefahrstoff-QR liefert einen KI-gestützten Entwurf (gemäß TRGS 555) als Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV). Die KI übernimmt das Auslesen und Strukturieren der Daten aus dem Sicherheitsdatenblatt, die Bewertung bleibt beim Menschen.',
-  },
-  {
     question: 'Wie dokumentiere ich die Zusammenlagerungsprüfung nach TRGS 510?',
     answer:
       'Nach TRGS 510 gleichen Sie die Lagerklassen (LGK) der Stoffe über die Zusammenlagerungstabelle ab, und zwar bei jeder neuen Charge oder Lagerplatzänderung erneut. Ein Screenshot oder Excel-Hinweis zeigt bei Audits selten, welche Kombination zum Prüfzeitpunkt bewertet wurde. Gefahrstoff-QR ordnet Stoffe ihrer Lagerklasse zu und weist pro Lagerort auf mögliche Konflikte hin. Die Lagerentscheidung trifft die SiFa / Fachkraft, die Verantwortung liegt beim Arbeitgeber.',
@@ -45,7 +61,7 @@ export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
   {
     question: 'Was kostet Gefahrstoff-QR?',
     answer:
-      'Gefahrstoff-QR ist für bis zu 5 Stoffe kostenlos. Small Business kostet 89 € pro Monat (bis 50 Stoffe), Professional 199 € pro Monat (bis 250 Stoffe, mehrere Nutzer, Batch-Upload), Multi-Mandant für SiFa-Beratungen ab 299 € pro Monat und Enterprise ab 699 € pro Monat. Alle Preise verstehen sich zzgl. MwSt., monatlich kündbar, bei Jahreszahlung mit 15 % Rabatt.',
+      'Die TarifVorschau ist kostenlos (bis zu 3 SDB-Uploads, PDF nur mit „MUSTER“-Wasserzeichen). KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, Mandanten-Trennung für externe SiFas, PDF-Rechnung möglich). Alle Preise zzgl. MwSt., monatlich kündbar.',
   },
   {
     question: 'Wo werden die Daten gehostet?',

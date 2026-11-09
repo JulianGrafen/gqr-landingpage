@@ -1,0 +1,98 @@
+/**
+ * Übernimmt die Preissektion und das Billing-Script von index.html auf Silo-Landings.
+ */
+import fs from 'fs';
+import path from 'path';
+
+const ROOT = process.cwd();
+const SOURCE = path.join(ROOT, 'index.html');
+
+const TARGETS = [
+  {
+    file: 'gefahrstoff-software-sicherheitsfachkraft-selbstständig/index.html',
+    headline: 'Skalieren Sie Ihre Compliance ohne Überraschungen',
+    intro:
+      'Vom Funktionstest bis zur Mandantenverwaltung für externe SiFas. Standard-Ansicht: Jahreszahlung zum reduzierten Monatspreis. Monatlich kündbar.',
+  },
+  {
+    file: 'gefahrstoffmanagement-reinigungsfirma/index.html',
+    headline: 'Skalieren Sie Ihre Compliance ohne Überraschungen',
+    intro:
+      'Transparente Festpreise für Reinigungsbetriebe: TarifVorschau kostenlos, bezahlte Pakete ab 49&nbsp;&euro;/Monat bei Jahreszahlung (KMU Basis). Monatlich kündbar.',
+  },
+];
+
+const homeHtml = fs.readFileSync(SOURCE, 'utf8');
+
+const pricingSectionMatch = homeHtml.match(
+  /<!-- PRICING -->[\s\S]*?<\/section>\s*(?=\n\s*<!-- FAQ -->)/,
+);
+if (!pricingSectionMatch) {
+  console.error('Preissektion in index.html nicht gefunden.');
+  process.exit(1);
+}
+
+let pricingSection = pricingSectionMatch[0];
+
+const pricingScriptMatch = homeHtml.match(
+  /<script>\s*\(function \(\) \{\s*var billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?setBilling\('yearly'\);\s*\}\)\(\);\s*<\/script>/,
+);
+if (!pricingScriptMatch) {
+  console.error('Pricing-Billing-Script in index.html nicht gefunden.');
+  process.exit(1);
+}
+const pricingScript = pricingScriptMatch[0];
+
+const offersMatch = homeHtml.match(/"offers": (\[[\s\S]*?\])\s*\n \}/);
+const offersArray = offersMatch ? offersMatch[1] : null;
+
+function applyHeadlineOverrides(section, { headline, intro }) {
+  let out = section;
+  if (headline) {
+    out = out.replace(
+      /<h2 id="pricingHeadline"[^>]*>[\s\S]*?<\/h2>/,
+      `<h2 id="pricingHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">${headline}</h2>`,
+    );
+  }
+  if (intro) {
+    out = out.replace(
+      /<p class="mt-4 text-base text-\[#8fa4c0\]">[\s\S]*?<\/p>/,
+      `<p class="mt-4 text-base text-[#8fa4c0]">${intro}\n <br>\n <br><b>Der QR-Scan-Zugriff ist ab KMU Basis inklusive.</b></p>`,
+    );
+  }
+  return out;
+}
+
+function replacePricingSection(pageHtml, section) {
+  const pattern = /<!-- PRICING -->[\s\S]*?<\/section>\s*(?=\n\s*<!-- FAQ -->)/;
+  if (!pattern.test(pageHtml)) {
+    throw new Error('Preissektion im Ziel nicht gefunden.');
+  }
+  return pageHtml.replace(pattern, section);
+}
+
+function replacePricingScript(pageHtml, script) {
+  const pattern =
+    /<script>\s*\(function \(\) \{\s*var[\s\S]*?billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?setBilling\('(?:monthly|yearly)'\);\s*\}\)\(\);\s*<\/script>/;
+  if (!pattern.test(pageHtml)) {
+    throw new Error('Pricing-Script im Ziel nicht gefunden.');
+  }
+  return pageHtml.replace(pattern, script);
+}
+
+function replaceOffers(pageHtml) {
+  if (!offersArray) return pageHtml;
+  if (!/"offers": \[[\s\S]*?\]/.test(pageHtml)) return pageHtml;
+  return pageHtml.replace(/"offers": \[[\s\S]*?\]/, `"offers": ${offersArray}`);
+}
+
+for (const target of TARGETS) {
+  const filePath = path.join(ROOT, target.file);
+  let html = fs.readFileSync(filePath, 'utf8');
+  const section = applyHeadlineOverrides(pricingSection, target);
+  html = replacePricingSection(html, section);
+  html = replacePricingScript(html, pricingScript);
+  html = replaceOffers(html);
+  fs.writeFileSync(filePath, html, 'utf8');
+  console.log(`✓ ${target.file}`);
+}

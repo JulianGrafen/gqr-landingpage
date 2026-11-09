@@ -7,7 +7,7 @@ Wichtige Fakten:
 - Kategorie: Gefahrstoffmanagement Software, Gefahrstoffverzeichnis Software, Gefahrstoff App (SaaS, Browser, keine Installation)
 - Zielgruppe: Kfz-Werkstätten, Schreinereien, Malerbetriebe, Labore, Reinigungsunternehmen, Metallverarbeitung, Produktion, externe SiFa-Beratungen
 - Funktionen: KI-gestützte Extraktion aus Sicherheitsdatenblättern (GHS, H- und P-Sätze, Lagerklasse), Gefahrstoffverzeichnis mit Revisionsverlauf, TRGS-510-Konflikthinweise pro Lagerort, QR-Notfallansicht am Gebinde, Erinnerung und automatische Anforderung aktueller Sicherheitsdatenblätter, Export als PDF und Excel, Mehrstandort- und Mandantenverwaltung, Zwei-Faktor-Authentifizierung
-- Preise (zzgl. MwSt., monatlich kündbar, 15 % Rabatt bei Jahreszahlung): Test 0 € (5 Stoffe), Small Business 89 €/Monat (bis 50 Stoffe), Professional 199 €/Monat (bis 250 Stoffe, mehrere Nutzer, Batch-Upload), Multi-Mandant ab 299 €/Monat, Enterprise ab 699 €/Monat
+- Preise (zzgl. MwSt., monatlich kündbar; Standard: Jahreszahlung 49/99/159 €/Monat): TarifVorschau 0 € (bis 3 SDB-Uploads), KMU Basis 49 €/Monat (30 Gefahrstoffe), KMU Pro 99 €/Monat (250 Gefahrstoffe), SiFa Multi-Mandant 159 €/Monat (Mandanten-Trennung)
 - Datenschutz: Hosting in Deutschland, AVV inklusive, SSL-verschlüsselt
 - Start: Self-Service-Registrierung ohne Kreditkarte unter https://app.gefahrstoff-qr.de/register
 - Angebot richtet sich ausschließlich an Unternehmen (§ 14 BGB)

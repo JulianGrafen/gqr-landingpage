@@ -3,6 +3,7 @@ import { SITE_URL } from '@/config/site-seo';
 import { buildBreadcrumbSchema, type BreadcrumbItem } from '@/lib/seo/build-breadcrumb-schema';
 import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
 import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
+import type { JsonLdObject } from '@/lib/seo/serialize-json-ld';
 
 /** Stand der Template-Inhalte (für dateModified); bei inhaltlichen Template-Änderungen anpassen. */
 export const BETRIEBSANWEISUNG_CONTENT_UPDATED = '2026-11-07';
@@ -51,7 +52,7 @@ export function buildBetriebsanweisungBreadcrumbs(entry: HazardousSubstanceSeoEn
 export function buildBetriebsanweisungSchemas(
   entry: HazardousSubstanceSeoEntry,
   faqItems: readonly SeoFaqItem[],
-): object[] {
+): JsonLdObject[] {
   const canonical = buildBetriebsanweisungCanonical(entry);
   return [
     {
