@@ -4,7 +4,7 @@
  * und wichtige URLs. Konsumenten: SoftwareApplication JSON-LD, /llms.txt, /pricing.md und die
  * statisch gerenderten Startseiten-Sektionen (scripts/sync-home-aeo.tsx).
  *
- * Copy-Regeln (UWG, § 14 BGB, AGENTS.md): kein "rechtssicher", keine Zeitversprechen, keine absoluten
+ * Copy-Regeln (UWG, § 14 BGB, AGENTS.md): keine absoluten Compliance-Versprechen, keine Zeitversprechen, keine absoluten
  * Garantien, keine Gedankenstriche. KI-Ergebnisse sind immer Entwürfe zur fachlichen Freigabe.
  */
 import { SITE_URL } from '@/config/site-seo';
