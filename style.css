@@ -4508,3 +4508,35 @@ body.trial-modal-open {
 @media (min-width: 768px) {
   .mobile-sticky-cta { display: none !important; }
 }
+
+/* Hero-Split: links Copy, rechts interaktive SDB-Dropzone (Live-Test ohne Login) */
+.sds-hero__top {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.sds-hero__top .sds-hero__headline {
+  margin-bottom: 0;
+}
+
+.sds-hero__top .sds-hero__preview {
+  margin-top: 0;
+}
+
+@media (min-width: 1024px) {
+  .sds-hero__top {
+    grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+  }
+}
+
+.sds-hero__top .sds-hero__title {
+  font-size: clamp(2.1rem, 3.4vw, 3.4rem);
+  hyphens: manual;
+  overflow-wrap: break-word;
+}
+
+/* Kompakte Zwei-Spalten-Tabelle (z. B. Feld → SDB-Abschnitt) ohne Mindestbreite der Preistabelle */
+.pricing-compare__table.pricing-compare__table--compact {
+  min-width: 0;
+}

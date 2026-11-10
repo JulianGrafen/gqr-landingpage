@@ -77,7 +77,7 @@ html = html
 
 /** Hero der Startseite: von der H1 bis einschließlich Microcopy unter den CTAs (textunabhängig). */
 const heroOldPattern =
-  /<h1 id="heroHeadline"[\s\S]*?<\/h1>[\s\S]*?<div class="mt-8 flex flex-wrap justify-center gap-4">[\s\S]*?<\/div>\s*<p class="mt-4 w-full[^"]*">[\s\S]*?<\/p>/;
+  /(?:<p class="sds-hero__eyebrow[^"]*">[\s\S]*?<\/p>\s*)?<h1 id="heroHeadline"[\s\S]*?<\/h1>[\s\S]*?<div class="mt-8 flex flex-wrap justify-center gap-4[^"]*">[\s\S]*?<\/div>\s*<p class="mt-4 w-full[^"]*">[\s\S]*?<\/p>/;
 
 const heroNew = `<p class="mb-3 w-full text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm text-center md:text-left">Branchenlösung</p>
 <h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-center md:items-start justify-center text-center md:text-left">

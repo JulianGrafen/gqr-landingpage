@@ -37,9 +37,9 @@
  <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png">
 
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="preload" href="/style.css?v=51" as="style">
+  <link rel="preload" href="/style.css?v=52" as="style">
  <link rel="preload" href="/tw.css" as="style">
-  <link rel="stylesheet" href="/style.css?v=51">
+  <link rel="stylesheet" href="/style.css?v=52">
  <link rel="stylesheet" href="/tw.css">
 
  <script type="application/ld+json">
@@ -341,14 +341,9 @@
  <a class="logo" href="/" aria-label="Gefahrstoff-QR Startseite"><img class="gqr-brand-logo" src="logo-wordmark.png" alt="Gefahrstoff-QR" width="431" height="108"></a>
 
  <nav class="nav-desktop" aria-label="Hauptnavigation">
- <a class="nav-link" href="#produkt">Produkt</a>
- <a class="nav-link" href="#funktionen">Funktionen</a>
- <a class="nav-link" href="#fuer-sifas">Für SiFas</a>
- <a class="nav-link" href="#preise">Preise</a>
- <a class="nav-link" href="#faq">FAQ</a>
-<a class="nav-link" href="/blog/">Blog</a>
- <a class="nav-link" href="https://app.gefahrstoff-qr.de/login">Login</a>
- <a class="btn btn-primary nav-cta" href="https://app.gefahrstoff-qr.de/register">Kostenlos testen</a>
+<!--AEO:NAV_DESKTOP-->
+<a class="nav-link" href="#live-demo">Live-Test</a><a class="nav-link" href="#fuer-sifas">Für SiFas</a><a class="nav-link" href="#preise">Preise</a><a class="nav-link" href="https://app.gefahrstoff-qr.de/login">Login</a><a class="btn btn-primary nav-cta" href="#live-demo">SDB live testen</a>
+<!--/AEO:NAV_DESKTOP-->
  </nav>
 
  <button id="navOpenBtn" class="nav-toggle flex flex-wrap items-center justify-center" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menü öffnen">
@@ -360,14 +355,9 @@
  <div class="nav-mobile-inner">
  <button id="navCloseBtn" class="nav-close" aria-label="Schließen">&#x2715; Schließen</button>
  <nav class="mobile-links">
- <a class="nav-link" href="#produkt">Produkt</a>
- <a class="nav-link" href="#funktionen">Funktionen</a>
- <a class="nav-link" href="#fuer-sifas">Für SiFas</a>
- <a class="nav-link" href="#preise">Preise</a>
- <a class="nav-link" href="#faq">FAQ</a>
-<a class="nav-link" href="/blog/">Blog</a>
- <a class="nav-link" href="https://app.gefahrstoff-qr.de/login">Login</a>
- <a class="btn btn-primary" href="https://app.gefahrstoff-qr.de/register">Jetzt kostenlos registrieren</a>
+<!--AEO:NAV_MOBILE-->
+<a class="nav-link" href="#live-demo">Live-Test</a><a class="nav-link" href="#fuer-sifas">Für SiFas</a><a class="nav-link" href="#preise">Preise</a><a class="nav-link" href="https://app.gefahrstoff-qr.de/login">Login</a><a class="btn btn-primary" href="#live-demo">SDB live testen</a>
+<!--/AEO:NAV_MOBILE-->
  </nav>
  </div>
  </div>
@@ -376,7 +366,9 @@
 
  <!-- HERO: Einstieg -->
  <section id="hero" class="sds-hero" aria-labelledby="heroHeadline">
+ <div class="container sds-hero__top">
  <div class=" flex w-full flex-wrap items-center justify-center container sds-hero__headline">
+<!--AEO:HERO_COPY-->
 <p class="mb-3 w-full text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm text-center md:text-left">Branchenlösung</p>
 <h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-center md:items-start justify-center text-center md:text-left">
  Gefahrstoffmanagement für Kfz-Werkstätten
@@ -386,47 +378,19 @@
    <a class="btn-cta-orange px-8 py-3 text-white" style="color: white !important;" href="https://app.gefahrstoff-qr.de/">Jetzt kostenlos testen</a>
    <a class="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 px-6 py-3 text-sm font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.06]" href="/">Zur Startseite</a>
  </div>
-<!--AEO:CTA_TRUST_LINE_HERO-->
-<p class="text-xs leading-relaxed text-[#8fa4c0] mt-2 w-full text-center md:text-left"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Deutschland (inkl. AVV)</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> PDF- &amp; Excel-Export inkl. GHS-Symbolen</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Auf Rechnung für SiFas &amp; Firmenkunden möglich</span></p>
-<!--/AEO:CTA_TRUST_LINE_HERO-->
+<!--/AEO:HERO_COPY-->
  </div>
 
- <div class="container sds-hero__preview w-full" id="sdb-live-preview-root">
+ <div class="sds-hero__preview w-full scroll-mt-28" id="live-demo">
+ <div id="sdb-live-preview-root">
  <div data-sdb-live-preview aria-label="Sicherheitsdatenblatt live testen"></div>
  </div>
+<!--AEO:HERO_TRUST_LINE-->
+<p class="text-xs leading-relaxed text-[#8fa4c0] mt-4 text-center"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Browserbasiert, keine Installation</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Keine Kreditkarte</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Frankfurt (inkl. AVV nach Art. 28 DSGVO)</span></p>
+<!--/AEO:HERO_TRUST_LINE-->
+ </div>
+ </div>
 
- <ul class="mt-6 mb-12 flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-4 border-t border-white/10 pt-6" role="list" aria-label="Vertrauen und Sicherheit">
- <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
- <svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
- <path d="M12 3 4 6v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/>
- <path d="m9.5 12.5 2 2 3.5-3.5"/>
- </svg>
- <span>Hosting in Deutschland (inkl. AVV)</span>
- </li>
- <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
- <svg class="h-7 w-9 flex-shrink-0 overflow-visible rounded-md border border-white/20 shadow-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" aria-hidden="true" focusable="false">
- <rect width="24" height="16" rx="1.5" fill="#1a1a1a"/>
- <rect width="24" height="5.33" y="5.33" fill="#dd0000"/>
- <rect width="24" height="5.34" y="10.66" fill="#ffce00"/>
- </svg>
- <span>Made in Germany</span>
- </li>
- <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
- <svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
- <path d="M7 11V8a5 5 0 0 1 10 0v3"/>
- <rect x="5" y="11" width="14" height="10" rx="2"/>
- <path d="M12 16v2"/>
- </svg>
- <span>SSL-verschlüsselt</span>
- </li>
-  <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
-    <svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-      <path d="M12 3 4 6v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/>
-      <path d="m9.5 12.5 2 2 3.5-3.5"/>
-    </svg>
-    <span>Orientiert an § 6 GefStoffV &amp; TRGS</span>
-  </li>
- </ul>
 
  <div class="container sds-hero__inner">
  <div class="sds-hero__copy">
@@ -525,6 +489,11 @@ Mit Excel
  </div>
  </section>
 
+ <!-- ERGEBNIS (CRO/AEO): Mechanismus + Output, generiert aus config/home-sections/output-preview.ts -->
+<!--AEO:OUTPUT_PREVIEW-->
+<section id="ergebnis" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="outputPreviewHeadline"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><header class="mx-auto mb-12 max-w-2xl text-center"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Mechanismus &amp; Ergebnis</p><h2 id="outputPreviewHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Jedes Feld mit Fundstelle im Sicherheitsdatenblatt</h2><p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">Die KI liest nicht frei, sondern feldweise: Jede Angabe wird dem zuständigen SDB-Unterabschnitt zugeordnet und mit dieser Fundstelle angezeigt. So prüft die SiFa gezielt an der Quelle, statt das ganze PDF erneut zu lesen.</p></header><div class="mx-auto mb-12 max-w-3xl"><div class="pricing-compare__scroll" tabindex="0" role="region" aria-label="Zuordnung der Erfassungsfelder zu den SDB-Unterabschnitten"><table class="pricing-compare__table pricing-compare__table--compact"><caption>Zuordnung der Erfassungsfelder zu den SDB-Unterabschnitten</caption><thead><tr><th scope="col">Erfasstes Feld</th><th scope="col" class="pricing-compare__col--highlight">Fundstelle im SDB</th></tr></thead><tbody><tr><th scope="row">Handelsname, Artikelnummer, UFI</th><td class="pricing-compare__col--highlight">SDB 1.1</td></tr><tr><th scope="row">Signalwort, GHS-Piktogramme, H- und P-Sätze</th><td class="pricing-compare__col--highlight">SDB 2.2</td></tr><tr><th scope="row">Erste-Hilfe-Maßnahmen</th><td class="pricing-compare__col--highlight">SDB 4.1</td></tr><tr><th scope="row">Lagerklasse (TRGS 510)</th><td class="pricing-compare__col--highlight">SDB 7.2</td></tr><tr><th scope="row">Persönliche Schutzausrüstung</th><td class="pricing-compare__col--highlight">SDB 8.2</td></tr><tr><th scope="row">Wassergefährdungsklasse (WGK)</th><td class="pricing-compare__col--highlight">SDB 15.1</td></tr><tr><th scope="row">Überarbeitungsdatum des SDB</th><td class="pricing-compare__col--highlight">SDB 16</td></tr></tbody></table></div></div><ul class="grid list-none gap-6 p-0 lg:grid-cols-3"><li class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><div class="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3"><img src="/images/landing-kataster-dashboard.png" alt="Gefahrstoffverzeichnis in Gefahrstoff-QR mit Standortfilter, Signalwort und GHS-Piktogrammen" width="1833" height="1168" loading="lazy" decoding="async" class="h-auto w-full rounded-lg"/></div><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">§ 6 GefStoffV</p><h3 class="text-lg font-bold text-[#f0f6ff]">Gefahrstoffverzeichnis für die Betriebsprüfung</h3><ul class="mt-3 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Filterbar nach Standort, Werk und Lagerort</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>GHS-Piktogramme im PDF und in der Excel-Datei</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Fehlende Angaben aus der Begehung farblich markiert</li></ul></li><li class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><div class="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3"><div class="mx-auto aspect-[210/297] w-full max-w-[220px] rounded-md border-4 border-[#ff6b35] bg-white p-3 text-left shadow-lg" aria-hidden="true"><p class="text-[9px] font-black uppercase tracking-wider text-slate-900">Betriebsanweisung</p><p class="text-[7px] text-slate-500">gemäß TRGS 555 · Entwurf</p><ul class="mt-2 list-none space-y-1.5 p-0"><li><p class="rounded-sm bg-[#ff6b35] px-1 text-[7px] font-bold text-white">Anwendungsbereich</p><span class="mt-0.5 block h-1 w-full rounded bg-slate-200"></span><span class="mt-0.5 block h-1 w-3/4 rounded bg-slate-200"></span></li><li><p class="rounded-sm bg-[#ff6b35] px-1 text-[7px] font-bold text-white">Gefahren für Mensch und Umwelt</p><span class="mt-0.5 block h-1 w-full rounded bg-slate-200"></span><span class="mt-0.5 block h-1 w-3/4 rounded bg-slate-200"></span></li><li><p class="rounded-sm bg-[#ff6b35] px-1 text-[7px] font-bold text-white">Schutzmaßnahmen und Verhaltensregeln</p><span class="mt-0.5 block h-1 w-full rounded bg-slate-200"></span><span class="mt-0.5 block h-1 w-3/4 rounded bg-slate-200"></span></li><li><p class="rounded-sm bg-[#ff6b35] px-1 text-[7px] font-bold text-white">Verhalten im Gefahrfall</p><span class="mt-0.5 block h-1 w-full rounded bg-slate-200"></span><span class="mt-0.5 block h-1 w-3/4 rounded bg-slate-200"></span></li><li><p class="rounded-sm bg-[#ff6b35] px-1 text-[7px] font-bold text-white">Erste Hilfe</p><span class="mt-0.5 block h-1 w-full rounded bg-slate-200"></span><span class="mt-0.5 block h-1 w-3/4 rounded bg-slate-200"></span></li><li><p class="rounded-sm bg-[#ff6b35] px-1 text-[7px] font-bold text-white">Sachgerechte Entsorgung</p><span class="mt-0.5 block h-1 w-full rounded bg-slate-200"></span><span class="mt-0.5 block h-1 w-3/4 rounded bg-slate-200"></span></li></ul></div></div><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">TRGS 555</p><h3 class="text-lg font-bold text-[#f0f6ff]">Betriebsanweisung als A4-Entwurf</h3><ul class="mt-3 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Gliederung in die sechs Abschnitte nach TRGS 555</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Eigenes Firmenlogo und anpassbare Rahmenfarbe</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Schriftgröße passt sich dem Inhalt für den Aushang an</li></ul></li><li class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><div class="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3"><img src="/images/gefahrstoffmanagement-trgs510-check.jpeg" alt="TRGS-510-Zusammenlagerungshinweise pro Lagerort in Gefahrstoff-QR" width="1770" height="1294" loading="lazy" decoding="async" class="h-auto w-full rounded-lg"/></div><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">TRGS 510 &amp; Notfall</p><h3 class="text-lg font-bold text-[#f0f6ff]">Zusammenlagerung und QR-Notfallansicht</h3><ul class="mt-3 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Konflikthinweise der Lagerklassen pro Lagerort</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>QR-Code am Gebinde öffnet Erste Hilfe und Schutzmaßnahmen</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Abruf im Smartphone-Browser, ohne App-Installation</li></ul></li></ul></div></section>
+<!--/AEO:OUTPUT_PREVIEW-->
+
  <!-- KURZANTWORT (AEO): zitierfähige Definition + Faktenblock -->
  <section id="auf-einen-blick" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-20" aria-labelledby="kurzantwortHeadline">
  <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
@@ -617,9 +586,6 @@ Mit Excel
  <div class="mt-10 flex flex-col items-center gap-3">
  <a class="btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base" href="https://app.gefahrstoff-qr.de/register">Erstes Sicherheitsdatenblatt kostenlos hochladen</a>
  <p class="text-sm text-[#8fa4c0]">TarifVorschau im Browser · ohne Kreditkarte</p>
-<!--AEO:CTA_TRUST_LINE-->
-<p class="text-xs leading-relaxed text-[#8fa4c0] mx-auto mt-3 max-w-xl text-center"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Deutschland (inkl. AVV)</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> PDF- &amp; Excel-Export inkl. GHS-Symbolen</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Auf Rechnung für SiFas &amp; Firmenkunden möglich</span></p>
-<!--/AEO:CTA_TRUST_LINE-->
  </div>
  </div>
  </section>
@@ -920,7 +886,7 @@ Mit Excel
  <ul class="zigzag-checklist" role="list">
  <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Administrator, Mitarbeiter oder Nur-Lesen</li>
  <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Einladungslinks mit Ablaufdatum</li>
- <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Mehrere Nutzer ab Professional-Paket</li>
+ <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Mehrere Nutzer ab KMU Pro</li>
  </ul>
  </div>
  </article>
@@ -1086,14 +1052,6 @@ Mit Excel
 
  </div>
 
- <div class="mt-10 text-center">
- <p class="text-sm text-[#8fa4c0]">
- Weitere Updates auf
- <a href="https://www.youtube.com/@gefahrstoff-qr" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#ff6b35] underline-offset-2 transition-colors hover:text-[#ff8a5c] hover:underline">
- YouTube @gefahrstoff-qr
- </a>
- </p>
- </div>
 
  </div>
  </section>
@@ -1162,36 +1120,6 @@ Mit Excel
  </div>
  </article>
 
- <article class="kataster-prose">
-
- <p class="mt-8">
- Die <strong>Gefahrstoffverordnung (GefStoffV)</strong> verlangt ein lückenloses <strong>Gefahrstoffverzeichnis</strong>.
- Wer dieses Kataster in Excel-Listen und PDF-Ordnern führt, riskiert nicht nur massiven Zeitverlust,
- sondern empfindliche Sanktionen bei BG- und Behördenkontrollen.
- </p>
-
- <strong class="kataster-prose__subhead">Strukturierte Daten statt Tabellenchaos</strong>
- <p>
- Mit <strong>Gefahrstoff-QR</strong> transformieren Sie Ihr Kataster in eine professionelle Datenbank.
- Das System extrahiert relevante Sicherheitsdatenblatt-Informationen (CLP-Kennzeichnung, H/P-Sätze) und dokumentiert
- Lagerklassen nach <strong>TRGS&nbsp;510</strong>. Das Ergebnis: Lückenlose Konsistenz ohne manuelles Abtippen.
- </p>
-
- <strong class="kataster-prose__subhead">Aktualität und Risikomanagement</strong>
- <p>
- Bei einem Audit zählen Fakten. GQR warnt proaktiv vor abgelaufenen Sicherheitsdatenblättern und liefert
- <strong>KMR-Warnungen</strong> für die Substitutionsprüfung nach <strong>TRGS&nbsp;600</strong>.
- Risiken gehen nicht mehr in Excel-Zeilen unter, sondern werden aktiv gemanagt.
- </p>
-
- <strong class="kataster-prose__subhead">Praxiserprobt für KMU</strong>
- <p>
- Ob Werkstatt, Handwerk oder Labor: GQR liefert einen durchgängigen Workflow: von der KI-gestützten Erfassung
- bis zur <strong>QR-Notfallansicht am Gebinde</strong>.
- <a href="https://app.gefahrstoff-qr.de/register">Testen Sie jetzt</a>,
- ob Ihr aktuelles System den harten Anforderungen der Aufsichtsbehörden standhält.
- </p >
- </article>
  </div >
  </section >
 
@@ -1290,7 +1218,7 @@ Mit Excel
 
  <div class="onboarding-paths">
  <article class="onboarding-path">
- <span class="onboarding-path__badge">Im Professional-Paket (199&nbsp;&euro;/Monat) inklusive</span>
+ <span class="onboarding-path__badge">In KMU Pro (ab 99&nbsp;&euro;/Monat) und SiFa Multi-Mandant inklusive</span>
  <span class="onboarding-path__step" aria-hidden="true">01</span>
  <h3 class="onboarding-path__title">Batch-Upload: Altdaten in einem Rutsch</h3>
 
@@ -1320,7 +1248,7 @@ Mit Excel
 
  <!-- SIFA MULTI-MANDANT (CRO): generiert aus config/home-sections/multi-tenant-sifa.ts -->
 <!--AEO:MULTI_TENANT_SIFA-->
-<section id="fuer-sifas" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="multiTenantSifaHeadline"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><header class="mx-auto mb-12 max-w-2xl text-center"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Für externe SiFas &amp; Arbeitsschutz-Büros (Multi-Mandant)</p><h2 id="multiTenantSifaHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Betreuen Sie mehrere Betriebe? Alle Mandanten und Werke in einem Zugang.</h2><p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">Für freiberufliche Fachkräfte für Arbeitssicherheit und Ingenieurbüros, die Gefahrstoffverzeichnisse für mehrere Kundenbetriebe führen.</p></header><ul class="grid list-none gap-6 p-0 sm:grid-cols-2"><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Saubere Mandanten- &amp; Werkstrennung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Verwalten Sie mehrere Kundenbetriebe, Standorte (Werke) und spezifische Tätigkeiten strikt getrennt in einem Account.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Begehungs-Modus (Erfassung ohne SDB)</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Nehmen Sie Gefahrstoffe schon beim Rundgang ohne SDB oder Mengenangabe auf. Offene Felder markiert das System im Export farblich zur späteren Nachpflege.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Exporte für die Betriebsprüfung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Exportieren Sie das Gefahrstoffverzeichnis nach § 6 GefStoffV inkl. echter GHS-Piktogramme und Tätigkeitenzuordnung als PDF oder Excel.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Klassischer Kauf auf Rechnung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Für SiFas, Ingenieurbüros und Firmenkunden bieten wir im Multi-Mandanten-Tarif die gewohnte Abrechnung per monatlicher PDF-Rechnung und Überweisung an.</p></li></ul><div class="mt-10 flex flex-col items-center gap-3"><a class="btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base" href="https://app.gefahrstoff-qr.de/register">Multi-Mandanten-Zugang anfragen / testen →</a><a class="sds-secondary-link" href="mailto:info@gefahrstoff-qr.de?subject=Multi-Mandanten-Zugang%20auf%20Rechnung">Kauf auf Rechnung per E-Mail anfragen</a><p class="text-xs leading-relaxed text-[#8fa4c0] text-center"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Deutschland (inkl. AVV)</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> PDF- &amp; Excel-Export inkl. GHS-Symbolen</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Auf Rechnung für SiFas &amp; Firmenkunden möglich</span></p></div></div></section>
+<section id="fuer-sifas" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="multiTenantSifaHeadline"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><header class="mx-auto mb-12 max-w-2xl text-center"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Für externe SiFas &amp; Arbeitsschutz-Büros (Multi-Mandant)</p><h2 id="multiTenantSifaHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Betreuen Sie mehrere Betriebe? Alle Mandanten und Werke in einem Zugang.</h2><p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">Für freiberufliche Fachkräfte für Arbeitssicherheit und Ingenieurbüros, die Gefahrstoffverzeichnisse für mehrere Kundenbetriebe führen.</p></header><ul class="grid list-none gap-6 p-0 sm:grid-cols-2"><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Saubere Mandanten- &amp; Werkstrennung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Verwalten Sie mehrere Kundenbetriebe, Standorte (Werke) und spezifische Tätigkeiten strikt getrennt in einem Account.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Begehungs-Modus (Erfassung ohne SDB)</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Nehmen Sie Gefahrstoffe schon beim Rundgang ohne SDB oder Mengenangabe auf. Offene Felder markiert das System im Export farblich zur späteren Nachpflege.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Exporte für die Betriebsprüfung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Exportieren Sie das Gefahrstoffverzeichnis nach § 6 GefStoffV inkl. echter GHS-Piktogramme und Tätigkeitenzuordnung als PDF oder Excel.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Klassischer Kauf auf Rechnung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Für SiFas, Ingenieurbüros und Firmenkunden bieten wir im Multi-Mandanten-Tarif die gewohnte Abrechnung per monatlicher PDF-Rechnung und Überweisung an.</p></li></ul><div class="mt-10 flex flex-col items-center gap-3"><a class="btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base" href="https://app.gefahrstoff-qr.de/register">Als SiFa kostenlos starten →</a><a class="sds-secondary-link" href="mailto:info@gefahrstoff-qr.de?subject=Multi-Mandanten-Zugang%20auf%20Rechnung">Direktkauf auf Rechnung verfügbar</a></div></div></section>
 <!--/AEO:MULTI_TENANT_SIFA-->
 
  <!-- PRICING -->
@@ -1371,7 +1299,7 @@ Mit Excel
  <p class="pricing-tier__price mt-6 text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="59" data-yearly="49" data-yearly-total="588">
  <span data-pricing-amount>49</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span>
  </p>
- <p class="pricing-tier__price-note" data-pricing-note>588&nbsp;&euro; jährlich abgerechnet</p>
+ <p class="pricing-tier__price-note" data-pricing-note>588&nbsp;&euro; jährlich · monatlich zahlbar: 59&nbsp;&euro;/Monat</p>
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis 30 Gefahrstoffe</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> 1 Werk, unbegrenzt Lagerorte</li>
@@ -1388,7 +1316,7 @@ Mit Excel
  <p class="pricing-tier__price mt-6 text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="119" data-yearly="99" data-yearly-total="1188">
  <span data-pricing-amount>99</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span>
  </p>
- <p class="pricing-tier__price-note" data-pricing-note>1.188&nbsp;&euro; jährlich abgerechnet</p>
+ <p class="pricing-tier__price-note" data-pricing-note>1.188&nbsp;&euro; jährlich · monatlich zahlbar: 119&nbsp;&euro;/Monat</p>
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis 250 Gefahrstoffe</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis 3 Werke, unbegrenzt Lagerorte</li>
@@ -1397,7 +1325,7 @@ Mit Excel
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> KI-gestützte BA-Entwürfe &amp; PDF/Excel-Export</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> SDB-Aktualitäts-Alerts</li>
  </ul>
- <a class="btn-cta-orange btn-cta-orange--block mt-8" href="https://app.gefahrstoff-qr.de/#preise">Professional wählen</a>
+ <a class="btn-cta-orange btn-cta-orange--block mt-8" href="https://app.gefahrstoff-qr.de/#preise">KMU Pro wählen</a>
  </article>
 
  </div>
@@ -1483,9 +1411,6 @@ Mit Excel
  <a href="https://app.gefahrstoff-qr.de/register" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Kostenlos starten</a>,
  ohne Kreditkarte.
  </p>
-<!--AEO:CTA_TRUST_LINE-->
-<p class="text-xs leading-relaxed text-[#8fa4c0] mx-auto mt-3 max-w-xl text-center"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Deutschland (inkl. AVV)</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> PDF- &amp; Excel-Export inkl. GHS-Symbolen</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Auf Rechnung für SiFas &amp; Firmenkunden möglich</span></p>
-<!--/AEO:CTA_TRUST_LINE-->
  </div>
  </section>
 
@@ -1505,13 +1430,6 @@ Mit Excel
 <!--/AEO:FAQ_ITEMS-->
  </div>
 
- <nav class="mt-8 text-center text-sm text-[#8fa4c0]" aria-label="Weiterführende Inhalte">
- Weiterlesen:
- <a href="/gefahrstoffkataster-excel-vorlage/" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Excel vs. Software</a> ·
- <a href="/gefahrstoffverzeichnis-excel-vorlage/" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Gefahrstoffverzeichnis Excel-Vorlage</a> ·
- <a href="/trgs-510-zusammenlagerungs-check/" class="font-semibold text-teal-300 underline-offset-2 hover:underline">TRGS-510-Check</a> ·
- <a href="/wissen/" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Wissen</a>
- </nav>
  </div>
  </section>
 
@@ -1535,9 +1453,6 @@ Mit Excel
  <div class="mt-8 flex justify-center">
  <a class="btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base" href="https://app.gefahrstoff-qr.de/register">Jetzt kostenlos starten</a>
  </div>
-<!--AEO:CTA_TRUST_LINE-->
-<p class="text-xs leading-relaxed text-[#8fa4c0] mx-auto mt-3 max-w-xl text-center"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Deutschland (inkl. AVV)</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> PDF- &amp; Excel-Export inkl. GHS-Symbolen</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Auf Rechnung für SiFas &amp; Firmenkunden möglich</span></p>
-<!--/AEO:CTA_TRUST_LINE-->
 
  <p class="mx-auto mt-5 max-w-md text-xs leading-relaxed text-[#8fa4c0]">
  TarifVorschau im Browser. Upgrade nur, wenn Sie es wollen. Details in unserer <a href="/datenschutz/" class="text-teal-300 underline-offset-2 hover:underline">Datenschutzerklärung</a>.
@@ -1840,7 +1755,9 @@ Mit Excel
  noteEl.textContent =
  (prefix ? prefix + ' ' : '') +
  formatAmount(yTotal, 0) +
- '\u00a0\u20ac jährlich abgerechnet';
+ '\u00a0\u20ac jährlich \u00b7 monatlich zahlbar: ' +
+ formatAmount(monthly, 0) +
+ '\u00a0\u20ac/Monat';
  noteEl.hidden = false;
  }
  } else {

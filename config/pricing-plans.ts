@@ -72,7 +72,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
       'KI-gestützte BA-Entwürfe & PDF/Excel-Export',
       'SDB-Aktualitäts-Alerts',
     ],
-    ctaLabel: 'Professional wählen',
+    ctaLabel: 'KMU Pro wählen',
     isRecommended: true,
   },
   {

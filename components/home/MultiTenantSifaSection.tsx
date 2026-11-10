@@ -1,4 +1,3 @@
-import { CtaTrustLine } from '@/components/home/CtaTrustLine';
 import { HOME_SECTION_STYLES as styles } from '@/components/home/home-section-styles';
 import { MULTI_TENANT_SIFA } from '@/config/home-sections/multi-tenant-sifa';
 
@@ -38,7 +37,6 @@ export function MultiTenantSifaSection() {
           <a className={styles.secondaryLink} href={MULTI_TENANT_SIFA.secondaryCta.href}>
             {MULTI_TENANT_SIFA.secondaryCta.label}
           </a>
-          <CtaTrustLine className="text-center" />
         </div>
       </div>
     </section>

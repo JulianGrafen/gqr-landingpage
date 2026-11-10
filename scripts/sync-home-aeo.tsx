@@ -1,6 +1,7 @@
 /**
  * Rendert die konfigurationsgetriebenen Startseiten-Blöcke in die statische index.html:
- * SoftwareApplication- und FAQPage-JSON-LD, sichtbare FAQ, Excel-Vergleich, SiFa-Sektion, Trust-Microcopy.
+ * Navigation, Hero-Text, Trust-Leiste, Output-Vorschau, Excel-Vergleich, SiFa-Sektion, sichtbare FAQ
+ * sowie SoftwareApplication- und FAQPage-JSON-LD.
  *
  * Ausführen: npm run sync:home
  * Quelle: config/aeo-config.ts, config/home-sections/*, config/landing-home-seo-faq.ts
@@ -12,7 +13,10 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { CtaTrustLine } from '@/components/home/CtaTrustLine';
 import { ExcelComparisonSection } from '@/components/home/ExcelComparisonSection';
 import { HomeFaqItems } from '@/components/home/HomeFaqItems';
+import { HomeHeroCopy } from '@/components/home/HomeHeroCopy';
+import { HomeNavigation } from '@/components/home/HomeNavigation';
 import { MultiTenantSifaSection } from '@/components/home/MultiTenantSifaSection';
+import { OutputPreviewSection } from '@/components/home/OutputPreviewSection';
 import { LANDING_HOME_SEO_FAQ } from '@/config/landing-home-seo-faq';
 import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
 import { buildSoftwareApplicationSchema } from '@/lib/seo/build-software-application-schema';
@@ -37,8 +41,11 @@ const updatedHtml = replaceMarkedBlocks(html, {
   FAQ_ITEMS: () => renderHtml(<HomeFaqItems items={LANDING_HOME_SEO_FAQ} />),
   EXCEL_COMPARISON: () => renderHtml(<ExcelComparisonSection />),
   MULTI_TENANT_SIFA: () => renderHtml(<MultiTenantSifaSection />),
-  CTA_TRUST_LINE_HERO: () => renderHtml(<CtaTrustLine className="mt-2 w-full text-center md:text-left" />),
-  CTA_TRUST_LINE: () => renderHtml(<CtaTrustLine className="mx-auto mt-3 max-w-xl text-center" />),
+  NAV_DESKTOP: () => renderHtml(<HomeNavigation variant="desktop" />),
+  NAV_MOBILE: () => renderHtml(<HomeNavigation variant="mobile" />),
+  HERO_COPY: () => renderHtml(<HomeHeroCopy />),
+  HERO_TRUST_LINE: () => renderHtml(<CtaTrustLine className="mt-4 text-center" />),
+  OUTPUT_PREVIEW: () => renderHtml(<OutputPreviewSection />),
 });
 
 writeFileSync(INDEX_HTML_PATH, updatedHtml, 'utf8');

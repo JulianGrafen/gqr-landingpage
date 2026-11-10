@@ -2,7 +2,7 @@
 
 > Gefahrstoff-QR ist eine browserbasierte B2B-Webanwendung zur Digitalisierung des Gefahrstoffverzeichnisses nach § 6 GefStoffV. Die Software wertet Sicherheitsdatenblätter (SDB) KI-gestützt aus, erstellt Entwürfe für Betriebsanweisungen nach TRGS 555 und stellt Notfallinformationen per QR-Code am Arbeitsplatz bereit. Jeder KI-gestützte Entwurf (gemäß TRGS 555) ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).
 
-Stand: 2026-11-09. Das Angebot richtet sich ausschließlich an Unternehmen, Gewerbetreibende und freiberufliche Sicherheitsfachkräfte (§ 14 BGB).
+Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewerbetreibende und freiberufliche Sicherheitsfachkräfte (§ 14 BGB).
 
 ## Kernzielgruppen
 

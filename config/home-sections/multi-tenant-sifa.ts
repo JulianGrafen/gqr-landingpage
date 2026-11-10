@@ -42,7 +42,7 @@ export const MULTI_TENANT_SIFA = {
         'Für SiFas, Ingenieurbüros und Firmenkunden bieten wir im Multi-Mandanten-Tarif die gewohnte Abrechnung per monatlicher PDF-Rechnung und Überweisung an.',
     },
   ] satisfies SellingPoint[],
-  primaryCta: { label: 'Multi-Mandanten-Zugang anfragen / testen →', href: APP_REGISTER_URL },
+  primaryCta: { label: 'Als SiFa kostenlos starten →', href: APP_REGISTER_URL },
   secondaryCta: {
     label: SIFA_INVOICE_REQUEST_CTA_LABEL,
     href: SIFA_INVOICE_REQUEST_MAILTO,

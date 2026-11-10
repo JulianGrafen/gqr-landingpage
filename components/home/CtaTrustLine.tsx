@@ -1,16 +1,16 @@
 import { Fragment } from 'react';
-import { CTA_TRUST_SIGNALS } from '@/config/aeo-config';
+import { HOME_HERO } from '@/config/home-sections/hero';
 
 type CtaTrustLineProps = {
   /** Zusätzliche Klassen für Ausrichtung im jeweiligen CTA-Kontext. */
   className?: string;
 };
 
-/** Dezente Trust-Microcopy unter primären CTAs (Serverstandort, Export, Rechnungskauf). */
+/** Einzige Trust-Leiste der Startseite, direkt unter der SDB-Dropzone (keine Wiederholung). */
 export function CtaTrustLine({ className = '' }: CtaTrustLineProps) {
   return (
     <p className={`text-xs leading-relaxed text-[#8fa4c0] ${className}`.trim()}>
-      {CTA_TRUST_SIGNALS.map((signal, index) => (
+      {HOME_HERO.trustSignals.map((signal, index) => (
         <Fragment key={signal}>
           {index > 0 ? ' · ' : null}
           <span className="whitespace-nowrap">
