@@ -17,7 +17,11 @@ export const CONTACT_EMAIL = 'info@gefahrstoff-qr.de';
 /** Betreff für SiFa-/Firmenkunden: Kauf auf monatliche PDF-Rechnung */
 export const SIFA_INVOICE_REQUEST_SUBJECT = 'Multi-Mandanten-Zugang auf Rechnung';
 export const SIFA_INVOICE_REQUEST_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(SIFA_INVOICE_REQUEST_SUBJECT)}`;
-export const SIFA_INVOICE_REQUEST_CTA_LABEL = 'Direktkauf auf Rechnung verfügbar';
+export const SIFA_INVOICE_REQUEST_CTA_LABEL = 'Angebot auf Rechnung anfordern';
+
+/** Betreff für Industrie-/Konzern-Tarif (Anker-Preisstufe, kein Self-Serve). */
+export const INDUSTRIE_INQUIRY_SUBJECT = 'Industrie-Tarif Anfrage';
+export const INDUSTRIE_INQUIRY_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(INDUSTRIE_INQUIRY_SUBJECT)}`;
 
 /** Stand der AEO-Inhalte (dateModified, llms.txt); bei inhaltlichen Änderungen anpassen. */
 export const AEO_CONTENT_UPDATED = '2026-11-10';

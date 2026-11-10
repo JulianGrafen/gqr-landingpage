@@ -37,9 +37,9 @@
  <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png">
 
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="preload" href="style.css?v=58" as="style">
+  <link rel="preload" href="style.css?v=69" as="style">
  <link rel="preload" href="tw.css" as="style">
-  <link rel="stylesheet" href="style.css?v=58">
+  <link rel="stylesheet" href="style.css?v=69">
  <link rel="stylesheet" href="tw.css">
 
  <script type="application/ld+json">
@@ -57,7 +57,7 @@
  "publisher": { "@id": "https://gefahrstoff-qr.de/#organization" },
  "speakable": {
   "@type": "SpeakableSpecification",
-  "cssSelector": ["#heroHeadline", "#kurzantwort", "#faqHeadline"]
+  "cssSelector": ["#heroHeadline", "#kurzantwort", "#faq summary"]
  }
  }
  </script>
@@ -139,12 +139,25 @@
   {
    "@type": "Offer",
    "name": "SiFa Multi-Mandant",
-   "description": "unbegrenzte Mandanten & Werke (Fair-Use). Saubere Mandanten-, Werks- & Tätigkeitstrennung, Erfassung auch ohne SDB (Begehungs-Modus), Batch-Upload & alle PDF/Excel-Exporte inkl. GHS, Direktkauf auf monatliche PDF-Rechnung möglich",
+   "description": "bis 15 Mandantenbetriebe inklusive. Ab dem 16. Mandant: +79,00 €/Monat je 10er-Block weiterer Mandanten, Unbegrenzte Werke je Mandant (Fair-Use), Saubere Mandanten-, Werks- & Tätigkeitstrennung, Erfassung auch ohne SDB (Begehungs-Modus), Batch-Upload & alle PDF/Excel-Exporte inkl. GHS, Direktkauf auf monatliche PDF-Rechnung möglich",
    "price": "189",
    "priceCurrency": "EUR",
    "priceSpecification": {
     "@type": "UnitPriceSpecification",
     "price": "189",
+    "priceCurrency": "EUR",
+    "unitText": "MONTH"
+   }
+  },
+  {
+   "@type": "Offer",
+   "name": "Industrie",
+   "description": "ab 250 Gefahrstoffen, ab 4 Werken (Fair-Use). Alles aus KMU Pro, SSO (Single Sign-On), Dedizierter AVV-Support, Individuelle Einführung & Jahresvertrag auf Anfrage",
+   "price": "399",
+   "priceCurrency": "EUR",
+   "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "price": "399",
     "priceCurrency": "EUR",
     "unitText": "MONTH"
    }
@@ -213,7 +226,134 @@
  </script>
 
 <!--AEO:FAQ_JSONLD-->
-
+ <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Wie unterstützt Gefahrstoff-QR beim Gefahrstoffverzeichnis nach § 6 GefStoffV?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Gefahrstoff-QR ist eine browserbasierte Software, die aus Sicherheitsdatenblättern einen KI-gestützten Entwurf für das Gefahrstoffverzeichnis nach § 6 GefStoffV erstellt. Die Angaben werden mit Verweis auf den jeweiligen SDB-Abschnitt ausgelesen, den Tätigkeiten und Arbeitsbereichen zugeordnet und als PDF oder Excel inklusive GHS-Piktogrammen exportiert. Die SiFa bzw. der Arbeitgeber prüft den Entwurf und gibt ihn fachlich frei."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Eignet sich Gefahrstoff-QR für externe Fachkräfte für Arbeitssicherheit (SiFas) mit mehreren Mandanten?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ja, Gefahrstoff-QR bietet für externe SiFas und Ingenieurbüros eine Multi-Mandanten-Verwaltung, in der Kundenbetriebe als Mandanten, darunter Werke und Arbeitsbereiche bzw. Tätigkeiten strikt getrennt geführt werden. Bei der Begehung lassen sich Gefahrstoffe auch ohne vorliegendes Sicherheitsdatenblatt oder Mengenangabe vorab erfassen. Fehlende Angaben werden im Export farblich markiert und können später nachgepflegt werden."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wie viele Mandantenbetriebe sind im SiFa Multi-Mandant-Tarif enthalten?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Im SiFa Multi-Mandant-Tarif sind bis zu 15 Mandantenbetriebe im Grundpreis enthalten (189 €/Monat oder 159 €/Monat bei Jahreszahlung, jeweils zzgl. MwSt.). Das deckt rund 90 % aller freiberuflichen Einzel-SiFas ohne Aufpreis ab. Ab dem 16. Mandant: +79,00 €/Monat je 10er-Block weiterer Mandanten. Beispiel bei Jahreszahlung: 35 Firmen 317,00 €/Monat, 55 Firmen 475,00 €/Monat."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Ersetzt die KI-Auswertung die fachliche Prüfung nach TRGS 555 und § 14 GefStoffV?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Nein, Gefahrstoff-QR erstellt aus dem Sicherheitsdatenblatt des Lieferanten strukturierte Entwürfe, die fachliche Prüfung bleibt beim Menschen. Jeder KI-gestützte Entwurf (gemäß TRGS 555) ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV). Die Anpassung an die Bedingungen am Arbeitsplatz und die Freigabe erfolgen durch die verantwortliche Person."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Können Unternehmen und SiFas Gefahrstoff-QR auf Rechnung beziehen?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ja, neben der direkten Online-Buchung können Geschäftskunden und SiFas im Multi-Mandanten-Tarif per monatlicher PDF-Rechnung und Überweisung zahlen. Eine langfristige Vertragsbindung besteht nicht, die Pakete sind monatlich kündbar. Das Angebot richtet sich ausschließlich an Unternehmen, Gewerbetreibende und freiberufliche Sicherheitsfachkräfte (§ 14 BGB)."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Was ist eine Gefahrstoffmanagement Software?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Eine Gefahrstoffmanagement Software ist ein digitales System, mit dem Betriebe ihr Gefahrstoffverzeichnis nach § 6 GefStoffV, die zugehörigen Sicherheitsdatenblätter, Betriebsanweisungen und Lagerinformationen an einer Stelle führen. Gegenüber Excel-Listen bietet sie Versionierung, Erinnerungen an SDB-Aktualisierungen und einen Revisionsverlauf. Gefahrstoff-QR läuft im Browser und erstellt aus dem Sicherheitsdatenblatt einen KI-gestützten Entwurf zur fachlichen Freigabe durch die SiFa / den Arbeitgeber."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Welche Pflichtangaben muss ein Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthalten?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ein Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthält mindestens die Bezeichnung des Gefahrstoffs, die Einstufung bzw. die gefährlichen Eigenschaften (GHS-Gefahrenklassen und -kategorien), die verwendeten Mengenbereiche im Betrieb, die betroffenen Arbeitsbereiche und einen Verweis auf das aktuelle Sicherheitsdatenblatt. In Excel fehlen häufig die Verknüpfung zur gültigen SDB-Version und Zeitstempel pro Änderung. Gefahrstoff-QR strukturiert diese Pflichtfelder aus dem SDB-PDF als Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber und führt einen Revisionsverlauf."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wie oft muss das Gefahrstoffverzeichnis aktualisiert werden?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Das Gefahrstoffverzeichnis muss bei wesentlichen Änderungen fortgeschrieben und mindestens einmal jährlich überprüft werden. Wesentliche Änderungen sind zum Beispiel neue Stoffe, geänderte Mengen oder Arbeitsbereiche und neue Versionen des Sicherheitsdatenblatts. Gefahrstoff-QR erinnert an fällige SDB-Aktualisierungen und dokumentiert jede Änderung mit Zeitstempel und Nutzer."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Reicht Excel als Gefahrstoffverzeichnis aus?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Excel kann die Pflichtfelder abbilden, deckt aber laufende Aktualität, Versionierung der Sicherheitsdatenblätter und den Nachweis von Änderungen nur mit viel Handarbeit ab. Genau diese Punkte prüfen SiFa und Aufsichtsbehörden bei Betriebsprüfungen. Gefahrstoff-QR führt KI-gestützte Extraktion, fachliche Freigabe und den PDF-Export des Verzeichnisses in einer Datenbasis zusammen, ohne Abtipp-Marathon."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wie dokumentiere ich die Zusammenlagerungsprüfung nach TRGS 510?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Nach TRGS 510 gleichen Sie die Lagerklassen (LGK) der Stoffe über die Zusammenlagerungstabelle ab, und zwar bei jeder neuen Charge oder Lagerplatzänderung erneut. Ein Screenshot oder Excel-Hinweis zeigt bei Audits selten, welche Kombination zum Prüfzeitpunkt bewertet wurde. Gefahrstoff-QR ordnet Stoffe ihrer Lagerklasse zu und weist pro Lagerort auf mögliche Konflikte hin. Die Lagerentscheidung trifft die SiFa / Fachkraft, die Verantwortung liegt beim Arbeitgeber."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Woran erkennt eine Betriebsprüfung, dass das Gefahrstoffverzeichnis veraltet ist?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Prüfer vergleichen Verzeichnisstand, SDB-Versionen und Arbeitsbereiche mit der Situation vor Ort. Abweichungen zwischen Etikett, Lagerort und dokumentiertem Eintrag gelten als Organisationsverschulden. Ordner mit PDFs oder unversionierte Excel-Listen zeigen selten, wer wann welches Feld geändert hat. Gefahrstoff-QR protokolliert Revisionen, fordert SDB-Updates zyklisch an und verknüpft jeden Eintrag mit der gültigen SDB-Version."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Was kostet Gefahrstoff-QR?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Die TarifVorschau ist kostenlos (bis zu 3 SDB-Uploads, PDF nur mit „MUSTER“-Wasserzeichen). KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, bis 15 Mandantenbetriebe inklusive, Ab dem 16. Mandant: +79,00 €/Monat je 10er-Block weiterer Mandanten, PDF-Rechnung möglich). Industrie: ab 399 € pro Monat (ab 250 Gefahrstoffen, ab 4 Werken, SSO, dedizierter AVV-Support, Anfrage). Alle Preise zzgl. MwSt., monatlich kündbar."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wo werden die Daten gehostet?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Die Daten werden in Deutschland gehostet, ein Auftragsverarbeitungsvertrag (AVV) ist inklusive. Die Verbindung ist SSL-verschlüsselt, Konten lassen sich mit Zwei-Faktor-Authentifizierung schützen. Details zu Zweckbindung und Löschfristen stehen in der Datenschutzerklärung."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Unterstützt Gefahrstoff-QR auch TRGS 555, TRGS 600 und REACH?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ja, im Rahmen der Vorprüfung. Die Einstufung erfolgt nach CLP-Verordnung, REACH-relevante Daten wie die UFI können geführt werden. Gefahrstoff-QR unterstützt bei TRGS 510 (Lagerung), TRGS 555 (Betriebsanweisung als KI-gestützter Entwurf) und TRGS 600 (Hinweise zur Substitutionsprüfung bei KMR-Stoffen). Die fachliche Bewertung bleibt bei der SiFa / dem Arbeitgeber."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wie aufwendig ist der Umstieg von Excel auf Gefahrstoff-QR?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Der Umstieg braucht kein IT-Projekt, weil Gefahrstoff-QR im Browser läuft. Vorhandene Sicherheitsdatenblätter laden Sie ab dem Professional-Paket per Batch-Upload in einem Rutsch hoch. Alternativ begleitet Sie der Umzugsservice persönlich beim Erstimport."
+   }
+  }
+ ]
+}
+ </script>
 <!--/AEO:FAQ_JSONLD-->
  </head>
 <body>
@@ -223,7 +363,7 @@
 
  <nav class="nav-desktop" aria-label="Hauptnavigation">
 <!--AEO:NAV_DESKTOP-->
-<a class="nav-link" href="#live-demo">Live-Test</a><a class="nav-link" href="#fuer-sifas">Für SiFas</a><a class="nav-link" href="#preise">Preise</a><a class="nav-link" href="https://app.gefahrstoff-qr.de/login">Login</a><a class="btn btn-primary nav-cta" href="#live-demo">SDB live testen</a>
+<a class="nav-link" href="#live-demo">Live-Test</a><a class="nav-link" href="#fuer-sifas">Für SiFas</a><a class="nav-link" href="#preise">Preise</a><a class="nav-link" href="https://app.gefahrstoff-qr.de/login">Login</a><a class="btn btn-primary nav-cta" href="https://app.gefahrstoff-qr.de/register" data-nav-primary-cta="true">Kostenlos testen</a>
 <!--/AEO:NAV_DESKTOP-->
  </nav>
 
@@ -232,12 +372,14 @@
  </button>
  </header>
 
+ <a class="header-sticky-cta" href="https://app.gefahrstoff-qr.de/register" data-header-sticky-cta hidden>Kostenlos testen <span aria-hidden="true">→</span></a>
+
  <div class="nav-mobile" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Mobilmenü">
  <div class="nav-mobile-inner">
  <button id="navCloseBtn" class="nav-close" aria-label="Schließen">&#x2715; Schließen</button>
  <nav class="mobile-links">
 <!--AEO:NAV_MOBILE-->
-<a class="nav-link" href="#live-demo">Live-Test</a><a class="nav-link" href="#fuer-sifas">Für SiFas</a><a class="nav-link" href="#preise">Preise</a><a class="nav-link" href="https://app.gefahrstoff-qr.de/login">Login</a><a class="btn btn-primary" href="#live-demo">SDB live testen</a>
+<a class="nav-link" href="#live-demo">Live-Test</a><a class="nav-link" href="#fuer-sifas">Für SiFas</a><a class="nav-link" href="#preise">Preise</a><a class="nav-link" href="https://app.gefahrstoff-qr.de/login">Login</a><a class="btn btn-primary" href="https://app.gefahrstoff-qr.de/register">Kostenlos testen</a>
 <!--/AEO:NAV_MOBILE-->
  </nav>
  </div>
@@ -250,7 +392,7 @@
  <div class="container sds-hero__top">
  <div class=" flex w-full flex-wrap items-center justify-center container sds-hero__headline">
 <!--AEO:HERO_COPY-->
-<h1 id="heroHeadline" class="sds-hero__title flex w-full flex-col flex-wrap items-center justify-center md:items-start"><span class="text-center md:text-left">Gefahrstoff­kataster &amp; BA-Entwurf</span><span class="block text-center text-[#ff5e00] md:text-left">ohne Abtippen.</span></h1><p class="sds-hero__subtitle mt-5 text-center text-lg text-[#c8d4e6] md:text-left">SDB-PDF hochladen: KI liest aus, Sie geben frei. Sparen Sie sich Stunden an Arbeit für Ihre Mandanten.</p><div class="sds-hero__cta-row mt-8 flex w-full flex-col flex-wrap justify-center gap-4 sm:flex-row md:justify-start"><a class="btn-cta-orange sds-hero__cta" href="#live-demo">Beispiel-SDB live auslesen</a><a class="sds-secondary-link sds-hero__cta" href="https://app.gefahrstoff-qr.de/register">Kostenlos registrieren</a></div><p class="mt-4 w-full text-center text-sm text-[#8fa4c0] md:text-left">Kein Verkaufsgespräch, testen Sie die Software in Ruhe</p>
+<h1 id="heroHeadline" class="sds-hero__title flex w-full flex-col flex-wrap items-center justify-center md:items-start"><span class="text-center md:text-left">Gefahrstoff­kataster &amp; BA-Entwurf</span><span class="block text-center text-[#ff5e00] md:text-left">ohne Abtippen.</span></h1><p class="sds-hero__subtitle mt-5 text-center text-lg text-[#c8d4e6] md:text-left">KI liest aus, Sie geben frei. Sparen Sie sich Stunden an Arbeit für Ihre Mandanten.</p><div class="sds-hero__cta-row mt-8 flex w-full flex-col flex-wrap justify-center gap-4 sm:flex-row md:justify-start"><a class="btn-cta-orange sds-hero__cta" href="https://app.gefahrstoff-qr.de/register">Kostenlos registrieren</a></div><p class="mt-4 w-full text-center text-sm text-[#8fa4c0] md:text-left">Kein Verkaufsgespräch, testen Sie die Software in Ruhe</p>
 <!--/AEO:HERO_COPY-->
  </div>
 
@@ -476,16 +618,18 @@ Mit Excel
  </section>
  <!-- ERGEBNIS (CRO/AEO): Output-Vorschau, generiert aus config/home-sections/output-preview.ts -->
 <!--AEO:OUTPUT_PREVIEW-->
-<section id="ergebnis" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-label="Ergebnisse in der App"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><ul class="grid list-none gap-6 p-0 lg:grid-cols-3"><li class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><div class="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3"><img src="/images/landing-kataster-dashboard.png" alt="Gefahrstoffverzeichnis in Gefahrstoff-QR mit Standortfilter, Signalwort und GHS-Piktogrammen" width="1833" height="1168" loading="lazy" decoding="async" class="h-auto w-full rounded-lg"/></div><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">§ 6 GefStoffV</p><h3 class="text-lg font-bold text-[#f0f6ff]">Gefahrstoffverzeichnis für die Betriebsprüfung</h3><ul class="mt-3 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Filterbar nach Standort, Werk und Lagerort</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>GHS-Piktogramme im PDF und in der Excel-Datei</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Fehlende Angaben aus der Begehung farblich markiert</li></ul></li><li class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><div class="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3"><div class="mx-auto aspect-[210/297] w-full max-w-[220px] rounded-md border-4 border-[#ff6b35] bg-white p-3 text-left shadow-lg" aria-hidden="true"><p class="text-[9px] font-black uppercase tracking-wider text-slate-900">Betriebsanweisung</p><p class="text-[7px] text-slate-500">gemäß TRGS 555 · Entwurf</p><ul class="mt-2 list-none space-y-1.5 p-0"><li><p class="rounded-sm bg-[#ff6b35] px-1 text-[7px] font-bold text-white">Anwendungsbereich</p><span class="mt-0.5 block h-1 w-full rounded bg-slate-200"></span><span class="mt-0.5 block h-1 w-3/4 rounded bg-slate-200"></span></li><li><p class="rounded-sm bg-[#ff6b35] px-1 text-[7px] font-bold text-white">Gefahren für Mensch und Umwelt</p><span class="mt-0.5 block h-1 w-full rounded bg-slate-200"></span><span class="mt-0.5 block h-1 w-3/4 rounded bg-slate-200"></span></li><li><p class="rounded-sm bg-[#ff6b35] px-1 text-[7px] font-bold text-white">Schutzmaßnahmen und Verhaltensregeln</p><span class="mt-0.5 block h-1 w-full rounded bg-slate-200"></span><span class="mt-0.5 block h-1 w-3/4 rounded bg-slate-200"></span></li><li><p class="rounded-sm bg-[#ff6b35] px-1 text-[7px] font-bold text-white">Verhalten im Gefahrfall</p><span class="mt-0.5 block h-1 w-full rounded bg-slate-200"></span><span class="mt-0.5 block h-1 w-3/4 rounded bg-slate-200"></span></li><li><p class="rounded-sm bg-[#ff6b35] px-1 text-[7px] font-bold text-white">Erste Hilfe</p><span class="mt-0.5 block h-1 w-full rounded bg-slate-200"></span><span class="mt-0.5 block h-1 w-3/4 rounded bg-slate-200"></span></li><li><p class="rounded-sm bg-[#ff6b35] px-1 text-[7px] font-bold text-white">Sachgerechte Entsorgung</p><span class="mt-0.5 block h-1 w-full rounded bg-slate-200"></span><span class="mt-0.5 block h-1 w-3/4 rounded bg-slate-200"></span></li></ul></div></div><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">TRGS 555</p><h3 class="text-lg font-bold text-[#f0f6ff]">Betriebsanweisung als A4-Entwurf</h3><ul class="mt-3 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Gliederung in die sechs Abschnitte nach TRGS 555</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Eigenes Firmenlogo und anpassbare Rahmenfarbe</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Schriftgröße passt sich dem Inhalt für den Aushang an</li></ul></li><li class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><div class="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3"><img src="/images/gefahrstoffmanagement-trgs510-check.jpeg" alt="TRGS-510-Zusammenlagerungshinweise pro Lagerort in Gefahrstoff-QR" width="1770" height="1294" loading="lazy" decoding="async" class="h-auto w-full rounded-lg"/></div><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">TRGS 510 &amp; Notfall</p><h3 class="text-lg font-bold text-[#f0f6ff]">Zusammenlagerung und QR-Notfallansicht</h3><ul class="mt-3 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Konflikthinweise der Lagerklassen pro Lagerort</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>QR-Code am Gebinde öffnet Erste Hilfe und Schutzmaßnahmen</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Abruf im Smartphone-Browser, ohne App-Installation</li></ul></li></ul></div></section>
+<section id="ergebnis" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-label="Ergebnisse in der App"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><ul class="grid list-none gap-6 p-0 lg:grid-cols-3"><li class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><div class="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3"><img src="/images/landing-kataster-dashboard.png" alt="Gefahrstoffverzeichnis in Gefahrstoff-QR mit Standortfilter, Signalwort und GHS-Piktogrammen" width="1833" height="1168" loading="lazy" decoding="async" class="h-auto w-full rounded-lg"/></div><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">§ 6 GefStoffV</p><h3 class="text-lg font-bold text-[#f0f6ff]">Gefahrstoffverzeichnis für die Betriebsprüfung</h3><ul class="mt-3 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Filterbar nach Standort, Werk und Lagerort</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>GHS-Piktogramme im PDF und in der Excel-Datei</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Fehlende Angaben aus der Begehung farblich markiert</li></ul></li><li class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><div class="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3"><img src="/images/app-screenshot-form.png" alt="Betriebsanweisung als KI-gestützter Entwurf (TRGS 555) in Gefahrstoff-QR" width="2940" height="1656" loading="lazy" decoding="async" class="h-auto w-full rounded-lg"/></div><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">TRGS 555</p><h3 class="text-lg font-bold text-[#f0f6ff]">Betriebsanweisung als A4-Entwurf</h3><ul class="mt-3 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Gliederung in die sechs Abschnitte nach TRGS 555</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Eigenes Firmenlogo und anpassbare Rahmenfarbe</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Schriftgröße passt sich dem Inhalt für den Aushang an</li></ul></li><li class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><div class="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3"><img src="/images/gefahrstoffmanagement-trgs510-check.jpeg" alt="TRGS-510-Zusammenlagerungshinweise pro Lagerort in Gefahrstoff-QR" width="1770" height="1294" loading="lazy" decoding="async" class="h-auto w-full rounded-lg"/></div><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">TRGS 510 &amp; Notfall</p><h3 class="text-lg font-bold text-[#f0f6ff]">Zusammenlagerung und QR-Notfallansicht</h3><ul class="mt-3 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Konflikthinweise der Lagerklassen pro Lagerort</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>QR-Code am Gebinde öffnet Erste Hilfe und Schutzmaßnahmen</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Abruf im Smartphone-Browser, ohne App-Installation</li></ul></li></ul></div></section>
 <!--/AEO:OUTPUT_PREVIEW-->
 
  <!-- KURZANTWORT (AEO): zitierfähige Definition + Faktenblock -->
  <section id="auf-einen-blick" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-20" aria-labelledby="kurzantwortHeadline">
  <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
- <div class="mx-auto mb-10 max-w-3xl text-center">
+ <div class="mx-auto mb-10 max-w-3xl">
+ <div class="text-center">
  <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Kurz erklärt</p>
  <h2 id="kurzantwortHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Was ist Gefahrstoff-QR?</h2>
- <p id="kurzantwort" class="mt-4 text-base leading-relaxed text-[#c5d0e2]">
+ </div>
+ <p id="kurzantwort" class="mt-6 text-left text-base leading-7 text-pretty text-[#c5d0e2] sm:text-lg sm:leading-8">
  Gefahrstoff-QR ist eine browserbasierte Gefahrstoffmanagement Software für Handwerksbetriebe, KMU, Sicherheitsfachkräfte und Industrie in Deutschland. Die Software liest Sicherheitsdatenblätter KI-gestützt aus und erstellt daraus einen Entwurf für das Gefahrstoffverzeichnis nach § 6 GefStoffV, den Zusammenlagerungscheck nach TRGS 510 und Betriebsanweisungen als KI-gestützter Entwurf (gemäß TRGS 555). Jeder Entwurf ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).
  </p>
  </div>
@@ -509,6 +653,10 @@ Mit Excel
  </dl>
  </div>
  </section>
+
+ <!--AEO:DATA_TRUST-->
+<section id="daten-trust" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="dataTrustHeadline"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><header class="mx-auto mb-10 max-w-2xl text-center"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Datenhoheit &amp; Datenschutz</p><h2 id="dataTrustHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Ihre Sicherheitsdatenblätter bleiben Ihre Daten</h2></header><ul class="grid list-none gap-6 p-0 lg:grid-cols-3"><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Kein KI-Training mit Kundendaten</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Hochgeladene PDFs und Katasterdaten werden ausschließlich zur Extraktion verarbeitet (Zero-Data-Retention bei Subprozessoren).</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Serverstandort Frankfurt (AWS/Supabase EU)</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">DSGVO-konforme Speicherung in Deutschland inkl. vorab unterzeichnetem AVV nach Art. 28 DSGVO.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Jederzeitige Datenhoheit</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Vollständiger Export aller Katasterdaten als Excel/PDF und SDB-Archiv zu jedem Zeitpunkt, ohne Vendor-Lock-in.</p></li></ul></div></section>
+<!--/AEO:DATA_TRUST-->
 
  <!-- PROBLEM: Kosten des Status quo -->
  <section id="excel-probleme" class="sds-problem-section" aria-labelledby="problemHeadline">
@@ -620,7 +768,7 @@ Mit Excel
                     </article>
                     <article class="scroll-story__slide" data-bg="#101927">
                       <figure class="scroll-story__mobile-image"><span class="scroll-story__orb"><img src="/images/app-werkstrennung.jpeg" width="1770" height="1294" loading="lazy" decoding="async" alt="Werkstrennung und Mandantenverwaltung" /></span></figure>
-                      <h3 class="scroll-story__title">Mehrere Werke &amp; Abteilungen</h3>
+                      <h3 class="scroll-story__title">Mehrere Werke, Abteilungen &amp; Mandanten</h3>
                       <p class="scroll-story__text">Zentrale Verwaltung von Gefahrstoffen in mehreren Werken, mit klarer Werkstrennung.</p>
                     </article>
                     <article class="scroll-story__slide" data-bg="#0f2035">
@@ -875,10 +1023,6 @@ Mit Excel
                    <h3 class="scroll-story__title">Export als PDF oder Excel-Datei</h3>
                    <p class="scroll-story__text">Exportieren Sie Ihre strukturierten Gefahrstoffdaten in gängigen Formaten für Berichte und Dokumentation.</p>
                  </article>
-                 <article class="scroll-story__slide" data-bg="#0f1e35">
-                   <h3 class="scroll-story__title">Automatisches Anfordern aktueller Sicherheitsdatenblätter</h3>
-                   <p class="scroll-story__text">Fordern Sie automatisch aktuelle Sicherheitsdatenblätter an, um Ihre Informationen immer auf dem neuesten Stand zu haben.</p>
-                 </article>
                  <article class="scroll-story__slide" data-bg="#111418">
                    <h3 class="scroll-story__title">Zwei-Faktor-Authentifizierung</h3>
                    <p class="scroll-story__text">Schützen Sie Ihr Konto mit einer zusätzlichen Authentifizierungsebene.</p>
@@ -978,7 +1122,6 @@ Mit Excel
 
  <div class="onboarding-paths">
  <article class="onboarding-path">
- <span class="onboarding-path__badge">In KMU Pro (ab 99&nbsp;&euro;/Monat) und SiFa Multi-Mandant inklusive</span>
  <span class="onboarding-path__step" aria-hidden="true">01</span>
  <h3 class="onboarding-path__title">Batch-Upload: Altdaten in einem Rutsch</h3>
 
@@ -1008,7 +1151,7 @@ Mit Excel
 
  <!-- SIFA MULTI-MANDANT (CRO): generiert aus config/home-sections/multi-tenant-sifa.ts -->
 <!--AEO:MULTI_TENANT_SIFA-->
-<section id="fuer-sifas" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="multiTenantSifaHeadline"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><header class="mx-auto mb-12 max-w-2xl text-center"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Für externe SiFas &amp; Arbeitsschutz-Büros (Multi-Mandant)</p><h2 id="multiTenantSifaHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Betreuen Sie mehrere Betriebe? Alle Mandanten und Werke in einem Zugang.</h2><p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">Für freiberufliche Fachkräfte für Arbeitssicherheit und Ingenieurbüros, die Gefahrstoffverzeichnisse für mehrere Kundenbetriebe führen.</p></header><ul class="grid list-none gap-6 p-0 sm:grid-cols-2"><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Saubere Mandanten- &amp; Werkstrennung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Verwalten Sie mehrere Kundenbetriebe, Standorte (Werke) und spezifische Tätigkeiten strikt getrennt in einem Account.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Begehungs-Modus (Erfassung ohne SDB)</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Nehmen Sie Gefahrstoffe schon beim Rundgang ohne SDB oder Mengenangabe auf. Offene Felder markiert das System im Export farblich zur späteren Nachpflege.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Exporte für die Betriebsprüfung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Exportieren Sie das Gefahrstoffverzeichnis nach § 6 GefStoffV inkl. echter GHS-Piktogramme und Tätigkeitenzuordnung als PDF oder Excel.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Klassischer Kauf auf Rechnung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Für SiFas, Ingenieurbüros und Firmenkunden bieten wir im Multi-Mandanten-Tarif die gewohnte Abrechnung per monatlicher PDF-Rechnung und Überweisung an.</p></li></ul><div class="sds-hero__cta-row mt-10 mx-auto flex w-full flex-col gap-3"><a class="btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base sds-hero__cta" href="https://app.gefahrstoff-qr.de/register">Als SiFa kostenlos starten →</a><a class="sds-secondary-link sds-hero__cta" href="mailto:info@gefahrstoff-qr.de?subject=Multi-Mandanten-Zugang%20auf%20Rechnung">Direktkauf auf Rechnung verfügbar</a></div></div></section>
+<section id="fuer-sifas" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="multiTenantSifaHeadline"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><header class="mx-auto mb-12 max-w-2xl text-center"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Für externe SiFas &amp; Arbeitsschutz-Büros (Multi-Mandant)</p><h2 id="multiTenantSifaHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Betreuen Sie mehrere Betriebe?<br/>Alle Mandanten und Werke in einem Zugang.</h2><p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">Für freiberufliche Fachkräfte für Arbeitssicherheit und Ingenieurbüros, die Gefahrstoffverzeichnisse für mehrere Kundenbetriebe führen.</p></header><ul class="grid list-none gap-6 p-0 sm:grid-cols-2"><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Saubere Mandanten- &amp; Werkstrennung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Verwalten Sie mehrere Kundenbetriebe, Standorte (Werke) und spezifische Tätigkeiten strikt getrennt in einem Account.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Begehungs-Modus (Erfassung ohne SDB)</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Nehmen Sie Gefahrstoffe schon beim Rundgang ohne SDB oder Mengenangabe auf. Offene Felder markiert das System im Export farblich zur späteren Nachpflege.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Exporte für die Betriebsprüfung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Exportieren Sie das Gefahrstoffverzeichnis nach § 6 GefStoffV inkl. echter GHS-Piktogramme und Tätigkeitenzuordnung als PDF oder Excel.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Klassischer Kauf auf Rechnung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Für SiFas, Ingenieurbüros und Firmenkunden bieten wir im Multi-Mandanten-Tarif die gewohnte Abrechnung per monatlicher PDF-Rechnung und Überweisung an.</p></li></ul><aside class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6 mx-auto mt-10 max-w-3xl text-center sm:text-left" aria-labelledby="multiTenantSifaPricingHeadline"><h3 id="multiTenantSifaPricingHeadline" class="text-lg font-bold text-[#f0f6ff]">SiFa Multi-Mandant: 159,00 €/Monat bei Jahreszahlung · 189,00 €/Monat monatlich</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0] mt-3">Bis zu 15 Mandantenbetriebe sind im Grundpreis enthalten.</p><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0] mt-3">Damit decken Sie rund 90 % aller freiberuflichen Einzel-SiFas ab. Bei voller Auslastung wirkt der Tarif wie eine echte Flatrate ohne Reibung (ca. 10,60 € pro betreutem Betrieb bei Jahreszahlung).</p><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0] mt-3">Ab dem 16. Mandanten (für große Ingenieurbüros mit mehreren SiFas): +79,00 €/Monat je 10er-Block weiterer Mandanten.</p><ul class="mt-4 list-none space-y-2 p-0 text-sm leading-relaxed text-[#c5d0e2]"><li><span class="font-semibold text-[#f0f6ff]">35 betreute Firmen</span>: 317,00 €/Monat (ca. 9,06 € pro Betrieb) <span class="text-[#8fa4c0]">· großes Ingenieurbüro</span></li><li><span class="font-semibold text-[#f0f6ff]">55 betreute Firmen</span>: 475,00 €/Monat (ca. 8,64 € pro Betrieb) <span class="text-[#8fa4c0]">· Großbüro</span></li></ul><p class="mt-4 text-xs leading-relaxed text-[#8fa4c0]">Alle Preise zzgl. MwSt. Rechenbeispiele bei Jahreszahlung zum reduzierten Monatspreis.</p><p class="mt-4"><a class="sds-secondary-link" href="#preise">Alle Pakete im Überblick</a></p></aside><div class="sds-hero__cta-row mt-10 mx-auto flex w-full flex-col gap-3"><a class="btn-glass-outline inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base sds-hero__cta" href="https://app.gefahrstoff-qr.de/register">Als SiFa kostenlos starten →</a></div></div></section>
 <!--/AEO:MULTI_TENANT_SIFA-->
 
  <!-- PRICING -->
@@ -1017,9 +1160,6 @@ Mit Excel
  <div class="mx-auto mb-12 max-w-2xl text-center">
  <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Preise</p>
  <h2 id="pricingHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Was kostet Gefahrstoffmanagement Software?</h2>
- <p class="mt-4 text-base text-[#8fa4c0]">Ab 49&nbsp;&euro;/Monat bei Jahreszahlung (KMU Basis). Monatlich kündbar oder günstiger bei jährlicher Vorauszahlung. Zum Vergleich: Bei rund 20 Minuten Abtippen pro Sicherheitsdatenblatt kosten 50 Stoffe in Excel etwa zwei Arbeitstage.
- <br>
- <br><b>Der QR-Scan-Zugriff ist immer inklusive.</b></p>
  </div>
 
  <div class="pricing-billing" data-pricing-billing>
@@ -1037,20 +1177,21 @@ Mit Excel
  <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
  <p class="text-lg font-bold text-[#f0f6ff]">TarifVorschau <span class="text-sm font-semibold text-teal-300">(Free)</span></p>
  <p class="mt-1 text-sm text-[#8fa4c0]">Unverbindlicher Funktionstest im Browser.</p>
- <p class="mt-6 text-3xl font-black text-[#f0f6ff]">0&nbsp;&euro;</p>
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]">0&nbsp;&euro;</p>
+ <p class="pricing-tier__price-note" hidden aria-hidden="true">&nbsp;</p>
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis zu 3 SDB-Uploads testen</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> KI-Auswertung im Browser ansehen</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> PDF-Vorschau nur mit „MUSTER“-Wasserzeichen</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10007;</span> Kein Excel-Export, keine dauerhaften QR-Links</li>
  </ul>
- <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="https://app.gefahrstoff-qr.de/register">Im Browser testen</a>
+ <a class="btn-glass-outline btn-glass-outline--block mt-8" href="https://app.gefahrstoff-qr.de/register">Jetzt Starten</a>
  </article>
 
  <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
  <p class="text-lg font-bold text-[#f0f6ff]">KMU Basis</p>
  <p class="mt-1 text-sm text-[#8fa4c0]">Für kleine Betriebe, Werkstätten &amp; Handwerk.</p>
- <p class="pricing-tier__price mt-6 text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="59" data-yearly="49" data-yearly-total="588">
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="59" data-yearly="49" data-yearly-total="588">
  <span data-pricing-amount>49</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span>
  </p>
  <p class="pricing-tier__price-note" data-pricing-note>588&nbsp;&euro; jährlich · monatlich zahlbar: 59&nbsp;&euro;/Monat</p>
@@ -1061,14 +1202,13 @@ Mit Excel
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> PDF- &amp; Excel-Export (ohne Wasserzeichen)</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Aktive QR-Notfallansicht am Arbeitsplatz</li>
  </ul>
- <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="https://app.gefahrstoff-qr.de/#preise">Mit Basis starten</a>
+ <a class="btn-glass-outline btn-glass-outline--block mt-8" href="https://app.gefahrstoff-qr.de/#preise">Jetzt Starten</a>
  </article>
 
- <article class="relative flex flex-col rounded-2xl border-2 border-[#ff6b35]/60 bg-[#162340] p-6 shadow-xl shadow-orange-900/20 ring-1 ring-orange-400/30 lg:p-7" aria-label="Empfohlenes Paket">
- <span class="pricing-badge-recommended">Empfohlen</span>
+ <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
  <p class="text-lg font-bold text-[#f0f6ff]">KMU Pro</p>
  <p class="mt-1 text-sm text-[#8fa4c0]">Für Mittelstand &amp; Produktion mit vielen Stoffen.</p>
- <p class="pricing-tier__price mt-6 text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="119" data-yearly="99" data-yearly-total="1188">
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="119" data-yearly="99" data-yearly-total="1188">
  <span data-pricing-amount>99</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span>
  </p>
  <p class="pricing-tier__price-note" data-pricing-note>1.188&nbsp;&euro; jährlich · monatlich zahlbar: 119&nbsp;&euro;/Monat</p>
@@ -1080,27 +1220,43 @@ Mit Excel
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> KI-gestützte BA-Entwürfe &amp; PDF/Excel-Export</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> SDB-Aktualitäts-Alerts</li>
  </ul>
- <a class="btn-cta-orange btn-cta-orange--block mt-8" href="https://app.gefahrstoff-qr.de/#preise">KMU Pro wählen</a>
+ <a class="btn-glass-outline btn-glass-outline--block mt-8" href="https://app.gefahrstoff-qr.de/#preise">Jetzt Starten</a>
  </article>
 
  <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
  <p class="text-lg font-bold text-[#f0f6ff]">SiFa Multi-Mandant</p>
  <p class="mt-1 text-sm text-[#8fa4c0]">Speziell für externe SiFas &amp; Ingenieurbüros.</p>
- <p class="pricing-tier__price mt-6 text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="189" data-yearly="159" data-yearly-total="1908">
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="189" data-yearly="159" data-yearly-total="1908">
  <span data-pricing-amount>159</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span>
  </p>
  <p class="pricing-tier__price-note" data-pricing-note>1.908&nbsp;&euro; jährlich · monatlich zahlbar: 189&nbsp;&euro;/Monat</p>
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
- <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Unbegrenzte Mandanten &amp; Werke (Fair-Use)</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis 15 Mandantenbetriebe inklusive</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Ab 16. Mandant: +79&nbsp;&euro;/Monat je 10er-Block</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Unbegrenzte Werke je Mandant (Fair-Use)</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Saubere Mandanten-, Werks- &amp; Tätigkeitstrennung</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Erfassung auch ohne SDB (Begehungs-Modus)</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Batch-Upload &amp; alle PDF/Excel-Exporte inkl. GHS</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Direktkauf auf monatliche PDF-Rechnung möglich</li>
  </ul>
- <div class="mt-8 flex flex-col gap-3">
- <a class="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="https://app.gefahrstoff-qr.de/#preise">Als SiFa starten (auch auf Rechnung)</a>
- <a class="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-teal-400/35 bg-teal-400/10 text-center text-sm font-semibold leading-snug text-[#f0f6ff] transition hover:border-teal-400/55 hover:bg-teal-400/15" href="mailto:info@gefahrstoff-qr.de?subject=Multi-Mandanten-Zugang%20auf%20Rechnung">Kauf auf Rechnung per E-Mail anfragen</a>
- </div>
+ <a class="btn-glass-outline btn-glass-outline--block mt-8" href="mailto:info@gefahrstoff-qr.de?subject=Multi-Mandanten-Zugang%20auf%20Rechnung">Jetzt Starten</a>
+ </article>
+
+ <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
+ <p class="text-lg font-bold text-[#f0f6ff]">Industrie</p>
+ <p class="mt-1 text-sm text-[#8fa4c0]">Für Konzerne, Werksverbünde &amp; hohe Stoffzahlen.</p>
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="399" data-yearly="399" data-yearly-total="4788">
+ <span data-pricing-amount>399</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span>
+ </p>
+ <p class="pricing-tier__price-note" data-pricing-note>4.788&nbsp;&euro; jährlich · monatlich zahlbar: 399&nbsp;&euro;/Monat</p>
+ <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Ab 250 Gefahrstoffen (Fair-Use)</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Ab 4 Werken, unbegrenzt Lagerorte</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Alles aus KMU Pro inklusive</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> SSO (Single Sign-On)</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Dedizierter AVV-Support</li>
+ </ul>
+ <a class="btn-glass-outline btn-glass-outline--block mt-8" href="mailto:info@gefahrstoff-qr.de?subject=Industrie-Tarif%20Anfrage">Jetzt Starten</a>
  </article>
  </div>
 
@@ -1109,7 +1265,7 @@ Mit Excel
  <div class="pricing-compare__panel">
  <div class="pricing-compare__scroll" tabindex="0" role="region" aria-label="Paketvergleich als Tabelle">
  <table class="pricing-compare__table">
- <caption>Vergleich der Pakete TarifVorschau, KMU Basis, KMU Pro und SiFa Multi-Mandant</caption>
+ <caption>Vergleich der Pakete TarifVorschau, KMU Basis, KMU Pro, SiFa Multi-Mandant und Industrie</caption>
  <thead>
  <tr>
  <th scope="col">Vergleich</th>
@@ -1117,6 +1273,7 @@ Mit Excel
  <th scope="col">KMU Basis</th>
  <th scope="col" class="pricing-compare__col--highlight">KMU Pro</th>
  <th scope="col">SiFa Multi-Mandant</th>
+ <th scope="col">Industrie</th>
  </tr>
  </thead>
  <tbody>
@@ -1126,6 +1283,7 @@ Mit Excel
  <td data-pricing-compare-price data-monthly="59" data-yearly="49" data-yearly-total="588">49&nbsp;&euro;/Monat</td>
  <td class="pricing-compare__col--highlight" data-pricing-compare-price data-monthly="119" data-yearly="99" data-yearly-total="1188">99&nbsp;&euro;/Monat</td>
  <td data-pricing-compare-price data-monthly="189" data-yearly="159" data-yearly-total="1908">159&nbsp;&euro;/Monat</td>
+ <td data-pricing-compare-price data-monthly="399" data-yearly="399" data-yearly-total="4788">399&nbsp;&euro;/Monat</td>
  </tr>
  <tr>
  <th scope="row">Zielgruppe</th>
@@ -1133,13 +1291,15 @@ Mit Excel
  <td>Kleine Betriebe &amp; Handwerk</td>
  <td class="pricing-compare__col--highlight">Mittelstand &amp; Produktion</td>
  <td>Externe SiFa &amp; Ingenieurbüros</td>
+ <td>Konzerne &amp; Werksverbünde</td>
  </tr>
  <tr>
  <th scope="row">SDB-Uploads / Gefahrstoffe</th>
  <td>Bis 3 Uploads (Test)</td>
  <td>Bis 30</td>
  <td class="pricing-compare__col--highlight">Bis 250</td>
- <td>Fair-Use (unbegrenzt Mandanten)</td>
+ <td>Fair-Use je Mandant</td>
+ <td>Ab 250 (Fair-Use)</td>
  </tr>
  <tr>
  <th scope="row">Werke</th>
@@ -1147,12 +1307,14 @@ Mit Excel
  <td>1</td>
  <td class="pricing-compare__col--highlight">Bis 3</td>
  <td>Unbegrenzt (Fair-Use)</td>
+ <td>Ab 4 (Fair-Use)</td>
  </tr>
  <tr>
  <th scope="row">KI-gestützte BA-Entwürfe</th>
  <td>Vorschau</td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
@@ -1161,12 +1323,14 @@ Mit Excel
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
  <th scope="row">PDF-Export</th>
  <td>Nur MUSTER-Wasserzeichen</td>
  <td>Ohne Wasserzeichen</td>
  <td class="pricing-compare__col--highlight">Ohne Wasserzeichen</td>
+ <td>Inkl. GHS</td>
  <td>Inkl. GHS</td>
  </tr>
  <tr>
@@ -1175,12 +1339,14 @@ Mit Excel
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
  <th scope="row">QR-Notfallansicht</th>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span> (keine dauerhaften Links)</td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
@@ -1189,12 +1355,14 @@ Mit Excel
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
  <th scope="row">Mehrere Nutzer</th>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
@@ -1203,6 +1371,7 @@ Mit Excel
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  </tr>
  <tr>
  <th scope="row">Mandanten- &amp; Werkstrennung</th>
@@ -1210,12 +1379,38 @@ Mit Excel
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ </tr>
+ <tr>
+ <th scope="row">Mandantenbetriebe inkl.</th>
+ <td><span class="pricing-compare__dash" aria-hidden="true">&ndash;</span></td>
+ <td><span class="pricing-compare__dash" aria-hidden="true">&ndash;</span></td>
+ <td class="pricing-compare__col--highlight"><span class="pricing-compare__dash" aria-hidden="true">&ndash;</span></td>
+ <td>Bis 15 · +79&nbsp;&euro;/Monat je 10er-Block</td>
+ <td><span class="pricing-compare__dash" aria-hidden="true">&ndash;</span></td>
  </tr>
  <tr>
  <th scope="row">PDF-Rechnung (Direktkauf)</th>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ </tr>
+ <tr>
+ <th scope="row">SSO (Single Sign-On)</th>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ </tr>
+ <tr>
+ <th scope="row">Dedizierter AVV-Support</th>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  </tbody>
@@ -1232,12 +1427,26 @@ Mit Excel
  </div>
  </section>
 
- <!-- FAQ: Kontakt (npm run sync:home) -->
+ <!-- FAQ -->
  <section id="faq" class="py-14 lg:py-24" aria-labelledby="faqHeadline">
  <div class="mx-auto max-w-[800px] px-4 sm:px-6 lg:px-10">
+ <div class="mb-10 text-center">
+ <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">FAQ</p>
+ <h2 id="faqHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl">Häufige Fragen zu Gefahrstoffverzeichnis und Gefahrstoff-Software</h2>
+ <p class="mt-3 text-sm text-[#8fa4c0] sm:text-base">Kurz, sachlich und praxisnah. Für SiFa, Geschäftsführung und IT. <time datetime="2026-11">Stand: November 2026</time></p>
+ </div>
+
+ <!-- FAQ: generiert aus config/landing-home-seo-faq.ts (npm run sync:home) -->
+ <div id="sifa-faq" class="divide-y divide-white/10 rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 px-4 sm:px-6">
 <!--AEO:FAQ_ITEMS-->
-<div class="text-center"><p id="faqHeadline" class="text-lg leading-relaxed text-[#c5d0e2] sm:text-xl">Noch Fragen? Senden Sie uns eine Mail an: <a href="mailto:info@gefahrstoff-qr.de" class="font-semibold text-teal-300 underline-offset-2 hover:underline">info@gefahrstoff-qr.de</a></p></div>
+<details class="gqr-faq group py-5" open=""><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Wie unterstützt Gefahrstoff-QR beim Gefahrstoffverzeichnis nach § 6 GefStoffV?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Gefahrstoff-QR ist eine browserbasierte Software, die aus Sicherheitsdatenblättern einen KI-gestützten Entwurf für das Gefahrstoffverzeichnis nach § 6 GefStoffV erstellt. Die Angaben werden mit Verweis auf den jeweiligen SDB-Abschnitt ausgelesen, den Tätigkeiten und Arbeitsbereichen zugeordnet und als PDF oder Excel inklusive GHS-Piktogrammen exportiert. Die SiFa bzw. der Arbeitgeber prüft den Entwurf und gibt ihn fachlich frei.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Eignet sich Gefahrstoff-QR für externe Fachkräfte für Arbeitssicherheit (SiFas) mit mehreren Mandanten?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Ja, Gefahrstoff-QR bietet für externe SiFas und Ingenieurbüros eine Multi-Mandanten-Verwaltung, in der Kundenbetriebe als Mandanten, darunter Werke und Arbeitsbereiche bzw. Tätigkeiten strikt getrennt geführt werden. Bei der Begehung lassen sich Gefahrstoffe auch ohne vorliegendes Sicherheitsdatenblatt oder Mengenangabe vorab erfassen. Fehlende Angaben werden im Export farblich markiert und können später nachgepflegt werden.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Wie viele Mandantenbetriebe sind im SiFa Multi-Mandant-Tarif enthalten?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Im SiFa Multi-Mandant-Tarif sind bis zu 15 Mandantenbetriebe im Grundpreis enthalten (189 €/Monat oder 159 €/Monat bei Jahreszahlung, jeweils zzgl. MwSt.). Das deckt rund 90 % aller freiberuflichen Einzel-SiFas ohne Aufpreis ab. Ab dem 16. Mandant: +79,00 €/Monat je 10er-Block weiterer Mandanten. Beispiel bei Jahreszahlung: 35 Firmen 317,00 €/Monat, 55 Firmen 475,00 €/Monat.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Ersetzt die KI-Auswertung die fachliche Prüfung nach TRGS 555 und § 14 GefStoffV?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Nein, Gefahrstoff-QR erstellt aus dem Sicherheitsdatenblatt des Lieferanten strukturierte Entwürfe, die fachliche Prüfung bleibt beim Menschen. Jeder KI-gestützte Entwurf (gemäß TRGS 555) ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV). Die Anpassung an die Bedingungen am Arbeitsplatz und die Freigabe erfolgen durch die verantwortliche Person.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Können Unternehmen und SiFas Gefahrstoff-QR auf Rechnung beziehen?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Ja, neben der direkten Online-Buchung können Geschäftskunden und SiFas im Multi-Mandanten-Tarif per monatlicher PDF-Rechnung und Überweisung zahlen. Eine langfristige Vertragsbindung besteht nicht, die Pakete sind monatlich kündbar. Das Angebot richtet sich ausschließlich an Unternehmen, Gewerbetreibende und freiberufliche Sicherheitsfachkräfte (§ 14 BGB).</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Was ist eine Gefahrstoffmanagement Software?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Eine Gefahrstoffmanagement Software ist ein digitales System, mit dem Betriebe ihr Gefahrstoffverzeichnis nach § 6 GefStoffV, die zugehörigen Sicherheitsdatenblätter, Betriebsanweisungen und Lagerinformationen an einer Stelle führen. Gegenüber Excel-Listen bietet sie Versionierung, Erinnerungen an SDB-Aktualisierungen und einen Revisionsverlauf. Gefahrstoff-QR läuft im Browser und erstellt aus dem Sicherheitsdatenblatt einen KI-gestützten Entwurf zur fachlichen Freigabe durch die SiFa / den Arbeitgeber.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Welche Pflichtangaben muss ein Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthalten?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Ein Gefahrstoffverzeichnis nach § 6 Abs. 12 GefStoffV enthält mindestens die Bezeichnung des Gefahrstoffs, die Einstufung bzw. die gefährlichen Eigenschaften (GHS-Gefahrenklassen und -kategorien), die verwendeten Mengenbereiche im Betrieb, die betroffenen Arbeitsbereiche und einen Verweis auf das aktuelle Sicherheitsdatenblatt. In Excel fehlen häufig die Verknüpfung zur gültigen SDB-Version und Zeitstempel pro Änderung. Gefahrstoff-QR strukturiert diese Pflichtfelder aus dem SDB-PDF als Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber und führt einen Revisionsverlauf.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Wie oft muss das Gefahrstoffverzeichnis aktualisiert werden?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Das Gefahrstoffverzeichnis muss bei wesentlichen Änderungen fortgeschrieben und mindestens einmal jährlich überprüft werden. Wesentliche Änderungen sind zum Beispiel neue Stoffe, geänderte Mengen oder Arbeitsbereiche und neue Versionen des Sicherheitsdatenblatts. Gefahrstoff-QR erinnert an fällige SDB-Aktualisierungen und dokumentiert jede Änderung mit Zeitstempel und Nutzer.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Reicht Excel als Gefahrstoffverzeichnis aus?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Excel kann die Pflichtfelder abbilden, deckt aber laufende Aktualität, Versionierung der Sicherheitsdatenblätter und den Nachweis von Änderungen nur mit viel Handarbeit ab. Genau diese Punkte prüfen SiFa und Aufsichtsbehörden bei Betriebsprüfungen. Gefahrstoff-QR führt KI-gestützte Extraktion, fachliche Freigabe und den PDF-Export des Verzeichnisses in einer Datenbasis zusammen, ohne Abtipp-Marathon.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Wie dokumentiere ich die Zusammenlagerungsprüfung nach TRGS 510?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Nach TRGS 510 gleichen Sie die Lagerklassen (LGK) der Stoffe über die Zusammenlagerungstabelle ab, und zwar bei jeder neuen Charge oder Lagerplatzänderung erneut. Ein Screenshot oder Excel-Hinweis zeigt bei Audits selten, welche Kombination zum Prüfzeitpunkt bewertet wurde. Gefahrstoff-QR ordnet Stoffe ihrer Lagerklasse zu und weist pro Lagerort auf mögliche Konflikte hin. Die Lagerentscheidung trifft die SiFa / Fachkraft, die Verantwortung liegt beim Arbeitgeber.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Woran erkennt eine Betriebsprüfung, dass das Gefahrstoffverzeichnis veraltet ist?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Prüfer vergleichen Verzeichnisstand, SDB-Versionen und Arbeitsbereiche mit der Situation vor Ort. Abweichungen zwischen Etikett, Lagerort und dokumentiertem Eintrag gelten als Organisationsverschulden. Ordner mit PDFs oder unversionierte Excel-Listen zeigen selten, wer wann welches Feld geändert hat. Gefahrstoff-QR protokolliert Revisionen, fordert SDB-Updates zyklisch an und verknüpft jeden Eintrag mit der gültigen SDB-Version.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Was kostet Gefahrstoff-QR?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Die TarifVorschau ist kostenlos (bis zu 3 SDB-Uploads, PDF nur mit „MUSTER“-Wasserzeichen). KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, bis 15 Mandantenbetriebe inklusive, Ab dem 16. Mandant: +79,00 €/Monat je 10er-Block weiterer Mandanten, PDF-Rechnung möglich). Industrie: ab 399 € pro Monat (ab 250 Gefahrstoffen, ab 4 Werken, SSO, dedizierter AVV-Support, Anfrage). Alle Preise zzgl. MwSt., monatlich kündbar.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Wo werden die Daten gehostet?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Die Daten werden in Deutschland gehostet, ein Auftragsverarbeitungsvertrag (AVV) ist inklusive. Die Verbindung ist SSL-verschlüsselt, Konten lassen sich mit Zwei-Faktor-Authentifizierung schützen. Details zu Zweckbindung und Löschfristen stehen in der Datenschutzerklärung.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Unterstützt Gefahrstoff-QR auch TRGS 555, TRGS 600 und REACH?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Ja, im Rahmen der Vorprüfung. Die Einstufung erfolgt nach CLP-Verordnung, REACH-relevante Daten wie die UFI können geführt werden. Gefahrstoff-QR unterstützt bei TRGS 510 (Lagerung), TRGS 555 (Betriebsanweisung als KI-gestützter Entwurf) und TRGS 600 (Hinweise zur Substitutionsprüfung bei KMR-Stoffen). Die fachliche Bewertung bleibt bei der SiFa / dem Arbeitgeber.</p></div></details><details class="gqr-faq group py-5"><summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-[&#x27;+&#x27;] group-open:after:content-[&#x27;–&#x27;]">Wie aufwendig ist der Umstieg von Excel auf Gefahrstoff-QR?</summary><div class="mt-3 text-sm leading-relaxed text-[#8fa4c0]"><p>Der Umstieg braucht kein IT-Projekt, weil Gefahrstoff-QR im Browser läuft. Vorhandene Sicherheitsdatenblätter laden Sie ab dem Professional-Paket per Batch-Upload in einem Rutsch hoch. Alternativ begleitet Sie der Umzugsservice persönlich beim Erstimport.</p></div></details>
 <!--/AEO:FAQ_ITEMS-->
+ </div>
+
+<!--AEO:FAQ_FOOTER-->
+<p class="mt-8 text-center text-base leading-relaxed text-[#c5d0e2] sm:text-lg">Noch Fragen? <a href="mailto:info@gefahrstoff-qr.de" class="font-semibold text-teal-300 underline-offset-2 hover:underline">info@gefahrstoff-qr.de</a></p>
+<!--/AEO:FAQ_FOOTER-->
+
  </div>
  </section>
 
@@ -1360,47 +1569,6 @@ Mit Excel
  <div class="mobile-sticky-cta" data-mobile-sticky-cta hidden>
  <a class="btn-cta-orange btn-cta-orange--block" href="https://app.gefahrstoff-qr.de/register">Kostenlos testen</a>
  <p class="mobile-sticky-cta__hint">TarifVorschau gratis · ohne Kreditkarte</p>
- </div>
-
- <!-- KOSTENLOS-TESTEN MODAL -->
- <div id="trialModal" class="trial-modal" hidden>
- <div class="trial-modal__overlay" data-trial-close></div>
- <div class="trial-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="trialModalTitle">
- <button type="button" class="trial-modal__close" data-trial-close aria-label="Dialog schließen">&#x2715;</button>
- <p class="trial-modal__kicker">Kostenlos testen</p>
- <h2 id="trialModalTitle" class="trial-modal__title">Eine gute Entscheidung!</h2>
- <p class="trial-modal__lead">Probieren Sie Gefahrstoff-QR kostenlos und unverbindlich aus und überzeugen Sie sich selbst.</p>
- <p class="trial-modal__badge">100&nbsp;% kostenlos. Kein Risiko.</p>
-
- <form id="trialForm" class="trial-form" novalidate>
- <div class="trial-form__row">
- <div class="trial-form__field">
- <label for="trial-vorname">Vorname</label>
- <input id="trial-vorname" name="Vorname" type="text" autocomplete="given-name" required />
- </div>
- <div class="trial-form__field">
- <label for="trial-nachname">Nachname</label>
- <input id="trial-nachname" name="Nachname" type="text" autocomplete="family-name" required />
- </div>
- </div>
- <div class="trial-form__field">
- <label for="trial-email">E-Mail</label>
- <input id="trial-email" name="E-Mail" type="email" autocomplete="email" required />
- </div>
- <div class="trial-form__field">
- <label for="trial-telefon">Telefon</label>
- <input id="trial-telefon" name="Telefon" type="tel" autocomplete="tel" required />
- </div>
- <button type="submit" class="btn-cta-orange trial-form__submit">Kostenlos testen</button>
- <p id="trialFormError" class="trial-form__error" hidden role="alert"></p>
- <p class="trial-form__hint">Mit dem Absenden stimmen Sie unserer <a href="/datenschutz/">Datenschutzerklärung</a> zu.</p>
- </form>
-
- <div id="trialSuccess" class="trial-form__success" hidden role="status">
- <p class="trial-form__success-title">Vielen Dank!</p>
- <p>Ihre Anfrage ist eingegangen. Starten Sie parallel direkt die kostenlose Registrierung unter <a href="https://app.gefahrstoff-qr.de/register">app.gefahrstoff-qr.de/register</a>, ohne Wartezeit auf Rückruf.</p>
- </div>
- </div>
  </div>
 
  <script>
@@ -1602,7 +1770,6 @@ Mit Excel
  </script>
 
  <script src="/scripts/sdb-preview.js" defer></script>
- <script src="/scripts/trial-modal.js" defer></script>
 
  <script>
  (function () {
@@ -1646,22 +1813,7 @@ Mit Excel
  })();
  </script>
 
-  <script>
- (function () {
- var bar = document.querySelector('[data-mobile-sticky-cta]');
- if (!bar || !('IntersectionObserver' in window)) return;
- var hero = document.getElementById('hero');
- var finalCta = document.getElementById('gratis-vorlage');
- var visible = new Set();
- var observer = new IntersectionObserver(function (entries) {
- entries.forEach(function (entry) {
- if (entry.isIntersecting) visible.add(entry.target); else visible.delete(entry.target);
- });
- bar.hidden = visible.size > 0;
- });
- [hero, finalCta].forEach(function (el) { if (el) observer.observe(el); });
- })();
- </script>
+  <script src="/scripts/sticky-cta-bars.js?v=2" defer></script>
 
   <script src="/scripts/scroll-presentation.js?v=10" defer></script>
 </body>

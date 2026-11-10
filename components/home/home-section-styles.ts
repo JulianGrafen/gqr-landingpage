@@ -14,7 +14,8 @@ export const HOME_SECTION_STYLES = {
   cardTitle: 'text-lg font-bold text-[#f0f6ff]',
   cardText: 'mt-2 text-sm leading-relaxed text-[#8fa4c0]',
   checkmark: 'text-teal-300',
-  primaryCta: 'btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base',
+  primaryCta:
+    'btn-glass-outline inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base',
   secondaryLink: 'sds-secondary-link',
   ctaGroup: 'sds-hero__cta-row mt-10 mx-auto flex w-full flex-col gap-3',
 } as const;

@@ -3,12 +3,24 @@
  * Die sichtbaren Preiskarten in index.html müssen bei Änderungen manuell nachgezogen werden.
  */
 
+import {
+  SIFA_MANDANT_EXTENSION_LABEL,
+  SIFA_MANDANT_LIMITS_LABEL,
+} from '@/config/sifa-mandant-pricing';
+
 export const PRICING_CURRENCY = 'EUR';
+/** Einheitlicher Button-Text auf den Preiskarten (Startseite). */
+export const PRICING_CARD_CTA_LABEL = 'Jetzt Starten';
 /** Legacy-Hilfswert; jährliche Preise sind in `yearlyMonthlyPriceEur` fest definiert. */
 export const YEARLY_DISCOUNT_PERCENT = 15;
 export const PRICING_UPDATED_LABEL = 'November 2026';
 
-export type PricingPlanId = 'tarif-vorschau' | 'kmu-basis' | 'kmu-pro' | 'sifa-multi-mandant';
+export type PricingPlanId =
+  | 'tarif-vorschau'
+  | 'kmu-basis'
+  | 'kmu-pro'
+  | 'sifa-multi-mandant'
+  | 'industrie';
 
 export interface PricingPlan {
   id: PricingPlanId;
@@ -41,7 +53,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
       'PDF-Vorschau nur mit „MUSTER“-Wasserzeichen',
       'Kein Excel-Export, keine dauerhaften QR-Links',
     ],
-    ctaLabel: 'Im Browser testen',
+    ctaLabel: PRICING_CARD_CTA_LABEL,
   },
   {
     id: 'kmu-basis',
@@ -56,7 +68,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
       'PDF- & Excel-Export (ohne Wasserzeichen)',
       'Aktive QR-Notfallansicht am Arbeitsplatz',
     ],
-    ctaLabel: 'Mit Basis starten',
+    ctaLabel: PRICING_CARD_CTA_LABEL,
   },
   {
     id: 'kmu-pro',
@@ -72,8 +84,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
       'KI-gestützte BA-Entwürfe & PDF/Excel-Export',
       'SDB-Aktualitäts-Alerts',
     ],
-    ctaLabel: 'KMU Pro wählen',
-    isRecommended: true,
+    ctaLabel: PRICING_CARD_CTA_LABEL,
   },
   {
     id: 'sifa-multi-mandant',
@@ -82,14 +93,32 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
     monthlyPriceEur: 189,
     yearlyMonthlyPriceEur: 159,
     yearlyTotalPriceEur: 1908,
-    limits: 'unbegrenzte Mandanten & Werke (Fair-Use)',
+    limits: SIFA_MANDANT_LIMITS_LABEL,
     features: [
+      SIFA_MANDANT_EXTENSION_LABEL,
+      'Unbegrenzte Werke je Mandant (Fair-Use)',
       'Saubere Mandanten-, Werks- & Tätigkeitstrennung',
       'Erfassung auch ohne SDB (Begehungs-Modus)',
       'Batch-Upload & alle PDF/Excel-Exporte inkl. GHS',
       'Direktkauf auf monatliche PDF-Rechnung möglich',
     ],
-    ctaLabel: 'Als SiFa starten (auch auf Rechnung)',
+    ctaLabel: PRICING_CARD_CTA_LABEL,
+  },
+  {
+    id: 'industrie',
+    name: 'Industrie',
+    audience: 'Für Konzerne, Werksverbünde & hohe Stoffzahlen.',
+    monthlyPriceEur: 399,
+    yearlyMonthlyPriceEur: 399,
+    yearlyTotalPriceEur: 4788,
+    limits: 'ab 250 Gefahrstoffen, ab 4 Werken (Fair-Use)',
+    features: [
+      'Alles aus KMU Pro',
+      'SSO (Single Sign-On)',
+      'Dedizierter AVV-Support',
+      'Individuelle Einführung & Jahresvertrag auf Anfrage',
+    ],
+    ctaLabel: PRICING_CARD_CTA_LABEL,
   },
 ];
 

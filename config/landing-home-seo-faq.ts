@@ -1,4 +1,5 @@
 import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
+import { formatEuroAmount, SIFA_MANDANT_INCLUDED, SIFA_MANDANT_EXTENSION_LABEL } from '@/config/sifa-mandant-pricing';
 
 /**
  * Homepage FAQPage (AEO): jede Antwort beginnt mit einer direkten, zitierfähigen Kernaussage.
@@ -16,6 +17,10 @@ export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
       'Eignet sich Gefahrstoff-QR für externe Fachkräfte für Arbeitssicherheit (SiFas) mit mehreren Mandanten?',
     answer:
       'Ja, Gefahrstoff-QR bietet für externe SiFas und Ingenieurbüros eine Multi-Mandanten-Verwaltung, in der Kundenbetriebe als Mandanten, darunter Werke und Arbeitsbereiche bzw. Tätigkeiten strikt getrennt geführt werden. Bei der Begehung lassen sich Gefahrstoffe auch ohne vorliegendes Sicherheitsdatenblatt oder Mengenangabe vorab erfassen. Fehlende Angaben werden im Export farblich markiert und können später nachgepflegt werden.',
+  },
+  {
+    question: 'Wie viele Mandantenbetriebe sind im SiFa Multi-Mandant-Tarif enthalten?',
+    answer: `Im SiFa Multi-Mandant-Tarif sind bis zu ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe im Grundpreis enthalten (189 €/Monat oder 159 €/Monat bei Jahreszahlung, jeweils zzgl. MwSt.). Das deckt rund 90 % aller freiberuflichen Einzel-SiFas ohne Aufpreis ab. ${SIFA_MANDANT_EXTENSION_LABEL}. Beispiel bei Jahreszahlung: 35 Firmen ${formatEuroAmount(317)}/Monat, 55 Firmen ${formatEuroAmount(475)}/Monat.`,
   },
   {
     question: 'Ersetzt die KI-Auswertung die fachliche Prüfung nach TRGS 555 und § 14 GefStoffV?',
@@ -61,7 +66,7 @@ export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
   {
     question: 'Was kostet Gefahrstoff-QR?',
     answer:
-      'Die TarifVorschau ist kostenlos (bis zu 3 SDB-Uploads, PDF nur mit „MUSTER“-Wasserzeichen). KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, Mandanten-Trennung für externe SiFas, PDF-Rechnung möglich). Alle Preise zzgl. MwSt., monatlich kündbar.',
+      `Die TarifVorschau ist kostenlos (bis zu 3 SDB-Uploads, PDF nur mit „MUSTER“-Wasserzeichen). KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, bis ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe inklusive, ${SIFA_MANDANT_EXTENSION_LABEL}, PDF-Rechnung möglich). Industrie: ab 399 € pro Monat (ab 250 Gefahrstoffen, ab 4 Werken, SSO, dedizierter AVV-Support, Anfrage). Alle Preise zzgl. MwSt., monatlich kündbar.`,
   },
   {
     question: 'Wo werden die Daten gehostet?',
