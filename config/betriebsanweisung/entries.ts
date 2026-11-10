@@ -1818,6 +1818,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Industrielle Reinigung",
     ],
   },
+  {
+    slug: 'schimmelentferner-trgs-555',
+    substanceName: "Schimmelentferner",
+    metaDescription: "Betriebsanweisung Schimmelentferner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Hausmeisterservice & Objektbetreuung",
+      "Sanierung & Schadstoffsanierung",
+      "Hotellerie & Gastgewerbe",
+    ],
+  },
+  {
+    slug: 'fassadenreiniger-trgs-555',
+    substanceName: "Fassadenreiniger",
+    metaDescription: "Betriebsanweisung Fassadenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Malerbetrieb & Fassadentechnik",
+      "Dachdecker & Gerüstbau",
+      "Hausmeisterdienst & Winterdienst",
+    ],
+  },
+  {
+    slug: 'betonreiniger-trgs-555',
+    substanceName: "Betonreiniger",
+    metaDescription: "Betriebsanweisung Betonreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Bau & Tiefbau",
+      "Betonwerk & Fertigteilbau",
+      "Gebäudereinigung & Facility",
+      "Straßen- & Wegebau",
+    ],
+  },
+  {
+    slug: 'industriereiniger-trgs-555',
+    substanceName: "Industriereiniger",
+    metaDescription: "Betriebsanweisung Industriereiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Industrielle Reinigung",
+      "Metallverarbeitung & Maschinenbau",
+      "Lebensmittelverarbeitung (Produktion)",
+      "Gebäudereinigung & Facility",
+    ],
+  },
+  {
+    slug: 'metallreiniger-trgs-555',
+    substanceName: "Metallreiniger",
+    metaDescription: "Betriebsanweisung Metallreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbau & Schweißtechnik",
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Galvanik & Oberflächentechnik",
+      "Gebäudereinigung & Facility",
+    ],
+  },
+  {
+    slug: 'holzlasur-trgs-555',
+    substanceName: "Holzlasur",
+    metaDescription: "Betriebsanweisung Holzlasur: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Schreinerei & Holzverarbeitung",
+      "Malerbetrieb & Lackierung",
+      "Tischlerei & Innenausbau",
+      "Garten- & Landschaftsbau",
+    ],
+  },
+  {
+    slug: 'autopolitur-trgs-555',
+    substanceName: "Autopolitur",
+    metaDescription: "Betriebsanweisung Autopolitur: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Car detailing & Aufbereitung",
+      "Fuhrpark & Logistik",
+      "Waschanlage & Fahrzeugreinigung",
+    ],
+  },
+  {
+    slug: 'geschirrspuelmittel-trgs-555',
+    substanceName: "Geschirrspülmittel",
+    metaDescription: "Betriebsanweisung Geschirrspülmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gastronomie & Großküche",
+      "Hotellerie & Gastgewerbe",
+      "Betriebsgastronomie & Kantinen",
+      "Gebäudereinigung & Facility",
+    ],
+  },
+  {
+    slug: 'fugenreiniger-trgs-555',
+    substanceName: "Fugenreiniger",
+    metaDescription: "Betriebsanweisung Fugenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Bau & Fliesenleger",
+      "Sanitär & Badausbau",
+      "Hausmeisterdienst & Objektbetreuung",
+    ],
+  },
+  {
+    slug: 'rostumwandler-trgs-555',
+    substanceName: "Rostumwandler",
+    metaDescription: "Betriebsanweisung Rostumwandler: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Metallbau & Schweißtechnik",
+      "Malerbetrieb & Korrosionsschutz",
+      "Industrielle Instandhaltung",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
