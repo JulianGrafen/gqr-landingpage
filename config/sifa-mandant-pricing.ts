@@ -32,7 +32,7 @@ export function sifaMonthlyTotalEur(mandantCount: number, baseMonthlyEur: number
 
 export const SIFA_MANDANT_LIMITS_LABEL = `bis ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe inklusive`;
 
-export const SIFA_MANDANT_EXTENSION_LABEL = `Ab dem ${SIFA_MANDANT_INCLUDED + 1}. Mandant: +${formatEuroAmount(SIFA_MANDANT_BLOCK_PRICE_MONTHLY_EUR)}/Monat je ${SIFA_MANDANT_BLOCK_SIZE}er-Block weiterer Mandanten`;
+export const SIFA_MANDANT_EXTENSION_LABEL = `Ab dem ${SIFA_MANDANT_INCLUDED + 1}. Mandant: +${formatEuroAmount(SIFA_MANDANT_BLOCK_PRICE_MONTHLY_EUR)}/Monat je ${SIFA_MANDANT_BLOCK_SIZE}er-Block`;
 
 /** Rechenbeispiele (Jahreszahlung, eff. 159 €/Monat Grundpreis). */
 export const SIFA_MANDANT_PRICE_EXAMPLES = [
@@ -54,7 +54,7 @@ export const SIFA_MANDANT_PRICE_EXAMPLES = [
 export function buildSifaPricingCardPitch(): readonly string[] {
   return [
     `Bis zu ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe sind im Grundpreis enthalten.`,
-    `Ab dem ${SIFA_MANDANT_INCLUDED + 1}. Mandanten (für große Ingenieurbüros mit mehreren SiFas): +${formatEuroAmount(SIFA_MANDANT_BLOCK_PRICE_MONTHLY_EUR)}/Monat je ${SIFA_MANDANT_BLOCK_SIZE}er-Block weiterer Mandanten.`,
+    `Ab dem ${SIFA_MANDANT_INCLUDED + 1}. Mandant: +${formatEuroAmount(SIFA_MANDANT_BLOCK_PRICE_MONTHLY_EUR)}/Monat je ${SIFA_MANDANT_BLOCK_SIZE}er-Block.`,
   ];
 }
 
