@@ -1,6 +1,6 @@
 /**
  * SiFa Multi-Mandant: inkludierte Mandantenbetriebe und Skalierung per 10er-Block.
- * Einzige Quelle für Limits, FAQ und Marketing-Texte (Startseite #preise, #fuer-sifas).
+ * Einzige Quelle für Limits, FAQ und Marketing-Texte (Preiskarte #preise, FAQ).
  */
 
 export const SIFA_MANDANT_INCLUDED = 15;
@@ -49,3 +49,14 @@ export const SIFA_MANDANT_PRICE_EXAMPLES = [
     label: 'Großbüro',
   },
 ] as const;
+
+/** Fließtext in der SiFa-Preiskarte (#preise), nicht in der Conversion-Sektion. */
+export function buildSifaPricingCardPitch(): readonly string[] {
+  return [
+    `Bis zu ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe sind im Grundpreis enthalten.`,
+    `Ab dem ${SIFA_MANDANT_INCLUDED + 1}. Mandanten (für große Ingenieurbüros mit mehreren SiFas): +${formatEuroAmount(SIFA_MANDANT_BLOCK_PRICE_MONTHLY_EUR)}/Monat je ${SIFA_MANDANT_BLOCK_SIZE}er-Block weiterer Mandanten.`,
+  ];
+}
+
+export const SIFA_PRICING_CARD_FOOTNOTE =
+  'Alle Preise zzgl. MwSt. Rechenbeispiele bei Jahreszahlung zum reduzierten Monatspreis.';

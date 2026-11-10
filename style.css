@@ -568,6 +568,10 @@ ul { list-style: none; }
   line-height: 1.45;
 }
 
+.pricing-tier__pitch p + p {
+  margin-top: 0.5rem;
+}
+
 .pricing-tier__price-note[hidden] {
   display: none;
 }
