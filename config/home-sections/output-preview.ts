@@ -1,15 +1,4 @@
-/**
- * "Was hinten herauskommt": Mechanismus (SDB-Abschnittszuordnung) und Output-Vorschau.
- * Konsument: <OutputPreviewSection>.
- *
- * Die Feld-zu-Abschnitt-Zuordnung spiegelt die App-Logik (gqr-backend: src/domain/sdb-sections.ts).
- * Bei Änderungen dort hier nachziehen, damit die Landingpage nichts verspricht, was die App nicht tut.
- */
-
-export interface SdbFieldMapping {
-  field: string;
-  sdbSection: string;
-}
+/** "Was hinten herauskommt": Output-Vorschau der drei Kernergebnisse (<OutputPreviewSection>). */
 
 export interface OutputPreviewCard {
   id: string;
@@ -21,21 +10,6 @@ export interface OutputPreviewCard {
 
 export const OUTPUT_PREVIEW = {
   sectionId: 'ergebnis',
-  eyebrow: 'Mechanismus & Ergebnis',
-  headline: 'Jedes Feld mit Fundstelle im Sicherheitsdatenblatt',
-  intro:
-    'Die KI liest nicht frei, sondern feldweise: Jede Angabe wird dem zuständigen SDB-Unterabschnitt zugeordnet und mit dieser Fundstelle angezeigt. So prüft die SiFa gezielt an der Quelle, statt das ganze PDF erneut zu lesen.',
-  mappingCaption: 'Zuordnung der Erfassungsfelder zu den SDB-Unterabschnitten',
-  mappingColumnLabels: { field: 'Erfasstes Feld', sdbSection: 'Fundstelle im SDB' },
-  fieldMappings: [
-    { field: 'Handelsname, Artikelnummer, UFI', sdbSection: 'SDB 1.1' },
-    { field: 'Signalwort, GHS-Piktogramme, H- und P-Sätze', sdbSection: 'SDB 2.2' },
-    { field: 'Erste-Hilfe-Maßnahmen', sdbSection: 'SDB 4.1' },
-    { field: 'Lagerklasse (TRGS 510)', sdbSection: 'SDB 7.2' },
-    { field: 'Persönliche Schutzausrüstung', sdbSection: 'SDB 8.2' },
-    { field: 'Wassergefährdungsklasse (WGK)', sdbSection: 'SDB 15.1' },
-    { field: 'Überarbeitungsdatum des SDB', sdbSection: 'SDB 16' },
-  ] satisfies SdbFieldMapping[],
   cards: [
     {
       id: 'verzeichnis',

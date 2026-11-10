@@ -16,5 +16,5 @@ export const HOME_SECTION_STYLES = {
   checkmark: 'text-teal-300',
   primaryCta: 'btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base',
   secondaryLink: 'sds-secondary-link',
-  ctaGroup: 'mt-10 flex flex-col items-center gap-3',
+  ctaGroup: 'sds-hero__cta-row mt-10 mx-auto flex w-full flex-col gap-3',
 } as const;

@@ -1,8 +1,6 @@
 import { HOME_SECTION_STYLES as styles } from '@/components/home/home-section-styles';
 import { OUTPUT_PREVIEW, type OutputPreviewCard } from '@/config/home-sections/output-preview';
 
-const HEADLINE_ID = 'outputPreviewHeadline';
-
 /** Stilisiertes A4-Blatt der Betriebsanweisung (kein Screenshot, rein aus den Abschnittstiteln). */
 function BaSheetPreview() {
   return (
@@ -59,45 +57,11 @@ function OutputCard({ card }: { card: OutputPreviewCard }) {
   );
 }
 
-/** Mechanismus (Feld → SDB-Abschnitt) plus Output-Vorschau der drei Kernergebnisse. */
+/** Output-Vorschau der drei Kernergebnisse (ohne SDB-Mapping-Tabelle). */
 export function OutputPreviewSection() {
-  const { mappingColumnLabels } = OUTPUT_PREVIEW;
-
   return (
-    <section id={OUTPUT_PREVIEW.sectionId} className={styles.sectionRaised} aria-labelledby={HEADLINE_ID}>
+    <section id={OUTPUT_PREVIEW.sectionId} className={styles.sectionRaised} aria-label="Ergebnisse in der App">
       <div className={styles.container}>
-        <header className={styles.header}>
-          <p className={styles.eyebrow}>{OUTPUT_PREVIEW.eyebrow}</p>
-          <h2 id={HEADLINE_ID} className={styles.headline}>
-            {OUTPUT_PREVIEW.headline}
-          </h2>
-          <p className={styles.lead}>{OUTPUT_PREVIEW.intro}</p>
-        </header>
-
-        <div className="mx-auto mb-12 max-w-3xl">
-          <div className="pricing-compare__scroll" tabIndex={0} role="region" aria-label={OUTPUT_PREVIEW.mappingCaption}>
-            <table className="pricing-compare__table pricing-compare__table--compact">
-              <caption>{OUTPUT_PREVIEW.mappingCaption}</caption>
-              <thead>
-                <tr>
-                  <th scope="col">{mappingColumnLabels.field}</th>
-                  <th scope="col" className="pricing-compare__col--highlight">
-                    {mappingColumnLabels.sdbSection}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {OUTPUT_PREVIEW.fieldMappings.map((mapping) => (
-                  <tr key={mapping.field}>
-                    <th scope="row">{mapping.field}</th>
-                    <td className="pricing-compare__col--highlight">{mapping.sdbSection}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
         <ul className="grid list-none gap-6 p-0 lg:grid-cols-3">
           {OUTPUT_PREVIEW.cards.map((card) => (
             <OutputCard key={card.id} card={card} />

@@ -31,10 +31,10 @@ export function MultiTenantSifaSection() {
         </ul>
 
         <div className={styles.ctaGroup}>
-          <a className={styles.primaryCta} href={MULTI_TENANT_SIFA.primaryCta.href}>
+          <a className={`${styles.primaryCta} sds-hero__cta`} href={MULTI_TENANT_SIFA.primaryCta.href}>
             {MULTI_TENANT_SIFA.primaryCta.label}
           </a>
-          <a className={styles.secondaryLink} href={MULTI_TENANT_SIFA.secondaryCta.href}>
+          <a className={`${styles.secondaryLink} sds-hero__cta`} href={MULTI_TENANT_SIFA.secondaryCta.href}>
             {MULTI_TENANT_SIFA.secondaryCta.label}
           </a>
         </div>

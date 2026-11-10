@@ -26,19 +26,30 @@ export const HOME_NAVIGATION = {
 } as const;
 
 export const HOME_HERO = {
-  eyebrow: 'Für externe SiFas, Ingenieurbüros & KMU · Orientiert an § 6 GefStoffV, TRGS 555 & TRGS 510',
   /** Weiche Trennstellen (\u00ad) für saubere Umbrüche der langen Komposita auf Mobilgeräten. */
-  headline: 'Vom Sicherheits\u00addatenblatt zum Gefahrstoff\u00adverzeichnis und BA-Entwurf.',
-  headlineAccent: 'Ohne Abtippen.',
+  headline: 'Gefahrstoff\u00adkataster & BA-Entwurf',
+  headlineAccent: 'ohne Abtippen.',
   subheadline:
-    'SDB-PDF hochladen: Die KI liest Pflichtfelder nach § 6 GefStoffV, H- und P-Sätze, GHS-Piktogramme und die Lagerklasse nach TRGS 510 aus, jeweils mit Fundstelle im SDB. Sie erhalten einen KI-gestützten Entwurf (gemäß TRGS 555) zur fachlichen Freigabe durch die SiFa / den Arbeitgeber.',
+    'SDB-PDF hochladen: KI liest aus, Sie geben frei. Sparen Sie sich Stunden an Arbeit für Ihre Mandanten.',
   primaryCta: { label: 'Beispiel-SDB live auslesen', href: LIVE_DEMO_HREF },
   secondaryCta: { label: 'Kostenlos registrieren', href: APP_REGISTER_URL },
-  microcopy: 'Live-Test ohne Login · TarifVorschau gratis · ohne Verkaufsgespräch',
+  microcopy: 'Kein Verkaufsgespräch, testen Sie die Software in Ruhe',
   /** Einzige Trust-Leiste der Seite, direkt unter der Dropzone. */
   trustSignals: [
     'Browserbasiert, keine Installation',
     'Keine Kreditkarte',
-    'Serverstandort Frankfurt (inkl. AVV nach Art. 28 DSGVO)',
+    'Hosted in Frankfurt',
+  ],
+  /** Linksspalte unter der Live-Demo: Nutzen + Vertrauen (neben ROI-Rechner). */
+  benefitBullets: [
+    'Gefahrstoffe aus dem Sicherheitsdatenblatt anlegen statt abtippen',
+    'TRGS-510-Zusammenlagerungscheck pro Lagerort',
+    'Sicherheitsdatenblatt & Notfallinfos per QR-Code am Gebinde',
+    'KI-gestützter Entwurf für Betriebsanweisungen (gemäß TRGS 555)',
+  ],
+  trustBadges: [
+    { id: 'hosting', label: 'Hosted in Frankfurt' },
+    { id: 'made-in-germany', label: 'Made in Germany' },
+    { id: 'ssl', label: 'SSL-verschlüsselt' },
   ],
 } as const;

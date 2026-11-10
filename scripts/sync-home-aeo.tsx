@@ -13,6 +13,8 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { CtaTrustLine } from '@/components/home/CtaTrustLine';
 import { ExcelComparisonSection } from '@/components/home/ExcelComparisonSection';
 import { HomeFaqItems } from '@/components/home/HomeFaqItems';
+import { HeroInnerTrustSection } from '@/components/home/HeroInnerTrustSection';
+import { HeroTrustLogoGrid } from '@/components/home/HeroTrustLogoGrid';
 import { HomeHeroCopy } from '@/components/home/HomeHeroCopy';
 import { HomeNavigation } from '@/components/home/HomeNavigation';
 import { MultiTenantSifaSection } from '@/components/home/MultiTenantSifaSection';
@@ -44,6 +46,8 @@ const updatedHtml = replaceMarkedBlocks(html, {
   NAV_DESKTOP: () => renderHtml(<HomeNavigation variant="desktop" />),
   NAV_MOBILE: () => renderHtml(<HomeNavigation variant="mobile" />),
   HERO_COPY: () => renderHtml(<HomeHeroCopy />),
+  HERO_INNER_TRUST: () => renderHtml(<HeroInnerTrustSection />),
+  HERO_TRUST_GRID: () => renderHtml(<HeroTrustLogoGrid />),
   HERO_TRUST_LINE: () => renderHtml(<CtaTrustLine className="mt-4 text-center" />),
   OUTPUT_PREVIEW: () => renderHtml(<OutputPreviewSection />),
 });
