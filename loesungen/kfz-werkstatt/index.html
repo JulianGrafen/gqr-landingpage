@@ -387,9 +387,6 @@
  <div id="sdb-live-preview-root">
  <div data-sdb-live-preview aria-label="Sicherheitsdatenblatt live testen"></div>
  </div>
-<!--AEO:HERO_TRUST_LINE-->
-<p class="text-xs leading-relaxed text-[#8fa4c0] mt-4 text-center"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Browserbasiert, keine Installation</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Keine Kreditkarte</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Hosted in Frankfurt</span></p>
-<!--/AEO:HERO_TRUST_LINE-->
  </div>
  </div>
 
@@ -616,28 +613,12 @@ Mit Excel
  <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Kurz erklärt</p>
  <h2 id="kurzantwortHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Was ist Gefahrstoff-QR?</h2>
  </div>
- <p id="kurzantwort" class="mt-6 text-left text-base leading-7 text-pretty text-[#c5d0e2] sm:text-lg sm:leading-8">
- Gefahrstoff-QR ist eine browserbasierte Gefahrstoffmanagement Software für Handwerksbetriebe, KMU, Sicherheitsfachkräfte und Industrie in Deutschland. Die Software liest Sicherheitsdatenblätter KI-gestützt aus und erstellt daraus einen Entwurf für das Gefahrstoffverzeichnis nach § 6 GefStoffV, den Zusammenlagerungscheck nach TRGS 510 und Betriebsanweisungen als KI-gestützter Entwurf (gemäß TRGS 555). Jeder Entwurf ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).
- </p>
+ <div id="kurzantwort" class="mt-6 space-y-4 text-left text-base leading-7 text-pretty text-[#c5d0e2] sm:text-lg sm:leading-8">
+ <p>Gefahrstoff-QR ist eine browserbasierte Gefahrstoffmanagement Software für Handwerksbetriebe, KMU, Sicherheitsfachkräfte und Industrie in Deutschland.</p>
+ <p>Die Software liest Sicherheitsdatenblätter KI-gestützt aus und erstellt daraus einen Entwurf für das Gefahrstoffverzeichnis nach § 6 GefStoffV, den Zusammenlagerungscheck nach TRGS 510 und Betriebsanweisungen als KI-gestützter Entwurf (gemäß TRGS 555).</p>
+ <p>Jeder Entwurf ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).</p>
  </div>
- <dl class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
- <div class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 p-5">
- <dt class="text-xs font-bold uppercase tracking-wider text-teal-400">Für wen</dt>
- <dd class="mt-2 text-sm leading-relaxed text-[#c5d0e2]">Werkstätten, Handwerk, Labore, Reinigungsdienste, Produktion und externe SiFa-Beratungen</dd>
  </div>
- <div class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 p-5">
- <dt class="text-xs font-bold uppercase tracking-wider text-teal-400">Rechtsgrundlagen</dt>
- <dd class="mt-2 text-sm leading-relaxed text-[#c5d0e2]">§ 6 GefStoffV (Verzeichnis), TRGS 510 (Lagerung), TRGS 555 (Betriebsanweisung), TRGS 600 (Substitution), CLP/GHS</dd>
- </div>
- <div class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 p-5">
- <dt class="text-xs font-bold uppercase tracking-wider text-teal-400">Preis</dt>
- <dd class="mt-2 text-sm leading-relaxed text-[#c5d0e2]">TarifVorschau kostenlos (bis 3 SDB-Uploads). Bezahlpakete ab 49&nbsp;&euro;/Monat bei Jahreszahlung zzgl. MwSt., monatlich kündbar</dd>
- </div>
- <div class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 p-5">
- <dt class="text-xs font-bold uppercase tracking-wider text-teal-400">Datenschutz</dt>
- <dd class="mt-2 text-sm leading-relaxed text-[#c5d0e2]">Hosting in Deutschland inkl. AVV, SSL-Verschlüsselung, Zwei-Faktor-Authentifizierung</dd>
- </div>
- </dl>
  </div>
  </section>
 
@@ -700,7 +681,6 @@ Mit Excel
  </ol>
  <div class="mt-10 flex flex-col items-center gap-3">
  <a class="btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base" href="https://app.gefahrstoff-qr.de/register">Erstes Sicherheitsdatenblatt kostenlos hochladen</a>
- <p class="text-sm text-[#8fa4c0]">TarifVorschau im Browser · ohne Kreditkarte</p>
  </div>
  </div>
  </section>
@@ -1140,7 +1120,7 @@ Mit Excel
  <li>Mehrere Sicherheitsdatenblätter auf einmal importieren</li>
  <li>Start im Browser, kein IT-Projekt</li>
  </ul>
- <a class="onboarding-path__link" href="#preise">Professional-Paket ansehen →</a>
+ <a class="onboarding-path__link" href="#preise">KMU Pro →</a>
  </article>
 
  <article class="onboarding-path onboarding-path--featured" aria-label="Umzugsservice ab Professional">
@@ -1180,15 +1160,22 @@ Mit Excel
  <span class="pricing-billing__badge">Standard</span>
  </button>
  </div>
- <p class="pricing-billing__hint" data-pricing-billing-hint">Jährliche Vorauszahlung zum reduzierten Monatspreis (Standard-Ansicht).</p>
+ <p class="pricing-billing__hint" data-pricing-billing-hint>Jährliche Vorauszahlung zum reduzierten Monatspreis.</p>
  </div>
+
+ <p class="pricing-intro-offer">Exklusive Einführungspreise</p>
 
  <div class="pricing-tier-grid" style="grid-template-columns: repeat(3, minmax(240px, 1fr));">
  <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
  <p class="text-lg font-bold text-[#f0f6ff]">TarifVorschau <span class="text-sm font-semibold text-teal-300">(Free)</span></p>
  <p class="mt-1 text-sm text-[#8fa4c0]">Unverbindlicher Funktionstest im Browser.</p>
- <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]">0&nbsp;&euro;</p>
- <p class="pricing-tier__price-note" hidden aria-hidden="true">&nbsp;</p>
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]">
+ <span class="pricing-tier__price-row">
+ <span class="pricing-tier__price-anchor pricing-tier__price-anchor--placeholder" aria-hidden="true">0&nbsp;&euro;</span>
+ <span class="pricing-tier__price-current">0&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0] invisible" aria-hidden="true">/Monat</span></span>
+ </span>
+ </p>
+ <p class="pricing-tier__price-note pricing-tier__price-note--spacer" aria-hidden="true">588&nbsp;&euro; jährlich · monatlich zahlbar: 59&nbsp;&euro;/Monat</p>
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis zu 3 SDB-Uploads testen</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> KI-Auswertung im Browser ansehen</li>
@@ -1200,8 +1187,11 @@ Mit Excel
  <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
  <p class="text-lg font-bold text-[#f0f6ff]">KMU Basis</p>
  <p class="mt-1 text-sm text-[#8fa4c0]">Für kleine Betriebe, Werkstätten &amp; Handwerk.</p>
- <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="59" data-yearly="49" data-yearly-total="588">
- <span data-pricing-amount>49</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span>
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="59" data-yearly="49" data-yearly-total="588" data-anchor-offset="20">
+ <span class="pricing-tier__price-row">
+ <s class="pricing-tier__price-anchor" data-pricing-anchor>69&nbsp;&euro;</s>
+ <span class="pricing-tier__price-current"><span data-pricing-amount>49</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span></span>
+ </span>
  </p>
  <p class="pricing-tier__price-note" data-pricing-note>588&nbsp;&euro; jährlich · monatlich zahlbar: 59&nbsp;&euro;/Monat</p>
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
@@ -1216,8 +1206,11 @@ Mit Excel
  <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
  <p class="text-lg font-bold text-[#f0f6ff]">KMU Pro</p>
  <p class="mt-1 text-sm text-[#8fa4c0]">Für Mittelstand &amp; Produktion mit vielen Stoffen.</p>
- <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="119" data-yearly="99" data-yearly-total="1188">
- <span data-pricing-amount>99</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span>
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="119" data-yearly="99" data-yearly-total="1188" data-anchor-offset="20">
+ <span class="pricing-tier__price-row">
+ <s class="pricing-tier__price-anchor" data-pricing-anchor>119&nbsp;&euro;</s>
+ <span class="pricing-tier__price-current"><span data-pricing-amount>99</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span></span>
+ </span>
  </p>
  <p class="pricing-tier__price-note" data-pricing-note>1.188&nbsp;&euro; jährlich · monatlich zahlbar: 119&nbsp;&euro;/Monat</p>
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
@@ -1334,7 +1327,7 @@ Mit Excel
  </div>
 
 <!--AEO:FAQ_FOOTER-->
-<p class="mt-8 text-center text-base leading-relaxed text-[#c5d0e2] sm:text-lg">Noch Fragen? <a href="mailto:info@gefahrstoff-qr.de" class="font-semibold text-teal-300 underline-offset-2 hover:underline">info@gefahrstoff-qr.de</a></p>
+<div class="mt-8 text-center text-base leading-relaxed text-[#c5d0e2] sm:text-lg"><p>Noch Fragen? <a href="mailto:info@gefahrstoff-qr.de" class="font-semibold text-teal-300 underline-offset-2 hover:underline">info@gefahrstoff-qr.de</a></p><p class="mt-3">oder Austausch per Call: <a href="https://calendly.com/juliangraefen" class="font-semibold text-teal-300 underline-offset-2 hover:underline" target="_blank" rel="noopener noreferrer">calendly.com/juliangraefen</a></p></div>
 <!--/AEO:FAQ_FOOTER-->
 
  </div>
@@ -1353,9 +1346,10 @@ Mit Excel
  <h2 id="leadMagnetHeadline" class="text-3xl font-black leading-tight text-[#f0f6ff] sm:text-4xl lg:text-5xl">
  Die nächste Betriebsprüfung<br class="hidden sm:block"> kommt bestimmt.
  </h2>
- <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-[#c5d0e2] sm:text-lg">
- Stellen Sie sich vor, Sie öffnen dann ein aktuelles Gefahrstoffverzeichnis mit Revisionsverlauf statt einer Excel-Liste von 2019. Starten Sie heute mit der TarifVorschau, kostenlos im Browser, ohne Kreditkarte und ohne Verkaufsgespräch.
- </p>
+ <div class="mx-auto mt-5 max-w-xl space-y-4 text-base leading-relaxed text-[#c5d0e2] sm:text-lg">
+ <p>Stellen Sie sich vor, Sie öffnen dann ein aktuelles Gefahrstoffverzeichnis mit Revisionsverlauf statt einer Excel-Liste von 2019.</p>
+ <p>Starten Sie heute mit der TarifVorschau, kostenlos im Browser, ohne Kreditkarte und ohne Verkaufsgespräch.</p>
+ </div>
 
  <div class="mt-8 flex justify-center">
  <a class="btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base" href="https://app.gefahrstoff-qr.de/register">Jetzt kostenlos starten</a>
@@ -1382,78 +1376,9 @@ Mit Excel
 
  </main>
 
- <footer class="site-footer">
- <div class="container footer-inner">
- <div class="footer-brand">
- <p class="logo">Gefahrstoff-QR</p>
- <p class="footer-tagline">Gefahrstoffverzeichnis nach Vorgaben von &#167;&nbsp;6 GefStoffV &amp; TRGS<br>KI-gestützt aus dem Sicherheitsdatenblatt.</p>
- </div>
-
- <nav class="footer-links" aria-label="Footer-Navigation">
- <a href="/gefahrstoffverzeichnis-excel-vorlage/">Excel-Vorlage</a>
- <a href="/wissen/">Wissen</a>
- <a href="/trgs-510-zusammenlagerungs-check/">TRGS-510-Checker</a>
- <a href="/gefahrstoffkataster-excel-vorlage/">Excel vs. Software</a>
-<a href="/blog/">Blog</a>
- <a href="/impressum">Impressum</a>
- <a href="/datenschutz">Datenschutz</a>
- <a href="/agb">AGB</a>
- </nav>
-
- <ul class="mt-6 flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-4 border-t border-white/10 pt-6 md:justify-start" role="list" aria-label="Vertrauen und Sicherheit">
- <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
- <svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
- <path d="M12 3 4 6v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/>
- <path d="m9.5 12.5 2 2 3.5-3.5"/>
- </svg>
- <span>Hosting in Deutschland (inkl. AVV)</span>
- </li>
- <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
- <svg class="h-7 w-9 flex-shrink-0 overflow-visible rounded-md border border-white/20 shadow-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" aria-hidden="true" focusable="false">
- <rect width="24" height="16" rx="1.5" fill="#1a1a1a"/>
- <rect width="24" height="5.33" y="5.33" fill="#dd0000"/>
- <rect width="24" height="5.34" y="10.66" fill="#ffce00"/>
- </svg>
- <span>Made in Germany</span>
- </li>
- <li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]">
- <svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
- <path d="M7 11V8a5 5 0 0 1 10 0v3"/>
- <rect x="5" y="11" width="14" height="10" rx="2"/>
- <path d="M12 16v2"/>
- </svg>
- <span>SSL-verschlüsselt</span>
- </li>
- </ul>
-
- <div class="w-full border-t border-white/10 pt-8 mt-4 md:mt-2">
- <p class="text-xs font-bold uppercase tracking-wider text-[#ff6b35] mb-3">Lösungen für Branchen</p>
- <nav class="flex flex-col gap-2 text-sm" aria-label="Branchen-Lösungen">
- <a href="/loesungen/kfz-werkstatt/" class="text-[#ff6b35] underline-offset-2 hover:underline">Gefahrstoffmanagement Kfz-Werkstatt</a>
- <a href="/loesungen/schreinerei/" class="text-[#ff6b35] underline-offset-2 hover:underline">Gefahrstoffmanagement Schreinerei</a>
- <a href="/loesungen/malerbetrieb/" class="text-[#ff6b35] underline-offset-2 hover:underline">Gefahrstoffmanagement Malerbetrieb</a>
- <a href="/loesungen/laborbetrieb/" class="text-[#ff6b35] underline-offset-2 hover:underline">Gefahrstoffmanagement Labor</a>
- <a href="/loesungen/reinigungsunternehmen/" class="text-[#ff6b35] underline-offset-2 hover:underline">Gefahrstoffmanagement Gebäudereinigung</a>
- </nav>
- </div>
-
- <div class="w-full border-t border-white/10 pt-8 mt-6">
- <p class="text-xs font-bold uppercase tracking-wider text-[#ff6b35] mb-3"><a href="/betriebsanweisung/" class="hover:underline">Beliebte Betriebsanweisungen (TRGS 555)</a></p>
- <nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm" aria-label="Betriebsanweisungen nach Stoff">
- <a href="/betriebsanweisung/bremsenreiniger-trgs-555/" class="text-[#8fa4c0] hover:text-[#ff6b35] hover:underline underline-offset-2">Bremsenreiniger</a>
- <a href="/betriebsanweisung/aceton-trgs-555/" class="text-[#8fa4c0] hover:text-[#ff6b35] hover:underline underline-offset-2">Aceton</a>
- <a href="/betriebsanweisung/isopropanol-trgs-555/" class="text-[#8fa4c0] hover:text-[#ff6b35] hover:underline underline-offset-2">Isopropanol</a>
- <a href="/betriebsanweisung/epoxidharz-trgs-555/" class="text-[#8fa4c0] hover:text-[#ff6b35] hover:underline underline-offset-2">Epoxidharz</a>
- <a href="/betriebsanweisung/kuehlschmierstoff-trgs-555/" class="text-[#8fa4c0] hover:text-[#ff6b35] hover:underline underline-offset-2">Kühlschmierstoff</a>
- <a href="/betriebsanweisung/adblue-trgs-555/" class="text-[#8fa4c0] hover:text-[#ff6b35] hover:underline underline-offset-2">AdBlue</a>
- <a href="/betriebsanweisung/salzsaeure-trgs-555/" class="text-[#8fa4c0] hover:text-[#ff6b35] hover:underline underline-offset-2">Salzsäure</a>
- <a href="/betriebsanweisung/natronlauge-trgs-555/" class="text-[#8fa4c0] hover:text-[#ff6b35] hover:underline underline-offset-2">Natronlauge</a>
- </nav>
- </div>
-
- <p class="footer-copy">&#xa9; 2026 Gefahrstoff-QR &middot; Das Angebot richtet sich ausschlie&#223;lich an Unternehmen, Gewerbetreibende, Freiberufler und juristische Personen des &#246;ffentlichen Rechts im Sinne des &#167; 14 BGB.</p>
- </div>
- </footer>
+ <!--AEO:SITE_FOOTER-->
+<footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__grid"><h2 class="sr-only">Seitenfuß</h2><a href="/" class="site-footer__brand" aria-label="Gefahrstoff-QR Startseite"><p class="site-footer__logo">Gefahrstoff-QR</p><p class="site-footer__tagline">Gefahrstoffverzeichnis nach Vorgaben von § 6 GefStoffV &amp; TRGS, KI-gestützt aus dem Sicherheitsdatenblatt.</p></a><section aria-labelledby="footer-col-product"><h2 id="footer-col-product" class="site-footer__column-title">Produkt</h2><ul class="site-footer__link-list"><li><a href="/#live-demo" class="site-footer__link">Live-Test</a></li><li><a href="/#preise" class="site-footer__link">Preise</a></li><li><a href="/#fuer-sifas" class="site-footer__link">Für SiFas</a></li><li><a href="https://app.gefahrstoff-qr.de/register" class="site-footer__link">TarifVorschau starten</a></li></ul></section><section aria-labelledby="footer-col-resources"><h2 id="footer-col-resources" class="site-footer__column-title">Wissen &amp; Tools</h2><ul class="site-footer__link-list"><li><a href="/wissen/" class="site-footer__link">Wissen</a></li><li><a href="/blog/" class="site-footer__link">Blog</a></li><li><a href="/gefahrstoffverzeichnis-excel-vorlage/" class="site-footer__link">Excel-Vorlage</a></li><li><a href="/trgs-510-zusammenlagerungs-check/" class="site-footer__link">TRGS-510-Checker</a></li><li><a href="/gefahrstoffkataster-excel-vorlage/" class="site-footer__link">Excel vs. Software</a></li></ul></section><section aria-labelledby="footer-col-legal"><h2 id="footer-col-legal" class="site-footer__column-title">Rechtliches</h2><ul class="site-footer__link-list"><li><a href="/impressum" class="site-footer__link">Impressum</a></li><li><a href="/datenschutz" class="site-footer__link">Datenschutz</a></li><li><a href="/agb" class="site-footer__link">AGB</a></li></ul></section></div><ul class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 lg:justify-start site-footer__trust mt-8 w-full border-t border-white/10 pt-8" role="list" aria-label="Vertrauen und Sicherheit"><li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]"><svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"></path><path d="m9.5 12.5 2 2 3.5-3.5"></path></svg><span>Hosting in Deutschland (inkl. AVV)</span></li><li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]"><svg class="h-7 w-9 flex-shrink-0 overflow-visible rounded-md border border-white/20 shadow-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" aria-hidden="true" focusable="false"><rect width="24" height="16" rx="1.5" fill="#1a1a1a"></rect><rect width="24" height="5.33" y="5.33" fill="#dd0000"></rect><rect width="24" height="5.34" y="10.66" fill="#ffce00"></rect></svg><span>Made in Germany</span></li><li class="flex items-center gap-2.5 text-sm font-medium text-[#8fa4c0]"><svg class="h-7 w-7 flex-shrink-0 text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 11V8a5 5 0 0 1 10 0v3"></path><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M12 16v2"></path></svg><span>SSL-verschlüsselt</span></li></ul><div class="site-footer__secondary"><div class="site-footer__secondary-col"><h2 class="site-footer__column-title">Lösungen nach Branche</h2><ul class="site-footer__link-list site-footer__link-list--secondary site-footer__link-list--industry"><li><a href="/loesungen/kfz-werkstatt/" class="site-footer__link">Kfz-Werkstatt</a></li><li><a href="/loesungen/schreinerei/" class="site-footer__link">Schreinerei</a></li><li><a href="/loesungen/malerbetrieb/" class="site-footer__link">Malerbetrieb</a></li><li><a href="/loesungen/laborbetrieb/" class="site-footer__link">Labor</a></li><li><a href="/loesungen/reinigungsunternehmen/" class="site-footer__link">Gebäudereinigung</a></li></ul></div><div class="site-footer__secondary-col"><h2 class="site-footer__column-title"><a href="/betriebsanweisung/" class="site-footer__heading-link">Betriebsanweisungen (TRGS 555)</a></h2><ul class="site-footer__link-list site-footer__link-list--secondary site-footer__link-list--ba-samples"><li><a href="/betriebsanweisung/bremsenreiniger-trgs-555/" class="site-footer__link">Bremsenreiniger</a></li><li><a href="/betriebsanweisung/aceton-trgs-555/" class="site-footer__link">Aceton</a></li><li><a href="/betriebsanweisung/isopropanol-trgs-555/" class="site-footer__link">Isopropanol</a></li><li><a href="/betriebsanweisung/epoxidharz-trgs-555/" class="site-footer__link">Epoxidharz</a></li><li><a href="/betriebsanweisung/kuehlschmierstoff-trgs-555/" class="site-footer__link">Kühlschmierstoff</a></li><li><a href="/betriebsanweisung/adblue-trgs-555/" class="site-footer__link">AdBlue</a></li><li class="site-footer__link-list__full-row"><a href="/betriebsanweisung/" class="site-footer__link site-footer__link--accent">Alle Stoffe ansehen →</a></li></ul></div></div><p class="site-footer__legal">© 2026 Gefahrstoff-QR · Das Angebot richtet sich ausschließlich an Unternehmen, Gewerbetreibende, Freiberufler und juristische Personen des öffentlichen Rechts im Sinne des § 14 BGB.</p></div></footer>
+<!--/AEO:SITE_FOOTER-->
 
  <!-- STICKY MOBILE CTA: blendet sich aus, solange ein anderer Primär-CTA sichtbar ist -->
  <div class="mobile-sticky-cta" data-mobile-sticky-cta hidden>
@@ -1544,7 +1469,7 @@ Mit Excel
 
  var hints = {
  monthly: 'Monatliche Abrechnung, monatlich kündbar.',
- yearly: 'Jährliche Vorauszahlung zum reduzierten Monatspreis (Standard-Ansicht).',
+ yearly: 'Jährliche Vorauszahlung zum reduzierten Monatspreis.',
  };
 
  var footnotes = {
@@ -1604,6 +1529,8 @@ Mit Excel
  var amountEl = block.querySelector('[data-pricing-amount]');
  var periodEl = block.querySelector('[data-pricing-period]');
  var prefixEl = block.querySelector('[data-pricing-prefix]');
+ var anchorEl = block.querySelector('[data-pricing-anchor]');
+ var anchorOffset = parseFloat(block.getAttribute('data-anchor-offset') || '20', 10);
  var noteEl = block.parentElement.querySelector('[data-pricing-note]');
 
  if (!amountEl || !periodEl) return;
@@ -1617,6 +1544,9 @@ Mit Excel
  var yTotal = getYearlyTotal(block, monthly);
  amountEl.textContent = formatAmount(yMonthly, 0);
  periodEl.textContent = '/Monat';
+ if (anchorEl) {
+ anchorEl.textContent = formatAmount(yMonthly + anchorOffset, 0) + '\u00a0\u20ac';
+ }
  if (noteEl) {
  noteEl.textContent =
  (prefix ? prefix + ' ' : '') +
@@ -1629,6 +1559,9 @@ Mit Excel
  } else {
  amountEl.textContent = formatAmount(monthly, 0);
  periodEl.textContent = '/Monat';
+ if (anchorEl) {
+ anchorEl.textContent = formatAmount(monthly + anchorOffset, 0) + '\u00a0\u20ac';
+ }
  if (noteEl) {
  noteEl.textContent = '';
  noteEl.hidden = true;
@@ -1658,6 +1591,8 @@ Mit Excel
  setBilling('yearly');
  })();
  </script>
+
+ <script src="/scripts/pricing-tier-features.js" defer></script>
 
  <script src="/scripts/sdb-preview.js" defer></script>
  <script>

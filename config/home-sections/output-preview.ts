@@ -1,11 +1,20 @@
 /** "Was hinten herauskommt": Output-Vorschau der drei Kernergebnisse (<OutputPreviewSection>). */
 
+import { SAMPLE_BA_ENTWURF_PDF } from '@/config/sample-downloads';
+
+export interface OutputPreviewDownloadCta {
+  label: string;
+  href: string;
+  download?: string;
+}
+
 export interface OutputPreviewCard {
   id: string;
   kicker: string;
   title: string;
   points: readonly string[];
   image?: { src: string; alt: string; width: number; height: number };
+  downloadCta?: OutputPreviewDownloadCta;
 }
 
 export const OUTPUT_PREVIEW = {
@@ -36,6 +45,17 @@ export const OUTPUT_PREVIEW = {
         'Eigenes Firmenlogo und anpassbare Rahmenfarbe',
         'Schriftgröße passt sich dem Inhalt für den Aushang an',
       ],
+      image: {
+        src: '/images/app-screenshot-form.png',
+        alt: 'Betriebsanweisung als KI-gestützter Entwurf (TRGS 555) in Gefahrstoff-QR',
+        width: 2940,
+        height: 1656,
+      },
+      downloadCta: {
+        label: 'Beispiel BA herunterladen',
+        href: SAMPLE_BA_ENTWURF_PDF.href,
+        download: SAMPLE_BA_ENTWURF_PDF.downloadFilename,
+      },
     },
     {
       id: 'lagerung-notfall',
@@ -54,13 +74,4 @@ export const OUTPUT_PREVIEW = {
       },
     },
   ] satisfies OutputPreviewCard[],
-  /** Abschnitte der BA-Vorschau (TRGS 555), dargestellt als stilisiertes A4-Blatt. */
-  baPreviewSections: [
-    'Anwendungsbereich',
-    'Gefahren für Mensch und Umwelt',
-    'Schutzmaßnahmen und Verhaltensregeln',
-    'Verhalten im Gefahrfall',
-    'Erste Hilfe',
-    'Sachgerechte Entsorgung',
-  ],
 } as const;

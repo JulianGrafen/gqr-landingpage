@@ -13,6 +13,7 @@ export const APP_URL = 'https://app.gefahrstoff-qr.de';
 export const APP_REGISTER_URL = `${APP_URL}/register`;
 export const APP_LOGIN_URL = `${APP_URL}/login`;
 export const CONTACT_EMAIL = 'info@gefahrstoff-qr.de';
+export const CONTACT_CALENDLY_URL = 'https://calendly.com/juliangraefen';
 
 /** Betreff für SiFa-/Firmenkunden: Kauf auf monatliche PDF-Rechnung */
 export const SIFA_INVOICE_REQUEST_SUBJECT = 'Multi-Mandanten-Zugang auf Rechnung';

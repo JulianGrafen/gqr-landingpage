@@ -5,6 +5,20 @@
 
 export const SITE_URL = 'https://gefahrstoff-qr.de';
 
+/** Marketing-Startseite (statische `index.html` im Repo-Root, nicht `app/page.tsx`). */
+export const MARKETING_HOME_HREF = '/' as const;
+
+/**
+ * Logo/Home-Link für Next-Layouts: Produktion → `/`, lokal `next dev` → Live-Startseite
+ * (sonst landet `/` auf der Next-Platzhalterroute).
+ */
+export function resolveMarketingHomeHref(): string {
+  if (process.env.NODE_ENV === 'development') {
+    return `${SITE_URL}/`;
+  }
+  return MARKETING_HOME_HREF;
+}
+
 /** Homepage — Title 1 + Description 2 */
 export const HOME_SEO = {
  title: 'Cloud Gefahrstoffmanagement Software statt Excel | Gefahrstoff-QR',
@@ -14,7 +28,7 @@ export const HOME_SEO = {
  heroSubline:
  'Browserbasiert in der Cloud statt fehleranfälliger Excel-Vorlagen: KI extrahiert Daten aus dem Sicherheitsdatenblatt automatisch, führt Ihr Verzeichnis mit Revisionsverlauf und spart Stunden Abtipp-Arbeit.',
  softwareDescription:
- 'Cloud Gefahrstoffmanagement Software: KI extrahiert Sicherheitsdatenblätter automatisch im Browser — die nächste Stufe nach Excel mit mit Revisionsverlaufem Verzeichnis, Revisionsverlauf und QR-Notfallpass inklusive.',
+  'Cloud Gefahrstoffmanagement Software: KI extrahiert Sicherheitsdatenblätter automatisch im Browser — die nächste Stufe nach Excel mit Verzeichnis mit Revisionsverlauf, Änderungsprotokoll und QR-Notfallpass inklusive.',
 } as const;
 
 /** Lead-Magnet: Gratis Excel-Vorlage Download — siehe config/vorlage-landing.ts */

@@ -1,21 +1,17 @@
 'use client';
 
-import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { useBetriebsanweisungSdbUpload } from '@/components/betriebsanweisung/betriebsanweisung-sdb-upload-context';
 import { SdbLivePreviewDropzone, type SdbLivePreviewDropzoneHandle } from '@/components/sdb-preview';
-import {
-  BETRIEBSANWEISUNG_NO_PDF_STORAGE,
-  DSGVO_HOSTING_BADGE,
-} from '@/config/legal/site-copy';
+import { SdbTrustFeatureList } from '@/components/programmatic-seo/SdbTrustFeatureList';
+import { BETRIEBSANWEISUNG_NO_PDF_STORAGE } from '@/config/legal/site-copy';
 import type { SdbPreviewPhase } from '@/lib/sdb-preview/useSdbPreview';
 
 type Props = {
   substanceName: string;
-  registerUrl: string;
 };
 
-export function BetriebsanweisungSdbSidebar({ substanceName, registerUrl }: Props) {
+export function BetriebsanweisungSdbSidebar({ substanceName }: Props) {
   const [scanPhase, setScanPhase] = useState<SdbPreviewPhase>('idle');
   const dropzoneRef = useRef<SdbLivePreviewDropzoneHandle>(null);
   const { registerSdbUploadSurface } = useBetriebsanweisungSdbUpload();
@@ -51,29 +47,7 @@ export function BetriebsanweisungSdbSidebar({ substanceName, registerUrl }: Prop
       {scanPhase === 'idle' ? (
         <p className="mt-3 text-center text-xs text-[#8fa4c0]">{BETRIEBSANWEISUNG_NO_PDF_STORAGE}</p>
       ) : null}
-      {scanPhase === 'idle' ? (
-        <p className="mt-4 text-center text-sm">
-          <Link href={registerUrl} className="gqr-link font-semibold text-[#8fa4c0] hover:text-[#ff6b35]">
-            Kein SDB-PDF zur Hand? → Direkt in der App registrieren
-          </Link>
-        </p>
-      ) : null}
-      {scanPhase === 'idle' ? (
-        <div className="mt-4 flex flex-col gap-1.5 text-xs text-[#8fa4c0]" role="group" aria-label="Vertrauensmerkmale">
-          <span className="flex items-center gap-1.5">
-            <span aria-hidden="true">✓</span>
-            {DSGVO_HOSTING_BADGE}
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span aria-hidden="true">✓</span>
-            Keine Installation
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span aria-hidden="true">✓</span>
-            Extraktion aus Ihrem SDB-PDF
-          </span>
-        </div>
-      ) : null}
+      {scanPhase === 'idle' ? <SdbTrustFeatureList /> : null}
     </aside>
   );
 }

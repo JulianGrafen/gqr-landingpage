@@ -22,25 +22,21 @@ export const HOME_NAVIGATION = {
     { label: 'Preise', href: '#preise' },
   ] satisfies NavLink[],
   login: { label: 'Login', href: APP_LOGIN_URL },
-  primaryCta: { label: 'SDB live testen', href: LIVE_DEMO_HREF },
+  primaryCta: { label: 'Kostenlos testen', href: APP_REGISTER_URL },
 } as const;
 
 export const HOME_HERO = {
+  eyebrow: 'Für Selbstständige SiFa, KMU & Konzerne',
   /** Weiche Trennstellen (\u00ad) für saubere Umbrüche der langen Komposita auf Mobilgeräten. */
   headline: 'Gefahrstoff\u00adkataster & BA-Entwurf',
   headlineAccent: 'ohne Abtippen.',
-  subheadline:
-    'SDB-PDF hochladen: KI liest aus, Sie geben frei. Sparen Sie sich Stunden an Arbeit für Ihre Mandanten.',
-  primaryCta: { label: 'Beispiel-SDB live auslesen', href: LIVE_DEMO_HREF },
+  subheadlineParagraphs: [
+    'KI liest aus, Sie geben frei.',
+    'Sparen Sie sich mehrere Stunden Arbeit pro Woche für Ihre Mandanten.',
+  ],
   secondaryCta: { label: 'Kostenlos registrieren', href: APP_REGISTER_URL },
   microcopy: 'Kein Verkaufsgespräch, testen Sie die Software in Ruhe',
-  /** Einzige Trust-Leiste der Seite, direkt unter der Dropzone. */
-  trustSignals: [
-    'Browserbasiert, keine Installation',
-    'Keine Kreditkarte',
-    'Hosted in Frankfurt',
-  ],
-  /** Linksspalte unter der Live-Demo: Nutzen + Vertrauen (neben ROI-Rechner). */
+  /** Linksspalte unter der Live-Demo: Nutzen (neben ROI-Rechner). */
   benefitBullets: [
     'Gefahrstoffe aus dem Sicherheitsdatenblatt anlegen statt abtippen',
     'TRGS-510-Zusammenlagerungscheck pro Lagerort',

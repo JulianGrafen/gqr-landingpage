@@ -19,7 +19,11 @@ export function HomeNavigation({ variant }: HomeNavigationProps) {
       <a className="nav-link" href={HOME_NAVIGATION.login.href}>
         {HOME_NAVIGATION.login.label}
       </a>
-      <a className={ctaClassName} href={HOME_NAVIGATION.primaryCta.href}>
+      <a
+        className={ctaClassName}
+        href={HOME_NAVIGATION.primaryCta.href}
+        {...(variant === 'desktop' ? { 'data-nav-primary-cta': true } : {})}
+      >
         {HOME_NAVIGATION.primaryCta.label}
       </a>
     </>

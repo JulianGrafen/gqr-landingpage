@@ -5,7 +5,16 @@ import { SiteBreadcrumb } from '@/components/seo/SiteBreadcrumb';
 import { getAllBetriebsanweisungEntries } from '@/config/betriebsanweisung/registry';
 import { BETRIEBSANWEISUNG_HERO_DISCLAIMER } from '@/config/legal/site-copy';
 import { SITE_URL } from '@/config/site-seo';
+import { marketingHomeBreadcrumbItem } from '@/lib/seo/marketing-home-breadcrumb';
 import { groupEntriesAlphabetically } from '@/lib/betriebsanweisung/group-entries-alphabetically';
+import {
+  BA_CONTAINER,
+  BA_PAGE_MAIN,
+  BA_PILL_LIST,
+  BA_PROSE,
+  BA_SECTION,
+  BA_SECTION_HERO,
+} from '@/components/betriebsanweisung/ba-page-layout';
 import { buildBreadcrumbSchema, type BreadcrumbItem } from '@/lib/seo/build-breadcrumb-schema';
 
 const canonical = `${SITE_URL}/betriebsanweisung/`;
@@ -13,7 +22,7 @@ const pageTitle = 'Betriebsanweisungen nach TRGS 555 von A bis Z: Entwurf aus Ih
 const pageDescription =
   'Betriebsanweisungen für über 100 Gefahrstoffe von Aceton bis Xylol: KI-gestützter Entwurf (gemäß TRGS 555) aus Ihrem Sicherheitsdatenblatt, Freigabe durch die SiFa. Kostenlos testen.';
 
-const BREADCRUMBS: BreadcrumbItem[] = [{ label: 'Startseite', href: '/' }, { label: 'Betriebsanweisungen' }];
+const BREADCRUMBS: BreadcrumbItem[] = [marketingHomeBreadcrumbItem(), { label: 'Betriebsanweisungen' }];
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -57,11 +66,12 @@ export default function BetriebsanweisungIndexPage() {
   ];
 
   return (
-    <main>
+    <main className={BA_PAGE_MAIN}>
       <JsonLd data={schemas} />
 
-      <section className="border-b border-white/[0.07] bg-gradient-to-b from-[#0f1e35]/90 to-[#0a1628] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="mx-auto max-w-3xl">
+      <section className={`${BA_SECTION_HERO} lg:py-20`}>
+        <div className={BA_CONTAINER}>
+          <div className={BA_PROSE}>
           <SiteBreadcrumb items={BREADCRUMBS} className="mb-6 text-xs sm:text-sm" />
           <p className="text-xs font-bold uppercase tracking-wider text-[#ff6b35]">TRGS 555 · {entries.length} Stoffe</p>
           <h1 className="mt-3 text-3xl font-black leading-tight text-[#f0f6ff] sm:text-4xl">
@@ -91,19 +101,20 @@ export default function BetriebsanweisungIndexPage() {
             Ihr Stoff fehlt? Der Entwurf funktioniert mit jedem Sicherheitsdatenblatt, nicht nur mit den Stoffen dieser
             Liste.
           </p>
+          </div>
         </div>
       </section>
 
-      <section id="stoffe-a-z" className="scroll-mt-24 bg-white px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-2xl font-bold text-slate-900">Alle Stoffe und Produkte</h2>
+      <section id="stoffe-a-z" className={`${BA_SECTION} scroll-mt-24 lg:py-16`}>
+        <div className={BA_CONTAINER}>
+          <h2 className="m-0 text-2xl font-bold text-[#f0f6ff]">Alle Stoffe und Produkte</h2>
           <nav aria-label="Stoffe nach Anfangsbuchstabe" className="mt-6">
-            <ul className="flex flex-wrap gap-2" role="list">
+            <ul className={BA_PILL_LIST} role="list">
               {groups.map((group) => (
-                <li key={group.anchorId}>
+                <li key={group.anchorId} className="m-0 p-0">
                   <a
                     href={`#${group.anchorId}`}
-                    className="inline-flex min-w-[2.25rem] justify-center rounded-lg border border-slate-200 px-2 py-1 text-sm font-semibold text-slate-700 hover:border-[#ff6b35]/40 hover:text-[#ff6b35]"
+                    className="inline-flex min-w-[2.25rem] justify-center rounded-lg border border-white/15 bg-white/[0.04] px-2 py-1 text-sm font-semibold text-[#c8d4e6] no-underline transition hover:border-[#ff6b35]/40 hover:text-[#ff6b35]"
                   >
                     {group.letter}
                   </a>
@@ -114,19 +125,18 @@ export default function BetriebsanweisungIndexPage() {
 
           {groups.map((group) => (
             <div key={group.anchorId} id={group.anchorId} className="mt-10 scroll-mt-24">
-              <h3 className="border-b border-slate-200 pb-2 text-lg font-bold text-slate-900">{group.letter}</h3>
-              <ul className="mt-4 grid gap-3 sm:grid-cols-2" role="list">
+              <h3 className="m-0 border-b border-white/[0.08] pb-2 text-lg font-bold text-[#f0f6ff]">
+                {group.letter}
+              </h3>
+              <ul className="m-0 mt-4 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-3" role="list">
                 {group.entries.map((entry) => (
-                  <li key={entry.slug}>
-                    <Link
-                      href={`/betriebsanweisung/${entry.slug}/`}
-                      className="flex h-full flex-col rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-4 transition hover:border-[#ff6b35]/40 hover:bg-white hover:shadow-sm"
-                    >
-                      <span className="font-semibold text-slate-900">Betriebsanweisung {entry.substanceName}</span>
-                      <span className="mt-1 text-xs leading-relaxed text-slate-500">
+                  <li key={entry.slug} className="m-0 p-0">
+                    <Link href={`/betriebsanweisung/${entry.slug}/`} className="ba-hub-link-card">
+                      <span className="font-semibold text-[#f0f6ff]">Betriebsanweisung {entry.substanceName}</span>
+                      <span className="mt-1 text-xs leading-relaxed text-[#8fa4c0]">
                         {entry.typicalIndustries.slice(0, 3).join(' · ')}
                       </span>
-                      <span className="mt-2 text-sm text-[#ff6b35]">Entwurf erstellen →</span>
+                      <span className="mt-2 text-sm font-semibold text-[#ff6b35]">Entwurf erstellen →</span>
                     </Link>
                   </li>
                 ))}

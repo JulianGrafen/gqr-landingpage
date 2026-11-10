@@ -25,7 +25,7 @@ export const VORLAGE_GQR_BENEFITS = [
  description: 'Nie wieder manuell tippen — KI liest Sicherheitsdatenblätter und füllt Pflichtfelder.',
  },
  {
- title: 'Archivierung mit Revisionsverlauf mit Prüfsummen',
+ title: 'Archivierung mit Revisionsverlauf und Prüfsummen',
  description: 'Historie mit Revisionsverlauf: jede Sicherheitsdatenblatt-Version nachvollziehbar für Audits und BG-Prüfungen.',
  },
  {

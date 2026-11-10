@@ -23,7 +23,7 @@ export const EXCEL_VORLAGE_SILO_CONFIG: SeoSiloPageConfig = {
  lead:
  'Sie suchen eine Vorlage für Ihr Gefahrstoffverzeichnis? Unsere XLSX deckt die Pflichtfelder ab, die SiFa und Prüfer typischerweise erwarten — als pragmatischer Einstieg vor dem nächsten BG-Audit.',
  proofLine:
- 'Wichtig vorab: Excel erfüllt die Informationspflicht nach § 6 GefStoffV nicht automatisch. Ohne mit Revisionsverlaufe Sicherheitsdatenblatt-Historie und nachvollziehbare Änderungen riskieren Betriebe Nachweise bei Behörden- und BG-Kontrollen — besonders seit der CLP-Anpassungspflicht für Gemische (Übergangsfrist bis Mai 2026).',
+ 'Wichtig vorab: Excel erfüllt die Informationspflicht nach § 6 GefStoffV nicht automatisch. Ohne Sicherheitsdatenblatt-Historie mit Revisionsverlauf-Historie und nachvollziehbare Änderungen riskieren Betriebe Nachweise bei Behörden- und BG-Kontrollen — besonders seit der CLP-Anpassungspflicht für Gemische (Übergangsfrist bis Mai 2026).',
  primaryCta: {
  label: 'Gratis Vorlage sichern',
  href: '#vorlage-download',

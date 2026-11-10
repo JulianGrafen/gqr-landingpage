@@ -6,6 +6,14 @@ const PRODUCTION_DEFAULTS: SdbPreviewConfig = {
   registerBaseUrl: 'https://app.gefahrstoff-qr.de/register',
 };
 
+function resolveApiBaseUrl(data: SdbPreviewConfig, isLocalDev: boolean): string {
+  const fallback = (data.apiBaseUrl ?? PRODUCTION_DEFAULTS.apiBaseUrl).replace(/\/$/, '');
+  if (isLocalDev && data.localApiBaseUrl?.trim()) {
+    return data.localApiBaseUrl.trim().replace(/\/$/, '');
+  }
+  return fallback;
+}
+
 let cached: SdbPreviewConfig | null = null;
 
 function configUrl(): string {
@@ -24,19 +32,28 @@ export async function loadSdbPreviewConfig(): Promise<SdbPreviewConfig> {
   try {
     const res = await fetch(configUrl(), { cache: 'no-store' });
     if (!res.ok) {
-      cached = { ...PRODUCTION_DEFAULTS, useMock: isLocalDev };
+      cached = {
+        ...PRODUCTION_DEFAULTS,
+        apiBaseUrl: resolveApiBaseUrl(PRODUCTION_DEFAULTS, isLocalDev),
+        useMock: false,
+      };
       return cached;
     }
     const data = (await res.json()) as SdbPreviewConfig;
+    const useMock = data.useMock === true;
     cached = {
       ...PRODUCTION_DEFAULTS,
       ...data,
-      apiBaseUrl: (data.apiBaseUrl ?? PRODUCTION_DEFAULTS.apiBaseUrl).replace(/\/$/, ''),
-      useMock: isLocalDev ? true : Boolean(data.useMock),
+      apiBaseUrl: resolveApiBaseUrl(data, isLocalDev),
+      useMock,
     };
     return cached;
   } catch {
-    cached = { ...PRODUCTION_DEFAULTS, useMock: isLocalDev };
+    cached = {
+      ...PRODUCTION_DEFAULTS,
+      apiBaseUrl: resolveApiBaseUrl(PRODUCTION_DEFAULTS, isLocalDev),
+      useMock: false,
+    };
     return cached;
   }
 }

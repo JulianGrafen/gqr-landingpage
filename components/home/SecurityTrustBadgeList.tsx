@@ -68,7 +68,7 @@ function TrustBadgeIcon({ id }: { id: TrustBadgeId }) {
 export function SecurityTrustBadgeList({ badges, className = '' }: SecurityTrustBadgeListProps) {
   return (
     <ul
-      className={`flex flex-wrap items-center justify-center gap-x-8 gap-y-4 lg:justify-start ${className}`.trim()}
+      className={`flex flex-wrap items-center justify-center gap-x-8 gap-y-4 ${className}`.trim()}
       role="list"
       aria-label="Vertrauen und Sicherheit"
     >

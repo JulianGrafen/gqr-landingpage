@@ -1,3 +1,5 @@
+import { SecurityTrustBadgeList } from '@/components/home/SecurityTrustBadgeList';
+import { HOME_HERO } from '@/config/home-sections/hero';
 import { HOME_HERO_TRUST_GRID, type HeroTrustLogo } from '@/config/home-sections/hero-trust-grid';
 
 function TrustLogoCell({ logo }: { logo: HeroTrustLogo }) {
@@ -10,15 +12,22 @@ function TrustLogoCell({ logo }: { logo: HeroTrustLogo }) {
     .join(' ');
 
   const image = (
-    <img
-      src={logo.src}
-      alt={logo.alt}
-      width={logo.width}
-      height={logo.height}
-      loading="lazy"
-      decoding="async"
-      className="sds-hero__trust-logos-img"
-    />
+    <span className="sds-hero__trust-logos-img-slot">
+      <img
+        src={logo.src}
+        alt={logo.alt}
+        width={logo.width}
+        height={logo.height}
+        loading="lazy"
+        decoding="async"
+        className="sds-hero__trust-logos-img"
+        style={
+          logo.displayScale && logo.displayScale !== 1
+            ? { transform: `scale(${logo.displayScale})` }
+            : undefined
+        }
+      />
+    </span>
   );
 
   if (logo.href) {
@@ -38,15 +47,14 @@ function TrustLogoCell({ logo }: { logo: HeroTrustLogo }) {
   return <p className={`${itemClass} sds-hero__trust-logos-item--static`}>{image}</p>;
 }
 
-/** Dezentes Logo-Grid direkt unter Copy & Live-Demo im Hero. */
+/** Sicherheits-Badges + Presse-/Verzeichnis-Logo-Grid unter dem Hero. */
 export function HeroTrustLogoGrid() {
-  const { kicker, logos } = HOME_HERO_TRUST_GRID;
+  const { ariaLabel, logos } = HOME_HERO_TRUST_GRID;
 
   return (
-    <div className="sds-hero__trust-logos" aria-labelledby="heroTrustGridLabel">
-      <p id="heroTrustGridLabel" className="sds-hero__trust-logos-kicker">
-        {kicker}
-      </p>
+  <>
+    <SecurityTrustBadgeList badges={HOME_HERO.trustBadges} className="sds-hero__trust sds-hero__trust--above-logos" />
+    <div className="sds-hero__trust-logos" aria-label={ariaLabel}>
       <ul className="sds-hero__trust-logos-grid" role="list">
         {logos.map((logo) => (
           <li key={logo.id} className="sds-hero__trust-logos-cell">
@@ -55,5 +63,6 @@ export function HeroTrustLogoGrid() {
         ))}
       </ul>
     </div>
+  </>
   );
 }

@@ -19,10 +19,13 @@ export type HeroTrustLogo = {
   lightSurface?: boolean;
   /** Logo mit dunklem Hintergrund (z. B. Expertenmarkt). */
   darkSurface?: boolean;
+  /** Ausgleich für PNGs mit viel Rand (gleiche optische Größe im Grid). */
+  displayScale?: number;
 };
 
 export const HOME_HERO_TRUST_GRID = {
-  kicker: 'Bekannt aus',
+  /** Barrierefreiheit für das Logo-Grid (sichtbare Kicker-Zeile entfällt). */
+  ariaLabel: 'Presse und Verzeichnisse',
   logos: [
     {
       id: 'portal-der-wirtschaft',
@@ -33,6 +36,7 @@ export const HOME_HERO_TRUST_GRID = {
       href: PORTAL_DER_WIRTSCHAFT_PRESS_URL,
       linkTitle: 'Pressebericht auf Portal der Wirtschaft lesen (öffnet in neuem Tab)',
       lightSurface: true,
+      displayScale: 1.68,
     },
     {
       id: 'expertenmarkt',
@@ -43,6 +47,7 @@ export const HOME_HERO_TRUST_GRID = {
       href: EXPERTENMARKT_PROFILE_URL,
       linkTitle: 'Expertenprofil auf Expertenmarkt.de öffnen (neuer Tab)',
       darkSurface: true,
+      displayScale: 0.86,
     },
   ] satisfies readonly HeroTrustLogo[],
 } as const;

@@ -1,16 +1,25 @@
-const CONTACT_EMAIL = 'info@gefahrstoff-qr.de';
+import { CONTACT_CALENDLY_URL, CONTACT_EMAIL } from '@/config/aeo-config';
 
-/** Startseiten-FAQ-Ersatz: Kontakt statt Accordion (sync:home → #faq). */
-export function HomeFaqContact() {
+const faqContactLinkClass = 'font-semibold text-teal-300 underline-offset-2 hover:underline';
+
+/** Kontaktzeile unter dem FAQ-Accordion auf der Startseite (sync:home → FAQ_FOOTER). */
+export function HomeFaqContactFooter() {
   return (
-    <div className="text-center">
-      <p id="faqHeadline" className="text-lg leading-relaxed text-[#c5d0e2] sm:text-xl">
-        Noch Fragen? Senden Sie uns eine Mail an:{' '}
-        <a
-          href={`mailto:${CONTACT_EMAIL}`}
-          className="font-semibold text-teal-300 underline-offset-2 hover:underline"
-        >
+    <div className="mt-8 text-center text-base leading-relaxed text-[#c5d0e2] sm:text-lg">
+      <p>
+        Noch Fragen?{' '}
+        <a href={`mailto:${CONTACT_EMAIL}`} className={faqContactLinkClass}>
           {CONTACT_EMAIL}
+        </a>
+      </p>
+      <p className="mt-5 flex justify-center">
+        <a
+          href={CONTACT_CALENDLY_URL}
+          className="btn-glass-outline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Austausch per Call buchen →
         </a>
       </p>
     </div>
