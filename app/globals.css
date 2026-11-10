@@ -64,6 +64,11 @@
     max-width: 36rem;
   }
 
+  /** pSEO-Hero: gleiche Breite wie `PSEO_PROSE` / `max-w-3xl` (Subheadline). */
+  .sds-hero__trust-section--prose {
+    max-width: 48rem;
+  }
+
   .sds-hero__checks {
     display: flex;
     flex-wrap: wrap;

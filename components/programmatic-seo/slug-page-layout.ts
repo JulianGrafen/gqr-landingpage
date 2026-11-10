@@ -19,3 +19,6 @@ export const PSEO_CONTAINER = 'mx-auto w-full max-w-6xl';
 export const PSEO_PROSE = 'max-w-3xl';
 
 export const PSEO_PILL_LIST = 'm-0 flex list-none flex-wrap gap-2 p-0';
+
+/** USP-Section im Hero: volle Prosa-Spalte statt 36rem (Startseiten-Hero-Spalte). */
+export const PSEO_HERO_USP_SECTION_CLASS = 'sds-hero__trust-section--prose';

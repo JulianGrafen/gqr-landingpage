@@ -6,6 +6,7 @@ export {
   PSEO_SECTION,
   PSEO_SECTION_HERO,
   PSEO_SECTION_MUTED,
+  PSEO_HERO_USP_SECTION_CLASS,
 } from '@/components/programmatic-seo/slug-page-layout';
 export { SdbTrustFeatureList } from '@/components/programmatic-seo/SdbTrustFeatureList';
 export { SlugHeroSubheadline } from '@/components/programmatic-seo/SlugHeroSubheadline';
