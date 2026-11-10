@@ -4031,15 +4031,6 @@ button.sds-entry-card__summary:focus-visible {
   font-weight: 900;
 }
 
-.sdb-live-preview-examples__label {
-  margin: 0 0 8px;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #ff6b35;
-}
-
 .sdb-live-preview-examples__row {
   display: flex;
   flex-wrap: wrap;

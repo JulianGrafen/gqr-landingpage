@@ -1,7 +1,7 @@
 /**
  * Rendert die konfigurationsgetriebenen Startseiten-Blöcke in die statische index.html:
- * Navigation, Hero-Text, Trust-Leiste, Output-Vorschau, Excel-Vergleich, SiFa-Sektion, sichtbare FAQ
- * sowie SoftwareApplication- und FAQPage-JSON-LD.
+ * Navigation, Hero-Text, Trust-Leiste, Output-Vorschau, Excel-Vergleich, SiFa-Sektion, FAQ-Kontakt
+ * sowie SoftwareApplication-JSON-LD.
  *
  * Ausführen: npm run sync:home
  * Quelle: config/aeo-config.ts, config/home-sections/*, config/landing-home-seo-faq.ts
@@ -12,15 +12,13 @@ import type { ReactElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { CtaTrustLine } from '@/components/home/CtaTrustLine';
 import { ExcelComparisonSection } from '@/components/home/ExcelComparisonSection';
-import { HomeFaqItems } from '@/components/home/HomeFaqItems';
+import { HomeFaqContact } from '@/components/home/HomeFaqContact';
 import { HeroInnerTrustSection } from '@/components/home/HeroInnerTrustSection';
 import { HeroTrustLogoGrid } from '@/components/home/HeroTrustLogoGrid';
 import { HomeHeroCopy } from '@/components/home/HomeHeroCopy';
 import { HomeNavigation } from '@/components/home/HomeNavigation';
 import { MultiTenantSifaSection } from '@/components/home/MultiTenantSifaSection';
 import { OutputPreviewSection } from '@/components/home/OutputPreviewSection';
-import { LANDING_HOME_SEO_FAQ } from '@/config/landing-home-seo-faq';
-import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
 import { buildSoftwareApplicationSchema } from '@/lib/seo/build-software-application-schema';
 import { serializeJsonLd, type JsonLdObject } from '@/lib/seo/serialize-json-ld';
 import { replaceMarkedBlocks } from '@/lib/static-html/replace-marked-blocks';
@@ -39,8 +37,8 @@ const html = readFileSync(INDEX_HTML_PATH, 'utf8');
 
 const updatedHtml = replaceMarkedBlocks(html, {
   SOFTWARE_APPLICATION_JSONLD: () => renderJsonLdScript(buildSoftwareApplicationSchema()),
-  FAQ_JSONLD: () => renderJsonLdScript(buildFaqPageSchema(LANDING_HOME_SEO_FAQ)),
-  FAQ_ITEMS: () => renderHtml(<HomeFaqItems items={LANDING_HOME_SEO_FAQ} />),
+  FAQ_JSONLD: () => '',
+  FAQ_ITEMS: () => renderHtml(<HomeFaqContact />),
   EXCEL_COMPARISON: () => renderHtml(<ExcelComparisonSection />),
   MULTI_TENANT_SIFA: () => renderHtml(<MultiTenantSifaSection />),
   NAV_DESKTOP: () => renderHtml(<HomeNavigation variant="desktop" />),

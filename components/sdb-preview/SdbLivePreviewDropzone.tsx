@@ -69,7 +69,8 @@ export const SdbLivePreviewDropzone = forwardRef<SdbLivePreviewDropzoneHandle, S
   const stepCount = PROCESSING_STEP_LABELS.length;
   const progressPercent = Math.round(((processingStepIndex + 1) / stepCount) * 100);
   const embeddedActive = embedded && phase !== 'idle';
-  const showExampleChips = !(embedded && (phase === 'processing' || phase === 'ready'));
+  const showExampleChips =
+    variant !== 'static' && !(embedded && (phase === 'processing' || phase === 'ready'));
   const dropzoneCompact = embeddedActive;
 
   useEffect(() => {
