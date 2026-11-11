@@ -12,7 +12,7 @@ export type PdfSectionExtractResult = {
 
 /**
  * Liest die ersten Seiten eines SDB-PDFs im Browser (Abschn. 1–2 liegen typischerweise dort).
- * Wird an die App-API als `sectionExtract` übergeben, damit das Backend nicht das volle PDF parsen muss.
+ * Optionaler Client-Hinweis (früher Handelsname); die Extraktion läuft über das volle PDF im Backend.
  */
 export async function extractSdbSectionTextFromPdf(file: File): Promise<PdfSectionExtractResult | null> {
   if (typeof window === 'undefined') return null;

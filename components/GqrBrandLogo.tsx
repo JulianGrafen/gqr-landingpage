@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { resolveMarketingHomeHref } from '@/config/site-seo';
 
 /** Getrimmte Wortmarke (ohne transparenten 500×500-Rand). */
 export const GQR_BRAND_LOGO_SRC = '/logo-wordmark.png';
@@ -10,9 +10,11 @@ type Props = {
 };
 
 export function GqrBrandLogo({ className = '', priority = false }: Props) {
+  const homeHref = resolveMarketingHomeHref();
+
   return (
-    <Link
-      href="/"
+    <a
+      href={homeHref}
       className={`inline-flex shrink-0 items-center no-underline ${className}`.trim()}
       aria-label="Gefahrstoff-QR Startseite"
     >
@@ -26,6 +28,6 @@ export function GqrBrandLogo({ className = '', priority = false }: Props) {
         decoding="async"
         fetchPriority={priority ? 'high' : 'auto'}
       />
-    </Link>
+    </a>
   );
 }

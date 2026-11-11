@@ -1,16 +1,23 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { notFound } from 'next/navigation';
 import { BetriebsanweisungClosingCtaCard } from '@/components/betriebsanweisung/BetriebsanweisungClosingCtaCard';
 import { BetriebsanweisungContrastSection } from '@/components/betriebsanweisung/BetriebsanweisungContrastSection';
 import { BetriebsanweisungExpertSeoSection } from '@/components/betriebsanweisung/BetriebsanweisungExpertSeoSection';
+import { BetriebsanweisungSlugHero } from '@/components/betriebsanweisung/BetriebsanweisungSlugHero';
 import { BetriebsanweisungQuickFacts } from '@/components/betriebsanweisung/BetriebsanweisungQuickFacts';
 import { BetriebsanweisungRelatedLinks } from '@/components/betriebsanweisung/BetriebsanweisungRelatedLinks';
 import { BetriebsanweisungSdbSidebar } from '@/components/betriebsanweisung/BetriebsanweisungSdbSidebar';
 import { BetriebsanweisungTeaserDocument } from '@/components/betriebsanweisung/BetriebsanweisungTeaserDocument';
+import {
+  BA_CONTAINER,
+  BA_PAGE_MAIN,
+  BA_PROSE,
+  BA_SECTION,
+  BA_SECTION_HERO,
+  BA_SECTION_MUTED,
+} from '@/components/betriebsanweisung/ba-page-layout';
 import { BetriebsanweisungSdbUploadProvider } from '@/components/betriebsanweisung/betriebsanweisung-sdb-upload-context';
-import { SiteBreadcrumb } from '@/components/seo/SiteBreadcrumb';
 import { HAZARDOUS_SUBSTANCE_SLUGS } from '@/config/betriebsanweisung/entries';
 import type { HazardousSubstanceSlug } from '@/config/betriebsanweisung/entries';
 import { getAllBetriebsanweisungEntries, getBetriebsanweisungEntry } from '@/config/betriebsanweisung/registry';
@@ -72,65 +79,27 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
   const registerUrl = buildBetriebsanweisungRegisterUrl(entry.slug);
 
   return (
-    <main className="bg-[#0a1628]">
+    <main className={BA_PAGE_MAIN}>
       <JsonLd data={schemas} />
 
-      <section
-        className="border-b border-white/[0.07] bg-gradient-to-b from-[#0f1e35]/90 to-[#0a1628] px-4 py-12 sm:px-6 lg:px-8 lg:py-16"
-        aria-labelledby="ba-hero-title"
-      >
-        <div className="mx-auto max-w-6xl">
-          <SiteBreadcrumb items={buildBetriebsanweisungBreadcrumbs(entry)} className="mb-6 text-xs sm:text-sm" />
-          <p className="gqr-kicker">TRGS 555 · KI-gestützter Entwurf</p>
-          <h1
-            id="ba-hero-title"
-            className="mt-3 text-3xl font-black leading-tight tracking-tight text-[#f0f6ff] sm:text-4xl lg:text-[2.35rem]"
-          >
-            Betriebsanweisung {entry.substanceName} nach TRGS 555: Entwurf aus Ihrem Sicherheitsdatenblatt
-          </h1>
-          <p
-            id="ba-hero-subheadline"
-            className="mt-4 max-w-3xl text-sm leading-relaxed text-[#8fa4c0] sm:text-base"
-          >
-            Schluss mit Abtippen: Laden Sie das Lieferanten-SDB für {entry.substanceName} hoch. Die Software übernimmt
-            relevante Angaben aus Ihrem PDF als strukturierten Textvorschlag in einen TRGS-555-Entwurf. Die Vorprüfung
-            und Freigabe erfolgt durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a href="#ba-sdb-dropzone" className="gqr-cta-primary gqr-cta-primary--md inline-flex justify-center">
-              Sicherheitsdatenblatt hochladen ↓
-            </a>
-            <Link href={registerUrl} className="gqr-cta-secondary gqr-cta-secondary--md inline-flex justify-center">
-              Kostenlos registrieren
-            </Link>
-          </div>
-          <p className="mt-3 text-xs text-[#8fa4c0]">Kostenlos für 5 Stoffe · ohne Kreditkarte · Hosting in Deutschland</p>
-          {entry.typicalIndustries.length > 0 ? (
-            <div className="mt-6">
-              <p className="text-xs font-medium text-[#8fa4c0]">Typische Branchen:</p>
-              <ul className="mt-2 flex flex-wrap gap-2" role="list">
-                {entry.typicalIndustries.map((industry) => (
-                  <li
-                    key={industry}
-                    className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-xs font-medium text-[#c8d4e6]"
-                  >
-                    {industry}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+      <section className={BA_SECTION_HERO} aria-labelledby="ba-hero-title">
+        <div className={BA_CONTAINER}>
+          <BetriebsanweisungSlugHero
+            entry={entry}
+            breadcrumbs={buildBetriebsanweisungBreadcrumbs(entry)}
+            registerUrl={registerUrl}
+          />
         </div>
       </section>
 
       <BetriebsanweisungSdbUploadProvider>
-        <section className="border-b border-white/[0.07] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-8 lg:grid-cols-12">
+        <section className={`${BA_SECTION} lg:py-16`}>
+          <div className={`${BA_CONTAINER} grid grid-cols-1 items-start gap-8 lg:grid-cols-12`}>
             <div className="order-2 lg:order-1 lg:col-span-7">
               <BetriebsanweisungTeaserDocument entry={entry} />
             </div>
             <div className="order-1 lg:order-2 lg:col-span-5">
-              <BetriebsanweisungSdbSidebar substanceName={entry.substanceName} registerUrl={registerUrl} />
+              <BetriebsanweisungSdbSidebar substanceName={entry.substanceName} />
             </div>
           </div>
         </section>
@@ -139,9 +108,11 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
 
         <BetriebsanweisungContrastSection entry={entry} />
 
-        <section className="border-b border-white/[0.07] bg-[#0f1e35]/50 px-4 py-14 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <BetriebsanweisungExpertSeoSection entry={entry} faqItems={faqItems} />
+        <section className={BA_SECTION_MUTED}>
+          <div className={BA_CONTAINER}>
+            <div className={BA_PROSE}>
+              <BetriebsanweisungExpertSeoSection entry={entry} faqItems={faqItems} />
+            </div>
           </div>
         </section>
 

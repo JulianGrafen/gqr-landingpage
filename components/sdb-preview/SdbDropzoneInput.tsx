@@ -113,13 +113,11 @@ export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(functi
         disabled={disabled}
         onChange={(e) => handleFiles(e.target.files)}
       />
-      <span className={variant === 'static' ? 'sdb-live-preview-dropzone__icon' : 'text-3xl text-teal-300'} aria-hidden="true">
+      <span className="sdb-live-preview-dropzone__icon" aria-hidden="true">
         PDF
       </span>
-      <strong className={variant === 'static' ? '' : 'text-lg text-[#f0f6ff]'}>
-        Sicherheitsdatenblatt hier ablegen
-      </strong>
-      <span className={variant === 'static' ? '' : 'text-sm text-[#8fa4c0]'}>
+      <strong className="sdb-live-preview-dropzone__title">Sicherheitsdatenblatt hier ablegen</strong>
+      <span className="sdb-live-preview-dropzone__hint">
         PDF, max. 10 MB, ohne Login · KI-gestützter Entwurf (gemäß TRGS 555)
       </span>
     </div>

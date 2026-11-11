@@ -13,14 +13,19 @@ export const APP_URL = 'https://app.gefahrstoff-qr.de';
 export const APP_REGISTER_URL = `${APP_URL}/register`;
 export const APP_LOGIN_URL = `${APP_URL}/login`;
 export const CONTACT_EMAIL = 'info@gefahrstoff-qr.de';
+export const CONTACT_CALENDLY_URL = 'https://calendly.com/juliangraefen';
 
 /** Betreff für SiFa-/Firmenkunden: Kauf auf monatliche PDF-Rechnung */
 export const SIFA_INVOICE_REQUEST_SUBJECT = 'Multi-Mandanten-Zugang auf Rechnung';
 export const SIFA_INVOICE_REQUEST_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(SIFA_INVOICE_REQUEST_SUBJECT)}`;
-export const SIFA_INVOICE_REQUEST_CTA_LABEL = 'Kauf auf Rechnung per E-Mail anfragen';
+export const SIFA_INVOICE_REQUEST_CTA_LABEL = 'Angebot auf Rechnung anfordern';
+
+/** Betreff für Industrie-/Konzern-Tarif (Anker-Preisstufe, kein Self-Serve). */
+export const INDUSTRIE_INQUIRY_SUBJECT = 'Industrie-Tarif Anfrage';
+export const INDUSTRIE_INQUIRY_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(INDUSTRIE_INQUIRY_SUBJECT)}`;
 
 /** Stand der AEO-Inhalte (dateModified, llms.txt); bei inhaltlichen Änderungen anpassen. */
-export const AEO_CONTENT_UPDATED = '2026-11-09';
+export const AEO_CONTENT_UPDATED = '2026-11-10';
 
 /** Pflichtformulierung Human-in-the-Loop (AGENTS.md, § 14 GefStoffV). */
 export const HUMAN_IN_THE_LOOP_NOTICE =
@@ -118,13 +123,6 @@ export const CORE_FEATURES: readonly CoreFeature[] = [
     explanation: 'Zuordnung der Lagerklasse und Konflikthinweise pro Lagerort.',
   },
 ];
-
-/** Trust-Microcopy unter primären CTAs (Abbau B2B-Kaufskepsis). */
-export const CTA_TRUST_SIGNALS = [
-  'Serverstandort Deutschland (inkl. AVV)',
-  'PDF- & Excel-Export inkl. GHS-Symbolen',
-  'Auf Rechnung für SiFas & Firmenkunden möglich',
-] as const;
 
 export interface KeyUrl {
   label: string;

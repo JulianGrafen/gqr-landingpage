@@ -59,12 +59,12 @@ export function BetriebsanweisungTeaserDocument({ entry }: Props) {
           ))}
         </div>
 
-        <div className="absolute inset-0 flex items-center justify-center bg-white/80 p-6 backdrop-blur-sm">
+        <div className="absolute inset-0 flex items-center justify-center bg-white/92 p-6 backdrop-blur-sm">
           <div className="max-w-sm text-center">
             <p className="text-lg font-bold text-slate-900">
               Wartet auf Ihr Lieferanten-SDB für {entry.substanceName}
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600">
+            <p className="mt-3 text-sm leading-relaxed text-slate-700">
               Angaben zu Einstufung, Schutzmaßnahmen und Notfallverhalten hängen vom konkreten Produkt Ihres Herstellers
               ab. Laden Sie Ihr PDF in der Dropzone hoch, um eine Live-Vorschau (Abschnitt 1 &amp; 2) zu generieren, oder
               bearbeiten Sie den gesamten Entwurf in der App.
@@ -72,7 +72,7 @@ export function BetriebsanweisungTeaserDocument({ entry }: Props) {
             <div className="mt-6">
               <button
                 type="button"
-                className="gqr-cta-secondary gqr-cta-secondary--md inline-flex w-full justify-center"
+                className="ba-teaser-overlay-cta"
                 onClick={requestSdbUploadFromOverlay}
               >
                 {BETRIEBSANWEISUNG_OVERLAY_SDB_CTA}

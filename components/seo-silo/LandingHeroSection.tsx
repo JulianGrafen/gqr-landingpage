@@ -1,5 +1,11 @@
 import type { SeoSiloHero } from '@/config/seo-silo/types';
 import { LandingCtaLink } from '@/components/seo-silo/LandingCtaLink';
+import { SlugHeroSubheadline } from '@/components/programmatic-seo/SlugHeroSubheadline';
+import { SlugHeroUspSection } from '@/components/programmatic-seo/SlugHeroUspSection';
+import {
+  DEFAULT_SLUG_HERO_USP_BULLETS,
+  SLUG_HERO_PROOF_LINE,
+} from '@/config/programmatic-seo/defaults';
 
 type LandingHeroSectionProps = SeoSiloHero & {
   id?: string;
@@ -28,10 +34,12 @@ export function LandingHeroSection({
         >
           {h1}
         </h1>
-        <p className="gqr-section-sub mt-6 max-w-3xl">{lead}</p>
+        <SlugHeroSubheadline id={`${id}-subheadline`} paragraphs={[lead]} className="text-gqr-muted sm:text-lg" />
         {proofLine ? (
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gqr-muted">{proofLine}</p>
-        ) : null}
+        ) : (
+          <p className="mt-3 text-xs text-gqr-muted">{SLUG_HERO_PROOF_LINE}</p>
+        )}
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <LandingCtaLink cta={primaryCta} variant="primary" />
@@ -39,10 +47,7 @@ export function LandingHeroSection({
         </div>
 
         {trustBullets?.length ? (
-          <ul
-            className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-gqr-muted"
-            aria-label="Vertrauenshinweise"
-          >
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-gqr-muted" aria-label="Vertrauenshinweise">
             {trustBullets.map((item) => (
               <li key={item} className="flex items-center gap-2">
                 <span className="font-bold text-gqr-trust" aria-hidden="true">
@@ -52,7 +57,13 @@ export function LandingHeroSection({
               </li>
             ))}
           </ul>
-        ) : null}
+        ) : (
+          <SlugHeroUspSection
+            bullets={DEFAULT_SLUG_HERO_USP_BULLETS}
+            headingId={`${id}-benefits-title`}
+            className="mt-8"
+          />
+        )}
       </div>
     </header>
   );

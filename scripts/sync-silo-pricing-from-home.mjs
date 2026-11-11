@@ -35,7 +35,7 @@ if (!pricingSectionMatch) {
 let pricingSection = pricingSectionMatch[0];
 
 const pricingScriptMatch = homeHtml.match(
-  /<script>\s*\(function \(\) \{\s*var billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?setBilling\('yearly'\);\s*\}\)\(\);\s*<\/script>/,
+  /<script>\s*\(function \(\) \{\s*var billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/,
 );
 if (!pricingScriptMatch) {
   console.error('Pricing-Billing-Script in index.html nicht gefunden.');
@@ -73,7 +73,7 @@ function replacePricingSection(pageHtml, section) {
 
 function replacePricingScript(pageHtml, script) {
   const pattern =
-    /<script>\s*\(function \(\) \{\s*var[\s\S]*?billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?setBilling\('(?:monthly|yearly)'\);\s*\}\)\(\);\s*<\/script>/;
+    /<script>\s*\(function \(\) \{\s*var[\s\S]*?billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/;
   if (!pattern.test(pageHtml)) {
     throw new Error('Pricing-Script im Ziel nicht gefunden.');
   }
@@ -86,12 +86,27 @@ function replaceOffers(pageHtml) {
   return pageHtml.replace(/"offers": \[[\s\S]*?\]/, `"offers": ${offersArray}`);
 }
 
+const PRICING_FEATURES_SCRIPT =
+  '\n <script src="/scripts/pricing-tier-features.js" defer></script>';
+
+function ensurePricingFeaturesScript(pageHtml) {
+  if (pageHtml.includes('/scripts/pricing-tier-features.js')) return pageHtml;
+  const billingEnd =
+    /billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/;
+  if (!billingEnd.test(pageHtml)) return pageHtml;
+  return pageHtml.replace(
+    billingEnd,
+    (match) => `${match}${PRICING_FEATURES_SCRIPT}`,
+  );
+}
+
 for (const target of TARGETS) {
   const filePath = path.join(ROOT, target.file);
   let html = fs.readFileSync(filePath, 'utf8');
   const section = applyHeadlineOverrides(pricingSection, target);
   html = replacePricingSection(html, section);
   html = replacePricingScript(html, pricingScript);
+  html = ensurePricingFeaturesScript(html);
   html = replaceOffers(html);
   fs.writeFileSync(filePath, html, 'utf8');
   console.log(`✓ ${target.file}`);

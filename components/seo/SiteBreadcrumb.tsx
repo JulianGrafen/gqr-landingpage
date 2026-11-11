@@ -9,8 +9,8 @@ type SiteBreadcrumbProps = {
 /** Sichtbare Breadcrumb-Navigation; Schema via `buildBreadcrumbSchema` mit denselben Items erzeugen. */
 export function SiteBreadcrumb({ items, className = 'text-sm' }: SiteBreadcrumbProps) {
   return (
-    <nav aria-label="Breadcrumb" className={className}>
-      <ol className="flex flex-wrap items-center gap-2 text-gqr-muted">
+    <nav aria-label="Breadcrumb" className={`block w-full text-left ${className}`.trim()}>
+      <ol className="m-0 flex w-full list-none flex-wrap items-center justify-start gap-x-2 gap-y-1 p-0 text-left text-gqr-muted">
         {items.map((item, index) => (
           <li key={`${item.label}-${index}`} className="flex items-center gap-2">
             {index > 0 ? (
@@ -19,9 +19,18 @@ export function SiteBreadcrumb({ items, className = 'text-sm' }: SiteBreadcrumbP
               </span>
             ) : null}
             {item.href ? (
-              <Link href={item.href} className="font-semibold text-gqr-trust no-underline hover:underline">
-                {item.label}
-              </Link>
+              item.href.startsWith('http') ? (
+                <a
+                  href={item.href}
+                  className="font-semibold text-gqr-trust no-underline hover:underline"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link href={item.href} className="font-semibold text-gqr-trust no-underline hover:underline">
+                  {item.label}
+                </Link>
+              )
             ) : (
               <span className="font-semibold text-gqr-text" aria-current="page">
                 {item.label}
