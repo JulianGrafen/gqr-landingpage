@@ -1,6 +1,6 @@
 /**
  * Zentrale Paketdaten (Single Source of Truth für JSON-LD-Offers, /llms.txt und /pricing.md).
- * Die sichtbaren Preiskarten in index.html müssen bei Änderungen manuell nachgezogen werden.
+ * Preiskarten: index.html #preise; Stripe-Links: config/pricing-stripe-checkout.ts + scripts/pricing-billing.js.
  */
 
 import {

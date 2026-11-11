@@ -35,10 +35,10 @@ if (!pricingSectionMatch) {
 let pricingSection = pricingSectionMatch[0];
 
 const pricingScriptMatch = homeHtml.match(
-  /<script>\s*\(function \(\) \{\s*var billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/,
+  /<script src="\/scripts\/pricing-billing\.js" defer><\/script>/,
 );
 if (!pricingScriptMatch) {
-  console.error('Pricing-Billing-Script in index.html nicht gefunden.');
+  console.error('scripts/pricing-billing.js in index.html nicht gefunden.');
   process.exit(1);
 }
 const pricingScript = pricingScriptMatch[0];
@@ -72,12 +72,16 @@ function replacePricingSection(pageHtml, section) {
 }
 
 function replacePricingScript(pageHtml, script) {
-  const pattern =
+  const inlinePattern =
     /<script>\s*\(function \(\) \{\s*var[\s\S]*?billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/;
-  if (!pattern.test(pageHtml)) {
-    throw new Error('Pricing-Script im Ziel nicht gefunden.');
+  const externalPattern = /<script src="\/scripts\/pricing-billing\.js" defer><\/script>/;
+  if (inlinePattern.test(pageHtml)) {
+    return pageHtml.replace(inlinePattern, script);
   }
-  return pageHtml.replace(pattern, script);
+  if (externalPattern.test(pageHtml)) {
+    return pageHtml.replace(externalPattern, script);
+  }
+  throw new Error('Pricing-Script im Ziel nicht gefunden.');
 }
 
 function replaceOffers(pageHtml) {
@@ -91,6 +95,10 @@ const PRICING_FEATURES_SCRIPT =
 
 function ensurePricingFeaturesScript(pageHtml) {
   if (pageHtml.includes('/scripts/pricing-tier-features.js')) return pageHtml;
+  const billingTag = /<script src="\/scripts\/pricing-billing\.js" defer><\/script>/;
+  if (billingTag.test(pageHtml)) {
+    return pageHtml.replace(billingTag, (match) => `${match}${PRICING_FEATURES_SCRIPT}`);
+  }
   const billingEnd =
     /billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/;
   if (!billingEnd.test(pageHtml)) return pageHtml;
