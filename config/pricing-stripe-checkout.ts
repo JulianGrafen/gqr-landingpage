@@ -14,7 +14,7 @@ export const PRICING_STRIPE_CHECKOUT: Record<
 > = {
   'kmu-basis': {
     monthly: 'https://buy.stripe.com/9B68wOduzesC0jz2asdAk06',
-    yearly: 'https://buy.stripe.com/00wbJ03TZ70a8Q5cP6CUdAk03',
+    yearly: 'https://buy.stripe.com/00wbJ03TZ70a8Q5cP6dAk03',
   },
   'kmu-pro': {
     monthly: 'https://buy.stripe.com/3cI9AS3TZ0BM4zP5mEdAk05',
