@@ -31,7 +31,10 @@ function validatePdfFile(file: File): string | null {
 function networkErrorMessage(cause: unknown): string {
   const msg = cause instanceof Error ? cause.message : String(cause);
   if (/failed to fetch|networkerror|load failed/i.test(msg)) {
-    return 'Netzwerkfehler — Verbindung zur Extraktions-API fehlgeschlagen. Bitte Seite neu laden, Werbeblocker prüfen oder später erneut versuchen.';
+    const host = typeof window !== 'undefined' ? window.location.host : '';
+    return host
+      ? `Netzwerkfehler — Browser konnte ${host} nicht mit der Extraktions-API verbinden (oft CORS, Werbeblocker oder API offline). Seite über https://gefahrstoff-qr.de öffnen oder app.gefahrstoff-qr.de im Werbeblocker erlauben.`
+      : 'Netzwerkfehler — Verbindung zur Extraktions-API fehlgeschlagen. Bitte Seite neu laden, Werbeblocker prüfen oder später erneut versuchen.';
   }
   return 'Netzwerkfehler — bitte Verbindung prüfen.';
 }
