@@ -60,14 +60,14 @@ export const HOME_HERO_TRUST_GRID = {
     },
     {
       id: 'marktplatz-mittelstand',
-      src: '/images/trust/marktplatz-mittelstand-on-dark.png',
+      src: '/images/trust/marktplatz-mittelstand-on-dark.svg',
       alt: 'Gefahrstoff-QR auf Marktplatz Mittelstand',
-      width: 520,
-      height: 120,
+      width: 250,
+      height: 20,
       href: MARKTPLATZ_MITTELSTAND_PROFILE_URL,
       linkTitle: 'Unternehmensprofil auf Marktplatz Mittelstand öffnen (neuer Tab)',
       darkSurface: true,
-      displayScale: 1.12,
+      displayScale: 1.45,
     },
     {
       id: 'trendkraft',
