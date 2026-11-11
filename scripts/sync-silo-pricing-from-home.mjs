@@ -35,7 +35,7 @@ if (!pricingSectionMatch) {
 let pricingSection = pricingSectionMatch[0];
 
 const pricingScriptMatch = homeHtml.match(
-  /<script>\s*\(function \(\) \{\s*var billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?setBilling\('yearly'\);\s*\}\)\(\);\s*<\/script>/,
+  /<script>\s*\(function \(\) \{\s*var billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/,
 );
 if (!pricingScriptMatch) {
   console.error('Pricing-Billing-Script in index.html nicht gefunden.');

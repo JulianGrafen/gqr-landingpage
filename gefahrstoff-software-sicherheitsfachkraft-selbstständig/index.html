@@ -90,7 +90,7 @@
   {
    "@type": "Offer",
    "name": "KMU Basis",
-   "description": "bis 30 Gefahrstoffe, 1 Werk, unbegrenzt Lagerorte. KI-gestützte BA-Entwürfe, PDF- & Excel-Export (ohne Wasserzeichen), Aktive QR-Notfallansicht am Arbeitsplatz",
+   "description": "bis 30 Gefahrstoffe, 1 Werk, unbegrenzt Lagerorte. Erfassung auch ohne SDB (Begehungs-Modus), KI-gestützte BA-Entwürfe, PDF- & Excel-Export (ohne Wasserzeichen), Aktive QR-Notfallansicht am Arbeitsplatz",
    "price": "59",
    "priceCurrency": "EUR",
    "priceSpecification": {
@@ -103,7 +103,7 @@
   {
    "@type": "Offer",
    "name": "KMU Pro",
-   "description": "bis 250 Gefahrstoffe, bis 3 Werke, unbegrenzt Lagerorte. Batch-Upload (mehrere SDBs gleichzeitig), Mehrere Nutzer-Logins, KI-gestützte BA-Entwürfe & PDF/Excel-Export, SDB-Aktualitäts-Alerts",
+   "description": "bis 250 Gefahrstoffe, bis 3 Werke, unbegrenzt Lagerorte. Erfassung auch ohne SDB (Begehungs-Modus), Werks- & Lagerorttrennung (bis 3 Werke), Batch-Upload (mehrere SDBs gleichzeitig), Mehrere Nutzer-Logins, KI-gestützte BA-Entwürfe & PDF/Excel-Export, SDB-Aktualitäts-Alerts",
    "price": "119",
    "priceCurrency": "EUR",
    "priceSpecification": {
@@ -140,6 +140,28 @@
    }
   }
  ]
+}
+ </script>
+<!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Gefahrstoff-QR",
+ "url": "https://gefahrstoff-qr.de/",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://gefahrstoff-qr.de/logo.png",
+ "width": 200,
+ "height": 60
+ },
+ "@id": "https://gefahrstoff-qr.de/#organization",
+ "description": "Gefahrstoff-QR ist eine browserbasierte Software für das Gefahrstoffverzeichnis nach § 6 GefStoffV. Sie erstellt aus Sicherheitsdatenblättern KI-gestützte Entwürfe zur fachlichen Freigabe durch die SiFa oder den Arbeitgeber. Hosting in Deutschland.",
+ "email": "info@gefahrstoff-qr.de",
+ "areaServed": { "@type": "Country", "name": "Deutschland" },
+ "knowsAbout": ["Gefahrstoffverordnung (GefStoffV)", "Gefahrstoffverzeichnis", "TRGS 510", "TRGS 555", "TRGS 600", "Sicherheitsdatenblatt", "GHS/CLP-Kennzeichnung"],
+ "sameAs": ["https://www.linkedin.com/showcase/gefahrstoff-qr/", "https://www.youtube.com/@gefahrstoff-qr"]
 }
  </script>
 <!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
@@ -1327,7 +1349,7 @@
  </section>
 
  <!-- PRICING -->
- <section id="preise" class="border-t mt-8 border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="pricingHeadline">
+ <section id="preise" class="border-t mt-8 border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="pricingHeadline" data-billing-mode="yearly">
  <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
  <div class="mx-auto mb-12 max-w-2xl text-center">
  <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Preise</p>
@@ -1336,6 +1358,7 @@
 
  <div class="pricing-billing" data-pricing-billing>
  <div class="pricing-billing__switch" role="group" aria-label="Abrechnungszeitraum wählen">
+ <span class="pricing-billing__thumb" aria-hidden="true"></span>
  <button type="button" class="pricing-billing__option" data-billing="monthly" aria-pressed="false">Monatlich</button>
  <button type="button" class="pricing-billing__option is-active" data-billing="yearly" aria-pressed="true">
  Jährlich
@@ -1383,6 +1406,7 @@
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> KI-gestützte BA-Entwürfe</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> PDF- &amp; Excel-Export (ohne Wasserzeichen)</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Aktive QR-Notfallansicht am Arbeitsplatz</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Erfassung auch ohne SDB (Begehungs-Modus)</li>
  </ul>
  <a class="btn-glass-outline btn-glass-outline--block mt-8" href="https://app.gefahrstoff-qr.de/#preise">Jetzt Starten</a>
  </article>
@@ -1404,6 +1428,7 @@
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Mehrere Nutzer-Logins</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> KI-gestützte BA-Entwürfe &amp; PDF/Excel-Export</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> SDB-Aktualitäts-Alerts</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Erfassung auch ohne SDB (Begehungs-Modus)</li>
  </ul>
  <a class="btn-glass-outline btn-glass-outline--block mt-8" href="https://app.gefahrstoff-qr.de/#preise">Jetzt Starten</a>
  </article>
@@ -1419,13 +1444,13 @@
  </p>
  <p class="pricing-tier__price-note" data-pricing-note>1.908&nbsp;&euro; jährlich · monatlich zahlbar: 189&nbsp;&euro;/Monat</p>
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
- <li class="pricing-tier__pitch list-none border-b border-white/[0.08] pb-4">
- <p class="m-0 leading-relaxed text-[#c5d0e2]">Bis zu 15 Mandantenbetriebe sind im Grundpreis enthalten.</p>
- <p class="m-0 mt-2 leading-relaxed text-[#c5d0e2]">Ab dem 16. Mandant: +79,00&nbsp;&euro;/Monat je 10er-Block.</p>
- </li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Unbegrenzte Werke je Mandant (Fair-Use)</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Saubere Mandanten-, Werks- &amp; Tätigkeitstrennung</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Erfassung auch ohne SDB (Begehungs-Modus)</li>
+ <li class="pricing-tier__pitch list-none border-t border-white/[0.08] pt-4">
+ <p class="m-0 leading-relaxed text-[#c5d0e2]">Bis zu 15 Mandantenbetriebe sind im Grundpreis enthalten.</p>
+ <p class="m-0 mt-2 leading-relaxed text-[#c5d0e2]">Ab dem 16. Mandant: +79,00&nbsp;&euro;/Monat je 10er-Block.</p>
+ </li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Batch-Upload &amp; alle PDF/Excel-Exporte inkl. GHS</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Direktkauf auf monatliche PDF-Rechnung möglich</li>
  </ul>
@@ -1519,7 +1544,7 @@
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
- <th scope="row">PDF-Export</th>
+ <th scope="row">GHS immer inklusive</th>
  <td>Nur MUSTER-Wasserzeichen</td>
  <td>Ohne Wasserzeichen</td>
  <td class="pricing-compare__col--highlight">Ohne Wasserzeichen</td>
@@ -1560,19 +1585,19 @@
  </tr>
  <tr>
  <th scope="row">Begehungs-Modus (ohne SDB)</th>
- <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
- <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
- <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
- <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
  <th scope="row">Mandanten- &amp; Werkstrennung</th>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
- <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
- <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
- <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja, Werks-Hierarchie">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja, Mandanten- und Werks-Hierarchie">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja, Werks-Hierarchie">&#10003;</span></td>
  </tr>
  <tr>
  <th scope="row">Mandantenbetriebe inkl.</th>
@@ -1834,6 +1859,8 @@
  var billingRoot = document.querySelector('[data-pricing-billing]');
  if (!billingRoot) return;
 
+ var billingSwitch = billingRoot.querySelector('.pricing-billing__switch');
+ var billingThumb = billingSwitch && billingSwitch.querySelector('.pricing-billing__thumb');
  var billingButtons = billingRoot.querySelectorAll('[data-billing]');
  var billingHint = billingRoot.querySelector('[data-pricing-billing-hint]');
  var priceBlocks = document.querySelectorAll('[data-pricing-price]');
@@ -1885,12 +1912,32 @@
  return prefixText + formatAmount(monthly, 0) + '\u00a0\u20ac/Monat';
  }
 
+ function positionBillingThumb() {
+ if (!billingSwitch || !billingThumb) return;
+ var active = billingSwitch.querySelector('.pricing-billing__option.is-active');
+ if (!active) return;
+ billingThumb.style.width = active.offsetWidth + 'px';
+ billingThumb.style.left = active.offsetLeft + 'px';
+ }
+
+ var preiseSection = document.getElementById('preise');
+
  function setBilling(mode) {
  billingButtons.forEach(function (button) {
  var isActive = button.getAttribute('data-billing') === mode;
  button.classList.toggle('is-active', isActive);
  button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
  });
+
+ if (preiseSection) {
+ preiseSection.setAttribute('data-billing-mode', mode);
+ preiseSection.classList.add('is-pricing-billing-transition');
+ window.setTimeout(function () {
+ preiseSection.classList.remove('is-pricing-billing-transition');
+ }, 480);
+ }
+
+ requestAnimationFrame(positionBillingThumb);
 
  if (billingHint) {
  billingHint.textContent = hints[mode];
@@ -1915,6 +1962,7 @@
  if (mode === 'yearly') {
  var yMonthly = getYearlyMonthly(block, monthly);
  var yTotal = getYearlyTotal(block, monthly);
+ block.classList.add('is-pricing-updating');
  amountEl.textContent = formatAmount(yMonthly, 0);
  periodEl.textContent = '/Monat';
  if (anchorEl) {
@@ -1930,6 +1978,7 @@
  noteEl.hidden = false;
  }
  } else {
+ block.classList.add('is-pricing-updating');
  amountEl.textContent = formatAmount(monthly, 0);
  periodEl.textContent = '/Monat';
  if (anchorEl) {
@@ -1940,6 +1989,12 @@
  noteEl.hidden = true;
  }
  }
+ });
+
+ requestAnimationFrame(function () {
+ priceBlocks.forEach(function (block) {
+ block.classList.remove('is-pricing-updating');
+ });
  });
 
  compareCells.forEach(function (cell) {
@@ -1961,7 +2016,14 @@
  });
  });
 
+ window.addEventListener('resize', positionBillingThumb);
+ if (document.fonts && document.fonts.ready) {
+ document.fonts.ready.then(function () {
  setBilling('yearly');
+ });
+ } else {
+ setBilling('yearly');
+ }
  })();
  </script>
 

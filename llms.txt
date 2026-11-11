@@ -35,7 +35,7 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 
 - Datenschutz: Serverstandort Deutschland (Frankfurt am Main) inkl. Auftragsverarbeitungsvertrag (AVV), SSL-verschlüsselt, Zwei-Faktor-Authentifizierung
 - Betrieb: browserbasiert, keine Installation; QR-Notfallansicht ohne App auf jedem Smartphone
-- Preise (zzgl. MwSt., monatlich kündbar; Standard: Jahreszahlung zum reduzierten Monatspreis): TarifVorschau 0 € (bis zu 3 SDB-Uploads), KMU Basis 49 €/Monat (bis 30 Gefahrstoffe, 1 Werk, unbegrenzt Lagerorte), KMU Pro 99 €/Monat (bis 250 Gefahrstoffe, bis 3 Werke, unbegrenzt Lagerorte), SiFa Multi-Mandant 159 €/Monat (unbegrenzte Mandanten & Werke (Fair-Use))
+- Preise (zzgl. MwSt., monatlich kündbar; Standard: Jahreszahlung zum reduzierten Monatspreis): TarifVorschau 0 € (bis zu 3 SDB-Uploads), KMU Basis 49 €/Monat (bis 30 Gefahrstoffe, 1 Werk, unbegrenzt Lagerorte), KMU Pro 99 €/Monat (bis 250 Gefahrstoffe, bis 3 Werke, unbegrenzt Lagerorte), SiFa Multi-Mandant 159 €/Monat (bis 15 Mandantenbetriebe inklusive), Industrie 399 €/Monat (ab 250 Gefahrstoffen, ab 4 Werken (Fair-Use))
 - Zahlung: Online-Buchung; im SiFa Multi-Mandant-Tarif auch per PDF-Rechnung und Überweisung
 - Start: Self-Service-Registrierung ohne Kreditkarte unter https://app.gefahrstoff-qr.de/register
 

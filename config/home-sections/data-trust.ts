@@ -21,7 +21,7 @@ export const HOME_DATA_TRUST = {
     {
       title: 'Serverstandort Frankfurt (AWS/Supabase EU)',
       description:
-        'DSGVO-konforme Speicherung in Deutschland inkl. vorab unterzeichnetem AVV nach Art. 28 DSGVO.',
+        'Hosting in Deutschland inkl. vorab unterzeichnetem AVV nach Art. 28 DSGVO.',
     },
     {
       title: 'Jederzeitige Datenhoheit',
