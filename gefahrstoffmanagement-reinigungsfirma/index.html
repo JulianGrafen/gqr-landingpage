@@ -61,7 +61,7 @@
  "applicationSuite": "Gefahrstoff-QR",
  "operatingSystem": "Web, iOS, Android",
  "alternateName": ["Gefahrstoff App", "Gefahrstoffmanagement Software", "Gefahrstoffverzeichnis Software"],
- "description": "Gefahrstoffmanagement Software & Gefahrstoff App: KI extrahiert Sicherheitsdatenblätter automatisch — die nächste Stufe nach Excel mit mit Revisionsverlaufem Verzeichnis, Revisionsverlauf und QR-Notfallpass inklusive.",
+ "description": "Gefahrstoffmanagement Software & Gefahrstoff App: KI extrahiert Sicherheitsdatenblätter automatisch — die nächste Stufe nach Excel mit Verzeichnis mit Revisionsverlauf, Revisionsverlauf und QR-Notfallpass inklusive.",
  "featureList": [
  "KI-gestütztes Gefahrstoffverzeichnis (§ 6 GefStoffV) mit Freigabe-Workflow",
  "KI-Extraktion aus Sicherheitsdatenblättern (GHS, H/P-Sätze, Schutzmaßnahmen)",
@@ -90,7 +90,7 @@
   {
    "@type": "Offer",
    "name": "KMU Basis",
-   "description": "bis 30 Gefahrstoffe, 1 Werk, unbegrenzt Lagerorte. KI-gestützte BA-Entwürfe, PDF- & Excel-Export (ohne Wasserzeichen), Aktive QR-Notfallansicht am Arbeitsplatz",
+   "description": "bis 30 Gefahrstoffe, 1 Werk, unbegrenzt Lagerorte. Erfassung auch ohne SDB (Begehungs-Modus), KI-gestützte BA-Entwürfe, PDF- & Excel-Export (ohne Wasserzeichen), Aktive QR-Notfallansicht am Arbeitsplatz",
    "price": "59",
    "priceCurrency": "EUR",
    "priceSpecification": {
@@ -103,7 +103,7 @@
   {
    "@type": "Offer",
    "name": "KMU Pro",
-   "description": "bis 250 Gefahrstoffe, bis 3 Werke, unbegrenzt Lagerorte. Batch-Upload (mehrere SDBs gleichzeitig), Mehrere Nutzer-Logins, KI-gestützte BA-Entwürfe & PDF/Excel-Export, SDB-Aktualitäts-Alerts",
+   "description": "bis 250 Gefahrstoffe, bis 3 Werke, unbegrenzt Lagerorte. Erfassung auch ohne SDB (Begehungs-Modus), Werks- & Lagerorttrennung (bis 3 Werke), Batch-Upload (mehrere SDBs gleichzeitig), Mehrere Nutzer-Logins, KI-gestützte BA-Entwürfe & PDF/Excel-Export, SDB-Aktualitäts-Alerts",
    "price": "119",
    "priceCurrency": "EUR",
    "priceSpecification": {
@@ -116,7 +116,7 @@
   {
    "@type": "Offer",
    "name": "SiFa Multi-Mandant",
-   "description": "unbegrenzte Mandanten & Werke (Fair-Use). Saubere Mandanten-, Werks- & Tätigkeitstrennung, Erfassung auch ohne SDB (Begehungs-Modus), Batch-Upload & alle PDF/Excel-Exporte inkl. GHS, Direktkauf auf monatliche PDF-Rechnung möglich",
+   "description": "bis 15 Mandantenbetriebe inklusive. Ab dem 16. Mandant: +79,00 €/Monat je 10er-Block, Unbegrenzte Werke je Mandant (Fair-Use), Saubere Mandanten-, Werks- & Tätigkeitstrennung, Erfassung auch ohne SDB (Begehungs-Modus), Batch-Upload & alle PDF/Excel-Exporte inkl. GHS, Direktkauf auf monatliche PDF-Rechnung möglich",
    "price": "189",
    "priceCurrency": "EUR",
    "priceSpecification": {
@@ -125,8 +125,153 @@
     "priceCurrency": "EUR",
     "unitText": "MONTH"
    }
+  },
+  {
+   "@type": "Offer",
+   "name": "Industrie",
+   "description": "ab 250 Gefahrstoffen, ab 4 Werken (Fair-Use). Alles aus KMU Pro, SSO (Single Sign-On), Dedizierter AVV-Support, Individuelle Einführung & Jahresvertrag auf Anfrage",
+   "price": "399",
+   "priceCurrency": "EUR",
+   "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "price": "399",
+    "priceCurrency": "EUR",
+    "unitText": "MONTH"
+   }
   }
  ]
+}
+ </script>
+<!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Gefahrstoff-QR",
+ "url": "https://gefahrstoff-qr.de/",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://gefahrstoff-qr.de/logo.png",
+ "width": 200,
+ "height": 60
+ },
+ "@id": "https://gefahrstoff-qr.de/#organization",
+ "description": "Gefahrstoff-QR ist eine browserbasierte Software für das Gefahrstoffverzeichnis nach § 6 GefStoffV. Sie erstellt aus Sicherheitsdatenblättern KI-gestützte Entwürfe zur fachlichen Freigabe durch die SiFa oder den Arbeitgeber. Hosting in Deutschland.",
+ "email": "info@gefahrstoff-qr.de",
+ "areaServed": { "@type": "Country", "name": "Deutschland" },
+ "knowsAbout": ["Gefahrstoffverordnung (GefStoffV)", "Gefahrstoffverzeichnis", "TRGS 510", "TRGS 555", "TRGS 600", "Sicherheitsdatenblatt", "GHS/CLP-Kennzeichnung"],
+ "sameAs": ["https://www.linkedin.com/showcase/gefahrstoff-qr/", "https://www.youtube.com/@gefahrstoff-qr"]
+}
+ </script>
+<!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Gefahrstoff-QR",
+ "url": "https://gefahrstoff-qr.de/",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://gefahrstoff-qr.de/logo.png",
+ "width": 200,
+ "height": 60
+ },
+ "@id": "https://gefahrstoff-qr.de/#organization",
+ "description": "Gefahrstoff-QR ist eine browserbasierte Software für das Gefahrstoffverzeichnis nach § 6 GefStoffV. Sie erstellt aus Sicherheitsdatenblättern KI-gestützte Entwürfe zur fachlichen Freigabe durch die SiFa oder den Arbeitgeber. Hosting in Deutschland.",
+ "email": "info@gefahrstoff-qr.de",
+ "areaServed": { "@type": "Country", "name": "Deutschland" },
+ "knowsAbout": ["Gefahrstoffverordnung (GefStoffV)", "Gefahrstoffverzeichnis", "TRGS 510", "TRGS 555", "TRGS 600", "Sicherheitsdatenblatt", "GHS/CLP-Kennzeichnung"],
+ "sameAs": ["https://www.linkedin.com/showcase/gefahrstoff-qr/", "https://www.youtube.com/@gefahrstoff-qr"]
+}
+ </script>
+<!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Gefahrstoff-QR",
+ "url": "https://gefahrstoff-qr.de/",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://gefahrstoff-qr.de/logo.png",
+ "width": 200,
+ "height": 60
+ },
+ "@id": "https://gefahrstoff-qr.de/#organization",
+ "description": "Gefahrstoff-QR ist eine browserbasierte Software für das Gefahrstoffverzeichnis nach § 6 GefStoffV. Sie erstellt aus Sicherheitsdatenblättern KI-gestützte Entwürfe zur fachlichen Freigabe durch die SiFa oder den Arbeitgeber. Hosting in Deutschland.",
+ "email": "info@gefahrstoff-qr.de",
+ "areaServed": { "@type": "Country", "name": "Deutschland" },
+ "knowsAbout": ["Gefahrstoffverordnung (GefStoffV)", "Gefahrstoffverzeichnis", "TRGS 510", "TRGS 555", "TRGS 600", "Sicherheitsdatenblatt", "GHS/CLP-Kennzeichnung"],
+ "sameAs": ["https://www.linkedin.com/showcase/gefahrstoff-qr/", "https://www.youtube.com/@gefahrstoff-qr"]
+}
+ </script>
+<!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Gefahrstoff-QR",
+ "url": "https://gefahrstoff-qr.de/",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://gefahrstoff-qr.de/logo.png",
+ "width": 200,
+ "height": 60
+ },
+ "@id": "https://gefahrstoff-qr.de/#organization",
+ "description": "Gefahrstoff-QR ist eine browserbasierte Software für das Gefahrstoffverzeichnis nach § 6 GefStoffV. Sie erstellt aus Sicherheitsdatenblättern KI-gestützte Entwürfe zur fachlichen Freigabe durch die SiFa oder den Arbeitgeber. Hosting in Deutschland.",
+ "email": "info@gefahrstoff-qr.de",
+ "areaServed": { "@type": "Country", "name": "Deutschland" },
+ "knowsAbout": ["Gefahrstoffverordnung (GefStoffV)", "Gefahrstoffverzeichnis", "TRGS 510", "TRGS 555", "TRGS 600", "Sicherheitsdatenblatt", "GHS/CLP-Kennzeichnung"],
+ "sameAs": ["https://www.linkedin.com/showcase/gefahrstoff-qr/", "https://www.youtube.com/@gefahrstoff-qr"]
+}
+ </script>
+<!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Gefahrstoff-QR",
+ "url": "https://gefahrstoff-qr.de/",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://gefahrstoff-qr.de/logo.png",
+ "width": 200,
+ "height": 60
+ },
+ "@id": "https://gefahrstoff-qr.de/#organization",
+ "description": "Gefahrstoff-QR ist eine browserbasierte Software für das Gefahrstoffverzeichnis nach § 6 GefStoffV. Sie erstellt aus Sicherheitsdatenblättern KI-gestützte Entwürfe zur fachlichen Freigabe durch die SiFa oder den Arbeitgeber. Hosting in Deutschland.",
+ "email": "info@gefahrstoff-qr.de",
+ "areaServed": { "@type": "Country", "name": "Deutschland" },
+ "knowsAbout": ["Gefahrstoffverordnung (GefStoffV)", "Gefahrstoffverzeichnis", "TRGS 510", "TRGS 555", "TRGS 600", "Sicherheitsdatenblatt", "GHS/CLP-Kennzeichnung"],
+ "sameAs": ["https://www.linkedin.com/showcase/gefahrstoff-qr/", "https://www.youtube.com/@gefahrstoff-qr"]
+}
+ </script>
+<!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Gefahrstoff-QR",
+ "url": "https://gefahrstoff-qr.de/",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://gefahrstoff-qr.de/logo.png",
+ "width": 200,
+ "height": 60
+ },
+ "@id": "https://gefahrstoff-qr.de/#organization",
+ "description": "Gefahrstoff-QR ist eine browserbasierte Software für das Gefahrstoffverzeichnis nach § 6 GefStoffV. Sie erstellt aus Sicherheitsdatenblättern KI-gestützte Entwürfe zur fachlichen Freigabe durch die SiFa oder den Arbeitgeber. Hosting in Deutschland.",
+ "email": "info@gefahrstoff-qr.de",
+ "areaServed": { "@type": "Country", "name": "Deutschland" },
+ "knowsAbout": ["Gefahrstoffverordnung (GefStoffV)", "Gefahrstoffverzeichnis", "TRGS 510", "TRGS 555", "TRGS 600", "Sicherheitsdatenblatt", "GHS/CLP-Kennzeichnung"],
+ "sameAs": ["https://www.linkedin.com/showcase/gefahrstoff-qr/", "https://www.youtube.com/@gefahrstoff-qr"]
 }
  </script>
 <!--/AEO:SOFTWARE_APPLICATION_JSONLD-->
@@ -314,7 +459,7 @@
  "name": "Erfüllen wir damit die Pflichten aus § 6 GefStoffV?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Ja. Das Gesetz fordert ein aktuelles, nachvollziehbares und nachvollziehbares Verzeichnis. GQR strukturiert die Sicherheitsdatenblatt-Inhalte orientiert sich an diesen Vorgaben, reduziert Abtippaufwand bei der Übertragung und macht das Kataster mit Revisionsverlauf."
+ "text": "Ja. Das Gesetz fordert ein aktuelles, nachvollziehbares Verzeichnis. GQR strukturiert die Pflichtangaben aus dem Sicherheitsdatenblatt nach § 6 GefStoffV, reduziert Abtippaufwand bei der Übertragung und führt einen Revisionsverlauf im Kataster."
  }
  },
  {
@@ -427,7 +572,7 @@
  <li><span aria-hidden="true">✓</span> Sicherheitsdatenblatt & Notfallinfos per QR-Code direkt am Gefahrstoff</li>
  <li><span aria-hidden="true">✓</span> Gefahrstoffe per SDB-Upload anlegen durch Sicherheitsdatenblatt-Scan: Kein Copy & Paste mehr</li>
  <li><span aria-hidden="true">✓</span> Automatischer TRGS510 Zusammenlagerungscheck</li>
- <li><span aria-hidden="true">✓</span> mit Revisionsverlaufes Protokoll aller Änderungen für Audits</li>
+ <li><span aria-hidden="true">✓</span> Protokoll mit Revisionsverlauf aller Änderungen für Audits</li>
  <li><span aria-hidden="true">✓</span> KI-gestützten Betriebsanweisungs-Entwurf (gemäß TRGS 555) zur fachlichen Freigabe erstellen</li>
 </ul>
  </div>
@@ -664,7 +809,7 @@
  loading="lazy"
  decoding="async"
  alt="Aktivitäten-Protokoll in Gefahrstoff-QR: Zeitstempel, Nutzer, Aktion und Änderungen an Gefahrstoffen und Lagerorten"
- title="mit Revisionsverlaufes Aktivitäten-Protokoll mit Sicherheitsdatenblatt-Änderungen"
+ title="Aktivitäten-Protokoll mit Revisionsverlauf und Sicherheitsdatenblatt-Änderungen"
  />
  </div>
  </div>
@@ -873,7 +1018,7 @@
  <div class="mb-4 text-teal-300" aria-hidden="true">
  </div>
  <h4 class="font-bold text-[#f0f6ff]">Revisionsverlauf</h4>
- <p class="mt-2 text-sm text-[#8fa4c0]">Verfolgen Sie Änderungen an Ihren Gefahrstoffdaten und erhalten Sie eine Historie der Revisionen Ihrer Revisionen.</p>
+ <p class="mt-2 text-sm text-[#8fa4c0]">Verfolgen Sie Änderungen an Ihren Gefahrstoffdaten und erhalten Sie eine nachvollziehbare Änderungshistorie.</p>
  </article>
  </div>
  </div>
@@ -1223,74 +1368,78 @@
  </section>
 
  <!-- PRICING -->
- <section id="preise" class="border-t mt-8 border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="pricingHeadline">
+ <section id="preise" class="border-t mt-8 border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="pricingHeadline" data-billing-mode="yearly">
  <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
  <div class="mx-auto mb-12 max-w-2xl text-center">
  <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Preise</p>
  <h2 id="pricingHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Skalieren Sie Ihre Compliance ohne Überraschungen</h2>
- <p class="mt-4 text-base text-[#8fa4c0]">Transparente Festpreise für Reinigungsbetriebe: TarifVorschau kostenlos, bezahlte Pakete ab 49&nbsp;&euro;/Monat bei Jahreszahlung (KMU Basis). Monatlich kündbar.
- <br>
- <br><b>Der QR-Scan-Zugriff ist ab KMU Basis inklusive.</b></p>
  </div>
 
  <div class="pricing-billing" data-pricing-billing>
  <div class="pricing-billing__switch" role="group" aria-label="Abrechnungszeitraum wählen">
+ <span class="pricing-billing__thumb" aria-hidden="true"></span>
  <button type="button" class="pricing-billing__option" data-billing="monthly" aria-pressed="false">Monatlich</button>
  <button type="button" class="pricing-billing__option is-active" data-billing="yearly" aria-pressed="true">
  Jährlich
  <span class="pricing-billing__badge">Standard</span>
  </button>
  </div>
- <p class="pricing-billing__hint" data-pricing-billing-hint">Jährliche Vorauszahlung zum reduzierten Monatspreis (Standard-Ansicht).</p>
+ <p class="pricing-billing__hint" data-pricing-billing-hint>Jährliche Vorauszahlung zum reduzierten Monatspreis.</p>
  </div>
 
- <p class="mx-auto mb-8 max-w-3xl text-center text-sm leading-relaxed text-[#8fa4c0]">
- <strong class="text-[#f0f6ff]">Welches Paket passt?</strong>
- Funktionstest: <strong class="text-[#c5d0e2]">TarifVorschau</strong> ·
- bis 30 Stoffe, ein Werk: <strong class="text-[#c5d0e2]">KMU Basis</strong> ·
- viele Stoffe, Batch &amp; Team: <strong class="text-[#c5d0e2]">KMU Pro</strong> ·
- externe SiFa mit Mandanten: <strong class="text-[#c5d0e2]">SiFa Multi-Mandant</strong>
- </p>
+ <p class="pricing-intro-offer">Exklusive Einführungspreise</p>
 
  <div class="pricing-tier-grid">
  <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
  <p class="text-lg font-bold text-[#f0f6ff]">TarifVorschau <span class="text-sm font-semibold text-teal-300">(Free)</span></p>
  <p class="mt-1 text-sm text-[#8fa4c0]">Unverbindlicher Funktionstest im Browser.</p>
- <p class="mt-6 text-3xl font-black text-[#f0f6ff]">0&nbsp;&euro;</p>
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]">
+ <span class="pricing-tier__price-row">
+ <span class="pricing-tier__price-anchor pricing-tier__price-anchor--placeholder" aria-hidden="true">0&nbsp;&euro;</span>
+ <span class="pricing-tier__price-current">0&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0] invisible" aria-hidden="true">/Monat</span></span>
+ </span>
+ </p>
+ <p class="pricing-tier__price-note pricing-tier__price-note--spacer" aria-hidden="true">588&nbsp;&euro; jährlich · monatlich zahlbar: 59&nbsp;&euro;/Monat</p>
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis zu 3 SDB-Uploads testen</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> KI-Auswertung im Browser ansehen</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> PDF-Vorschau nur mit „MUSTER“-Wasserzeichen</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10007;</span> Kein Excel-Export, keine dauerhaften QR-Links</li>
  </ul>
- <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="https://app.gefahrstoff-qr.de/register">Im Browser testen</a>
+ <a class="btn-glass-outline btn-glass-outline--block mt-8" href="https://app.gefahrstoff-qr.de/register">Jetzt Starten</a>
  </article>
 
  <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
  <p class="text-lg font-bold text-[#f0f6ff]">KMU Basis</p>
  <p class="mt-1 text-sm text-[#8fa4c0]">Für kleine Betriebe, Werkstätten &amp; Handwerk.</p>
- <p class="pricing-tier__price mt-6 text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="59" data-yearly="49" data-yearly-total="588">
- <span data-pricing-amount>49</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span>
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="59" data-yearly="49" data-yearly-total="588" data-anchor-offset="20">
+ <span class="pricing-tier__price-row">
+ <s class="pricing-tier__price-anchor" data-pricing-anchor>69&nbsp;&euro;</s>
+ <span class="pricing-tier__price-current"><span data-pricing-amount>49</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span></span>
+ </span>
  </p>
- <p class="pricing-tier__price-note" data-pricing-note>588&nbsp;&euro; jährlich abgerechnet</p>
+ <p class="pricing-tier__price-note" data-pricing-note>588&nbsp;&euro; jährlich · monatlich zahlbar: 59&nbsp;&euro;/Monat</p>
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis 30 Gefahrstoffe</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> 1 Werk, unbegrenzt Lagerorte</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> KI-gestützte BA-Entwürfe</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> PDF- &amp; Excel-Export (ohne Wasserzeichen)</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Aktive QR-Notfallansicht am Arbeitsplatz</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Erfassung auch ohne SDB (Begehungs-Modus)</li>
  </ul>
- <a class="mt-8 inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="https://app.gefahrstoff-qr.de/#preise">Mit Basis starten</a>
+ <a class="btn-glass-outline btn-glass-outline--block mt-8" href="https://app.gefahrstoff-qr.de/#preise">Jetzt Starten</a>
  </article>
 
- <article class="relative flex flex-col rounded-2xl border-2 border-[#ff6b35]/60 bg-[#162340] p-6 shadow-xl shadow-orange-900/20 ring-1 ring-orange-400/30 lg:p-7" aria-label="Empfohlenes Paket">
- <span class="pricing-badge-recommended">Empfohlen</span>
+ <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
  <p class="text-lg font-bold text-[#f0f6ff]">KMU Pro</p>
  <p class="mt-1 text-sm text-[#8fa4c0]">Für Mittelstand &amp; Produktion mit vielen Stoffen.</p>
- <p class="pricing-tier__price mt-6 text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="119" data-yearly="99" data-yearly-total="1188">
- <span data-pricing-amount>99</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span>
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="119" data-yearly="99" data-yearly-total="1188" data-anchor-offset="20">
+ <span class="pricing-tier__price-row">
+ <s class="pricing-tier__price-anchor" data-pricing-anchor>119&nbsp;&euro;</s>
+ <span class="pricing-tier__price-current"><span data-pricing-amount>99</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span></span>
+ </span>
  </p>
- <p class="pricing-tier__price-note" data-pricing-note>1.188&nbsp;&euro; jährlich abgerechnet</p>
+ <p class="pricing-tier__price-note" data-pricing-note>1.188&nbsp;&euro; jährlich · monatlich zahlbar: 119&nbsp;&euro;/Monat</p>
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis 250 Gefahrstoffe</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Bis 3 Werke, unbegrenzt Lagerorte</li>
@@ -1298,28 +1447,53 @@
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Mehrere Nutzer-Logins</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> KI-gestützte BA-Entwürfe &amp; PDF/Excel-Export</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> SDB-Aktualitäts-Alerts</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Erfassung auch ohne SDB (Begehungs-Modus)</li>
  </ul>
- <a class="btn-cta-orange btn-cta-orange--block mt-8" href="https://app.gefahrstoff-qr.de/#preise">Professional wählen</a>
+ <a class="btn-glass-outline btn-glass-outline--block mt-8" href="https://app.gefahrstoff-qr.de/#preise">Jetzt Starten</a>
  </article>
 
  <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
  <p class="text-lg font-bold text-[#f0f6ff]">SiFa Multi-Mandant</p>
  <p class="mt-1 text-sm text-[#8fa4c0]">Speziell für externe SiFas &amp; Ingenieurbüros.</p>
- <p class="pricing-tier__price mt-6 text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="189" data-yearly="159" data-yearly-total="1908">
- <span data-pricing-amount>159</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span>
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="189" data-yearly="159" data-yearly-total="1908" data-anchor-offset="20">
+ <span class="pricing-tier__price-row">
+ <s class="pricing-tier__price-anchor" data-pricing-anchor>179&nbsp;&euro;</s>
+ <span class="pricing-tier__price-current"><span data-pricing-amount>159</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span></span>
+ </span>
  </p>
- <p class="pricing-tier__price-note" data-pricing-note>1.908&nbsp;&euro; jährlich abgerechnet</p>
+ <p class="pricing-tier__price-note" data-pricing-note>1.908&nbsp;&euro; jährlich · monatlich zahlbar: 189&nbsp;&euro;/Monat</p>
  <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
- <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Unbegrenzte Mandanten &amp; Werke (Fair-Use)</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Unbegrenzte Werke je Mandant (Fair-Use)</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Saubere Mandanten-, Werks- &amp; Tätigkeitstrennung</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Erfassung auch ohne SDB (Begehungs-Modus)</li>
+ <li class="pricing-tier__pitch list-none border-t border-white/[0.08] pt-4">
+ <p class="m-0 leading-relaxed text-[#c5d0e2]">Bis zu 15 Mandantenbetriebe sind im Grundpreis enthalten.</p>
+ <p class="m-0 mt-2 leading-relaxed text-[#c5d0e2]">Ab dem 16. Mandant: +79,00&nbsp;&euro;/Monat je 10er-Block.</p>
+ </li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Batch-Upload &amp; alle PDF/Excel-Exporte inkl. GHS</li>
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Direktkauf auf monatliche PDF-Rechnung möglich</li>
  </ul>
- <div class="mt-8 flex flex-col gap-3">
- <a class="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.04]" href="https://app.gefahrstoff-qr.de/#preise">Als SiFa starten (auch auf Rechnung)</a>
- <a class="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-teal-400/35 bg-teal-400/10 text-center text-sm font-semibold leading-snug text-[#f0f6ff] transition hover:border-teal-400/55 hover:bg-teal-400/15" href="mailto:info@gefahrstoff-qr.de?subject=Multi-Mandanten-Zugang%20auf%20Rechnung">Kauf auf Rechnung per E-Mail anfragen</a>
- </div>
+ <a class="btn-glass-outline btn-glass-outline--block mt-8" href="mailto:info@gefahrstoff-qr.de?subject=Multi-Mandanten-Zugang%20auf%20Rechnung">Jetzt Starten</a>
+ </article>
+
+ <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
+ <p class="text-lg font-bold text-[#f0f6ff]">Industrie</p>
+ <p class="mt-1 text-sm text-[#8fa4c0]">Für Konzerne, Werksverbünde &amp; hohe Stoffzahlen.</p>
+ <p class="pricing-tier__price text-3xl font-black text-[#f0f6ff]" data-pricing-price data-monthly="399" data-yearly="399" data-yearly-total="4788" data-anchor-offset="20">
+ <span class="pricing-tier__price-row">
+ <s class="pricing-tier__price-anchor" data-pricing-anchor>419&nbsp;&euro;</s>
+ <span class="pricing-tier__price-current"><span data-pricing-amount>399</span>&nbsp;&euro;<span class="text-base font-semibold text-[#8fa4c0]" data-pricing-period>/Monat</span></span>
+ </span>
+ </p>
+ <p class="pricing-tier__price-note" data-pricing-note>4.788&nbsp;&euro; jährlich · monatlich zahlbar: 399&nbsp;&euro;/Monat</p>
+ <ul class="mt-6 flex flex-1 flex-col gap-3 text-sm text-[#c5d0e2]">
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Ab 250 Gefahrstoffen (Fair-Use)</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Ab 4 Werken, unbegrenzt Lagerorte</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Alles aus KMU Pro inklusive</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> SSO (Single Sign-On)</li>
+ <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Dedizierter AVV-Support</li>
+ </ul>
+ <a class="btn-glass-outline btn-glass-outline--block mt-8" href="mailto:info@gefahrstoff-qr.de?subject=Industrie-Tarif%20Anfrage">Jetzt Starten</a>
  </article>
  </div>
 
@@ -1328,7 +1502,7 @@
  <div class="pricing-compare__panel">
  <div class="pricing-compare__scroll" tabindex="0" role="region" aria-label="Paketvergleich als Tabelle">
  <table class="pricing-compare__table">
- <caption>Vergleich der Pakete TarifVorschau, KMU Basis, KMU Pro und SiFa Multi-Mandant</caption>
+ <caption>Vergleich der Pakete TarifVorschau, KMU Basis, KMU Pro, SiFa Multi-Mandant und Industrie</caption>
  <thead>
  <tr>
  <th scope="col">Vergleich</th>
@@ -1336,6 +1510,7 @@
  <th scope="col">KMU Basis</th>
  <th scope="col" class="pricing-compare__col--highlight">KMU Pro</th>
  <th scope="col">SiFa Multi-Mandant</th>
+ <th scope="col">Industrie</th>
  </tr>
  </thead>
  <tbody>
@@ -1345,6 +1520,7 @@
  <td data-pricing-compare-price data-monthly="59" data-yearly="49" data-yearly-total="588">49&nbsp;&euro;/Monat</td>
  <td class="pricing-compare__col--highlight" data-pricing-compare-price data-monthly="119" data-yearly="99" data-yearly-total="1188">99&nbsp;&euro;/Monat</td>
  <td data-pricing-compare-price data-monthly="189" data-yearly="159" data-yearly-total="1908">159&nbsp;&euro;/Monat</td>
+ <td data-pricing-compare-price data-monthly="399" data-yearly="399" data-yearly-total="4788">399&nbsp;&euro;/Monat</td>
  </tr>
  <tr>
  <th scope="row">Zielgruppe</th>
@@ -1352,13 +1528,15 @@
  <td>Kleine Betriebe &amp; Handwerk</td>
  <td class="pricing-compare__col--highlight">Mittelstand &amp; Produktion</td>
  <td>Externe SiFa &amp; Ingenieurbüros</td>
+ <td>Konzerne &amp; Werksverbünde</td>
  </tr>
  <tr>
  <th scope="row">SDB-Uploads / Gefahrstoffe</th>
  <td>Bis 3 Uploads (Test)</td>
  <td>Bis 30</td>
  <td class="pricing-compare__col--highlight">Bis 250</td>
- <td>Fair-Use (unbegrenzt Mandanten)</td>
+ <td>Fair-Use je Mandant</td>
+ <td>Ab 250 (Fair-Use)</td>
  </tr>
  <tr>
  <th scope="row">Werke</th>
@@ -1366,12 +1544,14 @@
  <td>1</td>
  <td class="pricing-compare__col--highlight">Bis 3</td>
  <td>Unbegrenzt (Fair-Use)</td>
+ <td>Ab 4 (Fair-Use)</td>
  </tr>
  <tr>
  <th scope="row">KI-gestützte BA-Entwürfe</th>
  <td>Vorschau</td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
@@ -1380,12 +1560,14 @@
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
- <th scope="row">PDF-Export</th>
+ <th scope="row">GHS immer inklusive</th>
  <td>Nur MUSTER-Wasserzeichen</td>
  <td>Ohne Wasserzeichen</td>
  <td class="pricing-compare__col--highlight">Ohne Wasserzeichen</td>
+ <td>Inkl. GHS</td>
  <td>Inkl. GHS</td>
  </tr>
  <tr>
@@ -1394,12 +1576,14 @@
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
  <th scope="row">QR-Notfallansicht</th>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span> (keine dauerhaften Links)</td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
@@ -1408,6 +1592,7 @@
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
  <th scope="row">Mehrere Nutzer</th>
@@ -1415,26 +1600,54 @@
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
  <th scope="row">Begehungs-Modus (ohne SDB)</th>
- <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
- <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
- <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  <tr>
  <th scope="row">Mandanten- &amp; Werkstrennung</th>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
- <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
- <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td class="pricing-compare__col--highlight"><span class="pricing-compare__yes" aria-label="Ja, Werks-Hierarchie">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja, Mandanten- und Werks-Hierarchie">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja, Werks-Hierarchie">&#10003;</span></td>
+ </tr>
+ <tr>
+ <th scope="row">Mandantenbetriebe inkl.</th>
+ <td><span class="pricing-compare__dash" aria-hidden="true">&ndash;</span></td>
+ <td><span class="pricing-compare__dash" aria-hidden="true">&ndash;</span></td>
+ <td class="pricing-compare__col--highlight"><span class="pricing-compare__dash" aria-hidden="true">&ndash;</span></td>
+ <td>Bis 15 · +79&nbsp;&euro;/Monat je 10er-Block</td>
+ <td><span class="pricing-compare__dash" aria-hidden="true">&ndash;</span></td>
  </tr>
  <tr>
  <th scope="row">PDF-Rechnung (Direktkauf)</th>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ </tr>
+ <tr>
+ <th scope="row">SSO (Single Sign-On)</th>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
+ </tr>
+ <tr>
+ <th scope="row">Dedizierter AVV-Support</th>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td class="pricing-compare__col--highlight"><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
+ <td><span class="pricing-compare__no" aria-label="Nein">&#10007;</span></td>
  <td><span class="pricing-compare__yes" aria-label="Ja">&#10003;</span></td>
  </tr>
  </tbody>
@@ -1448,9 +1661,6 @@
  <a href="https://app.gefahrstoff-qr.de/register" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Kostenlos starten</a>,
  ohne Kreditkarte.
  </p>
-<!--AEO:CTA_TRUST_LINE-->
-<p class="text-xs leading-relaxed text-[#8fa4c0] mx-auto mt-3 max-w-xl text-center"><span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Serverstandort Deutschland (inkl. AVV)</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> PDF- &amp; Excel-Export inkl. GHS-Symbolen</span> · <span class="whitespace-nowrap"><span class="text-teal-300" aria-hidden="true">✓</span> Auf Rechnung für SiFas &amp; Firmenkunden möglich</span></p>
-<!--/AEO:CTA_TRUST_LINE-->
  </div>
  </section>
 
@@ -1470,7 +1680,7 @@
  </details>
  <details class="gqr-faq group py-5">
  <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">Erfüllen wir damit die Pflichten aus § 6 GefStoffV?</summary>
- <p class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">Ja. Das Gesetz fordert ein aktuelles, nachvollziehbares und nachvollziehbares Verzeichnis. GQR strukturiert die Sicherheitsdatenblatt-Inhalte orientiert sich an diesen Vorgaben, reduziert Abtippaufwand bei der Übertragung und macht das Kataster mit Revisionsverlauf.</p>
+ <p class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">Ja. Das Gesetz fordert ein aktuelles, nachvollziehbares Verzeichnis. GQR strukturiert die Pflichtangaben aus dem Sicherheitsdatenblatt nach § 6 GefStoffV, reduziert Abtippaufwand bei der Übertragung und führt einen Revisionsverlauf im Kataster.</p>
  </details>
  <details class="gqr-faq group py-5">
  <summary class="relative cursor-pointer list-none pr-8 text-left text-base font-semibold text-[#f0f6ff] marker:content-none after:absolute after:right-0 after:text-xl after:text-teal-300 after:content-['+'] group-open:after:content-['–']">Was bringt die KI-Extraktion im Vergleich zum Abtippen?</summary>
@@ -1668,6 +1878,8 @@
  var billingRoot = document.querySelector('[data-pricing-billing]');
  if (!billingRoot) return;
 
+ var billingSwitch = billingRoot.querySelector('.pricing-billing__switch');
+ var billingThumb = billingSwitch && billingSwitch.querySelector('.pricing-billing__thumb');
  var billingButtons = billingRoot.querySelectorAll('[data-billing]');
  var billingHint = billingRoot.querySelector('[data-pricing-billing-hint]');
  var priceBlocks = document.querySelectorAll('[data-pricing-price]');
@@ -1676,7 +1888,7 @@
 
  var hints = {
  monthly: 'Monatliche Abrechnung, monatlich kündbar.',
- yearly: 'Jährliche Vorauszahlung zum reduzierten Monatspreis (Standard-Ansicht).',
+ yearly: 'Jährliche Vorauszahlung zum reduzierten Monatspreis.',
  };
 
  var footnotes = {
@@ -1719,12 +1931,32 @@
  return prefixText + formatAmount(monthly, 0) + '\u00a0\u20ac/Monat';
  }
 
+ function positionBillingThumb() {
+ if (!billingSwitch || !billingThumb) return;
+ var active = billingSwitch.querySelector('.pricing-billing__option.is-active');
+ if (!active) return;
+ billingThumb.style.width = active.offsetWidth + 'px';
+ billingThumb.style.left = active.offsetLeft + 'px';
+ }
+
+ var preiseSection = document.getElementById('preise');
+
  function setBilling(mode) {
  billingButtons.forEach(function (button) {
  var isActive = button.getAttribute('data-billing') === mode;
  button.classList.toggle('is-active', isActive);
  button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
  });
+
+ if (preiseSection) {
+ preiseSection.setAttribute('data-billing-mode', mode);
+ preiseSection.classList.add('is-pricing-billing-transition');
+ window.setTimeout(function () {
+ preiseSection.classList.remove('is-pricing-billing-transition');
+ }, 480);
+ }
+
+ requestAnimationFrame(positionBillingThumb);
 
  if (billingHint) {
  billingHint.textContent = hints[mode];
@@ -1736,6 +1968,8 @@
  var amountEl = block.querySelector('[data-pricing-amount]');
  var periodEl = block.querySelector('[data-pricing-period]');
  var prefixEl = block.querySelector('[data-pricing-prefix]');
+ var anchorEl = block.querySelector('[data-pricing-anchor]');
+ var anchorOffset = parseFloat(block.getAttribute('data-anchor-offset') || '20', 10);
  var noteEl = block.parentElement.querySelector('[data-pricing-note]');
 
  if (!amountEl || !periodEl) return;
@@ -1747,23 +1981,39 @@
  if (mode === 'yearly') {
  var yMonthly = getYearlyMonthly(block, monthly);
  var yTotal = getYearlyTotal(block, monthly);
+ block.classList.add('is-pricing-updating');
  amountEl.textContent = formatAmount(yMonthly, 0);
  periodEl.textContent = '/Monat';
+ if (anchorEl) {
+ anchorEl.textContent = formatAmount(yMonthly + anchorOffset, 0) + '\u00a0\u20ac';
+ }
  if (noteEl) {
  noteEl.textContent =
  (prefix ? prefix + ' ' : '') +
  formatAmount(yTotal, 0) +
- '\u00a0\u20ac jährlich abgerechnet';
+ '\u00a0\u20ac jährlich \u00b7 monatlich zahlbar: ' +
+ formatAmount(monthly, 0) +
+ '\u00a0\u20ac/Monat';
  noteEl.hidden = false;
  }
  } else {
+ block.classList.add('is-pricing-updating');
  amountEl.textContent = formatAmount(monthly, 0);
  periodEl.textContent = '/Monat';
+ if (anchorEl) {
+ anchorEl.textContent = formatAmount(monthly + anchorOffset, 0) + '\u00a0\u20ac';
+ }
  if (noteEl) {
  noteEl.textContent = '';
  noteEl.hidden = true;
  }
  }
+ });
+
+ requestAnimationFrame(function () {
+ priceBlocks.forEach(function (block) {
+ block.classList.remove('is-pricing-updating');
+ });
  });
 
  compareCells.forEach(function (cell) {
@@ -1785,7 +2035,14 @@
  });
  });
 
+ window.addEventListener('resize', positionBillingThumb);
+ if (document.fonts && document.fonts.ready) {
+ document.fonts.ready.then(function () {
  setBilling('yearly');
+ });
+ } else {
+ setBilling('yearly');
+ }
  })();
  </script>
 

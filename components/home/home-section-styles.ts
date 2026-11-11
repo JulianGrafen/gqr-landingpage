@@ -14,7 +14,15 @@ export const HOME_SECTION_STYLES = {
   cardTitle: 'text-lg font-bold text-[#f0f6ff]',
   cardText: 'mt-2 text-sm leading-relaxed text-[#8fa4c0]',
   checkmark: 'text-teal-300',
-  primaryCta: 'btn-cta-orange inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base',
+  /** Trust-Karten (#daten-trust): mittige Ausrichtung, gleiche Titelhöhe auf Desktop. */
+  trustCard: 'flex h-full flex-col items-center text-center',
+  trustCardTitle:
+    'flex w-full items-center justify-center gap-2 text-center text-lg font-bold leading-snug text-[#f0f6ff] lg:min-h-[4.75rem]',
+  trustCardTitleMark: 'shrink-0 leading-none text-teal-300',
+  trustCardTitleText: 'max-w-[18rem] text-pretty',
+  trustCardBody: 'mt-3 w-full max-w-[18rem] text-center text-sm leading-relaxed text-[#8fa4c0] text-pretty',
+  primaryCta:
+    'btn-glass-outline inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base',
   secondaryLink: 'sds-secondary-link',
-  ctaGroup: 'mt-10 flex flex-col items-center gap-3',
+  ctaGroup: 'sds-hero__cta-row mt-10 mx-auto flex w-full flex-col gap-3',
 } as const;

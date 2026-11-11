@@ -28,10 +28,9 @@ export function dropzoneClass(
     if (state === 'processing') return `${base} border-teal-500/50 opacity-80`;
     return base;
   }
-  const base =
-    'flex min-h-[140px] cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-teal-400/45 bg-teal-400/5 px-3 py-5 text-center transition';
-  if (state === 'drag') return `${base} border-blue-500 bg-blue-100/10`;
-  if (state === 'processing') return `${base} border-teal-500 bg-teal-500/10`;
+  const base = 'sdb-live-preview-dropzone';
+  if (state === 'drag') return `${base} is-drag-over`;
+  if (state === 'processing') return `${base} is-processing`;
   return base;
 }
 

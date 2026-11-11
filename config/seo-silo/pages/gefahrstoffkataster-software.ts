@@ -9,7 +9,7 @@ export const KATASTER_SOFTWARE_SILO_CONFIG: SeoSiloPageConfig = {
  seo: {
  title: 'Cloud Gefahrstoffmanagement Software: Nachweisführung statt Excel | GQR',
  description:
- 'Cloud Gefahrstoffmanagement Software mit KI-Sicherheitsdatenblatt-Import, mit Revisionsverlaufem Verzeichnis nach § 6 GefStoffV, TRGS 510 und QR-Notfallpass — browserbasiert, ohne Installation.',
+ 'Cloud Gefahrstoffmanagement Software mit KI-Sicherheitsdatenblatt-Import, Verzeichnis mit Revisionsverlauf nach § 6 GefStoffV, TRGS 510 und QR-Notfallpass — browserbasiert, ohne Installation.',
  ogImageAlt:
  'Cloud Gefahrstoffmanagement Software Gefahrstoff-QR — Dashboard mit Sicherheitsdatenblatt-Status und Compliance-KPIs',
  canonicalPath: KATASTER_SOFTWARE_SILO_PATH,
@@ -94,7 +94,7 @@ export const KATASTER_SOFTWARE_SILO_CONFIG: SeoSiloPageConfig = {
  {
  question: 'Was unterscheidet Gefahrstoffkataster-Software von Excel?',
  answer:
- 'Excel erfasst Stoffe — es führt sie nicht. Keine mit Revisionsverlaufe Sicherheitsdatenblatt-Historie, keine automatische CLP-Aktualisierung, keine TRGS-510-Prüfung, kein Nachweis der Datenherkunft beim Export. Software adressiert genau die Mängel, die bei BG-Kontrollen zu Beanstandungen führen: fehlende Aktualität, undokumentierte Änderungen, getrennte Ablage von Sicherheitsdatenblatt-PDF und Tabellenzeile.',
+ 'Excel erfasst Stoffe — es führt sie nicht. Keine Sicherheitsdatenblatt-Historie mit Revisionsverlauf-Historie, keine automatische CLP-Aktualisierung, keine TRGS-510-Prüfung, kein Nachweis der Datenherkunft beim Export. Software adressiert genau die Mängel, die bei BG-Kontrollen zu Beanstandungen führen: fehlende Aktualität, undokumentierte Änderungen, getrennte Ablage von Sicherheitsdatenblatt-PDF und Tabellenzeile.',
  },
  {
  question: 'Lohnt sich GQR für kleine Betriebe mit unter 20 Stoffen?',

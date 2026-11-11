@@ -77,16 +77,16 @@ html = html
 
 /** Hero der Startseite: von der H1 bis einschließlich Microcopy unter den CTAs (textunabhängig). */
 const heroOldPattern =
-  /<h1 id="heroHeadline"[\s\S]*?<\/h1>[\s\S]*?<div class="mt-8 flex flex-wrap justify-center gap-4">[\s\S]*?<\/div>\s*<p class="mt-4 w-full[^"]*">[\s\S]*?<\/p>/;
+  /(?:<p class="sds-hero__eyebrow[^"]*">[\s\S]*?<\/p>\s*)?<h1 id="heroHeadline"[\s\S]*?<\/h1>[\s\S]*?<div class="sds-hero__cta-row[^"]*">[\s\S]*?<\/div>\s*(?:<p class="mt-4 w-full[^"]*">[\s\S]*?<\/p>)?/;
 
 const heroNew = `<p class="mb-3 w-full text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm text-center md:text-left">Branchenlösung</p>
 <h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-center md:items-start justify-center text-center md:text-left">
  Gefahrstoffmanagement für Kfz-Werkstätten
 </h1>
  <p class="text-2xl mt-5 sds-hero__subtitle text-center md:text-left">Vom Bremsenreiniger bis zu den Anforderungen rund um Dieselmotor-Emissionen (DME) – Stoffe, Mengen und Sicherheitsdatenblätter an einem Ort.</p>
- <div class="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
-   <a class="btn-cta-orange px-8 py-3 text-white" style="color: white !important;" href="https://app.gefahrstoff-qr.de/">Jetzt kostenlos testen</a>
-   <a class="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 px-6 py-3 text-sm font-semibold text-[#f0f6ff] transition hover:border-white/35 hover:bg-white/[0.06]" href="/">Zur Startseite</a>
+ <div class="sds-hero__cta-row mt-8 flex w-full flex-col flex-wrap justify-center gap-4 sm:flex-row md:justify-start">
+   <a class="btn-cta-orange sds-hero__cta" href="https://app.gefahrstoff-qr.de/">Jetzt kostenlos testen</a>
+   <a class="sds-secondary-link sds-hero__cta" href="/">Zur Startseite</a>
  </div>`;
 
 if (!heroOldPattern.test(html)) {
@@ -103,20 +103,8 @@ html = html.replace(
   '<a href="/loesungen/kfz-werkstatt/" aria-current="page" class="group flex h-full flex-col rounded-2xl border-2 border-[#ff6b35]/50 bg-[#162340] p-5 shadow-lg ring-1 ring-orange-400/20 no-underline">',
 );
 
-const KFZ_PACKAGE_HINT = `<p class="mx-auto mb-8 max-w-3xl text-center text-sm leading-relaxed text-[#8fa4c0]">
- <strong class="text-[#f0f6ff]">Welches Paket passt in der Werkstatt?</strong>
- Funktionstest: <strong class="text-[#c5d0e2]">TarifVorschau</strong> ·
- bis 30 Stoffe, ein Betrieb: <strong class="text-[#c5d0e2]">KMU Basis</strong> ·
- viele Stoffe &amp; Batch: <strong class="text-[#c5d0e2]">KMU Pro</strong>
- </p>`;
-
 function trimPricingToProfessional(pageHtml) {
   let out = pageHtml.replace(
-    /<p class="mx-auto mb-8 max-w-3xl[\s\S]*?SiFa Multi-Mandant<\/strong>\s*<\/p>/,
-    KFZ_PACKAGE_HINT,
-  );
-
-  out = out.replace(
     /(<div class="pricing-tier-grid"[^>]*>)([\s\S]*?)(<\/div>\s*\n\s*<details class="pricing-compare)/,
     (_, open, content, close) => {
       const articles = content.match(/\n <article[\s\S]*?<\/article>/g) || [];

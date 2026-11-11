@@ -1,8 +1,4 @@
-import {
-  APP_REGISTER_URL,
-  SIFA_INVOICE_REQUEST_CTA_LABEL,
-  SIFA_INVOICE_REQUEST_MAILTO,
-} from '@/config/aeo-config';
+import { APP_REGISTER_URL } from '@/config/aeo-config';
 
 /**
  * Conversion-Sektion für externe SiFas und Arbeitsschutz-Büros (Multi-Mandant).
@@ -17,7 +13,8 @@ export interface SellingPoint {
 export const MULTI_TENANT_SIFA = {
   sectionId: 'fuer-sifas',
   eyebrow: 'Für externe SiFas & Arbeitsschutz-Büros (Multi-Mandant)',
-  headline: 'Betreuen Sie mehrere Betriebe? Alle Mandanten und Werke in einem Zugang.',
+  headlineLead: 'Betreuen Sie mehrere Betriebe?',
+  headlineRest: 'Alle Mandanten und Werke in einem Zugang.',
   intro:
     'Für freiberufliche Fachkräfte für Arbeitssicherheit und Ingenieurbüros, die Gefahrstoffverzeichnisse für mehrere Kundenbetriebe führen.',
   sellingPoints: [
@@ -42,9 +39,5 @@ export const MULTI_TENANT_SIFA = {
         'Für SiFas, Ingenieurbüros und Firmenkunden bieten wir im Multi-Mandanten-Tarif die gewohnte Abrechnung per monatlicher PDF-Rechnung und Überweisung an.',
     },
   ] satisfies SellingPoint[],
-  primaryCta: { label: 'Multi-Mandanten-Zugang anfragen / testen →', href: APP_REGISTER_URL },
-  secondaryCta: {
-    label: SIFA_INVOICE_REQUEST_CTA_LABEL,
-    href: SIFA_INVOICE_REQUEST_MAILTO,
-  },
+  primaryCta: { label: 'Als SiFa kostenlos starten →', href: APP_REGISTER_URL },
 } as const;

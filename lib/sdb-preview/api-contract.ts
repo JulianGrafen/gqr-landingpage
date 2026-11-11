@@ -52,6 +52,9 @@ export type SdbPreviewPostResponse =
 
 export type SdbPreviewConfig = {
   apiBaseUrl: string;
+  /** Optional: lokales gqr-backend (nur localhost / 127.0.0.1). */
+  localApiBaseUrl?: string;
+  /** Nur `true` = Mock in der Landingpage; `false` = POST an gqr-backend. */
   useMock?: boolean;
   registerBaseUrl?: string;
   stripeCheckoutUrl?: string;

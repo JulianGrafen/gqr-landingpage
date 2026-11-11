@@ -83,31 +83,34 @@ async function postPreview(
   }
 }
 
-function appendCompactUploadFields(form: FormData, prepared: CompactUploadPayload, originalFileName: string): void {
-  form.append('file', prepared.uploadFile, prepared.uploadFile.name);
+/** Volles vom Nutzer gewähltes PDF an gqr-backend (`runSdbExtractionFromPdfBuffer`). */
+function appendPdfUploadFields(form: FormData, originalFile: File, prepared?: CompactUploadPayload): void {
+  form.append('file', originalFile, originalFile.name);
   appendCompactScope(form);
-  form.append('originalFileName', originalFileName);
-  form.append(
-    'compactUploadMeta',
-    JSON.stringify({
-      originalBytes: prepared.trim.originalBytes,
-      uploadBytes: prepared.trim.uploadBytes,
-      pdfTrimmed: prepared.trim.trimmed,
-      pdfPageCount: prepared.trim.pageCount,
-      pdfPagesUploaded: prepared.trim.pagesUsed,
-    }),
-  );
+  form.append('originalFileName', originalFile.name);
 
-  if (prepared.sectionExtract?.text) {
-    form.append('sectionExtract', prepared.sectionExtract.text);
+  if (prepared) {
     form.append(
-      'sectionExtractMeta',
+      'compactUploadMeta',
       JSON.stringify({
-        pagesUsed: prepared.sectionExtract.pagesUsed,
-        pageCount: prepared.sectionExtract.pageCount,
-        charCount: prepared.sectionExtract.text.length,
+        originalBytes: prepared.trim.originalBytes,
+        clientPagesPreviewed: prepared.trim.pagesUsed,
+        pdfPageCount: prepared.trim.pageCount,
+        pdfTrimmedOnClient: prepared.trim.trimmed,
       }),
     );
+
+    if (prepared.sectionExtract?.text) {
+      form.append('sectionExtract', prepared.sectionExtract.text);
+      form.append(
+        'sectionExtractMeta',
+        JSON.stringify({
+          pagesUsed: prepared.sectionExtract.pagesUsed,
+          pageCount: prepared.sectionExtract.pageCount,
+          charCount: prepared.sectionExtract.text.length,
+        }),
+      );
+    }
   }
 }
 
@@ -131,7 +134,7 @@ export async function uploadPdfPreview(
 
   const payload = prepared ?? (await prepareCompactUpload(file));
   const form = new FormData();
-  appendCompactUploadFields(form, payload, file.name);
+  appendPdfUploadFields(form, file, payload);
 
   return postPreview(options.apiBaseUrl, form);
 }

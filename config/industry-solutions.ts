@@ -20,6 +20,10 @@ export interface IndustrySolution {
  metaTitle: string;
  metaDescription: string;
  heroText: string;
+ /** Optional: mehrere Absätze statt einem `heroText`-Block. */
+ heroLeadParagraphs?: readonly string[];
+ /** Optional: eigene USP-Liste; sonst `DEFAULT_SLUG_HERO_USP_BULLETS`. */
+ heroUspBullets?: readonly string[];
  typischeStoffe: string[];
  spezifischerVorteil: string;
  /** Längerer Absatz für den Mittelteil */
@@ -127,7 +131,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  spezifischerVorteil:
  'Neue oder aktualisierte Sicherheitsdatenblätter können KI-gestützt strukturiert übernommen werden — Freigabe durch SiFa / Arbeitgeber; weniger Abtippen bei H/P-Sätzen.',
  handwerkAbsatz:
- 'Labore arbeiten mit vielen Stoffen geringer Menge aber hoher Einstufungsvielfalt. mit Revisionsverlaufes Führen des Gefahrstoffverzeichnisses und schnelle Synchronisierung bei Lieferantenupdates sind entscheidend, ohne den Fachkräfte-Alltag zu blockieren.',
+    'Labore arbeiten mit vielen Stoffen geringer Menge aber hoher Einstufungsvielfalt. Ein Gefahrstoffverzeichnis mit Revisionsverlauf zu führen und schnelle Synchronisierung bei Lieferantenupdates sind entscheidend, ohne den Fachkräfte-Alltag zu blockieren.',
  brancheGenitiv: 'Labor',
  blogPostHref: '/blog/laborbetrieb-gefahrstoff-blog.html',
  },

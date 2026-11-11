@@ -1,4 +1,3 @@
-import { CtaTrustLine } from '@/components/home/CtaTrustLine';
 import { HOME_SECTION_STYLES as styles } from '@/components/home/home-section-styles';
 import { MULTI_TENANT_SIFA } from '@/config/home-sections/multi-tenant-sifa';
 
@@ -12,7 +11,9 @@ export function MultiTenantSifaSection() {
         <header className={styles.header}>
           <p className={styles.eyebrow}>{MULTI_TENANT_SIFA.eyebrow}</p>
           <h2 id={HEADLINE_ID} className={styles.headline}>
-            {MULTI_TENANT_SIFA.headline}
+            {MULTI_TENANT_SIFA.headlineLead}
+            <br />
+            {MULTI_TENANT_SIFA.headlineRest}
           </h2>
           <p className={styles.lead}>{MULTI_TENANT_SIFA.intro}</p>
         </header>
@@ -32,13 +33,9 @@ export function MultiTenantSifaSection() {
         </ul>
 
         <div className={styles.ctaGroup}>
-          <a className={styles.primaryCta} href={MULTI_TENANT_SIFA.primaryCta.href}>
+          <a className={`${styles.primaryCta} sds-hero__cta`} href={MULTI_TENANT_SIFA.primaryCta.href}>
             {MULTI_TENANT_SIFA.primaryCta.label}
           </a>
-          <a className={styles.secondaryLink} href={MULTI_TENANT_SIFA.secondaryCta.href}>
-            {MULTI_TENANT_SIFA.secondaryCta.label}
-          </a>
-          <CtaTrustLine className="text-center" />
         </div>
       </div>
     </section>

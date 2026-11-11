@@ -19,7 +19,7 @@ export function GefahrstoffkatasterErstellenSiloPage() {
  hero={KATASTER_ERSTELLEN_SILO_CONFIG.hero}
  image={{
  src: '/images/aktivitätsprotokoll.jpeg',
- alt: 'Aktivitäten-Protokoll in Gefahrstoff-QR: mit Revisionsverlaufe Nachweise beim Gefahrstoffkataster erstellen',
+ alt: 'Aktivitäten-Protokoll in Gefahrstoff-QR: Nachweise mit Revisionsverlauf beim Gefahrstoffkataster erstellen',
  width: 1180,
  height: 665,
  }}
@@ -76,7 +76,7 @@ export function GefahrstoffkatasterErstellenSiloPage() {
  >
  <p>
  <strong>1. Das Excel-Paradoxon (Fehlende Nachweisführung mit Revisionsverlauf):</strong>
- § 6 GefStoffV fordert eine lückenlose Informationsermittlung. Eine Excel-Tabelle wächst zwar schnell und bietet anfänglich eine gute Übersicht, kennt aber systembedingt keine unmanipulierbare Historie. Wenn ein Lieferant das Sicherheitsdatenblatt aktualisiert und Sie die bestehende Zeile überschreiben, löschen Sie unwiederbringlich den historischen Nachweis. Kommt es Jahre später zu einem Rechtsstreit, können Sie nicht mehr gerichtsfest belegen, mit welchem Datenstand der betroffene Mitarbeiter damals gearbeitet hat. Excel ist ein Kalkulationsprogramm, kein mit Revisionsverlaufes Dokumentenmanagementsystem.
+ § 6 GefStoffV fordert eine lückenlose Informationsermittlung. Eine Excel-Tabelle wächst zwar schnell und bietet anfänglich eine gute Übersicht, kennt aber systembedingt keine unmanipulierbare Historie. Wenn ein Lieferant das Sicherheitsdatenblatt aktualisiert und Sie die bestehende Zeile überschreiben, löschen Sie unwiederbringlich den historischen Nachweis. Kommt es Jahre später zu einem Rechtsstreit, können Sie nicht mehr gerichtsfest belegen, mit welchem Datenstand der betroffene Mitarbeiter damals gearbeitet hat. Excel ist ein Kalkulationsprogramm, kein Dokumentenmanagementsystem mit Revisionsverlauf.
  </p>
  <p>
  <strong>2. Trennung von Verzeichnis und Gefährdungsbeurteilung (TRGS 400):</strong>

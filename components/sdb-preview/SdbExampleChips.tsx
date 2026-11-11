@@ -23,9 +23,6 @@ export function SdbExampleChips({ variant, disabled, onSelect }: Props) {
 
   return (
     <div className={wrapClass} aria-label="Beispiel-SDBs mit 1 Klick testen">
-      <p className={variant === 'static' ? 'sdb-live-preview-examples__label' : 'w-full text-xs font-bold uppercase tracking-wider text-[#ff6b35]'}>
-        Beispiel-SDBs mit 1 Klick testen
-      </p>
       <div className={variant === 'static' ? 'sdb-live-preview-examples__row' : 'flex flex-wrap gap-2'}>
         {SDB_PREVIEW_EXAMPLES.map((ex) => (
           <button

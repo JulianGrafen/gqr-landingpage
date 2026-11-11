@@ -63,7 +63,7 @@ export function ExcelVorlageSiloPage() {
  <LandingProseSection
  id="seo-leitfaden"
  eyebrow="Realitätscheck & Leitfaden"
- title="Von der Erstaufnahme zur mit Revisionsverlaufen Automatisierung"
+ title="Von der Erstaufnahme zur Automatisierung mit Revisionsverlauf"
  variant="raised"
  >
  <h3>Der pragmatische Einstieg: Wann Excel ausreicht</h3>

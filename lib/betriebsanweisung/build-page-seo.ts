@@ -4,6 +4,7 @@ import { buildBreadcrumbSchema, type BreadcrumbItem } from '@/lib/seo/build-brea
 import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
 import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
 import type { JsonLdObject } from '@/lib/seo/serialize-json-ld';
+import { marketingHomeBreadcrumbItem } from '@/lib/seo/marketing-home-breadcrumb';
 
 /** Stand der Template-Inhalte (für dateModified); bei inhaltlichen Template-Änderungen anpassen. */
 export const BETRIEBSANWEISUNG_CONTENT_UPDATED = '2026-11-07';
@@ -42,7 +43,7 @@ export function buildBetriebsanweisungMetaDescription(entry: HazardousSubstanceS
 
 export function buildBetriebsanweisungBreadcrumbs(entry: HazardousSubstanceSeoEntry): BreadcrumbItem[] {
   return [
-    { label: 'Startseite', href: '/' },
+    marketingHomeBreadcrumbItem(),
     { label: 'Betriebsanweisungen', href: '/betriebsanweisung/' },
     { label: entry.substanceName },
   ];
