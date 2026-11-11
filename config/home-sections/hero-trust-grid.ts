@@ -7,6 +7,9 @@ export const PORTAL_DER_WIRTSCHAFT_PRESS_URL =
 
 export const EXPERTENMARKT_PROFILE_URL = 'https://www.expertenmarkt.de/experte/gefahrstoff-qr-kall';
 
+export const MARKTPLATZ_MITTELSTAND_PROFILE_URL =
+  'https://www.marktplatz-mittelstand.de/kall/gefahrstoff-qr-aYGBhp.html';
+
 export const TRENDKRAFT_SIFA_PRESS_URL =
   'https://trendkraft.io/software/vom-zettelchaos-zur-digitalen-audit-sicherheit-wie-externe-sicherheitsfachkraefte-mit-gefahrstoff-qr-ihre-mandantenbetreuung-revolutionieren-40522';
 
@@ -54,6 +57,17 @@ export const HOME_HERO_TRUST_GRID = {
       linkTitle: 'Expertenprofil auf Expertenmarkt.de öffnen (neuer Tab)',
       darkSurface: true,
       displayScale: 0.86,
+    },
+    {
+      id: 'marktplatz-mittelstand',
+      src: '/images/trust/marktplatz-mittelstand-on-dark.png',
+      alt: 'Gefahrstoff-QR auf Marktplatz Mittelstand',
+      width: 520,
+      height: 120,
+      href: MARKTPLATZ_MITTELSTAND_PROFILE_URL,
+      linkTitle: 'Unternehmensprofil auf Marktplatz Mittelstand öffnen (neuer Tab)',
+      darkSurface: true,
+      displayScale: 1.12,
     },
     {
       id: 'trendkraft',
