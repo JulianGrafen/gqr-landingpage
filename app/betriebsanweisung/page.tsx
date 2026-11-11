@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { SiteBreadcrumb } from '@/components/seo/SiteBreadcrumb';
+import { BetriebsanweisungHubHero } from '@/components/betriebsanweisung/BetriebsanweisungHubHero';
 import { getAllBetriebsanweisungEntries } from '@/config/betriebsanweisung/registry';
-import { BETRIEBSANWEISUNG_HERO_DISCLAIMER } from '@/config/legal/site-copy';
 import { SITE_URL } from '@/config/site-seo';
 import { marketingHomeBreadcrumbItem } from '@/lib/seo/marketing-home-breadcrumb';
 import { groupEntriesAlphabetically } from '@/lib/betriebsanweisung/group-entries-alphabetically';
@@ -14,8 +13,10 @@ import {
   BA_PROSE,
   BA_SECTION,
   BA_SECTION_HERO,
+  BA_SECTION_MUTED,
 } from '@/components/betriebsanweisung/ba-page-layout';
 import { buildBreadcrumbSchema, type BreadcrumbItem } from '@/lib/seo/build-breadcrumb-schema';
+import { stickyCtaObstructProps } from '@/lib/marketing/sticky-header-cta';
 
 const canonical = `${SITE_URL}/betriebsanweisung/`;
 const pageTitle = 'Betriebsanweisungen nach TRGS 555 von A bis Z: Entwurf aus Ihrem SDB';
@@ -69,52 +70,31 @@ export default function BetriebsanweisungIndexPage() {
     <main className={BA_PAGE_MAIN}>
       <JsonLd data={schemas} />
 
-      <section className={`${BA_SECTION_HERO} lg:py-20`}>
-        <div className={BA_CONTAINER}>
-          <div className={BA_PROSE}>
-          <SiteBreadcrumb items={BREADCRUMBS} className="mb-6 text-xs sm:text-sm" />
-          <p className="text-xs font-bold uppercase tracking-wider text-[#ff6b35]">TRGS 555 · {entries.length} Stoffe</p>
-          <h1 className="mt-3 text-3xl font-black leading-tight text-[#f0f6ff] sm:text-4xl">
-            Betriebsanweisungen für Gefahrstoffe von A bis Z
-          </h1>
-          <p className="mt-4 text-lg leading-relaxed text-[#c8d4e6]">
-            Eine Betriebsanweisung nach TRGS 555 beschreibt für einen Gefahrstoff, welche Gefahren am Arbeitsplatz
-            bestehen, welche Schutzmaßnahmen gelten und was im Notfall zu tun ist. Sie ist nach § 14 GefStoffV Pflicht
-            und muss auf dem Sicherheitsdatenblatt des tatsächlich verwendeten Produkts beruhen.
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-[#8fa4c0]">
-            {BETRIEBSANWEISUNG_HERO_DISCLAIMER} Diese Übersicht enthält bewusst keine CAS-, GHS- oder H/P-Angaben.
-            Maßgeblich sind die Angaben im Sicherheitsdatenblatt Ihres Lieferanten.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a href="#stoffe-a-z" className="gqr-cta-secondary gqr-cta-secondary--md inline-flex justify-center">
-              Stoff auswählen ↓
-            </a>
-            <Link
-              href="https://app.gefahrstoff-qr.de/register"
-              className="gqr-cta-primary gqr-cta-primary--md inline-flex justify-center"
-            >
-              Eigenes SDB kostenlos auslesen
-            </Link>
-          </div>
-          <p className="mt-3 text-xs text-[#8fa4c0]">
-            Ihr Stoff fehlt? Der Entwurf funktioniert mit jedem Sicherheitsdatenblatt, nicht nur mit den Stoffen dieser
-            Liste.
-          </p>
-          </div>
+      <section
+        className={`${BA_SECTION_HERO} lg:py-20`}
+        aria-labelledby="ba-hub-hero-title"
+        {...stickyCtaObstructProps}
+      >
+        <div className={`${BA_CONTAINER} ${BA_PROSE}`}>
+          <BetriebsanweisungHubHero breadcrumbs={BREADCRUMBS} substanceCount={entries.length} />
         </div>
       </section>
 
-      <section id="stoffe-a-z" className={`${BA_SECTION} scroll-mt-24 lg:py-16`}>
+      <section id="stoffe-a-z" className={`${BA_SECTION_MUTED} scroll-mt-24 lg:py-16`}>
         <div className={BA_CONTAINER}>
-          <h2 className="m-0 text-2xl font-bold text-[#f0f6ff]">Alle Stoffe und Produkte</h2>
+          <div className={BA_PROSE}>
+            <h2 className="m-0 text-2xl font-bold text-[#f0f6ff] sm:text-3xl">Alle Stoffe und Produkte</h2>
+            <p className="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
+              Alphabetische Übersicht — jeder Link führt zur TRGS-555-Vorlage mit eigener SDB-Dropzone.
+            </p>
+          </div>
           <nav aria-label="Stoffe nach Anfangsbuchstabe" className="mt-6">
             <ul className={BA_PILL_LIST} role="list">
               {groups.map((group) => (
                 <li key={group.anchorId} className="m-0 p-0">
                   <a
                     href={`#${group.anchorId}`}
-                    className="inline-flex min-w-[2.25rem] justify-center rounded-lg border border-white/15 bg-white/[0.04] px-2 py-1 text-sm font-semibold text-[#c8d4e6] no-underline transition hover:border-[#ff6b35]/40 hover:text-[#ff6b35]"
+                    className="inline-flex min-w-[2.25rem] justify-center rounded-lg border border-white/20 bg-white/[0.06] px-2.5 py-1.5 text-sm font-semibold text-[#f0f6ff] no-underline transition hover:border-[#ff6b35]/45 hover:bg-white/[0.1] hover:text-[#ff6b35]"
                   >
                     {group.letter}
                   </a>
@@ -125,9 +105,7 @@ export default function BetriebsanweisungIndexPage() {
 
           {groups.map((group) => (
             <div key={group.anchorId} id={group.anchorId} className="mt-10 scroll-mt-24">
-              <h3 className="m-0 border-b border-white/[0.08] pb-2 text-lg font-bold text-[#f0f6ff]">
-                {group.letter}
-              </h3>
+              <h3 className="m-0 border-b border-white/[0.1] pb-2 text-lg font-bold text-[#f0f6ff]">{group.letter}</h3>
               <ul className="m-0 mt-4 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-3" role="list">
                 {group.entries.map((entry) => (
                   <li key={entry.slug} className="m-0 p-0">

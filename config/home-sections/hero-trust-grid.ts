@@ -7,6 +7,9 @@ export const PORTAL_DER_WIRTSCHAFT_PRESS_URL =
 
 export const EXPERTENMARKT_PROFILE_URL = 'https://www.expertenmarkt.de/experte/gefahrstoff-qr-kall';
 
+export const TRENDKRAFT_SIFA_PRESS_URL =
+  'https://trendkraft.io/software/vom-zettelchaos-zur-digitalen-audit-sicherheit-wie-externe-sicherheitsfachkraefte-mit-gefahrstoff-qr-ihre-mandantenbetreuung-revolutionieren-40522';
+
 export type HeroTrustLogo = {
   id: string;
   src: string;
@@ -48,6 +51,16 @@ export const HOME_HERO_TRUST_GRID = {
       linkTitle: 'Expertenprofil auf Expertenmarkt.de öffnen (neuer Tab)',
       darkSurface: true,
       displayScale: 0.86,
+    },
+    {
+      id: 'trendkraft',
+      src: '/images/trust/trendkraft-on-dark.svg',
+      alt: 'TRENDKRAFT – Pressemitteilung zu Gefahrstoff-QR',
+      width: 400,
+      height: 72,
+      href: TRENDKRAFT_SIFA_PRESS_URL,
+      linkTitle: 'Presseartikel auf TRENDKRAFT lesen (öffnet in neuem Tab)',
+      darkSurface: true,
     },
   ] satisfies readonly HeroTrustLogo[],
 } as const;

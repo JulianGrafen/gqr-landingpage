@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 72" role="img" aria-label="TRENDKRAFT">
+  <title>TRENDKRAFT</title>
+  <text
+    x="200"
+    y="52"
+    text-anchor="middle"
+    font-family="'Arial Narrow', 'Helvetica Neue Condensed', Arial, sans-serif"
+    font-size="52"
+    font-weight="800"
+    letter-spacing="0.02em"
+  >
+    <tspan fill="#EF6B24">TREND</tspan><tspan fill="#FFFFFF">KRAFT</tspan>
+  </text>
+</svg>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useBetriebsanweisungSdbUpload } from '@/components/betriebsanweisung/betriebsanweisung-sdb-upload-context';
 import { BA_CONTAINER, BA_PROSE } from '@/components/betriebsanweisung/ba-page-layout';
 import { BETRIEBSANWEISUNG_CLOSING_REGISTER_CTA } from '@/config/legal/site-copy';
+import { stickyCtaObstructProps } from '@/lib/marketing/sticky-header-cta';
 
 type Props = {
   substanceName: string;
@@ -14,7 +15,10 @@ export function BetriebsanweisungClosingCtaCard({ substanceName, registerUrl }: 
   const { scrollToDropzone } = useBetriebsanweisungSdbUpload();
 
   return (
-    <section className="border-t border-white/[0.07] bg-[#0f1e35] px-4 py-14 sm:px-6 lg:px-8">
+    <section
+      className="border-t border-white/[0.07] bg-[#0f1e35] px-4 py-14 sm:px-6 lg:px-8"
+      {...stickyCtaObstructProps}
+    >
       <div className={BA_CONTAINER}>
         <div
           className={`ba-contrast-panel mx-auto ${BA_PROSE} border-[#ff6b35]/25 bg-[#162340]/90 text-center`}

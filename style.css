@@ -769,8 +769,9 @@ ul { list-style: none; }
 
 .pricing-tier-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(172px, 1fr));
-  justify-content: start;
+  width: 100%;
+  box-sizing: border-box;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1rem;
   align-items: stretch;
   overflow-x: auto;
@@ -900,7 +901,8 @@ ul { list-style: none; }
 
 @media (min-width: 1024px) {
   .pricing-tier-grid {
-    gap: 1.25rem;
+    gap: 1.15rem;
+    overflow-x: visible;
   }
 }
 
@@ -5290,16 +5292,25 @@ body.trial-modal-open {
   margin: 0;
 }
 
-.sds-hero__top .sds-hero__headline .sds-hero__cta-row {
+.sds-hero__cta-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
   margin-top: 2rem;
+}
+
+.sds-hero__top .sds-hero__headline .sds-hero__cta-stack .sds-hero__cta-row {
+  margin-top: 0;
   width: 100%;
 }
 
-.sds-hero__top .sds-hero__headline .sds-hero__microcopy {
+.sds-hero__top .sds-hero__headline .sds-hero__cta-stack .sds-hero__microcopy {
   margin-top: 1rem;
-  width: auto;
+  width: 100%;
   max-width: none;
-  margin-inline: auto;
+  margin-inline: 0;
   align-self: center;
   color: #8fa4c0;
   text-align: center;
@@ -5307,13 +5318,8 @@ body.trial-modal-open {
 }
 
 @media (min-width: 768px) {
-  #hero .sds-hero__top > .sds-hero__headline .sds-hero__microcopy {
+  #hero .sds-hero__top > .sds-hero__headline .sds-hero__cta-stack {
     align-self: flex-start;
-    margin-inline: 0;
-    text-align: left;
-    width: auto;
-    max-width: none;
-    white-space: nowrap;
   }
 }
 
@@ -5481,7 +5487,7 @@ body.trial-modal-open {
 
 .sds-hero__trust-logos-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: clamp(0.85rem, 2vw, 1.25rem);
   width: 100%;
   max-width: min(52rem, 100%);
@@ -5560,7 +5566,17 @@ body.trial-modal-open {
   transform-origin: center center;
 }
 
+@media (min-width: 640px) {
+  .sds-hero__trust-logos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 1024px) {
+  .sds-hero__trust-logos-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .sds-hero__trust-logos-wrap .sds-hero__trust--above-logos {
     justify-content: center;
     width: 100%;

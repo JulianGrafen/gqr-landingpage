@@ -31,6 +31,7 @@ import {
 } from '@/lib/betriebsanweisung/build-page-seo';
 import { buildBetriebsanweisungFaqItems } from '@/lib/betriebsanweisung/build-substance-faq';
 import { findMatchingIndustrySolutions, findRelatedEntries } from '@/lib/betriebsanweisung/related-entries';
+import { stickyCtaObstructProps } from '@/lib/marketing/sticky-header-cta';
 
 type PageProps = {
   params: { slug: string };
@@ -82,7 +83,7 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
     <main className={BA_PAGE_MAIN}>
       <JsonLd data={schemas} />
 
-      <section className={BA_SECTION_HERO} aria-labelledby="ba-hero-title">
+      <section className={BA_SECTION_HERO} aria-labelledby="ba-hero-title" {...stickyCtaObstructProps}>
         <div className={BA_CONTAINER}>
           <BetriebsanweisungSlugHero
             entry={entry}

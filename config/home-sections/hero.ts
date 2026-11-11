@@ -47,5 +47,6 @@ export const HOME_HERO = {
     { id: 'hosting', label: 'Hosted in Frankfurt' },
     { id: 'made-in-germany', label: 'Made in Germany' },
     { id: 'ssl', label: 'SSL-verschlüsselt' },
+    { id: 'sifa-experts', label: 'Entwickelt mit Sicherheitsfachkräften' },
   ],
 } as const;

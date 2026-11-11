@@ -19,12 +19,14 @@ export function HomeHeroCopy() {
           </p>
         ))}
       </div>
-      <div className="sds-hero__cta-row">
-        <a className="btn-cta-orange sds-hero__cta" href={HOME_HERO.secondaryCta.href}>
-          {HOME_HERO.secondaryCta.label}
-        </a>
+      <div className="sds-hero__cta-stack">
+        <div className="sds-hero__cta-row">
+          <a className="btn-cta-orange sds-hero__cta" href={HOME_HERO.secondaryCta.href}>
+            {HOME_HERO.secondaryCta.label}
+          </a>
+        </div>
+        <p className="sds-hero__microcopy">{HOME_HERO.microcopy}</p>
       </div>
-      <p className="sds-hero__microcopy">{HOME_HERO.microcopy}</p>
     </>
   );
 }
