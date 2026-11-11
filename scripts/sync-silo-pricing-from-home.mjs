@@ -73,7 +73,7 @@ function replacePricingSection(pageHtml, section) {
 
 function replacePricingScript(pageHtml, script) {
   const pattern =
-    /<script>\s*\(function \(\) \{\s*var[\s\S]*?billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?setBilling\('(?:monthly|yearly)'\);\s*\}\)\(\);\s*<\/script>/;
+    /<script>\s*\(function \(\) \{\s*var[\s\S]*?billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/;
   if (!pattern.test(pageHtml)) {
     throw new Error('Pricing-Script im Ziel nicht gefunden.');
   }
@@ -92,7 +92,7 @@ const PRICING_FEATURES_SCRIPT =
 function ensurePricingFeaturesScript(pageHtml) {
   if (pageHtml.includes('/scripts/pricing-tier-features.js')) return pageHtml;
   const billingEnd =
-    /setBilling\('(?:monthly|yearly)'\);\s*\}\)\(\);\s*<\/script>/;
+    /billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/;
   if (!billingEnd.test(pageHtml)) return pageHtml;
   return pageHtml.replace(
     billingEnd,
