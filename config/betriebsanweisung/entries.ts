@@ -2038,6 +2038,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Industrielle Instandhaltung",
     ],
   },
+  {
+    slug: 'badreiniger-trgs-555',
+    substanceName: "Badreiniger",
+    metaDescription: "Betriebsanweisung Badreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Hausmeisterdienst & Objektbetreuung",
+      "Hotellerie & Gastgewerbe",
+      "Sanitär & Badausbau",
+    ],
+  },
+  {
+    slug: 'holzbeize-trgs-555',
+    substanceName: "Holzbeize",
+    metaDescription: "Betriebsanweisung Holzbeize: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Schreinerei & Holzverarbeitung",
+      "Tischlerei & Innenausbau",
+      "Malerbetrieb & Lackierung",
+      "Möbelbau & Küchenstudio",
+    ],
+  },
+  {
+    slug: 'tiefgrund-trgs-555',
+    substanceName: "Tiefgrund",
+    metaDescription: "Betriebsanweisung Tiefgrund: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Bau & Handwerk",
+      "Innenausbau & Trockenbau",
+      "Facility & Objektinstandhaltung",
+    ],
+  },
+  {
+    slug: 'autolack-trgs-555',
+    substanceName: "Autolack",
+    metaDescription: "Betriebsanweisung Autolack: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Karosseriebau",
+      "Lackiererei & Beschichtung",
+      "Fuhrpark & Logistik",
+      "Fahrzeugaufbereitung & Detailing",
+    ],
+  },
+  {
+    slug: 'zelluloseverduenner-trgs-555',
+    substanceName: "Zelluloseverdünnung",
+    metaDescription: "Betriebsanweisung Zelluloseverdünnung: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Kfz-Lackierung",
+      "Schreinerei & Holzbeschichtung",
+      "Industrielle Beschichtung",
+    ],
+  },
+  {
+    slug: 'scheuerschaum-trgs-555',
+    substanceName: "Scheuerschaum",
+    metaDescription: "Betriebsanweisung Scheuerschaum: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Gastronomie & Großküche",
+      "Hotellerie & Gastgewerbe",
+      "Lebensmittelhandel & Verkaufsflächen",
+    ],
+  },
+  {
+    slug: 'silikonfett-trgs-555',
+    substanceName: "Silikonfett",
+    metaDescription: "Betriebsanweisung Silikonfett: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Elektroinstallation & Gebäudetechnik",
+      "Maschinenbau & Anlagenbau",
+      "Sanitär & Heizungstechnik",
+    ],
+  },
+  {
+    slug: 'plexiglasreiniger-trgs-555',
+    substanceName: "Plexiglasreiniger",
+    metaDescription: "Betriebsanweisung Plexiglasreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Werbetechnik & Beschilderung",
+      "Einzelhandel & Schaufensterpflege",
+      "Messebau & Veranstaltungstechnik",
+    ],
+  },
+  {
+    slug: 'anti-spatter-spray-trgs-555',
+    substanceName: "Anti-Spatter-Spray",
+    metaDescription: "Betriebsanweisung Anti-Spatter-Spray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbau & Schweißtechnik",
+      "Kfz-Werkstatt & Karosseriebau",
+      "Industrielle Instandhaltung",
+      "Rohrleitungs- & Anlagenbau",
+    ],
+  },
+  {
+    slug: 'waschmittel-trgs-555',
+    substanceName: "Waschmittel",
+    metaDescription: "Betriebsanweisung Waschmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Textilreinigung & Wäscherei",
+      "Gastronomie & Gemeinschaftsverpflegung",
+      "Hotellerie & Hauswirtschaft",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];

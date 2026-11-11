@@ -8,7 +8,8 @@ export const PORTAL_DER_WIRTSCHAFT_PRESS_URL =
 export const EXPERTENMARKT_PROFILE_URL = 'https://www.expertenmarkt.de/experte/gefahrstoff-qr-kall';
 
 export const TRENDKRAFT_SIFA_PRESS_URL =
-  'https://trendkraft.io/software/vom-zettelchaos-zur-digitalen-audit-sicherheit-wie-externe-sicherheitsfachkraefte-mit-gefahrstoff-qr-ihre-mandantenbetreuung-revolutionieren-40522';
+  'https://trendkraft.io/software/vom-zettelchaos-zur-digitalen-audit-' +
+  'sicherheit-wie-externe-sicherheitsfachkraefte-mit-gefahrstoff-qr-ihre-mandantenbetreuung-revolutionieren-40522';
 
 export type HeroTrustLogo = {
   id: string;
