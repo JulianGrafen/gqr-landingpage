@@ -5574,7 +5574,7 @@ body.trial-modal-open {
 
 @media (min-width: 1024px) {
   .sds-hero__trust-logos-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sds-hero__trust-logos-wrap .sds-hero__trust--above-logos {
@@ -5605,6 +5605,13 @@ body.trial-modal-open {
   .sds-hero__trust-logos-img-slot {
     width: 13.75rem;
     height: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sds-hero__trust-logos-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: min(70rem, 100%);
   }
 }
 

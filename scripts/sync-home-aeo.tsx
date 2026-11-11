@@ -6,7 +6,7 @@
  * Ausführen: npm run sync:home
  * Quelle: config/aeo-config.ts, config/home-sections/*, config/landing-home-seo-faq.ts
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { ReactElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -28,6 +28,18 @@ import { serializeJsonLd, type JsonLdObject } from '@/lib/seo/serialize-json-ld'
 import { replaceMarkedBlocks } from '@/lib/static-html/replace-marked-blocks';
 
 const INDEX_HTML_PATH = resolve(process.cwd(), 'index.html');
+
+/** Statische LP (`index.html`) lädt `/images/trust/*` aus `images/trust/`, nicht aus `public/`. */
+function syncTrustImagesToStaticRoot(): void {
+  const srcDir = resolve(process.cwd(), 'public/images/trust');
+  const destDir = resolve(process.cwd(), 'images/trust');
+  if (!existsSync(srcDir)) return;
+  mkdirSync(destDir, { recursive: true });
+  for (const name of readdirSync(srcDir)) {
+    if (name.startsWith('.')) continue;
+    cpSync(resolve(srcDir, name), resolve(destDir, name), { force: true });
+  }
+}
 
 function renderJsonLdScript(data: JsonLdObject): string {
   return ` <script type="application/ld+json">\n${serializeJsonLd(data, 1)}\n </script>`;
@@ -57,4 +69,6 @@ const updatedHtml = replaceMarkedBlocks(html, {
 });
 
 writeFileSync(INDEX_HTML_PATH, updatedHtml, 'utf8');
+syncTrustImagesToStaticRoot();
 console.log('✓ index.html: AEO-Blöcke aus der zentralen Konfiguration synchronisiert');
+console.log('✓ images/trust: aus public/images/trust gespiegelt');

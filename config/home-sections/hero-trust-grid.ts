@@ -10,6 +10,9 @@ export const EXPERTENMARKT_PROFILE_URL = 'https://www.expertenmarkt.de/experte/g
 export const TRENDKRAFT_SIFA_PRESS_URL =
   'https://trendkraft.io/software/vom-zettelchaos-zur-digitalen-audit-sicherheit-wie-externe-sicherheitsfachkraefte-mit-gefahrstoff-qr-ihre-mandantenbetreuung-revolutionieren-40522';
 
+export const LEITQUELLE_PRESS_URL =
+  'https://leitquelle.de/meldung/gefahrstoff-qr-sicherheitsdatenblaetter-ki-gefahrstoffverzeichnis';
+
 export type HeroTrustLogo = {
   id: string;
   src: string;
@@ -61,6 +64,17 @@ export const HOME_HERO_TRUST_GRID = {
       href: TRENDKRAFT_SIFA_PRESS_URL,
       linkTitle: 'Presseartikel auf TRENDKRAFT lesen (öffnet in neuem Tab)',
       darkSurface: true,
+    },
+    {
+      id: 'leitquelle',
+      src: '/images/trust/leitquelle.jpg',
+      alt: 'Leitquelle – Meldung zu Gefahrstoff-QR',
+      width: 560,
+      height: 160,
+      href: LEITQUELLE_PRESS_URL,
+      linkTitle: 'Meldung auf Leitquelle lesen (öffnet in neuem Tab)',
+      lightSurface: true,
+      displayScale: 1.35,
     },
   ] satisfies readonly HeroTrustLogo[],
 } as const;
