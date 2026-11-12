@@ -10,7 +10,8 @@
   <meta name="description" content="Impressum Gefahrstoff-QR: Anbieter, Kontakt und Pflichtangaben gemäß § 5 TMG.">
   <link rel="canonical" href="https://gefahrstoff-qr.de/impressum/" />
   <meta name="robots" content="noindex, follow">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="/style.css?v=116">
+  <link rel="stylesheet" href="/tw.css">
   <style>
     .legal-page {
       max-width: 680px;
@@ -40,31 +41,9 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="/" aria-label="Gefahrstoff-QR Startseite">Gefahrstoff-QR</a>
-    <nav class="nav-desktop" aria-label="Hauptnavigation">
-      <a class="nav-link" href="/#probleme">Probleme</a>
-      <a class="nav-link" href="/#features">Features</a>
-      <a class="nav-link" href="/#preise">Preise</a>
-      <a class="nav-link" href="/blog/">Blog</a>
-      <a class="btn btn-primary nav-cta" href="https://app.gefahrstoff-qr.de/register">Kostenlos starten</a>
-    </nav>
-    <button id="navOpenBtn" class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menü öffnen">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"/></svg>
-    </button>
-    <div class="nav-mobile" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
-      <div class="nav-mobile-inner">
-        <button id="navCloseBtn" class="nav-close">&#x2715; Schließen</button>
-        <nav class="mobile-links">
-          <a class="nav-link" href="/#probleme">Probleme</a>
-          <a class="nav-link" href="/#features">Features</a>
-          <a class="nav-link" href="/#preise">Preise</a>
-          <a class="nav-link" href="/blog/">Blog</a>
-          <a class="btn btn-primary" href="https://app.gefahrstoff-qr.de/register">Kostenlos starten</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+<!--AEO:MARKETING_CHROME-->
+<header class="site-header" id="siteHeader"><a class="logo" href="/" aria-label="Gefahrstoff-QR Startseite"><img class="gqr-brand-logo" src="/logo-wordmark.png" alt="Gefahrstoff-QR" width="431" height="108"/></a><nav class="nav-desktop" aria-label="Hauptnavigation"><a class="nav-link" href="/#live-demo">Live-Test</a><a class="nav-link" href="/#fuer-sifas">Für SiFas</a><a class="nav-link" href="/#preise">Preise</a><a class="nav-link" href="https://app.gefahrstoff-qr.de/login">Login</a><a class="btn btn-primary nav-cta" href="https://app.gefahrstoff-qr.de/register" data-nav-primary-cta="true">Kostenlos testen</a></nav><button id="navOpenBtn" class="nav-toggle flex flex-wrap items-center justify-center" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menü öffnen"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"></path></svg></button></header><div class="header-sticky-cta-bar" data-header-sticky-cta="true" hidden=""><a class="header-sticky-cta-bar__action" href="https://app.gefahrstoff-qr.de/register">Kostenlos testen <span aria-hidden="true">→</span></a><p class="header-sticky-cta-bar__microcopy">Kein Verkaufsgespräch, testen Sie die Software in Ruhe</p></div><div class="nav-mobile" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Mobilmenü"><div class="nav-mobile-inner"><button id="navCloseBtn" class="nav-close" type="button" aria-label="Schließen">✕ Schließen</button><nav class="mobile-links"><a class="nav-link" href="/#live-demo">Live-Test</a><a class="nav-link" href="/#fuer-sifas">Für SiFas</a><a class="nav-link" href="/#preise">Preise</a><a class="nav-link" href="https://app.gefahrstoff-qr.de/login">Login</a><a class="btn btn-primary" href="https://app.gefahrstoff-qr.de/register">Kostenlos testen</a></nav></div></div>
+<!--/AEO:MARKETING_CHROME-->
 
   <main>
     <div class="legal-page">
@@ -122,8 +101,39 @@
       <p class="footer-copy">&#xa9; 2026 Gefahrstoff-QR &middot; Das Angebot richtet sich ausschlie&#223;lich an Unternehmen, Gewerbetreibende, Freiberufler und juristische Personen des &#246;ffentlichen Rechts im Sinne des &#167; 14 BGB.</p>
     </div>
   </footer>
-  <script>
-    (function(){var o=document.getElementById('navOpenBtn'),c=document.getElementById('navCloseBtn'),m=document.getElementById('mobileMenu');function op(){document.body.classList.add('nav-open');m.setAttribute('aria-hidden','false');o.setAttribute('aria-expanded','true');c.focus();}function cl(){document.body.classList.remove('nav-open');m.setAttribute('aria-hidden','true');o.setAttribute('aria-expanded','false');o.focus();}o.addEventListener('click',op);c.addEventListener('click',cl);document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});m.querySelectorAll('.nav-link,.btn').forEach(function(el){el.addEventListener('click',cl);});})();
-  </script>
+<!--AEO:MARKETING_CHROME_SCRIPTS-->
+<script>
+(function () {
+ var openBtn = document.getElementById('navOpenBtn');
+ var closeBtn = document.getElementById('navCloseBtn');
+ var menu = document.getElementById('mobileMenu');
+ if (!openBtn || !closeBtn || !menu) return;
+
+ function openMenu() {
+ document.body.classList.add('nav-open');
+ menu.setAttribute('aria-hidden', 'false');
+ openBtn.setAttribute('aria-expanded', 'true');
+ closeBtn.focus();
+ }
+
+ function closeMenu() {
+ document.body.classList.remove('nav-open');
+ menu.setAttribute('aria-hidden', 'true');
+ openBtn.setAttribute('aria-expanded', 'false');
+ openBtn.focus();
+ }
+
+ openBtn.addEventListener('click', openMenu);
+ closeBtn.addEventListener('click', closeMenu);
+ document.addEventListener('keydown', function (e) {
+ if (e.key === 'Escape') closeMenu();
+ });
+ menu.querySelectorAll('.nav-link, .btn').forEach(function (el) {
+ el.addEventListener('click', closeMenu);
+ });
+})();
+</script>
+<script src="/scripts/sticky-cta-bars.js?v=3" defer></script>
+<!--/AEO:MARKETING_CHROME_SCRIPTS-->
 </body>
 </html>

@@ -1,18 +1,21 @@
 import { HOME_NAVIGATION } from '@/config/home-sections/hero';
+import { resolveHomeNavHref } from '@/lib/navigation/resolve-home-nav-href';
 
 type HomeNavigationProps = {
   /** Desktop-Leiste nutzt die kompakte CTA-Variante, das Mobilmenü die Standard-Variante. */
   variant: 'desktop' | 'mobile';
+  /** Auf Legal-/Unterseiten: `"/"` für `/#preise` statt `#preise`. */
+  homePathPrefix?: string;
 };
 
 /** Kopfnavigation der Startseite (Desktop und Mobil aus derselben Konfiguration). */
-export function HomeNavigation({ variant }: HomeNavigationProps) {
+export function HomeNavigation({ variant, homePathPrefix = '' }: HomeNavigationProps) {
   const ctaClassName = variant === 'desktop' ? 'btn btn-primary nav-cta' : 'btn btn-primary';
 
   return (
     <>
       {HOME_NAVIGATION.anchorLinks.map((link) => (
-        <a key={link.href} className="nav-link" href={link.href}>
+        <a key={link.href} className="nav-link" href={resolveHomeNavHref(link.href, homePathPrefix)}>
           {link.label}
         </a>
       ))}

@@ -18,6 +18,7 @@
     "verify:sdb-preview": "node scripts/verify-sdb-preview.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "sync:home": "npx tsx --tsconfig tsconfig.scripts.json scripts/sync-home-aeo.tsx",
+    "sync:legal-chrome": "npx tsx --tsconfig tsconfig.scripts.json scripts/sync-legal-chrome.tsx",
     "generate:kfz-werkstatt-landing": "node scripts/generate-kfz-werkstatt-landing.mjs",
     "sync:silo-pricing": "node scripts/sync-silo-pricing-from-home.mjs",
     "generate:logo-wordmark": "node scripts/trim-logo-wordmark.mjs",

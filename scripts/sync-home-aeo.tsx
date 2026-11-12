@@ -15,9 +15,11 @@ import { ExcelComparisonSection } from '@/components/home/ExcelComparisonSection
 import { HomeFaqContactFooter } from '@/components/home/HomeFaqContact';
 import { HomeFaqItems } from '@/components/home/HomeFaqItems';
 import { HeroInnerTrustSection } from '@/components/home/HeroInnerTrustSection';
+import { HeroRegelwerkStrip } from '@/components/home/HeroRegelwerkStrip';
 import { HeroTrustLogoGrid } from '@/components/home/HeroTrustLogoGrid';
 import { HomeHeroCopy } from '@/components/home/HomeHeroCopy';
 import { HeroSdbLiveMetric } from '@/components/home/HeroSdbLiveMetric';
+import { HeroSdbSupplierHint } from '@/components/home/HeroSdbSupplierHint';
 import { HomeNavigation } from '@/components/home/HomeNavigation';
 import { MultiTenantSifaSection } from '@/components/home/MultiTenantSifaSection';
 import { ProductDemoVideoSection } from '@/components/home/ProductDemoVideoSection';
@@ -80,8 +82,10 @@ const updatedHtml = replaceMarkedBlocks(html, {
   NAV_MOBILE: () => renderHtml(<HomeNavigation variant="mobile" />),
   HERO_COPY: () => renderHtml(<HomeHeroCopy />),
   HERO_SDB_METRIC: () => renderHtml(<HeroSdbLiveMetric />),
+  HERO_SDB_SUPPLIER_HINT: () => renderHtml(<HeroSdbSupplierHint />),
   HERO_INNER_TRUST: () => renderHtml(<HeroInnerTrustSection />),
   HERO_TRUST_GRID: () => renderHtml(<HeroTrustLogoGrid />),
+  HERO_REGELWERK: () => renderHtml(<HeroRegelwerkStrip />),
   OUTPUT_PREVIEW: () => renderHtml(<OutputPreviewSection />),
   DATA_TRUST: () => renderHtml(<DataTrustSection />),
   SITE_FOOTER: () => renderHtml(<EnterpriseSiteFooter />),

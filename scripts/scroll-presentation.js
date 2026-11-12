@@ -30,17 +30,36 @@
   }
 
   function getSiteHeaderOffset() {
-    var raw = window.getComputedStyle(document.documentElement).getPropertyValue('--site-header-height');
+    var header = document.getElementById('siteHeader') || document.querySelector('.site-header');
+    if (header) {
+      var measured = header.getBoundingClientRect().height;
+      if (measured > 0) return measured;
+    }
+
+    var raw = window.getComputedStyle(document.documentElement).getPropertyValue('--site-header-height').trim();
     var parsed = parseFloat(raw);
-    return Number.isFinite(parsed) ? parsed : 0;
+    if (!Number.isFinite(parsed)) return 0;
+    if (raw.endsWith('rem')) {
+      var rootFont = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
+      return parsed * (Number.isFinite(rootFont) ? rootFont : 16);
+    }
+    return parsed;
   }
 
-  /** Inner scrub only after the 100vh story block fills the viewport (below site header). */
+  /** Inner scrub once the 100vh story fills the viewport slot below the fixed header. */
   function isScrollStoryPinned(root) {
     var rect = root.getBoundingClientRect();
     var topInset = getSiteHeaderOffset();
     var vh = window.innerHeight;
-    return rect.top <= topInset + 2 && rect.bottom >= vh - 2;
+    var slotHeight = Math.min(rect.height, Math.max(0, vh - topInset));
+    if (slotHeight <= 0) return false;
+
+    var visibleTop = Math.max(rect.top, topInset);
+    var visibleBottom = Math.min(rect.bottom, vh);
+    var visibleHeight = Math.max(0, visibleBottom - visibleTop);
+    var topAligned = rect.top <= topInset + 8;
+
+    return topAligned && visibleHeight / slotHeight >= 0.9;
   }
 
   function setScrollStoryEngaged(state, engaged) {
