@@ -17,6 +17,7 @@ import { HomeFaqItems } from '@/components/home/HomeFaqItems';
 import { HeroInnerTrustSection } from '@/components/home/HeroInnerTrustSection';
 import { HeroTrustLogoGrid } from '@/components/home/HeroTrustLogoGrid';
 import { HomeHeroCopy } from '@/components/home/HomeHeroCopy';
+import { HeroSdbLiveMetric } from '@/components/home/HeroSdbLiveMetric';
 import { HomeNavigation } from '@/components/home/HomeNavigation';
 import { MultiTenantSifaSection } from '@/components/home/MultiTenantSifaSection';
 import { ProductDemoVideoSection } from '@/components/home/ProductDemoVideoSection';
@@ -78,6 +79,7 @@ const updatedHtml = replaceMarkedBlocks(html, {
   NAV_DESKTOP: () => renderHtml(<HomeNavigation variant="desktop" />),
   NAV_MOBILE: () => renderHtml(<HomeNavigation variant="mobile" />),
   HERO_COPY: () => renderHtml(<HomeHeroCopy />),
+  HERO_SDB_METRIC: () => renderHtml(<HeroSdbLiveMetric />),
   HERO_INNER_TRUST: () => renderHtml(<HeroInnerTrustSection />),
   HERO_TRUST_GRID: () => renderHtml(<HeroTrustLogoGrid />),
   OUTPUT_PREVIEW: () => renderHtml(<OutputPreviewSection />),

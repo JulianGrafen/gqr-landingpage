@@ -32,7 +32,7 @@ export const HOME_HERO = {
   headlineAccent: 'ohne Abtippen.',
   subheadlineParagraphs: [
     'KI liest aus, Sie geben frei.',
-    'Sparen Sie sich mehrere Stunden Arbeit pro Woche für Ihre Mandanten.',
+    'Sparen Sie sich mehrere Stunden Arbeit pro Woche: im eigenen Betrieb oder für Ihre Mandanten.',
   ],
   microcopy: 'Kein Verkaufsgespräch, testen Sie die Software in Ruhe',
   /** Linksspalte unter der Live-Demo: Nutzen (neben ROI-Rechner). */

@@ -50,10 +50,12 @@
  "Aktualität durch Echtzeit-Synchronisation mit dem Hauptkataster"
  ],
  "media": {
- "src": "/images/notfall-qr-scan-demo.gif?v=2",
- "alt": "Demonstration: Smartphone scannt Gefahrstoff-QR-Code am Gebinde und öffnet die Notfallansicht",
- "width": 473,
- "height": 1024,
+ "kind": "video",
+ "src": "/videos/notfall-qr-scan-demo.mp4?v=1",
+ "alt": "Smartphone scannt den Gefahrstoff-QR-Code; Verknüpfung zur Notfallansicht in der App",
+ "title": "QR-Scan mit der Gefahrstoff App am Gefahrstoffregal",
+ "width": 320,
+ "height": 692,
  "variant": "portrait"
  },
  "reverse": true,

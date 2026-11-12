@@ -9,6 +9,7 @@ import {
  GEFAHrstoff_APP_COMPARISON,
  GEFAHrstoff_APP_SILO_CONFIG,
 } from '@/config/seo-silo/pages/gefahrstoff-app';
+import { NOTFALL_QR_SCAN_DEMO } from '@/config/home-sections/notfall-qr-scan-demo';
 
 export function GefahrstoffAppSiloPage() {
  return (
@@ -43,10 +44,12 @@ export function GefahrstoffAppSiloPage() {
  'Aktualität durch Echtzeit-Synchronisation mit dem Hauptkataster',
  ]}
  media={{
- src: '/images/notfall-qr-scan-demo.gif?v=2',
- alt: 'Demonstration: Smartphone scannt Gefahrstoff-QR-Code am Gebinde und öffnet die Notfallansicht',
- width: 473,
- height: 1024,
+ kind: 'video',
+ src: NOTFALL_QR_SCAN_DEMO.mp4Src,
+ title: NOTFALL_QR_SCAN_DEMO.title,
+ alt: NOTFALL_QR_SCAN_DEMO.ariaLabel,
+ width: NOTFALL_QR_SCAN_DEMO.width,
+ height: NOTFALL_QR_SCAN_DEMO.height,
  }}
  mediaVariant="portrait"
  reverse

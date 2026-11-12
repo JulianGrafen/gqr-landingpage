@@ -3267,20 +3267,32 @@ button.sds-entry-card__summary:focus-visible {
   min-height: unset;
   max-height: min(72vh, 640px);
   margin-inline: auto;
-  padding: clamp(10px, 1.5vw, 14px);
+  padding: clamp(4px, 0.65vw, 6px);
+  border-radius: 1.35rem;
+  border-color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(165deg, #2a2a2e 0%, #121214 48%, #050506 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.85),
+    0 20px 48px -16px rgba(0, 0, 0, 0.75);
 }
 
 #notfall-scan .zigzag-frame__stage--phone {
-  background: #0a0a0a;
+  background: #000;
+  border-radius: calc(1.35rem - 5px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
 }
 
-#notfall-scan .zigzag-frame__img--portrait {
+#notfall-scan .zigzag-frame__img--portrait,
+#notfall-scan video.zigzag-frame__img--portrait {
   width: 100%;
   height: 100%;
   max-width: none;
   max-height: none;
   object-fit: contain;
   object-position: center;
+  display: block;
+  background: #000;
 }
 
 .pain-grid {
@@ -5024,12 +5036,68 @@ button.sds-entry-card__summary:focus-visible {
   color: #8fa4c0;
 }
 
+.sds-hero__preview-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.sds-hero__metric {
+  margin: 0;
+  padding: 1rem 1.15rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(45, 212, 191, 0.22);
+  background: linear-gradient(165deg, rgba(15, 30, 53, 0.92) 0%, rgba(10, 22, 40, 0.98) 100%);
+  box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.55);
+}
+
+.sds-hero__metric-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ff6b35;
+}
+
+.sds-hero__metric-copy {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: #c5d0e2;
+}
+
+.sds-hero__metric-count {
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #f0f6ff;
+  font-variant-numeric: tabular-nums;
+}
+
 @media (min-width: 1024px) {
   .sds-hero__preview-row {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
-    gap: clamp(24px, 4vw, 48px);
-    align-items: start;
+    grid-template-columns: minmax(0, 11.5rem) minmax(0, 1fr);
+    gap: clamp(0.85rem, 1.8vw, 1.35rem);
+    align-items: stretch;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .sds-hero__metric {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: stretch;
+    padding: 1.1rem 1rem;
+  }
+
+  .sds-hero__metric-copy {
+    font-size: 0.82rem;
+    line-height: 1.5;
   }
 }
 
@@ -5628,11 +5696,13 @@ body.trial-modal-open {
     min-height: 100%;
   }
 
-  .sds-hero__preview #sdb-live-preview-root {
+  .sds-hero__preview #sdb-live-preview-root,
+  .sds-hero__preview .sds-hero__preview-main {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     min-height: 0;
+    min-width: 0;
   }
 
   .sds-hero__preview [data-sdb-live-preview] {

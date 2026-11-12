@@ -13,6 +13,9 @@ type LandingSplitMediaSectionProps = {
     width: number;
     height: number;
     webpSrc?: string;
+    /** Portrait-Loop-Demo (MP4) statt statischem Bild */
+    kind?: 'image' | 'video';
+    title?: string;
   };
   reverse?: boolean;
   cta?: SeoSiloCta;
@@ -43,20 +46,36 @@ export function LandingSplitMediaSection({
     >
       {isPortrait ? (
         <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-gqr-bg shadow-2xl shadow-black/40">
-          <picture>
-            {media.webpSrc ? (
-              <source srcSet={media.webpSrc} type="image/webp" />
-            ) : null}
-            <img
+          {media.kind === 'video' ? (
+            <video
               src={media.src}
               width={media.width}
               height={media.height}
               className="h-auto w-[260px] max-w-full object-cover object-top sm:w-[280px]"
-              loading="lazy"
-              decoding="async"
-              alt={media.alt}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              title={media.title ?? media.alt}
+              aria-label={media.alt}
             />
-          </picture>
+          ) : (
+            <picture>
+              {media.webpSrc ? (
+                <source srcSet={media.webpSrc} type="image/webp" />
+              ) : null}
+              <img
+                src={media.src}
+                width={media.width}
+                height={media.height}
+                className="h-auto w-[260px] max-w-full object-cover object-top sm:w-[280px]"
+                loading="lazy"
+                decoding="async"
+                alt={media.alt}
+              />
+            </picture>
+          )}
         </div>
       ) : (
         <picture>

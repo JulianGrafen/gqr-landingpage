@@ -35,7 +35,7 @@ if (!pricingSectionMatch) {
 let pricingSection = pricingSectionMatch[0];
 
 const pricingScriptMatch = homeHtml.match(
-  /<script src="\/scripts\/pricing-billing\.js" defer><\/script>/,
+  /<script src="\/scripts\/pricing-billing\.js(?:\?v=\d+)?" defer><\/script>/,
 );
 if (!pricingScriptMatch) {
   console.error('scripts/pricing-billing.js in index.html nicht gefunden.');
@@ -74,7 +74,7 @@ function replacePricingSection(pageHtml, section) {
 function replacePricingScript(pageHtml, script) {
   const inlinePattern =
     /<script>\s*\(function \(\) \{\s*var[\s\S]*?billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/;
-  const externalPattern = /<script src="\/scripts\/pricing-billing\.js" defer><\/script>/;
+  const externalPattern = /<script src="\/scripts\/pricing-billing\.js(?:\?v=\d+)?" defer><\/script>/;
   if (inlinePattern.test(pageHtml)) {
     return pageHtml.replace(inlinePattern, script);
   }
@@ -95,7 +95,7 @@ const PRICING_FEATURES_SCRIPT =
 
 function ensurePricingFeaturesScript(pageHtml) {
   if (pageHtml.includes('/scripts/pricing-tier-features.js')) return pageHtml;
-  const billingTag = /<script src="\/scripts\/pricing-billing\.js" defer><\/script>/;
+  const billingTag = /<script src="\/scripts\/pricing-billing\.js(?:\?v=\d+)?" defer><\/script>/;
   if (billingTag.test(pageHtml)) {
     return pageHtml.replace(billingTag, (match) => `${match}${PRICING_FEATURES_SCRIPT}`);
   }

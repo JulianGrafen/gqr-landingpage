@@ -34,8 +34,9 @@
   var checkoutLinks = document.querySelectorAll('[data-pricing-cta]');
 
   var hints = {
-    monthly: 'Monatliche Abrechnung, monatlich kündbar.',
-    yearly: 'Jährliche Abrechnung (Standard) — effektiv bis zu 17 % günstiger.',
+    monthly: 'Monatliche Abrechnung, monatlich kündbar. Kauf auf Rechnung immer möglich.',
+    yearly:
+      'Jährliche Abrechnung (Standard) — effektiv bis zu 17 % günstiger. Kauf auf Rechnung immer möglich.',
   };
 
   var footnotes = {
@@ -69,10 +70,10 @@
       var yTotal = getYearlyTotal(el, monthly);
       return (
         prefixText +
-        formatAmount(yTotal, 0) +
-        '\u00a0\u20ac/Jahr · ' +
         formatAmount(yMonthly, 0) +
-        '\u00a0\u20ac/Monat'
+        '\u00a0\u20ac/Monat · ' +
+        formatAmount(yTotal, 0) +
+        '\u00a0\u20ac/Jahr'
       );
     }
     return prefixText + formatAmount(monthly, 0) + '\u00a0\u20ac/Monat';
@@ -137,16 +138,19 @@
         var yMonthly = getYearlyMonthly(block, monthly);
         var yTotal = getYearlyTotal(block, monthly);
         block.classList.add('is-pricing-updating');
-        amountEl.textContent = formatAmount(yTotal, 0);
-        periodEl.textContent = '/Jahr';
+        amountEl.textContent = formatAmount(yMonthly, 0);
+        periodEl.textContent = '/Monat';
         if (anchorEl) {
-          anchorEl.hidden = true;
+          if (monthly > yMonthly) {
+            anchorEl.hidden = false;
+            anchorEl.textContent = formatAmount(monthly, 0) + '\u00a0\u20ac';
+          } else {
+            anchorEl.hidden = true;
+          }
         }
         if (noteEl && !noteEl.classList.contains('pricing-tier__price-note--spacer')) {
           noteEl.textContent =
-            'Entspricht ' +
-            formatAmount(yMonthly, 0) +
-            ' \u20ac/Monat \u00b7 Standard bei Jahreszahlung';
+            formatAmount(yTotal, 0) + ' \u20ac j\u00e4hrlich abgerechnet';
           noteEl.hidden = false;
         }
       } else {

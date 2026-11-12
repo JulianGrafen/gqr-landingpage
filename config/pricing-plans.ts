@@ -20,6 +20,9 @@ export const PRICING_VISIBLE_FEATURE_COUNT = 3;
 /** Begehungserfassung ohne vorliegendes SDB (alle bezahlten Pakete). */
 export const PRICING_FEATURE_BEGEHUNGS_MODUS =
   'Erfassung auch ohne SDB (Begehungs-Modus)' as const;
+/** B2B-Zahlungsart auf allen Preiskarten (Startseite #preise). */
+export const PRICING_FEATURE_INVOICE_SEPA =
+  'Kauf auf Rechnung / SEPA-Überweisung' as const;
 /** Legacy-Hilfswert; jährliche Preise sind in `yearlyMonthlyPriceEur` fest definiert. */
 export const YEARLY_DISCOUNT_PERCENT = 15;
 export const PRICING_UPDATED_LABEL = 'November 2026';
@@ -61,6 +64,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
       'KI-Auswertung im Browser ansehen',
       'PDF-Vorschau nur mit „MUSTER“-Wasserzeichen',
       'Kein Excel-Export, keine dauerhaften QR-Links',
+      PRICING_FEATURE_INVOICE_SEPA,
     ],
     ctaLabel: PRICING_CARD_CTA_LABEL,
   },
@@ -77,6 +81,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
       'KI-gestützte BA-Entwürfe',
       'PDF- & Excel-Export (ohne Wasserzeichen)',
       'Aktive QR-Notfallansicht am Arbeitsplatz',
+      PRICING_FEATURE_INVOICE_SEPA,
     ],
     ctaLabel: PRICING_CARD_CTA_LABEL,
   },
@@ -95,6 +100,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
       'Mehrere Nutzer-Logins',
       'KI-gestützte BA-Entwürfe & PDF/Excel-Export',
       'SDB-Aktualitäts-Alerts',
+      PRICING_FEATURE_INVOICE_SEPA,
     ],
     ctaLabel: PRICING_CARD_CTA_LABEL,
   },
@@ -112,7 +118,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
       'Saubere Mandanten-, Werks- & Tätigkeitstrennung',
       PRICING_FEATURE_BEGEHUNGS_MODUS,
       'Batch-Upload & alle PDF/Excel-Exporte inkl. GHS',
-      'Direktkauf auf monatliche PDF-Rechnung möglich',
+      PRICING_FEATURE_INVOICE_SEPA,
     ],
     ctaLabel: PRICING_CARD_CTA_LABEL,
   },
@@ -129,6 +135,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
       'SSO (Single Sign-On)',
       'Dedizierter AVV-Support',
       'Individuelle Einführung & Jahresvertrag auf Anfrage',
+      PRICING_FEATURE_INVOICE_SEPA,
     ],
     ctaLabel: PRICING_CARD_CTA_LABEL,
   },

@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { HOME_SECTION_STYLES as styles } from '@/components/home/home-section-styles';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { TURNKEY_AUDIT } from '@/config/home-sections/turnkey-audit';
+import { PRICING_FEATURE_INVOICE_SEPA } from '@/config/pricing-plans';
 import { buildTurnkeyAuditServiceSchema } from '@/lib/seo/build-turnkey-service-schema';
 
 const CHECKMARK = '✓';
@@ -75,6 +76,12 @@ function TurnkeyPriceCard() {
       </p>
       <p className="mt-1 text-3xl font-black tracking-tight text-[#f0f6ff] sm:text-4xl">{pricing.priceLabel}</p>
       <p className="mt-1 text-sm font-semibold text-[#8fa4c0]">{pricing.priceNote}</p>
+      <p className="mt-4 flex gap-2 text-sm leading-relaxed text-[#c5d0e2]">
+        <span className={`${styles.checkmark} shrink-0`} aria-hidden="true">
+          {CHECKMARK}
+        </span>
+        {PRICING_FEATURE_INVOICE_SEPA}
+      </p>
 
       <div className="mt-5 flex flex-col gap-3">
         <a className="btn-cta-orange btn-cta-orange--block sds-hero__cta text-center" href={cta.href}>
