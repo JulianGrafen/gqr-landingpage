@@ -66,7 +66,7 @@ export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
   {
     question: 'Was kostet Gefahrstoff-QR?',
     answer:
-      `Die TarifVorschau ist kostenlos (bis zu 3 SDB-Uploads, PDF nur mit „MUSTER“-Wasserzeichen). KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, bis ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe inklusive, ${SIFA_MANDANT_EXTENSION_LABEL}, PDF-Rechnung möglich). Industrie: ab 399 € pro Monat (ab 250 Gefahrstoffen, ab 4 Werken, SSO, dedizierter AVV-Support, Anfrage). Alle Preise zzgl. MwSt., monatlich kündbar.`,
+      `Die TarifVorschau ist kostenlos (bis zu 3 SDB-Uploads, PDF nur mit „MUSTER“-Wasserzeichen). KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, bis ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe inklusive, ${SIFA_MANDANT_EXTENSION_LABEL}, PDF-Rechnung möglich). Industrie: ab 399 € pro Monat (339 €/Monat bei Jahreszahlung, ab 250 Gefahrstoffen, ab 4 Werken, SSO, dedizierter AVV-Support, Anfrage). Alle Preise zzgl. MwSt., monatlich kündbar.`,
   },
   {
     question: 'Wo werden die Daten gehostet?',

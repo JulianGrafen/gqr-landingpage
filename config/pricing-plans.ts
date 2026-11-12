@@ -127,8 +127,8 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
     name: 'Industrie',
     audience: 'Für Konzerne, Werksverbünde & hohe Stoffzahlen.',
     monthlyPriceEur: 399,
-    yearlyMonthlyPriceEur: 399,
-    yearlyTotalPriceEur: 4788,
+    yearlyMonthlyPriceEur: 339,
+    yearlyTotalPriceEur: 4068,
     limits: 'ab 250 Gefahrstoffen, ab 4 Werken (Fair-Use)',
     features: [
       'Alles aus KMU Pro',

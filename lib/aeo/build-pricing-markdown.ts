@@ -32,7 +32,7 @@ export function buildPricingMarkdown(): string {
   return [
     `# Preise: ${PRODUCT_ENTITY.name}`,
     '',
-    `Stand: ${PRICING_UPDATED_LABEL}. Alle Preise zzgl. MwSt. Monatliche Abrechnung, monatlich kündbar. Standard-Ansicht: jährliche Vorauszahlung zum reduzierten Monatspreis (49 / 99 / 159 €; Industrie 399 €). Angebot ausschließlich für Unternehmen, Gewerbetreibende und freiberufliche Sicherheitsfachkräfte (§ 14 BGB).`,
+    `Stand: ${PRICING_UPDATED_LABEL}. Alle Preise zzgl. MwSt. Monatliche Abrechnung, monatlich kündbar. Standard-Ansicht: jährliche Vorauszahlung zum reduzierten Monatspreis (49 / 99 / 159 / 339 €). Angebot ausschließlich für Unternehmen, Gewerbetreibende und freiberufliche Sicherheitsfachkräfte (§ 14 BGB).`,
     `Registrierung ohne Kreditkarte: ${APP_REGISTER_URL}`,
     '',
     `Hinweis: KI-Funktionen liefern Entwürfe. ${HUMAN_IN_THE_LOOP_NOTICE}`,
