@@ -18,6 +18,10 @@
     "sifa-multi-mandant": {
       "monthly": "https://buy.stripe.com/6oU14m9ej1FQ5DT16odAk04",
       "yearly": "https://buy.stripe.com/eVqcN43TZ84e4zPaGYdAk01"
+    },
+    "industrie": {
+      "monthly": "https://buy.stripe.com/dRm28q2PVacm8Q5dTadAk07",
+      "yearly": "https://buy.stripe.com/dRm9ASbmr84e7M16qIdAk08"
     }
   };
 
