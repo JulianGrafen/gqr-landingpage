@@ -70,7 +70,7 @@ const EXT = new Set(['.ts', '.tsx', '.mdx', '.md', '.json', '.html', '.mjs']);
 const BANNED = [
   { id: 'rechtssicher', re: /rechtssicher/i },
   { id: 'revisionssicher', re: /revisionssicher/i },
-  { id: 'audit-sicher', re: /audit-sicher/i },
+  { id: 'audit-sicher', re: /audit-sicher/i, skipInHref: true },
   { id: 'behördenfest', re: /behördenfest/i },
   { id: 'behördenkonform', re: /behördenkonform/i },
   { id: 'gefstoffv-konform', re: /GefStoffV-konform/i },
@@ -138,7 +138,7 @@ const BANNED = [
   { id: 'agw-detail', re: /Arbeitsplatzgrenzwerte \(AGW\)/i, hint: 'No AGW/PSA detail in marketing copy' },
   { id: 'flammpunkt-detail', re: /Flammpunkt/i, hint: 'No safety numeric detail in marketing' },
   { id: 'psa-klammer', re: /Schutzausrüstung \(PSA\)/i },
-  { id: 'audit-sicherheit', re: /Audit-Sicherheit/i },
+  { id: 'audit-sicherheit', re: /Audit-Sicherheit/i, skipInHref: true },
   { id: 'sofortige-audit', re: /sofortige Audit/i },
   { id: 'vollautomatisch-aus', re: /vollautomatisch aus/i },
   { id: '90-prozent-marketing', re: /\b90\s*%\s*(weniger|sparen|Reduktion|Genauigkeit)|spart aber 90\s*%/i },

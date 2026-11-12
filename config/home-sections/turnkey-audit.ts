@@ -13,7 +13,7 @@ export const TURNKEY_AUDIT = {
     'Was kostet die komplette Erstellung eines Gefahrstoffverzeichnisses? Mit dem schlüsselfertigen Audit-Service von Gefahrstoff-QR digitalisieren wir Ihren gesamten Altbestand (bis zu 150 Sicherheitsdatenblätter) innerhalb von 48 Stunden für einmalig 2.900 € netto – inklusive Prüfung auf Zusammenlagerungsverbote nach TRGS 510, Betriebsanweisungs-Entwürfen nach TRGS 555, gedruckten QR-Code-Etiketten und 12 Monaten Pro-Softwarezugang.',
   pillars: [
     'Komplette SDB-Digitalisierung (bis 150 Stoffe): Sie schicken uns Ihren unsortierten PDF-Ordner oder Ihre alte Excel-Liste – wir übernehmen den kompletten Import.',
-    'Rechtssicheres Gefahrstoffverzeichnis (§ 6 GefStoffV): Vollständige Strukturierung nach Arbeitsbereichen, Mengen, CLP-Einstufung, H-/P-Sätzen und KMR-Hinweisen.',
+    'Gefahrstoffverzeichnis (§ 6 GefStoffV): Strukturierung nach Arbeitsbereichen, Mengen, CLP-Einstufung, H-/P-Sätzen und KMR-Hinweisen zur Vorprüfung.',
     'TRGS-510-Lagerklassen-Abgleich: Automatische Identifikation von Zusammenlagerungskonflikten und Separatlagerungspflichten pro Lagerort.',
     'Betriebsanweisungen (TRGS 555) & wetterfeste QR-Etiketten: KI-gestützte BA-Entwürfe zur fachlichen Freigabe durch die SiFa bzw. den Arbeitgeber sowie fertig gedruckte QR-Plaketten für Ihre Regale und Gebinde.',
     '12 Monate Gefahrstoff-QR Professional inklusive: Voller Cloud-Zugang (Wert: 2.388 €) für lückenlosen Revisionsverlauf bei BG-, ISO- und Behörden-Audits.',
@@ -22,7 +22,7 @@ export const TURNKEY_AUDIT = {
     aeoSummary: 'Was kostet die komplette Erstellung eines Gefahrstoffverzeichnisses?',
     pillarsSummary: '5 Leistungsbestandteile im Komplett-Paket',
     factsSummary: 'Paketdaten auf einen Blick',
-    guaranteeSummary: '100 % Audit-Vorbereitungs-Garantie',
+    guaranteeSummary: 'Audit-Vorbereitung mit Nachbesserungszusage',
   },
   pricing: {
     anchorLabel: 'Klassisches Ingenieurbüro (ca. 60 Std. Handarbeit): ~6.600 €',
@@ -30,7 +30,7 @@ export const TURNKEY_AUDIT = {
     priceNote: 'netto einmalig · inkl. 12 Monate Software',
     capacityBadge: 'Nur 3 Onboarding-Slots pro Monat für persönliche 4-Augen-Prüfung',
     guarantee:
-      '100 % Audit-Vorbereitungs-Garantie: Falls ein Prüfer der BG oder Gewerbeaufsicht formale Pflichtangaben nach § 6 GefStoffV im exportierten Verzeichnis bemängelt, passen wir die Struktur innerhalb von 24h kostenfrei an.',
+      'Audit-Vorbereitung mit Nachbesserungszusage: Falls ein Prüfer der BG oder Gewerbeaufsicht formale Pflichtangaben nach § 6 GefStoffV im exportierten Verzeichnis bemängelt, passen wir die Struktur innerhalb von 24h kostenfrei an.',
   },
   cta: {
     label: 'Schlüsselfertiges Kataster anfragen (48h-Express)',

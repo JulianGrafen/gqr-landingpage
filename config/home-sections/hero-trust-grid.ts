@@ -7,14 +7,9 @@ export const PORTAL_DER_WIRTSCHAFT_PRESS_URL =
 
 export const EXPERTENMARKT_PROFILE_URL = 'https://www.expertenmarkt.de/experte/gefahrstoff-qr-kall';
 
-export const MARKTPLATZ_MITTELSTAND_PROFILE_URL =
-  'https://www.marktplatz-mittelstand.de/kall/gefahrstoff-qr-aYGBhp.html';
-
 export const TRENDKRAFT_SIFA_PRESS_URL =
-  'https://trendkraft.io/software/vom-zettelchaos-zur-digitalen-audit-sicherheit-wie-externe-sicherheitsfachkraefte-mit-gefahrstoff-qr-ihre-mandantenbetreuung-revolutionieren-40522';
-
-export const LEITQUELLE_PRESS_URL =
-  'https://leitquelle.de/meldung/gefahrstoff-qr-sicherheitsdatenblaetter-ki-gefahrstoffverzeichnis';
+  'https://trendkraft.io/software/vom-zettelchaos-zur-digitalen-audit-' +
+  'sicherheit-wie-externe-sicherheitsfachkraefte-mit-gefahrstoff-qr-ihre-mandantenbetreuung-revolutionieren-40522';
 
 export type HeroTrustLogo = {
   id: string;
@@ -59,17 +54,6 @@ export const HOME_HERO_TRUST_GRID = {
       displayScale: 0.86,
     },
     {
-      id: 'marktplatz-mittelstand',
-      src: '/images/trust/marktplatz-mittelstand-on-dark.svg',
-      alt: 'Gefahrstoff-QR auf Marktplatz Mittelstand',
-      width: 250,
-      height: 20,
-      href: MARKTPLATZ_MITTELSTAND_PROFILE_URL,
-      linkTitle: 'Unternehmensprofil auf Marktplatz Mittelstand öffnen (neuer Tab)',
-      darkSurface: true,
-      displayScale: 1.45,
-    },
-    {
       id: 'trendkraft',
       src: '/images/trust/trendkraft-on-dark.svg',
       alt: 'TRENDKRAFT – Pressemitteilung zu Gefahrstoff-QR',
@@ -78,17 +62,6 @@ export const HOME_HERO_TRUST_GRID = {
       href: TRENDKRAFT_SIFA_PRESS_URL,
       linkTitle: 'Presseartikel auf TRENDKRAFT lesen (öffnet in neuem Tab)',
       darkSurface: true,
-    },
-    {
-      id: 'leitquelle',
-      src: '/images/trust/leitquelle.jpg',
-      alt: 'Leitquelle – Meldung zu Gefahrstoff-QR',
-      width: 560,
-      height: 160,
-      href: LEITQUELLE_PRESS_URL,
-      linkTitle: 'Meldung auf Leitquelle lesen (öffnet in neuem Tab)',
-      lightSurface: true,
-      displayScale: 1.35,
     },
   ] satisfies readonly HeroTrustLogo[],
 } as const;

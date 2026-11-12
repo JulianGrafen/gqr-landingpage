@@ -2038,6 +2038,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Industrielle Instandhaltung",
     ],
   },
+  {
+    slug: 'felgenreiniger-trgs-555',
+    substanceName: "Felgenreiniger",
+    metaDescription: "Betriebsanweisung Felgenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Car detailing & Aufbereitung",
+      "Fuhrpark & Logistik",
+      "Waschanlage & Fahrzeugreinigung",
+    ],
+  },
+  {
+    slug: 'poliermittel-trgs-555',
+    substanceName: "Poliermittel",
+    metaDescription: "Betriebsanweisung Poliermittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Car detailing & Aufbereitung",
+      "Malerbetrieb & Lackierung",
+      "Bootsbau & Yachtpflege",
+    ],
+  },
+  {
+    slug: 'holzoel-trgs-555',
+    substanceName: "Holzöl",
+    metaDescription: "Betriebsanweisung Holzöl: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Schreinerei & Holzverarbeitung",
+      "Tischlerei & Innenausbau",
+      "Möbelbau & Küchenstudio",
+      "Garten- & Landschaftsbau",
+    ],
+  },
+  {
+    slug: 'grundierung-trgs-555',
+    substanceName: "Grundierung",
+    metaDescription: "Betriebsanweisung Grundierung: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Karosseriebau & Kfz-Lackierung",
+      "Bau & Handwerk",
+      "Industrielle Beschichtung",
+    ],
+  },
+  {
+    slug: 'kettenreiniger-trgs-555',
+    substanceName: "Kettenreiniger",
+    metaDescription: "Betriebsanweisung Kettenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Fahrradwerkstatt & Zweiradhandel",
+      "Forst & Gartenbau",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'kaltreiniger-trgs-555',
+    substanceName: "Kaltreiniger",
+    metaDescription: "Betriebsanweisung Kaltreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Metallverarbeitung & Zerspanung",
+      "Maschinenbau & Anlagenbau",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'insektenspray-trgs-555',
+    substanceName: "Insektenspray",
+    metaDescription: "Betriebsanweisung Insektenspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Hausmeisterdienst & Objektbetreuung",
+      "Garten- & Landschaftsbau",
+      "Hotellerie & Gastgewerbe",
+    ],
+  },
+  {
+    slug: 'textilreiniger-trgs-555',
+    substanceName: "Textilreiniger",
+    metaDescription: "Betriebsanweisung Textilreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Textilreinigung & Wäscherei",
+      "Hotellerie & Gastgewerbe",
+      "Polsterei & Raumausstatter",
+    ],
+  },
+  {
+    slug: 'lederpflegemittel-trgs-555',
+    substanceName: "Lederpflegemittel",
+    metaDescription: "Betriebsanweisung Lederpflegemittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Polsterei & Raumausstatter",
+      "Car detailing & Aufbereitung",
+      "Schuhwerkstatt & Lederwaren",
+    ],
+  },
+  {
+    slug: 'schmierspray-trgs-555',
+    substanceName: "Schmierspray",
+    metaDescription: "Betriebsanweisung Schmierspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Maschinenbau & Anlagenbau",
+      "Elektroinstallation & Gebäudetechnik",
+      "Metallbau & Schweißtechnik",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
