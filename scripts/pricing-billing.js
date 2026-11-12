@@ -20,8 +20,8 @@
       "yearly": "https://buy.stripe.com/eVqcN43TZ84e4zPaGYdAk01"
     },
     "industrie": {
-      "monthly": "https://buy.stripe.com/dRm28q2PVacm8Q5dTadAk07",
-      "yearly": "https://buy.stripe.com/dRm9ASbmr84e7M16qIdAk08"
+      "monthly": "https://buy.stripe.com/dRm9ASbmr84e7M16qIdAk08",
+      "yearly": "https://buy.stripe.com/dRm28q2PVacm8Q5dTadAk07"
     }
   };
 
