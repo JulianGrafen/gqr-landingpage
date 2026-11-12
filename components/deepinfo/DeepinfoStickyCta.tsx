@@ -6,12 +6,13 @@ import { useEffect, useState } from 'react';
 type DeepinfoStickyCtaProps = {
  text: string;
  ctaText: string;
+ ctaHref: string;
  variant: 'sidebar' | 'mobile';
 };
 
 const SCROLL_THRESHOLD = 320;
 
-export function DeepinfoStickyCta({ text, ctaText, variant }: DeepinfoStickyCtaProps) {
+export function DeepinfoStickyCta({ text, ctaText, ctaHref, variant }: DeepinfoStickyCtaProps) {
  const [visible, setVisible] = useState(false);
 
  useEffect(() => {
@@ -27,7 +28,7 @@ export function DeepinfoStickyCta({ text, ctaText, variant }: DeepinfoStickyCtaP
  <h3>{text}</h3>
  <p>Unverbindlich · Keine Kreditkarte · KI-Sicherheitsdatenblatt-Import</p>
  <Link
- href="https://app.gefahrstoff-qr.de/register"
+ href={ctaHref}
  className="gqr-cta-primary gqr-cta-primary--md mt-2 box-border flex w-full max-w-full no-underline"
  >
  {ctaText}
@@ -46,7 +47,7 @@ export function DeepinfoStickyCta({ text, ctaText, variant }: DeepinfoStickyCtaP
  <div className="mx-auto flex max-w-lg items-center gap-3">
  <p className="min-w-0 flex-1 text-xs font-semibold leading-snug text-gqr-soft">{text}</p>
  <Link
- href="https://app.gefahrstoff-qr.de/register"
+ href={ctaHref}
  className="gqr-cta-primary gqr-cta-primary--compact shrink-0 no-underline"
  >
  Jetzt starten

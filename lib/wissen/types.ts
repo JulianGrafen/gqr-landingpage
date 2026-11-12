@@ -34,6 +34,10 @@ export interface DeepinfoPageMeta {
   ctaText: string;
   stickyCtaText: string;
   breadcrumbLabel: string;
+  /** Optional: `<title>` ohne Layout-Suffix (z. B. High-Intent SERP). */
+  documentTitle?: string;
+  /** DFY-Turnkey-Block ganz oben (2.900-€-Paket). */
+  showTurnkeyAudit?: boolean;
   comparison?: DeepinfoComparisonConfig;
   faq: DeepinfoFaqItem[];
 }

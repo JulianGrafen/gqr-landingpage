@@ -3,12 +3,12 @@
 import Link from 'next/link';
 import { GqrBrandLogo } from '@/components/GqrBrandLogo';
 import { APP_LOGIN_URL } from '@/config/aeo-config';
-import { HOME_NAVIGATION } from '@/config/home-sections/hero';
+import { HOME_HERO, HOME_NAVIGATION } from '@/config/home-sections/hero';
 import { useHeaderStickyCta } from '@/hooks/useHeaderStickyCta';
 import { SITE_HEADER_ELEMENT_ID } from '@/lib/marketing/sticky-header-cta';
 
 const nav = [
-  { href: '/#produkt', label: 'Produkt' },
+  { href: '/#funktionen', label: 'Produkt' },
   { href: '/#funktionen', label: 'Funktionen' },
   { href: '/#preise', label: 'Preise' },
   { href: '/#faq', label: 'FAQ' },
@@ -89,14 +89,16 @@ export function SiteHeader() {
         </div>
       </header>
 
-      <Link
-        href={headerCtaHref}
+      <div
         data-header-sticky-cta=""
         hidden={!stickyCtaVisible}
-        className={`header-sticky-cta${stickyCtaVisible ? ' is-visible' : ''}`}
+        className={`header-sticky-cta-bar${stickyCtaVisible ? ' is-visible' : ''}`}
       >
-        {headerCtaLabel} <span aria-hidden="true">→</span>
-      </Link>
+        <Link href={headerCtaHref} className="header-sticky-cta-bar__action">
+          {headerCtaLabel} <span aria-hidden="true">→</span>
+        </Link>
+        <p className="header-sticky-cta-bar__microcopy">{HOME_HERO.microcopy}</p>
+      </div>
     </>
   );
 }

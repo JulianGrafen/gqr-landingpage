@@ -18,19 +18,26 @@ export function MultiTenantSifaSection() {
           <p className={styles.lead}>{MULTI_TENANT_SIFA.intro}</p>
         </header>
 
-        <ul className="grid list-none gap-6 p-0 sm:grid-cols-2">
-          {MULTI_TENANT_SIFA.sellingPoints.map((point) => (
-            <li key={point.title} className={styles.card}>
-              <h3 className={`flex gap-2 ${styles.cardTitle}`}>
-                <span className={styles.checkmark} aria-hidden="true">
+        <div className={styles.sifaAccordion} role="list">
+          {MULTI_TENANT_SIFA.sellingPoints.map((point, index) => (
+            <details
+              key={point.title}
+              className={styles.sifaAccordionItem}
+              role="listitem"
+              open={index === 0}
+            >
+              <summary className={styles.sifaAccordionSummary}>
+                <span className={`${styles.checkmark} shrink-0`} aria-hidden="true">
                   ✓
                 </span>
-                {point.title}
-              </h3>
-              <p className={styles.cardText}>{point.description}</p>
-            </li>
+                <span>{point.title}</span>
+              </summary>
+              <div className={styles.sifaAccordionBody}>
+                <p className="m-0">{point.description}</p>
+              </div>
+            </details>
           ))}
-        </ul>
+        </div>
 
         <div className={styles.ctaGroup}>
           <a className={`${styles.primaryCta} sds-hero__cta`} href={MULTI_TENANT_SIFA.primaryCta.href}>

@@ -14,6 +14,8 @@ export interface FooterNavColumn {
 export const FOOTER_PRODUCT_LINKS = [
   { label: 'Live-Test', href: '/#live-demo' },
   { label: 'Preise', href: '/#preise' },
+  { label: 'Schlüsselfertig (2.900 €)', href: '/#schluesselfertig-service' },
+  { label: 'Kataster erstellen lassen', href: '/wissen/gefahrstoffkataster-erstellen-lassen/' },
   { label: 'Für SiFas', href: '/#fuer-sifas' },
   { label: 'TarifVorschau starten', href: 'https://app.gefahrstoff-qr.de/register' },
 ] as const satisfies readonly FooterLink[];

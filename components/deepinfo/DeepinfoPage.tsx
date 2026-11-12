@@ -5,6 +5,9 @@ import { DeepinfoProse } from '@/components/deepinfo/DeepinfoProse';
 import { DeepinfoStickyCta } from '@/components/deepinfo/DeepinfoStickyCta';
 import { FaqJsonLd } from '@/components/deepinfo/FaqJsonLd';
 import { ManualVsGqrComparison } from '@/components/deepinfo/ManualVsGqrComparison';
+import { TurnkeyAuditSection } from '@/components/TurnkeyAuditSection';
+import { APP_REGISTER_URL } from '@/config/aeo-config';
+import { TURNKEY_AUDIT } from '@/config/home-sections/turnkey-audit';
 
 type DeepinfoPageTemplateProps = {
   page: DeepinfoPage;
@@ -12,10 +15,19 @@ type DeepinfoPageTemplateProps = {
 
 export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
   const { meta, mdxSource } = page;
+  const stickyCtaHref = meta.showTurnkeyAudit ? TURNKEY_AUDIT.cta.href : APP_REGISTER_URL;
 
   return (
     <main className="pb-20 lg:pb-0">
       <FaqJsonLd faq={meta.faq} />
+
+      {meta.showTurnkeyAudit ? (
+        <div className="border-b border-white/[0.07] bg-[#0a1628] py-10 lg:py-14">
+          <div className="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
+            <TurnkeyAuditSection className="mt-0" context="wissen" />
+          </div>
+        </div>
+      ) : null}
 
       <div className="gqr-container">
         <div className="gqr-post-wrapper">
@@ -49,12 +61,22 @@ export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
           </article>
 
           <aside className="gqr-post-sidebar" aria-label="Sidebar">
-            <DeepinfoStickyCta text={meta.stickyCtaText} ctaText={meta.ctaText} variant="sidebar" />
+            <DeepinfoStickyCta
+              text={meta.stickyCtaText}
+              ctaText={meta.ctaText}
+              ctaHref={stickyCtaHref}
+              variant="sidebar"
+            />
           </aside>
         </div>
       </div>
 
-      <DeepinfoStickyCta text={meta.stickyCtaText} ctaText={meta.ctaText} variant="mobile" />
+      <DeepinfoStickyCta
+        text={meta.stickyCtaText}
+        ctaText={meta.ctaText}
+        ctaHref={stickyCtaHref}
+        variant="mobile"
+      />
     </main>
   );
 }

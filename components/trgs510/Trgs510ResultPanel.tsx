@@ -104,7 +104,7 @@ export function Trgs510ResultPanel({ result }: Trgs510ResultPanelProps) {
             GQR kostenlos testen
           </Link>
           <Link
-            href="/#produkt"
+            href="/#funktionen"
             className="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 px-5 text-sm font-bold text-[#f0f6ff] no-underline transition hover:border-white/35 hover:bg-white/[0.06]"
           >
             Zeig mir, wie das automatisch geht

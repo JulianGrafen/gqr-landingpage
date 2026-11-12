@@ -35,6 +35,4 @@ export const PRICING_SECTION_MARKETING = {
   billingHintMonthly: 'Monatliche Abrechnung, monatlich kündbar.',
   yearlyEquivalentNote: (monthlyEur: number) =>
     `Entspricht ${monthlyEur.toLocaleString('de-DE')} €/Monat · Standard bei Jahreszahlung`,
-  sifaInvoiceNote:
-    'Alternativ: Buchung auf PDF-Rechnung (support@gefahrstoff-qr.de)',
 } as const;

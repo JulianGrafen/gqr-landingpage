@@ -20,8 +20,8 @@ export function GefahrstoffkatasterSoftwareSiloPage() {
  image={{
  src: '/images/app-screenshot-dashboard.png',
  alt: 'Gefahrstoffkataster Software: Dashboard mit Sicherheitsdatenblatt-Status, Filtern und Compliance-KPIs',
- width: 2940,
- height: 1656,
+ width: 1024,
+ height: 581,
  }}
  />
  }
