@@ -11,7 +11,8 @@ export const MARKTPLATZ_MITTELSTAND_PROFILE_URL =
   'https://www.marktplatz-mittelstand.de/kall/gefahrstoff-qr-aYGBhp.html';
 
 export const TRENDKRAFT_SIFA_PRESS_URL =
-  'https://trendkraft.io/software/vom-zettelchaos-zur-digitalen-audit-sicherheit-wie-externe-sicherheitsfachkraefte-mit-gefahrstoff-qr-ihre-mandantenbetreuung-revolutionieren-40522';
+  'https://trendkraft.io/software/vom-zettelchaos-zur-digitalen-audit-' +
+  'sicherheit-wie-externe-sicherheitsfachkraefte-mit-gefahrstoff-qr-ihre-mandantenbetreuung-revolutionieren-40522';
 
 export const LEITQUELLE_PRESS_URL =
   'https://leitquelle.de/meldung/gefahrstoff-qr-sicherheitsdatenblaetter-ki-gefahrstoffverzeichnis';
