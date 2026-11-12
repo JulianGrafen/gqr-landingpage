@@ -23,12 +23,14 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
   const canonical = `${SITE_URL}${getDeepinfoCanonicalPath(page.meta.slug as DeepinfoSlug)}`;
 
+  const title = page.meta.documentTitle ?? page.meta.title;
+
   return {
-    title: page.meta.title,
+    title,
     description: page.meta.metaDescription,
     alternates: { canonical },
     openGraph: {
-      title: page.meta.title,
+      title,
       description: page.meta.metaDescription,
       url: canonical,
       siteName: 'Gefahrstoff-QR',
@@ -45,7 +47,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
     },
     twitter: {
       card: 'summary_large_image',
-      title: page.meta.title,
+      title,
       description: page.meta.metaDescription,
       images: ['/og-image.png'],
     },

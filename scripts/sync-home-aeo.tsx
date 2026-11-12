@@ -22,6 +22,7 @@ import { MultiTenantSifaSection } from '@/components/home/MultiTenantSifaSection
 import { ProductDemoVideoSection } from '@/components/home/ProductDemoVideoSection';
 import { VideoDemosSection } from '@/components/home/VideoDemosSection';
 import { OutputPreviewSection } from '@/components/home/OutputPreviewSection';
+import { TurnkeyAuditSection } from '@/components/TurnkeyAuditSection';
 import { EnterpriseSiteFooter } from '@/components/site/EnterpriseSiteFooter';
 import { LANDING_HOME_SEO_FAQ } from '@/config/landing-home-seo-faq';
 import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
@@ -82,6 +83,7 @@ const updatedHtml = replaceMarkedBlocks(html, {
   OUTPUT_PREVIEW: () => renderHtml(<OutputPreviewSection />),
   DATA_TRUST: () => renderHtml(<DataTrustSection />),
   SITE_FOOTER: () => renderHtml(<EnterpriseSiteFooter />),
+  TURNKEY_AUDIT: () => renderHtml(<TurnkeyAuditSection />),
 });
 
 writeFileSync(INDEX_HTML_PATH, updatedHtml, 'utf8');

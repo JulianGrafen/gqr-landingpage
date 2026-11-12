@@ -3969,6 +3969,45 @@ button.sds-entry-card__summary:focus-visible {
   border-radius: calc(var(--radius-lg) - 4px);
 }
 
+/* — Turnkey-DFY: kompakte Details unter #schluesselfertig-service — */
+.turnkey-audit-accordion {
+  position: relative;
+}
+
+.turnkey-audit-accordion summary {
+  position: relative;
+}
+
+.turnkey-audit-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.turnkey-audit-accordion summary::marker {
+  content: none;
+}
+
+.turnkey-audit-accordion summary::after {
+  content: '+';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.15rem;
+  line-height: 1;
+  font-weight: 600;
+  color: var(--color-trust);
+}
+
+.turnkey-audit-accordion[open] summary::after {
+  content: '–';
+}
+
+.turnkey-audit-accordion summary:focus-visible {
+  outline: 2px solid var(--color-trust);
+  outline-offset: 2px;
+  border-radius: 0.65rem;
+}
+
 /* — YouTube-Embed (#videos) — */
 .video-embed {
   position: relative;
