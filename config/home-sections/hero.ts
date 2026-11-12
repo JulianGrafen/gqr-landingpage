@@ -34,7 +34,6 @@ export const HOME_HERO = {
     'KI liest aus, Sie geben frei.',
     'Sparen Sie sich mehrere Stunden Arbeit pro Woche für Ihre Mandanten.',
   ],
-  secondaryCta: { label: 'Kostenlos registrieren', href: APP_REGISTER_URL },
   microcopy: 'Kein Verkaufsgespräch, testen Sie die Software in Ruhe',
   /** Linksspalte unter der Live-Demo: Nutzen (neben ROI-Rechner). */
   benefitBullets: [

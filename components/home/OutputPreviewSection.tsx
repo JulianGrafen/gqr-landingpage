@@ -14,15 +14,21 @@ function BetriebsanweisungSpotlightCard() {
     >
       <div className="output-preview-ba-spotlight__inner">
         <div className="output-preview-ba-spotlight__copy">
-          <p className={styles.eyebrow}>{spotlight.kicker}</p>
-          <h3 id="output-preview-ba-title" className="text-xl font-bold text-[#f0f6ff] sm:text-2xl">
+          <p className={`${styles.eyebrow} sm:text-base`}>{spotlight.kicker}</p>
+          <h3
+            id="output-preview-ba-title"
+            className="text-2xl font-black leading-tight text-[#f0f6ff] sm:text-3xl lg:text-4xl"
+          >
             {spotlight.title}
           </h3>
-          <p className="mt-3 text-sm leading-relaxed text-[#8fa4c0]">{spotlight.lead}</p>
-          <ul className="mt-4 list-none space-y-2 p-0">
+          <p className="mt-4 text-base leading-relaxed text-[#8fa4c0] sm:text-lg">{spotlight.lead}</p>
+          <ul className="mt-5 list-none space-y-3 p-0 sm:space-y-3.5">
             {spotlight.points.map((point) => (
-              <li key={point} className="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]">
-                <span className={styles.checkmark} aria-hidden="true">
+              <li
+                key={point}
+                className="flex gap-2.5 text-base leading-relaxed text-[#8fa4c0] sm:text-lg sm:leading-relaxed"
+              >
+                <span className={`${styles.checkmark} text-lg sm:text-xl`} aria-hidden="true">
                   ✓
                 </span>
                 {point}
@@ -30,7 +36,7 @@ function BetriebsanweisungSpotlightCard() {
             ))}
           </ul>
           <a
-            className="btn-glass-outline btn-glass-outline--block mt-6 max-w-sm"
+            className="btn-glass-outline btn-glass-outline--block mt-8 max-w-md text-base sm:text-lg"
             href={spotlight.downloadCta.href}
             download={spotlight.downloadCta.download}
           >
