@@ -2308,6 +2308,10 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   display: none;
 }
 
+.scroll-story__scroller--locked {
+  overflow: hidden;
+}
+
 .scroll-story__spacer {
   width: 100%;
 }
@@ -5039,65 +5043,34 @@ button.sds-entry-card__summary:focus-visible {
 .sds-hero__preview-row {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.65rem;
   width: 100%;
 }
 
 .sds-hero__metric {
   margin: 0;
-  padding: 1rem 1.15rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(45, 212, 191, 0.22);
-  background: linear-gradient(165deg, rgba(15, 30, 53, 0.92) 0%, rgba(10, 22, 40, 0.98) 100%);
-  box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.55);
-}
-
-.sds-hero__metric-eyebrow {
-  margin: 0 0 0.5rem;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #ff6b35;
-}
-
-.sds-hero__metric-copy {
-  margin: 0;
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1.55;
-  color: #c5d0e2;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #8fa4c0;
+  text-align: center;
 }
 
 .sds-hero__metric-count {
-  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  color: #f0f6ff;
+  font-weight: 800;
   font-variant-numeric: tabular-nums;
+  color: #f0f6ff;
 }
 
 @media (min-width: 1024px) {
   .sds-hero__preview-row {
-    display: grid;
-    grid-template-columns: minmax(0, 11.5rem) minmax(0, 1fr);
-    gap: clamp(0.85rem, 1.8vw, 1.35rem);
-    align-items: stretch;
+    gap: 0.75rem;
     flex: 1 1 auto;
     min-height: 0;
   }
 
   .sds-hero__metric {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: stretch;
-    padding: 1.1rem 1rem;
-  }
-
-  .sds-hero__metric-copy {
-    font-size: 0.82rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
   }
 }
 

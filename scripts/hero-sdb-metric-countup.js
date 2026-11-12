@@ -44,7 +44,7 @@
     requestAnimationFrame(tick);
   }
 
-  var root = counter.closest('.sds-hero__metric') || counter;
+  var root = counter.closest('#live-demo') || counter.closest('.sds-hero__metric') || counter;
 
   if ('IntersectionObserver' in window) {
     var observer = new IntersectionObserver(

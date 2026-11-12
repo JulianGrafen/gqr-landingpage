@@ -29,6 +29,44 @@
     return window.matchMedia(MOBILE_QUERY).matches;
   }
 
+  function getSiteHeaderOffset() {
+    var raw = window.getComputedStyle(document.documentElement).getPropertyValue('--site-header-height');
+    var parsed = parseFloat(raw);
+    return Number.isFinite(parsed) ? parsed : 0;
+  }
+
+  /** Inner scrub only after the 100vh story block fills the viewport (below site header). */
+  function isScrollStoryPinned(root) {
+    var rect = root.getBoundingClientRect();
+    var topInset = getSiteHeaderOffset();
+    var vh = window.innerHeight;
+    return rect.top <= topInset + 2 && rect.bottom >= vh - 2;
+  }
+
+  function setScrollStoryEngaged(state, engaged) {
+    if (engaged === state.isEngaged) return;
+    state.isEngaged = engaged;
+    state.root.classList.toggle('scroll-story--engaged', engaged);
+    if (state.scroller) {
+      state.scroller.classList.toggle('scroll-story__scroller--locked', !engaged);
+    }
+    if (!engaged && state.scroller) {
+      state.scroller.scrollTop = 0;
+      state.targetProgress = 0;
+      renderProgress(state, 0);
+      stopSmoothingLoop(state);
+      return;
+    }
+    if (engaged) {
+      state.scrollHandler();
+      if (!state.reducedMotion) startSmoothingLoop(state);
+    }
+  }
+
+  function syncScrollStoryEngagement(state) {
+    setScrollStoryEngaged(state, isScrollStoryPinned(state.root));
+  }
+
   /** Smooth bell-curve fade: one dominant slide, brief handoff at boundaries. */
   function getSlideOpacity(progress, index) {
     var dist = Math.abs(progress - index);
@@ -230,6 +268,15 @@
       state.frameObserver.disconnect();
     }
 
+    if (state.engagementHandler) {
+      window.removeEventListener('scroll', state.engagementHandler);
+    }
+
+    state.root.classList.remove('scroll-story--engaged');
+    if (state.scroller) {
+      state.scroller.classList.remove('scroll-story__scroller--locked');
+    }
+
     resetInlineStyles(state);
     root.classList.remove('scroll-story--mobile');
     root._scrollStoryState = null;
@@ -310,9 +357,11 @@
       targetProgress: 0,
       renderedProgress: 0,
       frameOffset: 0,
+      isEngaged: false,
       rafId: null,
       scrollHandler: null,
       resizeHandler: null,
+      engagementHandler: null,
       visibilityObserver: null,
     });
 
@@ -321,6 +370,8 @@
     }
 
     state.scrollHandler = function () {
+      if (!state.isEngaged) return;
+
       state.targetProgress = getScrollProgress(state.scroller, state.slideCount);
 
       if (state.reducedMotion) {
@@ -331,10 +382,18 @@
     state.resizeHandler = function () {
       measureCopyHeight(state);
       syncFrameSlides(state);
+      syncScrollStoryEngagement(state);
     };
+
+    state.engagementHandler = function () {
+      syncScrollStoryEngagement(state);
+    };
+
+    scroller.classList.add('scroll-story__scroller--locked');
 
     scroller.addEventListener('scroll', state.scrollHandler, { passive: true });
     window.addEventListener('resize', state.resizeHandler);
+    window.addEventListener('scroll', state.engagementHandler, { passive: true });
 
     if (state.frame && window.ResizeObserver) {
       state.frameObserver = new ResizeObserver(function () {
@@ -346,11 +405,10 @@
 
     state.visibilityObserver = new IntersectionObserver(function (entries) {
       var isVisible = entries[entries.length - 1].isIntersecting;
-      if (isVisible) {
-        state.scrollHandler();
-        if (!state.reducedMotion) startSmoothingLoop(state);
+      if (!isVisible) {
+        setScrollStoryEngaged(state, false);
       } else {
-        stopSmoothingLoop(state);
+        syncScrollStoryEngagement(state);
       }
     }, { threshold: 0 });
 
@@ -359,6 +417,7 @@
     measureCopyHeight(state);
     renderProgress(state, 0);
     syncFrameSlides(state);
+    syncScrollStoryEngagement(state);
     root._scrollStoryState = state;
   }
 
