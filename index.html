@@ -37,9 +37,9 @@
  <meta name="twitter:image" content="https://gefahrstoff-qr.de/og-image.png">
 
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="preload" href="style.css?v=85" as="style">
+  <link rel="preload" href="style.css?v=104" as="style">
  <link rel="preload" href="tw.css" as="style">
-  <link rel="stylesheet" href="style.css?v=85">
+  <link rel="stylesheet" href="style.css?v=104">
  <link rel="stylesheet" href="tw.css">
 
  <script type="application/ld+json">
@@ -392,7 +392,7 @@
  <div class="container sds-hero__top">
  <div class="sds-hero__headline">
 <!--AEO:HERO_COPY-->
-<p class="sds-hero__eyebrow">Für Selbstständige SiFa, KMU &amp; Konzerne</p><h1 id="heroHeadline" class="sds-hero__title"><span class="sds-hero__title-line">Gefahrstoff­kataster &amp; BA-Entwurf</span><span class="sds-hero__title-accent">ohne Abtippen.</span></h1><div class="sds-hero__subtitle"><p class="m-0">KI liest aus, Sie geben frei.</p><p class="m-0">Sparen Sie sich mehrere Stunden Arbeit pro Woche für Ihre Mandanten.</p></div><div class="sds-hero__cta-stack"><div class="sds-hero__cta-row"><a class="btn-cta-orange sds-hero__cta" href="https://app.gefahrstoff-qr.de/register">Kostenlos registrieren</a></div><p class="sds-hero__microcopy">Kein Verkaufsgespräch, testen Sie die Software in Ruhe</p></div>
+<p class="sds-hero__eyebrow">Die Excel-Alternative für SiFas &amp; KMU</p><h1 id="heroHeadline" class="sds-hero__title"><span class="sds-hero__title-line">Gefahrstoff­kataster &amp; BA-Entwurf</span><span class="sds-hero__title-accent">ohne Abtippen.</span></h1><div class="sds-hero__subtitle"><p class="m-0">KI liest aus, Sie geben frei.</p><p class="m-0">Sparen Sie sich mehrere Stunden Arbeit pro Woche für Ihre Mandanten.</p></div><div class="sds-hero__cta-stack"><div class="sds-hero__cta-row"><a class="btn-cta-orange sds-hero__cta" href="https://app.gefahrstoff-qr.de/register">Kostenlos registrieren</a></div><p class="sds-hero__microcopy">Kein Verkaufsgespräch, testen Sie die Software in Ruhe</p></div>
 <!--/AEO:HERO_COPY-->
  </div>
 
@@ -444,27 +444,57 @@
 <!--/AEO:HERO_INNER_TRUST-->
  </div>
 
- <aside class="roi-card sds-hero__roi" aria-label="ROI-Rechner: Zeitersparnis berechnen">
+ <aside class="roi-card sds-hero__roi" data-roi-calculator aria-label="ROI-Rechner: Zeitersparnis berechnen">
  <h2 class="roi-card__title">ROI-Rechner</h2>
  <p class="roi-card__subtitle">Wie viel Arbeitszeit verbrennen Sie mit Copy &amp; Paste?</p>
 
+ <div class="roi-mode" role="tablist" aria-label="Zielgruppe">
+ <span class="roi-mode__thumb" data-roi-mode-thumb aria-hidden="true"></span>
+ <button type="button" class="roi-mode__btn is-active" data-roi-mode="kmu" role="tab" aria-selected="true">Betrieb / KMU</button>
+ <button type="button" class="roi-mode__btn" data-roi-mode="sifa" role="tab" aria-selected="false">Externe SiFa</button>
+ </div>
+
  <div class="roi-slider-wrap">
  <div class="roi-slider-header">
- <label for="substanceSlider" class="roi-slider-label">Gefahrstoffe</label>
- <span class="roi-slider-value" id="substanceValue" aria-live="polite">20</span>
+ <label for="substanceSlider" class="roi-slider-label" data-roi-substance-label>Gefahrstoffe im Betrieb</label>
+ <span class="roi-slider-value" data-roi-substance-value aria-live="polite">20</span>
  </div>
  <input
  type="range"
  id="substanceSlider"
  class="roi-slider"
+ data-roi-substance-slider
  min="5"
- max="100"
+ max="150"
+ step="5"
  value="20"
  aria-label="Anzahl der Gefahrstoffe auswählen"
  />
  <div class="roi-slider-ticks">
  <span>5</span>
- <span>100</span>
+ <span>150</span>
+ </div>
+ </div>
+
+ <div class="roi-slider-wrap" data-roi-clients-wrap hidden>
+ <div class="roi-slider-header">
+ <label for="clientSlider" class="roi-slider-label">Anzahl der Mandanten</label>
+ <span class="roi-slider-value" data-roi-client-value aria-live="polite">10</span>
+ </div>
+ <input
+ type="range"
+ id="clientSlider"
+ class="roi-slider"
+ data-roi-client-slider
+ min="2"
+ max="50"
+ step="1"
+ value="10"
+ aria-label="Anzahl der Mandanten auswählen"
+ />
+ <div class="roi-slider-ticks">
+ <span>2</span>
+ <span>50</span>
  </div>
  </div>
 
@@ -474,7 +504,7 @@
 Mit Excel
  </div>
  <p class="roi-metric__value">
- <span id="traditionalHours">6,7</span><span class="roi-metric__unit">h</span>
+ <span data-roi-traditional-hours>6,7</span><span class="roi-metric__unit">h</span>
  </p>
  </div>
 
@@ -483,7 +513,7 @@ Mit Excel
  Mit Gefahrstoff-QR
  </div>
  <p class="roi-metric__value">
- <span id="digitalMinutes">60</span><span class="roi-metric__unit">min</span>
+ <span data-roi-digital-minutes>60</span><span class="roi-metric__unit">min</span>
  </p>
  </div>
  </div>
@@ -494,128 +524,34 @@ Mit Excel
  Gesparte Zeit
  </div>
  <p class="roi-savings__value">
- <span id="savedHours">5,7</span><span class="roi-savings__unit">h</span>
+ <span data-roi-saved-hours>5,7</span><span class="roi-savings__unit">h</span>
  </p>
  </div>
+
+ <div class="roi-honor" data-roi-honor-wrap hidden>
+ <p class="roi-honor__label">Blockiertes Honorarpotenzial</p>
+ <p class="roi-honor__value"><span data-roi-honor-value>570 €</span><span class="roi-honor__hint"> (bei 100&nbsp;€/h)</span></p>
+ </div>
+
  <a class="btn-cta-orange btn-cta-orange--block mt-5" href="https://app.gefahrstoff-qr.de/register">Diese <span data-roi-cta-hours>&nbsp;5,7&nbsp;</span> Stunden zurückholen</a>
- <p class="mt-3 text-center text-xs text-[#8fa4c0]">Annahme: rund 20 Minuten Abtippen pro Sicherheitsdatenblatt.</p>
+ <p class="mt-3 text-center text-xs text-[#8fa4c0]">Annahme: rund 20 Minuten manuelles Abtippen pro Sicherheitsdatenblatt.</p>
  </aside>
  </div>
  </section>
 
 
- <!-- YOUTUBE -->
- <section id="videos" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="youtubeHeadline">
- <div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10">
+ <!-- Haupt-Produktvideo (MP4): config/home-sections/product-demo-video.ts -->
+<!--AEO:PRODUCT_DEMO_VIDEO-->
+<section id="produkt-demo" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="productDemoVideoHeadline"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><header class="mx-auto mb-12 max-w-2xl text-center"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Produkt-Demo</p><h2 id="productDemoVideoHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Gefahrstoffverzeichnis digital in der Praxis</h2><p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">Vom Sicherheitsdatenblatt zum strukturierten Gefahrstoffverzeichnis: KI-Extraktion und Kataster-Workflow ohne Abtipp-Marathon.</p></header><div class="product-demo-video mx-auto max-w-[960px]"><div class="product-demo-video__frame video-embed video-embed--cinema"><video data-product-demo-video="true" muted="" loop="" controls="" preload="metadata" playsinline="" title="Gefahrstoffverzeichnis und Gefahrstoffmanagement Software | Gefahrstoff-QR"><source src="/videos/demo-gefahrstoffverzeichnis.mp4" type="video/mp4"/></video></div></div></div></section>
+<!--/AEO:PRODUCT_DEMO_VIDEO-->
 
- <div class="mx-auto mb-12 max-w-2xl text-center">
- <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Video-Demos</p>
- <h2 id="youtubeHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Gefahrstoff-QR in Aktion</h2>
- <p class="mt-4 text-base text-[#8fa4c0]">
- Sehen Sie den Workflow live: Gefahrstoffverzeichnis per KI-Sicherheitsdatenblatt-Import und Betriebsanweisung als KI-gestützter Entwurf, ohne Abtipp-Marathon.
- </p>
- </div>
-
- <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-
- <article class="flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 shadow-lg transition-all hover:border-white/[0.15] hover:bg-[#0f1e35]/70">
- <div
- class="yt-facade group relative w-full cursor-pointer overflow-hidden bg-black/40 aspect-video"
- data-video-id="XMn6NKrqlMY"
- data-video-title="Gefahrstoffmanagement Software 4.0: Verzeichnis in 2 Minuten | Gefahrstoff-QR"
- >
- <img
- src="https://i.ytimg.com/vi/XMn6NKrqlMY/hqdefault.jpg"
- alt="Vorschaubild: Verzeichnis in 2 Minuten"
- class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-105 group-hover:opacity-100"
- loading="lazy"
- >
- <div class="absolute inset-0 flex items-center justify-center bg-[#0f1e35]/20 transition-colors group-hover:bg-transparent">
- <div class="flex h-16 w-16 items-center justify-center rounded-full bg-[#ff6b35] text-white shadow-lg shadow-orange-900/50 transition-transform duration-300 group-hover:scale-110">
- <svg class="ml-1 h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
- <path d="M8 5v14l11-7z"/>
- </svg>
- </div>
- </div>
- </div>
-
- <div class="flex flex-1 flex-col p-6 lg:p-8">
- <p class="mb-2 text-xs font-bold uppercase tracking-wider text-teal-400">Verzeichnis</p>
- <h3 class="mb-3 text-xl font-bold text-[#f0f6ff]">Gefahrstoffverzeichnis digital führen</h3>
- <p class="mb-6 flex-1 text-sm leading-relaxed text-[#8fa4c0]">
- Vom Sicherheitsdatenblatt zum strukturierten Gefahrstoffverzeichnis: KI-Extraktion und Kataster-Workflow in der Praxis.
- </p>
- </div>
- </article>
-
- <article class="flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 shadow-lg transition-all hover:border-white/[0.15] hover:bg-[#0f1e35]/70">
- <div
- class="yt-facade group relative w-full cursor-pointer overflow-hidden bg-black/40 aspect-video"
- data-video-id="psEuup9DlXQ"
- data-video-title="Betriebsanweisung für Gefahrstoffe: KI-gestützter Entwurf (TRGS 555)"
- >
- <img
- src="https://i.ytimg.com/vi/psEuup9DlXQ/hqdefault.jpg"
- alt="Vorschaubild: Betriebsanweisung digital anlegen"
- class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-105 group-hover:opacity-100"
- loading="lazy"
- >
- <div class="absolute inset-0 flex items-center justify-center bg-[#0f1e35]/20 transition-colors group-hover:bg-transparent">
- <div class="flex h-16 w-16 items-center justify-center rounded-full bg-[#ff6b35] text-white shadow-lg shadow-orange-900/50 transition-transform duration-300 group-hover:scale-110">
- <svg class="ml-1 h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
- <path d="M8 5v14l11-7z"/>
- </svg>
- </div>
- </div>
- </div>
-
- <div class="flex flex-1 flex-col p-6 lg:p-8">
- <p class="mb-2 text-xs font-bold uppercase tracking-wider text-teal-400">Betriebsanweisung</p>
- <h3 class="mb-3 text-xl font-bold text-[#f0f6ff]">Betriebsanweisung digital anlegen</h3>
- <p class="mb-6 flex-1 text-sm leading-relaxed text-[#8fa4c0]">
- Betriebsanweisung aus den Daten des Sicherheitsdatenblatts: weniger Word-Pflege, schneller am Einsatzort verfügbar.
- </p>
- </div>
- </article>
-
- <article class="flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 shadow-lg transition-all hover:border-white/[0.15] hover:bg-[#0f1e35]/70">
- <div
- class="yt-facade group relative w-full cursor-pointer overflow-hidden bg-black/40 aspect-video"
- data-video-id="AVU3FRRn5mQ"
- data-video-title="TRGS-510-Lagerprüfung und QR-Scan in der Praxis | Gefahrstoff-QR"
- >
- <img
- src="https://i.ytimg.com/vi/AVU3FRRn5mQ/hqdefault.jpg"
- alt="Vorschaubild: TRGS-510-Lagerprüfung und QR-Scan in der Praxis"
- class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-105 group-hover:opacity-100"
- loading="lazy"
- >
- <div class="absolute inset-0 flex items-center justify-center bg-[#0f1e35]/20 transition-colors group-hover:bg-transparent">
- <div class="flex h-16 w-16 items-center justify-center rounded-full bg-[#ff6b35] text-white shadow-lg shadow-orange-900/50 transition-transform duration-300 group-hover:scale-110">
- <svg class="ml-1 h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
- <path d="M8 5v14l11-7z"/>
- </svg>
- </div>
- </div>
- </div>
-
- <div class="flex flex-1 flex-col p-6 lg:p-8">
- <p class="mb-2 text-xs font-bold uppercase tracking-wider text-teal-400">Lager &amp; Notfall</p>
- <h3 class="mb-3 text-xl font-bold text-[#f0f6ff]">TRGS-510-Lagerprüfung &amp; QR-Scan in der Praxis</h3>
- <p class="mb-6 flex-1 text-sm leading-relaxed text-[#8fa4c0]">
- Lagerklassen und Zusammenlagerung vor Ort prüfen: QR am Regal scannen, Stoffdaten und Notfallinfos direkt am Gefahrstoffschrank.
- </p>
- </div>
- </article>
-
- </div>
-
-
- </div>
- </section>
+ <!-- YOUTUBE: generiert aus config/home-sections/video-demos.ts -->
+<!--AEO:VIDEO_DEMOS-->
+<section id="videos" class="border-t border-white/[0.07] bg-white/[0.02] py-8 lg:py-10" aria-labelledby="youtubeHeadline"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><header class="mx-auto mb-6 max-w-2xl text-center"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Video-Demos</p><h2 id="youtubeHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Gefahrstoff-QR in Aktion</h2><p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">Sehen Sie den Workflow live: Gefahrstoffverzeichnis per KI-Sicherheitsdatenblatt-Import und Betriebsanweisung als KI-gestützter Entwurf, ohne Abtipp-Marathon.</p></header><ul class="m-0 grid list-none gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3"><li><article class="flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 shadow-lg"><div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/XMn6NKrqlMY?rel=0" title="Gefahrstoffmanagement Software 4.0: Verzeichnis in 2 Minuten | Gefahrstoff-QR" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" referrerPolicy="strict-origin-when-cross-origin"></iframe></div><div class="flex flex-1 flex-col p-5 lg:p-6"><p class="mb-2 text-xs font-bold uppercase tracking-wider text-teal-400">Verzeichnis</p><h3 class="mb-3 text-xl font-bold text-[#f0f6ff]">Gefahrstoffverzeichnis digital führen</h3><p class="mb-4 flex-1 text-sm leading-relaxed text-[#8fa4c0]">Vom Sicherheitsdatenblatt zum strukturierten Gefahrstoffverzeichnis: KI-Extraktion und Kataster-Workflow in der Praxis.</p><a class="sds-secondary-link text-sm font-semibold" href="https://www.youtube.com/watch?v=XMn6NKrqlMY" target="_blank" rel="noopener noreferrer">Auf YouTube ansehen →</a></div></article></li><li><article class="flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 shadow-lg"><div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/psEuup9DlXQ?rel=0" title="Betriebsanweisung für Gefahrstoffe: KI-gestützter Entwurf (TRGS 555)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" referrerPolicy="strict-origin-when-cross-origin"></iframe></div><div class="flex flex-1 flex-col p-5 lg:p-6"><p class="mb-2 text-xs font-bold uppercase tracking-wider text-teal-400">Betriebsanweisung</p><h3 class="mb-3 text-xl font-bold text-[#f0f6ff]">Betriebsanweisung digital anlegen</h3><p class="mb-4 flex-1 text-sm leading-relaxed text-[#8fa4c0]">Betriebsanweisung aus den Daten des Sicherheitsdatenblatts: weniger Word-Pflege, schneller am Einsatzort verfügbar.</p><a class="sds-secondary-link text-sm font-semibold" href="https://www.youtube.com/watch?v=psEuup9DlXQ" target="_blank" rel="noopener noreferrer">Auf YouTube ansehen →</a></div></article></li><li><article class="flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 shadow-lg"><div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/AVU3FRRn5mQ?rel=0" title="TRGS-510-Lagerprüfung und QR-Scan in der Praxis | Gefahrstoff-QR" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" referrerPolicy="strict-origin-when-cross-origin"></iframe></div><div class="flex flex-1 flex-col p-5 lg:p-6"><p class="mb-2 text-xs font-bold uppercase tracking-wider text-teal-400">Lager &amp; Notfall</p><h3 class="mb-3 text-xl font-bold text-[#f0f6ff]">TRGS-510-Lagerprüfung &amp; QR-Scan in der Praxis</h3><p class="mb-4 flex-1 text-sm leading-relaxed text-[#8fa4c0]">Lagerklassen und Zusammenlagerung vor Ort prüfen: QR am Regal scannen, Stoffdaten und Notfallinfos direkt am Gefahrstoffschrank.</p><a class="sds-secondary-link text-sm font-semibold" href="https://www.youtube.com/watch?v=AVU3FRRn5mQ" target="_blank" rel="noopener noreferrer">Auf YouTube ansehen →</a></div></article></li></ul></div></section>
+<!--/AEO:VIDEO_DEMOS-->
  <!-- ERGEBNIS (CRO/AEO): Output-Vorschau, generiert aus config/home-sections/output-preview.ts -->
 <!--AEO:OUTPUT_PREVIEW-->
-<section id="ergebnis" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-label="Ergebnisse in der App"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><ul class="grid list-none gap-6 p-0 lg:grid-cols-3"><li class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><div class="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3"><img src="/images/landing-kataster-dashboard.png" alt="Gefahrstoffverzeichnis in Gefahrstoff-QR mit Standortfilter, Signalwort und GHS-Piktogrammen" width="1833" height="1168" loading="lazy" decoding="async" class="h-auto w-full rounded-lg"/></div><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">§ 6 GefStoffV</p><h3 class="text-lg font-bold text-[#f0f6ff]">Gefahrstoffverzeichnis für die Betriebsprüfung</h3><ul class="mt-3 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Filterbar nach Standort, Werk und Lagerort</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>GHS-Piktogramme im PDF und in der Excel-Datei</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Fehlende Angaben aus der Begehung farblich markiert</li></ul></li><li class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><div class="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3"><img src="/images/app-screenshot-form.png" alt="Betriebsanweisung als KI-gestützter Entwurf (TRGS 555) in Gefahrstoff-QR" width="2940" height="1656" loading="lazy" decoding="async" class="h-auto w-full rounded-lg"/></div><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">TRGS 555</p><h3 class="text-lg font-bold text-[#f0f6ff]">Betriebsanweisung als A4-Entwurf</h3><ul class="mt-3 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Gliederung in die sechs Abschnitte nach TRGS 555</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Eigenes Firmenlogo und anpassbare Rahmenfarbe</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Schriftgröße passt sich dem Inhalt für den Aushang an</li></ul><div class="mt-auto pt-6"><a class="btn-glass-outline btn-glass-outline--block" href="/samples/ba/beispiel-betriebsanweisung-entwurf.pdf" download="Gefahrstoff-QR-Beispiel-Betriebsanweisung-Entwurf.pdf">Beispiel BA herunterladen</a></div></li><li class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><div class="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3"><img src="/images/gefahrstoffmanagement-trgs510-check.jpeg" alt="TRGS-510-Zusammenlagerungshinweise pro Lagerort in Gefahrstoff-QR" width="1770" height="1294" loading="lazy" decoding="async" class="h-auto w-full rounded-lg"/></div><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">TRGS 510 &amp; Notfall</p><h3 class="text-lg font-bold text-[#f0f6ff]">Zusammenlagerung und QR-Notfallansicht</h3><ul class="mt-3 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Konflikthinweise der Lagerklassen pro Lagerort</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>QR-Code am Gebinde öffnet Erste Hilfe und Schutzmaßnahmen</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Abruf im Smartphone-Browser, ohne App-Installation</li></ul></li></ul></div></section>
+<section id="ergebnis" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-label="Ergebnisse in der App"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><article id="ergebnis-ba" class="output-preview-ba-spotlight" aria-labelledby="output-preview-ba-title"><div class="output-preview-ba-spotlight__inner"><div class="output-preview-ba-spotlight__copy"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">TRGS 555</p><h3 id="output-preview-ba-title" class="text-xl font-bold text-[#f0f6ff] sm:text-2xl">Sparen Sie sich das Abtippen.</h3><p class="mt-3 text-sm leading-relaxed text-[#8fa4c0]">KI-gestützter Entwurf nach TRGS 555 zur fachlichen Freigabe durch die SiFa bzw. den Arbeitgeber — als druckfertiges A4-PDF mit Firmenlogo.</p><ul class="mt-4 list-none space-y-2 p-0"><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Gliederung in die sechs Abschnitte nach TRGS 555</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Eigenes Firmenlogo und anpassbare Rahmenfarbe</li><li class="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]"><span class="text-teal-300" aria-hidden="true">✓</span>Schriftgröße passt sich dem Inhalt für den Aushang an</li></ul><a class="btn-glass-outline btn-glass-outline--block mt-6 max-w-sm" href="/samples/ba/beispiel-betriebsanweisung-entwurf.pdf" download="Gefahrstoff-QR-Beispiel-Betriebsanweisung-Entwurf.pdf">Beispiel BA herunterladen</a></div><div class="output-preview-ba-spotlight__media"><div class="ba-preview-tilt output-preview-ba-tilt" data-ba-tilt=""><div class="ba-preview-tilt__perspective"><div class="ba-preview-tilt__inner"><div class="output-preview-pdf-embed output-preview-pdf-embed--spotlight"><iframe src="/samples/ba/beispiel-betriebsanweisung-entwurf.pdf#page=1&amp;toolbar=0&amp;navpanes=0&amp;scrollbar=0&amp;view=Fit" title="Vorschau: Beispiel-Betriebsanweisung als PDF-Entwurf (TRGS 555)" class="output-preview-pdf-embed__frame" loading="lazy"></iframe></div></div></div></div></div></div></article></div></section>
 <!--/AEO:OUTPUT_PREVIEW-->
 
  <!-- KURZANTWORT (AEO): zitierfähige Definition + Faktenblock -->
@@ -727,7 +663,7 @@ Mit Excel
                       <p class="scroll-story__text">Schluss mit Abtippen: Die KI liest das Sicherheitsdatenblatt aus und erstellt einen Entwurf. Die SiFa prüft und gibt frei, die Kontrolle bleibt bei Ihnen.</p>
                     </article>
                     <article class="scroll-story__slide" data-bg="#101927">
-                      <figure class="scroll-story__mobile-image"><span class="scroll-story__orb"><img src="/images/app-screenshot-dashboard.png" width="2940" height="1656" loading="lazy" decoding="async" alt="Cloud-Dashboard Gefahrstoffverzeichnis" /></span></figure>
+                      <figure class="scroll-story__mobile-image"><span class="scroll-story__orb"><img src="/images/app-screenshot-dashboard.png" width="1024" height="581" loading="lazy" decoding="async" alt="Cloud-Dashboard Gefahrstoffverzeichnis" /></span></figure>
                       <h3 class="scroll-story__title">Cloud Gefahrstoffmanagement</h3>
                       <p class="scroll-story__text">Keine On-Premise-Installation: Ihre Cloud Gefahrstoffmanagement Software läuft im Browser, auf Desktop, Tablet und Smartphone.</p>
                     </article>
@@ -764,7 +700,7 @@ Mit Excel
                     <div class="scroll-story__visual-viewport">
                       <div class="scroll-story__track" data-scroll-story-track>
                         <figure class="scroll-story__frame-slide"><span class="scroll-story__orb"><img src="/images/demo/scene-2-extraction.png" width="1024" height="646" loading="lazy" decoding="async" alt="" /></span></figure>
-                        <figure class="scroll-story__frame-slide"><span class="scroll-story__orb"><img src="/images/app-screenshot-dashboard.png" width="2940" height="1656" loading="lazy" decoding="async" alt="" /></span></figure>
+                        <figure class="scroll-story__frame-slide"><span class="scroll-story__orb"><img src="/images/app-screenshot-dashboard.png" width="1024" height="581" loading="lazy" decoding="async" alt="" /></span></figure>
                         <figure class="scroll-story__frame-slide"><span class="scroll-story__orb"><img src="/images/demo/scene-4-qr-mobile.png" width="506" height="1024" loading="lazy" decoding="async" alt="" /></span></figure>
                         <figure class="scroll-story__frame-slide"><span class="scroll-story__orb"><img src="/images/gefahrstoffmanagement-trgs510-check.jpeg" width="1770" height="1294" loading="lazy" decoding="async" alt="" /></span></figure>
                         <figure class="scroll-story__frame-slide"><span class="scroll-story__orb"><img src="/images/app-screenshot-form.png" width="2940" height="1656" loading="lazy" decoding="async" alt="" /></span></figure>
@@ -793,53 +729,7 @@ Mit Excel
  </div>
 
  <div class="zigzag-rows">
- <article id="produkt" class="zigzag-row scroll-mt-28">
- <div class="zigzag-row__media">
- <div class="zigzag-frame">
- <div class="zigzag-frame__stage">
- <img
- class="zigzag-frame__img zigzag-frame__img--landscape"
- src="/images/app-screenshot-dashboard.png"
- width="2940"
- height="1656"
- loading="lazy"
- decoding="async"
- alt="Gefahrstoffverzeichnis in Gefahrstoff-QR: KPI-Karten, Filter und Tabelle mit Signalwort, Sicherheitsdatenblatt-Revision und GHS-Piktogrammen"
- title="Gefahrstoffverzeichnis-Dashboard mit Lagerkonflikten und Sicherheitsdatenblatt-Status"
- />
- </div>
- </div>
- </div>
- <div class="zigzag-row__content">
- <p class="text-2xl zigzag-row__eyebrow">Gefahrstoffverzeichnis</p>
- <p class="zigzag-row__lead">
- Kein Tabellen-Wirrwarr mehr. Ein digitales Verzeichnis nach &sect;&nbsp;6 GefStoffV, das KMR-Hinweise und Gefahrenklassen strukturiert und exportierbar macht.
- </p>
- <ul class="zigzag-checklist" role="list">
- <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Durchsuchbares Kataster statt Excel-Fragmente</li>
- <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>KMR- und Substitutions-Prüfhinweise auf einen Blick</li>
- <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Export für Audits und interne Nachweise</li>
- </ul>
- </div>
- </article>
-
- <article class="zigzag-row zigzag-row--reverse">
- <div class="zigzag-row__media">
- <div class="zigzag-frame">
- <div class="zigzag-frame__stage">
- <img
- class="zigzag-frame__img zigzag-frame__img--landscape"
- src="/images/aktivitätsprotokoll.jpeg"
- width="1180"
- height="665"
- loading="lazy"
- decoding="async"
- alt="Aktivitäten-Protokoll in Gefahrstoff-QR: Zeitstempel, Nutzer, Aktion und Änderungen an Gefahrstoffen und Lagerorten"
- title="Aktivitäten-Protokoll mit Revisionsverlauf und Sicherheitsdatenblatt-Änderungen"
- />
- </div>
- </div>
- </div>
+ <article class="zigzag-row zigzag-row--text-only scroll-mt-28">
  <div class="zigzag-row__content">
  <p class="text-2xl zigzag-row__eyebrow">Nachvollziehbarkeit</p>
  <p class="zigzag-row__lead">
@@ -853,7 +743,7 @@ Mit Excel
  </div>
  </article>
 
- <article class="zigzag-row">
+ <article class="zigzag-row zigzag-row--reverse">
  <div class="zigzag-row__media">
  <div class="zigzag-frame">
  <div class="zigzag-frame__stage">
@@ -882,36 +772,6 @@ Mit Excel
  <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>QR-gestützte Notfall- und Infoscreens direkt am Lagerort</li>
  <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Betriebsanweisungen digital und greifbar</li>
  <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Sofortige Handlungssicherheit im Ernstfall</li>
- </ul>
- </div>
- </article>
-
- <article class="zigzag-row zigzag-row--reverse">
- <div class="zigzag-row__media">
- <div class="zigzag-frame">
- <div class="zigzag-frame__stage">
- <img
- class="zigzag-frame__img zigzag-frame__img--landscape"
- src="/images/gefahrstoffmanagement-trgs510-check.jpeg"
- width="1770"
- height="1294"
- loading="lazy"
- decoding="async"
- alt="TRGS 510 Zusammenlagerungskonflikt in Gefahrstoff-QR: Separatlagerung zwischen Lagerklassen mit Regelhinweis"
- title="Automatische TRGS-510-Prüfung mit Lagerkonflikt-Warnung"
- />
- </div>
- </div>
- </div>
- <div class="zigzag-row__content">
- <p class="text-2xl zigzag-row__eyebrow">TRGS 510</p>
- <p class="zigzag-row__lead">
- Zusammenlagerungsverbote nach TRGS&nbsp;510 werden im Kataster sichtbar. Statt Matrixsuche im Ordner erhalten Sie einen klaren Hinweis bei Separatlagerung.
- </p>
- <ul class="zigzag-checklist" role="list">
- <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Lagerklassen aus dem Sicherheitsdatenblatt automatisch hinterlegt</li>
- <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Konflikte pro Lagerort mit Regeltext und Schweregrad</li>
- <li><span class="zigzag-checklist__mark" aria-hidden="true">&#10003;</span>Weniger Risiko bei Feuerwehr- und Umweltbegehungen</li>
  </ul>
  </div>
  </article>
@@ -1092,7 +952,7 @@ Mit Excel
 
  <!-- SIFA MULTI-MANDANT (CRO): generiert aus config/home-sections/multi-tenant-sifa.ts -->
 <!--AEO:MULTI_TENANT_SIFA-->
-<section id="fuer-sifas" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="multiTenantSifaHeadline"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><header class="mx-auto mb-12 max-w-2xl text-center"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Für externe SiFas &amp; Arbeitsschutz-Büros (Multi-Mandant)</p><h2 id="multiTenantSifaHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Betreuen Sie mehrere Betriebe?<br/>Alle Mandanten und Werke in einem Zugang.</h2><p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">Für freiberufliche Fachkräfte für Arbeitssicherheit und Ingenieurbüros, die Gefahrstoffverzeichnisse für mehrere Kundenbetriebe führen.</p></header><ul class="grid list-none gap-6 p-0 sm:grid-cols-2"><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Saubere Mandanten- &amp; Werkstrennung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Verwalten Sie mehrere Kundenbetriebe, Standorte (Werke) und spezifische Tätigkeiten strikt getrennt in einem Account.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Begehungs-Modus (Erfassung ohne SDB)</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Nehmen Sie Gefahrstoffe schon beim Rundgang ohne SDB oder Mengenangabe auf. Offene Felder markiert das System im Export farblich zur späteren Nachpflege.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Exporte für die Betriebsprüfung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Exportieren Sie das Gefahrstoffverzeichnis nach § 6 GefStoffV inkl. echter GHS-Piktogramme und Tätigkeitenzuordnung als PDF oder Excel.</p></li><li class="rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 p-6"><h3 class="flex gap-2 text-lg font-bold text-[#f0f6ff]"><span class="text-teal-300" aria-hidden="true">✓</span>Klassischer Kauf auf Rechnung</h3><p class="mt-2 text-sm leading-relaxed text-[#8fa4c0]">Für SiFas, Ingenieurbüros und Firmenkunden bieten wir im Multi-Mandanten-Tarif die gewohnte Abrechnung per monatlicher PDF-Rechnung und Überweisung an.</p></li></ul><div class="sds-hero__cta-row mt-10 mx-auto flex w-full flex-col gap-3"><a class="btn-glass-outline inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base sds-hero__cta" href="https://app.gefahrstoff-qr.de/register">Als SiFa kostenlos starten →</a></div></div></section>
+<section id="fuer-sifas" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="multiTenantSifaHeadline"><div class="mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10"><header class="mx-auto mb-12 max-w-2xl text-center"><p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Für externe SiFas &amp; Arbeitsschutz-Büros (Multi-Mandant)</p><h2 id="multiTenantSifaHeadline" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Betreuen Sie mehrere Betriebe?<br/>Alle Mandanten und Werke in einem Zugang.</h2><p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">Für freiberufliche Fachkräfte für Arbeitssicherheit und Ingenieurbüros, die Gefahrstoffverzeichnisse für mehrere Kundenbetriebe führen.</p></header><div class="sifa-feature-accordion mx-auto flex max-w-2xl flex-col gap-3" role="list"><details class="sifa-feature-details group rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 open:border-teal-400/20" role="listitem" open=""><summary class="sifa-feature-details__summary relative flex cursor-pointer list-none items-start gap-2 p-6 pr-12 text-left text-lg font-bold leading-snug text-[#f0f6ff]"><span class="text-teal-300 shrink-0" aria-hidden="true">✓</span><span>Saubere Mandanten- &amp; Werkstrennung</span></summary><div class="px-6 pb-6 pt-0 text-sm leading-relaxed text-[#8fa4c0]"><p class="m-0">Verwalten Sie mehrere Kundenbetriebe, Standorte (Werke) und spezifische Tätigkeiten strikt getrennt in einem Account.</p></div></details><details class="sifa-feature-details group rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 open:border-teal-400/20" role="listitem"><summary class="sifa-feature-details__summary relative flex cursor-pointer list-none items-start gap-2 p-6 pr-12 text-left text-lg font-bold leading-snug text-[#f0f6ff]"><span class="text-teal-300 shrink-0" aria-hidden="true">✓</span><span>Begehungs-Modus (Erfassung ohne SDB)</span></summary><div class="px-6 pb-6 pt-0 text-sm leading-relaxed text-[#8fa4c0]"><p class="m-0">Nehmen Sie Gefahrstoffe schon beim Rundgang ohne SDB oder Mengenangabe auf. Offene Felder markiert das System im Export farblich zur späteren Nachpflege.</p></div></details><details class="sifa-feature-details group rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 open:border-teal-400/20" role="listitem"><summary class="sifa-feature-details__summary relative flex cursor-pointer list-none items-start gap-2 p-6 pr-12 text-left text-lg font-bold leading-snug text-[#f0f6ff]"><span class="text-teal-300 shrink-0" aria-hidden="true">✓</span><span>Exporte für die Betriebsprüfung</span></summary><div class="px-6 pb-6 pt-0 text-sm leading-relaxed text-[#8fa4c0]"><p class="m-0">Exportieren Sie das Gefahrstoffverzeichnis nach § 6 GefStoffV inkl. echter GHS-Piktogramme und Tätigkeitenzuordnung als PDF oder Excel.</p></div></details><details class="sifa-feature-details group rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 open:border-teal-400/20" role="listitem"><summary class="sifa-feature-details__summary relative flex cursor-pointer list-none items-start gap-2 p-6 pr-12 text-left text-lg font-bold leading-snug text-[#f0f6ff]"><span class="text-teal-300 shrink-0" aria-hidden="true">✓</span><span>Klassischer Kauf auf Rechnung</span></summary><div class="px-6 pb-6 pt-0 text-sm leading-relaxed text-[#8fa4c0]"><p class="m-0">Für SiFas, Ingenieurbüros und Firmenkunden bieten wir im Multi-Mandanten-Tarif die gewohnte Abrechnung per monatlicher PDF-Rechnung und Überweisung an.</p></div></details></div><div class="sds-hero__cta-row mt-10 mx-auto flex w-full flex-col gap-3"><a class="btn-glass-outline inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base sds-hero__cta" href="https://app.gefahrstoff-qr.de/register">Als SiFa kostenlos starten →</a></div></div></section>
 <!--/AEO:MULTI_TENANT_SIFA-->
 
  <!-- PRICING -->
@@ -1201,7 +1061,6 @@ Mit Excel
  <li class="flex gap-2"><span class="text-teal-300" aria-hidden="true">&#10003;</span> Direktkauf auf monatliche PDF-Rechnung möglich</li>
  </ul>
  <a class="btn-glass-outline btn-glass-outline--block mt-8" href="https://buy.stripe.com/eVqcN43TZ84e4zPaGYdAk01" data-pricing-cta data-pricing-plan="sifa-multi-mandant" rel="noopener noreferrer">Jetzt Starten</a>
- <p class="mt-3 text-center text-xs leading-relaxed text-[#8fa4c0]">Alternativ: Buchung auf PDF-Rechnung (<a href="mailto:info@gefahrstoff-qr.de" class="font-semibold text-teal-300 underline-offset-2 hover:underline whitespace-nowrap">info@gefahrstoff-qr.de</a>)</p>
  </article>
 
  <article class="flex flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/70 p-6 shadow-lg shadow-black/10 lg:p-7">
@@ -1499,44 +1358,7 @@ Mit Excel
  })();
  </script>
 
- <script>
- (function () {
- var MINUTES_PER_SUBSTANCE_TRADITIONAL = 20;
- var MINUTES_PER_SUBSTANCE_DIGITAL = 3; // KI-Import, Prüfung & Freigabe pro Sicherheitsdatenblatt
-
- function calculateTimeComparison(substanceCount) {
- var traditionalMinutes = substanceCount * MINUTES_PER_SUBSTANCE_TRADITIONAL;
- var digitalRawMinutes = substanceCount * MINUTES_PER_SUBSTANCE_DIGITAL;
- return {
- traditionalHours: (traditionalMinutes / 60).toFixed(1).replace('.', ','),
- digitalMinutes: Math.ceil(digitalRawMinutes),
- savedHours: ((traditionalMinutes - digitalRawMinutes) / 60).toFixed(1).replace('.', ','),
- };
- }
-
- var slider = document.getElementById('substanceSlider');
- if (!slider) return;
-
- var substanceValueEl = document.getElementById('substanceValue');
- var traditionalHoursEl = document.getElementById('traditionalHours');
- var digitalMinutesEl = document.getElementById('digitalMinutes');
- var savedHoursEl = document.getElementById('savedHours');
- var ctaHoursEl = document.querySelector('[data-roi-cta-hours]');
-
- function updateCalculator() {
- var count = parseInt(slider.value, 10);
- var result = calculateTimeComparison(count);
- substanceValueEl.textContent = count;
- traditionalHoursEl.textContent = result.traditionalHours;
- digitalMinutesEl.textContent = result.digitalMinutes;
- savedHoursEl.textContent = result.savedHours;
- if (ctaHoursEl) ctaHoursEl.textContent = '\u00a0' + result.savedHours.replace('.', ',') + '\u00a0';
- }
-
- slider.addEventListener('input', updateCalculator);
- updateCalculator();
- })();
- </script>
+ <script src="/scripts/roi-calculator.js?v=2" defer></script>
 
  <script src="/scripts/pricing-billing.js" defer></script>
 
@@ -1544,50 +1366,11 @@ Mit Excel
 
  <script src="/scripts/sdb-preview.js" defer></script>
 
- <script>
- (function () {
- document.querySelectorAll('.yt-facade').forEach(function (facade) {
- var videoId = facade.getAttribute('data-video-id');
- var videoTitle = facade.getAttribute('data-video-title') || 'YouTube-Video';
- if (!videoId) return;
-
- facade.setAttribute('role', 'button');
- facade.setAttribute('tabindex', '0');
- facade.setAttribute('aria-label', 'Video abspielen: ' + videoTitle);
-
- function loadVideo() {
- if (facade.getAttribute('data-loaded') === 'true') return;
- facade.setAttribute('data-loaded', 'true');
-
- var iframe = document.createElement('iframe');
- iframe.className = 'absolute inset-0 h-full w-full border-0';
- iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0';
- iframe.title = videoTitle;
- iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
- iframe.allowFullscreen = true;
- iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-
- facade.innerHTML = '';
- facade.appendChild(iframe);
- facade.classList.remove('cursor-pointer', 'group');
- facade.removeAttribute('role');
- facade.removeAttribute('tabindex');
- facade.removeAttribute('aria-label');
- }
-
- facade.addEventListener('click', loadVideo);
- facade.addEventListener('keydown', function (e) {
- if (e.key === 'Enter' || e.key === ' ') {
- e.preventDefault();
- loadVideo();
- }
- });
- });
- })();
- </script>
-
   <script src="/scripts/sticky-cta-bars.js?v=2" defer></script>
 
+  <script src="/scripts/output-preview-ba-tilt.js?v=2" defer></script>
+
   <script src="/scripts/scroll-presentation.js?v=10" defer></script>
+  <script src="/scripts/product-demo-video-autoplay.js?v=1" defer></script>
 </body>
 </html>

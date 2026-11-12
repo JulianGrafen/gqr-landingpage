@@ -5,8 +5,10 @@
 export const HOME_SECTION_STYLES = {
   section: 'border-t border-white/[0.07] py-14 lg:py-24',
   sectionRaised: 'border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24',
+  sectionRaisedTight: 'border-t border-white/[0.07] bg-white/[0.02] py-8 lg:py-10',
   container: 'mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10',
   header: 'mx-auto mb-12 max-w-2xl text-center',
+  headerTight: 'mx-auto mb-6 max-w-2xl text-center',
   eyebrow: 'mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm',
   headline: 'text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl',
   lead: 'mt-4 text-base leading-relaxed text-[#8fa4c0]',
@@ -25,4 +27,10 @@ export const HOME_SECTION_STYLES = {
     'btn-glass-outline inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base',
   secondaryLink: 'sds-secondary-link',
   ctaGroup: 'sds-hero__cta-row mt-10 mx-auto flex w-full flex-col gap-3',
+  sifaAccordion: 'sifa-feature-accordion mx-auto flex max-w-2xl flex-col gap-3',
+  sifaAccordionItem:
+    'sifa-feature-details group rounded-2xl border border-white/[0.08] bg-[#0f1e35]/60 open:border-teal-400/20',
+  sifaAccordionSummary:
+    'sifa-feature-details__summary relative flex cursor-pointer list-none items-start gap-2 p-6 pr-12 text-left text-lg font-bold leading-snug text-[#f0f6ff]',
+  sifaAccordionBody: 'px-6 pb-6 pt-0 text-sm leading-relaxed text-[#8fa4c0]',
 } as const;

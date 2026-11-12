@@ -8,7 +8,7 @@ import { useHeaderStickyCta } from '@/hooks/useHeaderStickyCta';
 import { SITE_HEADER_ELEMENT_ID } from '@/lib/marketing/sticky-header-cta';
 
 const nav = [
-  { href: '/#produkt', label: 'Produkt' },
+  { href: '/#funktionen', label: 'Produkt' },
   { href: '/#funktionen', label: 'Funktionen' },
   { href: '/#preise', label: 'Preise' },
   { href: '/#faq', label: 'FAQ' },

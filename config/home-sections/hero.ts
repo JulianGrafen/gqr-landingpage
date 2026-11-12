@@ -26,7 +26,7 @@ export const HOME_NAVIGATION = {
 } as const;
 
 export const HOME_HERO = {
-  eyebrow: 'Für Selbstständige SiFa, KMU & Konzerne',
+  eyebrow: 'Die Excel-Alternative für SiFas & KMU',
   /** Weiche Trennstellen (\u00ad) für saubere Umbrüche der langen Komposita auf Mobilgeräten. */
   headline: 'Gefahrstoff\u00adkataster & BA-Entwurf',
   headlineAccent: 'ohne Abtippen.',

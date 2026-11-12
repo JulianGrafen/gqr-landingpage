@@ -1,59 +1,65 @@
 import { HOME_SECTION_STYLES as styles } from '@/components/home/home-section-styles';
-import { OUTPUT_PREVIEW, type OutputPreviewCard } from '@/config/home-sections/output-preview';
+import { BaPreviewTiltFrame } from '@/components/ui/BaPreviewTiltFrame';
+import { OUTPUT_PREVIEW } from '@/config/home-sections/output-preview';
 
-function OutputCard({ card }: { card: OutputPreviewCard }) {
+function BetriebsanweisungSpotlightCard() {
+  const spotlight = OUTPUT_PREVIEW.baSpotlight;
+  const embedSrc = `${spotlight.pdfEmbed.href}#page=1&toolbar=0&navpanes=0&scrollbar=0&view=Fit`;
+
   return (
-    <li className={`flex flex-col ${styles.card}`}>
-      {card.image ? (
-        <div className="mb-5 flex min-h-[180px] items-center justify-center overflow-hidden rounded-xl bg-[#0a1628]/60 p-3">
-          <img
-            src={card.image.src}
-            alt={card.image.alt}
-            width={card.image.width}
-            height={card.image.height}
-            loading="lazy"
-            decoding="async"
-            className="h-auto w-full rounded-lg"
-          />
-        </div>
-      ) : null}
-      <p className={styles.eyebrow}>{card.kicker}</p>
-      <h3 className={styles.cardTitle}>{card.title}</h3>
-      <ul className="mt-3 list-none space-y-2 p-0">
-        {card.points.map((point) => (
-          <li key={point} className="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]">
-            <span className={styles.checkmark} aria-hidden="true">
-              ✓
-            </span>
-            {point}
-          </li>
-        ))}
-      </ul>
-      {card.downloadCta ? (
-        <div className="mt-auto pt-6">
+    <article
+      id={spotlight.sectionAnchorId}
+      className="output-preview-ba-spotlight"
+      aria-labelledby="output-preview-ba-title"
+    >
+      <div className="output-preview-ba-spotlight__inner">
+        <div className="output-preview-ba-spotlight__copy">
+          <p className={styles.eyebrow}>{spotlight.kicker}</p>
+          <h3 id="output-preview-ba-title" className="text-xl font-bold text-[#f0f6ff] sm:text-2xl">
+            {spotlight.title}
+          </h3>
+          <p className="mt-3 text-sm leading-relaxed text-[#8fa4c0]">{spotlight.lead}</p>
+          <ul className="mt-4 list-none space-y-2 p-0">
+            {spotlight.points.map((point) => (
+              <li key={point} className="flex gap-2 text-sm leading-relaxed text-[#8fa4c0]">
+                <span className={styles.checkmark} aria-hidden="true">
+                  ✓
+                </span>
+                {point}
+              </li>
+            ))}
+          </ul>
           <a
-            className="btn-glass-outline btn-glass-outline--block"
-            href={card.downloadCta.href}
-            download={card.downloadCta.download}
+            className="btn-glass-outline btn-glass-outline--block mt-6 max-w-sm"
+            href={spotlight.downloadCta.href}
+            download={spotlight.downloadCta.download}
           >
-            {card.downloadCta.label}
+            {spotlight.downloadCta.label}
           </a>
         </div>
-      ) : null}
-    </li>
+        <div className="output-preview-ba-spotlight__media">
+          <BaPreviewTiltFrame className="output-preview-ba-tilt">
+            <div className="output-preview-pdf-embed output-preview-pdf-embed--spotlight">
+              <iframe
+                src={embedSrc}
+                title={spotlight.pdfEmbed.title}
+                className="output-preview-pdf-embed__frame"
+                loading="lazy"
+              />
+            </div>
+          </BaPreviewTiltFrame>
+        </div>
+      </div>
+    </article>
   );
 }
 
-/** Output-Vorschau der drei Kernergebnisse (ohne SDB-Mapping-Tabelle). */
+/** Muster-Betriebsanweisung im Abschnitt #ergebnis. */
 export function OutputPreviewSection() {
   return (
     <section id={OUTPUT_PREVIEW.sectionId} className={styles.sectionRaised} aria-label="Ergebnisse in der App">
       <div className={styles.container}>
-        <ul className="grid list-none gap-6 p-0 lg:grid-cols-3">
-          {OUTPUT_PREVIEW.cards.map((card) => (
-            <OutputCard key={card.id} card={card} />
-          ))}
-        </ul>
+        <BetriebsanweisungSpotlightCard />
       </div>
     </section>
   );

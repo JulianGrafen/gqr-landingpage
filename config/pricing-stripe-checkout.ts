@@ -1,4 +1,3 @@
-import { CONTACT_EMAIL } from '@/config/aeo-config';
 import type { PricingPlanId } from '@/config/pricing-plans';
 
 /** Stripe Payment Links (Checkout) — Nettopreise wie in config/pricing-plans.ts. */
@@ -36,5 +35,4 @@ export const PRICING_SECTION_MARKETING = {
   billingHintMonthly: 'Monatliche Abrechnung, monatlich kündbar.',
   yearlyEquivalentNote: (monthlyEur: number) =>
     `Entspricht ${monthlyEur.toLocaleString('de-DE')} €/Monat · Standard bei Jahreszahlung`,
-  sifaInvoiceNote: `Alternativ: Buchung auf PDF-Rechnung (${CONTACT_EMAIL})`,
 } as const;

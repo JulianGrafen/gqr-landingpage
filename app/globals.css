@@ -43,10 +43,12 @@
 
   html {
     scroll-behavior: smooth;
+    background-color: #08111f;
   }
   body {
     @apply min-h-screen bg-gqr-bg font-sans text-gqr-text antialiased;
-    background:
+    background-color: #0a1628;
+    background-image:
       radial-gradient(circle at 50% -10%, rgba(45, 212, 191, 0.1), transparent 30%),
       radial-gradient(circle at 80% 5%, rgba(255, 107, 53, 0.08), transparent 26%),
       linear-gradient(180deg, #08111f 0%, #0a1628 42%, #0d1f38 100%);
