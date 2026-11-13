@@ -46,20 +46,29 @@
     return parsed;
   }
 
-  /** Inner scrub once the 100vh story fills the viewport slot below the fixed header. */
+  /** Inner scrub once the story block sits in the viewport slot below the fixed header. */
   function isScrollStoryPinned(root) {
     var rect = root.getBoundingClientRect();
     var topInset = getSiteHeaderOffset();
     var vh = window.innerHeight;
+    if (rect.bottom <= topInset + 32) return false;
+    if (rect.top >= vh - 32) return false;
+
     var slotHeight = Math.min(rect.height, Math.max(0, vh - topInset));
     if (slotHeight <= 0) return false;
 
     var visibleTop = Math.max(rect.top, topInset);
     var visibleBottom = Math.min(rect.bottom, vh);
     var visibleHeight = Math.max(0, visibleBottom - visibleTop);
-    var topAligned = rect.top <= topInset + 8;
+    var topAligned = rect.top <= topInset + 48;
 
-    return topAligned && visibleHeight / slotHeight >= 0.9;
+    return topAligned && visibleHeight / slotHeight >= 0.72;
+  }
+
+  function ensureScrollStoryEngaged(state) {
+    if (!state.isEngaged) {
+      setScrollStoryEngaged(state, true);
+    }
   }
 
   function setScrollStoryEngaged(state, engaged) {
@@ -163,11 +172,14 @@
       dot.setAttribute('aria-label', 'Schritt ' + (index + 1));
       dot.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
       dot.addEventListener('click', function () {
-        if (state.mode === 'mobile') {
-          scrollToMobileSlide(state.slides[index], !state.reducedMotion);
+        var live = state.root._scrollStoryState || state;
+        if (live.mode === 'mobile') {
+          scrollToMobileSlide(live.slides[index], !live.reducedMotion);
           return;
         }
-        scrollToSlide(state.scroller, state.slideCount, index, !state.reducedMotion);
+        ensureScrollStoryEngaged(live);
+        scrollToSlide(live.scroller, live.slideCount, index, !live.reducedMotion);
+        if (live.scrollHandler) live.scrollHandler();
       });
       state.progress.appendChild(dot);
     });
@@ -291,6 +303,10 @@
       window.removeEventListener('scroll', state.engagementHandler);
     }
 
+    if (state.wheelHandler) {
+      state.root.removeEventListener('wheel', state.wheelHandler);
+    }
+
     state.root.classList.remove('scroll-story--engaged');
     if (state.scroller) {
       state.scroller.classList.remove('scroll-story__scroller--locked');
@@ -381,6 +397,7 @@
       scrollHandler: null,
       resizeHandler: null,
       engagementHandler: null,
+      wheelHandler: null,
       visibilityObserver: null,
     });
 
@@ -408,9 +425,41 @@
       syncScrollStoryEngagement(state);
     };
 
+    state.wheelHandler = function (event) {
+      if (!isScrollStoryPinned(state.root)) {
+        if (state.isEngaged) setScrollStoryEngaged(state, false);
+        return;
+      }
+
+      if (
+        event.clientY < state.root.getBoundingClientRect().top ||
+        event.clientY > state.root.getBoundingClientRect().bottom
+      ) {
+        return;
+      }
+
+      ensureScrollStoryEngaged(state);
+
+      var maxScroll = state.scroller.scrollHeight - state.scroller.clientHeight;
+      if (maxScroll <= 0) return;
+
+      var scrollTop = state.scroller.scrollTop;
+      var atTop = scrollTop <= 0;
+      var atBottom = scrollTop >= maxScroll - 1;
+      var delta = event.deltaY;
+
+      if ((delta > 0 && atBottom) || (delta < 0 && atTop)) {
+        return;
+      }
+
+      event.preventDefault();
+      state.scroller.scrollTop = clamp(scrollTop + delta, 0, maxScroll);
+    };
+
     scroller.classList.add('scroll-story__scroller--locked');
 
     scroller.addEventListener('scroll', state.scrollHandler, { passive: true });
+    state.root.addEventListener('wheel', state.wheelHandler, { passive: false });
     window.addEventListener('resize', state.resizeHandler);
     window.addEventListener('scroll', state.engagementHandler, { passive: true });
 
