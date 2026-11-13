@@ -2258,6 +2258,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Metallbau & Schweißtechnik",
     ],
   },
+  {
+    slug: 'wd-40-trgs-555',
+    substanceName: "WD-40",
+    metaDescription: "Betriebsanweisung WD-40: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Maschinenbau & Anlagenbau",
+      "Metallbau & Schweißtechnik",
+      "Elektroinstallation & Gebäudetechnik",
+    ],
+  },
+  {
+    slug: 'glycerin-trgs-555',
+    substanceName: "Glycerin",
+    metaDescription: "Betriebsanweisung Glycerin: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Lebensmittel- & Kosmetikproduktion",
+      "Labor & Technik",
+      "Chemische Produktion",
+    ],
+  },
+  {
+    slug: 'bitumenemulsion-trgs-555',
+    substanceName: "Bitumenemulsion",
+    metaDescription: "Betriebsanweisung Bitumenemulsion: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Straßenbau & Asphaltierung",
+      "Dachdecker & Abdichtung",
+      "Tiefbau & Kanalbau",
+      "Bau & Handwerk",
+    ],
+  },
+  {
+    slug: 'epoxidhaerter-trgs-555',
+    substanceName: "Epoxidhärter",
+    metaDescription: "Betriebsanweisung Epoxidhärter: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Bodenbeschichtung & Industrieboden",
+      "Kunststoffverarbeitung & GFK",
+      "Elektrotechnik & Isolierung",
+      "Bau & Handwerk",
+    ],
+  },
+  {
+    slug: 'kupferpaste-trgs-555',
+    substanceName: "Kupferpaste",
+    metaDescription: "Betriebsanweisung Kupferpaste: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Metallbau & Schweißtechnik",
+      "Maschinenbau & Anlagenbau",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'spruehlack-trgs-555',
+    substanceName: "Sprühlack",
+    metaDescription: "Betriebsanweisung Sprühlack: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Karosseriebau & Kfz-Lackierung",
+      "Malerbetrieb & Lackierung",
+      "Metallbau & Oberflächentechnik",
+      "Industrielle Beschichtung",
+    ],
+  },
+  {
+    slug: 'dichtungsmasse-trgs-555',
+    substanceName: "Dichtungsmasse",
+    metaDescription: "Betriebsanweisung Dichtungsmasse: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "SHK-Handwerk & Sanitär",
+      "Bau & Handwerk",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'bremsenfett-trgs-555',
+    substanceName: "Bremsenfett",
+    metaDescription: "Betriebsanweisung Bremsenfett: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Fahrradwerkstatt & Zweiradhandel",
+      "Landmaschinentechnik & Agrartechnik",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'rostschutzfarbe-trgs-555',
+    substanceName: "Rostschutzfarbe",
+    metaDescription: "Betriebsanweisung Rostschutzfarbe: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbau & Stahlbau",
+      "Malerbetrieb & Lackierung",
+      "Schiffbau & Offshore",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'trennmittel-trgs-555',
+    substanceName: "Trennmittel",
+    metaDescription: "Betriebsanweisung Trennmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Betonwerk & Fertigteilbau",
+      "Kunststoffverarbeitung & Gummi",
+      "Gießerei & Formenbau",
+      "Bau & Handwerk",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
