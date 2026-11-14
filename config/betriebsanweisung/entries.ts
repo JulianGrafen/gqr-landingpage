@@ -2368,6 +2368,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Bau & Handwerk",
     ],
   },
+  {
+    slug: 'fensterreiniger-trgs-555',
+    substanceName: "Fensterreiniger",
+    metaDescription: "Betriebsanweisung Fensterreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Fenster- & Glasbau",
+      "Hausmeisterdienst & Objektbetreuung",
+      "Reinigungsdienst & Unterhaltsreinigung",
+    ],
+  },
+  {
+    slug: 'silikonspray-trgs-555',
+    substanceName: "Silikonspray",
+    metaDescription: "Betriebsanweisung Silikonspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Industrielle Instandhaltung",
+      "Maschinenbau & Anlagenbau",
+      "Werkstatt & Montage",
+    ],
+  },
+  {
+    slug: 'klarlack-trgs-555',
+    substanceName: "Klarlack",
+    metaDescription: "Betriebsanweisung Klarlack: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Karosseriebau & Kfz-Lackierung",
+      "Malerbetrieb & Lackierung",
+      "Möbelbau & Holzlackierung",
+      "Industrielle Beschichtung",
+    ],
+  },
+  {
+    slug: 'acryllack-trgs-555',
+    substanceName: "Acryllack",
+    metaDescription: "Betriebsanweisung Acryllack: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Karosseriebau & Kfz-Lackierung",
+      "Schreinerei & Holzverarbeitung",
+      "Metallbau & Oberflächentechnik",
+    ],
+  },
+  {
+    slug: 'fettloeser-trgs-555',
+    substanceName: "Fettlöser",
+    metaDescription: "Betriebsanweisung Fettlöser: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Gastronomie & Großküche",
+      "Gebäudereinigung & Industriereinigung",
+      "Maschinenbau & Produktion",
+    ],
+  },
+  {
+    slug: 'vergaserreiniger-trgs-555',
+    substanceName: "Vergaserreiniger",
+    metaDescription: "Betriebsanweisung Vergaserreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Oldtimer-Service",
+      "Landmaschinentechnik & Agrartechnik",
+      "Motorradwerkstatt & Zweiradhandel",
+      "Werkstatt & Motorentechnik",
+    ],
+  },
+  {
+    slug: 'innenraumreiniger-trgs-555',
+    substanceName: "Innenraumreiniger",
+    metaDescription: "Betriebsanweisung Innenraumreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Car detailing & Aufbereitung",
+      "Fuhrpark & Logistik",
+      "Gebäudereinigung & Textilpflege",
+    ],
+  },
+  {
+    slug: 'unterbodenschutz-trgs-555',
+    substanceName: "Unterbodenschutz",
+    metaDescription: "Betriebsanweisung Unterbodenschutz: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Karosseriebau & Kfz-Lackierung",
+      "Kfz-Werkstatt & Korrosionsschutz",
+      "Fuhrpark & Flottenpflege",
+      "Landmaschinentechnik & Agrartechnik",
+    ],
+  },
+  {
+    slug: 'latexfarbe-trgs-555',
+    substanceName: "Latexfarbe",
+    metaDescription: "Betriebsanweisung Latexfarbe: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Anstrich",
+      "Trockenbau & Innenausbau",
+      "Bau & Handwerk",
+      "Facility Management & Sanierung",
+    ],
+  },
+  {
+    slug: 'montagekleber-trgs-555',
+    substanceName: "Montagekleber",
+    metaDescription: "Betriebsanweisung Montagekleber: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "SHK-Handwerk & Sanitär",
+      "Elektroinstallation & Montage",
+      "Bau & Handwerk",
+      "Fenster- & Türenbau",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
