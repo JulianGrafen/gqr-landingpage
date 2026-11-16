@@ -24,7 +24,6 @@ import { getAllBetriebsanweisungEntries, getBetriebsanweisungEntry } from '@/con
 import { buildBetriebsanweisungRegisterUrl } from '@/lib/betriebsanweisung/build-register-url';
 import { resolveSubstanceCluster } from '@/lib/betriebsanweisung/resolve-substance-cluster';
 import { MOBILE_UPLOAD_FALLBACK } from '@/config/betriebsanweisung/conversion-copy';
-import { SAMPLE_PREVIEW_COPY } from '@/config/betriebsanweisung/sample-preview';
 import {
   buildBetriebsanweisungBreadcrumbs,
   buildBetriebsanweisungCanonical,
@@ -82,9 +81,6 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
   const industrySolutions = findMatchingIndustrySolutions(entry);
   const registerUrl = buildBetriebsanweisungRegisterUrl(entry.slug);
   const cluster = resolveSubstanceCluster(entry);
-  const sampleRegisterUrl = buildBetriebsanweisungRegisterUrl(entry.slug, {
-    utmContent: SAMPLE_PREVIEW_COPY.registerUtmContent,
-  });
   const mobileRegisterUrl = buildBetriebsanweisungRegisterUrl(entry.slug, {
     utmContent: MOBILE_UPLOAD_FALLBACK.utmContent,
   });
@@ -107,7 +103,7 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
         <section className={`${BA_SECTION} lg:py-16`}>
           <div className={`${BA_CONTAINER} grid grid-cols-1 items-start gap-8 lg:grid-cols-12`}>
             <div className="order-2 lg:order-1 lg:col-span-7">
-              <BetriebsanweisungTeaserDocument entry={entry} cluster={cluster} sampleRegisterUrl={sampleRegisterUrl} />
+              <BetriebsanweisungTeaserDocument entry={entry} />
             </div>
             <div className="order-1 lg:order-2 lg:col-span-5">
               <BetriebsanweisungSdbSidebar
