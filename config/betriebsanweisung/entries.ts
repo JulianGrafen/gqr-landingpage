@@ -2588,6 +2588,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Industriekälte & Lüftungstechnik",
     ],
   },
+  {
+    slug: 'polsterreiniger-trgs-555',
+    substanceName: "Polsterreiniger",
+    metaDescription: "Betriebsanweisung Polsterreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Aufbereitung",
+      "Gebäudereinigung & Facility",
+      "Polsterei & Raumausstatter",
+      "Hotellerie & Gastgewerbe",
+    ],
+  },
+  {
+    slug: 'schaumreiniger-trgs-555',
+    substanceName: "Schaumreiniger",
+    metaDescription: "Betriebsanweisung Schaumreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Kfz-Werkstatt & Innenreinigung",
+      "Hausmeisterdienst & Objektbetreuung",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'tapetenloeser-trgs-555',
+    substanceName: "Tapetenlöser",
+    metaDescription: "Betriebsanweisung Tapetenlöser: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Tapeziererhandwerk",
+      "Raumausstatter & Dekoration",
+      "Bau & Sanierung",
+      "Facility & Gebäudemanagement",
+    ],
+  },
+  {
+    slug: 'oelbindemittel-trgs-555',
+    substanceName: "Ölbindemittel",
+    metaDescription: "Betriebsanweisung Ölbindemittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Industrielle Instandhaltung",
+      "Logistik & Werkshof",
+      "Kommunaltechnik & Umweltsanierung",
+    ],
+  },
+  {
+    slug: 'fugenmasse-trgs-555',
+    substanceName: "Fugenmasse",
+    metaDescription: "Betriebsanweisung Fugenmasse: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "SHK-Handwerk & Sanitär",
+      "Fliesenleger & Bau",
+      "Malerbetrieb & Lackierung",
+      "Innenausbau & Trockenbau",
+    ],
+  },
+  {
+    slug: 'zinkspray-trgs-555',
+    substanceName: "Zinkspray",
+    metaDescription: "Betriebsanweisung Zinkspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbau & Stahlkonstruktion",
+      "Korrosionsschutz & Instandsetzung",
+      "Schiffbau & maritimer Service",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'weichspueler-trgs-555',
+    substanceName: "Weichspüler",
+    metaDescription: "Betriebsanweisung Weichspüler: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Textilreinigung & Wäscherei",
+      "Gebäudereinigung & Wäscherei-Service",
+      "Pflegeeinrichtungen & Klinikwäscherei",
+      "Gastronomie & Betriebsgastronomie",
+    ],
+  },
+  {
+    slug: 'scheuermilch-trgs-555',
+    substanceName: "Scheuermilch",
+    metaDescription: "Betriebsanweisung Scheuermilch: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Gastronomie & Großküche",
+      "Hotellerie & Gastgewerbe",
+      "Hausmeisterdienst & Objektbetreuung",
+    ],
+  },
+  {
+    slug: 'servolenkungsoel-trgs-555',
+    substanceName: "Servolenkungsöl",
+    metaDescription: "Betriebsanweisung Servolenkungsöl: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Kundendienst",
+      "Fuhrpark & Flottenmanagement",
+      "Landmaschinentechnik & Agrartechnik",
+      "Logistik & Spedition (Fuhrpark)",
+    ],
+  },
+  {
+    slug: 'chlorreiniger-trgs-555',
+    substanceName: "Chlorreiniger",
+    metaDescription: "Betriebsanweisung Chlorreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Schwimmbadbetrieb & Bädertechnik",
+      "Gastronomie & Lebensmittelhygiene",
+      "Kommunaltechnik & öffentliche Einrichtungen",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
