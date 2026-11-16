@@ -10,8 +10,16 @@ import { SITE_URL } from '@/config/site-seo';
 export const SOFTWARE_APPLICATION_ID = `${SITE_URL}/#software`;
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 
+/** Kernbeschreibung des Clusters "Gefahrstoffmanagement Software" (GSC-Fokus, siehe AGENTS.md für Compliance). */
+const SOFTWARE_SCHEMA_DESCRIPTION =
+  'Gefahrstoffmanagement Software und digitales Gefahrstoffkataster nach § 6 GefStoffV für KMU und externe SiFas.';
+
+function formatSchemaPrice(amountEur: number): string {
+  return amountEur.toFixed(2);
+}
+
 function buildOffer(plan: PricingPlan) {
-  const price = String(plan.monthlyPriceEur);
+  const price = formatSchemaPrice(plan.monthlyPriceEur);
   return {
     '@type': 'Offer',
     name: plan.name,
@@ -31,6 +39,19 @@ function buildOffer(plan: PricingPlan) {
   };
 }
 
+/** Preisspanne aller Pakete (monatliche Abrechnung) als AggregateOffer mit den Einzelangeboten. */
+function buildAggregateOffer() {
+  const monthlyPrices = PRICING_PLANS.map((plan) => plan.monthlyPriceEur);
+  return {
+    '@type': 'AggregateOffer',
+    priceCurrency: PRICING_CURRENCY,
+    lowPrice: formatSchemaPrice(Math.min(...monthlyPrices)),
+    highPrice: formatSchemaPrice(Math.max(...monthlyPrices)),
+    offerCount: PRICING_PLANS.length,
+    offers: PRICING_PLANS.map(buildOffer),
+  };
+}
+
 /**
  * schema.org SoftwareApplication (B2B SaaS) aus der zentralen AEO-Konfiguration.
  * Startseite und Produktseiten geben dieselbe Entität (`@id`) identisch aus, damit Suchmaschinen
@@ -47,8 +68,8 @@ export function buildSoftwareApplicationSchema() {
     inLanguage: 'de-DE',
     applicationCategory: 'BusinessApplication',
     applicationSubCategory: 'Gefahrstoffmanagement Software',
-    operatingSystem: 'Web, Browser-based',
-    description: `${PRODUCT_ENTITY.summary} ${HUMAN_IN_THE_LOOP_NOTICE}`,
+    operatingSystem: 'Web browser',
+    description: `${SOFTWARE_SCHEMA_DESCRIPTION} ${PRODUCT_ENTITY.summary} ${HUMAN_IN_THE_LOOP_NOTICE}`,
     featureList: CORE_FEATURES.map((feature) => feature.term),
     audience: {
       '@type': 'BusinessAudience',
@@ -56,6 +77,6 @@ export function buildSoftwareApplicationSchema() {
       geographicArea: { '@type': 'Country', name: 'Deutschland' },
     },
     provider: { '@id': ORGANIZATION_ID },
-    offers: PRICING_PLANS.map(buildOffer),
+    offers: buildAggregateOffer(),
   };
 }

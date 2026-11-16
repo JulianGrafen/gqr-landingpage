@@ -1,6 +1,7 @@
 'use client';
 
-import { createContext, useCallback, useContext, useMemo, useRef, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useMemo, useRef, useState, type ReactNode } from 'react';
+import { SAMPLE_PREVIEW_COPY } from '@/config/betriebsanweisung/sample-preview';
 
 type SdbUploadSurface = {
   openFilePicker: () => void;
@@ -11,6 +12,10 @@ type BetriebsanweisungSdbUploadContextValue = {
   registerSdbUploadSurface: (surface: SdbUploadSurface | null) => void;
   requestSdbUploadFromOverlay: () => void;
   scrollToDropzone: () => void;
+  /** Statische Muster-Vorschau ist sichtbar (kein API-Call, rein clientseitig). */
+  isSamplePreviewActive: boolean;
+  /** Blendet die Muster-Vorschau ein und scrollt zu ihr. */
+  showSamplePreview: () => void;
 };
 
 const BetriebsanweisungSdbUploadContext = createContext<BetriebsanweisungSdbUploadContextValue | null>(
@@ -19,6 +24,7 @@ const BetriebsanweisungSdbUploadContext = createContext<BetriebsanweisungSdbUplo
 
 export function BetriebsanweisungSdbUploadProvider({ children }: { children: ReactNode }) {
   const surfaceRef = useRef<SdbUploadSurface | null>(null);
+  const [isSamplePreviewActive, setIsSamplePreviewActive] = useState(false);
 
   const registerSdbUploadSurface = useCallback((surface: SdbUploadSurface | null) => {
     surfaceRef.current = surface;
@@ -40,9 +46,22 @@ export function BetriebsanweisungSdbUploadProvider({ children }: { children: Rea
     }
   }, []);
 
+  const showSamplePreview = useCallback(() => {
+    setIsSamplePreviewActive(true);
+    document
+      .getElementById(SAMPLE_PREVIEW_COPY.anchorId)
+      ?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }, []);
+
   const value = useMemo(
-    () => ({ registerSdbUploadSurface, requestSdbUploadFromOverlay, scrollToDropzone }),
-    [registerSdbUploadSurface, requestSdbUploadFromOverlay, scrollToDropzone],
+    () => ({
+      registerSdbUploadSurface,
+      requestSdbUploadFromOverlay,
+      scrollToDropzone,
+      isSamplePreviewActive,
+      showSamplePreview,
+    }),
+    [registerSdbUploadSurface, requestSdbUploadFromOverlay, scrollToDropzone, isSamplePreviewActive, showSamplePreview],
   );
 
   return (

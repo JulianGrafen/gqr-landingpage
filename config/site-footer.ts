@@ -17,11 +17,12 @@ export const FOOTER_PRODUCT_LINKS = [
   { label: 'Schlüsselfertig (2.900 €)', href: '/#schluesselfertig-service' },
   { label: 'Kataster erstellen lassen', href: '/wissen/gefahrstoffkataster-erstellen-lassen/' },
   { label: 'Für SiFas', href: '/#fuer-sifas' },
-  { label: 'TarifVorschau starten', href: 'https://app.gefahrstoff-qr.de/register' },
+  { label: 'Kostenlos starten', href: 'https://app.gefahrstoff-qr.de/register' },
 ] as const satisfies readonly FooterLink[];
 
 export const FOOTER_RESOURCE_LINKS = [
   { label: 'Wissen', href: '/wissen/' },
+  { label: 'Gefahrstoffmanagement Software', href: '/wissen/gefahrstoffmanagement-software/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Excel-Vorlage', href: '/gefahrstoffverzeichnis-excel-vorlage/' },
   { label: 'TRGS-510-Checker', href: '/trgs-510-zusammenlagerungs-check/' },

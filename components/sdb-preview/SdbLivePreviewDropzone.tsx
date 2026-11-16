@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useRef, type ReactNode } from 'react';
 import { SdbDropzoneInput, type SdbDropzoneInputHandle } from '@/components/sdb-preview/SdbDropzoneInput';
 import { SdbExampleChips } from '@/components/sdb-preview/SdbExampleChips';
 import { SdbProcessingProgressBar } from '@/components/sdb-preview/SdbProcessingProgressBar';
@@ -21,6 +21,11 @@ export type SdbLivePreviewDropzoneProps = {
   /** Keine GHS/CAS/H-Sätze in der Vorschau (öffentliche Betriebsanweisungs-LPs). */
   omitPublishedHazardData?: boolean;
   onPhaseChange?: (phase: SdbPreviewPhase) => void;
+  /**
+   * Ersetzt die generischen Beispiel-SDB-Chips (die eine Server-Extraktion auslösen) durch einen
+   * seitenspezifischen, rein clientseitigen Beispiel-Einstieg (z. B. Muster-Vorschau auf BA-Seiten).
+   */
+  exampleSlot?: ReactNode;
 };
 
 export type SdbLivePreviewDropzoneHandle = {
@@ -37,6 +42,7 @@ export const SdbLivePreviewDropzone = forwardRef<SdbLivePreviewDropzoneHandle, S
       embedded = false,
       omitPublishedHazardData = false,
       onPhaseChange,
+      exampleSlot,
     },
     ref,
   ) {
@@ -139,7 +145,7 @@ export const SdbLivePreviewDropzone = forwardRef<SdbLivePreviewDropzoneHandle, S
         onFile={uploadFile}
       />
       {showExampleChips ? (
-        <SdbExampleChips variant={variant} disabled={busy} onSelect={runExample} />
+        exampleSlot ?? <SdbExampleChips variant={variant} disabled={busy} onSelect={runExample} />
       ) : null}
       {fileLabel && phase !== 'idle' ? (
         <p className={variant === 'static' ? 'sdb-live-preview-file-label' : 'mt-2 truncate text-xs text-[#8fa4c0]'}>

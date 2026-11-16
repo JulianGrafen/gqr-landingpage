@@ -1,5 +1,9 @@
+import Link from 'next/link';
 import type { HazardousSubstanceSeoEntry, SubstanceFaqItems } from '@/config/betriebsanweisung/types';
 import { BetriebsanweisungFaqSection } from '@/components/betriebsanweisung/BetriebsanweisungFaqSection';
+import { BA_HUB_LINKS } from '@/config/betriebsanweisung/hub-links';
+import { resolveMarketingHomeHref } from '@/config/site-seo';
+import { BetriebsanweisungIntentSwitch } from '@/components/betriebsanweisung/BetriebsanweisungIntentSwitch';
 import { buildWorkplaceConditionsParagraph } from '@/lib/betriebsanweisung/format-workplace-context';
 
 type Props = {
@@ -7,6 +11,8 @@ type Props = {
   /** Dieselben Items wie im FAQPage-JSON-LD der Seite (1:1 synchron). */
   faqItems: SubstanceFaqItems;
 };
+
+const HUB_LINK_CLASS = 'font-semibold text-teal-300 underline underline-offset-2 hover:text-teal-200';
 
 export function BetriebsanweisungExpertSeoSection({ entry, faqItems }: Props) {
   const workplaceParagraph = buildWorkplaceConditionsParagraph(entry.substanceName, entry.typicalIndustries);
@@ -44,8 +50,23 @@ export function BetriebsanweisungExpertSeoSection({ entry, faqItems }: Props) {
             durch die SiFa / den Arbeitgeber (§ 14 GefStoffV). Freigabe, Unterweisung und die Dokumentation im
             Gefahrstoffverzeichnis nach § 6 GefStoffV bleiben betriebliche Pflichten.
           </p>
+          <p>
+            Die Betriebsanweisung ist ein Baustein des betrieblichen Gefahrstoffmanagements. Wie Excel-Listen,
+            Konzern-EHS-Systeme und spezialisierte Lösungen Verzeichnis, Betriebsanweisungen und Lagerung abdecken,
+            zeigt der Leitfaden{' '}
+            <Link href={BA_HUB_LINKS.softwareGuide.href} className={HUB_LINK_CLASS}>
+              {BA_HUB_LINKS.softwareGuide.anchorText}
+            </Link>
+            . Den Funktionsumfang im Überblick finden Sie bei{' '}
+            <a href={resolveMarketingHomeHref()} className={HUB_LINK_CLASS}>
+              {BA_HUB_LINKS.home.anchorText}
+            </a>
+            .
+          </p>
         </div>
       </section>
+
+      <BetriebsanweisungIntentSwitch slug={entry.slug} />
 
       <section aria-labelledby="faq-heading">
         <h2 id="faq-heading" className="text-2xl font-bold text-[#f0f6ff]">

@@ -1,13 +1,17 @@
 import Link from 'next/link';
 import type { DeepinfoPage } from '@/lib/wissen/types';
 import { DeepinfoFaq } from '@/components/deepinfo/DeepinfoFaq';
+import { DEEPINFO_PAGE_EXTENSIONS } from '@/components/deepinfo/deepinfo-page-extensions';
 import { DeepinfoProse } from '@/components/deepinfo/DeepinfoProse';
 import { DeepinfoStickyCta } from '@/components/deepinfo/DeepinfoStickyCta';
 import { FaqJsonLd } from '@/components/deepinfo/FaqJsonLd';
 import { ManualVsGqrComparison } from '@/components/deepinfo/ManualVsGqrComparison';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { TurnkeyAuditSection } from '@/components/TurnkeyAuditSection';
 import { APP_REGISTER_URL } from '@/config/aeo-config';
 import { TURNKEY_AUDIT } from '@/config/home-sections/turnkey-audit';
+import type { DeepinfoSlug } from '@/lib/wissen/deepinfo-loader';
+import { buildSoftwareApplicationSchema } from '@/lib/seo/build-software-application-schema';
 
 type DeepinfoPageTemplateProps = {
   page: DeepinfoPage;
@@ -16,10 +20,13 @@ type DeepinfoPageTemplateProps = {
 export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
   const { meta, mdxSource } = page;
   const stickyCtaHref = meta.showTurnkeyAudit ? TURNKEY_AUDIT.cta.href : APP_REGISTER_URL;
+  const extension = DEEPINFO_PAGE_EXTENSIONS[meta.slug as DeepinfoSlug];
+  const faqSchemaItems = [...meta.faq, ...(extension?.extraFaqSchemaItems ?? [])];
 
   return (
     <main className="pb-20 lg:pb-0">
-      <FaqJsonLd faq={meta.faq} />
+      <FaqJsonLd faq={faqSchemaItems} />
+      {extension?.includeSoftwareApplicationSchema ? <JsonLd data={buildSoftwareApplicationSchema()} /> : null}
 
       {meta.showTurnkeyAudit ? (
         <div className="border-b border-white/[0.07] bg-[#0a1628] py-10 lg:py-14">
@@ -52,10 +59,11 @@ export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
               </p>
 
               <DeepinfoProse source={mdxSource} />
-              <ManualVsGqrComparison
-                targetAudience={meta.targetAudience}
-                comparison={meta.comparison}
-              />
+              {extension?.sectionsBeforeComparison}
+              {extension?.comparison ?? (
+                <ManualVsGqrComparison targetAudience={meta.targetAudience} comparison={meta.comparison} />
+              )}
+              {extension?.sectionsAfterComparison}
               <DeepinfoFaq faq={meta.faq} />
             </div>
           </article>

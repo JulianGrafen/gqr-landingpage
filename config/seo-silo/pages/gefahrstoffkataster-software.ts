@@ -7,9 +7,9 @@ export const KATASTER_SOFTWARE_SILO_CONFIG: SeoSiloPageConfig = {
  path: KATASTER_SOFTWARE_SILO_PATH,
  intent: 'software-buy',
  seo: {
- title: 'Cloud Gefahrstoffmanagement Software: Nachweisführung statt Excel | GQR',
+ title: 'Gefahrstoffkataster Software & Chemikalienkataster kostenlos testen',
  description:
- 'Cloud Gefahrstoffmanagement Software mit KI-Sicherheitsdatenblatt-Import, Verzeichnis mit Revisionsverlauf nach § 6 GefStoffV, TRGS 510 und QR-Notfallpass — browserbasiert, ohne Installation.',
+ 'Gefahrstoffkataster Software und Chemikalienkataster im Browser: KI-gestützter SDB-Import, Verzeichnis nach § 6 GefStoffV mit Revisionsverlauf, TRGS 510 und QR-Notfallpass. Kostenlos testen.',
  ogImageAlt:
  'Cloud Gefahrstoffmanagement Software Gefahrstoff-QR — Dashboard mit Sicherheitsdatenblatt-Status und Compliance-KPIs',
  canonicalPath: KATASTER_SOFTWARE_SILO_PATH,

@@ -79,8 +79,18 @@ export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
       'Ja, im Rahmen der Vorprüfung. Die Einstufung erfolgt nach CLP-Verordnung, REACH-relevante Daten wie die UFI können geführt werden. Gefahrstoff-QR unterstützt bei TRGS 510 (Lagerung), TRGS 555 (Betriebsanweisung als KI-gestützter Entwurf) und TRGS 600 (Hinweise zur Substitutionsprüfung bei KMR-Stoffen). Die fachliche Bewertung bleibt bei der SiFa / dem Arbeitgeber.',
   },
   {
+    question: 'Kann ich eine Gefahrstoffkataster Software kostenlos testen?',
+    answer:
+      'Ja, Gefahrstoff-QR lässt sich in der TarifVorschau kostenlos und ohne Kreditkarte testen. Sie laden bis zu 3 eigene Sicherheitsdatenblätter hoch und sehen die KI-gestützte Auswertung im Browser. Exporte tragen in der Vorschau ein Muster-Wasserzeichen. Für das vollständige Gefahrstoffkataster mit PDF- und Excel-Export wählen Sie anschließend einen KMU- oder SiFa-Tarif.',
+  },
+  {
+    question: 'Ist Gefahrstoff-QR auch eine Chemikalienkataster Software?',
+    answer:
+      'Ja, Chemikalienkataster, Gefahrstoffkataster und Gefahrstoffverzeichnis bezeichnen in der Praxis dieselbe Liste nach § 6 GefStoffV. Gefahrstoff-QR führt sie als digitale Gefahrstoffdatenbank mit Einstufung, Mengenbereich, Arbeitsbereich, Verweis auf das aktuelle Sicherheitsdatenblatt und Revisionsverlauf. Einen ausführlichen Vergleich der Software-Kategorien finden Sie im Leitfaden zur Gefahrstoffmanagement Software.',
+  },
+  {
     question: 'Wie aufwendig ist der Umstieg von Excel auf Gefahrstoff-QR?',
     answer:
-      'Der Umstieg braucht kein IT-Projekt, weil Gefahrstoff-QR im Browser läuft. Vorhandene Sicherheitsdatenblätter laden Sie ab dem Professional-Paket per Batch-Upload in einem Rutsch hoch. Alternativ begleitet Sie der Umzugsservice persönlich beim Erstimport.',
+      'Der Umstieg braucht kein IT-Projekt, weil Gefahrstoff-QR im Browser läuft. Vorhandene Sicherheitsdatenblätter laden Sie ab KMU Pro per Batch-Upload in einem Rutsch hoch. Alternativ begleitet Sie der Umzugsservice persönlich beim Erstimport.',
   },
 ];
