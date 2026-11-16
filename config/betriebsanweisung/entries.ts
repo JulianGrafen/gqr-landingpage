@@ -2478,6 +2478,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Fenster- & Türenbau",
     ],
   },
+  {
+    slug: 'reinigungsalkohol-trgs-555',
+    substanceName: "Reinigungsalkohol",
+    metaDescription: "Betriebsanweisung Reinigungsalkohol: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Kfz-Werkstatt & Aufbereitung",
+      "Elektronik & Löttechnik",
+      "Gesundheitswesen & Labor",
+    ],
+  },
+  {
+    slug: 'enteiser-trgs-555',
+    substanceName: "Enteiser",
+    metaDescription: "Betriebsanweisung Enteiser: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Transport & Logistik (Fuhrpark)",
+      "Kommunaltechnik & Winterdienst",
+      "Flughafen- & Bahnverkehr",
+      "Hausmeisterdienst & Facility",
+    ],
+  },
+  {
+    slug: 'scheibenwischwasser-trgs-555',
+    substanceName: "Scheibenwischwasser",
+    metaDescription: "Betriebsanweisung Scheibenwischwasser: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Kundendienst",
+      "Fuhrpark & Flottenmanagement",
+      "Waschanlage & Fahrzeugreinigung",
+      "Landmaschinentechnik & Agrartechnik",
+    ],
+  },
+  {
+    slug: 'loetwasser-trgs-555',
+    substanceName: "Lötwasser",
+    metaDescription: "Betriebsanweisung Lötwasser: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Elektronikfertigung & Löttechnik",
+      "SHK-Handwerk & Sanitär",
+      "Blechbearbeitung & Spenglerhandwerk",
+      "Kunsthandwerk & Galvanik",
+    ],
+  },
+  {
+    slug: 'motorenreiniger-trgs-555',
+    substanceName: "Motorenreiniger",
+    metaDescription: "Betriebsanweisung Motorenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Landmaschinentechnik & Agrartechnik",
+      "Motorradwerkstatt & Zweiradhandel",
+      "Maschinenbau & Anlagenbau",
+    ],
+  },
+  {
+    slug: 'muelltonnenreiniger-trgs-555',
+    substanceName: "Mülltonnenreiniger",
+    metaDescription: "Betriebsanweisung Mülltonnenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Kommunaltechnik & Abfallwirtschaft",
+      "Gastronomie & Großküche",
+      "Hausmeisterdienst & Grünpflege",
+    ],
+  },
+  {
+    slug: 'urinsteinentferner-trgs-555',
+    substanceName: "Urinsteinentferner",
+    metaDescription: "Betriebsanweisung Urinsteinentferner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Sanitärreinigung",
+      "Gastronomie & Großküche",
+      "Hotel & Beherbergung",
+      "Pflegeeinrichtungen & Klinikservice",
+    ],
+  },
+  {
+    slug: 'terrassenreiniger-trgs-555',
+    substanceName: "Terrassenreiniger",
+    metaDescription: "Betriebsanweisung Terrassenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Garten- & Landschaftsbau",
+      "Gebäudereinigung & Außenpflege",
+      "Hotel & Gastronomie (Außenbereich)",
+      "Hausmeisterdienst & Facility",
+    ],
+  },
+  {
+    slug: 'algenentferner-trgs-555',
+    substanceName: "Algenentferner",
+    metaDescription: "Betriebsanweisung Algenentferner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Fassadentechnik",
+      "Schwimmbadbetrieb & Bädertechnik",
+      "Garten- & Landschaftsbau",
+      "Schiffbau & maritimer Service",
+    ],
+  },
+  {
+    slug: 'klimaanlagenreiniger-trgs-555',
+    substanceName: "Klimaanlagenreiniger",
+    metaDescription: "Betriebsanweisung Klimaanlagenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "SHK-Handwerk & Klimatechnik",
+      "Kfz-Werkstatt & Klimaservice",
+      "Gebäudetechnik & Facility Management",
+      "Industriekälte & Lüftungstechnik",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
