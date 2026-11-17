@@ -43,6 +43,7 @@ const SOURCE_STATIC_DIRS = [
   'gefahrstoffmanagement-reinigungsfirma',
   'gefahrstoff-software-sicherheitsfachkraft-selbstständig',
   'trgs-510-zusammenlagerungs-check',
+  'etikettensoftware-gefahrstoffe',
 ];
 
 /** Post–GitHub-Pages sync: committed static HTML export. */

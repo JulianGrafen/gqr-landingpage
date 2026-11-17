@@ -14,6 +14,7 @@ const SYNC_PATHS = [
   'loesungen',
   'betriebsanweisung',
   'gefahrstoff-app',
+  'etikettensoftware-gefahrstoffe',
   'gefahrstoffkataster-excel-vorlage',
   'gefahrstoffkataster-software',
   'gefahrstoffverzeichnis-excel-vorlage',

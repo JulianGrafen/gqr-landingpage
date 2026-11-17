@@ -8,7 +8,8 @@ export type SeoSiloIntent =
   | 'excel-intercept'
   | 'software-buy'
   | 'mobile-app'
-  | 'how-to-guide';
+  | 'how-to-guide'
+  | 'labeling';
 
 /** FAQ-Eintrag (UI + FAQPage JSON-LD) */
 export interface SeoSiloFaqItem {

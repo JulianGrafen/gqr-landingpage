@@ -23,6 +23,7 @@ export const FOOTER_PRODUCT_LINKS = [
 export const FOOTER_RESOURCE_LINKS = [
   { label: 'Wissen', href: '/wissen/' },
   { label: 'Gefahrstoffmanagement Software', href: '/wissen/gefahrstoffmanagement-software/' },
+  { label: 'Etikettensoftware Gefahrstoffe', href: '/etikettensoftware-gefahrstoffe/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Excel-Vorlage', href: '/gefahrstoffverzeichnis-excel-vorlage/' },
   { label: 'TRGS-510-Checker', href: '/trgs-510-zusammenlagerungs-check/' },

@@ -61,6 +61,11 @@ export function BetriebsanweisungExpertSeoSection({ entry, faqItems }: Props) {
             <a href={resolveMarketingHomeHref()} className={HUB_LINK_CLASS}>
               {BA_HUB_LINKS.home.anchorText}
             </a>
+            .{' '}
+            Wer Produkte in Sprühflaschen oder andere Gebinde umfüllt, kennzeichnet diese mit{' '}
+            <Link href={BA_HUB_LINKS.labelSoftware.href} className={HUB_LINK_CLASS}>
+              {BA_HUB_LINKS.labelSoftware.anchorText}
+            </Link>
             .
           </p>
         </div>
