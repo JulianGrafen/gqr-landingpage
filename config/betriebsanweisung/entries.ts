@@ -2698,6 +2698,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Kommunaltechnik & öffentliche Einrichtungen",
     ],
   },
+  {
+    slug: 'spuelmittel-trgs-555',
+    substanceName: "Spülmittel",
+    metaDescription: "Betriebsanweisung Spülmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gastronomie & Großküche",
+      "Gebäudereinigung & Facility",
+      "Lebensmittelverarbeitung & Produktion",
+      "Pflegeeinrichtungen & Sozialwesen",
+    ],
+  },
+  {
+    slug: 'reifenreiniger-trgs-555',
+    substanceName: "Reifenreiniger",
+    metaDescription: "Betriebsanweisung Reifenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Reifenservice",
+      "Fuhrpark & Flottenmanagement",
+      "Fahrzeugaufbereitung & Detailing",
+      "Logistik & Spedition (Fuhrpark)",
+    ],
+  },
+  {
+    slug: 'nagellackentferner-trgs-555',
+    substanceName: "Nagellackentferner",
+    metaDescription: "Betriebsanweisung Nagellackentferner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kosmetik & Nagelstudio",
+      "Friseur & Beauty",
+      "Gebäudereinigung & Facility",
+      "Hotellerie & Wellness",
+    ],
+  },
+  {
+    slug: 'klebstoffentferner-trgs-555',
+    substanceName: "Klebstoffentferner",
+    metaDescription: "Betriebsanweisung Klebstoffentferner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Kfz-Werkstatt & Karosserie",
+      "Tischlerei & Holzverarbeitung",
+      "Etikettierung & Verpackung",
+    ],
+  },
+  {
+    slug: 'impraegniermittel-trgs-555',
+    substanceName: "Imprägniermittel",
+    metaDescription: "Betriebsanweisung Imprägniermittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Textilreinigung & Wäscherei",
+      "Schuhmacherei & Lederwaren",
+      "Gebäudereinigung & Facility",
+      "Schreinerei & Holzverarbeitung",
+    ],
+  },
+  {
+    slug: 'holzreiniger-trgs-555',
+    substanceName: "Holzreiniger",
+    metaDescription: "Betriebsanweisung Holzreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Schreinerei & Holzverarbeitung",
+      "Parkettleger & Bodenbeläge",
+      "Gebäudereinigung & Facility",
+      "Möbelherstellung & Innenausbau",
+    ],
+  },
+  {
+    slug: 'marmorreiniger-trgs-555',
+    substanceName: "Marmorreiniger",
+    metaDescription: "Betriebsanweisung Marmorreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Steinmetz & Naturstein",
+      "Hotellerie & Gastgewerbe",
+      "Denkmalpflege & Restaurierung",
+    ],
+  },
+  {
+    slug: 'messingreiniger-trgs-555',
+    substanceName: "Messingreiniger",
+    metaDescription: "Betriebsanweisung Messingreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbearbeitung & Oberflächentechnik",
+      "Gebäudereinigung & Facility",
+      "Schiffbau & maritimer Service",
+      "Denkmalpflege & Restaurierung",
+    ],
+  },
+  {
+    slug: 'spuelmaschinenreiniger-trgs-555',
+    substanceName: "Spülmaschinenreiniger",
+    metaDescription: "Betriebsanweisung Spülmaschinenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gastronomie & Großküche",
+      "Gebäudereinigung & Facility",
+      "Hotellerie & Betriebsgastronomie",
+      "Pflegeeinrichtungen & Klinikverpflegung",
+    ],
+  },
+  {
+    slug: 'lufterfrischer-trgs-555',
+    substanceName: "Lufterfrischer",
+    metaDescription: "Betriebsanweisung Lufterfrischer: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Hotellerie & Gastgewerbe",
+      "Einzelhandel & Verkaufsflächen",
+      "Hausmeisterdienst & Objektbetreuung",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
