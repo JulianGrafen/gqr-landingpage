@@ -1,124 +1,200 @@
 'use client';
 
 import { useCallback, useRef, useState } from 'react';
-import type { SdbPreviewExampleId } from '@/lib/sdb-preview/api-contract';
-import { PROCESSING_STEP_LABELS } from '@/lib/sdb-preview/api-contract';
+import type { SdbPreviewExampleId, SdbPreviewPostResponse, SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
+import type { ExtractionProgressSnapshot } from '@/lib/sdb-preview/extraction-progress';
 import { loadSdbPreviewConfig } from '@/lib/sdb-preview/load-config';
-import {
-  persistPreviewToken,
-  prepareCompactUpload,
-  runExamplePreview,
-  uploadPdfPreview,
-  type SdbPreviewTeaser,
-} from '@/lib/sdb-preview/preview-api-client';
+import { prepareCompactUpload, runExamplePreview, uploadPdfPreview } from '@/lib/sdb-preview/preview-api-client';
+import { persistPreviewToken } from '@/lib/sdb-preview/preview-handoff';
+import { useExtractionProgress, type StartExtractionProgressOptions } from '@/lib/sdb-preview/use-extraction-progress';
 
 export type SdbPreviewPhase = 'idle' | 'processing' | 'ready' | 'error';
 
-export function useSdbPreview() {
+/** Herkunft der aktuellen Vorschau, steuert Badge-Text und Register-Übergabe. */
+export type SdbPreviewSource =
+  | { kind: 'upload'; fileName: string }
+  | { kind: 'example'; exampleId: SdbPreviewExampleId }
+  /** Clientseitige Demo ohne Server-Prefill (kein übertragbarer Token). */
+  | { kind: 'demo'; label: string };
+
+export type SdbDemoPreviewLoader = () => Promise<{
+  /** Anzeigename der Quelle, z. B. „Beispiel-SDB Salzsäure 37 %“. */
+  sourceLabel: string;
+  /** Bereits für die Landing gekürzter Teaser. */
+  teaser: SdbPreviewTeaser;
+}>;
+
+export interface SdbPreviewController {
+  phase: SdbPreviewPhase;
+  progress: ExtractionProgressSnapshot;
+  teaser: SdbPreviewTeaser | null;
+  source: SdbPreviewSource | null;
+  error: string | null;
+  /** Dateiname des hochgeladenen PDFs (nur bei `source.kind === 'upload'`). */
+  fileLabel: string | null;
+  /** Clientseitig erkannter Produktname, während die API noch läuft. */
+  earlyTradeName: string | null;
+  uploadFile: (file: File) => Promise<void>;
+  runExample: (exampleId: SdbPreviewExampleId) => Promise<void>;
+  runDemo: (loadDemo: SdbDemoPreviewLoader) => Promise<void>;
+  reset: () => void;
+}
+
+/**
+ * Demo-Lauf: gleiche Fortschrittskurve im Zeitraffer, damit der Durchlauf 1,5–2 s dauert
+ * und sichtbar bis in Phase 3 kommt (1,8 s × 2,5 = 4,5 s Kurvenzeit ≈ 60 %).
+ */
+const DEMO_RUN_DURATION_MS = 1800;
+const DEMO_PROGRESS_TIME_SCALE = 2.5;
+
+type PreviewRunResult = Pick<SdbPreviewPostResponse, 'ok'> & {
+  teaser?: SdbPreviewTeaser;
+  error?: string;
+  /** Erst nach dem Laden bekannte Quelle (Demo: Slug- oder Cluster-Beispiel). */
+  resolvedSource?: SdbPreviewSource;
+};
+
+function toRunResult(response: SdbPreviewPostResponse): PreviewRunResult {
+  return response.ok ? { ok: true, teaser: response.teaser } : { ok: false, error: response.error };
+}
+
+function delay(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/** Serverseitiger Prefill existiert nur für echte Uploads und Server-Beispiele. */
+export function hasTransferablePreviewToken(source: SdbPreviewSource | null): boolean {
+  return source !== null && source.kind !== 'demo';
+}
+
+export function useSdbPreview(): SdbPreviewController {
   const [phase, setPhase] = useState<SdbPreviewPhase>('idle');
-  const [processingStepIndex, setProcessingStepIndex] = useState(0);
   const [teaser, setTeaser] = useState<SdbPreviewTeaser | null>(null);
+  const [source, setSource] = useState<SdbPreviewSource | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [fileLabel, setFileLabel] = useState<string | null>(null);
   const [earlyTradeName, setEarlyTradeName] = useState<string | null>(null);
-  const abortRef = useRef(false);
+  const extractionProgress = useExtractionProgress();
+  const { start: startProgress, complete: completeProgress, stop: stopProgress } = extractionProgress;
 
-  /** Mindest-Feedback; endet früher wenn die API schneller antwortet als die Schrittanzeige. */
-  const runProcessingAnimation = useCallback(async (minMs: number) => {
-    const totalMs = Math.max(minMs, 900);
-    const stepMs = Math.ceil(totalMs / PROCESSING_STEP_LABELS.length);
-    setProcessingStepIndex(0);
-    for (let i = 0; i < PROCESSING_STEP_LABELS.length; i += 1) {
-      if (abortRef.current) return;
-      setProcessingStepIndex(i);
-      await new Promise((r) => setTimeout(r, stepMs));
-    }
-  }, []);
+  /** Monoton steigende Lauf-ID: Antworten veralteter Läufe (Reset / neuer Upload) werden verworfen. */
+  const activeRunIdRef = useRef(0);
 
-  const finishWithResult = useCallback(async (run: () => Promise<{ ok: boolean; teaser?: SdbPreviewTeaser; error?: string }>, minAnimationMs = 1200) => {
-    abortRef.current = false;
-    setPhase('processing');
-    setError(null);
-    setTeaser(null);
+  const runPreview = useCallback(
+    async (
+      nextSource: SdbPreviewSource,
+      run: (isCurrent: () => boolean) => Promise<PreviewRunResult>,
+      progressOptions?: StartExtractionProgressOptions,
+    ) => {
+      const runId = activeRunIdRef.current + 1;
+      activeRunIdRef.current = runId;
+      const isCurrent = () => activeRunIdRef.current === runId;
 
-    const animation = runProcessingAnimation(minAnimationMs);
-    const result = await run();
-    await animation;
+      setSource(nextSource);
+      setPhase('processing');
+      setError(null);
+      setTeaser(null);
+      setEarlyTradeName(null);
+      startProgress(progressOptions);
 
-    if (abortRef.current) return;
+      let result: PreviewRunResult;
+      try {
+        result = await run(isCurrent);
+      } catch (cause) {
+        result = {
+          ok: false,
+          error: cause instanceof Error && cause.message ? cause.message : 'Vorschau konnte nicht erstellt werden.',
+        };
+      }
 
-    if (!result.ok || !result.teaser) {
-      setPhase('error');
-      setError(result.error ?? 'Unbekannter Fehler');
-      return;
-    }
+      if (!isCurrent()) return;
 
-    persistPreviewToken(result.teaser.previewToken);
-    setTeaser(result.teaser);
-    setPhase('ready');
-  }, [runProcessingAnimation]);
+      if (!result.ok || !result.teaser) {
+        stopProgress();
+        setPhase('error');
+        setError(result.error ?? 'Unbekannter Fehler');
+        return;
+      }
+
+      const readyTeaser = result.teaser;
+      const readySource = result.resolvedSource ?? nextSource;
+      await completeProgress();
+      if (!isCurrent()) return;
+
+      if (hasTransferablePreviewToken(readySource)) {
+        persistPreviewToken(readyTeaser.previewToken);
+      }
+      setSource(readySource);
+      setTeaser(readyTeaser);
+      setPhase('ready');
+    },
+    [startProgress, stopProgress, completeProgress],
+  );
 
   const uploadFile = useCallback(
-    async (file: File) => {
-      setFileLabel(file.name);
-      setEarlyTradeName(null);
-      const config = await loadSdbPreviewConfig();
-      await finishWithResult(async () => {
+    (file: File) =>
+      runPreview({ kind: 'upload', fileName: file.name }, async (isCurrent) => {
+        const config = await loadSdbPreviewConfig();
         const prepared = await prepareCompactUpload(file);
-        if (prepared.earlyTradeName) {
+        if (prepared.earlyTradeName && isCurrent()) {
           setEarlyTradeName(prepared.earlyTradeName);
         }
-        const res = await uploadPdfPreview(
+        const response = await uploadPdfPreview(
           file,
-          {
-            apiBaseUrl: config.apiBaseUrl,
-            useMock: Boolean(config.useMock),
-          },
+          { apiBaseUrl: config.apiBaseUrl, useMock: Boolean(config.useMock) },
           prepared,
         );
-        if (!res.ok) return { ok: false, error: res.error };
-        return { ok: true, teaser: res.teaser };
-      }, 900);
-    },
-    [finishWithResult],
+        return toRunResult(response);
+      }),
+    [runPreview],
   );
 
   const runExample = useCallback(
-    async (exampleId: SdbPreviewExampleId) => {
-      setFileLabel(null);
-      const config = await loadSdbPreviewConfig();
-      await finishWithResult(async () => {
-        const res = await runExamplePreview(exampleId, {
+    (exampleId: SdbPreviewExampleId) =>
+      runPreview({ kind: 'example', exampleId }, async () => {
+        const config = await loadSdbPreviewConfig();
+        const response = await runExamplePreview(exampleId, {
           apiBaseUrl: config.apiBaseUrl,
           useMock: Boolean(config.useMock),
         });
-        if (!res.ok) return { ok: false, error: res.error };
-        return { ok: true, teaser: res.teaser };
-      });
-    },
-    [finishWithResult],
+        return toRunResult(response);
+      }),
+    [runPreview],
+  );
+
+  const runDemo = useCallback(
+    (loadDemo: SdbDemoPreviewLoader) =>
+      runPreview(
+        { kind: 'demo', label: '' },
+        async () => {
+          const [demo] = await Promise.all([loadDemo(), delay(DEMO_RUN_DURATION_MS)]);
+          return { ok: true, teaser: demo.teaser, resolvedSource: { kind: 'demo', label: demo.sourceLabel } };
+        },
+        { timeScale: DEMO_PROGRESS_TIME_SCALE },
+      ),
+    [runPreview],
   );
 
   const reset = useCallback(() => {
-    abortRef.current = true;
+    activeRunIdRef.current += 1;
+    stopProgress();
     setPhase('idle');
     setTeaser(null);
+    setSource(null);
     setError(null);
-    setFileLabel(null);
     setEarlyTradeName(null);
-    setProcessingStepIndex(0);
-  }, []);
+  }, [stopProgress]);
 
   return {
     phase,
-    processingStepIndex,
-    processingLabel: PROCESSING_STEP_LABELS[processingStepIndex] ?? PROCESSING_STEP_LABELS[0],
+    progress: extractionProgress.progress,
     teaser,
+    source,
     error,
-    fileLabel,
+    fileLabel: source?.kind === 'upload' ? source.fileName : null,
+    earlyTradeName,
     uploadFile,
     runExample,
+    runDemo,
     reset,
-    earlyTradeName,
   };
 }

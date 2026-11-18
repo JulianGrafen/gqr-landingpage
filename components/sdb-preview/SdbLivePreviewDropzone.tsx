@@ -8,8 +8,10 @@ import { SdbProcessingTimeline } from '@/components/sdb-preview/SdbProcessingTim
 import { SdbPreviewCompactResult } from '@/components/sdb-preview/SdbPreviewCompactResult';
 import { Trgs555PreviewDocument } from '@/components/sdb-preview/Trgs555PreviewDocument';
 import { shellClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
-import { PROCESSING_STEP_LABELS } from '@/lib/sdb-preview/api-contract';
-import { useSdbPreview, type SdbPreviewPhase } from '@/lib/sdb-preview/useSdbPreview';
+import type { SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
+import { useSdbPreview, type SdbPreviewController, type SdbPreviewPhase } from '@/lib/sdb-preview/useSdbPreview';
+
+const DROPZONE_ANCHOR_ID = 'ba-sdb-dropzone';
 
 export type SdbLivePreviewDropzoneProps = {
   variant?: SdbPreviewVariant;
@@ -23,9 +25,14 @@ export type SdbLivePreviewDropzoneProps = {
   onPhaseChange?: (phase: SdbPreviewPhase) => void;
   /**
    * Ersetzt die generischen Beispiel-SDB-Chips (die eine Server-Extraktion auslösen) durch einen
-   * seitenspezifischen, rein clientseitigen Beispiel-Einstieg (z. B. Muster-Vorschau auf BA-Seiten).
+   * seitenspezifischen Beispiel-Einstieg (z. B. Demo-Extraktion auf BA-Seiten).
    */
   exampleSlot?: ReactNode;
+  /**
+   * Ersetzt im Status „ready“ Ergebnis + Upload-Feld (z. B. Conversion-Card, wenn die Vorschau
+   * selbst an anderer Stelle der Seite gerendert wird). Neuer Upload über `openFilePicker()`.
+   */
+  renderReadyState?: (teaser: SdbPreviewTeaser) => ReactNode;
 };
 
 export type SdbLivePreviewDropzoneHandle = {
@@ -33,9 +40,20 @@ export type SdbLivePreviewDropzoneHandle = {
   scrollToDropzone: () => void;
 };
 
-export const SdbLivePreviewDropzone = forwardRef<SdbLivePreviewDropzoneHandle, SdbLivePreviewDropzoneProps>(
-  function SdbLivePreviewDropzone(
+type ControlledDropzoneProps = SdbLivePreviewDropzoneProps & {
+  /** Von außen gehaltener Vorschau-State (State-Lifting, z. B. BA-Seiten mit großer Hauptvorschau). */
+  controller: SdbPreviewController;
+};
+
+function scrollToDropzoneAnchor(): void {
+  document.getElementById(DROPZONE_ANCHOR_ID)?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+}
+
+/** Präsentationskomponente: rendert Upload, Fortschritt, Fehler und Ergebnis eines `SdbPreviewController`. */
+export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandle, ControlledDropzoneProps>(
+  function SdbLivePreviewDropzoneView(
     {
+      controller,
       variant = 'next',
       className = '',
       uploadIntro,
@@ -43,156 +61,147 @@ export const SdbLivePreviewDropzone = forwardRef<SdbLivePreviewDropzoneHandle, S
       omitPublishedHazardData = false,
       onPhaseChange,
       exampleSlot,
+      renderReadyState,
     },
     ref,
   ) {
-  const dropzoneInputRef = useRef<SdbDropzoneInputHandle>(null);
+    const dropzoneInputRef = useRef<SdbDropzoneInputHandle>(null);
+    const { phase, progress, teaser, error, fileLabel, uploadFile, runExample, reset, earlyTradeName } = controller;
 
-  useImperativeHandle(
-    ref,
-    () => ({
-      openFilePicker: () => dropzoneInputRef.current?.openFilePicker(),
-      scrollToDropzone: () => {
-        document.getElementById('ba-sdb-dropzone')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
-      },
-    }),
-    [],
-  );
-  const {
-    phase,
-    processingStepIndex,
-    processingLabel,
-    teaser,
-    error,
-    fileLabel,
-    uploadFile,
-    runExample,
-    reset,
-    earlyTradeName,
-  } = useSdbPreview();
+    useImperativeHandle(
+      ref,
+      () => ({
+        openFilePicker: () => dropzoneInputRef.current?.openFilePicker(),
+        scrollToDropzone: scrollToDropzoneAnchor,
+      }),
+      [],
+    );
 
-  const busy = phase === 'processing';
-  const stepCount = PROCESSING_STEP_LABELS.length;
-  const progressPercent = Math.round(((processingStepIndex + 1) / stepCount) * 100);
-  const embeddedActive = embedded && phase !== 'idle';
-  const showExampleChips =
-    variant !== 'static' && !(embedded && (phase === 'processing' || phase === 'ready'));
-  const dropzoneCompact = embeddedActive;
+    const busy = phase === 'processing';
+    const embeddedActive = embedded && phase !== 'idle';
+    const customReadyState = phase === 'ready' && teaser && renderReadyState ? renderReadyState(teaser) : null;
+    const showExampleChips = variant !== 'static' && !(embedded && (phase === 'processing' || phase === 'ready'));
 
-  useEffect(() => {
-    onPhaseChange?.(phase);
-  }, [phase, onPhaseChange]);
+    useEffect(() => {
+      onPhaseChange?.(phase);
+    }, [phase, onPhaseChange]);
 
-  useEffect(() => {
-    if (!embedded || phase === 'idle') return;
-    document.getElementById('ba-sdb-dropzone')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
-  }, [embedded, phase]);
+    useEffect(() => {
+      if (embedded && phase !== 'idle') scrollToDropzoneAnchor();
+    }, [embedded, phase]);
 
-  const processingBlock =
-    phase === 'processing' ? (
-      variant === 'static' ? (
-        <SdbProcessingTimeline variant={variant} activeIndex={processingStepIndex} label={processingLabel} />
-      ) : (
-        <SdbProcessingProgressBar
-          variant={variant}
-          activeIndex={processingStepIndex}
-          label={processingLabel}
-          progressPercent={progressPercent}
-          compact={embedded}
-          earlyHint={earlyTradeName}
-        />
-      )
-    ) : null;
+    const processingBlock =
+      phase === 'processing' ? (
+        variant === 'static' ? (
+          <SdbProcessingTimeline variant={variant} progress={progress} />
+        ) : (
+          <SdbProcessingProgressBar
+            variant={variant}
+            progress={progress}
+            compact={embedded}
+            earlyHint={earlyTradeName}
+          />
+        )
+      ) : null;
 
-  const errorBlock =
-    phase === 'error' && error ? (
-      <div
-        className={
-          variant === 'static'
-            ? 'sdb-live-preview-error'
-            : 'mt-3 rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-red-200'
-        }
-        role="alert"
-      >
-        {error}
-        <button type="button" className="ml-2 underline" onClick={reset}>
-          Erneut versuchen
-        </button>
-      </div>
-    ) : null;
+    const errorBlock =
+      phase === 'error' && error ? (
+        <div
+          className={
+            variant === 'static'
+              ? 'sdb-live-preview-error'
+              : 'mt-3 rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-red-200'
+          }
+          role="alert"
+        >
+          {error}
+          <button type="button" className="ml-2 underline" onClick={reset}>
+            Erneut versuchen
+          </button>
+        </div>
+      ) : null;
 
-  const resultBlock =
-    phase === 'ready' && teaser ? (
-      variant === 'static' ? (
-        <Trgs555PreviewDocument variant={variant} teaser={teaser} />
-      ) : (
-        <SdbPreviewCompactResult
-          variant={variant}
-          teaser={teaser}
-          embedded={embedded}
-          omitPublishedHazardData={omitPublishedHazardData}
-        />
-      )
-    ) : null;
+    const resultBlock =
+      phase === 'ready' && teaser ? (
+        variant === 'static' ? (
+          <Trgs555PreviewDocument variant={variant} teaser={teaser} />
+        ) : (
+          <SdbPreviewCompactResult
+            variant={variant}
+            teaser={teaser}
+            embedded={embedded}
+            omitPublishedHazardData={omitPublishedHazardData}
+          />
+        )
+      ) : null;
 
-  const dropzoneBlock = (
-    <>
+    const dropzoneInput = (
       <SdbDropzoneInput
         ref={dropzoneInputRef}
         variant={variant}
         disabled={busy}
-        compact={dropzoneCompact}
+        compact={embeddedActive}
         onFile={uploadFile}
       />
-      {showExampleChips ? (
-        exampleSlot ?? <SdbExampleChips variant={variant} disabled={busy} onSelect={runExample} />
-      ) : null}
-      {fileLabel && phase !== 'idle' ? (
-        <p className={variant === 'static' ? 'sdb-live-preview-file-label' : 'mt-2 truncate text-xs text-[#8fa4c0]'}>
-          Datei: {fileLabel}
-        </p>
-      ) : null}
-    </>
-  );
+    );
 
-  const shell =
-    embedded && embeddedActive
-      ? 'space-y-3 rounded-xl border border-white/10 bg-[#0f1e35]/70 p-3 shadow-inner shadow-black/20'
-      : shellClass(variant, embedded);
+    const dropzoneBlock = (
+      <>
+        {dropzoneInput}
+        {showExampleChips ? (
+          exampleSlot ?? <SdbExampleChips variant={variant} disabled={busy} onSelect={runExample} />
+        ) : null}
+        {fileLabel && phase !== 'idle' ? (
+          <p className={variant === 'static' ? 'sdb-live-preview-file-label' : 'mt-2 truncate text-xs text-[#8fa4c0]'}>
+            Datei: {fileLabel}
+          </p>
+        ) : null}
+      </>
+    );
 
-  return (
-    <div
-      className={[shell, className].filter(Boolean).join(' ')}
-      data-sdb-live-preview
-      data-sdb-phase={phase}
-    >
-      {uploadIntro && phase === 'idle' ? (
-        <p
-          className={
-            variant === 'static'
-              ? 'sdb-live-preview-intro'
-              : 'mb-3 text-sm leading-relaxed text-[#8fa4c0]'
-          }
-        >
-          {uploadIntro}
-        </p>
-      ) : null}
+    const shell =
+      embedded && embeddedActive && !customReadyState
+        ? 'space-y-3 rounded-xl border border-white/10 bg-[#0f1e35]/70 p-3 shadow-inner shadow-black/20'
+        : shellClass(variant, embedded);
 
-      {embeddedActive ? (
-        <>
-          {processingBlock}
-          {errorBlock}
-          {resultBlock}
-          <div className="space-y-3">{dropzoneBlock}</div>
-        </>
-      ) : (
-        <>
-          {dropzoneBlock}
-          {processingBlock}
-          {errorBlock}
-          {resultBlock}
-        </>
-      )}
-    </div>
-  );
-});
+    return (
+      <div className={[shell, className].filter(Boolean).join(' ')} data-sdb-live-preview data-sdb-phase={phase}>
+        {uploadIntro && phase === 'idle' ? (
+          <p className={variant === 'static' ? 'sdb-live-preview-intro' : 'mb-3 text-sm leading-relaxed text-[#8fa4c0]'}>
+            {uploadIntro}
+          </p>
+        ) : null}
+
+        {customReadyState ? (
+          <>
+            {customReadyState}
+            {/* Bleibt gemountet, damit „Anderes SDB testen“ den Datei-Dialog öffnen kann. */}
+            <div hidden>{dropzoneInput}</div>
+          </>
+        ) : embeddedActive ? (
+          <>
+            {processingBlock}
+            {errorBlock}
+            {resultBlock}
+            <div className="space-y-3">{dropzoneBlock}</div>
+          </>
+        ) : (
+          <>
+            {dropzoneBlock}
+            {processingBlock}
+            {errorBlock}
+            {resultBlock}
+          </>
+        )}
+      </div>
+    );
+  },
+);
+
+/** Eigenständige Dropzone mit internem State (Startseite, Lösungen, Silo-Seiten, statischer Mount). */
+export const SdbLivePreviewDropzone = forwardRef<SdbLivePreviewDropzoneHandle, SdbLivePreviewDropzoneProps>(
+  function SdbLivePreviewDropzone(props, ref) {
+    const controller = useSdbPreview();
+    return <SdbLivePreviewDropzoneView ref={ref} controller={controller} {...props} />;
+  },
+);

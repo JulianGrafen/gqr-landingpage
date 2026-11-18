@@ -7,6 +7,7 @@ export type UnlockUrlOptions = {
   utmSource?: string;
   utmMedium?: string;
   utmCampaign?: string;
+  utmContent?: string;
 };
 
 export function buildUnlockRegisterUrl(options: UnlockUrlOptions): string {
@@ -19,5 +20,6 @@ export function buildUnlockRegisterUrl(options: UnlockUrlOptions): string {
   url.searchParams.set('utm_source', options.utmSource ?? 'landing');
   url.searchParams.set('utm_medium', options.utmMedium ?? 'sdb-live-preview');
   url.searchParams.set('utm_campaign', options.utmCampaign ?? 'trgs555-teaser');
+  if (options.utmContent) url.searchParams.set('utm_content', options.utmContent);
   return url.toString();
 }

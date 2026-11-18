@@ -6,6 +6,11 @@ export type BetriebsanweisungRegisterUrlOptions = {
   registerBaseUrl?: string;
 };
 
+/** Relativer Pfad der Stoffseite, Rücksprungziel nach der Registrierung. */
+export function buildBetriebsanweisungPath(slug: string): string {
+  return `/betriebsanweisung/${slug}/`;
+}
+
 /** Self-serve Register-Link mit UTM-Parametern und Rücksprung auf die Stoffseite. */
 export function buildBetriebsanweisungRegisterUrl(
   slug: string,
@@ -16,7 +21,7 @@ export function buildBetriebsanweisungRegisterUrl(
   url.searchParams.set('utm_medium', 'betriebsanweisung');
   url.searchParams.set('utm_campaign', slug);
   if (utmContent) url.searchParams.set('utm_content', utmContent);
-  url.searchParams.set('returnTo', `/betriebsanweisung/${slug}/`);
+  url.searchParams.set('returnTo', buildBetriebsanweisungPath(slug));
   return url.toString();
 }
 

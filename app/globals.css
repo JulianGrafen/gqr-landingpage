@@ -1489,3 +1489,17 @@
     }
   }
 }
+
+/* BA-Live-Vorschau: sanfter Highlight-Übergang beim Wechsel Muster → extrahierter Entwurf */
+@keyframes ba-live-preview-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: saturate(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}

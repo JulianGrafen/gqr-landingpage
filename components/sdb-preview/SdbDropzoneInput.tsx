@@ -11,11 +11,13 @@ type Props = {
   variant: SdbPreviewVariant;
   disabled?: boolean;
   compact?: boolean;
+  /** Beschriftung der kompakten Zeile (nach erstem Upload). */
+  compactLabel?: string;
   onFile: (file: File) => void;
 };
 
 export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(function SdbDropzoneInput(
-  { variant, disabled, compact = false, onFile },
+  { variant, disabled, compact = false, compactLabel = 'Anderes SDB hochladen', onFile },
   ref,
 ) {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -71,7 +73,7 @@ export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(functi
           disabled={disabled}
           onChange={(e) => handleFiles(e.target.files)}
         />
-        <span className="text-sm font-semibold text-[#f0f6ff]">Anderes SDB hochladen</span>
+        <span className="text-sm font-semibold text-[#f0f6ff]">{compactLabel}</span>
         <span className="shrink-0 text-xs font-bold uppercase tracking-wide text-teal-300">PDF</span>
       </div>
     );

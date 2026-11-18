@@ -1,6 +1,8 @@
 # Betriebsanweisung — Programmatic SEO Daten
 
-Öffentliche Landingpages zeigen **keine** CAS-, GHS-, H/P- oder andere konkreten Gefahrstoffdaten. Inhalte stammen aus dem herstellerspezifischen SDB nach Upload in der App.
+Öffentliche Landingpages zeigen im **statischen HTML** **keine** CAS-, GHS-, H/P- oder andere konkreten Gefahrstoffdaten. Inhalte stammen aus dem herstellerspezifischen SDB nach Upload.
+
+Einzige Ausnahme: `demo-sdb-extractions.ts` (1-Klick-Demo „Mit Beispiel-SDB live testen“). Die Datei wird nur per dynamischem `import()` nach Nutzerklick geladen (eigener Chunk) und ist als „Beispiel-SDB“ gekennzeichnet. Nie in `entries.ts` oder Server-Komponenten importieren.
 
 ## Neue Stoffe hinzufügen (Batch-Workflow)
 

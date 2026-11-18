@@ -1,14 +1,15 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
+import { BaExtractionCheckCard } from '@/components/betriebsanweisung/BaExtractionCheckCard';
 import { useBetriebsanweisungSdbUpload } from '@/components/betriebsanweisung/betriebsanweisung-sdb-upload-context';
-import { SdbLivePreviewDropzone, type SdbLivePreviewDropzoneHandle } from '@/components/sdb-preview';
+import { SdbLivePreviewDropzoneView, type SdbLivePreviewDropzoneHandle } from '@/components/sdb-preview';
 import { SdbTrustFeatureList } from '@/components/programmatic-seo/SdbTrustFeatureList';
 import { MOBILE_UPLOAD_FALLBACK, SUPPLIER_COMPATIBILITY_HINTS } from '@/config/betriebsanweisung/conversion-copy';
-import { buildSampleButtonLabel } from '@/config/betriebsanweisung/sample-preview';
+import { buildDemoExtractionLinkLabel } from '@/config/betriebsanweisung/live-preview-copy';
 import type { SubstanceClusterId } from '@/config/betriebsanweisung/substance-clusters';
 import { BETRIEBSANWEISUNG_NO_PDF_STORAGE } from '@/config/legal/site-copy';
-import type { SdbPreviewPhase } from '@/lib/sdb-preview/useSdbPreview';
+import type { SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
 
 type Props = {
   substanceName: string;
@@ -17,26 +18,24 @@ type Props = {
   mobileRegisterUrl: string;
 };
 
-/** 1-Klick-Einstieg ohne PDF: blendet die statische Muster-Vorschau ein (0 API-Calls). */
-function SamplePreviewButton({ substanceName }: { substanceName: string }) {
-  const { showSamplePreview } = useBetriebsanweisungSdbUpload();
+/** 1-Klick-Demo ohne eigenes PDF: gleicher Extraktions-Durchlauf mit dem Beispiel-SDB des Slugs. */
+function DemoExtractionLink({ substanceName }: { substanceName: string }) {
+  const { startDemoExtraction, preview } = useBetriebsanweisungSdbUpload();
 
   return (
-    <div className="mt-4" aria-label="Beispiel-SDBs mit 1 Klick testen">
-      <button
-        type="button"
-        onClick={showSamplePreview}
-        className="w-full rounded-xl border border-teal-400/40 bg-teal-400/10 px-4 py-3 text-left text-sm font-semibold text-[#f0f6ff] transition hover:border-teal-400/70 hover:bg-teal-400/15"
-      >
-        {buildSampleButtonLabel(substanceName)}
-      </button>
-    </div>
+    <button
+      type="button"
+      onClick={startDemoExtraction}
+      disabled={preview.phase === 'processing'}
+      className="mt-3 w-full border-0 bg-transparent p-0 text-left text-sm font-semibold text-teal-300 underline-offset-2 transition hover:underline disabled:opacity-60"
+    >
+      {buildDemoExtractionLinkLabel(substanceName)}
+    </button>
   );
 }
 
 export function BetriebsanweisungSdbSidebar({ substanceName, cluster, mobileRegisterUrl }: Props) {
-  const { registerSdbUploadSurface } = useBetriebsanweisungSdbUpload();
-  const [scanPhase, setScanPhase] = useState<SdbPreviewPhase>('idle');
+  const { registerSdbUploadSurface, preview } = useBetriebsanweisungSdbUpload();
   const dropzoneRef = useRef<SdbLivePreviewDropzoneHandle>(null);
 
   useEffect(() => {
@@ -47,7 +46,19 @@ export function BetriebsanweisungSdbSidebar({ substanceName, cluster, mobileRegi
     return () => registerSdbUploadSurface(null);
   }, [registerSdbUploadSurface]);
 
-  const isScanActive = scanPhase !== 'idle';
+  const isDemo = preview.source?.kind === 'demo';
+  const renderCheckCard = useCallback(
+    (teaser: SdbPreviewTeaser) => (
+      <BaExtractionCheckCard
+        teaser={teaser}
+        isDemo={isDemo}
+        onTestAnotherPdf={() => dropzoneRef.current?.openFilePicker()}
+      />
+    ),
+    [isDemo],
+  );
+
+  const isScanActive = preview.phase !== 'idle';
 
   return (
     <aside
@@ -57,18 +68,18 @@ export function BetriebsanweisungSdbSidebar({ substanceName, cluster, mobileRegi
       <h2 className="text-xl font-bold text-[#f0f6ff]">Lieferanten-SDB für {substanceName} hochladen</h2>
       {!isScanActive ? (
         <p className="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
-          Die Live-Vorschau liest im Browser erste Basisangaben (Abschnitt 1 &amp; 2) aus Ihrem PDF aus. Die
-          vollständige Bearbeitung und fachliche Vorprüfung erfolgt im Account.
+          Die Live-Vorschau liest Basisangaben (Abschnitt 1 bis 3 &amp; 8) aus Ihrem PDF aus und baut links den
+          Entwurf auf. Die vollständige Bearbeitung und fachliche Vorprüfung erfolgt im Account.
         </p>
       ) : null}
-      <SdbLivePreviewDropzone
+      <SdbLivePreviewDropzoneView
         ref={dropzoneRef}
+        controller={preview}
         variant="next"
         embedded
-        omitPublishedHazardData
         className="mt-4"
-        onPhaseChange={setScanPhase}
-        exampleSlot={<SamplePreviewButton substanceName={substanceName} />}
+        exampleSlot={<DemoExtractionLink substanceName={substanceName} />}
+        renderReadyState={renderCheckCard}
       />
       {!isScanActive ? (
         <>
