@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { BaLiveExtractedDocument } from '@/components/betriebsanweisung/BaLiveExtractedDocument';
-import { BaPseoStackedPdfPreview } from '@/components/betriebsanweisung/BaPseoStackedPdfPreview';
+import { BaSampleLockedDocument } from '@/components/betriebsanweisung/BaSampleLockedDocument';
 import { useBetriebsanweisungSdbUpload } from '@/components/betriebsanweisung/betriebsanweisung-sdb-upload-context';
 import { LIVE_PREVIEW_COPY } from '@/config/betriebsanweisung/live-preview-copy';
 import { SAMPLE_PREVIEW_COPY as copy } from '@/config/betriebsanweisung/sample-preview';
@@ -32,7 +32,7 @@ function describeSource(source: SdbPreviewSource | null): string {
 
 /**
  * Große DIN-A4-Hauptvorschau links:
- * - vor dem Upload: statisches Muster (PDF-Ausschnitt, Inhalt geblurrt + Overlay),
+ * - vor dem Upload: Muster-BA im selben HTML-Layout (Kopf + Stoffname scharf, Inhalt geblurrt + Overlay),
  * - nach der Extraktion: Live-Entwurf aus dem gemeinsamen Vorschau-State (Smart Unblur).
  */
 export function BetriebsanweisungTeaserDocument({
@@ -42,7 +42,6 @@ export function BetriebsanweisungTeaserDocument({
   const { requestSdbUploadFromOverlay, scrollToDropzone, preview } = useBetriebsanweisungSdbUpload();
   const articleRef = useRef<HTMLElement>(null);
   const liveTeaser = preview.phase === 'ready' ? preview.teaser : null;
-  const embedTitle = `Vorschau: Beispiel-Betriebsanweisung (TRGS 555) — Muster für ${entry.substanceName}`;
 
   useEffect(() => {
     if (!liveTeaser) return;
@@ -63,7 +62,7 @@ export function BetriebsanweisungTeaserDocument({
       aria-label={`${liveTeaser ? 'Live-Vorschau' : 'Muster-Vorschau'} Betriebsanweisung ${entry.substanceName}`}
       aria-live="polite"
     >
-      <div className="ba-pseo-preview-stack overflow-hidden rounded-2xl border border-white/[0.12] bg-white shadow-2xl shadow-black/30">
+      <div className="overflow-hidden rounded-2xl border border-white/[0.12] bg-white shadow-2xl shadow-black/30">
         {liveTeaser ? (
           <div key={liveTeaser.previewToken} className="motion-safe:animate-[ba-live-preview-in_0.6s_ease-out]">
             <p className="relative z-20 m-0 flex items-center gap-1.5 truncate border-0 border-b border-teal-200 bg-teal-50 px-5 py-2 text-[11px] font-semibold leading-snug text-teal-900">
@@ -82,12 +81,12 @@ export function BetriebsanweisungTeaserDocument({
               {copy.sampleBadge}
             </p>
 
-            <BaPseoStackedPdfPreview
-              embedTitle={embedTitle}
+            <BaSampleLockedDocument
               substanceName={entry.substanceName}
+              applicationArea={applicationArea}
               overlay={
                 <div
-                  className="absolute inset-0 z-10 flex cursor-pointer items-center justify-center p-4 sm:p-6"
+                  className="flex h-full cursor-pointer items-center justify-center p-4 sm:p-6"
                   role="presentation"
                   onClick={requestSdbUploadFromOverlay}
                   onKeyDown={(event) => {
@@ -111,7 +110,7 @@ export function BetriebsanweisungTeaserDocument({
                     <button
                       type="button"
                       onClick={scrollToDropzone}
-                      className="mt-3 text-sm font-semibold text-slate-700 underline underline-offset-2 hover:text-slate-900"
+                      className="mt-3 border-0 bg-transparent p-0 text-sm font-semibold text-slate-700 underline underline-offset-2 hover:text-slate-900"
                     >
                       {copy.lockedOverlaySecondaryLabel}
                     </button>
