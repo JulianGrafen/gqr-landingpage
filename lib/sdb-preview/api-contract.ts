@@ -34,13 +34,34 @@ export interface Trgs555PreviewSection {
   body: string;
 }
 
+/** Persönliche Schutzausrüstung, die als Gebotszeichen in Abschnitt 3 erscheint. */
+export type ProtectiveEquipmentId =
+  | 'eye_protection'
+  | 'hand_protection'
+  | 'respiratory_protection'
+  | 'protective_clothing';
+
+export interface SdbPreviewStatementCounts {
+  hazard: number;
+  /** `null` = Server hat keine P-Sätze geliefert (Anzahl unbekannt). */
+  precautionary: number | null;
+}
+
 export interface SdbPreviewTeaser {
   previewToken: string;
   tradeName: string;
   manufacturer: string;
+  /** CAS-Nummer, falls im SDB-Abschnitt 1/3 erkannt. */
+  casNumber?: string;
   signalWord: 'Gefahr' | 'Achtung' | null;
   ghsPictograms: string[];
   hazardStatements: string[];
+  /** P-Sätze (Schutzmaßnahmen); optional, da ältere API-Antworten sie nicht liefern. */
+  precautionaryStatements?: string[];
+  /** Aus P-Sätzen / SDB 8.2 abgeleitete PSA (Gebotszeichen). */
+  protectiveEquipment?: ProtectiveEquipmentId[];
+  /** Gesamtzahl vor dem Kürzen für die öffentliche Vorschau. */
+  statementCounts?: SdbPreviewStatementCounts;
   sections: Trgs555PreviewSection[];
   /** Placeholder QR image URL (locked in teaser) */
   qrPreviewUrl?: string;
@@ -67,8 +88,5 @@ export const SDB_PREVIEW_COMPACT_SCOPE = 'landing_compact';
 export const sdbPreviewTokenPath = (token: string) =>
   `${SDB_PREVIEW_API_PATH}/${encodeURIComponent(token)}` as const;
 
-export const PROCESSING_STEP_LABELS = [
-  'PDF wird gelesen …',
-  'SDB wird ausgewertet …',
-  'Entwurfsvorschlag wird erstellt …',
-] as const;
+/** Lebensdauer des Prefills in Redis (siehe Kopfkommentar) — Basis für die Übergabe an die Registrierung. */
+export const SDB_PREVIEW_TOKEN_TTL_SECONDS = 72 * 60 * 60;

@@ -1,9 +1,11 @@
 import type { SdbPreviewTeaser, Trgs555PreviewSection } from '@/lib/sdb-preview/api-contract';
+import { deriveProtectiveEquipment } from '@/lib/sdb-preview/derive-protective-equipment';
 
 export type PrefillLike = {
   previewToken?: string;
   name?: string | null;
   manufacturer?: string | null;
+  cas_number?: string | null;
   signal_word?: 'Gefahr' | 'Achtung' | null;
   ghs_pictograms?: string[] | null;
   h_statements?: string | null;
@@ -16,10 +18,14 @@ export type PrefillLike = {
   ba_handling_storage?: string | null;
 };
 
-function splitStatements(raw: string | null | undefined): string[] {
+/**
+ * Trennt H-/P-Sätze an Zeilenumbrüchen bzw. vor einem neuen Code.
+ * Der Lookbehind verhindert Splits in Kombi-Codes (`P303+P361+P353`) und `EUH…`-Sätzen.
+ */
+export function splitStatements(raw: string | null | undefined): string[] {
   if (!raw?.trim()) return [];
   return raw
-    .split(/\n|(?=H\d{3})|(?=P\d{3})/)
+    .split(/\n|(?<![+\w])(?=[HP]\d{3})/)
     .map((s) => s.trim())
     .filter(Boolean);
 }
@@ -85,6 +91,7 @@ function buildSections(p: PrefillLike): Trgs555PreviewSection[] {
 export function buildTeaserFromPrefill(p: PrefillLike, previewToken: string): SdbPreviewTeaser {
   const ghs = Array.isArray(p.ghs_pictograms) ? p.ghs_pictograms : [];
   const hazardStatements = splitStatements(p.h_statements);
+  const precautionaryStatements = splitStatements(p.p_statements);
 
   const qrTarget = `https://gefahrstoff-qr.de/notfall/preview/${encodeURIComponent(previewToken)}/`;
   const qrPreviewUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=${encodeURIComponent(qrTarget)}`;
@@ -93,9 +100,16 @@ export function buildTeaserFromPrefill(p: PrefillLike, previewToken: string): Sd
     previewToken,
     tradeName: p.name?.trim() || 'Unbenannter Stoff',
     manufacturer: p.manufacturer?.trim() || '—',
+    casNumber: p.cas_number?.trim() || undefined,
     signalWord: p.signal_word ?? null,
     ghsPictograms: ghs,
     hazardStatements,
+    precautionaryStatements,
+    protectiveEquipment: deriveProtectiveEquipment([
+      p.p_statements,
+      p.ba_schutzmassnahmen,
+      p.psa_gloves ? `Handschuhe: ${p.psa_gloves}` : null,
+    ]),
     sections: buildSections(p),
     qrPreviewUrl,
   };

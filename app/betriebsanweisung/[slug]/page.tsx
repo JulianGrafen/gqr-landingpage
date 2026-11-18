@@ -24,6 +24,7 @@ import { getAllBetriebsanweisungEntries, getBetriebsanweisungEntry } from '@/con
 import { buildBetriebsanweisungRegisterUrl } from '@/lib/betriebsanweisung/build-register-url';
 import { resolveSubstanceCluster } from '@/lib/betriebsanweisung/resolve-substance-cluster';
 import { MOBILE_UPLOAD_FALLBACK } from '@/config/betriebsanweisung/conversion-copy';
+import { LIVE_PREVIEW_COPY } from '@/config/betriebsanweisung/live-preview-copy';
 import {
   buildBetriebsanweisungBreadcrumbs,
   buildBetriebsanweisungCanonical,
@@ -84,6 +85,9 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
   const mobileRegisterUrl = buildBetriebsanweisungRegisterUrl(entry.slug, {
     utmContent: MOBILE_UPLOAD_FALLBACK.utmContent,
   });
+  const demoRegisterUrl = buildBetriebsanweisungRegisterUrl(entry.slug, {
+    utmContent: LIVE_PREVIEW_COPY.demoRegisterUtmContent,
+  });
 
   return (
     <main className={BA_PAGE_MAIN}>
@@ -99,7 +103,11 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
         </div>
       </section>
 
-      <BetriebsanweisungSdbUploadProvider>
+      <BetriebsanweisungSdbUploadProvider
+        slug={entry.slug}
+        cluster={cluster}
+        fallbackRegisterUrl={demoRegisterUrl}
+      >
         <section className={`${BA_SECTION} lg:py-16`}>
           <div className={`${BA_CONTAINER} grid grid-cols-1 items-start gap-8 lg:grid-cols-12`}>
             <div className="order-2 lg:order-1 lg:col-span-7">

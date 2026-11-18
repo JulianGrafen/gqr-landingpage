@@ -15,6 +15,12 @@ export function formatWorkplaceContextPhrase(industries: readonly string[]): str
   return `im Bereich ${list[0]}, ${list[1]} oder ${list[2]}`;
 }
 
+/** Kurzform für das Feld „Einsatzbereich“ im Kopf der BA-Live-Vorschau (max. 3 Branchen). */
+export function formatApplicationAreaField(industries: readonly string[]): string {
+  const list = industries.filter(Boolean).slice(0, 3);
+  return list.length > 0 ? list.join(' · ') : 'Laut betrieblicher Gefährdungsbeurteilung';
+}
+
 export function buildWorkplaceConditionsParagraph(
   substanceName: string,
   industries: readonly string[],

@@ -1,9 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { primaryCtaClass, unlockCardClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
-import { buildUnlockRegisterUrl } from '@/lib/sdb-preview/build-unlock-url';
-import { loadSdbPreviewConfig } from '@/lib/sdb-preview/load-config';
+import { handOffPreviewTokenToRegistration } from '@/lib/sdb-preview/preview-handoff';
+import { useSdbUnlockHref } from '@/lib/sdb-preview/use-sdb-unlock-href';
 
 type Props = {
   variant: SdbPreviewVariant;
@@ -12,18 +11,8 @@ type Props = {
 };
 
 export function SdbUnlockCard({ variant, previewToken, compact = false }: Props) {
-  const [href, setHref] = useState('#');
-
-  useEffect(() => {
-    loadSdbPreviewConfig().then((cfg) => {
-      setHref(
-        buildUnlockRegisterUrl({
-          previewToken,
-          registerBaseUrl: cfg.registerBaseUrl,
-        }),
-      );
-    });
-  }, [previewToken]);
+  const href = useSdbUnlockHref({ previewToken, fallbackHref: '#' });
+  const handOff = () => handOffPreviewTokenToRegistration(previewToken);
 
   if (compact && variant === 'next') {
     return (
@@ -35,6 +24,7 @@ export function SdbUnlockCard({ variant, previewToken, compact = false }: Props)
         <a
           className="gqr-cta-primary gqr-cta-primary--md mt-2 inline-flex w-full justify-center py-2.5 text-sm no-underline"
           href={href}
+          onClick={handOff}
         >
           Entwurf zur Vorprüfung freischalten
         </a>
@@ -54,7 +44,7 @@ export function SdbUnlockCard({ variant, previewToken, compact = false }: Props)
         Schalten Sie den Entwurf zur fachlichen Prüfung und Freigabe durch die SiFa / den Arbeitgeber (§ 14
         GefStoffV) in der App frei, ohne Verkaufsgespräch.
       </p>
-      <a className={primaryCtaClass(variant)} href={href}>
+      <a className={primaryCtaClass(variant)} href={href} onClick={handOff}>
         Entwurf &amp; Kataster-Zugang zur Vorprüfung freischalten
       </a>
       <p className={variant === 'static' ? 'sdb-live-preview-unlock__fine' : 'mt-3 text-xs text-[#8fa4c0]'}>

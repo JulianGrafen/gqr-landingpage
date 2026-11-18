@@ -195,20 +195,4 @@ export async function runExamplePreview(
   return postPreview(options.apiBaseUrl, form);
 }
 
-export function persistPreviewToken(token: string): void {
-  try {
-    sessionStorage.setItem('gqr_preview_token', token);
-  } catch {
-    /* ignore */
-  }
-}
-
-export function readPersistedPreviewToken(): string | null {
-  try {
-    return sessionStorage.getItem('gqr_preview_token');
-  } catch {
-    return null;
-  }
-}
-
 export type { SdbPreviewTeaser };
