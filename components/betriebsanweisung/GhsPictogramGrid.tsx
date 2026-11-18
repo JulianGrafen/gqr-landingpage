@@ -11,8 +11,8 @@ export function GhsPictogramGrid({ codes, size = 'md', variant = 'light' }: Prop
   const dim = size === 'sm' ? 40 : 52;
   const figureClass =
     variant === 'dark'
-      ? 'flex w-[4.5rem] flex-col items-center gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-2'
-      : 'flex w-[4.5rem] flex-col items-center gap-1 rounded-xl border border-slate-200 bg-white p-2 shadow-sm';
+      ? 'm-0 flex w-[4.5rem] flex-col items-center gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-2'
+      : 'm-0 flex w-[4.5rem] flex-col items-center gap-1 rounded-xl border border-slate-200 bg-white p-2 shadow-sm';
   const captionClass =
     variant === 'dark' ? 'text-[10px] font-bold uppercase tracking-wide text-[#8fa4c0]' : 'text-[10px] font-bold uppercase tracking-wide text-slate-500';
 
