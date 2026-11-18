@@ -2808,6 +2808,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Hausmeisterdienst & Objektbetreuung",
     ],
   },
+  {
+    slug: 'grillreiniger-trgs-555',
+    substanceName: "Grillreiniger",
+    metaDescription: "Betriebsanweisung Grillreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gastronomie & Großküche",
+      "Hotellerie & Betriebsgastronomie",
+      "Metzgerei & Lebensmittelverarbeitung",
+      "Gebäudereinigung & Facility",
+    ],
+  },
+  {
+    slug: 'heizkoerperreiniger-trgs-555',
+    substanceName: "Heizkörperreiniger",
+    metaDescription: "Betriebsanweisung Heizkörperreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "SHK-Handwerk & Heizungsbau",
+      "Gebäudereinigung & Facility",
+      "Hausmeisterdienst & Objektbetreuung",
+      "Facility Management & Gebäudetechnik",
+    ],
+  },
+  {
+    slug: 'steinreiniger-trgs-555',
+    substanceName: "Steinreiniger",
+    metaDescription: "Betriebsanweisung Steinreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Steinmetz & Naturstein",
+      "Gebäudereinigung & Facility",
+      "Denkmalpflege & Restaurierung",
+      "Garten- & Landschaftsbau",
+    ],
+  },
+  {
+    slug: 'keramikreiniger-trgs-555',
+    substanceName: "Keramikreiniger",
+    metaDescription: "Betriebsanweisung Keramikreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Fliesenleger & Bau",
+      "Gastronomie & Großküche",
+      "Hotellerie & Sanitärreinigung",
+    ],
+  },
+  {
+    slug: 'kunststoffreiniger-trgs-555',
+    substanceName: "Kunststoffreiniger",
+    metaDescription: "Betriebsanweisung Kunststoffreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Aufbereitung",
+      "Gebäudereinigung & Facility",
+      "Kunststoffverarbeitung & Spritzguss",
+      "Elektronikfertigung & Montage",
+    ],
+  },
+  {
+    slug: 'aluminiumreiniger-trgs-555',
+    substanceName: "Aluminiumreiniger",
+    metaDescription: "Betriebsanweisung Aluminiumreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbearbeitung & Oberflächentechnik",
+      "Gebäudereinigung & Facility",
+      "Kfz-Werkstatt & Karosserie",
+      "Fensterbau & Metallbau",
+    ],
+  },
+  {
+    slug: 'silikatkleber-trgs-555',
+    substanceName: "Silikatkleber",
+    metaDescription: "Betriebsanweisung Silikatkleber: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Fliesenleger & Bau",
+      "SHK-Handwerk & Sanitär",
+      "Malerbetrieb & Beschichtung",
+      "Denkmalpflege & Restaurierung",
+    ],
+  },
+  {
+    slug: 'gewindedichtmittel-trgs-555',
+    substanceName: "Gewindedichtmittel",
+    metaDescription: "Betriebsanweisung Gewindedichtmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "SHK-Handwerk & Installateur",
+      "Kfz-Werkstatt & Instandhaltung",
+      "Metallbau & Maschinenbau",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'lackentferner-trgs-555',
+    substanceName: "Lackentferner",
+    metaDescription: "Betriebsanweisung Lackentferner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Kfz-Werkstatt & Karosserie",
+      "Industrielle Oberflächentechnik",
+      "Möbelrestaurierung & Lackiererei",
+    ],
+  },
+  {
+    slug: 'fluessiggas-trgs-555',
+    substanceName: "Flüssiggas",
+    metaDescription: "Betriebsanweisung Flüssiggas: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gastronomie & Großküche",
+      "Landwirtschaft & Hoftechnik",
+      "SHK-Handwerk & Heizungsbau",
+      "Logistik & Gefahrgutumschlag",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
