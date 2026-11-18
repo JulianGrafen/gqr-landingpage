@@ -41,13 +41,18 @@ for (const rel of SYNC_PATHS) {
   console.log(`✓ ${rel}/`);
 }
 
-/** GHS-Piktogramme aus public/ → Repo-Root images/ghs/ (ohne restliches images/ zu überschreiben). */
-const ghsOut = path.join(OUT, 'images', 'ghs');
-const ghsDest = path.join(ROOT, 'images', 'ghs');
-if (fs.existsSync(ghsOut)) {
-  fs.mkdirSync(ghsDest, { recursive: true });
-  fs.cpSync(ghsOut, ghsDest, { recursive: true });
-  console.log('✓ images/ghs/');
+/**
+ * Symbol-Ordner aus public/images → Repo-Root images/<ordner>/ (ohne restliches images/ zu überschreiben).
+ * ghs = GHS-Piktogramme, ba-symbols = ISO-7010-Zeichen der Live-BA-Vorschau (aus gqr-backend).
+ */
+const SYNCED_IMAGE_DIRS = ['ghs', 'ba-symbols'];
+for (const dir of SYNCED_IMAGE_DIRS) {
+  const imageOut = path.join(OUT, 'images', dir);
+  const imageDest = path.join(ROOT, 'images', dir);
+  if (!fs.existsSync(imageOut)) continue;
+  fs.mkdirSync(imageDest, { recursive: true });
+  fs.cpSync(imageOut, imageDest, { recursive: true });
+  console.log(`✓ images/${dir}/`);
 }
 
 const FAVICON_FILES = [
