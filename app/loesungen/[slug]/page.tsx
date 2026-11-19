@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { IndustryPseoSections } from '@/components/loesungen/IndustryPseoSections';
 import { IndustrySlugHero } from '@/components/loesungen/IndustrySlugHero';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
 import { PSEO_CONTAINER, PSEO_PAGE_MAIN, PSEO_PROSE, PSEO_SECTION_HERO } from '@/components/programmatic-seo';
 import { SdbTrustFeatureList } from '@/components/programmatic-seo/SdbTrustFeatureList';
 import { SdbLivePreviewDropzone } from '@/components/sdb-preview';
@@ -55,8 +58,11 @@ export default function IndustryPage({ params }: PageProps) {
   const data = getIndustry(params.slug);
   if (!data) notFound();
 
+  const faqSchema = data.pseo ? buildFaqPageSchema(data.pseo.faqItems) : null;
+
   return (
     <main className={PSEO_PAGE_MAIN}>
+      {faqSchema ? <JsonLd data={faqSchema} /> : null}
       <section className={`${PSEO_SECTION_HERO} lg:py-24`} aria-labelledby="industry-hero-title">
         <div className={`${PSEO_CONTAINER} ${PSEO_PROSE}`}>
           <IndustrySlugHero data={data} />
@@ -68,6 +74,8 @@ export default function IndustryPage({ params }: PageProps) {
           </div>
         ) : null}
       </section>
+
+      <IndustryPseoSections data={data} />
 
       <section
         className="border-b border-[#e5e7eb] bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20"

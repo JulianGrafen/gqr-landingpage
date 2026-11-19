@@ -30,6 +30,11 @@ export function IndustrySlugHero({ data }: Props) {
         {data.title}
       </h1>
       <SlugHeroSubheadline id="industry-hero-subheadline" paragraphs={industryHeroLeadParagraphs(data)} />
+      {data.pseo ? (
+        <p className="mt-6 rounded-xl border border-white/10 bg-[#162340]/40 px-4 py-4 text-sm leading-relaxed text-[#c8d4e6]">
+          {data.pseo.aeoAnswer}
+        </p>
+      ) : null}
       <div className="mt-10 flex flex-wrap gap-3">
         <Link href="https://app.gefahrstoff-qr.de/register" className="gqr-cta-primary gqr-cta-primary--md">
           Jetzt kostenlos testen

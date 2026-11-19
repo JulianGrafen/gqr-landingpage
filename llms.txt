@@ -63,6 +63,9 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 - [Malerbetrieb](https://gefahrstoff-qr.de/loesungen/malerbetrieb/)
 - [Laborbetrieb](https://gefahrstoff-qr.de/loesungen/laborbetrieb/)
 - [Reinigungsunternehmen](https://gefahrstoff-qr.de/loesungen/reinigungsunternehmen/)
+- [Friseursalon](https://gefahrstoff-qr.de/loesungen/friseursalon/)
+- [Metallbau](https://gefahrstoff-qr.de/loesungen/metallbau/)
+- [Landwirtschaft](https://gefahrstoff-qr.de/loesungen/landwirtschaft/)
 
 ## Optional
 
