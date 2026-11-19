@@ -14,6 +14,7 @@ import {
 import { EXCEL_COMPARISON } from '@/config/home-sections/excel-comparison';
 import { getAllIndustries } from '@/config/industry-solutions';
 import { formatPlanPrice, PRICING_PLANS } from '@/config/pricing-plans';
+import { getDecisionPages } from '@/config/trust/decision-pages';
 
 function markdownLink(label: string, path: string, description?: string): string {
   const link = `[${label}](${toAbsoluteSiteUrl(path)})`;
@@ -60,13 +61,18 @@ export function buildLlmsTxt(): string {
       `- Datenschutz: ${PRODUCT_ENTITY.hosting}, SSL-verschlüsselt, Zwei-Faktor-Authentifizierung`,
       `- Betrieb: browserbasiert, keine Installation; QR-Notfallansicht ohne App auf jedem Smartphone`,
       `- Preise (zzgl. MwSt., monatlich kündbar; Standard: Jahreszahlung zum reduzierten Monatspreis): ${priceSummary}`,
-      '- Zahlung: Online-Buchung; im SiFa Multi-Mandant-Tarif auch per PDF-Rechnung und Überweisung',
+      '- Zahlung: Online-Buchung; alle Jahreslizenzen auch auf Rechnung (Überweisung, PO-Nummer auf Angebot und Rechnung)',
       `- Start: Self-Service-Registrierung ohne Kreditkarte unter ${APP_REGISTER_URL}`,
     ]),
     '',
     section(
       'Wichtige URLs',
       KEY_URLS.map((url) => markdownLink(url.label, url.path, url.description)),
+    ),
+    '',
+    section(
+      'Entscheidungsgrundlagen (KI-Prüfung, Datenschutz, Einkauf)',
+      getDecisionPages().map((page) => markdownLink(page.navLabel, page.href, page.teaserText)),
     ),
     '',
     section(

@@ -8,6 +8,11 @@ type LandingProseSectionProps = {
   children: ReactNode;
   /** `muted` = dunkler Hintergrund (Standard Silo); `raised` = leicht abgesetzte Fläche */
   variant?: 'muted' | 'raised';
+  /**
+   * `prose` = Fließtext mit Artikel-Typografie (Standard);
+   * `blocks` = eigene Komponenten (Tabellen, Diagramme, Karten) ohne Prose-Styles, volle Containerbreite.
+   */
+  layout?: 'prose' | 'blocks';
 };
 
 export function LandingProseSection({
@@ -17,23 +22,37 @@ export function LandingProseSection({
   intro,
   children,
   variant = 'muted',
+  layout = 'prose',
 }: LandingProseSectionProps) {
   const surfaceClass =
     variant === 'raised'
-      ? 'border-b border-white/[0.07] bg-gqr-raised/40 py-14 lg:py-20'
-      : 'border-b border-white/[0.07] py-14 lg:py-20';
+      ? 'scroll-mt-28 border-b border-white/[0.07] bg-gqr-raised/40 py-14 lg:py-20'
+      : 'scroll-mt-28 border-b border-white/[0.07] py-14 lg:py-20';
+
+  const header = (
+    <>
+      <p className="gqr-kicker">{eyebrow}</p>
+      <h2 id={`${id}-title`} className="gqr-post-section-title mt-3">
+        {title}
+      </h2>
+      {intro ? <p className="gqr-post-section-sub mt-4">{intro}</p> : null}
+    </>
+  );
 
   return (
-    <section className={surfaceClass} aria-labelledby={`${id}-title`}>
+    <section id={id} className={surfaceClass} aria-labelledby={`${id}-title`}>
       <div className="gqr-container">
-        <div className="mx-auto max-w-3xl">
-          <p className="gqr-kicker">{eyebrow}</p>
-          <h2 id={`${id}-title`} className="gqr-post-section-title mt-3">
-            {title}
-          </h2>
-          {intro ? <p className="gqr-post-section-sub mt-4">{intro}</p> : null}
-          <div className="gqr-post-content mt-8">{children}</div>
-        </div>
+        {layout === 'prose' ? (
+          <div className="mx-auto max-w-3xl">
+            {header}
+            <div className="gqr-post-content mt-8">{children}</div>
+          </div>
+        ) : (
+          <>
+            <div className="mx-auto max-w-3xl">{header}</div>
+            <div className="mx-auto mt-10 max-w-5xl">{children}</div>
+          </>
+        )}
       </div>
     </section>
   );

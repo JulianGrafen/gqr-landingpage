@@ -11,6 +11,7 @@ import { resolve } from 'node:path';
 import type { ReactElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { DataTrustSection } from '@/components/home/DataTrustSection';
+import { PricingDecisionLinks } from '@/components/home/PricingDecisionLinks';
 import { ExcelComparisonSection } from '@/components/home/ExcelComparisonSection';
 import { HomeFaqContactFooter } from '@/components/home/HomeFaqContact';
 import { HomeFaqItems } from '@/components/home/HomeFaqItems';
@@ -90,6 +91,7 @@ const updatedHtml = replaceMarkedBlocks(html, {
   DATA_TRUST: () => renderHtml(<DataTrustSection />),
   SITE_FOOTER: () => renderHtml(<EnterpriseSiteFooter />),
   TURNKEY_AUDIT: () => renderHtml(<TurnkeyAuditSection />),
+  PRICING_DECISION_LINKS: () => renderHtml(<PricingDecisionLinks />),
 });
 
 writeFileSync(INDEX_HTML_PATH, updatedHtml, 'utf8');
