@@ -42,8 +42,7 @@ export const COMPANY: CompanyMasterData = {
   },
   vatId: 'DE369543245',
   contactEmail: 'info@gefahrstoff-qr.de',
-  // TODO(company): Bestätigen, ob Rechnungsrückfragen an info@ oder julian@ gehen sollen.
-  procurementEmail: 'julian@gefahrstoff-qr.de',
+  procurementEmail: 'kontakt@gefahrstoff-qr.de',
 };
 
 /** Einzeilige Postanschrift, z. B. für Kopierfelder. */

@@ -60,6 +60,7 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 
 - [So funktioniert die KI](https://gefahrstoff-qr.de/so-funktioniert-die-ki/): Extraktion, Regelprüfung, Abgleich am Original-SDB, Versions-Diff. Freigabe bleibt bei der SiFa.
 - [Sicherheit & AVV](https://gefahrstoff-qr.de/sicherheit-avv/): AVV direkt als PDF, Bestellung mit PO-Nummer, Lieferanten-Stammdaten zum Kopieren.
+- [Praxisbeispiel](https://gefahrstoff-qr.de/praxisbeispiele/umstieg-excel-gefahrstoffkataster/): Von Excel & Leitz-Ordner zum §-6-Kataster mit Raum-QR in 2 Tagen
 
 ## Branchenlösungen
 

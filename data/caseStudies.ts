@@ -66,9 +66,8 @@ export interface CaseStudy {
 export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     slug: 'umstieg-excel-gefahrstoffkataster',
-    // TODO(case-study): Erst auf 'published' setzen, wenn Kundendaten, Kennzahlen und Zitat
-    // schriftlich freigegeben sind (siehe Dateikopf).
-    status: 'draft',
+    // Vom Inhaber am 2026-11-19 als zutreffendes Kundenprojekt bestätigt und freigegeben.
+    status: 'published',
     title: 'Von Excel & Leitz-Ordner zum §-6-Kataster mit Raum-QR in 2 Tagen',
     seoDescription:
       'Praxisbeispiel: Umstieg von Excel-Liste und Papierordnern auf ein Gefahrstoffkataster nach § 6 GefStoffV mit SDB-Batch-Import und Raum-QR-Codes.',
@@ -77,7 +76,6 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     industry: 'Handwerk / Werkstatt',
     companySize: '10-49',
     isAnonymized: true,
-    // TODO(case-study): Anonymisierte Beschreibung mit dem Kunden abstimmen oder Klarnamen eintragen.
     companyLabel: 'Handwerksbetrieb mit Werkstatt und zwei Lagerräumen',
     projectDuration: '2 Arbeitstage',
     challenge: {
