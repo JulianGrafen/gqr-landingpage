@@ -87,7 +87,8 @@ const STRUC_DATA = {
 } as const;
 
 export const metadata: Metadata = {
- title: SEO_TITLE,
+ // absolute: SEO_TITLE enthält die Marke bereits („| GQR“); das Layout-Template würde sie doppeln.
+ title: { absolute: SEO_TITLE },
  description: SEO_DESCRIPTION,
  keywords: [...GSC_TARGET_KEYWORDS, 'Sicherheitsdatenblatt Extraktion', 'GefStoffV', 'Excel Gefahrstoffliste'],
  alternates: { canonical: pageUrl },

@@ -7,9 +7,9 @@ export const KATASTER_SOFTWARE_SILO_CONFIG: SeoSiloPageConfig = {
  path: KATASTER_SOFTWARE_SILO_PATH,
  intent: 'software-buy',
  seo: {
- title: 'Gefahrstoffkataster Software & Chemikalienkataster kostenlos testen',
+ title: 'Gefahrstoffkataster Software kostenlos testen | GQR',
  description:
- 'Gefahrstoffkataster Software und Chemikalienkataster im Browser: KI-gestützter SDB-Import, Verzeichnis nach § 6 GefStoffV mit Revisionsverlauf, TRGS 510 und QR-Notfallpass. Kostenlos testen.',
+ 'Gefahrstoffkataster Software im Browser: KI-gestützter SDB-Import, Verzeichnis nach § 6 GefStoffV mit Versionsstand, TRGS 510 & QR-Codes. Kostenlos testen.',
  ogImageAlt:
  'Cloud Gefahrstoffmanagement Software Gefahrstoff-QR — Dashboard mit Sicherheitsdatenblatt-Status und Compliance-KPIs',
  canonicalPath: KATASTER_SOFTWARE_SILO_PATH,

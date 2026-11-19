@@ -16,7 +16,7 @@ export const KI_PIPELINE_PAGE: TrustPageConfig = {
   seo: {
     title: 'So funktioniert die KI: SDB-Extraktion mit Regelprüfung',
     description:
-      'Wie Gefahrstoff-QR Sicherheitsdatenblätter ausliest: strukturierte Extraktion, deterministische Prüfung von H-/P-/EUH-Sätzen, Abgleich am Original-PDF und Versions-Diff.',
+      'Wie Gefahrstoff-QR Sicherheitsdatenblätter ausliest: strukturierte Extraktion, Regelprüfung von H-/P-/EUH-Sätzen, Abgleich am Original-PDF, Versions-Diff.',
     ogImageAlt: 'Vier-Stufen-Pipeline der KI-gestützten SDB-Prüfung in Gefahrstoff-QR',
   },
   breadcrumbLabel: 'So funktioniert die KI',

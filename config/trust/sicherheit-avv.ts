@@ -11,7 +11,7 @@ import type { ChecklistItem, FactTable, TrustPageConfig } from '@/config/trust/t
 export const SICHERHEIT_AVV_PAGE: TrustPageConfig = {
   path: SICHERHEIT_AVV_PATH,
   seo: {
-    title: 'Sicherheit, Hosting & AVV: Fakten für Datenschutz und Einkauf',
+    title: 'Sicherheit & AVV: Fakten für Datenschutz und Einkauf',
     description:
       'Hosting in der EU, Mandantentrennung per RLS, kein KI-Training mit Kundendaten. AVV als PDF ohne Formular, Kauf auf Rechnung mit PO-Nummer.',
     ogImageAlt: 'Faktenblatt zu Hosting, Datenschutz und Auftragsverarbeitung bei Gefahrstoff-QR',

@@ -5,18 +5,25 @@ import { IndustrySlugHero } from '@/components/loesungen/IndustrySlugHero';
 import { PSEO_CONTAINER, PSEO_PAGE_MAIN, PSEO_PROSE, PSEO_SECTION_HERO } from '@/components/programmatic-seo';
 import { SdbTrustFeatureList } from '@/components/programmatic-seo/SdbTrustFeatureList';
 import { SdbLivePreviewDropzone } from '@/components/sdb-preview';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { LandingFaqSection } from '@/components/seo-silo/LandingFaqSection';
 import {
   getIndustry,
   INDUSTRY_SLUGS,
   type IndustrySlug,
+  type IndustrySolution,
 } from '@/config/industry-solutions';
-import { SITE_URL } from '@/config/site-seo';
+import { buildBreadcrumbSchema } from '@/lib/seo/build-breadcrumb-schema';
+import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
+import { buildIndustryBreadcrumbs, buildIndustrySeoMeta } from '@/lib/seo/build-industry-seo';
+import { buildMetadata } from '@/lib/seo/buildMetadata';
+import type { JsonLdObject } from '@/lib/seo/serialize-json-ld';
 
 type PageProps = {
   params: { slug: string };
 };
 
-/** Kfz-Werkstatt: vollständige statische Landingpage (scripts/generate-kfz-werkstatt-landing.mjs). */
+/** Kfz-Werkstatt: vollständige statische Landingpage (scripts/generate-kfz-werkstatt-landing.tsx). */
 const STATIC_INDUSTRY_LANDINGS: IndustrySlug[] = ['kfz-werkstatt'];
 
 export function generateStaticParams(): { slug: IndustrySlug }[] {
@@ -28,27 +35,14 @@ export function generateStaticParams(): { slug: IndustrySlug }[] {
 export function generateMetadata({ params }: PageProps): Metadata {
   const data = getIndustry(params.slug);
   if (!data) return { title: 'Seite nicht gefunden' };
+  return buildMetadata(buildIndustrySeoMeta(data));
+}
 
-  const canonical = `${SITE_URL}/loesungen/${data.slug}/`;
-
-  return {
-    title: data.metaTitle,
-    description: data.metaDescription,
-    alternates: { canonical },
-    openGraph: {
-      title: data.metaTitle,
-      description: data.metaDescription,
-      url: canonical,
-      siteName: 'Gefahrstoff-QR',
-      locale: 'de_DE',
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: data.metaTitle,
-      description: data.metaDescription,
-    },
-  };
+function buildIndustrySchemas(data: IndustrySolution): JsonLdObject[] {
+  return [
+    buildBreadcrumbSchema(buildIndustryBreadcrumbs(data)),
+    ...(data.faq?.length ? [buildFaqPageSchema([...data.faq])] : []),
+  ];
 }
 
 export default function IndustryPage({ params }: PageProps) {
@@ -57,6 +51,7 @@ export default function IndustryPage({ params }: PageProps) {
 
   return (
     <main className={PSEO_PAGE_MAIN}>
+      <JsonLd data={buildIndustrySchemas(data)} />
       <section className={`${PSEO_SECTION_HERO} lg:py-24`} aria-labelledby="industry-hero-title">
         <div className={`${PSEO_CONTAINER} ${PSEO_PROSE}`}>
           <IndustrySlugHero data={data} />
@@ -134,6 +129,7 @@ export default function IndustryPage({ params }: PageProps) {
           </p>
         </div>
       </section>
+      {data.faq?.length ? <LandingFaqSection faq={[...data.faq]} id="industry-faq" /> : null}
     </main>
   );
 }

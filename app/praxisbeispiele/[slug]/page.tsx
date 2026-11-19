@@ -14,7 +14,7 @@ import {
   isCaseStudyIndexable,
 } from '@/config/trust/case-study-page';
 import { CASE_STUDIES, getCaseStudyBySlug } from '@/data/caseStudies';
-import { buildPageMetadata } from '@/lib/seo/build-page-metadata';
+import { buildTrustPageMetadata } from '@/lib/trust/build-trust-page-metadata';
 
 type CaseStudyPageProps = {
   params: { slug: string };
@@ -30,11 +30,7 @@ export function generateStaticParams(): CaseStudyPageProps['params'][] {
 export function generateMetadata({ params }: CaseStudyPageProps): Metadata {
   const caseStudy = getCaseStudyBySlug(params.slug);
   if (!caseStudy) return {};
-  const config = buildCaseStudyPageConfig(caseStudy);
-
-  return buildPageMetadata({
-    path: config.path,
-    ...config.seo,
+  return buildTrustPageMetadata(buildCaseStudyPageConfig(caseStudy), {
     indexable: isCaseStudyIndexable(caseStudy),
   });
 }

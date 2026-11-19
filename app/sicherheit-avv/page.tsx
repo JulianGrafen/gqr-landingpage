@@ -16,13 +16,10 @@ import {
   SICHERHEIT_AVV_PAGE,
   SUPPLIER_MASTER_DATA,
 } from '@/config/trust/sicherheit-avv';
-import { buildPageMetadata } from '@/lib/seo/build-page-metadata';
+import { buildTrustPageMetadata } from '@/lib/trust/build-trust-page-metadata';
 import { publicAssetExists } from '@/lib/static-export/public-asset-exists';
 
-export const metadata: Metadata = buildPageMetadata({
-  path: SICHERHEIT_AVV_PAGE.path,
-  ...SICHERHEIT_AVV_PAGE.seo,
-});
+export const metadata: Metadata = buildTrustPageMetadata(SICHERHEIT_AVV_PAGE);
 
 export default function SicherheitAvvPage() {
   return (

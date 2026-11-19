@@ -1,3 +1,4 @@
+import type { SeoMetaInput } from '@/lib/seo/buildMetadata';
 /**
  * Zentrale SEO-Texte (GSC-Strategie: Excel/Vorlage-Intent → SaaS-Upgrade).
  * Statische HTML-Seiten spiegeln diese Werte manuell in index.html bzw. gefahrstoffkataster-excel-vorlage/.
@@ -19,17 +20,25 @@ export function resolveMarketingHomeHref(): string {
   return MARKETING_HOME_HREF;
 }
 
-/** Homepage — Title 1 + Description 2 */
-export const HOME_SEO = {
- title: 'Cloud Gefahrstoffmanagement Software statt Excel | Gefahrstoff-QR',
- description:
- 'Cloud Gefahrstoffmanagement Software im Browser: KI-Sicherheitsdatenblatt-Import, QR-Notfallpass und Verzeichnis mit Revisionsverlauf nach § 6 — ohne Installation. Kostenlos testen.',
- h1: 'Cloud Gefahrstoffmanagement Software – die nächste Stufe nach Excel',
- heroSubline:
- 'Browserbasiert in der Cloud statt fehleranfälliger Excel-Vorlagen: KI extrahiert Daten aus dem Sicherheitsdatenblatt automatisch, führt Ihr Verzeichnis mit Revisionsverlauf und spart Stunden Abtipp-Arbeit.',
- softwareDescription:
-  'Cloud Gefahrstoffmanagement Software: KI extrahiert Sicherheitsdatenblätter automatisch im Browser — die nächste Stufe nach Excel mit Verzeichnis mit Revisionsverlauf, Änderungsprotokoll und QR-Notfallpass inklusive.',
-} as const;
+/**
+ * Startseite (statisches index.html): Head-Meta wird per `npm run sync:home` aus diesem Objekt
+ * in den Marker AEO:HEAD_META geschrieben (lib/seo/render-static-head-meta.ts).
+ * Ziel-Keywords (GSC 11/2026): gefahrstoff software, gefahrstoff app, gefahrstoffmanagement plattform,
+ * gefahrstoffkataster software kostenlos.
+ * Bewusst ohne Zeitversprechen („in 30 Sek.“) und ohne „fertig“ (UWG; AGENTS.md § 3: Entwurf zur Freigabe).
+ */
+export const HOME_SEO: SeoMetaInput = {
+  path: '/',
+  title: 'Gefahrstoff-Software & App: § 6 Kataster aus dem SDB | GQR',
+  socialTitle: 'Gefahrstoff-Software & App: Gefahrstoffkataster aus dem Sicherheitsdatenblatt',
+  description:
+    'SDB-PDF hochladen: Entwurf für Gefahrstoffkataster (§ 6), TRGS-555-Betriebsanweisungen & QR-Codes für Smartphone & Tablet. Kostenlos starten, ohne Excel.',
+  ogImageAlt: 'Gefahrstoff-QR: KI-gestütztes digitales Gefahrstoffverzeichnis',
+  ogType: 'website',
+};
+
+/** Speakable-Bereiche der statischen Marketing-Seiten (gleiches Hero-/FAQ-Markup wie index.html). */
+export const HOME_SPEAKABLE_SELECTORS = ['#heroHeadline', '#kurzantwort', '#faq summary'] as const;
 
 /** Lead-Magnet: Gratis Excel-Vorlage Download — siehe config/vorlage-landing.ts */
 export const VORLAGE_DOWNLOAD_SEO = {

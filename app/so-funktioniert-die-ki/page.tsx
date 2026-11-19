@@ -11,12 +11,9 @@ import {
   KI_PIPELINE_SECTION,
   KI_PIPELINE_STAGES,
 } from '@/config/trust/ki-pipeline';
-import { buildPageMetadata } from '@/lib/seo/build-page-metadata';
+import { buildTrustPageMetadata } from '@/lib/trust/build-trust-page-metadata';
 
-export const metadata: Metadata = buildPageMetadata({
-  path: KI_PIPELINE_PAGE.path,
-  ...KI_PIPELINE_PAGE.seo,
-});
+export const metadata: Metadata = buildTrustPageMetadata(KI_PIPELINE_PAGE);
 
 export default function SoFunktioniertDieKiPage() {
   return (

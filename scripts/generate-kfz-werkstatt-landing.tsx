@@ -1,18 +1,40 @@
 /**
  * Erzeugt /loesungen/kfz-werkstatt/ aus index.html — Branchen-Landingpage Kfz-Werkstatt.
+ *
+ * Head-Meta, WebPage-, FAQ- und Breadcrumb-JSON-LD sowie die sichtbaren FAQ kommen aus
+ * config/industry-solutions.ts (gleiche Quelle wie die Next-Branchenseiten) und werden über die
+ * AEO-Marker gesetzt. Fehlt ein Marker, bricht das Skript ab — kein stilles Übernehmen der
+ * Startseiten-Meta mehr (Kannibalisierung, GSC 11/2026).
  */
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { HomeFaqItems } from '@/components/home/HomeFaqItems';
+import { AEO_CONTENT_UPDATED, APP_REGISTER_URL } from '@/config/aeo-config';
+import { getIndustry } from '@/config/industry-solutions';
+import { buildBreadcrumbSchema } from '@/lib/seo/build-breadcrumb-schema';
+import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
+import { buildIndustrySeoMeta, buildIndustryBreadcrumbs } from '@/lib/seo/build-industry-seo';
+import { buildWebPageSchema } from '@/lib/seo/build-webpage-schema';
+import { renderStaticHeadMeta } from '@/lib/seo/render-static-head-meta';
+import { serializeJsonLd, type JsonLdObject } from '@/lib/seo/serialize-json-ld';
+import { replaceMarkedBlocks } from '@/lib/static-html/replace-marked-blocks';
 
 const ROOT = process.cwd();
 const SOURCE = path.join(ROOT, 'index.html');
 const OUT_DIR = path.join(ROOT, 'static-loesungen', 'kfz-werkstatt');
 const OUT_FILE = path.join(OUT_DIR, 'index.html');
 
-const CANONICAL = 'https://gefahrstoff-qr.de/loesungen/kfz-werkstatt/';
-const META_TITLE = 'Gefahrstoffverzeichnis Kfz-Werkstatt & Betriebsanweisung Werkstatt | Gefahrstoff-QR';
-const META_DESC =
-  'Gefahrstoffverzeichnis Kfz-Werkstatt: Öle, Bremsenreiniger, DME-Protokoll und Betriebsanweisungen aus dem Sicherheitsdatenblatt per KI.';
+const industry = getIndustry('kfz-werkstatt');
+if (!industry?.faq?.length) {
+  throw new Error('config/industry-solutions.ts: kfz-werkstatt benötigt metaTitle, metaDescription und faq.');
+}
+const seoMeta = buildIndustrySeoMeta(industry);
+const faqItems = [...industry.faq];
+
+function renderJsonLdScript(data: JsonLdObject): string {
+  return `<script type="application/ld+json">\n${serializeJsonLd(data, 1)}\n </script>`;
+}
 
 const INDUSTRY_SECTION = `
  <!-- BRANCHEN: KFZ-WERKSTATT -->
@@ -41,35 +63,19 @@ const INDUSTRY_SECTION = `
  </section>
 `;
 
-let html = fs.readFileSync(SOURCE, 'utf8');
+let html = replaceMarkedBlocks(fs.readFileSync(SOURCE, 'utf8'), {
+  HEAD_META: () => renderStaticHeadMeta(seoMeta),
+  WEBPAGE_JSONLD: () =>
+    renderJsonLdScript(buildWebPageSchema(seoMeta, { dateModified: AEO_CONTENT_UPDATED })),
+  FAQ_JSONLD: () =>
+    [
+      renderJsonLdScript(buildFaqPageSchema(faqItems)),
+      renderJsonLdScript(buildBreadcrumbSchema(buildIndustryBreadcrumbs(industry))),
+    ].join('\n'),
+  FAQ_ITEMS: () => renderToStaticMarkup(<HomeFaqItems items={faqItems} />),
+});
 
 html = html
-  .replace(
-    '<title>Gefahrstoffmanagement Software &amp; App:Excel-Alternative | Gefahrstoff-QR</title>',
-    `<title>${META_TITLE}</title>`,
-  )
-  .replace(
-    'content="Gefahrstoffkataster &amp; App: Excel-Alternative mit KI-Sicherheitsdatenblatt-Import, QR-Notfallpass und Revisionsverlauf nach § 6. Kostenlos testen."',
-    `content="${META_DESC}"`,
-  )
-  .replace('<link rel="canonical" href="https://gefahrstoff-qr.de/" />', `<link rel="canonical" href="${CANONICAL}" />`)
-  .replace(
-    '<meta property="og:title" content="Cloud Gefahrstoffmanagement Software: strukturierter als Excel | Gefahrstoff-QR">',
-    '<meta property="og:title" content="Gefahrstoffverzeichnis Kfz-Werkstatt &amp; Betriebsanweisung Werkstatt">',
-  )
-  .replace(
-    '<meta property="og:url" content="https://gefahrstoff-qr.de/">',
-    `<meta property="og:url" content="${CANONICAL}">`,
-  )
-  .replace(
-    '<meta name="twitter:title" content="Gefahrstoffkataster Software &amp; App: Die Excel-Alternative | Gefahrstoff-QR">',
-    '<meta name="twitter:title" content="Gefahrstoffverzeichnis Kfz-Werkstatt &amp; Betriebsanweisung Werkstatt">',
-  )
-  .replace('"url": "https://gefahrstoff-qr.de/"', `"url": "${CANONICAL}"`)
-  .replace(
-    '"name": "Gefahrstoffmanagement Software: 10x effizienter als Excel | Gefahrstoff-QR"',
-    '"name": "Gefahrstoffmanagement für Kfz-Werkstätten | Gefahrstoff-QR"',
-  )
   .replace(/href="style\.css/g, 'href="/style.css')
   .replace(/href="tw\.css/g, 'href="/tw.css')
   .replace('src="logo.png"', 'src="/logo.png"')
@@ -85,7 +91,7 @@ const heroNew = `<p class="mb-3 w-full text-xs font-bold uppercase tracking-wide
 </h1>
  <p class="text-2xl mt-5 sds-hero__subtitle text-center md:text-left">Vom Bremsenreiniger bis zu den Anforderungen rund um Dieselmotor-Emissionen (DME) – Stoffe, Mengen und Sicherheitsdatenblätter an einem Ort.</p>
  <div class="sds-hero__cta-row mt-8 flex w-full flex-col flex-wrap justify-center gap-4 sm:flex-row md:justify-start">
-   <a class="btn-cta-orange sds-hero__cta" href="https://app.gefahrstoff-qr.de/">Jetzt kostenlos testen</a>
+   <a class="btn-cta-orange sds-hero__cta" href="${APP_REGISTER_URL}">Jetzt kostenlos testen</a>
    <a class="sds-secondary-link sds-hero__cta" href="/">Zur Startseite</a>
  </div>`;
 
@@ -103,10 +109,10 @@ html = html.replace(
   '<a href="/loesungen/kfz-werkstatt/" aria-current="page" class="group flex h-full flex-col rounded-2xl border-2 border-[#ff6b35]/50 bg-[#162340] p-5 shadow-lg ring-1 ring-orange-400/20 no-underline">',
 );
 
-function trimPricingToProfessional(pageHtml) {
+function trimPricingToProfessional(pageHtml: string): string {
   let out = pageHtml.replace(
     /(<div class="pricing-tier-grid"[^>]*>)([\s\S]*?)(<\/div>\s*\n\s*<details class="pricing-compare)/,
-    (_, open, content, close) => {
+    (_: string, open: string, content: string, close: string) => {
       const articles = content.match(/\n <article[\s\S]*?<\/article>/g) || [];
       const kept = articles.filter((article) => !article.includes('>SiFa Multi-Mandant</p>'));
       const gridOpen = open.replace(
@@ -119,7 +125,7 @@ function trimPricingToProfessional(pageHtml) {
 
   out = out.replace(
     /(<section id="preise"[\s\S]*?<table class="pricing-compare__table">)([\s\S]*?)(<\/table>)/,
-    (_, tableOpen, tableInner, tableClose) => {
+    (_: string, tableOpen: string, tableInner: string, tableClose: string) => {
       let t = tableInner
         .replace(
           /<caption>[\s\S]*?<\/caption>/,
@@ -130,7 +136,7 @@ function trimPricingToProfessional(pageHtml) {
         .replace(/\s*<tr>\s*<th scope="row">Mandanten- &amp; Werkstrennung<\/th>[\s\S]*?<\/tr>/, '')
         .replace(/\s*<tr>\s*<th scope="row">Begehungs-Modus \(ohne SDB\)<\/th>[\s\S]*?<\/tr>/, '');
 
-      t = t.replace(/<tr>([\s\S]*?)<\/tr>/g, (rowMatch, inner) => {
+      t = t.replace(/<tr>([\s\S]*?)<\/tr>/g, (rowMatch: string, inner: string) => {
         if (!inner.includes('<td')) return rowMatch;
         const lastTdIndex = inner.lastIndexOf('<td');
         if (lastTdIndex === -1) return rowMatch;

@@ -30,7 +30,7 @@ export function buildCaseStudyPageConfig(caseStudy: CaseStudy): TrustPageConfig 
   return {
     path: caseStudyPath(caseStudy.slug),
     seo: {
-      title: `Praxisbeispiel: ${caseStudy.title}`,
+      title: caseStudy.seoTitle,
       description: caseStudy.seoDescription,
       ogImageAlt: `Praxisbeispiel Gefahrstoff-QR: ${caseStudy.title}`,
     },
