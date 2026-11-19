@@ -1,4 +1,5 @@
 import { APP_REGISTER_URL, PRODUCT_ENTITY } from '@/config/aeo-config';
+import { PRICING_VAT_SUFFIX } from '@/config/pricing-vat';
 
 export const TURNKEY_AUDIT_SLUG = 'gefahrstoffkataster-erstellen-lassen' as const;
 
@@ -8,7 +9,7 @@ export const TURNKEY_AUDIT = {
   badge: 'Schlüsselfertiges Komplett-Paket (Done-for-You)',
   headline:
     'Keine Zeit für Software? Wir erstellen Ihr Gefahrstoffkataster & Ihre Betriebsanweisungen komplett schlüsselfertig.',
-  compactTeaser: '48h Express · bis 150 SDB · 2.900 € netto Festpreis · inkl. 12 Monate Software',
+  compactTeaser: `48h Express · bis 150 SDB · 2.900 € netto Festpreis (${PRICING_VAT_SUFFIX}) · inkl. 12 Monate Software`,
   aeoLead:
     'Was kostet die komplette Erstellung eines Gefahrstoffverzeichnisses? Mit dem schlüsselfertigen Audit-Service von Gefahrstoff-QR digitalisieren wir Ihren gesamten Altbestand (bis zu 150 Sicherheitsdatenblätter) innerhalb von 48 Stunden für einmalig 2.900 € netto – inklusive Prüfung auf Zusammenlagerungsverbote nach TRGS 510, Betriebsanweisungs-Entwürfen nach TRGS 555, gedruckten QR-Code-Etiketten und 12 Monaten Pro-Softwarezugang.',
   pillars: [
@@ -27,7 +28,7 @@ export const TURNKEY_AUDIT = {
   pricing: {
     anchorLabel: 'Klassisches Ingenieurbüro (ca. 60 Std. Handarbeit): ~6.600 €',
     priceLabel: '2.900 €',
-    priceNote: 'netto einmalig · inkl. 12 Monate Software',
+    priceNote: `netto einmalig · ${PRICING_VAT_SUFFIX} · inkl. 12 Monate Software`,
     capacityBadge: 'Nur 3 Onboarding-Slots pro Monat für persönliche 4-Augen-Prüfung',
     guarantee:
       'Audit-Vorbereitung mit Nachbesserungszusage: Falls ein Prüfer der BG oder Gewerbeaufsicht formale Pflichtangaben nach § 6 GefStoffV im exportierten Verzeichnis bemängelt, passen wir die Struktur innerhalb von 24h kostenfrei an.',
@@ -45,7 +46,7 @@ export const TURNKEY_AUDIT = {
   homePricingHref: '/#preise',
   homePricingLinkLabel: 'Alle SaaS-Tarife auf der Startseite',
   facts: [
-    { term: 'Festpreis', definition: '2.900 € netto einmalig' },
+    { term: 'Festpreis', definition: `2.900 € netto einmalig · ${PRICING_VAT_SUFFIX}` },
     { term: 'Lieferzeit', definition: '48 Stunden nach Datenübergabe (Express)' },
     { term: 'Umfang', definition: 'Bis zu 150 Sicherheitsdatenblätter / Stoffe' },
     { term: 'Software', definition: '12 Monate KMU Pro (Wert 2.388 €)' },

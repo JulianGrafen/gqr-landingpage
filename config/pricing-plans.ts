@@ -8,6 +8,8 @@ import {
   SIFA_MANDANT_LIMITS_LABEL,
 } from '@/config/sifa-mandant-pricing';
 
+export { PRICING_VAT_FOOTNOTE_BILLING, PRICING_VAT_SUFFIX } from '@/config/pricing-vat';
+
 export const PRICING_CURRENCY = 'EUR';
 /** Ankerpreis in der UI: durchgestrichen, Summe = angezeigter Monatspreis + Offset (Marketing). */
 export const PRICING_DISPLAY_ANCHOR_OFFSET_EUR = 20;

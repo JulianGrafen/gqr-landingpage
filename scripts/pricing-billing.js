@@ -43,6 +43,7 @@
       'Jährliche Abrechnung (Standard) — effektiv bis zu 17 % günstiger. Kauf auf Rechnung immer möglich.',
   };
 
+  /** Keep in sync with config/pricing-plans.ts → PRICING_VAT_FOOTNOTE_BILLING */
   var footnotes = {
     monthly: 'Alle Preise zzgl. MwSt., monatliche Abrechnung',
     yearly: 'Alle Preise zzgl. MwSt., jährliche Vorauszahlung (Standard)',
