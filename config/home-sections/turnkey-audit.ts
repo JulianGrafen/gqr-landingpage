@@ -28,7 +28,7 @@ export const TURNKEY_AUDIT = {
   pricing: {
     anchorLabel: 'Klassisches Ingenieurbüro (ca. 60 Std. Handarbeit): ~6.600 €',
     priceLabel: '2.900 €',
-    priceNote: `netto einmalig · ${PRICING_VAT_SUFFIX} · inkl. 12 Monate Software`,
+    priceNote: 'netto einmalig · inkl. 12 Monate Software',
     capacityBadge: 'Nur 3 Onboarding-Slots pro Monat für persönliche 4-Augen-Prüfung',
     guarantee:
       'Audit-Vorbereitung mit Nachbesserungszusage: Falls ein Prüfer der BG oder Gewerbeaufsicht formale Pflichtangaben nach § 6 GefStoffV im exportierten Verzeichnis bemängelt, passen wir die Struktur innerhalb von 24h kostenfrei an.',
