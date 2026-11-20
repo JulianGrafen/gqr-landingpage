@@ -1,7 +1,14 @@
 import { INDUSTRY_SLUGS, industrySolutions, type IndustrySolution } from '@/config/industry-solutions';
 import type { IndustryPseoContent } from '@/config/loesungen/types';
 
-const PSEO_REQUIRED_SLUGS = ['friseursalon', 'metallbau', 'landwirtschaft'] as const;
+const PSEO_REQUIRED_SLUGS = [
+  'friseursalon',
+  'metallbau',
+  'landwirtschaft',
+  'zahnarztpraxis',
+  'elektrobetrieb',
+  'dachdecker',
+] as const;
 
 const BANNED_LOESUNGEN_COPY = [
   { id: 'entscheidend', re: /\bentscheidend\b/i },

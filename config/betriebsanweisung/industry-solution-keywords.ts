@@ -13,4 +13,7 @@ export const INDUSTRY_SOLUTION_KEYWORDS: Record<IndustrySlug, readonly string[]>
   friseursalon: ['friseur', 'friseursalon', 'kosmetik'],
   metallbau: ['metallbau', 'schweiß', 'schweiss'],
   landwirtschaft: ['landwirtschaft', 'hof', 'agrartechnik', 'pflanzenschutz'],
+  zahnarztpraxis: ['zahnarzt', 'zahnarztpraxis', 'dental', 'arztpraxis'],
+  elektrobetrieb: ['elektro', 'elektrobetrieb', 'elektriker', 'gebäudetechnik'],
+  dachdecker: ['dachdecker', 'bedachung', 'dach', 'spengler'],
 };
