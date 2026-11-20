@@ -10,4 +10,7 @@ export const INDUSTRY_SOLUTION_KEYWORDS: Record<IndustrySlug, readonly string[]>
   malerbetrieb: ['maler', 'lackier'],
   laborbetrieb: ['labor'],
   reinigungsunternehmen: ['gebäudereinigung', 'facility', 'reinigungsdienst'],
+  friseursalon: ['friseur', 'friseursalon', 'kosmetik'],
+  metallbau: ['metallbau', 'schweiß', 'schweiss'],
+  landwirtschaft: ['landwirtschaft', 'hof', 'agrartechnik', 'pflanzenschutz'],
 };

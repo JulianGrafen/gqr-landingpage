@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gefahrstoff-qr.de/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-18</lastmod>
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/betriebsanweisung/</loc>
@@ -14,6 +14,10 @@
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/betriebsanweisung/2-butanone-trgs-555/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/betriebsanweisung/abbeizer-trgs-555/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
@@ -321,6 +325,10 @@
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
+    <loc>https://gefahrstoff-qr.de/betriebsanweisung/frostschutzmittel-trgs-555/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
     <loc>https://gefahrstoff-qr.de/betriebsanweisung/fugenmasse-trgs-555/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
@@ -374,6 +382,10 @@
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/betriebsanweisung/grundreiniger-trgs-555/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/betriebsanweisung/handdesinfektion-trgs-555/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
@@ -525,6 +537,10 @@
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
+    <loc>https://gefahrstoff-qr.de/betriebsanweisung/korrosionsschutzmittel-trgs-555/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
     <loc>https://gefahrstoff-qr.de/betriebsanweisung/korrosionsschutzoel-trgs-555/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
@@ -542,6 +558,10 @@
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/betriebsanweisung/kuehlschmierstoff-trgs-555/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/betriebsanweisung/kuehlspray-trgs-555/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
@@ -642,6 +662,10 @@
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/betriebsanweisung/montageschaum-trgs-555/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/betriebsanweisung/montagespray-trgs-555/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
@@ -773,6 +797,14 @@
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
+    <loc>https://gefahrstoff-qr.de/betriebsanweisung/pu-schaum-trgs-555/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/betriebsanweisung/putzmittel-trgs-555/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
     <loc>https://gefahrstoff-qr.de/betriebsanweisung/reifenreiniger-trgs-555/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
@@ -782,6 +814,10 @@
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/betriebsanweisung/rohrreiniger-trgs-555/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/betriebsanweisung/rohrsanierer-trgs-555/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
@@ -914,6 +950,10 @@
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/betriebsanweisung/styrol-trgs-555/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/betriebsanweisung/tapetenkleber-trgs-555/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
@@ -1166,7 +1206,7 @@
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/gefahrstoff-software-sicherheitsfachkraft-selbstst%C3%A4ndig/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/gefahrstoffkataster-excel-vorlage/</loc>
@@ -1178,10 +1218,14 @@
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/gefahrstoffmanagement-reinigungsfirma/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/gefahrstoffverzeichnis-excel-vorlage/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/loesungen/friseursalon/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
@@ -1193,7 +1237,15 @@
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
+    <loc>https://gefahrstoff-qr.de/loesungen/landwirtschaft/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
     <loc>https://gefahrstoff-qr.de/loesungen/malerbetrieb/</loc>
+    <lastmod>2026-11-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gefahrstoff-qr.de/loesungen/metallbau/</loc>
     <lastmod>2026-11-19</lastmod>
   </url>
   <url>
@@ -1206,15 +1258,15 @@
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/praxisbeispiele/umstieg-excel-gefahrstoffkataster/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2020-01-01</lastmod>
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/sicherheit-avv/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2020-01-01</lastmod>
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/so-funktioniert-die-ki/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2020-01-01</lastmod>
   </url>
   <url>
     <loc>https://gefahrstoff-qr.de/trgs-510-zusammenlagerungs-check/</loc>

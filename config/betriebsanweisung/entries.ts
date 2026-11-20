@@ -2918,6 +2918,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Logistik & Gefahrgutumschlag",
     ],
   },
+  {
+    slug: 'montagespray-trgs-555',
+    substanceName: "Montagespray",
+    metaDescription: "Betriebsanweisung Montagespray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Metallbau & Schweißtechnik",
+      "SHK-Handwerk & Installateur",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'pu-schaum-trgs-555',
+    substanceName: "PU-Schaum",
+    metaDescription: "Betriebsanweisung PU-Schaum: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "SHK-Handwerk & Dämmtechnik",
+      "Fensterbau & Metallbau",
+      "Trockenbau & Ausbau",
+      "Malerbetrieb & Fassade",
+    ],
+  },
+  {
+    slug: 'abbeizer-trgs-555',
+    substanceName: "Abbeizer",
+    metaDescription: "Betriebsanweisung Abbeizer: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Restaurierung",
+      "Möbelrestaurierung & Lackiererei",
+      "Metallbau & Oberflächentechnik",
+      "Gebäudereinigung & Industriereinigung",
+    ],
+  },
+  {
+    slug: 'kuehlspray-trgs-555',
+    substanceName: "Kühlspray",
+    metaDescription: "Betriebsanweisung Kühlspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Elektronikfertigung & Montage",
+      "Kfz-Werkstatt & Instandhaltung",
+      "Metallbearbeitung & Werkzeugbau",
+      "Druckerei & Maschinenbau",
+    ],
+  },
+  {
+    slug: 'frostschutzmittel-trgs-555',
+    substanceName: "Frostschutzmittel",
+    metaDescription: "Betriebsanweisung Frostschutzmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fuhrpark",
+      "SHK-Handwerk & Heizungsbau",
+      "Landwirtschaft & Agrartechnik",
+      "Gebäudereinigung & Winterdienst",
+    ],
+  },
+  {
+    slug: 'handdesinfektion-trgs-555',
+    substanceName: "Handdesinfektion",
+    metaDescription: "Betriebsanweisung Handdesinfektion: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Friseursalon & Kosmetik",
+      "Zahnarztpraxis & Arztpraxis",
+      "Lebensmittelverarbeitung & Gastronomie",
+      "Pflegeeinrichtung & Sozialwesen",
+    ],
+  },
+  {
+    slug: 'tapetenkleber-trgs-555',
+    substanceName: "Tapetenkleber",
+    metaDescription: "Betriebsanweisung Tapetenkleber: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Raumausstatter",
+      "Trockenbau & Ausbau",
+      "Gebäudereinigung nach Bau",
+      "Hotel & Facility Management",
+    ],
+  },
+  {
+    slug: 'rohrsanierer-trgs-555',
+    substanceName: "Rohrsanierer",
+    metaDescription: "Betriebsanweisung Rohrsanierer: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "SHK-Handwerk & Sanitär",
+      "Gebäudereinigung & Kanalreinigung",
+      "Facility Management & Haustechnik",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'putzmittel-trgs-555',
+    substanceName: "Putzmittel",
+    metaDescription: "Betriebsanweisung Putzmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Gastronomie & Großküche",
+      "Lebensmittelhandel & Großhandel",
+      "Friseursalon & Nagelstudio",
+    ],
+  },
+  {
+    slug: 'korrosionsschutzmittel-trgs-555',
+    substanceName: "Korrosionsschutzmittel",
+    metaDescription: "Betriebsanweisung Korrosionsschutzmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbau & Schweißtechnik",
+      "Kfz-Werkstatt & Instandhaltung",
+      "Maritimer Betrieb & Werft",
+      "Maschinenbau & Anlagenbau",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
