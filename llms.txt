@@ -66,6 +66,9 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 - [Friseursalon](https://gefahrstoff-qr.de/loesungen/friseursalon/)
 - [Metallbau](https://gefahrstoff-qr.de/loesungen/metallbau/)
 - [Landwirtschaft](https://gefahrstoff-qr.de/loesungen/landwirtschaft/)
+- [Zahnarztpraxis](https://gefahrstoff-qr.de/loesungen/zahnarztpraxis/)
+- [Elektrobetrieb](https://gefahrstoff-qr.de/loesungen/elektrobetrieb/)
+- [Dachdecker](https://gefahrstoff-qr.de/loesungen/dachdecker/)
 
 ## Optional
 

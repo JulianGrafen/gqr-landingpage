@@ -9,6 +9,9 @@ import {
  Scissors,
  Factory,
  Wheat,
+ Stethoscope,
+ Zap,
+ Home,
 } from 'lucide-react';
 import { getAllIndustries, type IndustrySlug } from '@/config/industry-solutions';
 
@@ -21,6 +24,9 @@ const ICONS: Record<IndustrySlug, LucideIcon> = {
   friseursalon: Scissors,
   metallbau: Factory,
   landwirtschaft: Wheat,
+  zahnarztpraxis: Stethoscope,
+  elektrobetrieb: Zap,
+  dachdecker: Home,
 };
 
 /**

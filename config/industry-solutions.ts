@@ -13,6 +13,9 @@ export const INDUSTRY_SLUGS = [
   'friseursalon',
   'metallbau',
   'landwirtschaft',
+  'zahnarztpraxis',
+  'elektrobetrieb',
+  'dachdecker',
 ] as const;
 
 export type IndustrySlug = (typeof INDUSTRY_SLUGS)[number];
@@ -496,6 +499,339 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  question: 'Wer prüft Gefahrstoffe auf landwirtschaftlichen Höfen?',
  answer:
  'Die Sozialversicherung für Landwirtschaft, Forsten und Gartenbau (SVLFG) begutachtet Arbeitsmittel und Chemikalien im Betrieb. Gewerbeaufsicht kann ergänzend prüfen. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen sind Kernpunkte. Digitale Exporte erleichtern die Vorbereitung auf SVLFG-Begehungen und Dokumentationsnachweise vor Ort.',
+ },
+ ],
+ },
+ },
+ zahnarztpraxis: {
+ slug: 'zahnarztpraxis',
+ label: 'Zahnarztpraxis',
+ title: 'Gefahrstoffmanagement in der Zahnarztpraxis: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Zahnarztpraxis & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Zahnarztpraxis: Desinfektion, Säure, Amalgam — § 6 GefStoffV, TRGS 555 und TRGS 201 für Praxislager in Gefahrstoff-QR.',
+ heroText:
+ 'Ätzende Säuren, Desinfektionslösungen und Abformmaterial wechseln mit Herstellerprodukten. Verzeichnis, Betriebsanweisungen und Kennzeichnung müssen zur Nutzung an Behandlungsstuhl und Steri passen.',
+ typischeStoffe: [
+ 'Desinfektionsmittel für Flächen und Instrumente',
+ 'Ätzsäuren und Prophylaxepasten',
+ 'Abformsilikone und Kunststoffmonomer',
+ 'Röntgentwickler und Fixierlösungen',
+ 'Reiniger für Sauger und Leitungen',
+ ],
+ spezifischerVorteil:
+ 'Wechsel der Produktlinien oder neuer Biostoffe erfordert schnelle Anpassung von Verzeichnis und Betriebsanweisungen. Digitale SDB-Pflege hält Steri, Labor und Lager konsistent für die BGW-Begehung.',
+ handwerkAbsatz:
+ 'Praxen sind klein, aber die Stoffvielfalt ist groß. Wenn Sprühflaschen und Kanister ohne Bezug zum Verzeichnis stehen, fehlen Nachweise bei Unterweisung und Begehung. KI-gestützte TRGS-555-Entwürfe unterstützen die Vorprüfung durch die SiFa oder Praxisleitung vor der Freigabe.',
+ brancheGenitiv: 'Zahnarztpraxis',
+ blogPostHref: '/wissen/gefahrstoffverzeichnis-arztpraxis-muster/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'In der Zahnarztpraxis gilt das Gefahrstoffverzeichnis nach § 6 GefStoffV für alle eingesetzten und gelagerten Produkte. Betriebsanweisungen nach TRGS 555 werden für Desinfektion, Säure und Materialien am Behandlungsstuhl bereitgestellt. Umfüllen in Applikationsflaschen erfordert Kennzeichnung nach TRGS 201. Excel-Listen veralten bei jeder Produktumstellung. Gefahrstoff-QR bündelt SDB, Entwürfe und Unterweisung für die Praxis.',
+ typicalProducts: [
+ {
+ product: 'Alkoholische Flächendesinfektion',
+ gebinde: 'Kanister 5 Liter, Spendeflasche',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Verzeichniseintrag, Betriebsanweisung Steri, Unterweisung Team',
+ },
+ {
+ product: 'Phosphorsäure-Ätzgel (Prophylaxe)',
+ gebinde: 'Spritze, Tiegel',
+ hazardKind: 'ätzend',
+ workplaceDuty: 'BA am Stuhl, Unterweisung vor Einsatz',
+ },
+ {
+ product: 'Abformmittel (Silikon)',
+ gebinde: 'Kartusche, Karton',
+ hazardKind: 'sensibilisierend',
+ workplaceDuty: 'SDB archivieren, Verzeichnis führen, Unterweisung Labor',
+ },
+ {
+ product: 'Amalgammüll- / Abscheiderreiniger',
+ gebinde: 'Flasche 1 Liter',
+ hazardKind: 'reizend, umweltgefährdend',
+ workplaceDuty: 'Eintrag Technikraum, BA für Einleitung und Wartung',
+ },
+ {
+ product: 'Natriumhypochlorit-Lösung (Bleaching-Hilfsstoff)',
+ gebinde: 'Flasche, Ampulle',
+ hazardKind: 'ätzend, oxidierend',
+ workplaceDuty: 'Verzeichnis, BA mit Freigabe SiFa, Dokumentation Unterweisung',
+ },
+ {
+ product: 'Handdesinfektion (WHO-kompatible Rezeptur)',
+ gebinde: 'Spender, Kanister',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Verzeichnis aktualisieren',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Desinfektions- und Reinigungsmittel fehlen vollständig im Gefahrstoffverzeichnis, obwohl sie täglich genutzt werden.',
+ 'Betriebsanweisungen am Behandlungsstuhl sind veraltet oder ohne Bezug zum aktuellen Sicherheitsdatenblatt.',
+ 'Beschriftete Applikationsflaschen in Steri und Labor sind weder im Verzeichnis noch nach TRGS 201 dokumentiert.',
+ ],
+ berufsgenossenschaft: 'BGW',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Praxismanager tippt Stoffe in Excel am Büro-PC ab',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unbeschriftete Sprüh- und Spendeflaschen',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA und SDB am Spender',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Anmeldung oder im Archiv',
+ gqrWorkflow: 'QR am Sterischank oder an der Mischstation',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'Verstreute SDB-PDFs und Listen verschiedener Jahrgänge',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Braucht eine Zwei-Stuhl-Praxis ein Gefahrstoffverzeichnis?',
+ answer:
+ 'Ja, sobald Gefahrstoffe eingesetzt oder gelagert werden. § 2 GefStoffV umfasst auch Desinfektionsmittel und ätzende Produkte in der Zahnmedizin. Das Verzeichnis nach § 6 GefStoffV muss alle Gebinde und Standorte abbilden. Auch kleine Praxen nutzen Säuren, Desinfektion und Abformmaterial. Excel funktioniert nur bei regelmäßiger Pflege durch SiFa oder Praxisleitung.',
+ },
+ {
+ question: 'Wie dokumentiere ich Umfüllen von Desinfektion in Sprühflaschen?',
+ answer:
+ 'Umfüllen löst Kennzeichnungspflicht nach TRGS 201 aus. Das Gebinde braucht Stoff- und Gefahrenhinweise aus dem SDB. Parallel gehört es ins Gefahrstoffverzeichnis nach § 6 GefStoffV. Eine Betriebsanweisung nach TRGS 555 beschreibt den Umgang am Behandlungsstuhl. Gefahrstoff-QR liefert Entwürfe zur Vorprüfung durch SiFa oder Arbeitgeber vor der Unterweisung.',
+ },
+ {
+ question: 'Wie oft aktualisiere ich Betriebsanweisungen in der Zahnarztpraxis?',
+ answer:
+ 'Bei jedem Wechsel des Sicherheitsdatenblatts, der Konzentration oder des Einsatzorts. Hersteller tauschen Rezepturen ohne viel Vorlauf. TRGS-555-Entwürfe aus dem PDF erleichtern die Pflege. Die SiFa oder Praxisleitung prüft vor Freigabe und Unterweisung. Der Nachweis nach § 14 GefStoffV gehört zur Unterweisungsdokumentation im Team.',
+ },
+ ],
+ },
+ },
+ elektrobetrieb: {
+ slug: 'elektrobetrieb',
+ label: 'Elektrobetrieb',
+ title: 'Gefahrstoffmanagement im Elektrobetrieb: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Elektrobetrieb & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Elektrobetrieb: Lotpasten, Lösemittel, Reiniger — § 6 GefStoffV, TRGS 555 und TRGS 201 für Baustelle in Gefahrstoff-QR.',
+ heroText:
+ 'Lötwaren, Kontaktreiniger, Klebstoffe und Schutzlacke liegen auf der Baustelle, im Transporter und in der Werkstatt. Ihr Verzeichnis muss zu wechselnden Aufträgen passen.',
+ typischeStoffe: [
+ 'Kontaktreiniger und Lösungsmittel-Spray',
+ 'Löt- und Flussmittel',
+ 'Kabelvergussharze und Dichtmassen',
+ 'Korrosionsschutzlacke',
+ 'Montage- und Schmiersprays',
+ ],
+ spezifischerVorteil:
+ 'Temporäre Gebinde auf Baustellen erzeugen Pflegeaufwand. Ein digitales Verzeichnis mit SDB-Historie hilft, Betriebsanweisungen je Einsatzort freizugeben und Umfüll-Kennzeichnung nach TRGS 201 nachzuhalten.',
+ handwerkAbsatz:
+ 'Elektrobetriebe arbeiten dezentral. Wenn Kanister im Transporter nicht zum Verzeichnis passen oder SDB-Updates nicht nachgezogen werden, entstehen Lücken bei der BG ETEM. Strukturierte Erfassung mit mobilen Zugriffen reduziert Nacharbeit vor der Prüfung.',
+ brancheGenitiv: 'Elektrobetrieb',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Elektrobetriebe führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Werkstatt, Lager und Baustellenfahrzeug. Betriebsanweisungen nach TRGS 555 gelten für Löten, Reinigen und Vergießen. Umfüllen von Lösemitteln in Handflaschen erfordert Kennzeichnung nach TRGS 201. Excel-Listen pro Objekt veralten schnell. Gefahrstoff-QR verknüpft SDB, Entwürfe und Export für die SiFa vor der BG ETEM-Begehung.',
+ typicalProducts: [
+ {
+ product: 'Isopropanolhaltiger Kontaktreiniger',
+ gebinde: 'Spraydose, Flasche 1 Liter',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Verzeichnis, BA am Schaltschrank, Unterweisung Monteur',
+ },
+ {
+ product: 'Lötpaste (bleifrei)',
+ gebinde: 'Tube, Dose',
+ hazardKind: 'reizend',
+ workplaceDuty: 'SDB archivieren, Betriebsanweisung Löten, Unterweisung',
+ },
+ {
+ product: 'Kabelvergussharz (2K)',
+ gebinde: 'Kartusche, Eimer',
+ hazardKind: 'sensibilisierend, reizend',
+ workplaceDuty: 'Eintrag Baustelle, BA für Mischung und Aushärtung',
+ },
+ {
+ product: 'Montagespray (Trennen/Schmieren)',
+ gebinde: 'Spraydose',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Lagerort dokumentieren, BA im Transporter verfügbar',
+ },
+ {
+ product: 'Schutzlack für Leiterplatten',
+ gebinde: 'Spraydose, Flasche',
+ hazardKind: 'entzündbar, sensibilisierend',
+ workplaceDuty: 'Verzeichnis, Unterweisung vor Sprüharbeiten',
+ },
+ {
+ product: 'Flussmittel für Lötwellen',
+ gebinde: 'Kanister, Flasche',
+ hazardKind: 'ätzend oder reizend',
+ workplaceDuty: 'Werkstatteintrag, BA Wartung, Freigabe durch SiFa',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Chemikalien im Transporter und auf Baustellen fehlen im Gefahrstoffverzeichnis oder sind ohne Standortangabe erfasst.',
+ 'Betriebsanweisungen für Löten und Kontaktreiniger sind veraltet oder ohne Bezug zum aktuellen SDB.',
+ 'Umgefüllte Reinigungsflaschen im Schaltschrank sind nicht nach TRGS 201 gekennzeichnet oder nicht im Verzeichnis.',
+ ],
+ berufsgenossenschaft: 'BG ETEM',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Meister trägt Stoffe nach Auftrag in Excel ein',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unmarkierte Flaschen im Transporter',
+ gqrWorkflow: 'Etikett mit QR-Zugriff auf BA am Gebinde oder Regal',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Zentrale oder beim Polier',
+ gqrWorkflow: 'QR im Transporter oder am Schaltschrank',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'Listen je Baustelle manuell zusammenstellen',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Gilt das Gefahrstoffverzeichnis auch für Baustellenfahrzeuge?',
+ answer:
+ 'Ja, Gebinde im Transporter gelten als Lagerort nach § 6 GefStoffV. Kontaktreiniger, Lötmittel und Harze gehören mit Menge und Standort ins Verzeichnis. Betriebsanweisungen nach TRGS 555 müssen am Einsatzort verfügbar sein. Umfüllen in Handflaschen löst TRGS 201 aus. Digitale Erfassung erleichtert die Pflege bei wechselnden Aufträgen und Monteurteams.',
+ },
+ {
+ question: 'Wie dokumentiere ich Kontaktreiniger in der Schaltschrankmontage?',
+ answer:
+ 'Der Stoff wird im Verzeichnis mit Gebinde und Einsatzort geführt. Das Sicherheitsdatenblatt wird mit Revisionsstand archiviert. Eine Betriebsanweisung nach TRGS 555 beschreibt Umgang, Lagerung und Unterweisung am Montageplatz. Bei Umfüllen in Sprühflaschen gilt TRGS 201. Gefahrstoff-QR unterstützt Entwürfe zur Vorprüfung durch SiFa oder Betriebsleitung.',
+ },
+ {
+ question: 'Wer prüft Gefahrstoffe im Elektrohandwerk?',
+ answer:
+ 'Die Berufsgenossenschaft Energie Textil Elektro Medienerzeugnisse (BG ETEM) begutachtet chemische Arbeitsstoffe und Dokumentation im Betrieb. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Digitale Exporte aus Gefahrstoff-QR erleichtern den Nachweis vor Ort.',
+ },
+ ],
+ },
+ },
+ dachdecker: {
+ slug: 'dachdecker',
+ label: 'Dachdecker',
+ title: 'Gefahrstoffmanagement im Dachdeckerbetrieb: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Dachdecker & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Dachdecker: Bitumen, Kleber, Reiniger — § 6 GefStoffV, TRGS 555 und TRGS 201 für Baustelle in Gefahrstoff-QR.',
+ heroText:
+ 'Bitumenprodukte, Kleber und Reiniger liegen auf dem Dach, im Transporter und in der Halle. Verzeichnis, Betriebsanweisungen und Kennzeichnung müssen zu Saison und Wechselbaustellen passen.',
+ typischeStoffe: [
+ 'Bitumen- und Polymerdickenanstriche',
+ 'Kalt- und Heißvergussmassen',
+ 'Klebstoffe für Abdichtungsbahnen',
+ 'Entfetter und Reiniger für Dächer',
+ 'Lösemittelhaltige Grundierungen',
+ ],
+ spezifischerVorteil:
+ 'Wechselnde Bauobjekte erzeugen viele Hilfsstoffe in Kleinmengen. Digitales Verzeichnis mit SDB-Bezug hilft, Betriebsanweisungen je Dachauftrag bereitzustellen und Umfüllen nach TRGS 201 nachzuverfolgen.',
+ handwerkAbsatz:
+ 'Dachdecker arbeiten hoch und mobil. Wenn Kanister auf dem Dachgerüst nicht im Verzeichnis stehen oder SDB-Updates fehlen, wird die BG BAU-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe verkürzen die Pflege zwischen Projekten.',
+ brancheGenitiv: 'Dachdeckerbetrieb',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Dachdeckerbetriebe benötigen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Halle, Transporter und Dachbaustelle. Betriebsanweisungen nach TRGS 555 betreffen Bitumen, Kleber und Reiniger. Umfüllen in Handeimern oder Sprühflaschen löst TRGS 201 aus. Excel-Listen je Objekt scheitern in der Saison. Gefahrstoff-QR verbindet SDB, Entwürfe und Nachweise für die SiFa vor der BG BAU.',
+ typicalProducts: [
+ {
+ product: 'Bitumen-Dickbeschichtung (Kaltanstrich)',
+ gebinde: 'Eimer 20 Liter',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Verzeichnis, BA am Dach, Unterweisung vor Heißarbeit-Nähe',
+ },
+ {
+ product: 'Dachkleber (Bahnenkleber)',
+ gebinde: 'Eimer, Kartusche',
+ hazardKind: 'entzündbar, sensibilisierend',
+ workplaceDuty: 'Eintrag Baustelle, SDB archivieren, Unterweisung Team',
+ },
+ {
+ product: 'Entfetter für Dachabdichtung',
+ gebinde: 'Kanister, Spray',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Lagerort dokumentieren, BA am Gerüst verfügbar machen',
+ },
+ {
+ product: 'Polymer-Grundierung',
+ gebinde: 'Eimer 10 Liter',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Menge im Verzeichnis, Unterweisung vor Anstrich',
+ },
+ {
+ product: 'Flüssigkunststoff (2K-Abdichtung)',
+ gebinde: 'Eimer, Kartusche',
+ hazardKind: 'sensibilisierend',
+ workplaceDuty: 'Baustelleneintrag, BA für Mischung, Freigabe SiFa',
+ },
+ {
+ product: 'Reiniger für Bitumenwerkzeuge',
+ gebinde: 'Kanister',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Verzeichnis pflegen',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Bitumen- und Kleberprodukte auf der Baustelle fehlen im Gefahrstoffverzeichnis oder ohne Bauauftragsbezug.',
+ 'Betriebsanweisungen für Kleber und Anstriche sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Handeimer und Sprühflaschen auf dem Gerüst sind weder gekennzeichnet noch im Verzeichnis nach TRGS 201 erfasst.',
+ ],
+ berufsgenossenschaft: 'BG BAU',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Polier pflegt Stoffe je Dach in separater Excel-Datei',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unbeschriftete Eimer auf dem Gerüst',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA an der Bauauftragsbox',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Bauramme oder Zentrale',
+ gqrWorkflow: 'QR am Transporterregal oder am Gerüstcontainer',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'Listen aus mehreren Baustellen manuell zusammenführen',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Muss Bitumen im Gefahrstoffverzeichnis stehen?',
+ answer:
+ 'Ja, wenn Bitumenprodukte eingesetzt oder gelagert werden und als Gefahrstoff eingestuft sind. Sie gehören nach § 6 GefStoffV mit Menge und Lagerort ins Verzeichnis. Eine Betriebsanweisung nach TRGS 555 beschreibt Umgang auf dem Dach und in der Halle. Umfüllen in kleinere Gebinde löst TRGS 201 aus. Die SiFa prüft Entwürfe vor Freigabe.',
+ },
+ {
+ question: 'Wie erfasse ich Hilfsstoffe auf wechselnden Dächern?',
+ answer:
+ 'Temporäre Gebinde werden dem Bauauftrag oder Standort im Verzeichnis zugeordnet. Excel pro Objekt veralten schnell nach Projektende. Digitale Erfassung mit mobilen Zugriffen erleichtert Pflege auf der Baustelle. Betriebsanweisungen müssen am Einsatzort verfügbar sein. Unterweisungen nach § 14 GefStoffV werden dokumentiert.',
+ },
+ {
+ question: 'Welche BG ist für Dachdeckerbetriebe zuständig?',
+ answer:
+ 'Die Berufsgenossenschaft der Bauwirtschaft (BG BAU) prüft Gefahrstoffdokumentation auf Baustellen und in der Werkstatt. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen gehören zum Standardprogramm. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR unterstützen den Nachweis ohne Papierstapel.',
  },
  ],
  },

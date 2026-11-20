@@ -3028,6 +3028,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Maschinenbau & Anlagenbau",
     ],
   },
+  {
+    slug: 'kontaktspray-trgs-555',
+    substanceName: "Kontaktspray",
+    metaDescription: "Betriebsanweisung Kontaktspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Elektrobetrieb & Gebäudetechnik",
+      "Kfz-Werkstatt & Elektronikdiagnose",
+      "Industrielle Instandhaltung",
+      "Maschinenbau & Anlagenbau",
+    ],
+  },
+  {
+    slug: 'bohroel-trgs-555',
+    substanceName: "Bohröl",
+    metaDescription: "Betriebsanweisung Bohröl: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbearbeitung & Zerspanung",
+      "Metallbau & Schweißtechnik",
+      "Kfz-Werkstatt & Instandhaltung",
+      "Schreinerei & Holzverarbeitung",
+    ],
+  },
+  {
+    slug: 'silikonkleber-trgs-555',
+    substanceName: "Silikonkleber",
+    metaDescription: "Betriebsanweisung Silikonkleber: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "SHK-Handwerk & Sanitär",
+      "Elektrobetrieb & Montage",
+      "Kfz-Werkstatt & Karosserie",
+      "Glaserei & Fensterbau",
+    ],
+  },
+  {
+    slug: 'baukleber-trgs-555',
+    substanceName: "Baukleber",
+    metaDescription: "Betriebsanweisung Baukleber: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Fliesenleger & Bau",
+      "Trockenbau & Ausbau",
+      "Fensterbau & Metallbau",
+      "Dachdecker & Bedachung",
+    ],
+  },
+  {
+    slug: 'heisskleber-trgs-555',
+    substanceName: "Heißkleber",
+    metaDescription: "Betriebsanweisung Heißkleber: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Verpackung & Logistik",
+      "Schreinerei & Möbelproduktion",
+      "Druckerei & Buchbinderei",
+      "Elektronikfertigung & Montage",
+    ],
+  },
+  {
+    slug: 'gleitmittel-trgs-555',
+    substanceName: "Gleitmittel",
+    metaDescription: "Betriebsanweisung Gleitmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbearbeitung & Werkzeugbau",
+      "Kfz-Werkstatt & Instandhaltung",
+      "SHK-Handwerk & Installateur",
+      "Medizintechnik & Labor Service",
+    ],
+  },
+  {
+    slug: 'dachkleber-trgs-555',
+    substanceName: "Dachkleber",
+    metaDescription: "Betriebsanweisung Dachkleber: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Dachdecker & Bedachung",
+      "Abdichtung & Bau",
+      "Photovoltaik & Dachmontage",
+      "Spenglerei & Klempnerei",
+    ],
+  },
+  {
+    slug: 'unkrautvernichter-trgs-555',
+    substanceName: "Unkrautvernichter",
+    metaDescription: "Betriebsanweisung Unkrautvernichter: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Garten- & Landschaftsbau",
+      "Kommunaltechnik & Grünflächenpflege",
+      "Landwirtschaft & Hof",
+      "Facility Management & Außenanlagen",
+    ],
+  },
+  {
+    slug: 'ozonreiniger-trgs-555',
+    substanceName: "Ozonreiniger",
+    metaDescription: "Betriebsanweisung Ozonreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Rauchschadensanierung",
+      "Kfz-Aufbereitung & Innenraumreinigung",
+      "Hotel & Gastgewerbe",
+      "Lebensmittelbetrieb & Großküche",
+    ],
+  },
+  {
+    slug: 'fliesengrund-trgs-555',
+    substanceName: "Fliesengrund",
+    metaDescription: "Betriebsanweisung Fliesengrund: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Fliesenleger & Bau",
+      "SHK-Handwerk & Sanitär",
+      "Malerbetrieb & Beschichtung",
+      "Badmodernisierung & Objektbau",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
