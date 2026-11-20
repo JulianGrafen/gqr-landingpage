@@ -3,6 +3,8 @@
  * Einzige Quelle für Limits, FAQ und Marketing-Texte (Preiskarte #preise, FAQ).
  */
 
+import { PRICING_VAT_SUFFIX } from '@/config/pricing-vat';
+
 export const SIFA_MANDANT_INCLUDED = 15;
 export const SIFA_MANDANT_BLOCK_SIZE = 10;
 export const SIFA_MANDANT_BLOCK_PRICE_MONTHLY_EUR = 79;
@@ -58,5 +60,4 @@ export function buildSifaPricingCardPitch(): readonly string[] {
   ];
 }
 
-export const SIFA_PRICING_CARD_FOOTNOTE =
-  'Alle Preise zzgl. MwSt. Rechenbeispiele bei Jahreszahlung zum reduzierten Monatspreis.';
+export const SIFA_PRICING_CARD_FOOTNOTE = `Alle Preise ${PRICING_VAT_SUFFIX} Rechenbeispiele bei Jahreszahlung zum reduzierten Monatspreis.`;

@@ -4,6 +4,8 @@ import type { IndustryPseoContent } from '@/config/loesungen/types';
  * Zentrale Branchen-Daten für SEO-Landingpages (DRY).
  * Inhalte faktenorientiert; rechtliche Einordnung erfolgt durch die Nutzerorganisation.
  */
+import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
+
 export const INDUSTRY_SLUGS = [
   'kfz-werkstatt',
   'schreinerei',
@@ -25,8 +27,11 @@ export interface IndustrySolution {
  /** Kurzname für UI (z. B. Karten) */
  label: string;
  title: string;
+ /** Exakter SERP-Title (≤ 58 Zeichen; Marke wird nur angehängt, wenn sie noch passt). */
  metaTitle: string;
  metaDescription: string;
+ /** 2–3 Praxisfragen: sichtbar auf der Seite + FAQPage JSON-LD (identischer Wortlaut). */
+ faq?: readonly SeoFaqItem[];
  heroText: string;
  /** Optional: mehrere Absätze statt einem `heroText`-Block. */
  heroLeadParagraphs?: readonly string[];
@@ -51,10 +56,28 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  slug: 'kfz-werkstatt',
  label: 'Kfz-Werkstatt',
  title: 'Gefahrstoffmanagement für Kfz-Werkstätten',
- metaTitle:
- 'Gefahrstoffverzeichnis Kfz-Werkstatt & Betriebsanweisung Werkstatt',
+ // Abgrenzung zu /wissen/gefahrstoffverzeichnis-muster-kfz-werkstatt/ (Muster-Intent):
+ // diese Seite zielt auf „Software / Lösung“-Intent.
+ metaTitle: 'Gefahrstoff-Software Kfz-Werkstatt: Kataster & QR-Codes',
  metaDescription:
- 'Gefahrstoffverzeichnis Kfz-Werkstatt: Öle, Bremsenreiniger, DME-Protokoll und Betriebsanweisungen aus dem Sicherheitsdatenblatt per KI.',
+ 'Schluss mit Excel-Chaos in der Werkstatt: Sicherheitsdatenblätter per KI einlesen, TRGS-201-Etiketten drucken & QR-Codes an den Schrank hängen.',
+ faq: [
+ {
+ question: 'Muss Bremsenreiniger ins Gefahrstoffverzeichnis der Werkstatt?',
+ answer:
+ 'Ja. Bremsenreiniger ist in der Regel als entzündbares Aerosol mit H-Sätzen eingestuft und damit ein Gefahrstoff. Er gehört mit Arbeitsbereich, Mengenbereich und Verweis auf das aktuelle Sicherheitsdatenblatt ins Gefahrstoffverzeichnis nach § 6 GefStoffV.',
+ },
+ {
+ question: 'Wie werden Dieselmotoremissionen (DME) in der Werkstatt dokumentiert?',
+ answer:
+ 'DME entstehen bei Tätigkeiten und stehen auf keinem Sicherheitsdatenblatt. Sie sind in der Gefährdungsbeurteilung nach TRGS 554 zu berücksichtigen. In Gefahrstoff-QR führen Sie DME als eigenen Eintrag mit Arbeitsbereich und Schutzmaßnahmen neben den gelieferten Stoffen.',
+ },
+ {
+ question: 'Wo müssen Sicherheitsdatenblätter und Betriebsanweisungen verfügbar sein?',
+ answer:
+ 'Beschäftigte müssen die Informationen dort erreichen, wo sie mit dem Stoff arbeiten (§ 14 GefStoffV). Ein QR-Code am Gefahrstoffschrank oder an der Hebebühne öffnet Sicherheitsdatenblatt und Betriebsanweisung auf dem Smartphone, ohne Login.',
+ },
+ ],
  heroText:
  'Vom Bremsenreiniger bis zu den Anforderungen rund um Dieselmotor-Emissionen (DME) – Stoffe, Mengen und Sicherheitsdatenblätter an einem Ort.',
  typischeStoffe: [

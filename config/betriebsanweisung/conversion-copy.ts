@@ -44,7 +44,7 @@ export const INTENT_SWITCH = {
     id: 'schluesselfertig',
     audience: 'Für KMU mit mehr als 30 Stoffen',
     title: 'Keine Zeit, alle SDBs selbst zu suchen und hochzuladen?',
-    body: 'Mit dem Schlüsselfertig-Service (2.900 € Festpreis, netto) erstellen wir Ihr Gefahrstoffverzeichnis nach § 6 GefStoffV inklusive KI-gestützter BA-Entwürfe (gemäß TRGS 555) und QR-Etiketten. Die fachliche Freigabe bleibt bei der SiFa / dem Arbeitgeber.',
+    body: 'Mit dem Schlüsselfertig-Service (2.900 € Festpreis, netto zzgl. MwSt.) erstellen wir Ihr Gefahrstoffverzeichnis nach § 6 GefStoffV inklusive KI-gestützter BA-Entwürfe (gemäß TRGS 555) und QR-Etiketten. Die fachliche Freigabe bleibt bei der SiFa / dem Arbeitgeber.',
     cta: { label: 'Schlüsselfertig-Service ansehen →', target: { kind: 'path', href: `/wissen/${TURNKEY_AUDIT_SLUG}/` } },
   },
   sifa: {

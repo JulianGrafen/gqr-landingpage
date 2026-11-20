@@ -19,6 +19,9 @@ const SYNC_PATHS = [
   'gefahrstoffkataster-software',
   'gefahrstoffverzeichnis-excel-vorlage',
   'trgs-510-zusammenlagerungs-check',
+  'so-funktioniert-die-ki',
+  'sicherheit-avv',
+  'praxisbeispiele',
   '_next',
 ];
 
@@ -53,6 +56,18 @@ for (const dir of SYNCED_IMAGE_DIRS) {
   fs.mkdirSync(imageDest, { recursive: true });
   fs.cpSync(imageOut, imageDest, { recursive: true });
   console.log(`✓ images/${dir}/`);
+}
+
+/**
+ * Öffentliche Downloads (z. B. AVV-PDF für /sicherheit-avv/) aus public/downloads → Repo-Root downloads/.
+ * Zusammenführen statt Ersetzen, damit manuell hinterlegte Dateien im Root erhalten bleiben.
+ */
+const downloadsOut = path.join(OUT, 'downloads');
+if (fs.existsSync(downloadsOut)) {
+  const downloadsDest = path.join(ROOT, 'downloads');
+  fs.mkdirSync(downloadsDest, { recursive: true });
+  fs.cpSync(downloadsOut, downloadsDest, { recursive: true });
+  console.log('✓ downloads/');
 }
 
 const FAVICON_FILES = [

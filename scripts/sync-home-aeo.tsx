@@ -11,6 +11,7 @@ import { resolve } from 'node:path';
 import type { ReactElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { DataTrustSection } from '@/components/home/DataTrustSection';
+import { PricingDecisionLinks } from '@/components/home/PricingDecisionLinks';
 import { ExcelComparisonSection } from '@/components/home/ExcelComparisonSection';
 import { HomeFaqContactFooter } from '@/components/home/HomeFaqContact';
 import { HomeFaqItems } from '@/components/home/HomeFaqItems';
@@ -28,7 +29,11 @@ import { OutputPreviewSection } from '@/components/home/OutputPreviewSection';
 import { TurnkeyAuditSection } from '@/components/TurnkeyAuditSection';
 import { EnterpriseSiteFooter } from '@/components/site/EnterpriseSiteFooter';
 import { LANDING_HOME_SEO_FAQ } from '@/config/landing-home-seo-faq';
+import { AEO_CONTENT_UPDATED } from '@/config/aeo-config';
+import { HOME_SEO, HOME_SPEAKABLE_SELECTORS } from '@/config/site-seo';
 import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
+import { renderStaticHeadMeta } from '@/lib/seo/render-static-head-meta';
+import { buildWebPageSchema } from '@/lib/seo/build-webpage-schema';
 import { buildSoftwareApplicationSchema } from '@/lib/seo/build-software-application-schema';
 import { serializeJsonLd, type JsonLdObject } from '@/lib/seo/serialize-json-ld';
 import { replaceMarkedBlocks } from '@/lib/static-html/replace-marked-blocks';
@@ -88,8 +93,14 @@ const updatedHtml = replaceMarkedBlocks(html, {
   HERO_REGELWERK: () => renderHtml(<HeroRegelwerkStrip />),
   OUTPUT_PREVIEW: () => renderHtml(<OutputPreviewSection />),
   DATA_TRUST: () => renderHtml(<DataTrustSection />),
+  HEAD_META: () => renderStaticHeadMeta(HOME_SEO),
+  WEBPAGE_JSONLD: () =>
+    renderJsonLdScript(
+      buildWebPageSchema(HOME_SEO, { dateModified: AEO_CONTENT_UPDATED, speakableSelectors: HOME_SPEAKABLE_SELECTORS }),
+    ),
   SITE_FOOTER: () => renderHtml(<EnterpriseSiteFooter />),
   TURNKEY_AUDIT: () => renderHtml(<TurnkeyAuditSection />),
+  PRICING_DECISION_LINKS: () => renderHtml(<PricingDecisionLinks />),
 });
 
 writeFileSync(INDEX_HTML_PATH, updatedHtml, 'utf8');

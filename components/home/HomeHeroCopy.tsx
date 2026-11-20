@@ -2,7 +2,7 @@ import { HOME_HERO } from '@/config/home-sections/hero';
 
 /**
  * Textblock des Heros. Die Klassenstruktur (h1#heroHeadline, CTA-Div, Microcopy-<p>) ist
- * Vertrag mit scripts/generate-kfz-werkstatt-landing.mjs, das diesen Block ersetzt.
+ * Vertrag mit scripts/generate-kfz-werkstatt-landing.tsx, das diesen Block ersetzt.
  */
 export function HomeHeroCopy() {
   return (

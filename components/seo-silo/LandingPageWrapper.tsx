@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { SeoSiloPageConfig } from '@/config/seo-silo/types';
+import { buildBreadcrumbSchema } from '@/lib/seo/build-breadcrumb-schema';
 import { buildLandingSchemaBundle } from '@/lib/seo/build-landing-schema';
 import { LandingCtaBand } from '@/components/seo-silo/LandingCtaBand';
 import { LandingFaqSection } from '@/components/seo-silo/LandingFaqSection';
@@ -25,7 +26,18 @@ export function LandingPageWrapper({
   heroSlot,
   children,
 }: LandingPageWrapperProps) {
-  const schemas = buildLandingSchemaBundle(config.faq);
+  const schemas = [
+    ...buildLandingSchemaBundle(config.faq),
+    ...(config.breadcrumb.length > 1
+      ? [
+          buildBreadcrumbSchema(
+            config.breadcrumb.map((item, index) =>
+              index === config.breadcrumb.length - 1 ? { label: item.label } : { label: item.label, href: item.href },
+            ),
+          ),
+        ]
+      : []),
+  ];
 
   return (
     <main className="pb-8">

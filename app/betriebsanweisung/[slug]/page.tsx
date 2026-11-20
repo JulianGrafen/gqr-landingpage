@@ -27,13 +27,12 @@ import { MOBILE_UPLOAD_FALLBACK } from '@/config/betriebsanweisung/conversion-co
 import { LIVE_PREVIEW_COPY } from '@/config/betriebsanweisung/live-preview-copy';
 import {
   buildBetriebsanweisungBreadcrumbs,
-  buildBetriebsanweisungCanonical,
-  buildBetriebsanweisungMetaDescription,
   buildBetriebsanweisungSchemas,
-  buildBetriebsanweisungTitle,
+  buildBetriebsanweisungSeoMeta,
 } from '@/lib/betriebsanweisung/build-page-seo';
 import { buildBetriebsanweisungFaqItems } from '@/lib/betriebsanweisung/build-substance-faq';
 import { findMatchingIndustrySolutions, findRelatedEntries } from '@/lib/betriebsanweisung/related-entries';
+import { buildMetadata } from '@/lib/seo/buildMetadata';
 import { stickyCtaObstructProps } from '@/lib/marketing/sticky-header-cta';
 
 type PageProps = {
@@ -47,29 +46,7 @@ export function generateStaticParams(): { slug: HazardousSubstanceSlug }[] {
 export function generateMetadata({ params }: PageProps): Metadata {
   const entry = getBetriebsanweisungEntry(params.slug);
   if (!entry) return { title: 'Seite nicht gefunden' };
-
-  const title = buildBetriebsanweisungTitle(entry);
-  const description = buildBetriebsanweisungMetaDescription(entry);
-  const canonical = buildBetriebsanweisungCanonical(entry);
-
-  return {
-    title,
-    description,
-    alternates: { canonical },
-    openGraph: {
-      title,
-      description,
-      url: canonical,
-      siteName: 'Gefahrstoff-QR',
-      locale: 'de_DE',
-      type: 'article',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-    },
-  };
+  return buildMetadata(buildBetriebsanweisungSeoMeta(entry));
 }
 
 export default function BetriebsanweisungSlugPage({ params }: PageProps) {

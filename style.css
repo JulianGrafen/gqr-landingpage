@@ -620,12 +620,27 @@ ul { list-style: none; }
   gap: 0.1rem;
 }
 
+.pricing-tier__price {
+  display: block;
+}
+
 .pricing-tier-grid > article .pricing-tier__price {
   width: 100%;
 }
 
+.pricing-tier__price-vat,
+.pricing-tier__price .pricing-tier__price-vat {
+  display: block;
+  margin-top: 0.2rem;
+  color: #a8b8d0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
 .pricing-tier__price-note {
-  margin: 0.45rem 0 0;
+  margin: 0.35rem 0 0;
   color: #8fa4c0;
   font-size: 0.8rem;
   font-weight: 600;

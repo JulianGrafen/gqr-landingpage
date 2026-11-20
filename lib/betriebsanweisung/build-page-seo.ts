@@ -1,5 +1,6 @@
 import type { HazardousSubstanceSeoEntry } from '@/config/betriebsanweisung/types';
 import { SITE_URL } from '@/config/site-seo';
+import { fitDescription, fitTitle, type SeoMetaInput } from '@/lib/seo/buildMetadata';
 import { buildBreadcrumbSchema, type BreadcrumbItem } from '@/lib/seo/build-breadcrumb-schema';
 import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
 import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
@@ -7,38 +8,53 @@ import type { JsonLdObject } from '@/lib/seo/serialize-json-ld';
 import { marketingHomeBreadcrumbItem } from '@/lib/seo/marketing-home-breadcrumb';
 
 /** Stand der Template-Inhalte (für dateModified); bei inhaltlichen Template-Änderungen anpassen. */
-export const BETRIEBSANWEISUNG_CONTENT_UPDATED = '2026-11-07';
-
-const META_DESCRIPTION_MAX = 158;
+export const BETRIEBSANWEISUNG_CONTENT_UPDATED = '2026-11-19';
 
 export function buildBetriebsanweisungCanonical(entry: HazardousSubstanceSeoEntry): string {
-  return `${SITE_URL}/betriebsanweisung/${entry.slug}/`;
+  return `${SITE_URL}${buildBetriebsanweisungPath(entry)}`;
 }
 
-/** Title ohne Marken-Suffix (das ergänzt das Root-Layout-Template). */
-export function buildBetriebsanweisungTitle(entry: HazardousSubstanceSeoEntry): string {
-  return `Betriebsanweisung ${entry.substanceName} (TRGS 555): Entwurf aus Ihrem SDB`;
-}
-
-function describeWithIndustries(substanceName: string, industries: readonly string[], withCta: boolean): string {
-  const context = industries.length > 0 ? ` für ${industries.join(' und ')}` : '';
-  const cta = withCta ? ' Kostenlos testen.' : '';
-  return `Betriebsanweisung ${substanceName} (TRGS 555)${context}: KI-gestützter Entwurf aus Ihrem SDB, Freigabe durch die SiFa.${cta}`;
+export function buildBetriebsanweisungPath(entry: HazardousSubstanceSeoEntry): `/${string}/` {
+  return `/betriebsanweisung/${entry.slug}/`;
 }
 
 /**
- * Meta-Description mit Branchenbezug, damit sich die Seiten im Snippet unterscheiden.
- * Bevorzugt mehr Branchen vor dem CTA-Zusatz; Fallback ist die gepflegte `metaDescription`.
+ * SERP-Title (Suchintention „Betriebsanweisung <Stoff>“ = fertige Vorlage).
+ * Kaskade: Klammer-Variante → Gedankenstrich-Variante → Kurzform, jeweils ≤ SEO_LIMITS.titleMax.
+ */
+export function buildBetriebsanweisungTitle(entry: HazardousSubstanceSeoEntry): string {
+  const name = entry.substanceName;
+  return fitTitle([
+    `Betriebsanweisung ${name} (TRGS 555) – Muster & PDF`,
+    `Betriebsanweisung ${name} – TRGS 555 Vorlage & PDF`,
+    `Betriebsanweisung ${name} – TRGS 555 Muster`,
+    `Betriebsanweisung ${name} (TRGS 555)`,
+  ]);
+}
+
+/**
+ * Meta-Description (Ziel 140–155 Zeichen): Muster sofort sichtbar + eigenes SDB als KI-Entwurf.
+ * Bewusst ohne Zeit- oder Automatik-Versprechen (UWG, AGENTS.md § 3: Entwurf zur Freigabe).
  */
 export function buildBetriebsanweisungMetaDescription(entry: HazardousSubstanceSeoEntry): string {
-  for (const count of [2, 1, 0]) {
-    for (const withCta of [true, false]) {
-      const industries = entry.typicalIndustries.slice(0, count);
-      const description = describeWithIndustries(entry.substanceName, industries, withCta);
-      if (description.length <= META_DESCRIPTION_MAX) return description;
-    }
-  }
-  return entry.metaDescription;
+  const name = entry.substanceName;
+  return fitDescription([
+    `Muster-Betriebsanweisung für ${name} nach TRGS 555 & § 14 GefStoffV. Vorschau direkt prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln.`,
+    `Muster-Betriebsanweisung ${name} nach TRGS 555 & § 14 GefStoffV. Vorschau prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln.`,
+    `Betriebsanweisung ${name} nach TRGS 555: Muster-Vorschau prüfen oder eigenes SDB-PDF in einen KI-Entwurf zur Freigabe umwandeln.`,
+    entry.metaDescription,
+  ]);
+}
+
+/** Eingabe für `buildMetadata` — Title, Description und Canonical aus einer Quelle. */
+export function buildBetriebsanweisungSeoMeta(entry: HazardousSubstanceSeoEntry): SeoMetaInput {
+  return {
+    path: buildBetriebsanweisungPath(entry),
+    title: buildBetriebsanweisungTitle(entry),
+    description: buildBetriebsanweisungMetaDescription(entry),
+    ogImageAlt: `Muster-Betriebsanweisung ${entry.substanceName} nach TRGS 555`,
+    ogType: 'article',
+  };
 }
 
 export function buildBetriebsanweisungBreadcrumbs(entry: HazardousSubstanceSeoEntry): BreadcrumbItem[] {
@@ -61,7 +77,7 @@ export function buildBetriebsanweisungSchemas(
       '@type': 'WebPage',
       '@id': `${canonical}#webpage`,
       url: canonical,
-      name: `${buildBetriebsanweisungTitle(entry)} | Gefahrstoff-QR`,
+      name: buildBetriebsanweisungTitle(entry),
       description: buildBetriebsanweisungMetaDescription(entry),
       inLanguage: 'de-DE',
       dateModified: BETRIEBSANWEISUNG_CONTENT_UPDATED,
