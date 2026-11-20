@@ -1,4 +1,6 @@
 /** Footer-Navigation und SEO-Silos (Startseite & statisches HTML). */
+import { getDecisionPagesForFooterColumn } from '@/config/trust/decision-pages';
+import type { DecisionPageLink } from '@/config/trust/types';
 
 export interface FooterLink {
   label: string;
@@ -11,14 +13,19 @@ export interface FooterNavColumn {
   links: readonly FooterLink[];
 }
 
-export const FOOTER_PRODUCT_LINKS = [
+function toFooterLinks(pages: readonly DecisionPageLink[]): FooterLink[] {
+  return pages.map((page) => ({ label: page.navLabel, href: page.href }));
+}
+
+export const FOOTER_PRODUCT_LINKS: readonly FooterLink[] = [
   { label: 'Live-Test', href: '/#live-demo' },
   { label: 'Preise', href: '/#preise' },
-  { label: 'Schlüsselfertig (2.900 €)', href: '/#schluesselfertig-service' },
+  { label: 'Schlüsselfertig (2.900 € zzgl. MwSt.)', href: '/#schluesselfertig-service' },
   { label: 'Kataster erstellen lassen', href: '/wissen/gefahrstoffkataster-erstellen-lassen/' },
   { label: 'Für SiFas', href: '/#fuer-sifas' },
+  ...toFooterLinks(getDecisionPagesForFooterColumn('product')),
   { label: 'Kostenlos starten', href: 'https://app.gefahrstoff-qr.de/register' },
-] as const satisfies readonly FooterLink[];
+];
 
 export const FOOTER_RESOURCE_LINKS = [
   { label: 'Wissen', href: '/wissen/' },
@@ -30,11 +37,12 @@ export const FOOTER_RESOURCE_LINKS = [
   { label: 'Excel vs. Software', href: '/gefahrstoffkataster-excel-vorlage/' },
 ] as const satisfies readonly FooterLink[];
 
-export const FOOTER_LEGAL_LINKS = [
+export const FOOTER_LEGAL_LINKS: readonly FooterLink[] = [
+  ...toFooterLinks(getDecisionPagesForFooterColumn('legal')),
   { label: 'Impressum', href: '/impressum' },
   { label: 'Datenschutz', href: '/datenschutz' },
   { label: 'AGB', href: '/agb' },
-] as const satisfies readonly FooterLink[];
+];
 
 export const FOOTER_INDUSTRY_LINKS = [
   { label: 'Kfz-Werkstatt', href: '/loesungen/kfz-werkstatt/' },

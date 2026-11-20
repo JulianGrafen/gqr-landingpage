@@ -36,7 +36,7 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 - Datenschutz: Serverstandort Deutschland (Frankfurt am Main) inkl. Auftragsverarbeitungsvertrag (AVV), SSL-verschlüsselt, Zwei-Faktor-Authentifizierung
 - Betrieb: browserbasiert, keine Installation; QR-Notfallansicht ohne App auf jedem Smartphone
 - Preise (zzgl. MwSt., monatlich kündbar; Standard: Jahreszahlung zum reduzierten Monatspreis): TarifVorschau 0 € (bis zu 3 SDB-Uploads), KMU Basis 49 €/Monat (bis 30 Gefahrstoffe, 1 Werk, unbegrenzt Lagerorte), KMU Pro 99 €/Monat (bis 250 Gefahrstoffe, bis 3 Werke, unbegrenzt Lagerorte), SiFa Multi-Mandant 159 €/Monat (bis 15 Mandantenbetriebe inklusive), Industrie 339 €/Monat (ab 250 Gefahrstoffen, ab 4 Werken (Fair-Use))
-- Zahlung: Online-Buchung; im SiFa Multi-Mandant-Tarif auch per PDF-Rechnung und Überweisung
+- Zahlung: Online-Buchung; alle Jahreslizenzen auch auf Rechnung (Überweisung, PO-Nummer auf Angebot und Rechnung)
 - Start: Self-Service-Registrierung ohne Kreditkarte unter https://app.gefahrstoff-qr.de/register
 
 ## Wichtige URLs
@@ -55,6 +55,12 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 - [Software für selbstständige Sicherheitsfachkräfte](https://gefahrstoff-qr.de/gefahrstoff-software-sicherheitsfachkraft-selbstst%C3%A4ndig/): Mandantenverwaltung für externe SiFas
 - [Wissen](https://gefahrstoff-qr.de/wissen/): Praxiswissen zu Gefahrstoffkataster und Gefahrstoffverzeichnis
 - [Blog](https://gefahrstoff-qr.de/blog/): Praxisartikel zu Betriebsprüfung und Sicherheitsdatenblättern
+
+## Entscheidungsgrundlagen (KI-Prüfung, Datenschutz, Einkauf)
+
+- [So funktioniert die KI](https://gefahrstoff-qr.de/so-funktioniert-die-ki/): Extraktion, Regelprüfung, Abgleich am Original-SDB, Versions-Diff. Freigabe bleibt bei der SiFa.
+- [Sicherheit & AVV](https://gefahrstoff-qr.de/sicherheit-avv/): AVV direkt als PDF, Bestellung mit PO-Nummer, Lieferanten-Stammdaten zum Kopieren.
+- [Praxisbeispiel](https://gefahrstoff-qr.de/praxisbeispiele/umstieg-excel-gefahrstoffkataster/): Von Excel & Leitz-Ordner zum §-6-Kataster mit Raum-QR in 2 Tagen
 
 ## Branchenlösungen
 

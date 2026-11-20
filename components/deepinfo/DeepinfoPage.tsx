@@ -11,6 +11,8 @@ import { TurnkeyAuditSection } from '@/components/TurnkeyAuditSection';
 import { APP_REGISTER_URL } from '@/config/aeo-config';
 import { TURNKEY_AUDIT } from '@/config/home-sections/turnkey-audit';
 import type { DeepinfoSlug } from '@/lib/wissen/deepinfo-loader';
+import { buildDeepinfoBreadcrumbs } from '@/lib/wissen/build-deepinfo-breadcrumbs';
+import { buildBreadcrumbSchema } from '@/lib/seo/build-breadcrumb-schema';
 import { buildSoftwareApplicationSchema } from '@/lib/seo/build-software-application-schema';
 
 type DeepinfoPageTemplateProps = {
@@ -26,6 +28,7 @@ export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
   return (
     <main className="pb-20 lg:pb-0">
       <FaqJsonLd faq={faqSchemaItems} />
+      <JsonLd data={buildBreadcrumbSchema(buildDeepinfoBreadcrumbs(meta.breadcrumbLabel))} />
       {extension?.includeSoftwareApplicationSchema ? <JsonLd data={buildSoftwareApplicationSchema()} /> : null}
 
       {meta.showTurnkeyAudit ? (

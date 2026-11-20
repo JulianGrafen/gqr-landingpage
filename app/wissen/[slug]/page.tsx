@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
+import { buildMetadata, withBrandSuffix } from '@/lib/seo/buildMetadata';
 import { notFound } from 'next/navigation';
 import { DeepinfoPageTemplate } from '@/components/deepinfo/DeepinfoPage';
-import { SITE_URL } from '@/config/site-seo';
 import {
   getAllDeepinfoSlugs,
   getDeepinfoCanonicalPath,
@@ -21,38 +21,15 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const page = getDeepinfoPage(params.slug);
   if (!page) return { title: 'Seite nicht gefunden' };
 
-  const canonical = `${SITE_URL}${getDeepinfoCanonicalPath(page.meta.slug as DeepinfoSlug)}`;
-
-  const title = page.meta.documentTitle ?? page.meta.title;
-
-  return {
-    title,
+  return buildMetadata({
+    path: getDeepinfoCanonicalPath(page.meta.slug as DeepinfoSlug),
+    // documentTitle = exakter SERP-Title; sonst H1 + Marke (nur wenn ins Limit passend).
+    title: page.meta.documentTitle ?? withBrandSuffix(page.meta.title),
+    socialTitle: page.meta.title,
     description: page.meta.metaDescription,
-    alternates: { canonical },
-    openGraph: {
-      title,
-      description: page.meta.metaDescription,
-      url: canonical,
-      siteName: 'Gefahrstoff-QR',
-      locale: 'de_DE',
-      type: 'article',
-      images: [
-        {
-          url: '/og-image.png',
-          width: 1200,
-          height: 630,
-          alt: page.meta.title,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description: page.meta.metaDescription,
-      images: ['/og-image.png'],
-    },
-    robots: { index: true, follow: true },
-  };
+    ogImageAlt: page.meta.title,
+    ogType: 'article',
+  });
 }
 
 export default function DeepinfoSlugPage({ params }: PageProps) {

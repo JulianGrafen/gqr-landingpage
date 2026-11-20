@@ -14,8 +14,9 @@ export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 const SOFTWARE_SCHEMA_DESCRIPTION =
   'Gefahrstoffmanagement Software und digitales Gefahrstoffkataster nach § 6 GefStoffV für KMU und externe SiFas.';
 
+/** Ganze Beträge ohne Nachkommastellen ("0", "49"), sonst zwei Stellen — schema.org akzeptiert beides. */
 function formatSchemaPrice(amountEur: number): string {
-  return amountEur.toFixed(2);
+  return Number.isInteger(amountEur) ? String(amountEur) : amountEur.toFixed(2);
 }
 
 function buildOffer(plan: PricingPlan) {
