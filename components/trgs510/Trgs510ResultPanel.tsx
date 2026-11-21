@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { AlertTriangle, CheckCircle2, ShieldAlert, type LucideIcon } from 'lucide-react';
+import { buildTrgs510ResultCta } from '@/config/trgs510/conversion-copy';
 import type { Trgs510CheckResult, Trgs510Severity } from '@/lib/trgs510/types';
 
 type Trgs510ResultPanelProps = {
@@ -42,6 +43,7 @@ const RESULT_STYLES: Record<
 export function Trgs510ResultPanel({ result }: Trgs510ResultPanelProps) {
   const style = RESULT_STYLES[result.severity];
   const Icon = style.icon;
+  const cta = buildTrgs510ResultCta(result.status, result.firstClass, result.secondClass);
 
   return (
     <section
@@ -86,28 +88,19 @@ export function Trgs510ResultPanel({ result }: Trgs510ResultPanelProps) {
 
       <aside className="mt-6 rounded-2xl border border-[#2dd4bf]/25 bg-gradient-to-br from-[#2dd4bf]/12 to-white/[0.03] p-5">
         <p className="text-xs font-bold uppercase tracking-wider text-[#2dd4bf]">
-          GQR automatisiert diesen Check
+          {cta.eyebrow}
         </p>
-        <h3 className="mt-2 text-lg font-black text-[#f0f6ff]">
-          Du prüfst Lagerklassen noch manuell?
-        </h3>
-        <p className="mt-2 text-sm leading-relaxed text-[#8fa4c0]">
-          Gefahrstoff-QR (GQR) übernimmt die TRGS-510-Prüfung für dein gesamtes
-          Gefahrstoffverzeichnis automatisch und warnt dich bei Konflikten, bevor
-          sie im Lager entstehen.
-        </p>
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <Link
-            href="https://app.gefahrstoff-qr.de/register"
-            className="gqr-cta-primary gqr-cta-primary--md no-underline"
-          >
-            GQR kostenlos testen
+        <h3 className="mt-2 text-lg font-black text-[#f0f6ff]">{cta.headline}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-[#8fa4c0]">{cta.body}</p>
+        <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <Link href={cta.primary.href} className="gqr-cta-primary gqr-cta-primary--md no-underline">
+            {cta.primary.label}
           </Link>
           <Link
-            href="/#funktionen"
-            className="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 px-5 text-sm font-bold text-[#f0f6ff] no-underline transition hover:border-white/35 hover:bg-white/[0.06]"
+            href={cta.secondary.href}
+            className="gqr-link text-center text-sm"
           >
-            Zeig mir, wie das automatisch geht
+            {cta.secondary.label}
           </Link>
         </div>
       </aside>

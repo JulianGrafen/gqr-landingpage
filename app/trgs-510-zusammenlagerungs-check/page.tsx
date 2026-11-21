@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { ShieldCheck, Smartphone, Table2 } from 'lucide-react';
+import { Trgs510AudienceCards } from '@/components/trgs510/Trgs510AudienceCards';
 import { Trgs510CheckTool } from '@/components/trgs510/Trgs510CheckTool';
 import { SITE_URL } from '@/config/site-seo';
 
@@ -9,7 +9,7 @@ const canonical = `${SITE_URL}${PAGE_PATH}`;
 
 const SEO_TITLE = 'TRGS 510 Zusammenlagerungs-Check: Lagerklassen prüfen';
 const SEO_DESCRIPTION =
-  'TRGS 510 Zusammenlagerung Tabelle interaktiv prüfen: Lagerklassen auswählen, Ampel-Ergebnis erhalten und GQR-Automatisierung kennenlernen.';
+  'TRGS 510 Zusammenlagerung Tabelle interaktiv prüfen: Lagerklassen auswählen, Ampel-Ergebnis erhalten und die Automatisierung mit Gefahrstoff-QR kennenlernen.';
 
 export const metadata: Metadata = {
   title: SEO_TITLE,
@@ -48,7 +48,7 @@ const featureCards = [
   },
   {
     title: 'Lagerklassen prüfen im Lager',
-    text: 'Mobile-first Selects, große Touch-Ziele und sofortiges Ergebnis ohne Reload — ideal für Smartphone-Nutzung im Betrieb.',
+    text: 'Direkt am Gefahrstoffschrank per Smartphone nutzbar, ohne Blättern in dicken Papierordnern.',
     icon: Smartphone,
   },
   {
@@ -62,7 +62,7 @@ export default function Trgs510ZusammenlagerungsCheckPage() {
   return (
     <main>
       <article>
-        <header className="border-b border-white/[0.07] bg-gradient-to-b from-[#0f1e35]/90 to-[#0a1628] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <header className="bg-gradient-to-b from-[#0f1e35]/90 to-[#0a1628] px-4 pb-4 pt-8 sm:px-6 lg:px-8 lg:pb-6 lg:pt-10">
           <div className="mx-auto max-w-5xl">
             <p className="text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">
               TRGS 510 · Zusammenlagerung · Lagerklassen
@@ -70,35 +70,22 @@ export default function Trgs510ZusammenlagerungsCheckPage() {
             <h1 className="mt-3 max-w-4xl text-3xl font-black leading-tight tracking-tight text-[#f0f6ff] sm:text-4xl lg:text-[2.7rem] lg:leading-[1.12]">
               TRGS 510 Zusammenlagerungs-Check: Lagerklassen schnell und sicher prüfen
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#8fa4c0]">
+            <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#8fa4c0]">
               Prüfe die TRGS 510 Zusammenlagerung Tabelle direkt im Browser:
               Wähle zwei Lagerklassen, erhalte ein Ampel-Ergebnis und sieh, welche Regel
               für die Lagerung deiner Gefahrstoffe relevant ist.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#trgs510-check"
-                className="gqr-cta-primary gqr-cta-primary--lg no-underline"
-              >
-                Lagerklassen jetzt prüfen
-              </a>
-              <Link
-                href="https://app.gefahrstoff-qr.de/register"
-                className="inline-flex min-h-[52px] items-center justify-center rounded-xl border border-white/20 px-6 py-3 text-sm font-bold text-[#f0f6ff] no-underline transition hover:border-white/35 hover:bg-white/[0.06]"
-              >
-                GQR kostenlos testen
-              </Link>
-            </div>
           </div>
         </header>
 
         <section
           id="trgs510-check"
-          className="border-b border-white/[0.07] bg-[#0a1628] px-4 py-14 sm:px-6 lg:px-8 lg:py-20"
+          className="border-b border-white/[0.07] bg-[#0a1628] px-4 pb-14 pt-2 sm:px-6 lg:px-8 lg:pb-16"
           aria-label="TRGS 510 Zusammenlagerungs-Check Tool"
         >
           <div className="mx-auto max-w-5xl">
             <Trgs510CheckTool />
+            <Trgs510AudienceCards />
           </div>
         </section>
 
@@ -106,7 +93,7 @@ export default function Trgs510ZusammenlagerungsCheckPage() {
           <div className="mx-auto max-w-5xl">
             <div className="max-w-3xl">
               <p className="text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">
-                Programmatic SEO
+                Praxis & Hintergrund
               </p>
               <h2 className="mt-2 text-2xl font-black tracking-tight text-slate-900 sm:text-3xl">
                 Lagerklassen prüfen statt TRGS-510-Tabelle manuell durchsuchen

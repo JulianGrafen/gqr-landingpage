@@ -1,6 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import { useMemo, useState } from 'react';
+import { TRGS510_UNKNOWN_CLASS_HINT } from '@/config/trgs510/conversion-copy';
 import {
   checkStorageCompatibility,
   getStorageClasses,
@@ -37,7 +39,7 @@ function StorageClassSelect({ id, label, value, onChange }: StorageClassSelectPr
         <option value="">Lagerklasse auswählen</option>
         {storageClasses.map((storageClass) => (
           <option key={storageClass.id} value={storageClass.id}>
-            {storageClass.label} — {storageClass.shortDescription}
+            {storageClass.label}: {storageClass.shortDescription}
           </option>
         ))}
       </select>
@@ -74,7 +76,7 @@ export function Trgs510CheckTool() {
         </p>
       </div>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
         <StorageClassSelect
           id="storage-class-one"
           label="Lagerklasse (LGK) Stoff 1"
@@ -89,7 +91,18 @@ export function Trgs510CheckTool() {
         />
       </div>
 
-      <div className="mt-8">
+      <p className="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
+        {TRGS510_UNKNOWN_CLASS_HINT.lead}{' '}
+        <Link
+          href={TRGS510_UNKNOWN_CLASS_HINT.link.href}
+          className="gqr-link"
+        >
+          {TRGS510_UNKNOWN_CLASS_HINT.link.label}
+        </Link>
+        {TRGS510_UNKNOWN_CLASS_HINT.rest}
+      </p>
+
+      <div className="mt-6">
         {result ? (
           <Trgs510ResultPanel result={result} />
         ) : (
