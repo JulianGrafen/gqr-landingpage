@@ -18,6 +18,9 @@ export const INDUSTRY_SLUGS = [
   'zahnarztpraxis',
   'elektrobetrieb',
   'dachdecker',
+  'tankstelle',
+  'druckerei',
+  'baeckerei',
 ] as const;
 
 export type IndustrySlug = (typeof INDUSTRY_SLUGS)[number];
@@ -855,6 +858,339 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  question: 'Welche BG ist für Dachdeckerbetriebe zuständig?',
  answer:
  'Die Berufsgenossenschaft der Bauwirtschaft (BG BAU) prüft Gefahrstoffdokumentation auf Baustellen und in der Werkstatt. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen gehören zum Standardprogramm. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR unterstützen den Nachweis ohne Papierstapel.',
+ },
+ ],
+ },
+ },
+ tankstelle: {
+ slug: 'tankstelle',
+ label: 'Tankstelle',
+ title: 'Gefahrstoffmanagement an der Tankstelle: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Tankstelle & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Tankstelle: Shop-Reiniger, Frostschutz, Batterien — § 6 GefStoffV, TRGS 555 und TRGS 201 in Gefahrstoff-QR.',
+ heroText:
+ 'Kraftstoff, Frostschutz und Waschchemie stehen neben Shop-Reinigern und Werkstattstoffen im Umlauf. Verzeichnis, Betriebsanweisungen und Umfüll-Kennzeichnung müssen zwischen Schicht, Shop und Service passen.',
+ typischeStoffe: [
+ 'Betriebsmittel für Werkstattkunden (Frostschutz, Öl)',
+ 'Reiniger für Shop, Toilette und Waschhalle',
+ 'Batterien und Säuren im Wartungssortiment',
+ 'Enteiser und Winterhilfsstoffe im Shop',
+ 'Altöle und kleine Gebinde im Lager',
+ ],
+ spezifischerVorteil:
+ 'Wechseldienst und Franchise-Lieferanten erzeugen viele SDB-Updates. Ein digitales Verzeichnis mit Historie hilft, Betriebsanweisungen und Umfüll-Kennzeichnung nach TRGS 201 für Shop und Werkstatt parallel zu pflegen.',
+ handwerkAbsatz:
+ 'An Tankstellen überlagern sich Lager, Kundenbereich und gelegentliche Werkstatttätigkeiten. Wenn Sprühflaschen im Shop nicht im Verzeichnis stehen oder SDB-Wechsel nicht nachgezogen werden, wird die BG-Verkehr-Begehung anstrengend. Digitale Pflege bindet Standorte, Gebinde und Unterweisung zusammen.',
+ brancheGenitiv: 'Tankstelle',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Der Betreiber führt an der Tankstelle ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Shop, Waschanlage und Werkstatthilfsstoffe. Betriebsanweisungen nach TRGS 555 gelten für Reiniger, Frostschutz und Batterie-Service. Umfüllen in Handgebinden löst Kennzeichnung nach TRGS 201 aus. Excel-Listen mit Schichtwechsel veralten schnell. Gefahrstoff-QR verbindet SDB, TRGS-555-Entwürfe und Export für SiFa und BG Verkehr.',
+ typicalProducts: [
+ {
+ product: 'Scheibenreiniger-Konzentrat',
+ gebinde: 'Kanister 5 Liter, Sprühflasche',
+ hazardKind: 'reizend',
+ workplaceDuty: 'Verzeichnis, Betriebsanweisung Shop, Unterweisung vor Umfüllen',
+ },
+ {
+ product: 'AdBlue / Harnstofflösung',
+ gebinde: 'Kanister, IBC',
+ hazardKind: 'reizend',
+ workplaceDuty: 'SDB archivieren, Eintrag Lager, Unterweisung Tankstellenpersonal',
+ },
+ {
+ product: 'Motoröl für Kundenverkauf',
+ gebinde: 'Flasche 1 Liter, Fass',
+ hazardKind: 'reizend, umweltgefährdend',
+ workplaceDuty: 'Menge im Verzeichnis, BA im Shopbereich verfügbar',
+ },
+ {
+ product: 'Batteriesäure (Wartung)',
+ gebinde: 'Flasche 1 Liter',
+ hazardKind: 'ätzend, reizend',
+ workplaceDuty: 'Werkstatteintrag, BA, Freigabe durch SiFa',
+ },
+ {
+ product: 'Universalreiniger Waschhalle',
+ gebinde: 'Kanister, Eimer',
+ hazardKind: 'reizend, alkalisch',
+ workplaceDuty: 'Lagerort dokumentieren, Unterweisung Waschpersonal',
+ },
+ {
+ product: 'Handdesinfektion Shop-Kasse',
+ gebinde: 'Spender, Flasche',
+ hazardKind: 'entzündbar oder reizend',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Verzeichnis pflegen',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Reiniger und Hilfsstoffe im Shop fehlen im Gefahrstoffverzeichnis, obwohl sie täglich genutzt werden.',
+ 'Betriebsanweisungen für Waschhalle und Werkstatt sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Umgefüllte Sprühflaschen in Shop und Technikraum sind nicht nach TRGS 201 gekennzeichnet oder nicht im Verzeichnis.',
+ ],
+ berufsgenossenschaft: 'BG Verkehr',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Schichtleiter tippt Stoffe in Excel am Büro-PC ab',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unbeschriftete Flaschen hinter der Theke',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA am Regal oder Spender',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner im Büro der Tankstelle',
+ gqrWorkflow: 'QR im Technikraum, Shop oder an der Waschanlage',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'Listen und SDBs verschiedener Jahrgänge sammeln',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Braucht eine Tankstelle ohne eigene Werkstatt ein Gefahrstoffverzeichnis?',
+ answer:
+ 'Ja, sobald Gefahrstoffe gelagert oder eingesetzt werden. Shop-Reiniger, Frostschutz für Kunden und Hilfsstoffe in der Waschhalle gelten nach § 2 GefStoffV. Das Verzeichnis nach § 6 GefStoffV muss Gebinde und Bereiche abbilden. Auch kleine Standorte nutzen mehrere Produktlinien. Excel funktioniert nur bei regelmäßiger Pflege durch Leitung oder SiFa.',
+ },
+ {
+ question: 'Wie erfasse ich Umfüllen von Scheibenreiniger im Shop?',
+ answer:
+ 'Umfüllen löst Kennzeichnung nach TRGS 201 aus. Das Gebinde braucht Stoff- und Gefahrenhinweise aus dem SDB. Parallel gehört es ins Gefahrstoffverzeichnis nach § 6 GefStoffV. Eine Betriebsanweisung nach TRGS 555 beschreibt den Umgang am Einsatzort. Gefahrstoff-QR liefert Entwürfe zur Vorprüfung durch SiFa oder Betriebsleitung vor der Unterweisung.',
+ },
+ {
+ question: 'Welche BG prüft Gefahrstoffe an Tankstellen?',
+ answer:
+ 'Die Berufsgenossenschaft Verkehrswirtschaft Post-Logistik Telekommunikation (BG Verkehr) begutachtet chemische Arbeitsstoffe und Dokumentation am Standort. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Digitale Exporte aus Gefahrstoff-QR erleichtern den Nachweis bei wechselndem Personal.',
+ },
+ ],
+ },
+ },
+ druckerei: {
+ slug: 'druckerei',
+ label: 'Druckerei',
+ title: 'Gefahrstoffmanagement in der Druckerei: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Druckerei & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Druckerei: Farben, Waschmittel, Lösemittel — § 6 GefStoffV, TRGS 555 und TRGS 201 für Druckerei in Gefahrstoff-QR.',
+ heroText:
+ 'Farben, Waschlösungen und Reiniger wechseln mit Maschine und Auftrag. Verzeichnis, Betriebsanweisungen und Umfüll-Kennzeichnung müssen Offset, Digital und Reinigung abdecken.',
+ typischeStoffe: [
+ 'Offsetfarben und Reinigungsmittel',
+ 'Wasch- und Spüllösungen für Druckplatten',
+ 'Lösemittel und Verdünner',
+ 'Reinigungschemie für Rasterwalzen',
+ 'Heißkleber und Klebewege in der Weiterverarbeitung',
+ ],
+ spezifischerVorteil:
+ 'Jeder Maschinenpark nutzt andere chemische Linien. Ein digitales Verzeichnis mit SDB-Historie hilft, Betriebsanweisungen je Arbeitsplatz freizugeben und Umfüllen nach TRGS 201 nachzuhalten.',
+ handwerkAbsatz:
+ 'Druckereien arbeiten in Schicht und mit wechselnden Hilfsstoffen. Wenn Bechergläser mit Waschlösung nicht im Verzeichnis stehen oder SDB-Updates fehlen, wird die BG-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe unterstützen die Vorprüfung durch SiFa vor der Unterweisung.',
+ brancheGenitiv: 'Druckerei',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Druckereien führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Farblager, Maschinen und Waschbereich. Betriebsanweisungen nach TRGS 555 gelten für Farben, Lösemittel und Plattenreinigung. Umfüllen in Messbechern oder Sprühflaschen erfordert Kennzeichnung nach TRGS 201. Excel-Listen pro Schicht veralten bei Lieferantenwechsel. Gefahrstoff-QR bündelt SDB, Entwürfe und Nachweis für die SiFa vor der BG ETEM.',
+ typicalProducts: [
+ {
+ product: 'Offsetfarbe (Prozess)',
+ gebinde: 'Gebinde 1–5 kg',
+ hazardKind: 'reizend, sensibilisierend',
+ workplaceDuty: 'Verzeichnis, Betriebsanweisung Maschine, Unterweisung Drucker',
+ },
+ {
+ product: 'Waschlösung Druckplatten',
+ gebinde: 'Kanister, Becherglas',
+ hazardKind: 'reizend, alkalisch',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, SDB archivieren',
+ },
+ {
+ product: 'Lackverdünner / Wash',
+ gebinde: 'Kanister 10 Liter',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Lagerort dokumentieren, BA am Waschwerk verfügbar',
+ },
+ {
+ product: 'Reiniger Rasterwalzen',
+ gebinde: 'Spraydose, Flasche',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Eintrag Drucksaal, Unterweisung vor Reinigung',
+ },
+ {
+ product: 'Heißkleber Buchbinderei',
+ gebinde: 'Granulat, Patrone',
+ hazardKind: 'reizend, verbrennungsgefahr beim Schmelzen',
+ workplaceDuty: 'Verzeichnis, BA an der Schmelze, Freigabe SiFa',
+ },
+ {
+ product: 'Isopropanolhaltiger Kontaktfilmreiniger',
+ gebinde: 'Flasche 1 Liter',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Gebinde im Verzeichnis, Unterweisung Vorstufe',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Wasch- und Hilfsmittel an Maschinen fehlen im Gefahrstoffverzeichnis oder ohne Maschinenbezug.',
+ 'Betriebsanweisungen für Farbwechsel und Reinigung sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Messbecher und Sprühflaschen mit Waschlösung sind weder nach TRGS 201 gekennzeichnet noch im Verzeichnis.',
+ ],
+ berufsgenossenschaft: 'BG ETEM',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Druckvorarbeiter trägt Stoffe in Excel pro Auftrag ein',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unbeschriftete Becher an der Maschine',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA am Farblager',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Produktionsleitung',
+ gqrWorkflow: 'QR am Farbschrank oder an der Waschstation',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'SDB-PDFs und Listen aus mehreren Jahren sammeln',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Gehören Druckfarben ins Gefahrstoffverzeichnis?',
+ answer:
+ 'Ja, wenn sie als Gefahrstoff eingestuft sind und im Betrieb vorkommen. Offset- und Digitalfarben werden nach § 6 GefStoffV mit Gebinde, Bereich und SDB-Bezug geführt. Betriebsanweisungen nach TRGS 555 werden für Mischen, Reinigen und Waschvorgänge bereitgestellt. Auch Kühl- und Waschlösungen gehören dazu. Die SiFa prüft Entwürfe vor Freigabe.',
+ },
+ {
+ question: 'Wie dokumentiere ich Waschlösung in Messbechern an der Maschine?',
+ answer:
+ 'Umfüllen löst Kennzeichnung nach TRGS 201 aus. Becher brauchen Stoff- und Gefahrenhinweise aus dem SDB. Parallel gehört das Gebinde ins Gefahrstoffverzeichnis nach § 6 GefStoffV. Eine Betriebsanweisung nach TRGS 555 beschreibt den Umgang am Druckwerk. Gefahrstoff-QR unterstützt Entwürfe zur Vorprüfung durch SiFa oder Produktionsleitung.',
+ },
+ {
+ question: 'Wer prüft Gefahrstoffe in Druckereien?',
+ answer:
+ 'Die Berufsgenossenschaft Energie Textil Elektro Medienerzeugnisse (BG ETEM) begutachtet chemische Arbeitsstoffe und Dokumentation im Betrieb. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen gehören zum Standardprogramm. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR erleichtern den Nachweis im Schichtbetrieb.',
+ },
+ ],
+ },
+ },
+ baeckerei: {
+ slug: 'baeckerei',
+ label: 'Bäckerei',
+ title: 'Gefahrstoffmanagement in der Bäckerei: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Bäckerei & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Bäckerei: Reiniger, Fettlöser, Kühlanlagen — § 6 GefStoffV, TRGS 555 und TRGS 201 für Backstube in Gefahrstoff-QR.',
+ heroText:
+ 'Spül- und Reinigungsmittel, Fettlöser und Frostschutz der Kälteanlage stehen neben Pflegemitteln in Verkauf und Küche. Verzeichnis und Betriebsanweisungen müssen Backstube und Filialen abdecken.',
+ typischeStoffe: [
+ 'Alkalische Spül- und Geschirrfettlöser',
+ 'Säurehaltige Rohr- und Kalkreiniger',
+ 'Reiniger für Dämpfer und Backöfen',
+ 'Kältemittel in Kühltechnik (Service)',
+ 'Desinfektions- und Flächenreiniger im Verkauf',
+ ],
+ spezifischerVorteil:
+ 'Filialen und Zentralküche nutzen unterschiedliche Lieferanten. Ein digitales Verzeichnis hilft, Betriebsanweisungen je Standort freizugeben und Umfüll-Kennzeichnung nach TRGS 201 für Spülstation und Küche nachzuhalten.',
+ handwerkAbsatz:
+ 'In der Bäckerei überlagern sich tägliche Reinigung, Kühlanlagen-Service und wechselnde Pflegeprodukte. Wenn Sprühflaschen in der Backstube nicht im Verzeichnis stehen, wird die BGN-Begehung kritisch. Strukturierte Erfassung mit SDB-Bezug reduziert Nacharbeit vor der Prüfung.',
+ brancheGenitiv: 'Bäckerei',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Bäckereien führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Backstube, Küche und Lager. Betriebsanweisungen nach TRGS 555 gelten für Reiniger, Fettlöser und Kühlanlagenhilfsstoffe. Umfüllen in Spül- oder Sprühflaschen erfordert Kennzeichnung nach TRGS 201. Excel-Listen je Filiale veralten bei Lieferantenwechsel. Gefahrstoff-QR verknüpft SDB, Entwürfe und Export für SiFa und BGN.',
+ typicalProducts: [
+ {
+ product: 'Alkalischer Spülmittel-Fettlöser',
+ gebinde: 'Kanister, Dosierflasche',
+ hazardKind: 'ätzend, reizend',
+ workplaceDuty: 'Verzeichnis, Betriebsanweisung Spülstation, Unterweisung Team',
+ },
+ {
+ product: 'Backofenreiniger',
+ gebinde: 'Spraydose, Flasche',
+ hazardKind: 'ätzend oder reizend',
+ workplaceDuty: 'Eintrag Backstube, BA vor heißer Oberfläche bereitstellen',
+ },
+ {
+ product: 'Rohrreiniger / Entkalker',
+ gebinde: 'Flasche 1 Liter',
+ hazardKind: 'ätzend',
+ workplaceDuty: 'SDB archivieren, Unterweisung vor Einsatz',
+ },
+ {
+ product: 'Frostschutz Kälteanlage',
+ gebinde: 'Kanister, Service-Gebinde',
+ hazardKind: 'reizend, giftig bei Verschlucken',
+ workplaceDuty: 'Technikeintrag, BA, Dokumentation durch Kältetechniker',
+ },
+ {
+ product: 'Flächendesinfektion Verkauf',
+ gebinde: 'Sprühflasche, Spender',
+ hazardKind: 'reizend oder entzündbar',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Verzeichnis Filiale',
+ },
+ {
+ product: 'Geschirrspül-Nachfüllkonzentrat',
+ gebinde: 'Kanister 10 Liter',
+ hazardKind: 'reizend, alkalisch',
+ workplaceDuty: 'Lagerort dokumentieren, Unterweisung Küchenpersonal',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Reinigungsmittel in Backstube und Spülstation fehlen im Gefahrstoffverzeichnis oder ohne Filialbezug.',
+ 'Betriebsanweisungen für Ofen- und Rohrreiniger sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Beschriftete Sprühflaschen in Küche und Verkauf sind nicht nach TRGS 201 dokumentiert oder nicht im Verzeichnis.',
+ ],
+ berufsgenossenschaft: 'BGN',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Filialleitung tippt Reiniger in Excel ab',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unmarkierte Flaschen an der Spülmaschine',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA am Lagerregal',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Zentrale oder Büro',
+ gqrWorkflow: 'QR an Spülstation, Backofen oder Kühlraum',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'Listen und SDBs aus mehreren Filialen sammeln',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Braucht eine kleine Bäckerei ein Gefahrstoffverzeichnis?',
+ answer:
+ 'Ja, sobald Gefahrstoffe eingesetzt oder gelagert werden. Spül- und Backofenreiniger sowie Entkalker gelten nach § 2 GefStoffV. Das Verzeichnis nach § 6 GefStoffV muss alle Gebinde und Bereiche abbilden. Auch Filialen mit wenigen Plätzen nutzen alkalische Reiniger. Excel reicht nur, wenn Zentrale oder SiFa es regelmäßig pflegt.',
+ },
+ {
+ question: 'Wie dokumentiere ich Fettlöser an der Spülstation?',
+ answer:
+ 'Der Stoff wird im Verzeichnis mit Gebinde und Standort geführt. Das Sicherheitsdatenblatt wird mit Revisionsstand archiviert. Eine Betriebsanweisung nach TRGS 555 beschreibt Umgang, Dosierung und Unterweisung an der Spülmaschine. Bei Umfüllen in Handflaschen gilt TRGS 201. Gefahrstoff-QR unterstützt Entwürfe zur Vorprüfung durch SiFa oder Filialleitung.',
+ },
+ {
+ question: 'Welche BG ist für Bäckereien zuständig?',
+ answer:
+ 'Die Berufsgenossenschaft Nahrungsmittel und Gastgewerbe (BGN) begutachtet chemische Arbeitsstoffe und Dokumentation in Betrieb und Filialen. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Digitale Exporte aus Gefahrstoff-QR erleichtern den Nachweis bei mehreren Standorten.',
  },
  ],
  },

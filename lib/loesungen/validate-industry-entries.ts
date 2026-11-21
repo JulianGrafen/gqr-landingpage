@@ -8,6 +8,9 @@ const PSEO_REQUIRED_SLUGS = [
   'zahnarztpraxis',
   'elektrobetrieb',
   'dachdecker',
+  'tankstelle',
+  'druckerei',
+  'baeckerei',
 ] as const;
 
 const BANNED_LOESUNGEN_COPY = [

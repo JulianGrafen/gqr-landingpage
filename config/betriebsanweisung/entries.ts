@@ -3138,6 +3138,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Badmodernisierung & Objektbau",
     ],
   },
+  {
+    slug: 'flugrostentferner-trgs-555',
+    substanceName: "Flugrostentferner",
+    metaDescription: "Betriebsanweisung Flugrostentferner: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Aufbereitung",
+      "Metallbau & Stahlbau",
+      "Industrielle Instandhaltung",
+      "Malerbetrieb & Korrosionsschutz",
+    ],
+  },
+  {
+    slug: 'schweissfett-trgs-555',
+    substanceName: "Schweißfett",
+    metaDescription: "Betriebsanweisung Schweißfett: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbau & Schweißtechnik",
+      "SHK-Handwerk & Installateur",
+      "Kfz-Werkstatt & Karosserie",
+      "Industrielle Rohrleitungsmontage",
+    ],
+  },
+  {
+    slug: 'kettenspray-trgs-555',
+    substanceName: "Kettenspray",
+    metaDescription: "Betriebsanweisung Kettenspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Forstwirtschaft & Holzrücken",
+      "Garten- & Landschaftsbau",
+      "Kfz-Werkstatt & Motorradwerkstatt",
+      "Lebensmittelproduktion & Fördertechnik",
+    ],
+  },
+  {
+    slug: 'batteriesaeure-trgs-555',
+    substanceName: "Batteriesäure",
+    metaDescription: "Betriebsanweisung Batteriesäure: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Batterie-Service",
+      "Flurförderzeuge & Intralogistik",
+      "Tankstelle & Shop-Werkstatt",
+      "Notstrom- & USV-Anlagen",
+    ],
+  },
+  {
+    slug: 'druckluftreiniger-trgs-555',
+    substanceName: "Druckluftreiniger",
+    metaDescription: "Betriebsanweisung Druckluftreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Industrielle Instandhaltung",
+      "Elektrobetrieb & Schaltschrankbau",
+      "Druckerei & Offsetdruck",
+      "Kfz-Werkstatt & Elektronikdiagnose",
+    ],
+  },
+  {
+    slug: 'bremsenpaste-trgs-555',
+    substanceName: "Bremsenpaste",
+    metaDescription: "Betriebsanweisung Bremsenpaste: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Bremsenservice",
+      "Nutzfahrzeug-Werkstatt & Fuhrpark",
+      "Motorradwerkstatt & Kundendienst",
+      "Tankstelle mit Mini-Werkstatt",
+    ],
+  },
+  {
+    slug: 'epoxidkleber-trgs-555',
+    substanceName: "Epoxidkleber",
+    metaDescription: "Betriebsanweisung Epoxidkleber: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Metallbau & Maschinenbau",
+      "Bootsbau & GFK-Verarbeitung",
+      "Elektrobetrieb & Kabeltechnik",
+      "Bau & Bodenbeschichtung",
+    ],
+  },
+  {
+    slug: 'markierungsspray-trgs-555',
+    substanceName: "Markierungsspray",
+    metaDescription: "Betriebsanweisung Markierungsspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kommunalservice & Straßenunterhaltung",
+      "Bau & Tiefbau",
+      "Lager & Logistik",
+      "Spedition & Hallenmarkierung",
+    ],
+  },
+  {
+    slug: 'grafitfett-trgs-555',
+    substanceName: "Grafitfett",
+    metaDescription: "Betriebsanweisung Grafitfett: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Achsmontage",
+      "Metallbau & Schraubenverbindungen",
+      "Industrielle Wartung",
+      "SHK-Handwerk & Verschraubungen",
+    ],
+  },
+  {
+    slug: 'teflonspray-trgs-555',
+    substanceName: "Teflonspray",
+    metaDescription: "Betriebsanweisung Teflonspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kunststoffverarbeitung & Formenbau",
+      "Druckerei & Druckplatten",
+      "Malerbetrieb & Lackierkabine",
+      "Elektrobetrieb & Montage",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];

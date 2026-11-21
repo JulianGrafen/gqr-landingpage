@@ -16,4 +16,7 @@ export const INDUSTRY_SOLUTION_KEYWORDS: Record<IndustrySlug, readonly string[]>
   zahnarztpraxis: ['zahnarzt', 'zahnarztpraxis', 'dental', 'arztpraxis'],
   elektrobetrieb: ['elektro', 'elektrobetrieb', 'elektriker', 'gebäudetechnik'],
   dachdecker: ['dachdecker', 'bedachung', 'dach', 'spengler'],
+  tankstelle: ['tankstelle', 'kraftstoff', 'shop', 'waschanlage'],
+  druckerei: ['druckerei', 'offset', 'siebdruck', 'buchbinderei'],
+  baeckerei: ['bäckerei', 'baeckerei', 'backstube', 'konditorei'],
 };
