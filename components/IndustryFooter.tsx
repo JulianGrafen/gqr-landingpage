@@ -1,17 +1,20 @@
 import Link from 'next/link';
 import type { LucideIcon } from 'lucide-react';
 import {
- Car,
- FlaskConical,
- Hammer,
- Paintbrush,
- Sparkles,
- Scissors,
- Factory,
- Wheat,
- Stethoscope,
- Zap,
- Home,
+  Car,
+  FlaskConical,
+  Hammer,
+  Paintbrush,
+  Sparkles,
+  Scissors,
+  Factory,
+  Wheat,
+  Stethoscope,
+  Zap,
+  Home,
+  Fuel,
+  Printer,
+  Croissant,
 } from 'lucide-react';
 import { getAllIndustries, type IndustrySlug } from '@/config/industry-solutions';
 
@@ -27,6 +30,9 @@ const ICONS: Record<IndustrySlug, LucideIcon> = {
   zahnarztpraxis: Stethoscope,
   elektrobetrieb: Zap,
   dachdecker: Home,
+  tankstelle: Fuel,
+  druckerei: Printer,
+  baeckerei: Croissant,
 };
 
 /**
