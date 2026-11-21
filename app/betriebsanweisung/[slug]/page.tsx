@@ -33,6 +33,8 @@ import {
 import { buildBetriebsanweisungFaqItems } from '@/lib/betriebsanweisung/build-substance-faq';
 import { findMatchingIndustrySolutions, findRelatedEntries } from '@/lib/betriebsanweisung/related-entries';
 import { buildMetadata } from '@/lib/seo/buildMetadata';
+import { getBetriebsanweisungSolutionCallout } from '@/lib/seo/internalLinks';
+import { InternalSolutionBanner } from '@/components/seo/InternalSolutionBanner';
 import { stickyCtaObstructProps } from '@/lib/marketing/sticky-header-cta';
 
 type PageProps = {
@@ -57,6 +59,7 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
   const schemas = buildBetriebsanweisungSchemas(entry, faqItems);
   const relatedEntries = findRelatedEntries(entry, getAllBetriebsanweisungEntries());
   const industrySolutions = findMatchingIndustrySolutions(entry);
+  const solutionCallout = getBetriebsanweisungSolutionCallout(entry.slug);
   const registerUrl = buildBetriebsanweisungRegisterUrl(entry.slug);
   const cluster = resolveSubstanceCluster(entry);
   const mobileRegisterUrl = buildBetriebsanweisungRegisterUrl(entry.slug, {
@@ -101,6 +104,14 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
         </section>
 
         <BetriebsanweisungQuickFacts entry={entry} />
+
+        {solutionCallout ? (
+          <section className={BA_SECTION}>
+            <div className={BA_CONTAINER}>
+              <InternalSolutionBanner callout={solutionCallout} className={BA_PROSE} />
+            </div>
+          </section>
+        ) : null}
 
         <BetriebsanweisungContrastSection entry={entry} />
 

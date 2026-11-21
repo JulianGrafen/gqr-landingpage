@@ -9,7 +9,7 @@ const canonical = `${SITE_URL}${PAGE_PATH}`;
 
 const SEO_TITLE = 'TRGS 510 Zusammenlagerungs-Check: Lagerklassen prüfen';
 const SEO_DESCRIPTION =
-  'TRGS 510 Zusammenlagerung Tabelle interaktiv prüfen: Lagerklassen auswählen, Ampel-Ergebnis erhalten und die Automatisierung mit Gefahrstoff-QR kennenlernen.';
+  'TRGS 510 Zusammenlagerung Tabelle interaktiv prüfen: Lagerklassen auswählen, Ampel-Ergebnis erhalten und den Check mit Gefahrstoff-QR automatisieren.';
 
 export const metadata: Metadata = {
   title: SEO_TITLE,

@@ -2,7 +2,23 @@
  * Zentrale Branchen-Daten für SEO-Landingpages (DRY).
  * Inhalte faktenorientiert; rechtliche Einordnung erfolgt durch die Nutzerorganisation.
  */
+import type { HazardousSubstanceSlug } from '@/config/betriebsanweisung/entries';
+import type { HeroCopy } from '@/config/home-sections/hero';
 import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
+
+/** Typischer Branchenstoff mit Link auf die passende TRGS-555-Betriebsanweisung (Themen-Cluster). */
+export interface IndustrySubstanceLink {
+  label: string;
+  /** Kurzer Praxishinweis (Gefährdung / Einsatzort), eine Zeile. */
+  note: string;
+  baSlug: HazardousSubstanceSlug;
+}
+
+export interface IndustrySubstanceOverview {
+  heading: string;
+  intro: string;
+  items: readonly IndustrySubstanceLink[];
+}
 
 export const INDUSTRY_SLUGS = [
  'kfz-werkstatt',
@@ -39,19 +55,110 @@ export interface IndustrySolution {
  blogPostHref: string;
  /** Zero-Login SDB-Live-Dropzone im Hero-Bereich */
  showSdbPreview?: boolean;
+ /** Hero-Copy für statische Landingpages auf Basis der Startseite (H1 + Subheadline). */
+ staticHero?: HeroCopy;
+ /** „Typische Gefahrstoffe auf einen Blick“ mit Links auf Betriebsanweisungen. */
+ substanceOverview?: IndustrySubstanceOverview;
 }
 
 export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  'kfz-werkstatt': {
  slug: 'kfz-werkstatt',
  label: 'Kfz-Werkstatt',
- title: 'Gefahrstoffmanagement für Kfz-Werkstätten',
- // Abgrenzung zu /wissen/gefahrstoffverzeichnis-muster-kfz-werkstatt/ (Muster-Intent):
- // diese Seite zielt auf „Software / Lösung“-Intent.
+ title: 'Gefahrstoffkataster, Betriebsanweisungen & QR-Codes für die Kfz-Werkstatt',
+ // Keyword-Abgrenzung (GSC 11/2026):
+ // - diese Seite: kommerzieller Intent „Gefahrstoff-Software / Lösung Kfz“
+ // - /wissen/gefahrstoffverzeichnis-muster-kfz-werkstatt/: informatorischer Muster-/Pflicht-Check,
+ //   verlinkt per InternalSolutionBanner oben und unten hierher.
  metaTitle: 'Gefahrstoff-Software Kfz-Werkstatt: Kataster & QR-Codes',
  metaDescription:
- 'Schluss mit Excel-Chaos in der Werkstatt: Sicherheitsdatenblätter per KI einlesen, TRGS-201-Etiketten drucken & QR-Codes an den Schrank hängen.',
+ 'Schluss mit Excel-Chaos in der Werkstatt: Sicherheitsdatenblätter für Bremsenreiniger, Öle & Lacke per PDF einlesen und QR-Codes an den Schrank hängen.',
+ staticHero: {
+ eyebrow: 'Gefahrstoff-Software für Kfz-Werkstätten',
+ headline: 'Gefahrstoff­kataster, Betriebs­anweisungen & QR-Codes',
+ headlineAccent: 'für die Kfz-Werkstatt.',
+ subheadlineParagraphs: [
+ 'Sicherheitsdatenblatt hochladen: KI-gestützter Entwurf für das Gefahrstoffverzeichnis (§ 6 GefStoffV) und die Betriebsanweisung (gemäß TRGS 555). Sie prüfen und geben frei.',
+ 'Testen Sie es direkt hier mit dem SDB-PDF Ihres Bremsenreinigers, ohne Login.',
+ ],
+ secondaryLinks: [
+ { label: 'Typische Werkstatt-Gefahrstoffe ansehen', href: '#werkstatt-stoffe' },
+ { label: 'Kataster in 48 Stunden erstellen lassen', href: '#schluesselfertig-service' },
+ ],
+ },
+ substanceOverview: {
+ heading: 'Typische Gefahrstoffe in der Kfz-Werkstatt auf einen Blick',
+ intro:
+ 'Diese Produkte stehen in fast jeder Werkstatt im Regal. Zu jedem finden Sie eine Muster-Betriebsanweisung nach TRGS 555, die Sie mit Ihrem eigenen Sicherheitsdatenblatt in einen KI-gestützten Entwurf übernehmen.',
+ items: [
+ {
+ label: 'Bremsenreiniger',
+ note: 'Entzündbares Aerosol, Lösemitteldämpfe an Hebebühne und Prüfstand',
+ baSlug: 'bremsenreiniger-trgs-555',
+ },
+ {
+ label: 'Motoröl',
+ note: 'Hautkontakt beim Ölwechsel, Altöl getrennt sammeln',
+ baSlug: 'motoroel-trgs-555',
+ },
+ {
+ label: 'Getriebeöl',
+ note: 'Hautschutz bei Wartung und Getriebespülung',
+ baSlug: 'getriebeoel-trgs-555',
+ },
+ {
+ label: 'Kühlerfrostschutz',
+ note: 'Ethylenglykol, gesundheitsschädlich beim Verschlucken',
+ baSlug: 'kuehlerfrostschutz-trgs-555',
+ },
+ {
+ label: 'AdBlue',
+ note: 'Harnstofflösung, Abschnitt 2 des SDB entscheidet über den Eintrag',
+ baSlug: 'adblue-trgs-555',
+ },
+ {
+ label: '2K-Autolack',
+ note: 'Lösemittel und Isocyanat-Härter in der Lackierkabine',
+ baSlug: 'autolack-trgs-555',
+ },
+ {
+ label: 'Lackverdünner',
+ note: 'Leicht entzündbar, Zusammenlagerung nach TRGS 510 prüfen',
+ baSlug: 'lackverduenner-trgs-555',
+ },
+ {
+ label: 'Batteriesäure',
+ note: 'Schwefelsäure, verursacht schwere Verätzungen',
+ baSlug: 'schwefelsaure-trgs-555',
+ },
+ {
+ label: 'Waschbenzin',
+ note: 'Teilereinigung, leicht entzündbare Dämpfe',
+ baSlug: 'waschbenzin-trgs-555',
+ },
+ {
+ label: 'Felgenreiniger',
+ note: 'Saure oder alkalische Reiniger, Augen- und Hautschutz',
+ baSlug: 'felgenreiniger-trgs-555',
+ },
+ ],
+ },
  faq: [
+ {
+ question: 'Was prüft die BG bei einer Kontrolle in der Kfz-Werkstatt?',
+ answer:
+ 'Aufsichtspersonen der BG oder der Gewerbeaufsicht fragen in der Regel nach dem Gefahrstoffverzeichnis (§ 6 GefStoffV), der Gefährdungsbeurteilung, den Betriebsanweisungen mit Unterweisungsnachweis (§ 14 GefStoffV) und den aktuellen Sicherheitsdatenblättern. Typische Lücken in Werkstätten sind veraltete SDB-Versionen, fehlende Einträge für Sprays und Reiniger sowie Betriebsanweisungen, die nur im Büro liegen.',
+ },
+ {
+ question: 'Wie funktionieren QR-Codes am Gefahrstoffschrank?',
+ answer:
+ 'Sie drucken in Gefahrstoff-QR für jeden Stoff einen QR-Code und bringen ihn am Gefahrstoffschrank, an der Hebebühne oder am Gebinde an. Der Scan mit dem Smartphone öffnet Sicherheitsdatenblatt, Betriebsanweisung und Erste-Hilfe-Hinweise ohne Login. So erreichen Beschäftigte die Informationen dort, wo sie mit dem Stoff arbeiten (§ 14 GefStoffV).',
+ },
+ {
+ question: 'Wie gelingt der Umstieg von der Excel-Liste auf Gefahrstoff-QR?',
+ answer:
+ 'Sie laden die vorhandenen Sicherheitsdatenblätter als PDF hoch. Für jeden Stoff entsteht ein KI-gestützter Entwurf mit H- und P-Sätzen, Piktogrammen und Lagerklasse, als Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV). Ihre bisherige Excel-Liste dient als Abgleich, ob alle Produkte aus Werkstatt, Lager und Lackierbereich erfasst sind.',
+ },
  {
  question: 'Muss Bremsenreiniger ins Gefahrstoffverzeichnis der Werkstatt?',
  answer:
@@ -62,14 +169,9 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  answer:
  'DME entstehen bei Tätigkeiten und stehen auf keinem Sicherheitsdatenblatt. Sie sind in der Gefährdungsbeurteilung nach TRGS 554 zu berücksichtigen. In Gefahrstoff-QR führen Sie DME als eigenen Eintrag mit Arbeitsbereich und Schutzmaßnahmen neben den gelieferten Stoffen.',
  },
- {
- question: 'Wo müssen Sicherheitsdatenblätter und Betriebsanweisungen verfügbar sein?',
- answer:
- 'Beschäftigte müssen die Informationen dort erreichen, wo sie mit dem Stoff arbeiten (§ 14 GefStoffV). Ein QR-Code am Gefahrstoffschrank oder an der Hebebühne öffnet Sicherheitsdatenblatt und Betriebsanweisung auf dem Smartphone, ohne Login.',
- },
  ],
  heroText:
- 'Vom Bremsenreiniger bis zu den Anforderungen rund um Dieselmotor-Emissionen (DME) – Stoffe, Mengen und Sicherheitsdatenblätter an einem Ort.',
+ 'Vom Bremsenreiniger bis zu den Anforderungen rund um Dieselmotor-Emissionen (DME): Stoffe, Mengen und Sicherheitsdatenblätter an einem Ort.',
  typischeStoffe: [
  'Motor- und Getriebeöle',
  'Bremsenreiniger / stark lösende Reiniger',
@@ -78,7 +180,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  'Altöl und Abfälle aus Abscheidern',
  ],
  spezifischerVorteil:
- 'Wiederkehrende Erfassungen und ein nachvollziehbares DME-Protokoll lassen sich parallel zum Gefahrstoffverzeichnis führen – ohne zweite Excel-Parallelwelt.',
+ 'Wiederkehrende Erfassungen und ein nachvollziehbares DME-Protokoll lassen sich parallel zum Gefahrstoffverzeichnis führen, ohne zweite Excel-Parallelwelt.',
  handwerkAbsatz:
  'Werkstätten arbeiten oft mit vielen Herstellern und schnellen Produktwechseln. Wenn Sicherheitsdatenblätter nicht zeitnah in Verzeichnis und betriebliche Unterweisung einfließen, entstehen Lücken bei Prüfungen. KI-gestützte Extraktion aus dem PDF reduziert den manuellen Aufwand bei H- und P-Sätzen sowie Schutzmaßnahmen.',
  brancheGenitiv: 'Werkstatt',

@@ -25,6 +25,16 @@ export const HOME_NAVIGATION = {
   primaryCta: { label: 'Kostenlos testen', href: APP_REGISTER_URL },
 } as const;
 
+/** Textblock des Heros (Startseite und statische Branchen-Landingpages teilen dieselbe Struktur). */
+export interface HeroCopy {
+  eyebrow: string;
+  headline: string;
+  headlineAccent: string;
+  subheadlineParagraphs: readonly string[];
+  /** Optionale Sekundärlinks unter der Subheadline (Primär-CTA bleibt die SDB-Dropzone darunter). */
+  secondaryLinks?: readonly NavLink[];
+}
+
 export const HOME_HERO = {
   eyebrow: 'Die Excel-Alternative für SiFas & KMU',
   /** Weiche Trennstellen (\u00ad) für saubere Umbrüche der langen Komposita auf Mobilgeräten. */

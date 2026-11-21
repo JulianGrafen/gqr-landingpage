@@ -1,16 +1,21 @@
 /**
- * Erzeugt /loesungen/kfz-werkstatt/ aus index.html — Branchen-Landingpage Kfz-Werkstatt.
+ * Erzeugt /loesungen/kfz-werkstatt/ aus index.html (Branchen-Landingpage Kfz-Werkstatt).
  *
- * Head-Meta, WebPage-, FAQ- und Breadcrumb-JSON-LD sowie die sichtbaren FAQ kommen aus
- * config/industry-solutions.ts (gleiche Quelle wie die Next-Branchenseiten) und werden über die
- * AEO-Marker gesetzt. Fehlt ein Marker, bricht das Skript ab — kein stilles Übernehmen der
- * Startseiten-Meta mehr (Kannibalisierung, GSC 11/2026).
+ * Alle Inhalte kommen aus config/industry-solutions.ts (gleiche Quelle wie die Next-Branchenseiten):
+ * Head-Meta, WebPage-, FAQ- und Breadcrumb-JSON-LD, Hero-Copy (H1 + Subheadline über der
+ * SDB-Dropzone), Stoffübersicht mit Links auf die TRGS-555-Betriebsanweisungen und FAQ.
+ *
+ * Ersetzt wird ausschließlich über AEO-Marker bzw. feste Kommentar-Anker. Fehlt einer, bricht das
+ * Skript ab. Hintergrund (11/2026): Ein textbasiertes Hero-Regex hatte nach dem Startseiten-Redesign
+ * still die halbe Seite (inkl. Dropzone) entfernt.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { HomeFaqItems } from '@/components/home/HomeFaqItems';
-import { AEO_CONTENT_UPDATED, APP_REGISTER_URL } from '@/config/aeo-config';
+import { HomeHeroCopy } from '@/components/home/HomeHeroCopy';
+import { IndustryStaticLandingSections } from '@/components/loesungen/IndustryStaticLandingSections';
+import { AEO_CONTENT_UPDATED } from '@/config/aeo-config';
 import { getIndustry } from '@/config/industry-solutions';
 import { buildBreadcrumbSchema } from '@/lib/seo/build-breadcrumb-schema';
 import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
@@ -25,9 +30,14 @@ const SOURCE = path.join(ROOT, 'index.html');
 const OUT_DIR = path.join(ROOT, 'static-loesungen', 'kfz-werkstatt');
 const OUT_FILE = path.join(OUT_DIR, 'index.html');
 
+/** Kommentar-Anker in index.html, vor dem die Branchenabschnitte eingesetzt werden. */
+const INDUSTRY_SECTIONS_ANCHOR = ' <!-- EINSTIEGE -->';
+
 const industry = getIndustry('kfz-werkstatt');
-if (!industry?.faq?.length) {
-  throw new Error('config/industry-solutions.ts: kfz-werkstatt benötigt metaTitle, metaDescription und faq.');
+if (!industry?.faq?.length || !industry.staticHero || !industry.substanceOverview) {
+  throw new Error(
+    'config/industry-solutions.ts: kfz-werkstatt benötigt faq, staticHero und substanceOverview.',
+  );
 }
 const seoMeta = buildIndustrySeoMeta(industry);
 const faqItems = [...industry.faq];
@@ -36,32 +46,12 @@ function renderJsonLdScript(data: JsonLdObject): string {
   return `<script type="application/ld+json">\n${serializeJsonLd(data, 1)}\n </script>`;
 }
 
-const INDUSTRY_SECTION = `
- <!-- BRANCHEN: KFZ-WERKSTATT -->
- <section id="werkstatt-stoffe" class="border-t border-white/[0.07] bg-white/[0.02] py-14 lg:py-24" aria-labelledby="stoffe-heading">
- <div class="mx-auto max-w-[900px] px-4 sm:px-6 lg:px-10">
- <p class="mb-3 text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm">Ihre Branche</p>
- <h2 id="stoffe-heading" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Häufige Gefahrstoffe in Ihrer Branche</h2>
- <p class="mt-4 text-base text-[#8fa4c0]">Beispiele aus der Praxis — ergänzen Sie im Betrieb alle Stoffe, die Sie tatsächlich einsetzen, lagern oder abgeben.</p>
- <ul class="mt-8 grid gap-3 sm:grid-cols-2" role="list">
- <li class="flex gap-3 rounded-xl border border-white/[0.08] bg-[#0f1e35]/70 px-4 py-3 text-sm font-medium text-[#c5d0e2]"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#ff6b35]" aria-hidden="true"></span>Motor- und Getriebeöle</li>
- <li class="flex gap-3 rounded-xl border border-white/[0.08] bg-[#0f1e35]/70 px-4 py-3 text-sm font-medium text-[#c5d0e2]"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#ff6b35]" aria-hidden="true"></span>Bremsenreiniger / stark lösende Reiniger</li>
- <li class="flex gap-3 rounded-xl border border-white/[0.08] bg-[#0f1e35]/70 px-4 py-3 text-sm font-medium text-[#c5d0e2]"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#ff6b35]" aria-hidden="true"></span>Kühlerfrostschutz (Glykol)</li>
- <li class="flex gap-3 rounded-xl border border-white/[0.08] bg-[#0f1e35]/70 px-4 py-3 text-sm font-medium text-[#c5d0e2]"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#ff6b35]" aria-hidden="true"></span>Dieselruß und Motorabgasemissionen (DME-Protokolle)</li>
- <li class="flex gap-3 rounded-xl border border-white/[0.08] bg-[#0f1e35]/70 px-4 py-3 text-sm font-medium text-[#c5d0e2] sm:col-span-2"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#ff6b35]" aria-hidden="true"></span>Altöl und Abfälle aus Abscheidern</li>
- </ul>
- </div>
- </section>
-
- <section id="werkstatt-vorteil" class="border-t border-white/[0.07] bg-[#0f1e35]/30 py-14 lg:py-24" aria-labelledby="vorteil-heading">
- <div class="mx-auto max-w-[900px] px-4 sm:px-6 lg:px-10">
- <h2 id="vorteil-heading" class="text-2xl font-black text-[#f0f6ff] sm:text-3xl lg:text-4xl">Wie Gefahrstoff-QR Ihre Werkstatt erleichtert</h2>
- <p class="mt-6 text-lg font-semibold leading-relaxed text-[#f0f6ff]">Wiederkehrende Erfassungen und ein nachvollziehbares DME-Protokoll lassen sich parallel zum Gefahrstoffverzeichnis führen – ohne zweite Excel-Parallelwelt.</p>
- <p class="mt-6 leading-relaxed text-[#8fa4c0]">Werkstätten arbeiten oft mit vielen Herstellern und schnellen Produktwechseln. Wenn Sicherheitsdatenblätter nicht zeitnah in Verzeichnis und betriebliche Unterweisung einfließen, entstehen Lücken bei Prüfungen. KI-gestützte Extraktion aus dem PDF reduziert den manuellen Aufwand bei H- und P-Sätzen sowie Schutzmaßnahmen.</p>
- <p class="mt-6 text-sm leading-relaxed text-[#8fa4c0]">Gefahrstoff-QR unterstützt Sie bei einem <strong class="font-semibold text-[#c5d0e2]">Gefahrstoffverzeichnis nach §&nbsp;6 GefStoffV</strong> und bei <strong class="font-semibold text-[#c5d0e2]">Betriebsanweisungen</strong>, die Sie fachlich prüfen und freigeben. KI extrahiert strukturierte Angaben aus dem Sicherheitsdatenblatt — Sie behalten die Verantwortung für Bewertung und Dokumentation.</p>
- </div>
- </section>
-`;
+function insertBeforeAnchor(pageHtml: string, anchor: string, insertion: string): string {
+  if (!pageHtml.includes(anchor)) {
+    throw new Error(`generate-kfz-werkstatt-landing: Anker "${anchor.trim()}" fehlt in index.html.`);
+  }
+  return pageHtml.replace(anchor, `${insertion}\n\n${anchor}`);
+}
 
 let html = replaceMarkedBlocks(fs.readFileSync(SOURCE, 'utf8'), {
   HEAD_META: () => renderStaticHeadMeta(seoMeta),
@@ -73,7 +63,14 @@ let html = replaceMarkedBlocks(fs.readFileSync(SOURCE, 'utf8'), {
       renderJsonLdScript(buildBreadcrumbSchema(buildIndustryBreadcrumbs(industry))),
     ].join('\n'),
   FAQ_ITEMS: () => renderToStaticMarkup(<HomeFaqItems items={faqItems} />),
+  HERO_COPY: () => renderToStaticMarkup(<HomeHeroCopy copy={industry.staticHero} />),
 });
+
+html = insertBeforeAnchor(
+  html,
+  INDUSTRY_SECTIONS_ANCHOR,
+  renderToStaticMarkup(<IndustryStaticLandingSections industry={industry} />),
+);
 
 html = html
   .replace(/href="style\.css/g, 'href="/style.css')
@@ -81,34 +78,7 @@ html = html
   .replace('src="logo.png"', 'src="/logo.png"')
   .replace('src="./linkedIn.png"', 'src="/linkedIn.png"');
 
-/** Hero der Startseite: von der H1 bis einschließlich Microcopy unter den CTAs (textunabhängig). */
-const heroOldPattern =
-  /(?:<p class="sds-hero__eyebrow[^"]*">[\s\S]*?<\/p>\s*)?<h1 id="heroHeadline"[\s\S]*?<\/h1>[\s\S]*?<div class="sds-hero__cta-row[^"]*">[\s\S]*?<\/div>\s*(?:<p class="mt-4 w-full[^"]*">[\s\S]*?<\/p>)?/;
-
-const heroNew = `<p class="mb-3 w-full text-xs font-bold uppercase tracking-wider text-[#ff6b35] sm:text-sm text-center md:text-left">Branchenlösung</p>
-<h1 id="heroHeadline" class="sds-hero__title flex w-full flex-wrap flex-col items-center md:items-start justify-center text-center md:text-left">
- Gefahrstoffmanagement für Kfz-Werkstätten
-</h1>
- <p class="text-2xl mt-5 sds-hero__subtitle text-center md:text-left">Vom Bremsenreiniger bis zu den Anforderungen rund um Dieselmotor-Emissionen (DME) – Stoffe, Mengen und Sicherheitsdatenblätter an einem Ort.</p>
- <div class="sds-hero__cta-row mt-8 flex w-full flex-col flex-wrap justify-center gap-4 sm:flex-row md:justify-start">
-   <a class="btn-cta-orange sds-hero__cta" href="${APP_REGISTER_URL}">Jetzt kostenlos testen</a>
-   <a class="sds-secondary-link sds-hero__cta" href="/">Zur Startseite</a>
- </div>`;
-
-if (!heroOldPattern.test(html)) {
-  console.error('Hero-Block in index.html nicht gefunden: Generator anpassen.');
-  process.exit(1);
-}
-
-html = html.replace(heroOldPattern, heroNew);
-html = html.replace(' <!-- EINSTIEGE -->', `${INDUSTRY_SECTION}\n\n <!-- EINSTIEGE -->`);
-
-// Branchen-Karte Kfz hervorheben
-html = html.replace(
-  '<a href="/loesungen/kfz-werkstatt/" class="group flex h-full flex-col rounded-2xl border border-white/[0.08] bg-[#0f1e35]/50 p-5 shadow-lg transition-all hover:border-white/[0.15] hover:bg-[#0f1e35]/70 no-underline">',
-  '<a href="/loesungen/kfz-werkstatt/" aria-current="page" class="group flex h-full flex-col rounded-2xl border-2 border-[#ff6b35]/50 bg-[#162340] p-5 shadow-lg ring-1 ring-orange-400/20 no-underline">',
-);
-
+/** Kfz-Werkstätten sehen nur die KMU-Tarife; die SiFa-Mandanten-Spalte entfällt. */
 function trimPricingToProfessional(pageHtml: string): string {
   let out = pageHtml.replace(
     /(<div class="pricing-tier-grid"[^>]*>)([\s\S]*?)(<\/div>\s*\n\s*<details class="pricing-compare)/,
@@ -151,6 +121,12 @@ function trimPricingToProfessional(pageHtml: string): string {
 }
 
 html = trimPricingToProfessional(html);
+
+/** Footer: aktuelle Seite markieren (Barrierefreiheit, kein Selbstlink-Signal ohne Kontext). */
+html = html.replace(
+  '<a href="/loesungen/kfz-werkstatt/" class="site-footer__link">',
+  '<a href="/loesungen/kfz-werkstatt/" class="site-footer__link" aria-current="page">',
+);
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(OUT_FILE, html, 'utf8');

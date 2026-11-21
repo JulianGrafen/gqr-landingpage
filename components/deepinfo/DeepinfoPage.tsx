@@ -10,9 +10,11 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { TurnkeyAuditSection } from '@/components/TurnkeyAuditSection';
 import { APP_REGISTER_URL } from '@/config/aeo-config';
 import { TURNKEY_AUDIT } from '@/config/home-sections/turnkey-audit';
-import type { DeepinfoSlug } from '@/lib/wissen/deepinfo-loader';
+import { getDeepinfoCanonicalPath, type DeepinfoSlug } from '@/lib/wissen/deepinfo-loader';
 import { buildDeepinfoBreadcrumbs } from '@/lib/wissen/build-deepinfo-breadcrumbs';
 import { buildBreadcrumbSchema } from '@/lib/seo/build-breadcrumb-schema';
+import { getEditorialSolutionCallout } from '@/lib/seo/internalLinks';
+import { InternalSolutionBanner } from '@/components/seo/InternalSolutionBanner';
 import { buildSoftwareApplicationSchema } from '@/lib/seo/build-software-application-schema';
 
 type DeepinfoPageTemplateProps = {
@@ -24,6 +26,9 @@ export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
   const stickyCtaHref = meta.showTurnkeyAudit ? TURNKEY_AUDIT.cta.href : APP_REGISTER_URL;
   const extension = DEEPINFO_PAGE_EXTENSIONS[meta.slug as DeepinfoSlug];
   const faqSchemaItems = [...meta.faq, ...(extension?.extraFaqSchemaItems ?? [])];
+  const canonicalPath = getDeepinfoCanonicalPath(meta.slug as DeepinfoSlug);
+  const primaryCallout = getEditorialSolutionCallout(canonicalPath, 'primary');
+  const closingCallout = getEditorialSolutionCallout(canonicalPath, 'closing');
 
   return (
     <main className="pb-20 lg:pb-0">
@@ -60,6 +65,7 @@ export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
               <p>
                 <strong>Typisches Problem:</strong> {meta.painPoint}
               </p>
+              {primaryCallout ? <InternalSolutionBanner callout={primaryCallout} className="my-8" /> : null}
 
               <DeepinfoProse source={mdxSource} />
               {extension?.sectionsBeforeComparison}
@@ -67,6 +73,7 @@ export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
                 <ManualVsGqrComparison targetAudience={meta.targetAudience} comparison={meta.comparison} />
               )}
               {extension?.sectionsAfterComparison}
+              {closingCallout ? <InternalSolutionBanner callout={closingCallout} className="my-10" /> : null}
               <DeepinfoFaq faq={meta.faq} />
             </div>
           </article>

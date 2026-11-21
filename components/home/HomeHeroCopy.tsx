@@ -1,24 +1,38 @@
-import { HOME_HERO } from '@/config/home-sections/hero';
+import { HOME_HERO, type HeroCopy } from '@/config/home-sections/hero';
+
+type HomeHeroCopyProps = {
+  /** Standard: Startseite. Statische Branchenseiten übergeben ihre eigene Copy. */
+  copy?: HeroCopy;
+};
 
 /**
- * Textblock des Heros. Die Klassenstruktur (h1#heroHeadline, CTA-Div, Microcopy-<p>) ist
- * Vertrag mit scripts/generate-kfz-werkstatt-landing.tsx, das diesen Block ersetzt.
+ * Textblock des Heros innerhalb des Markers `AEO:HERO_COPY`.
+ * Die SDB-Dropzone direkt darunter bleibt unverändert und ist der Primär-CTA.
  */
-export function HomeHeroCopy() {
+export function HomeHeroCopy({ copy = HOME_HERO }: HomeHeroCopyProps) {
   return (
     <>
-      <p className="sds-hero__eyebrow">{HOME_HERO.eyebrow}</p>
+      <p className="sds-hero__eyebrow">{copy.eyebrow}</p>
       <h1 id="heroHeadline" className="sds-hero__title">
-        <span className="sds-hero__title-line">{HOME_HERO.headline}</span>
-        <span className="sds-hero__title-accent">{HOME_HERO.headlineAccent}</span>
+        <span className="sds-hero__title-line">{copy.headline}</span>
+        <span className="sds-hero__title-accent">{copy.headlineAccent}</span>
       </h1>
       <div className="sds-hero__subtitle">
-        {HOME_HERO.subheadlineParagraphs.map((paragraph) => (
+        {copy.subheadlineParagraphs.map((paragraph) => (
           <p key={paragraph} className="m-0">
             {paragraph}
           </p>
         ))}
       </div>
+      {copy.secondaryLinks?.length ? (
+        <p className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          {copy.secondaryLinks.map((link) => (
+            <a key={link.href} className="sds-secondary-link" href={link.href}>
+              {link.label}
+            </a>
+          ))}
+        </p>
+      ) : null}
     </>
   );
 }
