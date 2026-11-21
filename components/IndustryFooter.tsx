@@ -1,20 +1,38 @@
 import Link from 'next/link';
 import type { LucideIcon } from 'lucide-react';
 import {
- Car,
- FlaskConical,
- Hammer,
- Paintbrush,
- Sparkles,
+  Car,
+  FlaskConical,
+  Hammer,
+  Paintbrush,
+  Sparkles,
+  Scissors,
+  Factory,
+  Wheat,
+  Stethoscope,
+  Zap,
+  Home,
+  Fuel,
+  Printer,
+  Croissant,
 } from 'lucide-react';
 import { getAllIndustries, type IndustrySlug } from '@/config/industry-solutions';
 
 const ICONS: Record<IndustrySlug, LucideIcon> = {
- 'kfz-werkstatt': Car,
- schreinerei: Hammer,
- malerbetrieb: Paintbrush,
- laborbetrieb: FlaskConical,
- reinigungsunternehmen: Sparkles,
+  'kfz-werkstatt': Car,
+  schreinerei: Hammer,
+  malerbetrieb: Paintbrush,
+  laborbetrieb: FlaskConical,
+  reinigungsunternehmen: Sparkles,
+  friseursalon: Scissors,
+  metallbau: Factory,
+  landwirtschaft: Wheat,
+  zahnarztpraxis: Stethoscope,
+  elektrobetrieb: Zap,
+  dachdecker: Home,
+  tankstelle: Fuel,
+  druckerei: Printer,
+  baeckerei: Croissant,
 };
 
 /**
@@ -40,7 +58,7 @@ export function IndustryFooter() {
  GefStoffV, Sicherheitsdatenblatt und Betriebsanweisungen hilft.
  </p>
 
- <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5" role="list">
+ <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" role="list">
  {industries.map((item) => {
  const Icon = ICONS[item.slug];
  return (
@@ -55,12 +73,18 @@ export function IndustryFooter() {
  <span className="mt-4 text-base font-bold text-slate-900">
  {item.label}
  </span>
- <Link
- href={item.blogPostHref}
- className="mt-4 text-sm font-semibold text-[#ff6b35] no-underline transition hover:underline"
- >
- Branchen-Blog
- </Link>
+          <Link
+           href={`/loesungen/${item.slug}/`}
+           className="mt-4 text-sm font-semibold text-[#ff6b35] no-underline transition hover:underline"
+          >
+           Branchen-Landingpage
+          </Link>
+          <Link
+           href={item.blogPostHref}
+           className="mt-2 text-xs font-medium text-slate-500 no-underline transition hover:text-[#ff6b35] hover:underline"
+          >
+           Mehr im Blog &amp; Wissen
+          </Link>
  </div>
  </li>
  );

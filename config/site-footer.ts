@@ -50,6 +50,12 @@ export const FOOTER_INDUSTRY_LINKS = [
   { label: 'Malerbetrieb', href: '/loesungen/malerbetrieb/' },
   { label: 'Labor', href: '/loesungen/laborbetrieb/' },
   { label: 'Gebäudereinigung', href: '/loesungen/reinigungsunternehmen/' },
+  { label: 'Zahnarztpraxis', href: '/loesungen/zahnarztpraxis/' },
+  { label: 'Elektrobetrieb', href: '/loesungen/elektrobetrieb/' },
+  { label: 'Dachdecker', href: '/loesungen/dachdecker/' },
+  { label: 'Tankstelle', href: '/loesungen/tankstelle/' },
+  { label: 'Druckerei', href: '/loesungen/druckerei/' },
+  { label: 'Bäckerei', href: '/loesungen/baeckerei/' },
 ] as const satisfies readonly FooterLink[];
 
 export const FOOTER_BA_SAMPLE_LINKS = [

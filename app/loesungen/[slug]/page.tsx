@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { IndustryPseoSections } from '@/components/loesungen/IndustryPseoSections';
 import { IndustrySlugHero } from '@/components/loesungen/IndustrySlugHero';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { PSEO_CONTAINER, PSEO_PAGE_MAIN, PSEO_PROSE, PSEO_SECTION_HERO } from '@/components/programmatic-seo';
 import { SdbTrustFeatureList } from '@/components/programmatic-seo/SdbTrustFeatureList';
 import { SdbLivePreviewDropzone } from '@/components/sdb-preview';
-import { JsonLd } from '@/components/seo/JsonLd';
 import { LandingFaqSection } from '@/components/seo-silo/LandingFaqSection';
 import {
   getIndustry,
@@ -39,9 +40,14 @@ export function generateMetadata({ params }: PageProps): Metadata {
 }
 
 function buildIndustrySchemas(data: IndustrySolution): JsonLdObject[] {
+  const faqItems = data.faq?.length
+    ? [...data.faq]
+    : data.pseo?.faqItems?.length
+      ? [...data.pseo.faqItems]
+      : [];
   return [
     buildBreadcrumbSchema(buildIndustryBreadcrumbs(data)),
-    ...(data.faq?.length ? [buildFaqPageSchema([...data.faq])] : []),
+    ...(faqItems.length ? [buildFaqPageSchema(faqItems)] : []),
   ];
 }
 
@@ -63,6 +69,8 @@ export default function IndustryPage({ params }: PageProps) {
           </div>
         ) : null}
       </section>
+
+      <IndustryPseoSections data={data} />
 
       <section
         className="border-b border-[#e5e7eb] bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
