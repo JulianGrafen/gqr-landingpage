@@ -15,6 +15,9 @@ import {
   Fuel,
   Printer,
   Croissant,
+  LayoutGrid,
+  Droplets,
+  SprayCan,
 } from 'lucide-react';
 import { getAllIndustries, type IndustrySlug } from '@/config/industry-solutions';
 
@@ -33,6 +36,9 @@ const ICONS: Record<IndustrySlug, LucideIcon> = {
   tankstelle: Fuel,
   druckerei: Printer,
   baeckerei: Croissant,
+  fliesenleger: LayoutGrid,
+  'shk-betrieb': Droplets,
+  lackiererei: SprayCan,
 };
 
 /**
