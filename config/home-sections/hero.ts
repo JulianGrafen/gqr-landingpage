@@ -35,10 +35,12 @@ export interface HeroCopy {
   secondaryLinks?: readonly NavLink[];
 }
 
+/** Kompositum in der Hero-H1: darf nicht mit Bindestrich mitten im Wort umbrechen. */
+export const HOME_HERO_H1_UNBROKEN_COMPOUND = 'Gefahrstoffkataster';
+
 export const HOME_HERO = {
   eyebrow: 'Die Excel-Alternative für SiFas & KMU',
-  /** Weiche Trennstellen (\u00ad) für saubere Umbrüche der langen Komposita auf Mobilgeräten. */
-  headline: 'Gefahrstoff\u00adkataster & BA-Entwurf',
+  headline: `${HOME_HERO_H1_UNBROKEN_COMPOUND} & BA-Entwurf`,
   headlineAccent: 'ohne Abtippen.',
   subheadlineParagraphs: [
     'KI liest aus, Sie geben frei.',

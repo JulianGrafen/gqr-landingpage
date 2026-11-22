@@ -8,6 +8,7 @@ import { SdbProcessingTimeline } from '@/components/sdb-preview/SdbProcessingTim
 import { HeroBaLivePreview } from '@/components/sdb-preview/HeroBaPreviewDocument';
 import { SdbPreviewCompactResult } from '@/components/sdb-preview/SdbPreviewCompactResult';
 import { shellClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
+import { SDB_DROPZONE_QUICK_EXAMPLE_ID } from '@/config/sdb-preview/dropzone-copy';
 import type { SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
 import { resolvePreviewSourceLabel } from '@/lib/sdb-preview/resolve-preview-source-label';
 import { useSdbPreview, type SdbPreviewController, type SdbPreviewPhase } from '@/lib/sdb-preview/useSdbPreview';
@@ -148,6 +149,7 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
         compact={compactUpload || (variant === 'static' && phase !== 'idle')}
         compactLabel={phase === 'ready' ? 'Anderes SDB hochladen' : undefined}
         onFile={uploadFile}
+        onQuickExample={exampleSlot ? undefined : () => void runExample(SDB_DROPZONE_QUICK_EXAMPLE_ID)}
       />
     );
 
