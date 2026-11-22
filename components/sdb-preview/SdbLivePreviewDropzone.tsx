@@ -9,6 +9,7 @@ import { SdbPreviewCompactResult } from '@/components/sdb-preview/SdbPreviewComp
 import { Trgs555PreviewDocument } from '@/components/sdb-preview/Trgs555PreviewDocument';
 import { shellClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
 import type { SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
+import { resolvePreviewSourceLabel } from '@/lib/sdb-preview/resolve-preview-source-label';
 import { useSdbPreview, type SdbPreviewController, type SdbPreviewPhase } from '@/lib/sdb-preview/useSdbPreview';
 
 const DROPZONE_ANCHOR_ID = 'ba-sdb-dropzone';
@@ -66,7 +67,9 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
     ref,
   ) {
     const dropzoneInputRef = useRef<SdbDropzoneInputHandle>(null);
-    const { phase, progress, teaser, error, fileLabel, uploadFile, runExample, reset, earlyTradeName } = controller;
+    const { phase, progress, teaser, error, source, fileLabel, uploadFile, runExample, reset, earlyTradeName } =
+      controller;
+    const sourceLabel = resolvePreviewSourceLabel(source);
 
     useImperativeHandle(
       ref,
@@ -79,6 +82,7 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
 
     const busy = phase === 'processing';
     const embeddedActive = embedded && phase !== 'idle';
+    const compactUpload = embeddedActive || phase === 'ready';
     const customReadyState = phase === 'ready' && teaser && renderReadyState ? renderReadyState(teaser) : null;
     const showExampleChips = variant !== 'static' && !(embedded && (phase === 'processing' || phase === 'ready'));
 
@@ -124,13 +128,14 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
     const resultBlock =
       phase === 'ready' && teaser ? (
         variant === 'static' ? (
-          <Trgs555PreviewDocument variant={variant} teaser={teaser} />
+          <Trgs555PreviewDocument variant={variant} teaser={teaser} sourceLabel={sourceLabel} />
         ) : (
           <SdbPreviewCompactResult
             variant={variant}
             teaser={teaser}
             embedded={embedded}
             omitPublishedHazardData={omitPublishedHazardData}
+            sourceLabel={sourceLabel}
           />
         )
       ) : null;
@@ -140,7 +145,7 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
         ref={dropzoneInputRef}
         variant={variant}
         disabled={busy}
-        compact={embeddedActive}
+        compact={compactUpload}
         onFile={uploadFile}
       />
     );
@@ -151,7 +156,7 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
         {showExampleChips ? (
           exampleSlot ?? <SdbExampleChips variant={variant} disabled={busy} onSelect={runExample} />
         ) : null}
-        {fileLabel && phase !== 'idle' ? (
+        {fileLabel && phase !== 'idle' && phase !== 'ready' ? (
           <p className={variant === 'static' ? 'sdb-live-preview-file-label' : 'mt-2 truncate text-xs text-[#8fa4c0]'}>
             Datei: {fileLabel}
           </p>
@@ -185,12 +190,16 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
             {resultBlock}
             <div className="space-y-3">{dropzoneBlock}</div>
           </>
+        ) : phase === 'ready' ? (
+          <>
+            {resultBlock}
+            {dropzoneBlock}
+          </>
         ) : (
           <>
             {dropzoneBlock}
             {processingBlock}
             {errorBlock}
-            {resultBlock}
           </>
         )}
       </div>

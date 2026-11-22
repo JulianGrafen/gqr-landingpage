@@ -16,7 +16,7 @@ export function dropzoneClass(
   compact = false,
 ): string {
   if (variant === 'static') {
-    const base = 'sdb-live-preview-dropzone';
+    const base = compact ? 'sdb-live-preview-dropzone sdb-live-preview-dropzone--compact' : 'sdb-live-preview-dropzone';
     if (state === 'drag') return `${base} is-drag-over`;
     if (state === 'processing') return `${base} is-processing`;
     return base;

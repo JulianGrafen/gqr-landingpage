@@ -21,7 +21,7 @@ export function GhsPictogramBadge({ code, variant }: Props) {
 
   return (
     <figure className={cardClass}>
-      <img src={asset.src} alt={`${normalized} ${asset.label}`} width={48} height={48} loading="lazy" />
+      <img src={asset.src} alt={`${normalized} ${asset.label}`} width={32} height={32} loading="lazy" />
       <figcaption className="text-[10px] font-bold uppercase tracking-wide text-[#8fa4c0]">{normalized}</figcaption>
     </figure>
   );

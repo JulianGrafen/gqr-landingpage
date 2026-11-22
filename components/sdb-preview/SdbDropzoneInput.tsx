@@ -36,7 +36,7 @@ export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(functi
 
   const state = disabled ? 'processing' : dragOver ? 'drag' : 'idle';
 
-  if (compact && variant === 'next') {
+  if (compact) {
     return (
       <div
         className={dropzoneClass(variant, state, true)}
@@ -73,8 +73,24 @@ export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(functi
           disabled={disabled}
           onChange={(e) => handleFiles(e.target.files)}
         />
-        <span className="text-sm font-semibold text-[#f0f6ff]">{compactLabel}</span>
-        <span className="shrink-0 text-xs font-bold uppercase tracking-wide text-teal-300">PDF</span>
+        <span
+          className={
+            variant === 'static'
+              ? 'sdb-live-preview-dropzone__compact-label'
+              : 'text-sm font-semibold text-[#f0f6ff]'
+          }
+        >
+          {compactLabel}
+        </span>
+        <span
+          className={
+            variant === 'static'
+              ? 'sdb-live-preview-dropzone__compact-type'
+              : 'shrink-0 text-xs font-bold uppercase tracking-wide text-teal-300'
+          }
+        >
+          PDF
+        </span>
       </div>
     );
   }
