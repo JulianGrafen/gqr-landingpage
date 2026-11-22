@@ -6,6 +6,10 @@ export type PrefillLike = {
   name?: string | null;
   manufacturer?: string | null;
   cas_number?: string | null;
+  lgk?: string | null;
+  storage_class?: string | null;
+  lagerklasse?: string | null;
+  storageClassTrgs510?: string | null;
   signal_word?: 'Gefahr' | 'Achtung' | null;
   ghs_pictograms?: string[] | null;
   h_statements?: string | null;
@@ -28,6 +32,12 @@ export function splitStatements(raw: string | null | undefined): string[] {
     .split(/\n|(?<![+\w])(?=[HP]\d{3})/)
     .map((s) => s.trim())
     .filter(Boolean);
+}
+
+function pickStorageClass(p: PrefillLike): string | undefined {
+  const raw = p.lgk ?? p.storage_class ?? p.lagerklasse ?? p.storageClassTrgs510;
+  const trimmed = typeof raw === 'string' ? raw.trim() : '';
+  return trimmed.length > 0 ? trimmed : undefined;
 }
 
 function buildSections(p: PrefillLike): Trgs555PreviewSection[] {
@@ -101,6 +111,7 @@ export function buildTeaserFromPrefill(p: PrefillLike, previewToken: string): Sd
     tradeName: p.name?.trim() || 'Unbenannter Stoff',
     manufacturer: p.manufacturer?.trim() || '—',
     casNumber: p.cas_number?.trim() || undefined,
+    storageClass: pickStorageClass(p),
     signalWord: p.signal_word ?? null,
     ghsPictograms: ghs,
     hazardStatements,

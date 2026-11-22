@@ -11,6 +11,22 @@ export type SdbUnlockHrefOptions = Omit<UnlockUrlOptions, 'previewToken' | 'regi
   fallbackHref: string;
 };
 
+function hrefFromToken(
+  previewToken: string,
+  extras: Omit<SdbUnlockHrefOptions, 'previewToken' | 'fallbackHref'>,
+  registerBaseUrl?: string,
+): string {
+  return buildUnlockRegisterUrl({
+    previewToken,
+    registerBaseUrl,
+    returnTo: extras.returnTo,
+    utmSource: extras.utmSource,
+    utmMedium: extras.utmMedium,
+    utmCampaign: extras.utmCampaign,
+    utmContent: extras.utmContent,
+  });
+}
+
 /** Register-URL mit `previewToken`; Basis-URL aus `sdb-preview-config.json`. */
 export function useSdbUnlockHref({
   previewToken,
@@ -21,27 +37,21 @@ export function useSdbUnlockHref({
   utmCampaign,
   utmContent,
 }: SdbUnlockHrefOptions): string {
-  const [href, setHref] = useState(fallbackHref);
+  const extras = { returnTo, utmSource, utmMedium, utmCampaign, utmContent };
+  const [href, setHref] = useState(() =>
+    previewToken ? hrefFromToken(previewToken, extras) : fallbackHref,
+  );
 
   useEffect(() => {
     if (!previewToken) {
       setHref(fallbackHref);
       return;
     }
+    setHref(hrefFromToken(previewToken, extras));
     let cancelled = false;
     loadSdbPreviewConfig().then((config) => {
       if (cancelled) return;
-      setHref(
-        buildUnlockRegisterUrl({
-          previewToken,
-          registerBaseUrl: config.registerBaseUrl,
-          returnTo,
-          utmSource,
-          utmMedium,
-          utmCampaign,
-          utmContent,
-        }),
-      );
+      setHref(hrefFromToken(previewToken, extras, config.registerBaseUrl));
     });
     return () => {
       cancelled = true;

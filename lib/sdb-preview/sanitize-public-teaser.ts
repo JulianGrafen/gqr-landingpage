@@ -1,4 +1,5 @@
 import type { SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
+import { sharpPreviewSectionBody } from '@/lib/sdb-preview/build-result-insight-badges';
 import { deriveProtectiveEquipment } from '@/lib/sdb-preview/derive-protective-equipment';
 import { splitStatements } from '@/lib/sdb-preview/map-teaser';
 
@@ -40,10 +41,15 @@ export function sanitizePublicTeaser(teaser: SdbPreviewTeaser): SdbPreviewTeaser
       hazard: teaser.hazardStatements.length,
       precautionary: precautionaryStatements ? precautionaryStatements.length : null,
     },
-    sections: teaser.sections.map((section) => ({
-      ...section,
-      unlocked: false,
-      body: PLACEHOLDER,
-    })),
+    sections: teaser.sections.map((section) => {
+      if (section.key === 'identification' || section.key === 'hazards') {
+        return {
+          ...section,
+          unlocked: true,
+          body: sharpPreviewSectionBody(teaser, section.key),
+        };
+      }
+      return { ...section, unlocked: false, body: PLACEHOLDER };
+    }),
   };
 }

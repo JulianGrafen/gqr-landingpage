@@ -18,6 +18,9 @@
     --color-border: rgba(255, 255, 255, 0.07);
     --color-accent: #ff6b35;
     --color-accent-2: #ff9a6b;
+    --cta-orange-gradient: linear-gradient(135deg, #ff8a52 0%, #ff6b35 48%, #e35420 100%);
+    --cta-orange-fg: #0c1018;
+    --cta-orange-border: rgba(12, 16, 24, 0.2);
     --color-trust: #2dd4bf;
     --max-width: 1160px;
     --space-xs: 0.5rem;
@@ -247,6 +250,15 @@
   .sdb-live-preview-dropzone.is-processing {
     opacity: 0.85;
     pointer-events: none;
+  }
+
+  .sdb-live-preview-dropzone--compact {
+    min-height: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.55rem 0.9rem;
+    border-radius: 12px;
   }
 
   .sdb-live-preview-dropzone__icon {
@@ -1318,5 +1330,39 @@
     opacity: 1;
     transform: none;
     filter: none;
+  }
+}
+
+/* SDB-Ergebnis-CTA: Marken-Orange (Tokens analog style.css --cta-orange-gradient) */
+.sdb-unlock-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 800;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-decoration: none !important;
+  color: var(--cta-orange-fg) !important;
+  border: 1px solid var(--cta-orange-border);
+  background: var(--cta-orange-gradient);
+  box-shadow: 0 10px 24px rgba(227, 84, 32, 0.32);
+}
+
+.sdb-unlock-cta:hover {
+  color: var(--cta-orange-fg) !important;
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 639px) {
+  .sdb-unlock-cta {
+    white-space: normal;
+    font-size: 0.8rem;
   }
 }
