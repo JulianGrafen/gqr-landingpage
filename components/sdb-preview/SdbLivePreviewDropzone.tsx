@@ -5,8 +5,8 @@ import { SdbDropzoneInput, type SdbDropzoneInputHandle } from '@/components/sdb-
 import { SdbExampleChips } from '@/components/sdb-preview/SdbExampleChips';
 import { SdbProcessingProgressBar } from '@/components/sdb-preview/SdbProcessingProgressBar';
 import { SdbProcessingTimeline } from '@/components/sdb-preview/SdbProcessingTimeline';
+import { HeroBaLivePreview, HeroBaSamplePreview } from '@/components/sdb-preview/HeroBaPreviewDocument';
 import { SdbPreviewCompactResult } from '@/components/sdb-preview/SdbPreviewCompactResult';
-import { Trgs555PreviewDocument } from '@/components/sdb-preview/Trgs555PreviewDocument';
 import { shellClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
 import type { SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
 import { resolvePreviewSourceLabel } from '@/lib/sdb-preview/resolve-preview-source-label';
@@ -84,7 +84,7 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
     const embeddedActive = embedded && phase !== 'idle';
     const compactUpload = embeddedActive || phase === 'ready';
     const customReadyState = phase === 'ready' && teaser && renderReadyState ? renderReadyState(teaser) : null;
-    const showExampleChips = variant !== 'static' && !(embedded && (phase === 'processing' || phase === 'ready'));
+    const showExampleChips = !(embedded && (phase === 'processing' || phase === 'ready'));
 
     useEffect(() => {
       onPhaseChange?.(phase);
@@ -128,7 +128,7 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
     const resultBlock =
       phase === 'ready' && teaser ? (
         variant === 'static' ? (
-          <Trgs555PreviewDocument variant={variant} teaser={teaser} sourceLabel={sourceLabel} />
+          <HeroBaLivePreview teaser={teaser} source={controller.source} />
         ) : (
           <SdbPreviewCompactResult
             variant={variant}
@@ -145,7 +145,8 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
         ref={dropzoneInputRef}
         variant={variant}
         disabled={busy}
-        compact={compactUpload}
+        compact={compactUpload || (variant === 'static' && phase !== 'idle')}
+        compactLabel={phase === 'ready' ? 'Anderes SDB hochladen' : undefined}
         onFile={uploadFile}
       />
     );
@@ -182,6 +183,18 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
             {customReadyState}
             {/* Bleibt gemountet, damit „Anderes SDB testen“ den Datei-Dialog öffnen kann. */}
             <div hidden>{dropzoneInput}</div>
+          </>
+        ) : variant === 'static' && phase === 'idle' ? (
+          <>
+            <HeroBaSamplePreview onRequestUpload={() => dropzoneInputRef.current?.openFilePicker()} />
+            <div className="space-y-3">{dropzoneBlock}</div>
+          </>
+        ) : variant === 'static' ? (
+          <>
+            {processingBlock}
+            {errorBlock}
+            {resultBlock}
+            <div className="space-y-3">{dropzoneBlock}</div>
           </>
         ) : embeddedActive ? (
           <>

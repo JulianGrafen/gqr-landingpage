@@ -261,6 +261,21 @@
     border-radius: 12px;
   }
 
+  .sdb-live-preview-dropzone__compact-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #f0f6ff;
+  }
+
+  .sdb-live-preview-dropzone__compact-type {
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #2dd4bf;
+  }
+
   .sdb-live-preview-dropzone__icon {
     display: grid;
     place-items: center;
