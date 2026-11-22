@@ -1,14 +1,13 @@
 'use client';
 
 import { useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { buildRoiViewModel } from '@/lib/roi-calculator/buildRoiViewModel';
 import {
-  computeTimeSavings,
-  formatEuroWholeAmount,
-  formatGermanDecimal,
   ROI_CLIENT_SLIDER,
   ROI_SUBSTANCE_SLIDER,
   type RoiCalculatorMode,
 } from '@/lib/roi-calculator/computeTimeSavings';
+import { ROI_COPY } from '@/lib/roi-calculator/roi-copy';
 
 const DEFAULT_REGISTER_HREF = 'https://app.gefahrstoff-qr.de/register';
 
@@ -47,10 +46,7 @@ function RangeSliderField({
         <label htmlFor={fieldId} className="text-sm font-semibold text-slate-700">
           {label}
         </label>
-        <span
-          className="tabular-nums text-2xl font-extrabold text-blue-600"
-          aria-live="polite"
-        >
+        <span className="min-w-[3ch] text-right tabular-nums text-2xl font-extrabold text-blue-600" aria-live="polite">
           {value}
         </span>
       </div>
@@ -68,8 +64,8 @@ function RangeSliderField({
         aria-valuenow={value}
       />
       <div className="mt-1 flex justify-between text-xs text-slate-400">
-        <span>{min}</span>
-        <span>{max}</span>
+        <span className="tabular-nums">{min}</span>
+        <span className="tabular-nums">{max}</span>
       </div>
     </div>
   );
@@ -140,14 +136,15 @@ export default function ROICalculator({
   const modeLabelId = `${baseId}-mode-label`;
 
   const [mode, setMode] = useState<RoiCalculatorMode>('kmu');
-  const [substancesPerScope, setSubstancesPerScope] = useState<number>(
-    ROI_SUBSTANCE_SLIDER.default,
-  );
+  const [kmuSubstances, setKmuSubstances] = useState<number>(ROI_SUBSTANCE_SLIDER.kmuDefault);
+  const [sifaSubstances, setSifaSubstances] = useState<number>(ROI_SUBSTANCE_SLIDER.sifaDefault);
   const [clientCount, setClientCount] = useState<number>(ROI_CLIENT_SLIDER.default);
 
-  const result = useMemo(
+  const substancesPerScope = mode === 'sifa' ? sifaSubstances : kmuSubstances;
+
+  const view = useMemo(
     () =>
-      computeTimeSavings({
+      buildRoiViewModel({
         mode,
         substancesPerScope,
         clientCount,
@@ -155,21 +152,14 @@ export default function ROICalculator({
     [mode, substancesPerScope, clientCount],
   );
 
-  const savedHoursLabel = formatGermanDecimal(result.savedHours);
-
   return (
     <aside
-      className={[
-        'rounded-2xl border border-slate-200 bg-white p-6 shadow-xl sm:p-7',
-        className,
-      ].join(' ')}
+      className={['rounded-2xl border border-slate-200 bg-white p-6 shadow-xl sm:p-7', className].join(' ')}
       aria-label="ROI-Rechner: Zeitersparnis berechnen"
     >
       <header className="mb-5">
-        <h2 className="text-base font-bold text-slate-900">ROI-Rechner</h2>
-        <p className="mt-1 text-sm leading-relaxed text-slate-500">
-          Wie viel Arbeitszeit verbrennen Sie mit Copy &amp; Paste?
-        </p>
+        <h2 className="text-base font-bold text-slate-900">{ROI_COPY.title}</h2>
+        <p className="mt-1 text-sm leading-relaxed text-slate-500">{ROI_COPY.subtitle}</p>
       </header>
 
       <p id={modeLabelId} className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -180,22 +170,18 @@ export default function ROICalculator({
       <div className="mt-6">
         <RangeSliderField
           fieldId={`${baseId}-substances`}
-          label={
-            mode === 'kmu'
-              ? 'Gefahrstoffe im Betrieb'
-              : 'Ø Gefahrstoffe pro Mandant'
-          }
+          label={mode === 'kmu' ? ROI_COPY.kmuSubstanceLabel : ROI_COPY.sifaSubstanceLabel}
           min={ROI_SUBSTANCE_SLIDER.min}
           max={ROI_SUBSTANCE_SLIDER.max}
           step={ROI_SUBSTANCE_SLIDER.step}
           value={substancesPerScope}
-          onChange={setSubstancesPerScope}
+          onChange={mode === 'sifa' ? setSifaSubstances : setKmuSubstances}
         />
 
         {mode === 'sifa' ? (
           <RangeSliderField
             fieldId={`${baseId}-clients`}
-            label="Anzahl der Mandanten"
+            label={ROI_COPY.clientLabel}
             min={ROI_CLIENT_SLIDER.min}
             max={ROI_CLIENT_SLIDER.max}
             step={ROI_CLIENT_SLIDER.step}
@@ -203,36 +189,58 @@ export default function ROICalculator({
             onChange={setClientCount}
           />
         ) : null}
+
+        <p className="mt-1 text-xs text-slate-400">
+          <span className="tabular-nums">{view.totalSubstancesText}</span>
+        </p>
       </div>
 
-      <div className="mt-6 rounded-xl border border-blue-100 bg-blue-50 px-5 py-4">
-        <p className="text-sm font-semibold text-slate-700">
-          Gesparte Schreibtischzeit:{' '}
-          <span className="tabular-nums text-2xl font-extrabold text-blue-600">
-            {savedHoursLabel} Stunden
-          </span>
+      <div className="mt-6 grid grid-cols-2 gap-2.5">
+        <div className="rounded-xl border border-red-100 bg-red-50 px-4 py-3">
+          <p className="text-xs font-semibold text-[#ff6b35]">{ROI_COPY.excelLabel}</p>
+          <p className="mt-2 text-2xl font-black leading-none text-[#ff9a5c]">
+            <span className="inline-block min-w-[4.5ch] tabular-nums">{view.traditional.value}</span>
+            <span className="ml-1 text-sm font-medium">{view.traditional.unit}</span>
+          </p>
+        </div>
+        <div className="rounded-xl border border-teal-100 bg-teal-50 px-4 py-3">
+          <p className="text-xs font-semibold text-teal-600">{ROI_COPY.digitalLabel}</p>
+          <p className="mt-2 text-2xl font-black leading-none text-teal-600">
+            <span className="inline-block min-w-[4.5ch] tabular-nums">{view.digital.value}</span>
+            <span className="ml-1 text-sm font-medium">{view.digital.unit}</span>
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-3 flex items-center justify-between rounded-xl border border-teal-200 bg-teal-50 px-5 py-4">
+        <p className="text-sm font-bold text-slate-800">{ROI_COPY.savedTimeLabel}</p>
+        <p className="text-3xl font-black leading-none text-teal-600">
+          <span className="inline-block min-w-[4.5ch] tabular-nums">{view.saved.value}</span>
+          <span className="ml-1 text-xl font-bold">{view.saved.unit}</span>
         </p>
-        {mode === 'sifa' && result.honorPotentialEur !== null ? (
-          <p className="mt-2 text-sm text-slate-600">
-            Blockiertes Honorarpotenzial:{' '}
-            <span className="font-bold text-slate-900">
-              {formatEuroWholeAmount(result.honorPotentialEur)}
-            </span>
-            <span className="text-slate-500"> (bei 100&nbsp;€/h)</span>
+      </div>
+
+      <div className="mt-3 rounded-xl border border-orange-200/80 bg-orange-50 px-4 py-3">
+        <p className="text-[11px] font-bold uppercase tracking-wide text-slate-500">{view.costLabel}</p>
+        <p className="mt-1 text-2xl font-black leading-snug text-[#ff6b35]">
+          <span className="tabular-nums">{view.costEurFormatted}</span>
+          <span className="ml-1 text-sm font-semibold text-slate-500">{view.costHint}</span>
+        </p>
+        {view.roiLine ? (
+          <p className="mt-2 text-sm font-semibold leading-snug text-slate-700">
+            <span className="tabular-nums">{view.roiLine}</span>
           </p>
         ) : null}
       </div>
 
       <a
         href={registerHref}
-        className="mt-5 flex w-full items-center justify-center rounded-xl border border-transparent bg-[#ff6b35] px-5 py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-orange-200/60 transition hover:bg-[#ff8555] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b35] focus-visible:ring-offset-2"
+        className="mt-5 flex w-full items-center justify-center rounded-xl bg-[#ff6b35] px-5 py-3.5 text-center text-sm font-extrabold text-white shadow-lg shadow-orange-300/50 transition hover:bg-[#ff8555] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b35] focus-visible:ring-offset-2"
       >
-        Diese {savedHoursLabel} Stunden zurückholen
+        {ROI_COPY.ctaPrefix} <span className="tabular-nums">&nbsp;{view.savedHoursLabel}&nbsp;</span> {ROI_COPY.ctaSuffix}
       </a>
-
-      <p className="mt-4 text-center text-xs leading-relaxed text-slate-400">
-        Annahme: rund 20 Minuten manuelles Abtippen pro Sicherheitsdatenblatt.
-      </p>
+      <p className="mt-2 text-center text-xs leading-relaxed text-slate-500">{ROI_COPY.microcopy}</p>
+      <p className="mt-3 text-center text-xs leading-relaxed text-slate-400">{ROI_COPY.assumption}</p>
     </aside>
   );
 }

@@ -29,6 +29,10 @@ export const PRICING_FEATURE_INVOICE_SEPA =
 export const YEARLY_DISCOUNT_PERCENT = 15;
 export const PRICING_UPDATED_LABEL = 'November 2026';
 
+/** Stoff-Limits der KMU-Pakete (Preiskarten + ROI-Tarifwahl). */
+export const KMU_BASIS_SUBSTANCE_LIMIT = 30;
+export const KMU_PRO_SUBSTANCE_LIMIT = 250;
+
 export type PricingPlanId =
   | 'tarif-vorschau'
   | 'kmu-basis'
@@ -77,7 +81,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
     monthlyPriceEur: 59,
     yearlyMonthlyPriceEur: 49,
     yearlyTotalPriceEur: 588,
-    limits: 'bis 30 Gefahrstoffe, 1 Werk, unbegrenzt Lagerorte',
+    limits: `bis ${KMU_BASIS_SUBSTANCE_LIMIT} Gefahrstoffe, 1 Werk, unbegrenzt Lagerorte`,
     features: [
       PRICING_FEATURE_BEGEHUNGS_MODUS,
       'KI-gestützte BA-Entwürfe',
@@ -94,7 +98,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
     monthlyPriceEur: 119,
     yearlyMonthlyPriceEur: 99,
     yearlyTotalPriceEur: 1188,
-    limits: 'bis 250 Gefahrstoffe, bis 3 Werke, unbegrenzt Lagerorte',
+    limits: `bis ${KMU_PRO_SUBSTANCE_LIMIT} Gefahrstoffe, bis 3 Werke, unbegrenzt Lagerorte`,
     features: [
       PRICING_FEATURE_BEGEHUNGS_MODUS,
       'Werks- & Lagerorttrennung (bis 3 Werke)',
@@ -131,7 +135,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
     monthlyPriceEur: 399,
     yearlyMonthlyPriceEur: 339,
     yearlyTotalPriceEur: 4068,
-    limits: 'ab 250 Gefahrstoffen, ab 4 Werken (Fair-Use)',
+    limits: `ab ${KMU_PRO_SUBSTANCE_LIMIT} Gefahrstoffen, ab 4 Werken (Fair-Use)`,
     features: [
       'Alles aus KMU Pro',
       'SSO (Single Sign-On)',

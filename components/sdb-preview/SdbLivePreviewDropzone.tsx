@@ -5,7 +5,7 @@ import { SdbDropzoneInput, type SdbDropzoneInputHandle } from '@/components/sdb-
 import { SdbExampleChips } from '@/components/sdb-preview/SdbExampleChips';
 import { SdbProcessingProgressBar } from '@/components/sdb-preview/SdbProcessingProgressBar';
 import { SdbProcessingTimeline } from '@/components/sdb-preview/SdbProcessingTimeline';
-import { HeroBaLivePreview, HeroBaSamplePreview } from '@/components/sdb-preview/HeroBaPreviewDocument';
+import { HeroBaLivePreview } from '@/components/sdb-preview/HeroBaPreviewDocument';
 import { SdbPreviewCompactResult } from '@/components/sdb-preview/SdbPreviewCompactResult';
 import { shellClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
 import type { SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
@@ -184,12 +184,7 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
             {/* Bleibt gemountet, damit „Anderes SDB testen“ den Datei-Dialog öffnen kann. */}
             <div hidden>{dropzoneInput}</div>
           </>
-        ) : variant === 'static' && phase === 'idle' ? (
-          <>
-            <HeroBaSamplePreview onRequestUpload={() => dropzoneInputRef.current?.openFilePicker()} />
-            <div className="space-y-3">{dropzoneBlock}</div>
-          </>
-        ) : variant === 'static' ? (
+        ) : variant === 'static' && phase !== 'idle' ? (
           <>
             {processingBlock}
             {errorBlock}
