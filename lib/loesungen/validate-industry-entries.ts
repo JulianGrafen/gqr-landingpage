@@ -11,7 +11,13 @@ const PSEO_REQUIRED_SLUGS = [
   'tankstelle',
   'druckerei',
   'baeckerei',
+<<<<<<< HEAD
   'sifa-mehrere-mandanten',
+=======
+  'fliesenleger',
+  'shk-betrieb',
+  'lackiererei',
+>>>>>>> cursor/pseo-nightly-2026-11-22-2e47
 ] as const;
 
 const BANNED_LOESUNGEN_COPY = [

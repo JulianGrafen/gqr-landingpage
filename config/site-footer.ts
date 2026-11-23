@@ -56,7 +56,13 @@ export const FOOTER_INDUSTRY_LINKS = [
   { label: 'Tankstelle', href: '/loesungen/tankstelle/' },
   { label: 'Druckerei', href: '/loesungen/druckerei/' },
   { label: 'Bäckerei', href: '/loesungen/baeckerei/' },
+<<<<<<< HEAD
   { label: 'SiFa & Mandanten', href: '/loesungen/sifa-mehrere-mandanten/' },
+=======
+  { label: 'Fliesenleger', href: '/loesungen/fliesenleger/' },
+  { label: 'SHK-Betrieb', href: '/loesungen/shk-betrieb/' },
+  { label: 'Lackiererei', href: '/loesungen/lackiererei/' },
+>>>>>>> cursor/pseo-nightly-2026-11-22-2e47
 ] as const satisfies readonly FooterLink[];
 
 export const FOOTER_BA_SAMPLE_LINKS = [
