@@ -36,6 +36,8 @@ import { buildMetadata } from '@/lib/seo/buildMetadata';
 import { getBetriebsanweisungSolutionCallout } from '@/lib/seo/internalLinks';
 import { InternalSolutionBanner } from '@/components/seo/InternalSolutionBanner';
 import { stickyCtaObstructProps } from '@/lib/marketing/sticky-header-cta';
+import { BetriebsanweisungStrikingMidPageCta } from '@/components/betriebsanweisung/BetriebsanweisungStrikingMidPageCta';
+import { BETRIEBSANWEISUNG_STRIKING_OVERRIDES } from '@/config/seo/striking-distance-2026-11-23';
 
 type PageProps = {
   params: { slug: string };
@@ -68,6 +70,7 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
   const demoRegisterUrl = buildBetriebsanweisungRegisterUrl(entry.slug, {
     utmContent: LIVE_PREVIEW_COPY.demoRegisterUtmContent,
   });
+  const strikingOverride = BETRIEBSANWEISUNG_STRIKING_OVERRIDES[entry.slug as HazardousSubstanceSlug];
 
   return (
     <main className={BA_PAGE_MAIN}>
@@ -104,6 +107,8 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
         </section>
 
         <BetriebsanweisungQuickFacts entry={entry} />
+
+        {strikingOverride ? <BetriebsanweisungStrikingMidPageCta override={strikingOverride} /> : null}
 
         {solutionCallout ? (
           <section className={BA_SECTION}>

@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { StrikingDistanceMidPageCta } from '@/components/marketing/StrikingDistanceMidPageCta';
 import { SoftwareAeoAnswers, SoftwareLongtailSections } from '@/components/deepinfo/SoftwareAnswerSections';
 import { SoftwareCategoryComparison } from '@/components/deepinfo/SoftwareCategoryComparison';
 import { SOFTWARE_AEO_ANSWERS } from '@/config/wissen/software-category-comparison';
@@ -21,7 +22,20 @@ export interface DeepinfoPageExtension {
   includeSoftwareApplicationSchema: boolean;
 }
 
-export const DEEPINFO_PAGE_EXTENSIONS: Partial<Record<DeepinfoSlug, DeepinfoPageExtension>> = {
+const WISSEN_KFZ_MID_CTA = {
+  headline: 'Gefahrstoffverzeichnis Kfz-Werkstatt digital aufsetzen',
+  body: 'Statt nur ein Muster auszufüllen: SDB-PDF hochladen, Entwurf für Verzeichnis und Betriebsanweisungen prüfen und QR-Codes an Schrank und Hebebühne planen. Kostenloser Einstieg ohne Verkaufsgespräch.',
+  primaryLabel: 'Livetest auf der Startseite öffnen',
+  secondaryLabel: 'Zur Kfz-Werkstatt-Lösung',
+  secondaryHref: '/loesungen/kfz-werkstatt/',
+} as const;
+
+export const DEEPINFO_PAGE_EXTENSIONS: Partial<Record<DeepinfoSlug, Partial<DeepinfoPageExtension>>> = {
+  'gefahrstoffverzeichnis-muster-kfz-werkstatt': {
+    sectionsBeforeComparison: (
+      <StrikingDistanceMidPageCta copy={WISSEN_KFZ_MID_CTA} variant="wissen" />
+    ),
+  },
   'gefahrstoffmanagement-software': {
     comparison: <SoftwareCategoryComparison />,
     sectionsBeforeComparison: <SoftwareAeoAnswers />,

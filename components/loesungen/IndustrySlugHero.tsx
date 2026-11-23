@@ -22,7 +22,7 @@ export function IndustrySlugHero({ data }: Props) {
 
   return (
     <>
-      <p className="gqr-kicker">{data.heroKicker ?? 'Branchenlösung'}</p>
+      <p className="gqr-kicker">Branchenlösung</p>
       <h1
         id="industry-hero-title"
         className="mt-3 text-3xl font-black leading-tight tracking-tight text-[#f0f6ff] sm:text-4xl lg:text-[2.35rem] lg:leading-[1.15]"
@@ -36,33 +36,15 @@ export function IndustrySlugHero({ data }: Props) {
         </p>
       ) : null}
       <div className="mt-10 flex flex-wrap gap-3">
-        {data.primaryCta ? (
-          <a href={data.primaryCta.href} className="gqr-cta-primary gqr-cta-primary--md">
-            {data.primaryCta.label}
-          </a>
-        ) : (
-          <Link href="https://app.gefahrstoff-qr.de/register" className="gqr-cta-primary gqr-cta-primary--md">
-            Jetzt kostenlos testen
-          </Link>
-        )}
-        {data.heroSecondaryLinks?.length ? (
-          data.heroSecondaryLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 px-6 py-3 text-sm font-semibold text-[#f0f6ff] no-underline transition hover:border-white/35 hover:bg-white/[0.06]"
-            >
-              {link.label}
-            </a>
-          ))
-        ) : (
-          <a
-            href={marketingHome}
-            className="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 px-6 py-3 text-sm font-semibold text-[#f0f6ff] no-underline transition hover:border-white/35 hover:bg-white/[0.06]"
-          >
-            Zur Startseite
-          </a>
-        )}
+        <Link href="https://app.gefahrstoff-qr.de/register" className="gqr-cta-primary gqr-cta-primary--md">
+          Jetzt kostenlos testen
+        </Link>
+        <a
+          href={marketingHome}
+          className="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/20 px-6 py-3 text-sm font-semibold text-[#f0f6ff] no-underline transition hover:border-white/35 hover:bg-white/[0.06]"
+        >
+          Zur Startseite
+        </a>
       </div>
       <p className="mt-3 text-xs text-[#8fa4c0]">{SLUG_HERO_PROOF_LINE}</p>
       <SlugHeroUspSection

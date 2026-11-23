@@ -15,13 +15,9 @@ import {
   Fuel,
   Printer,
   Croissant,
-  ShieldCheck,
   LayoutGrid,
   Droplets,
   SprayCan,
-  Armchair,
-  UtensilsCrossed,
-  Pickaxe,
 } from 'lucide-react';
 import { getAllIndustries, type IndustrySlug } from '@/config/industry-solutions';
 
@@ -40,13 +36,9 @@ const ICONS: Record<IndustrySlug, LucideIcon> = {
   tankstelle: Fuel,
   druckerei: Printer,
   baeckerei: Croissant,
-  'sifa-mehrere-mandanten': ShieldCheck,
   fliesenleger: LayoutGrid,
   'shk-betrieb': Droplets,
   lackiererei: SprayCan,
-  tischlerei: Armchair,
-  gastronomie: UtensilsCrossed,
-  steinmetz: Pickaxe,
 };
 
 /**

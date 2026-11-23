@@ -5,6 +5,10 @@ import { BA_HUB_LINKS } from '@/config/betriebsanweisung/hub-links';
 import { resolveMarketingHomeHref } from '@/config/site-seo';
 import { BetriebsanweisungIntentSwitch } from '@/components/betriebsanweisung/BetriebsanweisungIntentSwitch';
 import { buildWorkplaceConditionsParagraph } from '@/lib/betriebsanweisung/format-workplace-context';
+import {
+  BetriebsanweisungStrikingProse,
+  hasBetriebsanweisungStrikingProse,
+} from '@/components/betriebsanweisung/BetriebsanweisungStrikingProse';
 
 type Props = {
   entry: HazardousSubstanceSeoEntry;
@@ -68,6 +72,9 @@ export function BetriebsanweisungExpertSeoSection({ entry, faqItems }: Props) {
             </Link>
             .
           </p>
+          {hasBetriebsanweisungStrikingProse(entry.slug) ? (
+            <BetriebsanweisungStrikingProse slug={entry.slug} substanceName={entry.substanceName} />
+          ) : null}
         </div>
       </section>
 

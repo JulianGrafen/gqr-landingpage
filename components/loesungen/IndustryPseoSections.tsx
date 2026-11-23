@@ -18,11 +18,10 @@ export function IndustryPseoSections({ data }: Props) {
         <div className={`${PSEO_CONTAINER}`}>
           <div className={PSEO_PROSE}>
             <h2 id="products-table-heading" className="text-2xl font-bold text-slate-900 sm:text-3xl">
-              {pseo.productsSectionTitle ?? 'Typische Gefahrstoffe in Ihrem Betrieb'}
+              Typische Gefahrstoffe in Ihrem Betrieb
             </h2>
             <p className="mt-3 text-slate-600">
-              {pseo.productsSectionIntro ??
-                'Beispiele aus der Praxis — ergänzen Sie alle Produkte, die Sie tatsächlich beziehen, lagern oder einsetzen.'}
+              Beispiele aus der Praxis — ergänzen Sie alle Produkte, die Sie tatsächlich beziehen, lagern oder einsetzen.
             </p>
           </div>
           <div className="mt-8 overflow-x-auto">
@@ -66,8 +65,7 @@ export function IndustryPseoSections({ data }: Props) {
       <section className={`${PSEO_SECTION} bg-[#0f1e35]/30 text-left`} aria-labelledby="inspection-heading">
         <div className={`${PSEO_CONTAINER} ${PSEO_PROSE}`}>
           <h2 id="inspection-heading" className="text-2xl font-bold text-[#f0f6ff] sm:text-3xl">
-            {pseo.inspectionSectionTitle ??
-              `Häufige Mängel bei Begehungen der ${pseo.berufsgenossenschaft}`}
+            Häufige Mängel bei Begehungen der {pseo.berufsgenossenschaft}
           </h2>
           <ol className="mt-6 list-decimal space-y-4 pl-5 text-sm leading-relaxed text-[#c8d4e6]">
             {pseo.inspectionDeficiencies.map((item) => (
