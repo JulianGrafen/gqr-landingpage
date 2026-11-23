@@ -1540,14 +1540,14 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  ],
  spezifischerVorteil:
  'Farbton und Härter wechseln mit Auftrag und Hersteller. Ein digitales Verzeichnis mit SDB-Historie unterstützt Betriebsanweisungen je Kabine und die Nachverfolgung von Umfüllen nach TRGS 201.',
- handwerkAbsatz:
- 'Lackierer arbeiten mit Lösemitteldämpfen und 2K-Systemen. Fehlen Mischbecher oder Härtergebilde im Verzeichnis, wird die BGW-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe aus dem Sicherheitsdatenblatt erleichtern die Vorprüfung vor der Unterweisung am Lackierpult.',
+    handwerkAbsatz:
+      'Lackierer arbeiten mit Lösemitteldämpfen und 2K-Systemen. Fehlen Mischbecher oder Härtergebilde im Verzeichnis, wird die BGHM-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe aus dem Sicherheitsdatenblatt erleichtern die Vorprüfung vor der Unterweisung am Lackierpult.',
  brancheGenitiv: 'Lackiererei',
  blogPostHref: '/wissen/',
  showSdbPreview: true,
  pseo: {
- aeoAnswer:
- 'Lackierereien führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Mischplatz, Kabine und Lager. Betriebsanweisungen nach TRGS 555 gelten für Basislack, Härter und Reiniger. Umfüllen in Messbechern löst TRGS 201 aus. Excel-Listen mit Farbcodes veralten bei Lieferantenwechsel. Gefahrstoff-QR bündelt SDB, Entwürfe und Export für die SiFa vor der BGW.',
+      aeoAnswer:
+        'Lackierereien führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Mischplatz, Kabine und Lager. Betriebsanweisungen nach TRGS 555 gelten für Basislack, Härter und Reiniger. Umfüllen in Messbechern löst TRGS 201 aus. Excel-Listen mit Farbcodes veralten bei Lieferantenwechsel. Gefahrstoff-QR bündelt SDB, Entwürfe und Export für die SiFa vor der BGHM.',
  typicalProducts: [
  {
  product: '2K-Basislack',
@@ -1589,13 +1589,13 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  inspectionDeficiencies: [
  'Härter und Mischbecher an der Kabine fehlen im Gefahrstoffverzeichnis oder ohne Mischverhältnisbezug.',
  'Betriebsanweisungen für 2K-Lacke und Spachtel sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
- 'Messbecher mit Lackresten sind weder nach TRGS 201 gekennzeichnet noch im Verzeichnis aufgeführt.',
- ],
- berufsgenossenschaft: 'BGW',
- excelComparison: [
- {
- topic: 'Neue Lieferanten-SDBs',
- excelWorkflow: 'Lackierer tippt Farbcode und Stoff in Excel ein',
+      'Messbecher mit Lackresten sind weder nach TRGS 201 gekennzeichnet noch im Verzeichnis aufgeführt.',
+    ],
+    berufsgenossenschaft: 'BGHM',
+    excelComparison: [
+      {
+        topic: 'Neue Lieferanten-SDBs',
+        excelWorkflow: 'Lackierer tippt Farbcode und Stoff in Excel ein',
  gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
  },
  {
@@ -1625,11 +1625,11 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  answer:
  'Umfüllen löst Kennzeichnung nach TRGS 201 aus. Der Becher braucht Stoff- und Gefahrenhinweise aus dem Sicherheitsdatenblatt. Das Originalkanister gehört ins Gefahrstoffverzeichnis nach § 6 GefStoffV. Eine Betriebsanweisung nach TRGS 555 beschreibt den Umgang an der Mischstation. Gefahrstoff-QR unterstützt Entwürfe zur Vorprüfung durch SiFa.',
  },
- {
- question: 'Welche BG prüft Karosserielackierereien?',
- answer:
- 'Die Berufsgenossenschaft Handel und Warenlogistik (BGW) begutachtet chemische Arbeitsstoffe und Dokumentation in Werkstatt und Kabine. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR erleichtern den Nachweis ohne getrennte Excel-Listen je Kabine.',
- },
+        {
+          question: 'Welche BG ist für Lackierereien zuständig?',
+          answer:
+            'Karosserie- und Industrielackierereien mit Metallbeschichtung fallen in der Regel zur Berufsgenossenschaft Holz und Metall (BGHM); Maler- und Lackierer im Baugewerbe zur Berufsgenossenschaft der Bauwirtschaft (BG BAU). Chemische Arbeitsstoffe und Dokumentation in Werkstatt und Kabine stehen bei Begehungen im Fokus. Die SiFa bereitet Nachweise aus § 6 GefStoffV und freigegebenen Betriebsanweisungen vor.',
+        },
  ],
  },
  },
