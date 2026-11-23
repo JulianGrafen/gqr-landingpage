@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BA_CONTAINER, BA_SECTION } from '@/components/betriebsanweisung/ba-page-layout';
+import { LIVE_DEMO_ANCHOR_ID } from '@/config/home-sections/hero';
 import { SITE_URL } from '@/config/site-seo';
 
 export type StrikingDistanceMidPageCtaCopy = {
@@ -17,7 +18,7 @@ type StrikingDistanceMidPageCtaProps = {
   variant?: 'betriebsanweisung' | 'wissen';
 };
 
-const LIVE_TEST_HREF = `${SITE_URL}/#live-demo`;
+const LIVE_DEMO_HREF = `${SITE_URL}/#${LIVE_DEMO_ANCHOR_ID}`;
 
 /**
  * Mid-page CTA (Striking Distance): oberhalb der Seitenmitte, gleiche Kartenoptik wie BA-Abschluss-CTA.
@@ -40,7 +41,7 @@ export function StrikingDistanceMidPageCta({
           <p className="mt-3 text-sm leading-relaxed text-[#8fa4c0]">{copy.body}</p>
           <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:justify-center">
             <a
-              href={LIVE_TEST_HREF}
+              href={LIVE_DEMO_HREF}
               className="gqr-cta-primary gqr-cta-primary--md inline-flex justify-center no-underline"
             >
               {copy.primaryLabel}
