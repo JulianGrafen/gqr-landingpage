@@ -56,6 +56,13 @@ export const FOOTER_INDUSTRY_LINKS = [
   { label: 'Tankstelle', href: '/loesungen/tankstelle/' },
   { label: 'Druckerei', href: '/loesungen/druckerei/' },
   { label: 'Bäckerei', href: '/loesungen/baeckerei/' },
+  { label: 'SiFa & Mandanten', href: '/loesungen/sifa-mehrere-mandanten/' },
+  { label: 'Fliesenleger', href: '/loesungen/fliesenleger/' },
+  { label: 'SHK-Betrieb', href: '/loesungen/shk-betrieb/' },
+  { label: 'Lackiererei', href: '/loesungen/lackiererei/' },
+  { label: 'Tischlerei', href: '/loesungen/tischlerei/' },
+  { label: 'Gastronomie', href: '/loesungen/gastronomie/' },
+  { label: 'Steinmetz', href: '/loesungen/steinmetz/' },
 ] as const satisfies readonly FooterLink[];
 
 export const FOOTER_BA_SAMPLE_LINKS = [
