@@ -37,9 +37,13 @@ export const INDUSTRY_SLUGS = [
   'tankstelle',
   'druckerei',
   'baeckerei',
+  'sifa-mehrere-mandanten',
   'fliesenleger',
   'shk-betrieb',
   'lackiererei',
+  'tischlerei',
+  'gastronomie',
+  'steinmetz',
 ] as const;
 
 export type IndustrySlug = (typeof INDUSTRY_SLUGS)[number];
@@ -75,6 +79,14 @@ export interface IndustrySolution {
  substanceOverview?: IndustrySubstanceOverview;
  /** Tabellen, AEO, FAQs und Vergleich (pSEO-Branchenseiten). */
  pseo?: IndustryPseoContent;
+ /** Optional: Kicker statt „Branchenlösung“ (z. B. Persona-Seiten). */
+ heroKicker?: string;
+ /** Optional: Primär-CTA im Hero und Abschluss. */
+ primaryCta?: { readonly href: string; readonly label: string };
+ /** Optional: Links neben dem Primär-CTA. */
+ heroSecondaryLinks?: readonly { readonly label: string; readonly href: string }[];
+ /** Optional: Abschnitt „Häufige Gefahrstoffe“ (Listenblock). */
+ stoffeListSection?: { readonly title: string; readonly intro: string };
 }
 
 export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
@@ -86,9 +98,9 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  // - diese Seite: kommerzieller Intent „Gefahrstoff-Software / Lösung Kfz“
  // - /wissen/gefahrstoffverzeichnis-muster-kfz-werkstatt/: informatorischer Muster-/Pflicht-Check,
  //   verlinkt per InternalSolutionBanner oben und unten hierher.
- metaTitle: 'Gefahrstoffverzeichnis Kfz-Werkstatt: Kataster & QR',
+ metaTitle: 'Gefahrstoff-Software Kfz-Werkstatt: Kataster & QR-Codes',
  metaDescription:
- 'Gefahrstoffverzeichnis Kfz-Werkstatt: SDB einlesen, Betriebsanweisungen und QR-Codes an Schrank und Hebebühne. Kostenlos testen, ohne Excel.',
+ 'Schluss mit Excel-Chaos in der Werkstatt: Sicherheitsdatenblätter für Bremsenreiniger, Öle & Lacke per PDF einlesen und QR-Codes an den Schrank hängen.',
  staticHero: {
  eyebrow: 'Gefahrstoff-Software für Kfz-Werkstätten',
  headline: 'Gefahrstoff­kataster, Betriebs­anweisungen & QR-Codes',
@@ -1300,6 +1312,143 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  ],
  },
  },
+ 'sifa-mehrere-mandanten': {
+ slug: 'sifa-mehrere-mandanten',
+ label: 'SiFa & Mandanten',
+ title: 'Gefahrstoffmanagement für externe SiFa: Kataster, TRGS 555 & Mandanten',
+ metaTitle: 'SiFa Gefahrstoffverzeichnis: mehrere Mandanten',
+ metaDescription:
+ 'Externe SiFa und Arbeitsschutzbüros: Gefahrstoffverzeichnisse und Betriebsanweisungen mehrerer Kundenbetriebe pflegen, ohne Excel-Chaos und SDB-Anhänge.',
+ heroKicker: 'Lösung für externe SiFa',
+ primaryCta: { href: '/#live-demo', label: 'SDB hochladen und Entwurf prüfen' },
+ heroSecondaryLinks: [
+ { label: 'Startseite', href: '/' },
+ { label: 'TRGS-510-Checker', href: '/trgs-510-zusammenlagerungs-check/' },
+ { label: 'Gefahrstoffmanagement Software', href: '/wissen/gefahrstoffmanagement-software/' },
+ ],
+ heroLeadParagraphs: [
+ 'Sie betreuen mehrere Kundenbetriebe mit Gefahrstoffverzeichnis, Betriebsanweisungen und Freigaben nach § 14 GefStoffV. Statt verstreuter Excel-Dateien und Sicherheitsdatenblätter per E-Mail bündelt Gefahrstoff-QR Mandanten, Werke und Tätigkeiten getrennt in einem Zugang.',
+ 'Der Tarif SiFa Multi-Mandant unterstützt die Mandantentrennung; Sie prüfen KI-gestützte Entwürfe (gemäß TRGS 555) als Vorprüfung zur fachlichen Freigabe durch die SiFa bzw. den Arbeitgeber.',
+ ],
+ heroUspBullets: [
+ 'SDB hochladen, Entwurf zur fachlichen Prüfung, QR-Code am Gefahrstoffschrank',
+ 'Mandanten-, Werks- und Tätigkeitstrennung im SiFa Multi-Mandant-Tarif',
+ 'Begehungs-Modus: Stoffe vorab erfassen, auch wenn das SDB noch fehlt',
+ 'PDF- und Excel-Export des Gefahrstoffverzeichnisses je Mandant',
+ ],
+ heroText:
+ 'Externe Fachkräfte für Arbeitssicherheit jonglieren Mandantenlisten, SDB-Postfächer und alte Betriebsanweisungen. Ein klarer Stand je Kundenbetrieb reduziert Nacharbeit vor der Begehung.',
+ typischeStoffe: [
+ 'Verstreute Excel-Listen je Mandant',
+ 'Sicherheitsdatenblätter per E-Mail ohne zentrales Archiv',
+ 'Unklarer Revisionsstand der Betriebsanweisungen',
+ 'Werks- und Tätigkeiten ohne saubere Zuordnung',
+ 'Unterweisung ohne Bezug zum Gefahrstoffverzeichnis',
+ ],
+ stoffeListSection: {
+ title: 'Typische Pain Points bei mehreren Mandanten',
+ intro:
+ 'Diese Engpässe sehen externe SiFas und Arbeitsschutzdienstleister häufig, wenn Gefahrstoffe über viele Kundenbetriebe hinweg gepflegt werden.',
+ },
+ spezifischerVorteil:
+ 'Im SiFa Multi-Mandant-Tarif führen Sie jeden Kundenbetrieb als Mandanten mit eigenen Werken. Stoffe, Sicherheitsdatenblätter und Betriebsanweisungs-Entwürfe bleiben getrennt, Batch-Upload und Exporte unterstützen die Pflege zwischen zwei Begehungen.',
+ handwerkAbsatz:
+ 'Ohne Trennung vermischen sich Daten: ein SDB-Update beim Malerbetrieb landet in der Liste des Metallbauers, eine alte Betriebsanweisung liegt noch im Freigabeordner. Gefahrstoff-QR strukturiert Mandant, Werk und Tätigkeit, damit Sie vor der Fachfreigabe den richtigen Entwurf prüfen und den Mandanten exportieren können.',
+ brancheGenitiv: 'Mandantenportfolio',
+ blogPostHref: '/wissen/gefahrstoffkataster-software/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Externe Fachkräfte für Arbeitssicherheit und Arbeitsschutzbüros führen für jeden Kundenbetrieb ein Gefahrstoffverzeichnis nach § 6 GefStoffV und Betriebsanweisungen nach TRGS 555. Sie bleiben fachlich verantwortlich für Prüfung und Freigabe. Gefahrstoff-QR unterstützt mit Mandantentrennung im SiFa Multi-Mandant-Tarif, KI-gestützten Entwürfen aus dem Sicherheitsdatenblatt, Begehungs-Modus und Exporten je Mandant.',
+ productsSectionTitle: 'Typische Mandanten-Situationen im Gefahrstoffalltag',
+ productsSectionIntro:
+ 'Statt Einzelstoffe listet diese Tabelle wiederkehrende Pflichtthemen, die SiFas über verschiedene Kundenbetriebe hinweg begleiten.',
+ typicalProducts: [
+ {
+ product: 'Handwerksbetrieb mit Lösemitteln',
+ gebinde: 'Kanister, Sprühdosen je Werkstatt',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Verzeichnis je Mandant, BA-Entwurf zur Freigabe',
+ },
+ {
+ product: 'Gebäudereinigung mit Konzentraten',
+ gebinde: 'Kanister, Umgefüllte Flaschen',
+ hazardKind: 'ätzend oder reizend',
+ workplaceDuty: 'Werkszuordnung, TRGS 201 beim Umfüllen beachten',
+ },
+ {
+ product: 'Malerbetrieb mit Dispersionsfarben',
+ gebinde: 'Eimer, Farbtonnendosen',
+ hazardKind: 'reizend, sensibilisierend',
+ workplaceDuty: 'SDB archivieren, Betriebsanweisung an Lager und Baustelle',
+ },
+ {
+ product: 'Metallbau mit Schweißzusätzen',
+ gebinde: 'Stäbe, Spulen, Reiniger',
+ hazardKind: 'reizend, staubbelastet',
+ workplaceDuty: 'Tätigkeiten zuordnen, Entwurf zur Vorprüfung',
+ },
+ {
+ product: 'Kfz-Betrieb mit Reinigern und Ölen',
+ gebinde: 'Kanister, Aerosole',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Begehungserfassung, später SDB nachreichen',
+ },
+ {
+ product: 'Labor oder Praxis mit Desinfektionsmitteln',
+ gebinde: 'Flaschen, Kanister',
+ hazardKind: 'reizend, biologisch wirksam',
+ workplaceDuty: 'Mandant getrennt halten, Export vor BG-Termin',
+ },
+ ],
+ inspectionSectionTitle: 'Typische Engpässe bei mehreren Mandanten',
+ inspectionDeficiencies: [
+ 'Jeder Kundenbetrieb nutzt eine eigene Excel-Datei. Sie finden keinen gemeinsamen Revisionsstand für Verzeichnis und Sicherheitsdatenblätter.',
+ 'Lieferanten schicken SDBs als E-Mail-Anhang. Ohne Archiv je Mandant wissen Sie nicht, welche Version für die Betriebsanweisung maßgeblich ist.',
+ 'Betriebsanweisungen und Unterweisungen hängen am falschen Ordner oder Mandanten. Freigaben laufen in alten Word-Dateien parallel zum Verzeichnis.',
+ ],
+ berufsgenossenschaft: 'Betreuung',
+ excelComparison: [
+ {
+ topic: 'Neue SDBs je Mandant',
+ excelWorkflow: 'Anhänge pro Kunde manuell in Listen übertragen',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem PDF mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Betriebsanweisungen je Betrieb',
+ excelWorkflow: 'Word-Dateien in getrennten Ordnern ohne Versionsstand',
+ gqrWorkflow: 'Entwurf zur Vorprüfung mit Revisionsverlauf je Mandant',
+ },
+ {
+ topic: 'Zugriff beim Kunden',
+ excelWorkflow: 'Ordner auf dem Notebook oder E-Mail an den Betriebsleiter',
+ gqrWorkflow: 'QR-Zugriff auf SDB und freigegebene BA am Einsatzort',
+ },
+ {
+ topic: 'Nachweis vor der Begehung',
+ excelWorkflow: 'Listen manuell je Mandant zusammenstellen',
+ gqrWorkflow: 'PDF- oder Excel-Export des Verzeichnisses je Mandant',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Gibt es bei Gefahrstoff-QR echte Mandantentrennung für externe SiFas?',
+ answer:
+ 'Ja, im Tarif SiFa Multi-Mandant führen Sie Kundenbetriebe als Mandanten mit Werken und Tätigkeiten strikt getrennt. Bis zu fünfzehn Mandantenbetriebe sind im Grundpreis vorgesehen, weitere Mandanten skalieren per Zehner-Block. Die fachliche Freigabe von Verzeichnis und Betriebsanweisung bleibt bei Ihnen oder dem Arbeitgeber.',
+ },
+ {
+ question: 'Wie hilft Gefahrstoff-QR, wenn beim Rundgang kein SDB vorliegt?',
+ answer:
+ 'Im Begehungs-Modus erfassen Sie Stoffe ohne vorliegendes Sicherheitsdatenblatt oder Mengenangabe. Offene Felder werden im Export farblich markiert und können später nachgepflegt werden, wenn der Kunde das PDF nachreicht. So entsteht kein Leerloch im externen Mandantenverzeichnis zwischen zwei Begehungen am Kundenbetrieb.',
+ },
+ {
+ question: 'Was bleibt bei der fachlichen Verantwortung der SiFa?',
+ answer:
+ 'Gefahrstoff-QR liefert KI-gestützte Entwürfe für Verzeichnis und Betriebsanweisung (gemäß TRGS 555) als Vorprüfung zur fachlichen Freigabe durch die SiFa bzw. den Arbeitgeber (§ 14 GefStoffV). Sie entscheiden über Inhalt, Unterweisung und Nachweise. Kein Entwurf ersetzt Ihre Prüfung vor Ort oder vor der BG-Begehung.',
+ },
+ ],
+ },
+ },
  fliesenleger: {
  slug: 'fliesenleger',
  label: 'Fliesenleger',
@@ -1540,14 +1689,14 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  ],
  spezifischerVorteil:
  'Farbton und Härter wechseln mit Auftrag und Hersteller. Ein digitales Verzeichnis mit SDB-Historie unterstützt Betriebsanweisungen je Kabine und die Nachverfolgung von Umfüllen nach TRGS 201.',
- handwerkAbsatz:
- 'Lackierer arbeiten mit Lösemitteldämpfen und 2K-Systemen. Fehlen Mischbecher oder Härtergebilde im Verzeichnis, wird die BGW-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe aus dem Sicherheitsdatenblatt erleichtern die Vorprüfung vor der Unterweisung am Lackierpult.',
+    handwerkAbsatz:
+      'Lackierer arbeiten mit Lösemitteldämpfen und 2K-Systemen. Fehlen Mischbecher oder Härtergebilde im Verzeichnis, wird die BGHM-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe aus dem Sicherheitsdatenblatt erleichtern die Vorprüfung vor der Unterweisung am Lackierpult.',
  brancheGenitiv: 'Lackiererei',
  blogPostHref: '/wissen/',
  showSdbPreview: true,
  pseo: {
- aeoAnswer:
- 'Lackierereien führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Mischplatz, Kabine und Lager. Betriebsanweisungen nach TRGS 555 gelten für Basislack, Härter und Reiniger. Umfüllen in Messbechern löst TRGS 201 aus. Excel-Listen mit Farbcodes veralten bei Lieferantenwechsel. Gefahrstoff-QR bündelt SDB, Entwürfe und Export für die SiFa vor der BGW.',
+      aeoAnswer:
+        'Lackierereien führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Mischplatz, Kabine und Lager. Betriebsanweisungen nach TRGS 555 gelten für Basislack, Härter und Reiniger. Umfüllen in Messbechern löst TRGS 201 aus. Excel-Listen mit Farbcodes veralten bei Lieferantenwechsel. Gefahrstoff-QR bündelt SDB, Entwürfe und Export für die SiFa vor der BGHM.',
  typicalProducts: [
  {
  product: '2K-Basislack',
@@ -1589,13 +1738,13 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  inspectionDeficiencies: [
  'Härter und Mischbecher an der Kabine fehlen im Gefahrstoffverzeichnis oder ohne Mischverhältnisbezug.',
  'Betriebsanweisungen für 2K-Lacke und Spachtel sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
- 'Messbecher mit Lackresten sind weder nach TRGS 201 gekennzeichnet noch im Verzeichnis aufgeführt.',
- ],
- berufsgenossenschaft: 'BGW',
- excelComparison: [
- {
- topic: 'Neue Lieferanten-SDBs',
- excelWorkflow: 'Lackierer tippt Farbcode und Stoff in Excel ein',
+      'Messbecher mit Lackresten sind weder nach TRGS 201 gekennzeichnet noch im Verzeichnis aufgeführt.',
+    ],
+    berufsgenossenschaft: 'BGHM',
+    excelComparison: [
+      {
+        topic: 'Neue Lieferanten-SDBs',
+        excelWorkflow: 'Lackierer tippt Farbcode und Stoff in Excel ein',
  gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
  },
  {
@@ -1625,10 +1774,343 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  answer:
  'Umfüllen löst Kennzeichnung nach TRGS 201 aus. Der Becher braucht Stoff- und Gefahrenhinweise aus dem Sicherheitsdatenblatt. Das Originalkanister gehört ins Gefahrstoffverzeichnis nach § 6 GefStoffV. Eine Betriebsanweisung nach TRGS 555 beschreibt den Umgang an der Mischstation. Gefahrstoff-QR unterstützt Entwürfe zur Vorprüfung durch SiFa.',
  },
+        {
+          question: 'Welche BG ist für Lackierereien zuständig?',
+          answer:
+            'Karosserie- und Industrielackierereien mit Metallbeschichtung fallen in der Regel zur Berufsgenossenschaft Holz und Metall (BGHM); Maler- und Lackierer im Baugewerbe zur Berufsgenossenschaft der Bauwirtschaft (BG BAU). Chemische Arbeitsstoffe und Dokumentation in Werkstatt und Kabine stehen bei Begehungen im Fokus. Die SiFa bereitet Nachweise aus § 6 GefStoffV und freigegebenen Betriebsanweisungen vor.',
+        },
+ ],
+ },
+ },
+ tischlerei: {
+ slug: 'tischlerei',
+ label: 'Tischlerei',
+ title: 'Gefahrstoffmanagement in der Tischlerei: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Tischlerei & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Tischlerei: Beizen, Lacke, Kleber — § 6 GefStoffV, TRGS 555 und TRGS 201 für Werkstatt und Möbelbau in Gefahrstoff-QR.',
+ heroText:
+ 'Lösemittel in Lacken, Beizen und Klebern liegen in der Werkstatt, im Lager und auf der Montage. Verzeichnis, Betriebsanweisungen und Kennzeichnung müssen zu Aufträgen und Lieferantenwechseln passen.',
+ typischeStoffe: [
+ 'Holzbeizen und Ätzmittel',
+ 'PU- und Kontaktkleber',
+ 'Nitro- und Wasserlacke',
+ 'Lösemittelhaltige Reiniger und Verdünner',
+ 'Harze und Spachtelmassen',
+ ],
+ spezifischerVorteil:
+ 'Kleinserien und wechselnde Anstriche erzeugen viele Hilfsstoffe. Ein digitales Verzeichnis mit SDB-Bezug hilft, Betriebsanweisungen je Arbeitsplatz freizugeben und Umfüllen nach TRGS 201 im Schreinerlager nachzuhalten.',
+ handwerkAbsatz:
+ 'Tischlereien arbeiten zwischen Werkstatt und Montage beim Kunden. Fehlen Umfüllgebinde oder aktuelle SDBs im Verzeichnis, wird die BGHM-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe verkürzen die Pflege zwischen Aufträgen.',
+ brancheGenitiv: 'Tischlerei',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Tischlereien führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Werkstatt und Lager. Betriebsanweisungen nach TRGS 555 gelten für Beizen, Lacke und Kleber. Umfüllen in Anschlagbehältern löst Kennzeichnung nach TRGS 201 aus. Excel-Listen scheitern bei wechselnden Stücklisten. Gefahrstoff-QR verknüpft SDB, Entwürfe und Export für SiFa und BGHM.',
+ typicalProducts: [
  {
- question: 'Welche BG prüft Karosserielackierereien?',
+ product: 'Holzbeize (wasserbasiert oder lösemittelhaltig)',
+ gebinde: 'Kanister 5 Liter, Flasche',
+ hazardKind: 'ätzend, reizend',
+ workplaceDuty: 'Verzeichnis, Betriebsanweisung am Beiztisch, Unterweisung vor Farbtonmischung',
+ },
+ {
+ product: 'Nitro- oder PU-Lack',
+ gebinde: 'Kanister, Spraydose',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Lagerort dokumentieren, BA am Lackierplatz bereitstellen',
+ },
+ {
+ product: 'Kontaktkleber (Polychloropren)',
+ gebinde: 'Eimer, Tube',
+ hazardKind: 'entzündbar, sensibilisierend',
+ workplaceDuty: 'Eintrag Lager, SDB archivieren, Unterweisung Schreiner',
+ },
+ {
+ product: 'Lackverdünner / Beizverdünnung',
+ gebinde: 'Kanister 10 Liter',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Verzeichnis aktuell halten',
+ },
+ {
+ product: 'Epoxid-Spachtel (2K)',
+ gebinde: 'Eimer, Kartusche',
+ hazardKind: 'sensibilisierend',
+ workplaceDuty: 'Mischgebinde im Verzeichnis, BA nach Freigabe SiFa',
+ },
+ {
+ product: 'Holzschutzmittel',
+ gebinde: 'Eimer, Kanister',
+ hazardKind: 'entzündbar, sensibilisierend',
+ workplaceDuty: 'Verzeichniseintrag, Unterweisung vor Imprägnierung',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Lacke, Beizen und Kleber in Werkstatt und Lager fehlen im Gefahrstoffverzeichnis oder ohne Arbeitsplatzbezug.',
+ 'Betriebsanweisungen für Beizen und Lacke sind veraltet oder ohne aktuelles Sicherheitsdatenblatt des Lieferanten.',
+ 'Beschriftete Anschlag- und Sprühflaschen am Beiztisch stehen nicht im Verzeichnis oder ohne TRGS-201-Bezug.',
+ ],
+ berufsgenossenschaft: 'BGHM',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Werkstattmeister tippt Lacke in Excel ab',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Weiße Flaschen ohne Stoffname am Montageplatz',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA am Lagerregal',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Werkstattleitung',
+ gqrWorkflow: 'QR am Lackiertisch, Beizbecken oder Kleberegal',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'Excel und SDB-PDFs aus mehreren Aufträgen sammeln',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Braucht eine kleine Tischlerei ein Gefahrstoffverzeichnis?',
  answer:
- 'Die Berufsgenossenschaft Handel und Warenlogistik (BGW) begutachtet chemische Arbeitsstoffe und Dokumentation in Werkstatt und Kabine. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR erleichtern den Nachweis ohne getrennte Excel-Listen je Kabine.',
+ 'Ja, sobald Gefahrstoffe eingesetzt oder gelagert werden. Beizen, Lacke und Kleber gelten nach § 2 GefStoffV. Das Verzeichnis nach § 6 GefStoffV muss alle Gebinde und Arbeitsplätze abbilden. Auch Meisterbetriebe mit wenigen Beschäftigten nutzen lösemittelhaltige Hilfsstoffe. Gefahrstoff-QR unterstützt Pflege und Vorprüfung durch SiFa oder Betriebsinhaber.',
+ },
+ {
+ question: 'Wie dokumentiere ich Umfüllen von Beize in Anschlagbehälter?',
+ answer:
+ 'Beim Umfüllen entsteht ein neues Arbeitsmittel nach TRGS 201. Es braucht Kennzeichnung mit Stoff- und Gefahrenhinweisen aus dem SDB. Parallel gehört das Gebinde ins Gefahrstoffverzeichnis. Eine Betriebsanweisung nach TRGS 555 wird für den Beizplatz benötigt und von der SiFa freigegeben. Digitale Erfassung erleichtert Updates bei Rezepturwechsel.',
+ },
+ {
+ question: 'Welche BG begutachtet Gefahrstoffe in der Tischlerei?',
+ answer:
+ 'Die Berufsgenossenschaft Holz und Metall (BGHM) prüft chemische Arbeitsstoffe und Dokumentation in Werkstatt und Montage. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR erleichtern den Nachweis gegenüber der BGHM.',
+ },
+ ],
+ },
+ },
+ gastronomie: {
+ slug: 'gastronomie',
+ label: 'Gastronomie',
+ title: 'Gefahrstoffmanagement in der Gastronomie: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Gastronomie & Küche',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Gastronomie: Reiniger, Fettlöser, Flüssiggas — § 6 GefStoffV, TRGS 555 und TRGS 201 für Küche und Lager in Gefahrstoff-QR.',
+ heroText:
+ 'Spül- und Fettlöser, Entkalker und Flüssiggas stehen in Küche, Spülkeller und Lager. Verzeichnis, Betriebsanweisungen und Kennzeichnung müssen zu Schichtbetrieb und Lieferantenwechsel passen.',
+ typischeStoffe: [
+ 'Alkalische Spül- und Fettlöser',
+ 'Säurehaltige Entkalker',
+ 'Grill- und Ofenreiniger',
+ 'Flüssiggas für Kochtechnik',
+ 'Desinfektionsmittel in Küche und Gastraum',
+ ],
+ spezifischerVorteil:
+ 'Wechselnde Lieferanten und Aushilfskräfte machen Papierlisten anfällig. Ein digitales Verzeichnis mit SDB-Bezug hilft, Betriebsanweisungen je Küchenbereich freizugeben und Umfüllen nach TRGS 201 an der Spüle nachzuhalten.',
+ handwerkAbsatz:
+ 'In der Küche überlagern sich Reinigung, Kaltetechnik und Grillbetrieb. Wenn Sprühflaschen neben dem Herd nicht im Verzeichnis stehen, wird die BGN-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe verkürzen die Pflege bei neuen Konzentraten.',
+ brancheGenitiv: 'Gastronomie',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Gastronomiebetriebe führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Küche, Spülkeller und Lager. Betriebsanweisungen nach TRGS 555 gelten für Spül-, Fett- und Grillreiniger. Umfüllen in Sprühflaschen erfordert Kennzeichnung nach TRGS 201. Excel-Listen veralten bei Aushilfen und Saisonwechsel. Gefahrstoff-QR verbindet SDB, Entwürfe und Export für SiFa und BGN.',
+ typicalProducts: [
+ {
+ product: 'Alkalischer Fettlöser für Grill und Pfanne',
+ gebinde: 'Kanister, Dosierflasche',
+ hazardKind: 'ätzend, reizend',
+ workplaceDuty: 'Verzeichnis, Betriebsanweisung Spülbereich, Unterweisung Küchenteam',
+ },
+ {
+ product: 'Grill- und Ofenreiniger',
+ gebinde: 'Spraydose, Flasche',
+ hazardKind: 'ätzend oder entzündbar',
+ workplaceDuty: 'Eintrag Küche, BA vor heißer Oberfläche bereitstellen',
+ },
+ {
+ product: 'Flüssiggas (Propangemisch)',
+ gebinde: 'Flasche 11 kg, Pfandflasche',
+ hazardKind: 'entzündbares Gas, druckgasförmig',
+ workplaceDuty: 'Menge und Lagerort im Verzeichnis, Unterweisung vor Flaschenwechsel',
+ },
+ {
+ product: 'Entkalker für Spültechnik',
+ gebinde: 'Kanister 5 Liter',
+ hazardKind: 'ätzend',
+ workplaceDuty: 'SDB archivieren, Umfüllen nach TRGS 201 dokumentieren',
+ },
+ {
+ product: 'Spülmittel-Konzentrat (maschinell)',
+ gebinde: 'Kanister 10 Liter',
+ hazardKind: 'reizend, alkalisch',
+ workplaceDuty: 'Lagerort Spülkeller, BA und Unterweisung dokumentieren',
+ },
+ {
+ product: 'Flächendesinfektion Gastraum',
+ gebinde: 'Sprühflasche, Kanister',
+ hazardKind: 'reizend oder entzündbar',
+ workplaceDuty: 'Umfüllgebinde kennzeichnen, Verzeichnis aktuell halten',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Spül- und Grillreiniger in Küche und Spülkeller fehlen im Gefahrstoffverzeichnis.',
+ 'Betriebsanweisungen für Fettlöser und Ofenreiniger sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Beschriftete Sprühflaschen an Spüle und Grillstation sind nicht nach TRGS 201 im Verzeichnis erfasst.',
+ ],
+ berufsgenossenschaft: 'BGN',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Küchenchef tippt Reiniger in Excel ab',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unmarkierte Flaschen an der Spülmaschine',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA am Küchenregal',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner im Büro oder Chefbüro',
+ gqrWorkflow: 'QR an Spüle, Grill oder Lagerflaschenregal',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'Listen und SDBs aus Küche und Nebenräumen sammeln',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Braucht ein Restaurant mit kleiner Küche ein Gefahrstoffverzeichnis?',
+ answer:
+ 'Ja, sobald Gefahrstoffe eingesetzt oder gelagert werden. Fettlöser, Entkalker und Flüssiggas gelten nach § 2 GefStoffV. Das Verzeichnis nach § 6 GefStoffV muss Küche und Lager abdecken. Auch kleine Gaststätten nutzen alkalische Reiniger täglich. Gefahrstoff-QR unterstützt Pflege und Vorprüfung durch SiFa oder Betriebsleitung vor Unterweisung.',
+ },
+ {
+ question: 'Wie dokumentiere ich Flüssiggas für den Herd?',
+ answer:
+ 'Propangemische gehören mit Mengenbereich und Lagerort ins Gefahrstoffverzeichnis. Das Sicherheitsdatenblatt wird archiviert. Eine Betriebsanweisung nach TRGS 555 beschreibt Umgang, Flaschenwechsel und Unterweisung. Bei Befüllung kleiner Gebinde gilt TRGS 201. Gefahrstoff-QR unterstützt Entwürfe zur fachlichen Freigabe durch SiFa oder Küchenleitung am Herd.',
+ },
+ {
+ question: 'Welche BG prüft Gefahrstoffe in der Gastronomie?',
+ answer:
+ 'Die Berufsgenossenschaft Nahrungsmittel und Gastgewerbe (BGN) begutachtet chemische Arbeitsstoffe und Dokumentation in Küche und Betrieb. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Digitale Exporte aus Gefahrstoff-QR erleichtern den Nachweis bei Schichtbetrieb.',
+ },
+ ],
+ },
+ },
+ steinmetz: {
+ slug: 'steinmetz',
+ label: 'Steinmetz',
+ title: 'Gefahrstoffmanagement im Steinmetzbetrieb: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Steinmetz & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Steinmetz: Diamantpaste, Klebstoffe, Impregnierung — § 6 GefStoffV, TRGS 555 und TRGS 201 für Werkstatt in Gefahrstoff-QR.',
+ heroText:
+ 'Schleif- und Poliermittel, Epoxidkleber und Imprägniermittel liegen in Werkstatt, Lager und auf Baustellen. Verzeichnis, Betriebsanweisungen und Kennzeichnung müssen zu Naturstein und Montage passen.',
+ typischeStoffe: [
+ 'Diamant- und Poliersuspensionen',
+ 'Epoxid- und Polyesterkleber',
+ 'Imprägniermittel für Naturstein',
+ 'Hydraulik- und Schleiföle an Maschinen',
+ 'Reiniger für Stein und Werkzeuge',
+ ],
+ spezifischerVorteil:
+ 'Werkstatt und Grabmalmontage nutzen unterschiedliche Klebersysteme. Ein digitales Verzeichnis mit SDB-Bezug hilft, Betriebsanweisungen je Bearbeitungsschritt freizugeben und Umfüllen nach TRGS 201 am Schleifplatz nachzuhalten.',
+ handwerkAbsatz:
+ 'Steinmetze arbeiten zwischen Werkstatt und Friedhof oder Baustelle. Fehlen Kleberkartuschen im Verzeichnis, wird die BG BAU-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe verkürzen die Pflege bei neuen Imprägniermitteln.',
+ brancheGenitiv: 'Steinmetzbetrieb',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Steinmetzbetriebe führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Werkstatt und Baustelle. Betriebsanweisungen nach TRGS 555 gelten für Kleber, Poliermittel und Imprägniermittel. Umfüllen in Handbehältern löst Kennzeichnung nach TRGS 201 aus. Excel-Listen brechen bei wechselnden Aufträgen ein. Gefahrstoff-QR verknüpft SDB, Entwürfe und Nachweise für SiFa und BG BAU.',
+ typicalProducts: [
+ {
+ product: 'Diamantpoliersuspension',
+ gebinde: 'Flasche, Kanister',
+ hazardKind: 'reizend, gesundheitsschädlich bei Einatmen',
+ workplaceDuty: 'Verzeichnis Schleifplatz, Betriebsanweisung, Unterweisung vor Nasspolieren',
+ },
+ {
+ product: 'Epoxid-Steinkleber (2K)',
+ gebinde: 'Kartusche, Eimer',
+ hazardKind: 'sensibilisierend, reizend',
+ workplaceDuty: 'Eintrag Werkstatt, SDB archivieren, Freigabe SiFa vor Montage',
+ },
+ {
+ product: 'Steinimprägniermittel',
+ gebinde: 'Kanister 5 Liter',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Lagerort dokumentieren, BA am Ausführplatz bereitstellen',
+ },
+ {
+ product: 'Schleif- und Hydrauliköl an der Säge',
+ gebinde: 'Kanister, Gebinde am Aggregat',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Verzeichniseintrag Maschine, Unterweisung Bediener',
+ },
+ {
+ product: 'Reiniger für Naturstein',
+ gebinde: 'Kanister, Spray',
+ hazardKind: 'ätzend oder entzündbar',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Verzeichnis pflegen',
+ },
+ {
+ product: 'Polyester-Vergussmasse (Abdichtung)',
+ gebinde: 'Kartusche, Eimer',
+ hazardKind: 'sensibilisierend',
+ workplaceDuty: 'Baustellen- oder Werkstatteintrag, BA nach TRGS 555',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Kleber, Poliermittel und Imprägniermittel fehlen im Gefahrstoffverzeichnis oder ohne Arbeitsplatzbezug.',
+ 'Betriebsanweisungen für Epoxidkleber und Schleifmittel sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Handbehälter und Sprühflaschen an Schleif- und Montageplätzen sind nicht nach TRGS 201 dokumentiert.',
+ ],
+ berufsgenossenschaft: 'BG BAU',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Polier tippt Kleber in Excel je Auftrag ab',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unbeschriftete Flaschen am Schleiftisch',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA am Werkstattregal',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Werkstattleitung oder Bauramme',
+ gqrWorkflow: 'QR am Schleifplatz, Kleberegal oder Montagewagen',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'Listen und SDBs aus Werkstatt und Baustelle sammeln',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Braucht ein Steinmetzbetrieb ein Gefahrstoffverzeichnis?',
+ answer:
+ 'Ja, sobald Gefahrstoffe eingesetzt oder gelagert werden. Kleber, Poliermittel und Reiniger gelten nach § 2 GefStoffV. Das Verzeichnis nach § 6 GefStoffV muss Werkstatt und Montageorte abdecken. Auch kleine Betriebe nutzen Epoxidkleber und Imprägniermittel. Gefahrstoff-QR unterstützt Pflege und Vorprüfung durch SiFa oder Meister vor Unterweisung.',
+ },
+ {
+ question: 'Wie dokumentiere ich Epoxidkleber bei Grabmalmontage?',
+ answer:
+ 'Der Stoff wird im Verzeichnis mit Gebinde und Einsatzort geführt. Das Sicherheitsdatenblatt wird archiviert. Eine Betriebsanweisung nach TRGS 555 beschreibt Mischung, Kontakt und Unterweisung vor Ort. Reste in Handkartuschen können TRGS 201 auslösen. Gefahrstoff-QR unterstützt Entwürfe zur fachlichen Freigabe durch SiFa oder Polier.',
+ },
+ {
+ question: 'Welche BG begutachtet Gefahrstoffe beim Steinmetz?',
+ answer:
+ 'Die Berufsgenossenschaft der Bauwirtschaft (BG BAU) prüft chemische Arbeitsstoffe und Dokumentation in Werkstatt und auf Montage. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR erleichtern den Nachweis auf der Baustelle.',
  },
  ],
  },
