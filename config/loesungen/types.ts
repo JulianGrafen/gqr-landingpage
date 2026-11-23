@@ -25,6 +25,11 @@ export interface IndustryPseoContent {
   inspectionDeficiencies: readonly [string, string, string];
   /** Zuständige BG für den Mängel-Abschnitt, z. B. „BGW“. */
   berufsgenossenschaft: string;
+  /** Optional: eigene Überschrift statt „Häufige Mängel bei Begehungen der …“. */
+  inspectionSectionTitle?: string;
+  /** Optional: Tabellen-Überschrift (Default: Typische Gefahrstoffe …). */
+  productsSectionTitle?: string;
+  productsSectionIntro?: string;
   excelComparison: readonly IndustryExcelCompareRow[];
   faqItems: readonly [SeoFaqItem, SeoFaqItem, SeoFaqItem];
 }

@@ -11,6 +11,7 @@ const PSEO_REQUIRED_SLUGS = [
   'tankstelle',
   'druckerei',
   'baeckerei',
+  'sifa-mehrere-mandanten',
 ] as const;
 
 const BANNED_LOESUNGEN_COPY = [

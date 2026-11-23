@@ -15,6 +15,7 @@ import {
   Fuel,
   Printer,
   Croissant,
+  ShieldCheck,
 } from 'lucide-react';
 import { getAllIndustries, type IndustrySlug } from '@/config/industry-solutions';
 
@@ -33,6 +34,7 @@ const ICONS: Record<IndustrySlug, LucideIcon> = {
   tankstelle: Fuel,
   druckerei: Printer,
   baeckerei: Croissant,
+  'sifa-mehrere-mandanten': ShieldCheck,
 };
 
 /**

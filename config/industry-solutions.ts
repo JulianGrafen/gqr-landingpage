@@ -37,6 +37,7 @@ export const INDUSTRY_SLUGS = [
   'tankstelle',
   'druckerei',
   'baeckerei',
+  'sifa-mehrere-mandanten',
 ] as const;
 
 export type IndustrySlug = (typeof INDUSTRY_SLUGS)[number];
@@ -70,8 +71,16 @@ export interface IndustrySolution {
  staticHero?: HeroCopy;
  /** „Typische Gefahrstoffe auf einen Blick“ mit Links auf Betriebsanweisungen. */
  substanceOverview?: IndustrySubstanceOverview;
- /** Tabellen, AEO, FAQs und Vergleich (pSEO-Branchenseiten). */
- pseo?: IndustryPseoContent;
+  /** Tabellen, AEO, FAQs und Vergleich (pSEO-Branchenseiten). */
+  pseo?: IndustryPseoContent;
+  /** Optional: Kicker statt „Branchenlösung“ (z. B. Persona-Seiten). */
+  heroKicker?: string;
+  /** Optional: Primär-CTA im Hero und Abschluss. */
+  primaryCta?: { readonly href: string; readonly label: string };
+  /** Optional: Links neben dem Primär-CTA. */
+  heroSecondaryLinks?: readonly { readonly label: string; readonly href: string }[];
+  /** Optional: Abschnitt „Häufige Gefahrstoffe“ (Listenblock). */
+  stoffeListSection?: { readonly title: string; readonly intro: string };
 }
 
 export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
@@ -1293,6 +1302,143 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  question: 'Welche BG ist für Bäckereien zuständig?',
  answer:
  'Die Berufsgenossenschaft Nahrungsmittel und Gastgewerbe (BGN) begutachtet chemische Arbeitsstoffe und Dokumentation in Betrieb und Filialen. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Digitale Exporte aus Gefahrstoff-QR erleichtern den Nachweis bei mehreren Standorten.',
+ },
+ ],
+ },
+ },
+ 'sifa-mehrere-mandanten': {
+ slug: 'sifa-mehrere-mandanten',
+ label: 'SiFa & Mandanten',
+ title: 'Gefahrstoffmanagement für externe SiFa: Kataster, TRGS 555 & Mandanten',
+ metaTitle: 'SiFa Gefahrstoffverzeichnis: mehrere Mandanten',
+ metaDescription:
+ 'Externe SiFa und Arbeitsschutzbüros: Gefahrstoffverzeichnisse und Betriebsanweisungen mehrerer Kundenbetriebe pflegen, ohne Excel-Chaos und SDB-Anhänge.',
+ heroKicker: 'Lösung für externe SiFa',
+ primaryCta: { href: '/#live-demo', label: 'SDB hochladen und Entwurf prüfen' },
+ heroSecondaryLinks: [
+ { label: 'Startseite', href: '/' },
+ { label: 'TRGS-510-Checker', href: '/trgs-510-zusammenlagerungs-check/' },
+ { label: 'Gefahrstoffmanagement Software', href: '/wissen/gefahrstoffmanagement-software/' },
+ ],
+ heroLeadParagraphs: [
+ 'Sie betreuen mehrere Kundenbetriebe mit Gefahrstoffverzeichnis, Betriebsanweisungen und Freigaben nach § 14 GefStoffV. Statt verstreuter Excel-Dateien und Sicherheitsdatenblätter per E-Mail bündelt Gefahrstoff-QR Mandanten, Werke und Tätigkeiten getrennt in einem Zugang.',
+ 'Der Tarif SiFa Multi-Mandant unterstützt die Mandantentrennung; Sie prüfen KI-gestützte Entwürfe (gemäß TRGS 555) als Vorprüfung zur fachlichen Freigabe durch die SiFa bzw. den Arbeitgeber.',
+ ],
+ heroUspBullets: [
+ 'SDB hochladen, Entwurf zur fachlichen Prüfung, QR-Code am Gefahrstoffschrank',
+ 'Mandanten-, Werks- und Tätigkeitstrennung im SiFa Multi-Mandant-Tarif',
+ 'Begehungs-Modus: Stoffe vorab erfassen, auch wenn das SDB noch fehlt',
+ 'PDF- und Excel-Export des Gefahrstoffverzeichnisses je Mandant',
+ ],
+ heroText:
+ 'Externe Fachkräfte für Arbeitssicherheit jonglieren Mandantenlisten, SDB-Postfächer und alte Betriebsanweisungen. Ein klarer Stand je Kundenbetrieb reduziert Nacharbeit vor der Begehung.',
+ typischeStoffe: [
+ 'Verstreute Excel-Listen je Mandant',
+ 'Sicherheitsdatenblätter per E-Mail ohne zentrales Archiv',
+ 'Unklarer Revisionsstand der Betriebsanweisungen',
+ 'Werks- und Tätigkeiten ohne saubere Zuordnung',
+ 'Unterweisung ohne Bezug zum Gefahrstoffverzeichnis',
+ ],
+ stoffeListSection: {
+ title: 'Typische Pain Points bei mehreren Mandanten',
+ intro:
+ 'Diese Engpässe sehen externe SiFas und Arbeitsschutzdienstleister häufig, wenn Gefahrstoffe über viele Kundenbetriebe hinweg gepflegt werden.',
+ },
+ spezifischerVorteil:
+ 'Im SiFa Multi-Mandant-Tarif führen Sie jeden Kundenbetrieb als Mandanten mit eigenen Werken. Stoffe, Sicherheitsdatenblätter und Betriebsanweisungs-Entwürfe bleiben getrennt, Batch-Upload und Exporte unterstützen die Pflege zwischen zwei Begehungen.',
+ handwerkAbsatz:
+ 'Ohne Trennung vermischen sich Daten: ein SDB-Update beim Malerbetrieb landet in der Liste des Metallbauers, eine alte Betriebsanweisung liegt noch im Freigabeordner. Gefahrstoff-QR strukturiert Mandant, Werk und Tätigkeit, damit Sie vor der Fachfreigabe den richtigen Entwurf prüfen und den Mandanten exportieren können.',
+ brancheGenitiv: 'Mandantenportfolio',
+ blogPostHref: '/wissen/gefahrstoffkataster-software/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Externe Fachkräfte für Arbeitssicherheit und Arbeitsschutzbüros führen für jeden Kundenbetrieb ein Gefahrstoffverzeichnis nach § 6 GefStoffV und Betriebsanweisungen nach TRGS 555. Sie bleiben fachlich verantwortlich für Prüfung und Freigabe. Gefahrstoff-QR unterstützt mit Mandantentrennung im SiFa Multi-Mandant-Tarif, KI-gestützten Entwürfen aus dem Sicherheitsdatenblatt, Begehungs-Modus und Exporten je Mandant.',
+ productsSectionTitle: 'Typische Mandanten-Situationen im Gefahrstoffalltag',
+ productsSectionIntro:
+ 'Statt Einzelstoffe listet diese Tabelle wiederkehrende Pflichtthemen, die SiFas über verschiedene Kundenbetriebe hinweg begleiten.',
+ typicalProducts: [
+ {
+ product: 'Handwerksbetrieb mit Lösemitteln',
+ gebinde: 'Kanister, Sprühdosen je Werkstatt',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Verzeichnis je Mandant, BA-Entwurf zur Freigabe',
+ },
+ {
+ product: 'Gebäudereinigung mit Konzentraten',
+ gebinde: 'Kanister, Umgefüllte Flaschen',
+ hazardKind: 'ätzend oder reizend',
+ workplaceDuty: 'Werkszuordnung, TRGS 201 beim Umfüllen beachten',
+ },
+ {
+ product: 'Malerbetrieb mit Dispersionsfarben',
+ gebinde: 'Eimer, Farbtonnendosen',
+ hazardKind: 'reizend, sensibilisierend',
+ workplaceDuty: 'SDB archivieren, Betriebsanweisung an Lager und Baustelle',
+ },
+ {
+ product: 'Metallbau mit Schweißzusätzen',
+ gebinde: 'Stäbe, Spulen, Reiniger',
+ hazardKind: 'reizend, staubbelastet',
+ workplaceDuty: 'Tätigkeiten zuordnen, Entwurf zur Vorprüfung',
+ },
+ {
+ product: 'Kfz-Betrieb mit Reinigern und Ölen',
+ gebinde: 'Kanister, Aerosole',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Begehungserfassung, später SDB nachreichen',
+ },
+ {
+ product: 'Labor oder Praxis mit Desinfektionsmitteln',
+ gebinde: 'Flaschen, Kanister',
+ hazardKind: 'reizend, biologisch wirksam',
+ workplaceDuty: 'Mandant getrennt halten, Export vor BG-Termin',
+ },
+ ],
+ inspectionSectionTitle: 'Typische Engpässe bei mehreren Mandanten',
+ inspectionDeficiencies: [
+ 'Jeder Kundenbetrieb nutzt eine eigene Excel-Datei. Sie finden keinen gemeinsamen Revisionsstand für Verzeichnis und Sicherheitsdatenblätter.',
+ 'Lieferanten schicken SDBs als E-Mail-Anhang. Ohne Archiv je Mandant wissen Sie nicht, welche Version für die Betriebsanweisung maßgeblich ist.',
+ 'Betriebsanweisungen und Unterweisungen hängen am falschen Ordner oder Mandanten. Freigaben laufen in alten Word-Dateien parallel zum Verzeichnis.',
+ ],
+ berufsgenossenschaft: 'Betreuung',
+ excelComparison: [
+ {
+ topic: 'Neue SDBs je Mandant',
+ excelWorkflow: 'Anhänge pro Kunde manuell in Listen übertragen',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem PDF mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Betriebsanweisungen je Betrieb',
+ excelWorkflow: 'Word-Dateien in getrennten Ordnern ohne Versionsstand',
+ gqrWorkflow: 'Entwurf zur Vorprüfung mit Revisionsverlauf je Mandant',
+ },
+ {
+ topic: 'Zugriff beim Kunden',
+ excelWorkflow: 'Ordner auf dem Notebook oder E-Mail an den Betriebsleiter',
+ gqrWorkflow: 'QR-Zugriff auf SDB und freigegebene BA am Einsatzort',
+ },
+ {
+ topic: 'Nachweis vor der Begehung',
+ excelWorkflow: 'Listen manuell je Mandant zusammenstellen',
+ gqrWorkflow: 'PDF- oder Excel-Export des Verzeichnisses je Mandant',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Gibt es bei Gefahrstoff-QR echte Mandantentrennung für externe SiFas?',
+ answer:
+ 'Ja, im Tarif SiFa Multi-Mandant führen Sie Kundenbetriebe als Mandanten mit Werken und Tätigkeiten strikt getrennt. Bis zu fünfzehn Mandantenbetriebe sind im Grundpreis vorgesehen, weitere Mandanten skalieren per Zehner-Block. Die fachliche Freigabe von Verzeichnis und Betriebsanweisung bleibt bei Ihnen oder dem Arbeitgeber.',
+ },
+ {
+ question: 'Wie hilft Gefahrstoff-QR, wenn beim Rundgang kein SDB vorliegt?',
+ answer:
+ 'Im Begehungs-Modus erfassen Sie Stoffe ohne vorliegendes Sicherheitsdatenblatt oder Mengenangabe. Offene Felder werden im Export farblich markiert und können später nachgepflegt werden, wenn der Kunde das PDF nachreicht. So entsteht kein Leerloch im externen Mandantenverzeichnis zwischen zwei Begehungen am Kundenbetrieb.',
+ },
+ {
+ question: 'Was bleibt bei der fachlichen Verantwortung der SiFa?',
+ answer:
+ 'Gefahrstoff-QR liefert KI-gestützte Entwürfe für Verzeichnis und Betriebsanweisung (gemäß TRGS 555) als Vorprüfung zur fachlichen Freigabe durch die SiFa bzw. den Arbeitgeber (§ 14 GefStoffV). Sie entscheiden über Inhalt, Unterweisung und Nachweise. Kein Entwurf ersetzt Ihre Prüfung vor Ort oder vor der BG-Begehung.',
  },
  ],
  },
