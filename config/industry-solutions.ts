@@ -83,9 +83,9 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  // - diese Seite: kommerzieller Intent „Gefahrstoff-Software / Lösung Kfz“
  // - /wissen/gefahrstoffverzeichnis-muster-kfz-werkstatt/: informatorischer Muster-/Pflicht-Check,
  //   verlinkt per InternalSolutionBanner oben und unten hierher.
- metaTitle: 'Gefahrstoff-Software Kfz-Werkstatt: Kataster & QR-Codes',
+ metaTitle: 'Gefahrstoffverzeichnis Kfz-Werkstatt: Kataster & QR',
  metaDescription:
- 'Schluss mit Excel-Chaos in der Werkstatt: Sicherheitsdatenblätter für Bremsenreiniger, Öle & Lacke per PDF einlesen und QR-Codes an den Schrank hängen.',
+ 'Gefahrstoffverzeichnis Kfz-Werkstatt: SDB einlesen, Betriebsanweisungen und QR-Codes an Schrank und Hebebühne. Kostenlos testen, ohne Excel.',
  staticHero: {
  eyebrow: 'Gefahrstoff-Software für Kfz-Werkstätten',
  headline: 'Gefahrstoff­kataster, Betriebs­anweisungen & QR-Codes',

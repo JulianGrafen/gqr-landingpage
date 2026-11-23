@@ -1,0 +1,69 @@
+{
+  "campaignDate": "2026-11-23",
+  "gscPeriod": "2026-10-24 bis 2026-11-20",
+  "pullRequest": null,
+  "pages": [
+    {
+      "url": "/loesungen/kfz-werkstatt/",
+      "baseline": { "position": 14.3, "impressions": 188, "ctrPercent": 0.5 },
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/isopropanol-trgs-555/",
+      "baseline": { "position": 13.8, "impressions": 50, "ctrPercent": 2.0 },
+      "optimized": true
+    },
+    {
+      "url": "/wissen/gefahrstoffverzeichnis-muster-kfz-werkstatt/",
+      "baseline": { "position": 9.9, "impressions": 36, "ctrPercent": 2.8 },
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/aceton-trgs-555/",
+      "baseline": { "position": 8.6, "impressions": 33, "ctrPercent": 0 },
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/sekundenkleber-trgs-555/",
+      "baseline": { "position": 5.9, "impressions": 15, "ctrPercent": 0 },
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/argon-trgs-555/",
+      "baseline": { "position": 4.5, "impressions": 13, "ctrPercent": 0 },
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/kaliumpermanganat-trgs-555/",
+      "baseline": { "position": 10.3, "impressions": 10, "ctrPercent": 0 },
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/grundierung-trgs-555/",
+      "baseline": { "position": 24.8, "impressions": 687, "ctrPercent": 0 },
+      "optimized": true,
+      "notes": "TRGS-600-Substitutionshinweis im Fließtext, Title bleibt stoffbezogen"
+    },
+    {
+      "url": "/blog/laborbetrieb-gefahrstoff-blog.html",
+      "baseline": { "position": 39.2, "impressions": 406, "ctrPercent": 0 },
+      "optimized": true,
+      "bucket": "link-spender"
+    },
+    {
+      "url": "/wissen/gefahrstoffmanagement-software/",
+      "baseline": { "position": 50.7, "impressions": 172, "ctrPercent": 0 },
+      "optimized": true,
+      "bucket": "link-spender"
+    }
+  ],
+  "skipped": [
+    { "url": "/betriebsanweisung/eiseniii-chlorid-trgs-555/", "reason": "unter Schwelle / Platz 9+" },
+    { "url": "/betriebsanweisung/bremsfluessigkeit-trgs-555/", "reason": "unter Schwelle / Platz 9+" },
+    { "url": "/betriebsanweisung/cyclohexan-trgs-555/", "reason": "unter Schwelle / Platz 9+" },
+    { "url": "/betriebsanweisung/dieselkraftstoff-trgs-555/", "reason": "unter Schwelle / Platz 9+" },
+    { "url": "/betriebsanweisung/natriumhypochlorit-trgs-555/", "reason": "unter Schwelle / Platz 9+" },
+    { "url": "/betriebsanweisung/salzsaeure-trgs-555/", "reason": "Position 15,1, Filter nicht erfüllt" },
+    { "url": "/betriebsanweisung/natronlauge-trgs-555/", "reason": "CTR 9,3 %, Filter nicht erfüllt" }
+  ]
+}

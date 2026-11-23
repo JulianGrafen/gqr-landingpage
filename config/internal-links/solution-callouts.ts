@@ -76,6 +76,21 @@ export const KFZ_BETRIEBSANWEISUNG_CALLOUTS: Partial<Record<HazardousSubstanceSl
     body: 'Getriebeöl, Bremsflüssigkeit und Reiniger: Führen Sie alle Werkstatt-Gefahrstoffe aus den Sicherheitsdatenblättern in einem Kataster und stellen Sie die Betriebsanweisungen per QR-Code bereit.',
     anchorText: 'Gefahrstoff-Software für die Kfz-Werkstatt: Kataster & Betriebsanweisungen',
   },
+  'isopropanol-trgs-555': {
+    eyebrow: KFZ_EYEBROW,
+    body: 'Isopropanol, Bremsenreiniger und Lacke stehen selten allein. Ein Gefahrstoffverzeichnis nach § 6 GefStoffV bündelt Reinigungsmittel, Öle und Betriebsanweisungen für die gesamte Halle.',
+    anchorText: 'Gefahrstoffverzeichnis und QR-Codes für die Kfz-Werkstatt anlegen',
+  },
+  'aceton-trgs-555': {
+    eyebrow: KFZ_EYEBROW,
+    body: 'Aceton und Lackierprodukte teilen oft dasselbe Lager. Mit digitaler Lösung verknüpfen Sie Verzeichnis, TRGS-555-Betriebsanweisungen und Lagerhinweise an einem Ort.',
+    anchorText: 'Gefahrstoffkataster für Lackierbereich und Werkstatt erstellen',
+  },
+  'sekundenkleber-trgs-555': {
+    eyebrow: KFZ_EYEBROW,
+    body: 'Klebstoffe und Dichtmassen brauchen Einträge im Verzeichnis und Betriebsanweisungen am Arbeitsplatz, oft zusammen mit Ölen und Reinigern.',
+    anchorText: 'Alle Werkstatt-Gefahrstoffe in einem Kataster führen',
+  },
 };
 
 /** Redaktionelle Seiten (Blog, Wissen), adressiert über ihren kanonischen Pfad. */

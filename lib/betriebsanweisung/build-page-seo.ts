@@ -1,4 +1,6 @@
 import type { HazardousSubstanceSeoEntry } from '@/config/betriebsanweisung/types';
+import { BETRIEBSANWEISUNG_STRIKING_OVERRIDES } from '@/config/seo/striking-distance-2026-11-23';
+import type { HazardousSubstanceSlug } from '@/config/betriebsanweisung/entries';
 import { SITE_URL } from '@/config/site-seo';
 import { fitDescription, fitTitle, type SeoMetaInput } from '@/lib/seo/buildMetadata';
 import { buildBreadcrumbSchema, type BreadcrumbItem } from '@/lib/seo/build-breadcrumb-schema';
@@ -22,7 +24,13 @@ export function buildBetriebsanweisungPath(entry: HazardousSubstanceSeoEntry): `
  * SERP-Title (Suchintention „Betriebsanweisung <Stoff>“ = fertige Vorlage).
  * Kaskade: Klammer-Variante → Gedankenstrich-Variante → Kurzform, jeweils ≤ SEO_LIMITS.titleMax.
  */
+function strikingOverride(entry: HazardousSubstanceSeoEntry) {
+  return BETRIEBSANWEISUNG_STRIKING_OVERRIDES[entry.slug as HazardousSubstanceSlug];
+}
+
 export function buildBetriebsanweisungTitle(entry: HazardousSubstanceSeoEntry): string {
+  const override = strikingOverride(entry);
+  if (override?.title) return fitTitle([override.title]);
   const name = entry.substanceName;
   return fitTitle([
     `Betriebsanweisung ${name} (TRGS 555) – Muster & PDF`,
@@ -37,6 +45,8 @@ export function buildBetriebsanweisungTitle(entry: HazardousSubstanceSeoEntry): 
  * Bewusst ohne Zeit- oder Automatik-Versprechen (UWG, AGENTS.md § 3: Entwurf zur Freigabe).
  */
 export function buildBetriebsanweisungMetaDescription(entry: HazardousSubstanceSeoEntry): string {
+  const override = strikingOverride(entry);
+  if (override?.description) return fitDescription([override.description]);
   const name = entry.substanceName;
   return fitDescription([
     `Muster-Betriebsanweisung für ${name} nach TRGS 555 & § 14 GefStoffV. Vorschau direkt prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln.`,
