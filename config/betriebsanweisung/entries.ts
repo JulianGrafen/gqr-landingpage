@@ -3248,6 +3248,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Elektrobetrieb & Montage",
     ],
   },
+  {
+    slug: 'schraubenloeser-trgs-555',
+    substanceName: "Schraubenlöser",
+    metaDescription: "Betriebsanweisung Schraubenlöser: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Metallbau & Schlosserei",
+      "Landmaschinenservice & Agrartechnik",
+      "Industrielle Montage & Wartung",
+    ],
+  },
+  {
+    slug: 'lackspray-trgs-555',
+    substanceName: "Lackspray",
+    metaDescription: "Betriebsanweisung Lackspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Karosserie",
+      "Malerbetrieb & Lackierkabine",
+      "Metallbau & Korrosionsschutz",
+      "Werkstatt & Instandsetzung",
+    ],
+  },
+  {
+    slug: 'kettenfett-trgs-555',
+    substanceName: "Kettenfett",
+    metaDescription: "Betriebsanweisung Kettenfett: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Zweiradwerkstatt",
+      "Forstwirtschaft & Holzrücken",
+      "Landwirtschaft & Agrartechnik",
+      "Industrielle Fördertechnik & Wartung",
+    ],
+  },
+  {
+    slug: 'kuehlfluessigkeit-trgs-555',
+    substanceName: "Kühlflüssigkeit",
+    metaDescription: "Betriebsanweisung Kühlflüssigkeit: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Kundendienst",
+      "Metallbearbeitung & Zerspanung",
+      "SHK-Handwerk & Installateur",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'handwaschpaste-trgs-555',
+    substanceName: "Handwaschpaste",
+    metaDescription: "Betriebsanweisung Handwaschpaste: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fahrzeugpflege",
+      "Metallbearbeitung & Werkstatt",
+      "Malerbetrieb & Baustelle",
+      "Industrielle Produktion & Montage",
+    ],
+  },
+  {
+    slug: 'vergussmasse-trgs-555',
+    substanceName: "Vergussmasse",
+    metaDescription: "Betriebsanweisung Vergussmasse: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Elektrobetrieb & Schaltschrankbau",
+      "SHK-Handwerk & Sanitär",
+      "Bau & Bodenbeschichtung",
+      "Industrielle Anlagenmontage",
+    ],
+  },
+  {
+    slug: 'hohlraumkonservierung-trgs-555',
+    substanceName: "Hohlraumkonservierung",
+    metaDescription: "Betriebsanweisung Hohlraumkonservierung: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Karosserie",
+      "Nutzfahrzeug-Werkstatt & Fuhrpark",
+      "Malerbetrieb & Korrosionsschutz",
+      "Oldtimer-Werkstatt & Restaurierung",
+    ],
+  },
+  {
+    slug: 'lackstift-trgs-555',
+    substanceName: "Lackstift",
+    metaDescription: "Betriebsanweisung Lackstift: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Smart-Repair",
+      "Malerbetrieb & Ausbesserung",
+      "Metallbau & Pulverbeschichtung",
+      "Werkstatt & Instandsetzung",
+    ],
+  },
+  {
+    slug: 'zinksalbe-trgs-555',
+    substanceName: "Zinksalbe",
+    metaDescription: "Betriebsanweisung Zinksalbe: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "SHK-Handwerk & Installateur",
+      "Metallbau & Schweißtechnik",
+      "Dachdecker & Klempner",
+      "Industrielle Anlagenmontage",
+    ],
+  },
+  {
+    slug: 'kupferspray-trgs-555',
+    substanceName: "Kupferspray",
+    metaDescription: "Betriebsanweisung Kupferspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Bremsenservice",
+      "SHK-Handwerk & Lüftungsbau",
+      "Metallbau & Instandhaltung",
+      "Industrielle Wartung & Montage",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
