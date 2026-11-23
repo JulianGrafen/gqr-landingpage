@@ -15,13 +15,13 @@ import {
   Fuel,
   Printer,
   Croissant,
-<<<<<<< HEAD
   ShieldCheck,
-=======
   LayoutGrid,
   Droplets,
   SprayCan,
->>>>>>> cursor/pseo-nightly-2026-11-22-2e47
+  Armchair,
+  UtensilsCrossed,
+  Pickaxe,
 } from 'lucide-react';
 import { getAllIndustries, type IndustrySlug } from '@/config/industry-solutions';
 
@@ -40,13 +40,13 @@ const ICONS: Record<IndustrySlug, LucideIcon> = {
   tankstelle: Fuel,
   druckerei: Printer,
   baeckerei: Croissant,
-<<<<<<< HEAD
   'sifa-mehrere-mandanten': ShieldCheck,
-=======
   fliesenleger: LayoutGrid,
   'shk-betrieb': Droplets,
   lackiererei: SprayCan,
->>>>>>> cursor/pseo-nightly-2026-11-22-2e47
+  tischlerei: Armchair,
+  gastronomie: UtensilsCrossed,
+  steinmetz: Pickaxe,
 };
 
 /**

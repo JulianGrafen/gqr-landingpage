@@ -3358,6 +3358,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Industrielle Wartung & Montage",
     ],
   },
+  {
+    slug: 'industrieseife-trgs-555',
+    substanceName: "Industrieseife",
+    metaDescription: "Betriebsanweisung Industrieseife: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Metallbau & Werkstatt",
+      "Gebäudereinigung & Facility",
+      "Industrielle Fertigung",
+    ],
+  },
+  {
+    slug: 'hautschutzcreme-trgs-555',
+    substanceName: "Hautschutzcreme",
+    metaDescription: "Betriebsanweisung Hautschutzcreme: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Friseursalon & Kosmetik",
+      "Malerbetrieb & Handwerk",
+      "Pflegeeinrichtung & Sozialwesen",
+      "Chemische Reinigung & Textilpflege",
+    ],
+  },
+  {
+    slug: 'lithiumfett-trgs-555',
+    substanceName: "Lithiumfett",
+    metaDescription: "Betriebsanweisung Lithiumfett: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fuhrpark",
+      "Landwirtschaft & Agrartechnik",
+      "Metallbau & Maschinenbau",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'haftgrund-trgs-555',
+    substanceName: "Haftgrund",
+    metaDescription: "Betriebsanweisung Haftgrund: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Beschichtung",
+      "Kfz-Werkstatt & Karosserie",
+      "Metallbau & Oberflächentechnik",
+      "Fliesenleger & Bau",
+    ],
+  },
+  {
+    slug: 'autoshampoo-trgs-555',
+    substanceName: "Autoshampoo",
+    metaDescription: "Betriebsanweisung Autoshampoo: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Aufbereitung",
+      "Tankstelle & Waschanlage",
+      "Fuhrpark & Flottenbetrieb",
+      "Gebäudereinigung & Fahrzeugpflege",
+    ],
+  },
+  {
+    slug: 'marderspray-trgs-555',
+    substanceName: "Marderspray",
+    metaDescription: "Betriebsanweisung Marderspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Landwirtschaft & Agrartechnik",
+      "Tankstelle & Waschbetrieb",
+      "Fuhrpark & Logistik",
+    ],
+  },
+  {
+    slug: 'loetpaste-trgs-555',
+    substanceName: "Lötpaste",
+    metaDescription: "Betriebsanweisung Lötpaste: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Elektrobetrieb & Gebäudetechnik",
+      "Elektronikfertigung & Montage",
+      "Metallbau & Blechnerei",
+      "SHK-Handwerk & Installateur",
+    ],
+  },
+  {
+    slug: 'kriechoel-trgs-555',
+    substanceName: "Kriechöl",
+    metaDescription: "Betriebsanweisung Kriechöl: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Instandhaltung",
+      "Metallbau & Maschinenbau",
+      "Industrielle Wartung",
+      "Landwirtschaft & Agrartechnik",
+    ],
+  },
+  {
+    slug: 'ultraschallreinigungsmittel-trgs-555',
+    substanceName: "Ultraschallreinigungsmittel",
+    metaDescription: "Betriebsanweisung Ultraschallreinigungsmittel: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Zahnarztpraxis & Dentaltechnik",
+      "Elektronikfertigung & Montage",
+      "Optik & Feinwerktechnik",
+      "Kfz-Werkstatt & Teileaufbereitung",
+    ],
+  },
+  {
+    slug: 'heissfestspray-trgs-555',
+    substanceName: "Heißfestspray",
+    metaDescription: "Betriebsanweisung Heißfestspray: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Bremsenservice",
+      "Metallbau & Schweißtechnik",
+      "SHK-Handwerk & Installateur",
+      "Industrielle Instandhaltung",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];

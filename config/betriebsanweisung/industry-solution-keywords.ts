@@ -19,7 +19,6 @@ export const INDUSTRY_SOLUTION_KEYWORDS: Record<IndustrySlug, readonly string[]>
   tankstelle: ['tankstelle', 'kraftstoff', 'shop', 'waschanlage'],
   druckerei: ['druckerei', 'offset', 'siebdruck', 'buchbinderei'],
   baeckerei: ['bäckerei', 'baeckerei', 'backstube', 'konditorei'],
-<<<<<<< HEAD
   'sifa-mehrere-mandanten': [
     'sifa',
     'fachkraft',
@@ -29,9 +28,10 @@ export const INDUSTRY_SOLUTION_KEYWORDS: Record<IndustrySlug, readonly string[]>
     'arbeitsschutz',
     'sicherheitsfachkraft',
   ],
-=======
   fliesenleger: ['fliesen', 'fliesenleger', 'naturstein', 'plattenleger'],
   'shk-betrieb': ['shk', 'sanitär', 'heizung', 'installateur', 'klima'],
   lackiererei: ['lackier', 'karosserie', 'lackiererei', 'autolackier'],
->>>>>>> cursor/pseo-nightly-2026-11-22-2e47
+  tischlerei: ['tischlerei', 'tischler', 'möbelbau', 'innenausbau'],
+  gastronomie: ['gastronomie', 'grossküche', 'großküche', 'restaurant', 'küche'],
+  steinmetz: ['steinmetz', 'steinmetzerei', 'naturstein', 'grabstein'],
 };
