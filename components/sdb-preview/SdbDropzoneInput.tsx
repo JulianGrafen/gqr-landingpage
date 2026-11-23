@@ -1,7 +1,16 @@
 'use client';
 
-import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
+import {
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  useState,
+  type DragEvent,
+  type KeyboardEvent,
+  type MouseEvent,
+} from 'react';
 import { dropzoneClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
+import { SDB_DROPZONE_COPY } from '@/config/sdb-preview/dropzone-copy';
 
 export type SdbDropzoneInputHandle = {
   openFilePicker: () => void;
@@ -14,10 +23,17 @@ type Props = {
   /** Beschriftung der kompakten Zeile (nach erstem Upload). */
   compactLabel?: string;
   onFile: (file: File) => void;
+  /** 1-Klick-Beispiel in der Dropzone (Landing; nicht bei exampleSlot / kompakter Zeile). */
+  onQuickExample?: () => void;
 };
 
+function stopDropzoneActivation(event: MouseEvent<HTMLButtonElement>): void {
+  event.preventDefault();
+  event.stopPropagation();
+}
+
 export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(function SdbDropzoneInput(
-  { variant, disabled, compact = false, compactLabel = 'Anderes SDB hochladen', onFile },
+  { variant, disabled, compact = false, compactLabel = 'Anderes SDB hochladen', onFile, onQuickExample },
   ref,
 ) {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -34,94 +50,112 @@ export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(functi
     if (file) onFile(file);
   };
 
-  const state = disabled ? 'processing' : dragOver ? 'drag' : 'idle';
+  const onKeyActivate = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      pick();
+    }
+  };
 
-  if (compact && variant === 'next') {
+  const state = disabled ? 'processing' : dragOver ? 'drag' : 'idle';
+  const surfaceInteraction = {
+    role: 'button' as const,
+    tabIndex: 0,
+    'aria-disabled': disabled,
+    onClick: pick,
+    onKeyDown: onKeyActivate,
+    onDragEnter: (event: DragEvent<HTMLDivElement>) => {
+      event.preventDefault();
+      if (!disabled) setDragOver(true);
+    },
+    onDragOver: (event: DragEvent<HTMLDivElement>) => {
+      event.preventDefault();
+      if (!disabled) setDragOver(true);
+    },
+    onDragLeave: () => setDragOver(false),
+    onDrop: (event: DragEvent<HTMLDivElement>) => {
+      event.preventDefault();
+      setDragOver(false);
+      if (!disabled) handleFiles(event.dataTransfer.files);
+    },
+  };
+
+  if (compact) {
     return (
-      <div
-        className={dropzoneClass(variant, state, true)}
-        role="button"
-        tabIndex={0}
-        aria-disabled={disabled}
-        onClick={pick}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            pick();
-          }
-        }}
-        onDragEnter={(e) => {
-          e.preventDefault();
-          if (!disabled) setDragOver(true);
-        }}
-        onDragOver={(e) => {
-          e.preventDefault();
-          if (!disabled) setDragOver(true);
-        }}
-        onDragLeave={() => setDragOver(false)}
-        onDrop={(e) => {
-          e.preventDefault();
-          setDragOver(false);
-          if (!disabled) handleFiles(e.dataTransfer.files);
-        }}
-      >
+      <div className={dropzoneClass(variant, state, true)} {...surfaceInteraction}>
         <input
           ref={inputRef}
           type="file"
           accept="application/pdf,.pdf"
           className="sr-only"
           disabled={disabled}
-          onChange={(e) => handleFiles(e.target.files)}
+          onChange={(event) => handleFiles(event.target.files)}
         />
-        <span className="text-sm font-semibold text-[#f0f6ff]">{compactLabel}</span>
-        <span className="shrink-0 text-xs font-bold uppercase tracking-wide text-teal-300">PDF</span>
+        <span
+          className={
+            variant === 'static'
+              ? 'sdb-live-preview-dropzone__compact-label'
+              : 'text-sm font-semibold text-[#f0f6ff]'
+          }
+        >
+          {compactLabel}
+        </span>
+        <span
+          className={
+            variant === 'static'
+              ? 'sdb-live-preview-dropzone__compact-type'
+              : 'shrink-0 text-xs font-bold uppercase tracking-wide text-teal-300'
+          }
+        >
+          {SDB_DROPZONE_COPY.pdfBadgeLabel}
+        </span>
       </div>
     );
   }
 
   return (
-    <div
-      className={dropzoneClass(variant, state, false)}
-      role="button"
-      tabIndex={0}
-      aria-disabled={disabled}
-      onClick={pick}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          pick();
-        }
-      }}
-      onDragEnter={(e) => {
-        e.preventDefault();
-        if (!disabled) setDragOver(true);
-      }}
-      onDragOver={(e) => {
-        e.preventDefault();
-        if (!disabled) setDragOver(true);
-      }}
-      onDragLeave={() => setDragOver(false)}
-      onDrop={(e) => {
-        e.preventDefault();
-        setDragOver(false);
-        if (!disabled) handleFiles(e.dataTransfer.files);
-      }}
-    >
+    <div className={dropzoneClass(variant, state, false)} {...surfaceInteraction}>
       <input
         ref={inputRef}
         type="file"
         accept="application/pdf,.pdf"
         className="sr-only"
         disabled={disabled}
-        onChange={(e) => handleFiles(e.target.files)}
+        onChange={(event) => handleFiles(event.target.files)}
       />
       <span className="sdb-live-preview-dropzone__icon" aria-hidden="true">
-        PDF
+        {SDB_DROPZONE_COPY.pdfBadgeLabel}
       </span>
-      <strong className="sdb-live-preview-dropzone__title">Sicherheitsdatenblatt hier ablegen</strong>
+      <strong className="sdb-live-preview-dropzone__title">{SDB_DROPZONE_COPY.title}</strong>
       <span className="sdb-live-preview-dropzone__hint">
-        PDF, max. 10 MB, ohne Login · KI-gestützter Entwurf (gemäß TRGS 555)
+        {SDB_DROPZONE_COPY.hint}
+        <br />
+        {SDB_DROPZONE_COPY.hintLegal}
       </span>
+      <button
+        type="button"
+        className="sdb-live-preview-dropzone__pick"
+        disabled={disabled}
+        onClick={(event) => {
+          stopDropzoneActivation(event);
+          pick();
+        }}
+      >
+        {SDB_DROPZONE_COPY.pickPdfLabel}
+      </button>
+      {onQuickExample ? (
+        <button
+          type="button"
+          className="sdb-live-preview-dropzone__example"
+          disabled={disabled}
+          onClick={(event) => {
+            stopDropzoneActivation(event);
+            onQuickExample();
+          }}
+        >
+          {SDB_DROPZONE_COPY.quickExampleLink}
+        </button>
+      ) : null}
     </div>
   );
 });

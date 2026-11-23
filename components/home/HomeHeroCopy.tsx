@@ -1,9 +1,24 @@
-import { HOME_HERO, type HeroCopy } from '@/config/home-sections/hero';
+import { HOME_HERO, HOME_HERO_H1_UNBROKEN_COMPOUND, type HeroCopy } from '@/config/home-sections/hero';
 
 type HomeHeroCopyProps = {
   /** Standard: Startseite. Statische Branchenseiten übergeben ihre eigene Copy. */
   copy?: HeroCopy;
 };
+
+function HeroHeadlineLine({ headline }: { headline: string }) {
+  const compoundIndex = headline.indexOf(HOME_HERO_H1_UNBROKEN_COMPOUND);
+  if (compoundIndex === -1) {
+    return headline;
+  }
+
+  return (
+    <>
+      {headline.slice(0, compoundIndex)}
+      <span className="sds-hero__title-compound">{HOME_HERO_H1_UNBROKEN_COMPOUND}</span>
+      {headline.slice(compoundIndex + HOME_HERO_H1_UNBROKEN_COMPOUND.length)}
+    </>
+  );
+}
 
 /**
  * Textblock des Heros innerhalb des Markers `AEO:HERO_COPY`.
@@ -14,7 +29,9 @@ export function HomeHeroCopy({ copy = HOME_HERO }: HomeHeroCopyProps) {
     <>
       <p className="sds-hero__eyebrow">{copy.eyebrow}</p>
       <h1 id="heroHeadline" className="sds-hero__title">
-        <span className="sds-hero__title-line">{copy.headline}</span>
+        <span className="sds-hero__title-line">
+          <HeroHeadlineLine headline={copy.headline} />
+        </span>
         <span className="sds-hero__title-accent">{copy.headlineAccent}</span>
       </h1>
       <div className="sds-hero__subtitle">

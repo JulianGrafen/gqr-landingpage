@@ -5,6 +5,7 @@ import { Lock } from 'lucide-react';
 import { GhsPictogramBadge } from '@/components/sdb-preview/GhsPictogramBadge';
 import { GHS_ASSETS, normalizeGhsCode } from '@/lib/ghs/ghs-assets';
 import { SdbUnlockCard } from '@/components/sdb-preview/SdbUnlockCard';
+import { Trgs555PreviewDocument } from '@/components/sdb-preview/Trgs555PreviewDocument';
 import type { SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
 import type { SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
 
@@ -14,6 +15,7 @@ type Props = {
   embedded?: boolean;
   /** Öffentliche BA-LPs: Nutzer-SDB-Daten nur geblurrt (kein SEO-Stoffdaten-Bezug). */
   omitPublishedHazardData?: boolean;
+  sourceLabel?: string | null;
 };
 
 /** Filter blur on extracted user PDF data (not backdrop-blur). */
@@ -25,14 +27,18 @@ export function SdbPreviewCompactResult({
   teaser,
   embedded = false,
   omitPublishedHazardData = false,
+  sourceLabel = null,
 }: Props) {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const identification = teaser.sections.find((s) => s.key === 'identification');
   const hazardLines = teaser.hazardStatements.slice(0, embedded ? 2 : 3);
-  const blurExtractedData = variant === 'next';
 
   if (variant === 'static') {
     return null;
+  }
+
+  if (!embedded && !omitPublishedHazardData) {
+    return <Trgs555PreviewDocument variant={variant} teaser={teaser} sourceLabel={sourceLabel} />;
   }
 
   const ghsBlock = embedded ? (
@@ -141,23 +147,23 @@ export function SdbPreviewCompactResult({
     >
       <div className={embedded ? 'px-3 py-3' : 'flex-1 overflow-y-auto px-4 py-4'}>
         <p className="text-[10px] font-bold uppercase tracking-wider text-[#ff6b35]">SDB-Vorschau (unverbindlich)</p>
-
-        {blurExtractedData ? (
-          <div
-            className={`relative overflow-hidden rounded-lg ${embedded ? 'mt-1.5 min-h-[6.25rem]' : 'mt-2 min-h-[7.5rem]'}`}
-          >
-            <div className={TEASER_DATA_BLUR_CLASS} aria-hidden="true">
-              {extractedBody}
-            </div>
-            {lockOverlay}
+        <div
+          className={`relative overflow-hidden rounded-lg ${embedded ? 'mt-1.5 min-h-[6.25rem]' : 'mt-2 min-h-[7.5rem]'}`}
+        >
+          <div className={TEASER_DATA_BLUR_CLASS} aria-hidden="true">
+            {extractedBody}
           </div>
-        ) : (
-          <div className="mt-1">{extractedBody}</div>
-        )}
+          {lockOverlay}
+        </div>
       </div>
-
       <div className={`shrink-0 border-t border-white/10 bg-[#0f1e35]/95 ${embedded ? 'p-2.5' : 'p-3'}`}>
-        <SdbUnlockCard variant={variant} previewToken={teaser.previewToken} compact />
+        <SdbUnlockCard
+          variant={variant}
+          previewToken={teaser.previewToken}
+          productName={teaser.tradeName}
+          sourceLabel={sourceLabel}
+          placement="footer"
+        />
       </div>
     </div>
   );

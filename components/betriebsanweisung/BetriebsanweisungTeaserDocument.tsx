@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { BaLiveExtractedDocument } from '@/components/betriebsanweisung/BaLiveExtractedDocument';
 import { BaSampleLockedDocument } from '@/components/betriebsanweisung/BaSampleLockedDocument';
+import { BaUnlockCta } from '@/components/betriebsanweisung/BaUnlockCta';
 import { useBetriebsanweisungSdbUpload } from '@/components/betriebsanweisung/betriebsanweisung-sdb-upload-context';
 import { LIVE_PREVIEW_COPY } from '@/config/betriebsanweisung/live-preview-copy';
 import { SAMPLE_PREVIEW_COPY as copy } from '@/config/betriebsanweisung/sample-preview';
@@ -73,6 +74,7 @@ export function BetriebsanweisungTeaserDocument({
               teaser={liveTeaser}
               applicationArea={applicationArea}
               isDemo={preview.source?.kind === 'demo'}
+              unlockCta={<BaUnlockCta label={LIVE_PREVIEW_COPY.lockedOverlay.cta} tone="light" className="mt-3" />}
             />
           </div>
         ) : (

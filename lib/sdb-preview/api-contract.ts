@@ -17,6 +17,13 @@ export const SDB_PREVIEW_MAX_BYTES = 10 * 1024 * 1024;
 
 export type SdbPreviewExampleId = 'bremsenreiniger' | 'aceton' | 'epoxidharz2k';
 
+/** Herkunft der aktuellen Vorschau, steuert Badge-Text und Register-Übergabe. */
+export type SdbPreviewSource =
+  | { kind: 'upload'; fileName: string }
+  | { kind: 'example'; exampleId: SdbPreviewExampleId }
+  /** Clientseitige Demo ohne Server-Prefill (kein übertragbarer Token). */
+  | { kind: 'demo'; label: string };
+
 export type Trgs555SectionKey =
   | 'identification'
   | 'hazards'
@@ -53,6 +60,8 @@ export interface SdbPreviewTeaser {
   manufacturer: string;
   /** CAS-Nummer, falls im SDB-Abschnitt 1/3 erkannt. */
   casNumber?: string;
+  /** Lagerklasse nach TRGS 510, falls im SDB erkannt (z. B. „3“ oder „LGK 3“). */
+  storageClass?: string;
   signalWord: 'Gefahr' | 'Achtung' | null;
   ghsPictograms: string[];
   hazardStatements: string[];

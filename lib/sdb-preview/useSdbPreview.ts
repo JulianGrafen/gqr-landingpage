@@ -1,7 +1,12 @@
 'use client';
 
 import { useCallback, useRef, useState } from 'react';
-import type { SdbPreviewExampleId, SdbPreviewPostResponse, SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
+import type {
+  SdbPreviewExampleId,
+  SdbPreviewPostResponse,
+  SdbPreviewSource,
+  SdbPreviewTeaser,
+} from '@/lib/sdb-preview/api-contract';
 import type { ExtractionProgressSnapshot } from '@/lib/sdb-preview/extraction-progress';
 import { loadSdbPreviewConfig } from '@/lib/sdb-preview/load-config';
 import { prepareCompactUpload, runExamplePreview, uploadPdfPreview } from '@/lib/sdb-preview/preview-api-client';
@@ -10,12 +15,7 @@ import { useExtractionProgress, type StartExtractionProgressOptions } from '@/li
 
 export type SdbPreviewPhase = 'idle' | 'processing' | 'ready' | 'error';
 
-/** Herkunft der aktuellen Vorschau, steuert Badge-Text und Register-Übergabe. */
-export type SdbPreviewSource =
-  | { kind: 'upload'; fileName: string }
-  | { kind: 'example'; exampleId: SdbPreviewExampleId }
-  /** Clientseitige Demo ohne Server-Prefill (kein übertragbarer Token). */
-  | { kind: 'demo'; label: string };
+export type { SdbPreviewSource };
 
 export type SdbDemoPreviewLoader = () => Promise<{
   /** Anzeigename der Quelle, z. B. „Beispiel-SDB Salzsäure 37 %“. */

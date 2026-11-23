@@ -1,7 +1,7 @@
 'use client';
 
 import { LockKeyhole } from 'lucide-react';
-import { BaUnlockCta } from '@/components/betriebsanweisung/BaUnlockCta';
+import type { ReactNode } from 'react';
 import {
   BaSheetFrame,
   BaSheetHeader,
@@ -22,6 +22,8 @@ type Props = {
   /** Einsatzbereich aus der Seiten-Config (nicht aus dem SDB). */
   applicationArea: string;
   isDemo: boolean;
+  /** Overlay-CTA (pSEO: `BaUnlockCta`, Hero: kontextfreie Register-CTA). */
+  unlockCta: ReactNode;
 };
 
 function BulletList({ items, footer }: { items: readonly string[]; footer?: string }) {
@@ -50,9 +52,11 @@ function toGhsSymbols(raw: readonly string[]): BaDocumentSymbol[] {
  * Kopf, Gefahrstoffbezeichnung, Gefahren, Schutzmaßnahmen scharf; Gefahrfall, Erste Hilfe,
  * Entsorgung und Freigabe mit sichtbarer Struktur, aber verdeckten Werten + Freischalt-Card.
  */
-export function BaLiveExtractedDocument({ teaser, applicationArea, isDemo }: Props) {
+export function BaLiveExtractedDocument({ teaser, applicationArea, isDemo, unlockCta }: Props) {
   const ghsSymbols = toGhsSymbols(teaser.ghsPictograms);
-  const protectiveSigns = (teaser.protectiveEquipment ?? []).map((id) => PROTECTIVE_EQUIPMENT_SIGNS[id]);
+  const protectiveSigns = (teaser.protectiveEquipment ?? [])
+    .map((id) => PROTECTIVE_EQUIPMENT_SIGNS[id])
+    .filter((sign): sign is BaDocumentSymbol => Boolean(sign));
   const precautionary = teaser.precautionaryStatements ?? [];
   const counts = teaser.statementCounts;
   const remainingHazard = Math.max(0, (counts?.hazard ?? 0) - teaser.hazardStatements.length);
@@ -108,7 +112,7 @@ export function BaLiveExtractedDocument({ teaser, applicationArea, isDemo }: Pro
               {overlayTitle}
             </p>
             <p className="m-0 mt-1.5 text-[13px] leading-snug text-slate-600">{copy.lockedOverlay.text}</p>
-            <BaUnlockCta label={copy.lockedOverlay.cta} tone="light" className="mt-3" />
+            {unlockCta}
           </div>
         </div>
       </div>
