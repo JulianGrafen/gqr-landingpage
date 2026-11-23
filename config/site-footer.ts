@@ -56,6 +56,7 @@ export const FOOTER_INDUSTRY_LINKS = [
   { label: 'Tankstelle', href: '/loesungen/tankstelle/' },
   { label: 'Druckerei', href: '/loesungen/druckerei/' },
   { label: 'Bäckerei', href: '/loesungen/baeckerei/' },
+  { label: 'SiFa & Mandanten', href: '/loesungen/sifa-mehrere-mandanten/' },
 ] as const satisfies readonly FooterLink[];
 
 export const FOOTER_BA_SAMPLE_LINKS = [

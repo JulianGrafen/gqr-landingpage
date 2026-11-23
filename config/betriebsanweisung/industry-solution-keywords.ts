@@ -19,4 +19,13 @@ export const INDUSTRY_SOLUTION_KEYWORDS: Record<IndustrySlug, readonly string[]>
   tankstelle: ['tankstelle', 'kraftstoff', 'shop', 'waschanlage'],
   druckerei: ['druckerei', 'offset', 'siebdruck', 'buchbinderei'],
   baeckerei: ['bäckerei', 'baeckerei', 'backstube', 'konditorei'],
+  'sifa-mehrere-mandanten': [
+    'sifa',
+    'fachkraft',
+    'arbeitssicherheit',
+    'mandant',
+    'ingenieurbüro',
+    'arbeitsschutz',
+    'sicherheitsfachkraft',
+  ],
 };

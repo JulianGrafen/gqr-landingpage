@@ -78,6 +78,7 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 - [Tankstelle](https://gefahrstoff-qr.de/loesungen/tankstelle/)
 - [Druckerei](https://gefahrstoff-qr.de/loesungen/druckerei/)
 - [Bäckerei](https://gefahrstoff-qr.de/loesungen/baeckerei/)
+- [SiFa & Mandanten](https://gefahrstoff-qr.de/loesungen/sifa-mehrere-mandanten/)
 
 ## Optional
 

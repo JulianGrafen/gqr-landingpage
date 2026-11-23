@@ -78,11 +78,11 @@ export default function IndustryPage({ params }: PageProps) {
       >
         <div className="mx-auto max-w-3xl">
           <h2 id="stoffe-heading" className="text-2xl font-bold text-slate-900 sm:text-3xl">
-            Häufige Gefahrstoffe in Ihrer Branche
+            {data.stoffeListSection?.title ?? 'Häufige Gefahrstoffe in Ihrer Branche'}
           </h2>
           <p className="mt-3 text-slate-600">
-            Beispiele aus der Praxis — ergänzen Sie im Betrieb alle Stoffe, die Sie tatsächlich einsetzen, lagern oder
-            abgeben.
+            {data.stoffeListSection?.intro ??
+              'Beispiele aus der Praxis — ergänzen Sie im Betrieb alle Stoffe, die Sie tatsächlich einsetzen, lagern oder abgeben.'}
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2" role="list">
             {data.typischeStoffe.map((stoff) => (
@@ -118,14 +118,24 @@ export default function IndustryPage({ params }: PageProps) {
       <section className="border-t border-white/[0.07] bg-[#0f1e35] px-4 py-16 sm:px-6 lg:px-8" aria-label="Handlungsaufruf">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-bold text-[#f0f6ff] sm:text-3xl">
-            Gefahrstoffverzeichnis und Betriebsanweisungen ohne Excel-Chaos
+            {data.primaryCta
+              ? 'SDB hochladen, Entwurf prüfen, QR am Schrank'
+              : 'Gefahrstoffverzeichnis und Betriebsanweisungen ohne Excel-Chaos'}
           </h2>
           <p className="mt-4 text-[#8fa4c0]">
-            Legen Sie mit Ihren echten Sicherheitsdatenblättern los — unverbindlich testen, ohne Kreditkarte.
+            {data.primaryCta
+              ? 'Testen Sie mit einem Sicherheitsdatenblatt-PDF im Live-Test auf der Startseite. Den Entwurf geben Sie nach Ihrer Prüfung frei.'
+              : 'Legen Sie mit Ihren echten Sicherheitsdatenblättern los. Unverbindlich testen, ohne Kreditkarte.'}
           </p>
-          <Link href="https://app.gefahrstoff-qr.de/register" className="gqr-cta-primary gqr-cta-primary--lg mt-8">
-            Jetzt kostenlos testen
-          </Link>
+          {data.primaryCta ? (
+            <a href={data.primaryCta.href} className="gqr-cta-primary gqr-cta-primary--lg mt-8">
+              {data.primaryCta.label}
+            </a>
+          ) : (
+            <Link href="https://app.gefahrstoff-qr.de/register" className="gqr-cta-primary gqr-cta-primary--lg mt-8">
+              Jetzt kostenlos testen
+            </Link>
+          )}
           <p className="mt-4 text-sm text-[#8fa4c0]">
             Fragen?{' '}
             <a
