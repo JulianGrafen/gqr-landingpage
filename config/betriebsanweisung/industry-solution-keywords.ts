@@ -19,4 +19,7 @@ export const INDUSTRY_SOLUTION_KEYWORDS: Record<IndustrySlug, readonly string[]>
   tankstelle: ['tankstelle', 'kraftstoff', 'shop', 'waschanlage'],
   druckerei: ['druckerei', 'offset', 'siebdruck', 'buchbinderei'],
   baeckerei: ['bäckerei', 'baeckerei', 'backstube', 'konditorei'],
+  tischlerei: ['tischlerei', 'tischler', 'möbelbau', 'innenausbau'],
+  gastronomie: ['gastronomie', 'grossküche', 'großküche', 'restaurant', 'küche'],
+  steinmetz: ['steinmetz', 'steinmetzerei', 'naturstein', 'grabstein'],
 };

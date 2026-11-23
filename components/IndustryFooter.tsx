@@ -15,6 +15,9 @@ import {
   Fuel,
   Printer,
   Croissant,
+  Armchair,
+  UtensilsCrossed,
+  Pickaxe,
 } from 'lucide-react';
 import { getAllIndustries, type IndustrySlug } from '@/config/industry-solutions';
 
@@ -33,6 +36,9 @@ const ICONS: Record<IndustrySlug, LucideIcon> = {
   tankstelle: Fuel,
   druckerei: Printer,
   baeckerei: Croissant,
+  tischlerei: Armchair,
+  gastronomie: UtensilsCrossed,
+  steinmetz: Pickaxe,
 };
 
 /**

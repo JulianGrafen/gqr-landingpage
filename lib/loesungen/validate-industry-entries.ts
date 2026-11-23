@@ -11,6 +11,9 @@ const PSEO_REQUIRED_SLUGS = [
   'tankstelle',
   'druckerei',
   'baeckerei',
+  'tischlerei',
+  'gastronomie',
+  'steinmetz',
 ] as const;
 
 const BANNED_LOESUNGEN_COPY = [
