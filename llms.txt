@@ -85,6 +85,9 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 - [Tischlerei](https://gefahrstoff-qr.de/loesungen/tischlerei/)
 - [Gastronomie](https://gefahrstoff-qr.de/loesungen/gastronomie/)
 - [Steinmetz](https://gefahrstoff-qr.de/loesungen/steinmetz/)
+- [Garten- und Landschaftsbau](https://gefahrstoff-qr.de/loesungen/garten-landschaftsbau/)
+- [Pflegeeinrichtung](https://gefahrstoff-qr.de/loesungen/pflegeeinrichtung/)
+- [Gerüstbau](https://gefahrstoff-qr.de/loesungen/geruestbau/)
 
 ## Optional
 

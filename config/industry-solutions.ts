@@ -44,6 +44,9 @@ export const INDUSTRY_SLUGS = [
   'tischlerei',
   'gastronomie',
   'steinmetz',
+  'garten-landschaftsbau',
+  'pflegeeinrichtung',
+  'geruestbau',
 ] as const;
 
 export type IndustrySlug = (typeof INDUSTRY_SLUGS)[number];
@@ -2111,6 +2114,339 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  question: 'Welche BG begutachtet Gefahrstoffe beim Steinmetz?',
  answer:
  'Die Berufsgenossenschaft der Bauwirtschaft (BG BAU) prüft chemische Arbeitsstoffe und Dokumentation in Werkstatt und auf Montage. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR erleichtern den Nachweis auf der Baustelle.',
+ },
+ ],
+ },
+ },
+ 'garten-landschaftsbau': {
+ slug: 'garten-landschaftsbau',
+ label: 'Garten- und Landschaftsbau',
+ title: 'Gefahrstoffmanagement im Garten- und Landschaftsbau: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Galabau & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Galabau: Pflanzenschutz, Öle, Dieselfreisteller — § 6 GefStoffV, TRGS 555 und TRGS 201 für Betriebshof in Gefahrstoff-QR.',
+ heroText:
+ 'Pflanzenschutzmittel, Zweitaktöl und Reiniger liegen neben Baustoffen auf Hof und Baustelle. Verzeichnis, Betriebsanweisungen und Kennzeichnung müssen zu Saison und wechselnden Objekten passen.',
+ typischeStoffe: [
+ 'Pflanzenschutzmittel und Herbizide',
+ 'Zweitaktöl und Kraftstoff-Hilfsstoffe',
+ 'Entfetter und Maschinenreiniger',
+ 'Holzschutzmittel und Imprägniermittel',
+ 'Betonreiniger und Zementschleierentferner',
+ ],
+ spezifischerVorteil:
+ 'Wechselnde Aufträge und Jungkräfte im Umfeld erzeugen viele Kleingebinde. Digitales Verzeichnis mit SDB-Bezug hilft, Betriebsanweisungen für Hof und Einsatzort bereitzustellen und Umfüllen nach TRGS 201 nachzuhalten.',
+ handwerkAbsatz:
+ 'Galabauer arbeiten mobil zwischen Depot und Baustelle. Fehlen Sprühflaschen oder Kanister im Verzeichnis, wird die BG BAU-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe verkürzen die Pflege bei neuen Pflanzenschutzmitteln und Betriebsmitteln.',
+ brancheGenitiv: 'Garten- und Landschaftsbau',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Galabauer führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Betriebshof, Werkstatt und Baustelle. Betriebsanweisungen nach TRGS 555 betreffen Pflanzenschutz, Öle und Reiniger. Umfüllen in Hand- und Dosiergebinde erfordert Kennzeichnung nach TRGS 201. Excel-Listen je Saison und Objekt veralten schnell. Gefahrstoff-QR verbindet SDB, Entwürfe und Nachweise für SiFa und BG BAU.',
+ typicalProducts: [
+ {
+ product: 'Herbizid-Konzentrat (Rasen und Wege)',
+ gebinde: 'Kanister 5 Liter, Sprühflasche',
+ hazardKind: 'reizend, gesundheitsschädlich bei Einatmen',
+ workplaceDuty: 'Verzeichnis, BA vor Ausbringung, Unterweisung Anwender',
+ },
+ {
+ product: 'Zweitaktöl für Gerätepark',
+ gebinde: 'Flasche 1 Liter, Kanister',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Eintrag Werkstatt, Lagerort Hof, Unterweisung vor Mischung',
+ },
+ {
+ product: 'Entfetter für Kettengerät und Gerätewerkstatt',
+ gebinde: 'Spray, Kanister',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'SDB archivieren, Umfüllen nach TRGS 201 dokumentieren',
+ },
+ {
+ product: 'Holzschutzmittel (Holzlager, Zaunbau)',
+ gebinde: 'Kanister 10 Liter',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Betriebsanweisung Hof, Verzeichnis, Unterweisung Team',
+ },
+ {
+ product: 'Algenentferner für Naturstein',
+ gebinde: 'Kanister, Sprühflasche',
+ hazardKind: 'ätzend oder reizend',
+ workplaceDuty: 'Kennzeichnung Umfüllgebinde, Verzeichnis Baustelle',
+ },
+ {
+ product: 'Diesel-Hilfsstoff (Motorreiniger)',
+ gebinde: 'Kanister 20 Liter',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Menge im Verzeichnis, BA in der Gerätehalle',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Pflanzenschutz- und Reinigungsmittel auf dem Hof fehlen im Gefahrstoffverzeichnis oder ohne Bauauftragsbezug.',
+ 'Betriebsanweisungen für Herbizide und Maschinenöle sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Beschriftete und unbeschriftete Sprühflaschen an Geräten sind nicht nach TRGS 201 im Verzeichnis erfasst.',
+ ],
+ berufsgenossenschaft: 'BG BAU',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Büro tippt PSM und Öle pro Objekt in Excel',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unbeschriftete Flaschen am Anhänger',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA am Geräteschuppen',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Hofbürobox oder zuhause beim Meister',
+ gqrWorkflow: 'QR am Hofregal, Anhänger oder Baustellencontainer',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'Listen aus Hof und mehreren Baustellen manuell bündeln',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Müssen Pflanzenschutzmittel ins Gefahrstoffverzeichnis?',
+ answer:
+ 'Ja, Pflanzenschutzmittel sind Gefahrstoffe nach § 2 GefStoffV. Sie werden nach § 6 GefStoffV mit Menge, Lagerort und Verwendung im Verzeichnis geführt. Eine Betriebsanweisung nach TRGS 555 beschreibt Umgang vor Ausbringung. Unterweisungen sind für alle Anwender dokumentiert. Gefahrstoff-QR unterstützt SDB-Bezug und Vorprüfung durch SiFa oder Betriebsleitung.',
+ },
+ {
+ question: 'Wie erfasse ich Hof und wechselnde Baustellen?',
+ answer:
+ 'Jedes Gebinde braucht einen Bezug zu Lagerort oder Einsatzadresse im Verzeichnis. Hoflager und Baustellencontainer gelten als Arbeitsorte mit eigenen Stoffen. Excel je Auftrag veraltet nach Saisonende. Digitale Pflege hält SDB-Stand und Betriebsanweisungen zusammen. Umfüllen kleiner Gebinde löst TRGS 201 aus und wird dokumentiert.',
+ },
+ {
+ question: 'Welche BG begeht Galabauer-Betriebe?',
+ answer:
+ 'Die Berufsgenossenschaft der Bauwirtschaft (BG BAU) prüft Gefahrstoffdokumentation in Werkstatt, auf Hof und Baustelle. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen gehören zum Standardprogramm. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR unterstützen den Nachweis ohne Papierstapel zwischen den Objekten.',
+ },
+ ],
+ },
+ },
+ 'pflegeeinrichtung': {
+ slug: 'pflegeeinrichtung',
+ label: 'Pflegeeinrichtung',
+ title: 'Gefahrstoffmanagement in der Pflegeeinrichtung: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Pflege & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Pflegeheim: Desinfektion, Reiniger, Bettenöl — § 6 GefStoffV, TRGS 555 und TRGS 201 für Station und Hauswirtschaft.',
+ heroText:
+ 'Desinfektionsmittel, Reiniger und Pflegeprodukte stehen in Station, Küche und Wäscherei. Verzeichnis, Betriebsanweisungen und Umfüll-Kennzeichnung müssen zu Schichtdienst und Hygieneplänen passen.',
+ typischeStoffe: [
+ 'Flächen- und Händedesinfektion',
+ 'Säure- und alkalische Reiniger für Küche und Bad',
+ 'Waschmittel und Weichspüler in der Wäscherei',
+ 'Hautschutz und Pflegeemulsionen',
+ 'Desinfektionsmittel für Medizinprodukte',
+ ],
+ spezifischerVorteil:
+ 'Hygienepläne und Lieferantenwechsel erzeugen viele SDB-Updates. Digitales Verzeichnis mit Historie hilft, Betriebsanweisungen je Bereich freizugeben und Umfüllen nach TRGS 201 in Hauswirtschaft und Station nachzuhalten.',
+ handwerkAbsatz:
+ 'In Pflegeeinrichtungen nutzen viele Berufsgruppen dieselben Lagerorte. Wenn Sprühflaschen in Stationen nicht im Verzeichnis stehen oder SDB-Updates fehlen, wird die BGW-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe verkürzen die Pflege bei neuen Desinfektionslinien.',
+ brancheGenitiv: 'Pflegeeinrichtung',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Pflegeeinrichtungen führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Station, Küche, Wäscherei und Technik. Betriebsanweisungen nach TRGS 555 gelten für Desinfektionsmittel und Reiniger. Umfüllen in Dosier- und Sprühflaschen erfordert Kennzeichnung nach TRGS 201. Excel-Listen mit Schichtwechsel veralten rasch. Gefahrstoff-QR verbindet SDB, Entwürfe und Exporte für SiFa und BGW.',
+ typicalProducts: [
+ {
+ product: 'Flächendesinfektion (nimmtot)',
+ gebinde: 'Kanister, Dosierflasche',
+ hazardKind: 'ätzend oder entzündbar',
+ workplaceDuty: 'Verzeichnis je Station, BA, Unterweisung Pflegekräfte',
+ },
+ {
+ product: 'Sanitärreiniger (WC und Bad)',
+ gebinde: 'Sprühflasche, Kanister',
+ hazardKind: 'ätzend, reizend',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Eintrag Hauswirtschaft',
+ },
+ {
+ product: 'Geschirrspülmittel-Konzentrat (Großküche)',
+ gebinde: 'Kanister 10 Liter',
+ hazardKind: 'ätzend, reizend',
+ workplaceDuty: 'SDB archivieren, Betriebsanweisung Küche, Unterweisung',
+ },
+ {
+ product: 'Hautschutzcreme vor Reinigungsarbeiten',
+ gebinde: 'Tube, Spender',
+ hazardKind: 'reizend',
+ workplaceDuty: 'Verzeichnis Technik, Hinweis in Unterweisung Hauswirtschaft',
+ },
+ {
+ product: 'Waschmittel Industriewäscherei',
+ gebinde: 'Kartusche, Kanister',
+ hazardKind: 'ätzend, reizend',
+ workplaceDuty: 'Lagerort Wäscherei, BA am Automaten, Dokumentation',
+ },
+ {
+ product: 'Desinfektionsmittel für Pflegebett',
+ gebinde: 'Sprühflasche, Kanister',
+ hazardKind: 'reizend, biozidwirksam',
+ workplaceDuty: 'Eintrag Station, BA, biozidbezogene Unterweisung',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Desinfektions- und Reinigungsmittel in Stationen fehlen im Gefahrstoffverzeichnis trotz täglicher Nutzung.',
+ 'Betriebsanweisungen für Küche und Hauswirtschaft sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Beschriftete Sprühflaschen auf den Stationen sind nicht dem Verzeichnis und keiner freigegebenen Betriebsanweisung zugeordnet.',
+ ],
+ berufsgenossenschaft: 'BGW',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Hauswirtschaftspflege tippt Produkte in Excel ab',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unmarkierte Flaschen auf dem Stationsschwenkwagen',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA im Schrank',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Verwaltung oder Stationsbüro',
+ gqrWorkflow: 'QR am Spülschrank, Reinigungswagen oder Küche',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'SDBs aus Station, Küche und Wäscherei sammeln',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Braucht ein Pflegeheim ein Gefahrstoffverzeichnis?',
+ answer:
+ 'Ja, sobald Gefahrstoffe eingesetzt oder gelagert werden. Desinfektionsmittel, Reiniger und Küchenchemie gelten nach § 2 GefStoffV. Das Verzeichnis nach § 6 GefStoffV muss Station, Küche und Technik abdecken. Auch kleine Häuser nutzen täglich Flächendesinfektion. Gefahrstoff-QR unterstützt Pflege und Vorprüfung durch SiFa oder Pflegedienstleitung.',
+ },
+ {
+ question: 'Wie dokumentiere ich Umfüllen auf den Stationen?',
+ answer:
+ 'Beim Umfüllen entsteht ein Arbeitsmittel nach TRGS 201. Es braucht Kennzeichnung mit Stoff- und Gefahrenhinweisen aus dem SDB. Das Gebinde gehört ins Gefahrstoffverzeichnis mit Stationsbezug. Eine Betriebsanweisung nach TRGS 555 wird für Reinigungsarbeiten benötigt. Gefahrstoff-QR unterstützt Entwürfe zur fachlichen Freigabe durch SiFa oder Einrichtungsleitung.',
+ },
+ {
+ question: 'Welche BG prüft Gefahrstoffe in der Pflege?',
+ answer:
+ 'Die Berufsgenossenschaft für Gesundheitsdienst und Wohlfahrtspflege (BGW) begutachtet chemische Arbeitsstoffe und Dokumentation in Pflegeeinrichtungen. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR erleichtern den Nachweis bei Räumediens und Schichtwechsel.',
+ },
+ ],
+ },
+ },
+ 'geruestbau': {
+ slug: 'geruestbau',
+ label: 'Gerüstbau',
+ title: 'Gefahrstoffmanagement im Gerüstbau: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Gerüstbau & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Gerüstbau: Korrosionsschutz, Schmierfett, Reiniger — § 6 GefStoffV, TRGS 555 und TRGS 201 für Lager und Montage.',
+ heroText:
+ 'Korrosionsschutzmittel, Schmierfette und Reiniger liegen in Lager, Werkstatt und auf Montagefahrzeugen. Verzeichnis, Betriebsanweisungen und Kennzeichnung müssen zu wechselnden Bauobjekten passen.',
+ typischeStoffe: [
+ 'Korrosionsschutzfarbe und Rostschutz',
+ 'Schmierfette und Öle für Gerüstverankerungen',
+ 'Entfetter und Maschinenreiniger',
+ 'Montageschaum und Baukleber',
+ 'Markierungsspray für Gerüstkennzeichnung',
+ ],
+ spezifischerVorteil:
+ 'Mobile Teams und Kurzzeitlager auf Baustellen erzeugen viele Kleingebinde. Digitales Verzeichnis mit SDB-Bezug hilft, Betriebsanweisungen je Montagestandort bereitzustellen und Umfüllen nach TRGS 201 am Anhänger nachzuhalten.',
+ handwerkAbsatz:
+ 'Gerüstbauer arbeiten zwischen Lagerhalle und Gerüst. Wenn Kanister im Transporter nicht im Verzeichnis stehen oder Sprays ohne SDB-Bezug genutzt werden, wird die BG BAU-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe verkürzen die Pflege bei neuen Schutzlacken.',
+ brancheGenitiv: 'Gerüstbau',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Gerüstbauunternehmen führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Lager, Werkstatt und Baustelle. Betriebsanweisungen nach TRGS 555 gelten für Korrosionsschutz, Schmiermittel und Reiniger. Umfüllen in Handgebinden und Sprühflaschen erfordert Kennzeichnung nach TRGS 201. Excel-Listen je Montageort veralten nach Abbau. Gefahrstoff-QR verbindet SDB, Entwürfe und Nachweise für SiFa und BG BAU.',
+ typicalProducts: [
+ {
+ product: 'Zinkspray für Gerüstschutz',
+ gebinde: 'Spraydose, Kanister',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Verzeichnis Lager, BA vor Sprüharbeit, Unterweisung Montageteam',
+ },
+ {
+ product: 'Schmierfett für Kupplungen und Räder',
+ gebinde: 'Tube, Eimer',
+ hazardKind: 'reizend',
+ workplaceDuty: 'Eintrag Werkstatt, Unterweisung bei Wartung',
+ },
+ {
+ product: 'Entfetter für Anbauteile',
+ gebinde: 'Spray, Kanister',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Verzeichnis Anhänger',
+ },
+ {
+ product: 'Montageschaum (2K Hartschaum)',
+ gebinde: 'Pistole, Kartusche',
+ hazardKind: 'entzündbar, sensibilisierend',
+ workplaceDuty: 'SDB archivieren, BA am Lager, Unterweisung vor Verankerung',
+ },
+ {
+ product: 'Markierungsspray für Gerüstplanken',
+ gebinde: 'Spraydose',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Lagerort dokumentieren, BA auf Baustelle verfügbar',
+ },
+ {
+ product: 'Rostumwandler vor Anstrich',
+ gebinde: 'Spray, Flasche',
+ hazardKind: 'ätzend oder reizend',
+ workplaceDuty: 'Verzeichniseintrag Transporter, Unterweisung dokumentieren',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Korrosionsschutz- und Reinigungsmittel im Transporter fehlen im Gefahrstoffverzeichnis.',
+ 'Betriebsanweisungen für Schmierfette und Sprays sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Spraydosen und abgefüllte Kanister auf der Baustelle sind nicht nach TRGS 201 im Verzeichnis erfasst.',
+ ],
+ berufsgenossenschaft: 'BG BAU',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Montageleiter pflegt Stoffe je Objekt in Excel',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unbeschriftete Flaschen im Anhänger',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA am Materialkasten',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Gerüstlagerleitung oder Bauramme',
+ gqrWorkflow: 'QR am Lagerregal, Transporter oder Gerüstcontainer',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'Listen aus Lager und Baustellen manuell zusammenführen',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Muss Korrosionsschutz im Gefahrstoffverzeichnis stehen?',
+ answer:
+ 'Ja, wenn Korrosions- und Rostschutzmittel eingesetzt oder gelagert werden. Sie gehören nach § 6 GefStoffV mit Menge und Lagerort ins Verzeichnis. Eine Betriebsanweisung nach TRGS 555 beschreibt Umgang in Lager und Montage. Unterweisungen für Gerüstbauer werden dokumentiert. Gefahrstoff-QR unterstützt SDB-Bezug und Vorprüfung durch SiFa oder Montageleitung.',
+ },
+ {
+ question: 'Wie erfasse ich Hilfsstoffe im Transporter?',
+ answer:
+ 'Mobile Gebinde werden im Verzeichnis mit Fahrzeug oder Bauauftrag verknüpft. Bei Objektwechsel muss der Eintrag aktuell bleiben. Excel je Baustelle verliert nach Abbau den Bezug. Digitale Pflege hält SDB und Betriebsanweisungen am QR-Code am Materialkasten. Umfüllen löst TRGS 201 aus und wird mitkennzeichnet.',
+ },
+ {
+ question: 'Welche BG ist für Gerüstbau zuständig?',
+ answer:
+ 'Die Berufsgenossenschaft der Bauwirtschaft (BG BAU) prüft Gefahrstoffdokumentation in Lager, Werkstatt und auf Montage. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen gehören zum Standardprogramm. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR unterstützen den Nachweis ohne Zettelwirtschaft zwischen den Gerüsten.',
  },
  ],
  },

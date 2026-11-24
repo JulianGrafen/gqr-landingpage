@@ -22,6 +22,9 @@ import {
   Armchair,
   UtensilsCrossed,
   Pickaxe,
+  TreePine,
+  HeartHandshake,
+  HardHat,
 } from 'lucide-react';
 import { getAllIndustries, type IndustrySlug } from '@/config/industry-solutions';
 
@@ -47,6 +50,9 @@ const ICONS: Record<IndustrySlug, LucideIcon> = {
   tischlerei: Armchair,
   gastronomie: UtensilsCrossed,
   steinmetz: Pickaxe,
+  'garten-landschaftsbau': TreePine,
+  pflegeeinrichtung: HeartHandshake,
+  geruestbau: HardHat,
 };
 
 /**

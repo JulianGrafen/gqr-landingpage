@@ -18,6 +18,9 @@ const PSEO_REQUIRED_SLUGS = [
   'tischlerei',
   'gastronomie',
   'steinmetz',
+  'garten-landschaftsbau',
+  'pflegeeinrichtung',
+  'geruestbau',
 ] as const;
 
 const BANNED_LOESUNGEN_COPY = [
