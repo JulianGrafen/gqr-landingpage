@@ -36,12 +36,12 @@ export interface HeroCopy {
 }
 
 /** Kompositum in der Hero-H1: darf nicht mit Bindestrich mitten im Wort umbrechen. */
-export const HOME_HERO_H1_UNBROKEN_COMPOUND = 'Gefahrstoffkataster';
+export const HOME_HERO_H1_UNBROKEN_COMPOUND = 'Gefahrstoffmanagement Software';
 
 export const HOME_HERO = {
   eyebrow: 'Die Excel-Alternative für SiFas & KMU',
-  headline: `${HOME_HERO_H1_UNBROKEN_COMPOUND} & BA-Entwurf`,
-  headlineAccent: 'ohne Abtippen.',
+  headline: `${HOME_HERO_H1_UNBROKEN_COMPOUND}`,
+  headlineAccent: 'für Kataster & BA-Entwurf ohne Abtippen.',
   subheadlineParagraphs: [
     'KI liest aus, Sie geben frei.',
     'Sparen Sie sich mehrere Stunden Arbeit pro Woche: im eigenen Betrieb oder für Ihre Mandanten.',

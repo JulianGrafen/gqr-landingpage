@@ -29,8 +29,8 @@ export function resolveMarketingHomeHref(): string {
  */
 export const HOME_SEO: SeoMetaInput = {
   path: '/',
-  title: 'Gefahrstoffmanagement Software: § 6 Kataster aus dem SDB | GQR',
-  socialTitle: 'Gefahrstoffmanagement Software: Kataster aus dem Sicherheitsdatenblatt',
+  title: 'Gefahrstoffmanagement Software: BA & SDB | Gefahrstoff-QR',
+  socialTitle: 'Gefahrstoffmanagement Software für Betriebsanweisungen & SDB',
   description:
     'SDB-PDF hochladen: Entwurf für Gefahrstoffkataster (§ 6), TRGS-555-Betriebsanweisungen & QR-Codes für Smartphone & Tablet. Kostenlos starten, ohne Excel.',
   ogImageAlt: 'Gefahrstoff-QR: KI-gestütztes digitales Gefahrstoffverzeichnis',

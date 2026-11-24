@@ -52,7 +52,7 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 - [Gefahrstoffkataster Software](https://gefahrstoff-qr.de/gefahrstoffkataster-software/): Kataster digital führen
 - [Etikettensoftware Gefahrstoffe](https://gefahrstoff-qr.de/etikettensoftware-gefahrstoffe/): GHS-Etiketten für Umfüllgebinde nach TRGS 201 aus dem SDB, mit QR-Code
 - [Gefahrstoff App](https://gefahrstoff-qr.de/gefahrstoff-app/): Mobile Nutzung und QR-Notfallansicht
-- [Software für selbstständige Sicherheitsfachkräfte](https://gefahrstoff-qr.de/gefahrstoff-software-sicherheitsfachkraft-selbstst%C3%A4ndig/): Mandantenverwaltung für externe SiFas
+- [Software für selbstständige Sicherheitsfachkräfte](https://gefahrstoff-qr.de/gefahrstoff-software-sicherheitsfachkraft-selbstständig/): Mandantenverwaltung für externe SiFas
 - [Wissen](https://gefahrstoff-qr.de/wissen/): Praxiswissen zu Gefahrstoffkataster und Gefahrstoffverzeichnis
 - [Blog](https://gefahrstoff-qr.de/blog/): Praxisartikel zu Betriebsprüfung und Sicherheitsdatenblättern
 

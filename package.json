@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run validate:loesungen && next build",
-    "build:github-pages": "npm run build:sdb-preview && npm run build:roi-calculator && npm run sync:home && npm run sync:silo-pricing && npm run generate:kfz-werkstatt-landing && npm run generate:sifa-selbststaendig-landing && npm run sync:solution-callouts && npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run validate:loesungen && next build && node scripts/sync-github-pages.mjs && npm run validate:export-routes && npm run generate:sitemap && npm run validate:sitemap && npm run validate:legal-copy-export && npm run validate:seo-meta",
+    "build:github-pages": "npm run build:sdb-preview && npm run build:roi-calculator && npm run sync:home && npm run sync:pricing-redirect && npm run sync:silo-pricing && npm run generate:kfz-werkstatt-landing && npm run generate:sifa-selbststaendig-landing && npm run sync:solution-callouts && npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run validate:loesungen && next build && node scripts/sync-github-pages.mjs && npm run validate:export-routes && npm run generate:sitemap && npm run validate:sitemap && npm run validate:legal-copy-export && npm run validate:seo-meta",
     "validate:legal-copy": "node scripts/validate-legal-copy.mjs",
     "validate:legal-copy-export": "node scripts/validate-legal-copy.mjs --export",
     "validate:betriebsanweisung": "npx tsx scripts/validate-betriebsanweisung-entries.ts",
@@ -21,6 +21,7 @@
     "verify:sdb-preview": "node scripts/verify-sdb-preview.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "sync:home": "npx tsx --tsconfig tsconfig.scripts.json scripts/sync-home-aeo.tsx",
+    "sync:pricing-redirect": "npx tsx --tsconfig tsconfig.scripts.json scripts/sync-pricing-redirect.tsx",
     "sync:legal-chrome": "npx tsx --tsconfig tsconfig.scripts.json scripts/sync-legal-chrome.tsx",
     "generate:kfz-werkstatt-landing": "npx tsx --tsconfig tsconfig.scripts.json scripts/generate-kfz-werkstatt-landing.tsx",
     "generate:sifa-selbststaendig-landing": "npx tsx --tsconfig tsconfig.scripts.json scripts/generate-sifa-selbststaendig-landing.tsx",

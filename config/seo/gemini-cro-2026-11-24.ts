@@ -22,7 +22,7 @@ export const GEMINI_CRO_BA_OVERRIDES: Partial<
   'bodenreiniger-trgs-555': {
     title: 'Betriebsanweisung Bodenreiniger (TRGS 555): Muster & PDF',
     description:
-      'TRGS-555-Muster für Bodenreiniger. Eigenes SDB hochladen, Entwurf zur fachlichen Prüfung. Ohne Login testen.',
+      'TRGS-555-Muster für Bodenreiniger. Eigenes SDB hochladen, KI-Entwurf ansehen. Ohne Login testen.',
     internalLink: {
       href: '/blog/reinigung-gefahrstoffkataster-vorlage/',
       label: 'Gefahrstoffkataster Vorlage für die Reinigung',
@@ -31,7 +31,7 @@ export const GEMINI_CRO_BA_OVERRIDES: Partial<
   'fensterreiniger-trgs-555': {
     title: 'Betriebsanweisung Fensterreiniger (TRGS 555): Muster & PDF',
     description:
-      'TRGS-555-Muster für Fensterreiniger. Eigenes SDB hochladen, Entwurf zur fachlichen Prüfung. Ohne Login testen.',
+      'TRGS-555-Muster für Fensterreiniger. Eigenes SDB hochladen, KI-Entwurf ansehen. Ohne Login testen.',
     internalLink: {
       href: '/blog/reinigung-gefahrstoffkataster-vorlage/',
       label: 'Gefahrstoffkataster Vorlage für die Reinigung',
@@ -40,7 +40,7 @@ export const GEMINI_CRO_BA_OVERRIDES: Partial<
   'fassadenreiniger-trgs-555': {
     title: 'Betriebsanweisung Fassadenreiniger TRGS 555: Muster & PDF',
     description:
-      'TRGS-555-Muster für Fassadenreiniger. Eigenes SDB hochladen, Entwurf zur fachlichen Prüfung. Ohne Login testen.',
+      'TRGS-555-Muster für Fassadenreiniger. Eigenes SDB hochladen, KI-Entwurf ansehen. Ohne Login testen.',
     internalLink: {
       href: '/blog/reinigung-gefahrstoffkataster-vorlage/',
       label: 'Gefahrstoffkataster Vorlage für die Reinigung',

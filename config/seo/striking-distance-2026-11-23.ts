@@ -21,7 +21,7 @@ export const BETRIEBSANWEISUNG_STRIKING_OVERRIDES: Partial<
   'isopropanol-trgs-555': {
     title: 'Betriebsanweisung Isopropanol (TRGS 555): Muster & PDF',
     description:
-      'Betriebsanweisung Isopropanol nach TRGS 555: Muster prüfen oder eigenes SDB-PDF in einen KI-Entwurf zur Freigabe umwandeln. Jetzt kostenlos testen.',
+      'Betriebsanweisung Isopropanol nach TRGS 555: Muster prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln. Jetzt kostenlos testen.',
     midPageCta: {
       headline: 'Isopropanol: eigenes SDB in einen TRGS-555-Entwurf übernehmen',
       body: 'Laden Sie Ihr Lieferanten-PDF hoch. Gefahrstoff-QR strukturiert einen Entwurf zur fachlichen Prüfung und Freigabe durch SiFa oder Arbeitgeber, ohne Login-Pflicht für den ersten Test.',
@@ -32,7 +32,7 @@ export const BETRIEBSANWEISUNG_STRIKING_OVERRIDES: Partial<
   'aceton-trgs-555': {
     title: 'Betriebsanweisung Aceton (TRGS 555): Vorlage & PDF',
     description:
-      'Betriebsanweisung Aceton nach TRGS 555: Muster ansehen oder SDB-PDF in einen KI-Entwurf zur Freigabe umwandeln. Kostenlos starten, ohne Verkaufsgespräch.',
+      'Betriebsanweisung Aceton nach TRGS 555: Muster ansehen oder SDB-PDF in einen KI-Entwurf umwandeln. Kostenlos starten, ohne Verkaufsgespräch.',
     midPageCta: {
       headline: 'Aceton: Muster sehen, dann Ihr SDB-PDF testen',
       body: 'Die Vorschau zeigt den Aufbau nach TRGS 555. Für Ihr Produkt gilt das Lieferanten-SDB: Upload unterstützt den Entwurf, die Freigabe bleibt beim Betrieb.',
@@ -43,7 +43,7 @@ export const BETRIEBSANWEISUNG_STRIKING_OVERRIDES: Partial<
   'sekundenkleber-trgs-555': {
     title: 'Betriebsanweisung Sekundenkleber (TRGS 555): Muster',
     description:
-      'Betriebsanweisung Sekundenkleber nach TRGS 555: Muster prüfen oder SDB in einen KI-Entwurf zur Freigabe umwandeln. Kostenloser Einstieg für wenige Stoffe.',
+      'Betriebsanweisung Sekundenkleber nach TRGS 555: Muster prüfen oder SDB in einen KI-Entwurf umwandeln. Kostenloser Einstieg für wenige Stoffe.',
     midPageCta: {
       headline: 'Sekundenkleber: Entwurf aus dem Hersteller-SDB',
       body: 'Kunststoffreparatur und Montage brauchen eine betriebliche Betriebsanweisung. Gefahrstoff-QR unterstützt den Entwurf aus Ihrem PDF, SiFa und Meister geben frei.',
@@ -54,7 +54,7 @@ export const BETRIEBSANWEISUNG_STRIKING_OVERRIDES: Partial<
   'argon-trgs-555': {
     title: 'Betriebsanweisung Argon (TRGS 555): Vorlage prüfen',
     description:
-      'Betriebsanweisung Argon nach TRGS 555: Muster ansehen oder SDB-PDF in einen KI-Entwurf zur Freigabe umwandeln. Maßnahmen aus Ihrem Lieferanten-PDF.',
+      'Betriebsanweisung Argon nach TRGS 555: Muster ansehen oder SDB-PDF in einen KI-Entwurf umwandeln. Maßnahmen aus Ihrem Lieferanten-PDF.',
     midPageCta: {
       headline: 'Argon: Betriebsanweisung aus Ihrem Lieferanten-PDF',
       body: 'Schweißgas-Angaben variieren je Gebinde. Der Entwurf orientiert sich an Ihrem Sicherheitsdatenblatt und dient der Vorprüfung vor der betrieblichen Freigabe.',
@@ -65,7 +65,7 @@ export const BETRIEBSANWEISUNG_STRIKING_OVERRIDES: Partial<
   'kaliumpermanganat-trgs-555': {
     title: 'Betriebsanweisung Kaliumpermanganat (TRGS 555): Muster',
     description:
-      'Betriebsanweisung Kaliumpermanganat nach TRGS 555: Muster prüfen oder SDB in einen KI-Entwurf zur Freigabe. Verzeichnis und BA an einem Ort pflegen.',
+      'Betriebsanweisung Kaliumpermanganat nach TRGS 555: Muster prüfen oder SDB in einen KI-Entwurf umwandeln. Verzeichnis und BA an einem Ort pflegen.',
     midPageCta: {
       headline: 'Kaliumpermanganat: Vorschau plus eigener SDB-Upload',
       body: 'Labor und Wasseraufbereitung nutzen unterschiedliche Konzentrationen. Der Entwurf unterstützt SiFa und Betriebsleitung bei der Freigabe nach § 14 GefStoffV.',
@@ -76,7 +76,7 @@ export const BETRIEBSANWEISUNG_STRIKING_OVERRIDES: Partial<
   'grundierung-trgs-555': {
     title: 'Betriebsanweisung Grundierung (TRGS 555): Muster & PDF',
     description:
-      'Betriebsanweisung Grundierung nach TRGS 555: Muster ansehen oder SDB-PDF in einen KI-Entwurf zur Freigabe umwandeln. Vorschau prüfen und testen.',
+      'Betriebsanweisung Grundierung nach TRGS 555: Muster ansehen oder SDB-PDF in einen KI-Entwurf umwandeln. Vorschau prüfen und testen.',
     midPageCta: {
       headline: 'Grundierung: TRGS-555-Entwurf aus Ihrem SDB',
       body: 'Bindemittel und Lösemittel unterscheiden sich je Produkt. Laden Sie Ihr Sicherheitsdatenblatt hoch und prüfen Sie den strukturierten Entwurf vor der Freigabe.',
