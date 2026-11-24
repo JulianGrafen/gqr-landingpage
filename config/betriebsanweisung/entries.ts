@@ -3468,6 +3468,116 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Industrielle Instandhaltung",
     ],
   },
+  {
+    slug: 'natriumhydroxid-trgs-555',
+    substanceName: "Natriumhydroxid",
+    metaDescription: "Betriebsanweisung Natriumhydroxid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Chemische Reinigung & Textilpflege",
+      "Lebensmittelverarbeitung (CIP)",
+      "Wasseraufbereitung & Kläranlage",
+      "Industrielle Abwassertechnik",
+    ],
+  },
+  {
+    slug: 'startpilot-trgs-555',
+    substanceName: "Startpilot",
+    metaDescription: "Betriebsanweisung Startpilot: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Pannendienst",
+      "Landwirtschaft & Hoftechnik",
+      "Forst- & Gartengeräteservice",
+      "Transport & Fuhrpark",
+    ],
+  },
+  {
+    slug: 'klarspueler-trgs-555',
+    substanceName: "Klarspüler",
+    metaDescription: "Betriebsanweisung Klarspüler: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gastronomie & Großküche",
+      "Hotel & Pflegeküche",
+      "Gebäudereinigung & Facility",
+      "Industrie-Großküchen",
+    ],
+  },
+  {
+    slug: 'magnesiumchlorid-trgs-555',
+    substanceName: "Magnesiumchlorid",
+    metaDescription: "Betriebsanweisung Magnesiumchlorid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kommunaltechnik & Winterdienst",
+      "Logistik & Fuhrpark",
+      "Landwirtschaft & Agrartechnik",
+      "Facility Management",
+    ],
+  },
+  {
+    slug: 'isophorondiisocyanat-trgs-555',
+    substanceName: "Isophorondiisocyanat",
+    metaDescription: "Betriebsanweisung Isophorondiisocyanat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Beschichtung & Lackierung",
+      "Kunststoffverarbeitung",
+      "Bodenbelags- & Industriebodenbau",
+      "Metallbau & Oberflächentechnik",
+    ],
+  },
+  {
+    slug: 'kaliumcarbonat-trgs-555',
+    substanceName: "Kaliumcarbonat",
+    metaDescription: "Betriebsanweisung Kaliumcarbonat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Glas- & Keramikindustrie",
+      "Seifen- & Waschmittelherstellung",
+      "Gebäudereinigung (Alkaligrund)",
+      "Labor & Technik",
+    ],
+  },
+  {
+    slug: 'natriumbicarbonat-trgs-555',
+    substanceName: "Natriumbicarbonat",
+    metaDescription: "Betriebsanweisung Natriumbicarbonat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Bäckerei & Lebensmittelverarbeitung",
+      "Gebäudereinigung & Raumhygiene",
+      "Schwimmbad- & Bädertechnik",
+      "Labor & Technik",
+    ],
+  },
+  {
+    slug: 'fensterkitt-trgs-555',
+    substanceName: "Fensterkitt",
+    metaDescription: "Betriebsanweisung Fensterkitt: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Fensterbau & Glaser",
+      "SHK-Handwerk & Sanitär",
+      "Maler- & Stuckateurhandwerk",
+      "Denkmalpflege & Restaurierung",
+    ],
+  },
+  {
+    slug: 'scheibenfrostschutz-trgs-555',
+    substanceName: "Scheibenfrostschutz",
+    metaDescription: "Betriebsanweisung Scheibenfrostschutz: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fuhrpark",
+      "Logistik & Spedition",
+      "Kommunaltechnik & Winterdienst",
+      "Landwirtschaft & Hof",
+    ],
+  },
+  {
+    slug: 'keilriemenreiniger-trgs-555',
+    substanceName: "Keilriemenreiniger",
+    metaDescription: "Betriebsanweisung Keilriemenreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Wartung",
+      "Industrielle Instandhaltung",
+      "Landwirtschaft & Maschinenring",
+      "Kommunaltechnik & Werkstatt",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];

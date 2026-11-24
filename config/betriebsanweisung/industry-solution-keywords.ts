@@ -34,4 +34,7 @@ export const INDUSTRY_SOLUTION_KEYWORDS: Record<IndustrySlug, readonly string[]>
   tischlerei: ['tischlerei', 'tischler', 'möbelbau', 'innenausbau'],
   gastronomie: ['gastronomie', 'grossküche', 'großküche', 'restaurant', 'küche'],
   steinmetz: ['steinmetz', 'steinmetzerei', 'naturstein', 'grabstein'],
+  'garten-landschaftsbau': ['galabau', 'landschaftsbau', 'gartenbau', 'grünanlagen', 'gartnerei'],
+  pflegeeinrichtung: ['pflegeheim', 'pflegeeinrichtung', 'altenpflege', 'seniorenheim', 'krankenhaus'],
+  geruestbau: ['gerüstbau', 'geruestbau', 'gerüst', 'geruest', 'arbeitsbühne'],
 };

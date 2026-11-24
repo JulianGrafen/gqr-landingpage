@@ -63,6 +63,9 @@ export const FOOTER_INDUSTRY_LINKS = [
   { label: 'Tischlerei', href: '/loesungen/tischlerei/' },
   { label: 'Gastronomie', href: '/loesungen/gastronomie/' },
   { label: 'Steinmetz', href: '/loesungen/steinmetz/' },
+  { label: 'Galabau', href: '/loesungen/garten-landschaftsbau/' },
+  { label: 'Pflegeeinrichtung', href: '/loesungen/pflegeeinrichtung/' },
+  { label: 'Gerüstbau', href: '/loesungen/geruestbau/' },
 ] as const satisfies readonly FooterLink[];
 
 export const FOOTER_BA_SAMPLE_LINKS = [
