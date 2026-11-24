@@ -30,6 +30,9 @@ export const PRICING_FEATURE_INVOICE_SEPA =
 export const YEARLY_DISCOUNT_PERCENT = 15;
 export const PRICING_UPDATED_LABEL = 'November 2026';
 
+/** Sichtbare Schreibweise des 0-€-Tests (JSON-LD, Preiskarten, Meta). */
+export const TARIF_VORSCHAU_PLAN_DISPLAY_NAME = 'Tarif Vorschau' as const;
+
 /** Stoff-Limits der KMU-Pakete (Preiskarten + ROI-Tarifwahl). */
 export const KMU_BASIS_SUBSTANCE_LIMIT = 30;
 export const KMU_PRO_SUBSTANCE_LIMIT = 250;
@@ -61,7 +64,7 @@ export interface PricingPlan {
 export const PRICING_PLANS: readonly PricingPlan[] = [
   {
     id: 'tarif-vorschau',
-    name: 'TarifVorschau',
+    name: TARIF_VORSCHAU_PLAN_DISPLAY_NAME,
     audience: 'Unverbindlicher Funktionstest im Browser.',
     monthlyPriceEur: 0,
     yearlyMonthlyPriceEur: 0,

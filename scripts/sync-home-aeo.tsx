@@ -29,6 +29,7 @@ import { OutputPreviewSection } from '@/components/home/OutputPreviewSection';
 import { HomePricingSection } from '@/components/home/HomePricingSection';
 import { EnterpriseSiteFooter } from '@/components/site/EnterpriseSiteFooter';
 import { LANDING_HOME_SEO_FAQ } from '@/config/landing-home-seo-faq';
+import { PRICING_TRIAL_LEAD_MAGNET_LINE } from '@/config/pricing-trial-copy';
 import { AEO_CONTENT_UPDATED } from '@/config/aeo-config';
 import { HOME_SEO, HOME_SPEAKABLE_SELECTORS } from '@/config/site-seo';
 import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
@@ -101,6 +102,7 @@ const updatedHtml = replaceMarkedBlocks(html, {
   SITE_FOOTER: () => renderHtml(<EnterpriseSiteFooter />),
   PRICING_SECTION: () => renderHtml(<HomePricingSection />),
   PRICING_DECISION_LINKS: () => renderHtml(<PricingDecisionLinks />),
+  LEAD_MAGNET_TRIAL_LINE: () => `<p>${PRICING_TRIAL_LEAD_MAGNET_LINE}</p>`,
 });
 
 writeFileSync(INDEX_HTML_PATH, updatedHtml, 'utf8');

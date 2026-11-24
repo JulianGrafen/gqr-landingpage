@@ -1,3 +1,4 @@
+import { TARIF_VORSCHAU_PLAN_DISPLAY_NAME } from '@/config/pricing-plans';
 import { SITE_URL } from '@/config/site-seo';
 import type { SeoMetaInput } from '@/lib/seo/buildMetadata';
 
@@ -12,8 +13,9 @@ export const PRICING_REDIRECT_CANONICAL = `${SITE_URL}${PRICING_REDIRECT_TARGET_
 export const PRICING_REDIRECT_SEO: SeoMetaInput = {
   path: '/pricing/',
   title: 'Preise – KMU Basis, Pro & SiFa Multi-Mandant | Gefahrstoff-QR',
-  description:
-    'Transparente Festpreise für Gefahrstoff-QR: TarifVorschau kostenlos, KMU Basis, KMU Pro und SiFa Multi-Mandant. Jährliche Abrechnung Standard, monatlich kündbar.',
+  description: `Transparente Festpreise für Gefahrstoff-QR: ${TARIF_VORSCHAU_PLAN_DISPLAY_NAME} kostenlos, KMU Basis, KMU Pro und SiFa Multi-Mandant. Jährliche Abrechnung Standard, monatlich kündbar.`,
   ogImageAlt: 'Gefahrstoff-QR Preise: KMU Basis, Pro und SiFa Multi-Mandant',
   ogType: 'website',
+  /** Zwischenseite nur Weiterleitung; keine Indexierung neben #preise (Legacy /pricing/ nach Domain-Umzug). */
+  indexable: false,
 };
