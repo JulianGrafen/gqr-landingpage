@@ -7,6 +7,7 @@ import {
   HOME_PRICING_SECTION_MARKETING,
 } from '@/config/home-sections/pricing';
 import { PRICING_STRIPE_CHECKOUT } from '@/config/pricing-stripe-checkout';
+import { PRICING_SECTION_LEGAL_LINE } from '@/config/pricing-vat';
 
 const PRICING_HEADLINE_ID = 'pricingHeadline';
 
@@ -90,6 +91,8 @@ export function HomePricingSection() {
         </p>
 
         <PricingCompareTable />
+
+        <p className="mt-6 text-center text-xs leading-relaxed text-[#8fa4c0]">{PRICING_SECTION_LEGAL_LINE}</p>
       </div>
     </section>
   );

@@ -45,8 +45,8 @@
 
   /** Keep in sync with config/pricing-plans.ts → PRICING_VAT_FOOTNOTE_BILLING */
   var footnotes = {
-    monthly: 'Alle Preise zzgl. MwSt., monatliche Abrechnung',
-    yearly: 'Alle Preise zzgl. MwSt., jährliche Vorauszahlung (Standard)',
+    monthly: 'Alle Preise zzgl. 19 % MwSt., monatliche Abrechnung',
+    yearly: 'Alle Preise zzgl. 19 % MwSt., jährliche Vorauszahlung (Standard)',
   };
 
   function formatAmount(value, decimals) {
