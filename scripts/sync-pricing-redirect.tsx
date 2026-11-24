@@ -46,6 +46,12 @@ const html = `<!DOCTYPE html>
 </html>
 `;
 
+const DPP_LEGACY_PATTERN = /dpp-flash|dppflash|digitaler produktpass|\bdpp\b/i;
+if (DPP_LEGACY_PATTERN.test(html)) {
+  console.error('pricing/index.html enthält DPP-Flash-Reste.');
+  process.exit(1);
+}
+
 mkdirSync(dirname(OUT), { recursive: true });
 writeFileSync(OUT, html, 'utf8');
 console.log(`✓ ${OUT} (canonical ${PRICING_REDIRECT_CANONICAL})`);
