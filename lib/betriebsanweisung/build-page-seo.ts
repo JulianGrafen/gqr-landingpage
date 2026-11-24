@@ -58,9 +58,9 @@ export function buildBetriebsanweisungMetaDescription(entry: HazardousSubstanceS
   if (override?.description) return fitDescription([override.description]);
   const name = entry.substanceName;
   return fitDescription([
-    `Muster-Betriebsanweisung für ${name} nach TRGS 555 & § 14 GefStoffV. Vorschau direkt prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln.`,
-    `Muster-Betriebsanweisung ${name} nach TRGS 555 & § 14 GefStoffV. Vorschau prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln.`,
-    `Betriebsanweisung ${name} nach TRGS 555: Muster-Vorschau prüfen oder eigenes SDB-PDF in einen KI-Entwurf zur Freigabe umwandeln.`,
+    `Muster-Betriebsanweisung für ${name} nach TRGS 555. Vorschau prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln.`,
+    `Betriebsanweisung ${name} nach TRGS 555: Muster-Vorschau prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln.`,
+    `Muster-Betriebsanweisung ${name} nach TRGS 555. Eigenes SDB-PDF hochladen und KI-Entwurf ansehen.`,
     entry.metaDescription,
   ]);
 }
