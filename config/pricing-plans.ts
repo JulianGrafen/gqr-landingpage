@@ -7,6 +7,7 @@ import {
   SIFA_MANDANT_EXTENSION_LABEL,
   SIFA_MANDANT_LIMITS_LABEL,
 } from '@/config/sifa-mandant-pricing';
+import { PRICING_TRIAL_VALUE_PROPOSITION } from '@/config/pricing-trial-copy';
 
 export { PRICING_VAT_FOOTNOTE_BILLING, PRICING_VAT_SUFFIX } from '@/config/pricing-vat';
 
@@ -67,9 +68,9 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
     yearlyTotalPriceEur: 0,
     limits: 'bis zu 3 SDB-Uploads',
     features: [
-      'KI-Auswertung im Browser ansehen',
-      'PDF-Vorschau nur mit „MUSTER“-Wasserzeichen',
-      'Kein Excel-Export, keine dauerhaften QR-Links',
+      PRICING_TRIAL_VALUE_PROPOSITION,
+      'KI-Auswertung und BA-Entwürfe im Browser prüfen',
+      'PDF- und Excel-Export ab KMU-Tarif (ohne Testkennzeichnung)',
       PRICING_FEATURE_INVOICE_SEPA,
     ],
     ctaLabel: PRICING_CARD_CTA_LABEL,
@@ -109,6 +110,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
       PRICING_FEATURE_INVOICE_SEPA,
     ],
     ctaLabel: PRICING_CARD_CTA_LABEL,
+    isRecommended: true,
   },
   {
     id: 'sifa-multi-mandant',

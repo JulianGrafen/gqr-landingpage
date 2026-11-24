@@ -8,9 +8,14 @@ type Props = {
   variant: SdbPreviewVariant;
   disabled?: boolean;
   onSelect: (id: SdbPreviewExampleId) => void;
+  /** Teilmenge der Beispiele (z. B. nur Werkstatt-Stoffe). */
+  exampleIds?: readonly SdbPreviewExampleId[];
 };
 
-export function SdbExampleChips({ variant, disabled, onSelect }: Props) {
+export function SdbExampleChips({ variant, disabled, onSelect, exampleIds }: Props) {
+  const examples = exampleIds?.length
+    ? SDB_PREVIEW_EXAMPLES.filter((ex) => exampleIds.includes(ex.id))
+    : SDB_PREVIEW_EXAMPLES;
   const wrapClass =
     variant === 'static'
       ? 'sdb-live-preview-examples'
@@ -24,7 +29,7 @@ export function SdbExampleChips({ variant, disabled, onSelect }: Props) {
   return (
     <div className={wrapClass} aria-label="Beispiel-SDBs mit 1 Klick testen">
       <div className={variant === 'static' ? 'sdb-live-preview-examples__row' : 'flex flex-wrap gap-2'}>
-        {SDB_PREVIEW_EXAMPLES.map((ex) => (
+        {examples.map((ex) => (
           <button
             key={ex.id}
             type="button"

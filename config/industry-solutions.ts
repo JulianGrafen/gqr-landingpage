@@ -110,11 +110,11 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  headlineAccent: 'für die Kfz-Werkstatt.',
  subheadlineParagraphs: [
  'Sicherheitsdatenblatt hochladen: KI-gestützter Entwurf für das Gefahrstoffverzeichnis (§ 6 GefStoffV) und die Betriebsanweisung (gemäß TRGS 555). Sie prüfen und geben frei.',
- 'Testen Sie es direkt hier mit dem SDB-PDF Ihres Bremsenreinigers, ohne Login.',
+ 'Bremsenreiniger oder Kupferpaste per Klick testen — oder Ihr eigenes SDB-PDF hochladen, ohne Login.',
  ],
  secondaryLinks: [
  { label: 'Typische Werkstatt-Gefahrstoffe ansehen', href: '#werkstatt-stoffe' },
- { label: 'Kataster in 48 Stunden erstellen lassen', href: '#schluesselfertig-service' },
+ { label: 'Kataster in 48 Stunden erstellen lassen', href: '/wissen/gefahrstoffkataster-erstellen-lassen/' },
  ],
  },
  substanceOverview: {
@@ -128,24 +128,14 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  baSlug: 'bremsenreiniger-trgs-555',
  },
  {
+ label: 'Kupferpaste',
+ note: 'Feiner Metallstaub bei Montagearbeiten, Atemschutz an der Hebebühne',
+ baSlug: 'kupferpaste-trgs-555',
+ },
+ {
  label: 'Motoröl',
  note: 'Hautkontakt beim Ölwechsel, Altöl getrennt sammeln',
  baSlug: 'motoroel-trgs-555',
- },
- {
- label: 'Getriebeöl',
- note: 'Hautschutz bei Wartung und Getriebespülung',
- baSlug: 'getriebeoel-trgs-555',
- },
- {
- label: 'Kühlerfrostschutz',
- note: 'Ethylenglykol, gesundheitsschädlich beim Verschlucken',
- baSlug: 'kuehlerfrostschutz-trgs-555',
- },
- {
- label: 'AdBlue',
- note: 'Harnstofflösung, Abschnitt 2 des SDB entscheidet über den Eintrag',
- baSlug: 'adblue-trgs-555',
  },
  {
  label: '2K-Autolack',
@@ -172,7 +162,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  note: 'Saure oder alkalische Reiniger, Augen- und Hautschutz',
  baSlug: 'felgenreiniger-trgs-555',
  },
- ],
+ ] as const,
  },
  faq: [
  {

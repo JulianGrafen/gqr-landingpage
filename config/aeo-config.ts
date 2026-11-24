@@ -144,7 +144,7 @@ export const KEY_URLS: readonly KeyUrl[] = [
   { label: 'Gefahrstoffkataster Software', path: '/gefahrstoffkataster-software/', description: 'Kataster digital führen' },
   { label: 'Etikettensoftware Gefahrstoffe', path: '/etikettensoftware-gefahrstoffe/', description: 'GHS-Etiketten für Umfüllgebinde nach TRGS 201 aus dem SDB, mit QR-Code' },
   { label: 'Gefahrstoff App', path: '/gefahrstoff-app/', description: 'Mobile Nutzung und QR-Notfallansicht' },
-  { label: 'Software für selbstständige Sicherheitsfachkräfte', path: '/gefahrstoff-software-sicherheitsfachkraft-selbstst%C3%A4ndig/', description: 'Mandantenverwaltung für externe SiFas' },
+  { label: 'Software für selbstständige Sicherheitsfachkräfte', path: '/gefahrstoff-software-sicherheitsfachkraft-selbstständig/', description: 'Mandantenverwaltung für externe SiFas' },
   { label: 'Wissen', path: '/wissen/', description: 'Praxiswissen zu Gefahrstoffkataster und Gefahrstoffverzeichnis' },
   { label: 'Blog', path: '/blog/', description: 'Praxisartikel zu Betriebsprüfung und Sicherheitsdatenblättern' },
 ];

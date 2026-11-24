@@ -26,7 +26,7 @@ import { MultiTenantSifaSection } from '@/components/home/MultiTenantSifaSection
 import { ProductDemoVideoSection } from '@/components/home/ProductDemoVideoSection';
 import { VideoDemosSection } from '@/components/home/VideoDemosSection';
 import { OutputPreviewSection } from '@/components/home/OutputPreviewSection';
-import { TurnkeyAuditSection } from '@/components/TurnkeyAuditSection';
+import { HomePricingSection } from '@/components/home/HomePricingSection';
 import { EnterpriseSiteFooter } from '@/components/site/EnterpriseSiteFooter';
 import { LANDING_HOME_SEO_FAQ } from '@/config/landing-home-seo-faq';
 import { AEO_CONTENT_UPDATED } from '@/config/aeo-config';
@@ -99,7 +99,7 @@ const updatedHtml = replaceMarkedBlocks(html, {
       buildWebPageSchema(HOME_SEO, { dateModified: AEO_CONTENT_UPDATED, speakableSelectors: HOME_SPEAKABLE_SELECTORS }),
     ),
   SITE_FOOTER: () => renderHtml(<EnterpriseSiteFooter />),
-  TURNKEY_AUDIT: () => renderHtml(<TurnkeyAuditSection />),
+  PRICING_SECTION: () => renderHtml(<HomePricingSection />),
   PRICING_DECISION_LINKS: () => renderHtml(<PricingDecisionLinks />),
 });
 

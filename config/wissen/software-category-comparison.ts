@@ -129,7 +129,7 @@ export const SOFTWARE_LONGTAIL_SECTIONS: readonly LongtailSection[] = [
   {
     id: 'kostenlos-testen',
     heading: `Gefahrstoffkataster Software kostenlos testen (${freePlan.limits})`,
-    body: 'In der TarifVorschau laden Sie eigene Sicherheitsdatenblätter hoch und sehen die KI-gestützte Auswertung im Browser, ohne Kreditkarte. Exporte tragen in der Vorschau ein Muster-Wasserzeichen, damit Sie den Ablauf prüfen, bevor Sie einen Tarif wählen.',
+    body: 'Laden Sie bis zu 3 eigene Sicherheitsdatenblätter hoch: 3 eigene SDBs kostenlos auslesen und fertige BA sofort im Browser prüfen — ohne Kreditkarte. Exporte ohne Testkennzeichnung gibt es ab den KMU-Tarifen.',
     link: { label: 'Kostenlos registrieren', href: APP_REGISTER_URL },
   },
   {

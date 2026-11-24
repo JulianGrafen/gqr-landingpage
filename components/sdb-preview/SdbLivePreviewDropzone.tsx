@@ -9,7 +9,7 @@ import { HeroBaLivePreview } from '@/components/sdb-preview/HeroBaPreviewDocumen
 import { SdbPreviewCompactResult } from '@/components/sdb-preview/SdbPreviewCompactResult';
 import { shellClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
 import { SDB_DROPZONE_QUICK_EXAMPLE_ID } from '@/config/sdb-preview/dropzone-copy';
-import type { SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
+import type { SdbPreviewExampleId, SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
 import { resolvePreviewSourceLabel } from '@/lib/sdb-preview/resolve-preview-source-label';
 import { useSdbPreview, type SdbPreviewController, type SdbPreviewPhase } from '@/lib/sdb-preview/useSdbPreview';
 
@@ -35,6 +35,8 @@ export type SdbLivePreviewDropzoneProps = {
    * selbst an anderer Stelle der Seite gerendert wird). Neuer Upload über `openFilePicker()`.
    */
   renderReadyState?: (teaser: SdbPreviewTeaser) => ReactNode;
+  /** Optionale Teilmenge der 1-Klick-Beispiel-SDBs. */
+  exampleIds?: readonly SdbPreviewExampleId[];
 };
 
 export type SdbLivePreviewDropzoneHandle = {
@@ -64,6 +66,7 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
       onPhaseChange,
       exampleSlot,
       renderReadyState,
+      exampleIds,
     },
     ref,
   ) {
@@ -157,7 +160,9 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
       <>
         {dropzoneInput}
         {showExampleChips ? (
-          exampleSlot ?? <SdbExampleChips variant={variant} disabled={busy} onSelect={runExample} />
+          exampleSlot ?? (
+            <SdbExampleChips variant={variant} disabled={busy} onSelect={runExample} exampleIds={exampleIds} />
+          )
         ) : null}
         {fileLabel && phase !== 'idle' && phase !== 'ready' ? (
           <p className={variant === 'static' ? 'sdb-live-preview-file-label' : 'mt-2 truncate text-xs text-[#8fa4c0]'}>

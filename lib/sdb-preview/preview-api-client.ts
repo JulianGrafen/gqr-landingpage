@@ -2,6 +2,7 @@ import {
   SDB_PREVIEW_API_PATH,
   SDB_PREVIEW_COMPACT_SCOPE,
   SDB_PREVIEW_MAX_BYTES,
+  SDB_PREVIEW_MOCK_FALLBACK_EXAMPLE_IDS,
   sdbPreviewTokenPath,
   type SdbPreviewExampleId,
   type SdbPreviewPostResponse,
@@ -192,7 +193,14 @@ export async function runExamplePreview(
   const form = new FormData();
   form.append('sampleKey', exampleId);
   appendCompactScope(form);
-  return postPreview(options.apiBaseUrl, form);
+  const response = await postPreview(options.apiBaseUrl, form);
+  if (
+    !response.ok &&
+    SDB_PREVIEW_MOCK_FALLBACK_EXAMPLE_IDS.includes(exampleId)
+  ) {
+    return runMockPreview({ kind: 'example', exampleId });
+  }
+  return response;
 }
 
 export type { SdbPreviewTeaser };

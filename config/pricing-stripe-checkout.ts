@@ -30,13 +30,4 @@ export const PRICING_STRIPE_CHECKOUT: Record<
   },
 };
 
-export const PRICING_SECTION_MARKETING = {
-  kicker: 'Preise',
-  headline: 'Transparente Preise für jedes Unternehmen',
-  subheadline:
-    'Vom unverbindlichen Tariftest bis zur SiFa-Mandantenverwaltung: KMU Basis, KMU Pro oder SiFa Multi-Mandant. Alle Tarife sind Nettopreise zzgl. MwSt. Jährliche Abrechnung ist Standard und günstiger — monatlich jederzeit kündbar. QR-Notfallzugriff ist in den bezahlten Plänen inklusive.',
-  billingHintYearly: 'Jährliche Abrechnung (Standard) — effektiv bis zu 17 % günstiger.',
-  billingHintMonthly: 'Monatliche Abrechnung, monatlich kündbar.',
-  yearlyEquivalentNote: (monthlyEur: number) =>
-    `Entspricht ${monthlyEur.toLocaleString('de-DE')} €/Monat · Standard bei Jahreszahlung`,
-} as const;
+export { HOME_PRICING_SECTION_MARKETING as PRICING_SECTION_MARKETING } from '@/config/home-sections/pricing';

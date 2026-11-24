@@ -1,4 +1,5 @@
 import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
+import { PRICING_TRIAL_VALUE_PROPOSITION } from '@/config/pricing-trial-copy';
 import { formatEuroAmount, SIFA_MANDANT_INCLUDED, SIFA_MANDANT_EXTENSION_LABEL } from '@/config/sifa-mandant-pricing';
 
 /**
@@ -66,7 +67,7 @@ export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
   {
     question: 'Was kostet Gefahrstoff-QR?',
     answer:
-      `Die TarifVorschau ist kostenlos (bis zu 3 SDB-Uploads, PDF nur mit „MUSTER“-Wasserzeichen). KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, bis ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe inklusive, ${SIFA_MANDANT_EXTENSION_LABEL}, PDF-Rechnung möglich). Industrie: ab 399 € pro Monat (339 €/Monat bei Jahreszahlung, ab 250 Gefahrstoffen, ab 4 Werken, SSO, dedizierter AVV-Support, Anfrage). Alle Preise zzgl. MwSt., monatlich kündbar.`,
+      `Kostenloser Einstieg: ${PRICING_TRIAL_VALUE_PROPOSITION}. KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, bis ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe inklusive, ${SIFA_MANDANT_EXTENSION_LABEL}, PDF-Rechnung möglich). Industrie: ab 399 € pro Monat (339 €/Monat bei Jahreszahlung, ab 250 Gefahrstoffen, ab 4 Werken, SSO, dedizierter AVV-Support, Anfrage). Alle Preise zzgl. MwSt., monatlich kündbar.`,
   },
   {
     question: 'Wo werden die Daten gehostet?',
@@ -81,7 +82,7 @@ export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
   {
     question: 'Kann ich eine Gefahrstoffkataster Software kostenlos testen?',
     answer:
-      'Ja, Gefahrstoff-QR lässt sich in der TarifVorschau kostenlos und ohne Kreditkarte testen. Sie laden bis zu 3 eigene Sicherheitsdatenblätter hoch und sehen die KI-gestützte Auswertung im Browser. Exporte tragen in der Vorschau ein Muster-Wasserzeichen. Für das vollständige Gefahrstoffkataster mit PDF- und Excel-Export wählen Sie anschließend einen KMU- oder SiFa-Tarif.',
+      `Ja, Gefahrstoff-QR lässt sich kostenlos und ohne Kreditkarte testen: ${PRICING_TRIAL_VALUE_PROPOSITION}. Für Exporte ohne Testkennzeichnung, Excel und dauerhafte QR-Links wählen Sie anschließend einen KMU- oder SiFa-Tarif.`,
   },
   {
     question: 'Ist Gefahrstoff-QR auch eine Chemikalienkataster Software?',

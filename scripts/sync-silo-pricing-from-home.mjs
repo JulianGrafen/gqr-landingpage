@@ -25,7 +25,7 @@ const TARGETS = [
 const homeHtml = fs.readFileSync(SOURCE, 'utf8');
 
 const pricingSectionMatch = homeHtml.match(
-  /<!-- PRICING -->[\s\S]*?<\/section>\s*(?=\n\s*<!-- FAQ -->)/,
+  /\s*<!-- PRICING -->[\s\S]*?<!--\/AEO:PRICING_SECTION-->/,
 );
 if (!pricingSectionMatch) {
   console.error('Preissektion in index.html nicht gefunden.');
@@ -56,19 +56,24 @@ function applyHeadlineOverrides(section, { headline, intro }) {
   }
   if (intro) {
     out = out.replace(
-      /<p class="mt-4 text-base text-\[#8fa4c0\]">[\s\S]*?<\/p>/,
-      `<p class="mt-4 text-base text-[#8fa4c0]">${intro}\n <br>\n <br><b>Der QR-Scan-Zugriff ist ab KMU Basis inklusive.</b></p>`,
+      /<p class="mt-4 text-base(?: leading-relaxed)? text-\[#8fa4c0\]">[\s\S]*?<\/p>/,
+      `<p class="mt-4 text-base leading-relaxed text-[#8fa4c0]">${intro}\n <br>\n <br><b>Der QR-Scan-Zugriff ist ab KMU Basis inklusive.</b></p>`,
     );
   }
   return out;
 }
 
 function replacePricingSection(pageHtml, section) {
-  const pattern = /<!-- PRICING -->[\s\S]*?<\/section>\s*(?=\n\s*<!-- FAQ -->)/;
-  if (!pattern.test(pageHtml)) {
-    throw new Error('Preissektion im Ziel nicht gefunden.');
+  const patterns = [
+    /\s*<!-- PRICING -->[\s\S]*?<!--\/AEO:PRICING_SECTION-->/,
+    /\s*<!-- PRICING -->[\s\S]*?<\/section>\s*(?=\n\s*<!-- FAQ -->)/,
+  ];
+  for (const pattern of patterns) {
+    if (pattern.test(pageHtml)) {
+      return pageHtml.replace(pattern, `\n${section.trim()}\n\n`);
+    }
   }
-  return pageHtml.replace(pattern, section);
+  throw new Error('Preissektion im Ziel nicht gefunden.');
 }
 
 function replacePricingScript(pageHtml, script) {
@@ -108,6 +113,21 @@ function ensurePricingFeaturesScript(pageHtml) {
   );
 }
 
+/** Muss zu KMU Pro `yearlyTotalPriceEur` in config/pricing-plans.ts passen (Schlüsselfertig-Inklusivsoftware). */
+const KMU_PRO_YEARLY_NET_EUR = 1188;
+
+function patchTurnkeyStalePricingCopy(pageHtml) {
+  return pageHtml
+    .replace(
+      /12 Monate Gefahrstoff-QR Professional inklusive: Voller Cloud-Zugang \(Wert: 2\.388 €\)/g,
+      `12 Monate KMU Pro inklusive: Voller Cloud-Zugang (Listenpreis Jahresabo: ${KMU_PRO_YEARLY_NET_EUR.toLocaleString('de-DE')} € netto)`,
+    )
+    .replace(
+      /12 Monate KMU Pro \(Wert 2\.388 €\)/g,
+      `12 Monate KMU Pro (Listenpreis Jahresabo: ${KMU_PRO_YEARLY_NET_EUR.toLocaleString('de-DE')} € netto)`,
+    );
+}
+
 for (const target of TARGETS) {
   const filePath = path.join(ROOT, target.file);
   let html = fs.readFileSync(filePath, 'utf8');
@@ -116,6 +136,7 @@ for (const target of TARGETS) {
   html = replacePricingScript(html, pricingScript);
   html = ensurePricingFeaturesScript(html);
   html = replaceOffers(html);
+  html = patchTurnkeyStalePricingCopy(html);
   fs.writeFileSync(filePath, html, 'utf8');
   console.log(`✓ ${target.file}`);
 }

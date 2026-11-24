@@ -805,6 +805,24 @@ ul { list-style: none; }
   }
 }
 
+.pricing-tier-grid--core {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pricing-tier-grid--kmu {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pricing-industry-bar {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing-trial-promo a {
+  text-decoration-thickness: 2px;
+}
+
 .pricing-tier-grid {
   display: grid;
   width: 100%;

@@ -15,7 +15,10 @@
 
 export const SDB_PREVIEW_MAX_BYTES = 10 * 1024 * 1024;
 
-export type SdbPreviewExampleId = 'bremsenreiniger' | 'aceton' | 'epoxidharz2k';
+export type SdbPreviewExampleId = 'bremsenreiniger' | 'kupferpaste' | 'aceton' | 'epoxidharz2k';
+
+/** Beispiel-Keys ohne Public-API-Sample — Fallback auf Client-Mock. */
+export const SDB_PREVIEW_MOCK_FALLBACK_EXAMPLE_IDS: readonly SdbPreviewExampleId[] = ['kupferpaste'];
 
 /** Herkunft der aktuellen Vorschau, steuert Badge-Text und Register-Übergabe. */
 export type SdbPreviewSource =

@@ -1,5 +1,12 @@
 import { APP_REGISTER_URL, PRODUCT_ENTITY } from '@/config/aeo-config';
+import { PRICING_PLANS } from '@/config/pricing-plans';
 import { PRICING_VAT_SUFFIX } from '@/config/pricing-vat';
+
+const KMU_PRO_YEARLY_NET_EUR =
+  PRICING_PLANS.find((plan) => plan.id === 'kmu-pro')?.yearlyTotalPriceEur ?? 1188;
+const KMU_PRO_YEARLY_LISTPRICE_LABEL = `${KMU_PRO_YEARLY_NET_EUR.toLocaleString('de-DE')} € netto`;
+const TURNKEY_INCLUDED_SOFTWARE_PILLAR = `12 Monate KMU Pro inklusive: Voller Cloud-Zugang (Listenpreis Jahresabo: ${KMU_PRO_YEARLY_LISTPRICE_LABEL}) für lückenlosen Revisionsverlauf bei BG-, ISO- und Behörden-Audits.`;
+const TURNKEY_INCLUDED_SOFTWARE_FACT = `12 Monate KMU Pro (Listenpreis Jahresabo: ${KMU_PRO_YEARLY_LISTPRICE_LABEL})`;
 
 export const TURNKEY_AUDIT_SLUG = 'gefahrstoffkataster-erstellen-lassen' as const;
 
@@ -17,7 +24,7 @@ export const TURNKEY_AUDIT = {
     'Gefahrstoffverzeichnis (§ 6 GefStoffV): Strukturierung nach Arbeitsbereichen, Mengen, CLP-Einstufung, H-/P-Sätzen und KMR-Hinweisen zur Vorprüfung.',
     'TRGS-510-Lagerklassen-Abgleich: Automatische Identifikation von Zusammenlagerungskonflikten und Separatlagerungspflichten pro Lagerort.',
     'Betriebsanweisungen (TRGS 555) & wetterfeste QR-Etiketten: KI-gestützte BA-Entwürfe zur fachlichen Freigabe durch die SiFa bzw. den Arbeitgeber sowie fertig gedruckte QR-Plaketten für Ihre Regale und Gebinde.',
-    '12 Monate Gefahrstoff-QR Professional inklusive: Voller Cloud-Zugang (Wert: 2.388 €) für lückenlosen Revisionsverlauf bei BG-, ISO- und Behörden-Audits.',
+    TURNKEY_INCLUDED_SOFTWARE_PILLAR,
   ] as const,
   accordion: {
     aeoSummary: 'Was kostet die komplette Erstellung eines Gefahrstoffverzeichnisses?',
@@ -38,7 +45,7 @@ export const TURNKEY_AUDIT = {
     href: 'mailto:info@gefahrstoff-qr.de?subject=Anfrage%20Schl%C3%BCsselfertiges%20Gefahrstoffkataster%20(2.900%20EUR)&body=Hallo%20Herr%20Gr%C3%A4fen,%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20das%20schl%C3%BCsselfertige%20Gefahrstoffkataster-Paket%20(2.900%20%E2%82%AC%20netto).%0A%0AAktuelle%20Anzahl%20unserer%20Gefahrstoffe%20(ca.):%20%0ABranche%20/%20Unternehmen:%20%0ATelefonnummer%20f%C3%BCr%20kurze%20R%C3%BCcksprache:%20',
   },
   secondaryCta: {
-    label: 'Oder zuerst TarifVorschau im Browser',
+    label: 'Oder zuerst kostenlos mit 3 SDBs testen',
     href: APP_REGISTER_URL,
   },
   deepinfoPath: `/wissen/${TURNKEY_AUDIT_SLUG}/`,
@@ -49,7 +56,7 @@ export const TURNKEY_AUDIT = {
     { term: 'Festpreis', definition: `2.900 € netto einmalig · ${PRICING_VAT_SUFFIX}` },
     { term: 'Lieferzeit', definition: '48 Stunden nach Datenübergabe (Express)' },
     { term: 'Umfang', definition: 'Bis zu 150 Sicherheitsdatenblätter / Stoffe' },
-    { term: 'Software', definition: '12 Monate KMU Pro (Wert 2.388 €)' },
+    { term: 'Software', definition: TURNKEY_INCLUDED_SOFTWARE_FACT },
   ] as const,
   faq: [
     {

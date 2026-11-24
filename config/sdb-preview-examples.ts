@@ -14,6 +14,11 @@ export const SDB_PREVIEW_EXAMPLES: SdbPreviewExampleConfig[] = [
     description: 'Lösemittel · entzündlich · typisch in der Werkstatt',
   },
   {
+    id: 'kupferpaste',
+    label: 'Kupferpaste',
+    description: 'Montagepaste · Metallstaub · Bremsen & Abgasanlage',
+  },
+  {
     id: 'aceton',
     label: 'Aceton',
     description: 'Entfetter · leicht entzündlich · Labor & Lack',
@@ -43,6 +48,23 @@ const MOCK_PREFILLS: Record<SdbPreviewExampleId, Parameters<typeof buildTeaserFr
       'Einatmen: Frischluft, bei Beschwerden Arzt. Haut: Mit viel Wasser waschen. Augen: Mindestens 10 Minuten spülen.',
     ba_entsorgung: 'Entsorgung gemäß lokalen Vorschriften. Nicht in die Kanalisation gelangen lassen.',
     psa_gloves: 'Butylkautschuk, min. 0,4 mm',
+  },
+  kupferpaste: {
+    previewToken: '',
+    name: 'Kupferpaste HT Montage',
+    manufacturer: 'WerkstattChem Nord GmbH, 20095 Hamburg',
+    signal_word: 'Achtung',
+    ghs_pictograms: ['GHS07', 'GHS08'],
+    h_statements:
+      'H317 Kann allergische Hautreaktionen verursachen.\nH351 Kann vermutlich Krebs erzeugen (Einatmen).',
+    p_statements:
+      'P261 Einatmen von Staub/Rauch vermeiden.\nP280 Schutzhandschuhe/Schutzkleidung tragen.',
+    ba_schutzmassnahmen:
+      'Arbeiten nur mit Absaugung oder Atemschutz. Handschuhe (Nitril). Hautkontakt mit Paste vermeiden.',
+    ba_gefahrfall: 'Feine Metallpartikel können bei Reibung entstehen — Einatmen vermeiden.',
+    ba_erste_hilfe: 'Haut: Abwaschen. Einatmen: Frischluft, bei Beschwerden Arzt.',
+    ba_entsorgung: 'Reste als metallhaltiger Sonderabfall gemäß Betriebsbeauftragtem.',
+    psa_gloves: 'Nitril, EN 374',
   },
   aceton: {
     previewToken: '',
