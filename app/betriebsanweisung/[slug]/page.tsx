@@ -36,7 +36,9 @@ import { buildMetadata } from '@/lib/seo/buildMetadata';
 import { getBetriebsanweisungSolutionCallout } from '@/lib/seo/internalLinks';
 import { InternalSolutionBanner } from '@/components/seo/InternalSolutionBanner';
 import { stickyCtaObstructProps } from '@/lib/marketing/sticky-header-cta';
+import { BetriebsanweisungGeminiInternalLink } from '@/components/betriebsanweisung/BetriebsanweisungGeminiInternalLink';
 import { BetriebsanweisungStrikingMidPageCta } from '@/components/betriebsanweisung/BetriebsanweisungStrikingMidPageCta';
+import { GEMINI_CRO_BA_OVERRIDES } from '@/config/seo/gemini-cro-2026-11-24';
 import { BETRIEBSANWEISUNG_STRIKING_OVERRIDES } from '@/config/seo/striking-distance-2026-11-23';
 
 type PageProps = {
@@ -70,6 +72,7 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
   const demoRegisterUrl = buildBetriebsanweisungRegisterUrl(entry.slug, {
     utmContent: LIVE_PREVIEW_COPY.demoRegisterUtmContent,
   });
+  const geminiOverride = GEMINI_CRO_BA_OVERRIDES[entry.slug as HazardousSubstanceSlug];
   const strikingOverride = BETRIEBSANWEISUNG_STRIKING_OVERRIDES[entry.slug as HazardousSubstanceSlug];
 
   return (
@@ -107,6 +110,8 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
         </section>
 
         <BetriebsanweisungQuickFacts entry={entry} />
+
+        {geminiOverride ? <BetriebsanweisungGeminiInternalLink link={geminiOverride.internalLink} /> : null}
 
         {strikingOverride ? <BetriebsanweisungStrikingMidPageCta override={strikingOverride} /> : null}
 

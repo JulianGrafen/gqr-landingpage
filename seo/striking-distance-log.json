@@ -55,6 +55,54 @@
       "baseline": { "position": 50.7, "impressions": 172, "ctrPercent": 0 },
       "optimized": true,
       "bucket": "link-spender"
+    },
+    {
+      "url": "/blog/reinigung-gefahrstoffkataster-vorlage/",
+      "source": "gemini-cro",
+      "campaignDate": "2026-11-24",
+      "gscPeriod": "2025-10-25 bis 2026-11-21",
+      "baseline": { "position": 19.1, "impressions": 98, "ctrPercent": 5.1 },
+      "previousTitle": "Gefahrstoffverzeichnis Reinigung | Gefahrstoff-QR",
+      "previousDescription": "Reinigung Gefahrstoffverzeichnis: Säuren, Laugen, Desinfektion – Excel-Fallstricke und saubere Dokumentation.",
+      "newTitle": "Gefahrstoffkataster Reinigung: Vorlage, Muster & PDF | Gefahrstoff-QR",
+      "newDescription": "Gefahrstoffkataster für Gebäudereinigung: Reiniger-SDB hochladen, Entwurf für Kataster und TRGS-555-Betriebsanweisung zur fachlichen Prüfung. Ohne Login testen.",
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/bodenreiniger-trgs-555/",
+      "source": "gemini-cro",
+      "campaignDate": "2026-11-24",
+      "gscPeriod": "2025-10-25 bis 2026-11-21",
+      "baseline": { "position": 22.0, "impressions": 160, "ctrPercent": 0 },
+      "previousTitle": "Betriebsanweisung Bodenreiniger (TRGS 555): Muster & PDF",
+      "previousDescription": "Muster-Betriebsanweisung für Bodenreiniger nach TRGS 555 & § 14 GefStoffV. Vorschau direkt prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln.",
+      "newTitle": "Betriebsanweisung Bodenreiniger (TRGS 555): Muster & PDF",
+      "newDescription": "TRGS-555-Muster für Bodenreiniger. Eigenes SDB hochladen, Entwurf zur fachlichen Prüfung. Ohne Login testen.",
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/fensterreiniger-trgs-555/",
+      "source": "gemini-cro",
+      "campaignDate": "2026-11-24",
+      "gscPeriod": "2025-10-25 bis 2026-11-21",
+      "baseline": { "position": 17.0, "impressions": 79, "ctrPercent": 0 },
+      "previousTitle": "Betriebsanweisung Fensterreiniger – TRGS 555 Vorlage & PDF",
+      "previousDescription": "Muster-Betriebsanweisung für Fensterreiniger nach TRGS 555 & § 14 GefStoffV. Vorschau direkt prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln.",
+      "newTitle": "Betriebsanweisung Fensterreiniger (TRGS 555): Muster & PDF",
+      "newDescription": "TRGS-555-Muster für Fensterreiniger. Eigenes SDB hochladen, Entwurf zur fachlichen Prüfung. Ohne Login testen.",
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/fassadenreiniger-trgs-555/",
+      "source": "gemini-cro",
+      "campaignDate": "2026-11-24",
+      "gscPeriod": "2025-10-25 bis 2026-11-21",
+      "baseline": { "position": 31.7, "impressions": 85, "ctrPercent": 0 },
+      "previousTitle": "Betriebsanweisung Fassadenreiniger – TRGS 555 Muster",
+      "previousDescription": "Muster-Betriebsanweisung für Fassadenreiniger nach TRGS 555 & § 14 GefStoffV. Vorschau direkt prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln.",
+      "newTitle": "Betriebsanweisung Fassadenreiniger TRGS 555: Muster & PDF",
+      "newDescription": "TRGS-555-Muster für Fassadenreiniger. Eigenes SDB hochladen, Entwurf zur fachlichen Prüfung. Ohne Login testen.",
+      "optimized": true
     }
   ],
   "skipped": [
