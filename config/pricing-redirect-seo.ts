@@ -1,21 +1,10 @@
-import { TARIF_VORSCHAU_PLAN_DISPLAY_NAME } from '@/config/pricing-plans';
-import { SITE_URL } from '@/config/site-seo';
-import type { SeoMetaInput } from '@/lib/seo/buildMetadata';
-
 /**
- * /pricing/ leitet auf die Startseiten-Ankersektion #preise (Legacy-URL nach Domain-Migration).
- * Kein DPP-Flash-Erbe: Meta, Texte und Canonical spiegeln Gefahrstoff-QR.
+ * Legacy: /pricing/ war eine Weiterleitung auf /#preise.
+ * Aktuelle Preisseite: app/pricing/page.tsx und config/pricing-page-seo.ts.
  */
-export const PRICING_REDIRECT_TARGET_HREF = '/#preise' as const;
+export {
+  PRICING_PAGE_CANONICAL as PRICING_REDIRECT_CANONICAL,
+  PRICING_PAGE_SEO as PRICING_REDIRECT_SEO,
+} from '@/config/pricing-page-seo';
 
-export const PRICING_REDIRECT_CANONICAL = `${SITE_URL}${PRICING_REDIRECT_TARGET_HREF}` as const;
-
-export const PRICING_REDIRECT_SEO: SeoMetaInput = {
-  path: '/pricing/',
-  title: 'Preise & Tarife | Gefahrstoff-QR',
-  description: `Transparente Festpreise für Gefahrstoff-QR: ${TARIF_VORSCHAU_PLAN_DISPLAY_NAME} kostenlos, KMU Basis, KMU Pro und SiFa Multi-Mandant. Jährliche Abrechnung Standard, monatlich kündbar.`,
-  ogImageAlt: 'Gefahrstoff-QR Preise: KMU Basis, Pro und SiFa Multi-Mandant',
-  ogType: 'website',
-  /** Zwischenseite nur Weiterleitung; keine Indexierung neben #preise (Legacy /pricing/ nach Domain-Umzug). */
-  indexable: false,
-};
+export const PRICING_REDIRECT_TARGET_HREF = '/pricing/' as const;

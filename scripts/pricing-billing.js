@@ -34,19 +34,12 @@
   var billingHint = billingRoot.querySelector('[data-pricing-billing-hint]');
   var priceBlocks = document.querySelectorAll('[data-pricing-price]');
   var compareCells = document.querySelectorAll('[data-pricing-compare-price]');
-  var footnote = document.querySelector('[data-pricing-footnote]');
   var checkoutLinks = document.querySelectorAll('[data-pricing-cta]');
 
   var hints = {
     monthly: 'Monatliche Abrechnung, monatlich kündbar. Kauf auf Rechnung immer möglich.',
     yearly:
       'Jährliche Abrechnung (Standard) — effektiv bis zu 17 % günstiger. Kauf auf Rechnung immer möglich.',
-  };
-
-  /** Keep in sync with config/pricing-plans.ts → PRICING_VAT_FOOTNOTE_BILLING */
-  var footnotes = {
-    monthly: 'Alle Preise zzgl. 19 % MwSt., monatliche Abrechnung',
-    yearly: 'Alle Preise zzgl. 19 % MwSt., jährliche Vorauszahlung (Standard)',
   };
 
   function formatAmount(value, decimals) {
@@ -184,12 +177,6 @@
       var prefix = cell.getAttribute('data-price-prefix') || '';
       cell.textContent = formatComparePrice(cell, monthly, mode, prefix);
     });
-
-    if (footnote) {
-      footnote.innerHTML =
-        footnotes[mode] +
-        ' &middot; <a href="https://app.gefahrstoff-qr.de/register" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Kostenlos starten</a>, ohne Kreditkarte.';
-    }
 
     updateCheckoutLinks(mode);
   }

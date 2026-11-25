@@ -244,19 +244,23 @@ ul { list-style: none; }
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-/* Preise: „Empfohlen“-Badge — gleicher Verlauf wie Primär-CTA */
+/* Preise: Badge schwebt über der Kartenkante (oben rechts), nicht auf Titel/Copy */
 .pricing-badge-recommended {
   position: absolute;
-  top: 0.65rem;
+  top: 0;
   right: 1rem;
   left: auto;
   z-index: 2;
   display: inline-block;
+  max-width: calc(100% - 2rem);
   padding: 0.35rem 0.85rem;
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 900;
+  line-height: 1.2;
   letter-spacing: 0.03em;
+  text-align: center;
+  white-space: nowrap;
   color: var(--cta-orange-fg);
   border: 2px solid var(--cta-orange-border);
   background: var(--cta-orange-gradient);
@@ -264,6 +268,8 @@ ul { list-style: none; }
     0 4px 16px rgba(0, 0, 0, 0.35),
     0 0 0 1px rgba(255, 140, 100, 0.4),
     0 0 28px rgba(255, 115, 70, 0.3);
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 /* Preise: aufklappbarer Planvergleich */
@@ -607,6 +613,58 @@ ul { list-style: none; }
   text-align: center;
 }
 
+/* Persona-Tabs #preise (Für Betriebe | Für externe SiFas) */
+.pricing-persona-toggle {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(15, 30, 53, 0.55);
+}
+
+.pricing-persona-toggle__btn {
+  min-height: 2.75rem;
+  padding: 0.45rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background: rgba(222, 230, 242, 0.94);
+  color: #2a3f5c;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .pricing-persona-toggle__btn {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.pricing-persona-toggle__btn:hover:not(.is-active) {
+  background: rgba(236, 241, 250, 1);
+  color: #1a2d48;
+}
+
+.pricing-persona-toggle__btn.is-active {
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(255, 107, 53, 0.38);
+}
+
+.pricing-persona-toggle__btn:focus-visible {
+  outline: 2px solid var(--color-trust);
+  outline-offset: 2px;
+}
+
 .pricing-tier__price-row {
   display: flex;
   flex-direction: column;
@@ -805,13 +863,7 @@ ul { list-style: none; }
   }
 }
 
-.pricing-tier-grid--core {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.pricing-tier-grid--kmu {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
+/* Spaltenanzahl: Modifier müssen die Basis-.pricing-tier-grid überschreiben (gleiche Spezifität, später im File). */
 
 .pricing-industry-bar {
   max-width: 42rem;
@@ -827,18 +879,24 @@ ul { list-style: none; }
   display: grid;
   width: 100%;
   box-sizing: border-box;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
   align-items: stretch;
   overflow-x: auto;
   overflow-y: visible;
-  padding-top: 1.35rem;
+  padding-top: 1.65rem;
   padding-bottom: 0.25rem;
   scroll-padding-inline: 0.25rem;
   -webkit-overflow-scrolling: touch;
 }
 
+.pricing-tier-grid.pricing-tier-grid--kmu {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .pricing-tier-grid > article {
+  min-width: 0;
+  width: 100%;
   overflow: visible;
 }
 
@@ -871,14 +929,22 @@ ul { list-style: none; }
     gap: 0;
   }
 
-  .pricing-tier-grid > article > p.text-lg {
+  .pricing-tier-grid > article > p.text-lg,
+  .pricing-tier-grid > article > h3.text-lg {
     grid-row: 1;
     align-self: start;
   }
 
-  .pricing-tier-grid > article > p.mt-1.text-sm {
+  .pricing-tier-grid > article > p.mt-1.text-sm,
+  .pricing-tier-grid > article > .pricing-tier-card__audience {
     grid-row: 2;
     align-self: start;
+    min-height: 4.25rem;
+  }
+
+  .pricing-tier-grid > article:has(.pricing-badge-recommended) > p.text-lg,
+  .pricing-tier-grid > article:has(.pricing-badge-recommended) > h3.text-lg {
+    padding-top: 0.35rem;
   }
 
   .pricing-tier-grid > article .pricing-tier__price {
@@ -921,7 +987,8 @@ ul { list-style: none; }
   }
 
   .pricing-tier-grid > article > .pricing-tier__features,
-  .pricing-tier-grid > article > ul.mt-6 {
+  .pricing-tier-grid > article > ul.mt-6,
+  .pricing-tier-grid > article > .pricing-tier-card__features {
     grid-row: 5;
     margin-top: 1.5rem;
     align-self: stretch;
@@ -931,11 +998,13 @@ ul { list-style: none; }
   }
 
   #preise[data-billing-mode='monthly'] .pricing-tier-grid > article > .pricing-tier__features,
-  #preise[data-billing-mode='monthly'] .pricing-tier-grid > article > ul.mt-6 {
+  #preise[data-billing-mode='monthly'] .pricing-tier-grid > article > ul.mt-6,
+  #preise[data-billing-mode='monthly'] .pricing-tier-grid > article > .pricing-tier-card__features {
     margin-top: 0.65rem;
   }
 
-  .pricing-tier-grid > article > .btn-glass-outline {
+  .pricing-tier-grid > article > .btn-glass-outline,
+  .pricing-tier-grid > article > .pricing-tier-card__cta {
     grid-row: 6;
     margin-top: 2rem;
     align-self: end;
@@ -945,19 +1014,20 @@ ul { list-style: none; }
     text-align: center;
   }
 
-  .pricing-tier-grid > article > .pricing-badge-recommended {
-    grid-row: 1;
-    grid-column: 1 / -1;
-    justify-self: end;
-    align-self: start;
-    width: max-content;
-    margin: 0;
+  .pricing-tier-grid > article > .pricing-tier-card__cta {
+    padding-top: 0;
   }
+
+  .pricing-tier-grid > article > .pricing-tier-card__cta .btn-cta-orange,
+  .pricing-tier-grid > article > .pricing-tier-card__cta .btn-glass-outline {
+    width: 100%;
+  }
+
 }
 
 @media (min-width: 1024px) {
   .pricing-tier-grid {
-    gap: 1.15rem;
+    gap: 1.5rem;
     overflow-x: visible;
   }
 }
@@ -1569,9 +1639,11 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 }
 
 .sds-hero__checks--stacked {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.9rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.65rem;
+  row-gap: 0.9rem;
+  grid-auto-rows: minmax(calc(2 * 1.45em), auto);
   margin-top: 0;
   max-width: none;
   font-size: clamp(1.125rem, 2.5vw, 1.45rem);
@@ -1583,13 +1655,25 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 }
 
 .sds-hero__checks--stacked li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  width: 100%;
+  display: contents;
 }
 
-.sds-hero__checks--stacked span {
+.sds-hero__checks--stacked .sds-hero__checks-mark {
+  flex-shrink: 0;
+  align-self: start;
+  margin-top: 0.12em;
+  font-size: 1.15em;
+  line-height: 1;
+  color: var(--color-trust);
+  font-weight: 950;
+}
+
+.sds-hero__checks--stacked .sds-hero__checks-copy {
+  align-self: start;
+  min-width: 0;
+}
+
+.sds-hero__checks--stacked span:not(.sds-hero__checks-mark):not(.sds-hero__checks-copy) {
   flex-shrink: 0;
   margin-top: 0.12em;
   font-size: 1.15em;
@@ -5762,12 +5846,19 @@ body.trial-modal-open {
   .pricing-tier-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 42rem;
-    margin-inline: auto;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  .pricing-tier-grid.pricing-tier-grid--core {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .pricing-tier-grid > article {
     max-width: none;
+    width: 100%;
   }
 }
 

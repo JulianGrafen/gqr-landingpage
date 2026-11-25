@@ -25,6 +25,9 @@ export const SIFA_INVOICE_REQUEST_CTA_LABEL = 'Angebot auf Rechnung anfordern';
 export const INDUSTRIE_INQUIRY_SUBJECT = 'Industrie-Tarif Anfrage';
 export const INDUSTRIE_INQUIRY_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(INDUSTRIE_INQUIRY_SUBJECT)}`;
 
+export const SIFA_GROSS_INQUIRY_SUBJECT = 'Beratungshaus / Groß-SiFa Tarif Anfrage';
+export const SIFA_GROSS_INQUIRY_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(SIFA_GROSS_INQUIRY_SUBJECT)}`;
+
 /** Stand der AEO-Inhalte (dateModified, llms.txt); bei inhaltlichen Änderungen anpassen. */
 export const AEO_CONTENT_UPDATED = '2026-11-10';
 

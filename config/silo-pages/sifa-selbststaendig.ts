@@ -21,7 +21,7 @@ export const SIFA_SELBSTSTAENDIG = {
       `Bis ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe inklusive, saubere Trennung nach Werk und Tätigkeit. ${SIFA_MANDANT_EXTENSION_LABEL}.`,
     ],
     secondaryLinks: [
-      { label: 'SiFa-Tarif & Preise', href: '#preise' },
+      { label: 'SiFa-Tarif & Preise', href: '#preise?tab=sifa' },
       { label: 'Multi-Mandant im Detail', href: '#fuer-sifas' },
       { label: 'SDB jetzt im Browser testen', href: '#live-demo' },
     ],
