@@ -51,6 +51,12 @@ export const HOME_FOUNDER_TRUST = {
   founder: {
     name: 'Julian Gräfen',
     initials: 'JG',
+    photo: {
+      src: '/images/trust/julian-graefen-gruender.jpg',
+      alt: 'Julian Gräfen, Gründer von Gefahrstoff-QR',
+      width: 112,
+      height: 112,
+    },
     role: 'Gründer von Gefahrstoff-QR',
     location: `${COMPANY.address.city}, NRW`,
     bio: 'Ich entwickle Gefahrstoff-QR für Betriebe und externe SiFas, die ihr Gefahrstoffverzeichnis ohne Excel-Zettelwirtschaft führen wollen. Feedback aus der Praxis fließt direkt ins Produkt.',

@@ -45,12 +45,24 @@ export function HomeFounderTrustSection() {
         <div className="grid gap-6 lg:grid-cols-5 lg:items-stretch">
           <article className={`${styles.card} flex flex-col lg:col-span-2`}>
             <div className="flex items-center gap-4">
-              <span
-                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-teal-300/30 bg-teal-300/10 text-lg font-black text-teal-300"
-                aria-hidden="true"
-              >
-                {founder.initials}
-              </span>
+              {founder.photo ? (
+                <img
+                  src={founder.photo.src}
+                  alt={founder.photo.alt}
+                  width={founder.photo.width}
+                  height={founder.photo.height}
+                  className="h-14 w-14 shrink-0 rounded-full border border-white/15 object-cover object-[center_20%]"
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <span
+                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-teal-300/30 bg-teal-300/10 text-lg font-black text-teal-300"
+                  aria-hidden="true"
+                >
+                  {founder.initials}
+                </span>
+              )}
               <div>
                 <p className={styles.cardTitle}>{founder.name}</p>
                 <p className="text-sm text-[#8fa4c0]">
@@ -58,7 +70,9 @@ export function HomeFounderTrustSection() {
                 </p>
               </div>
             </div>
-            <p className={`${styles.cardText} flex-1`}>{founder.bio}</p>
+            <blockquote className="m-0 mt-2 flex-1 text-sm leading-relaxed text-[#c5d0e2]">
+              „{founder.bio}“
+            </blockquote>
             <a className={`${styles.secondaryLink} mt-4 self-start text-sm font-semibold`} href={founder.contactHref}>
               {founder.contactLabel} →
             </a>

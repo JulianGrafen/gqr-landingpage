@@ -1639,7 +1639,8 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   gap: 0.45rem;
 }
 
-.sds-hero__checks span {
+.sds-hero__checks .sds-hero__checks-mark,
+.sds-hero__checks > li > span[aria-hidden='true'] {
   color: var(--color-trust);
   font-weight: 950;
 }
@@ -1669,6 +1670,7 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
   grid-auto-rows: minmax(calc(2 * 1.45em), auto);
   margin-top: 0;
   max-width: none;
+  color: var(--color-text);
   font-size: clamp(1.125rem, 2.5vw, 1.45rem);
   font-weight: 600;
   line-height: 1.45;
@@ -1694,6 +1696,8 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 .sds-hero__checks--stacked .sds-hero__checks-copy {
   align-self: start;
   min-width: 0;
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 .sds-hero__checks--stacked span:not(.sds-hero__checks-mark):not(.sds-hero__checks-copy) {
