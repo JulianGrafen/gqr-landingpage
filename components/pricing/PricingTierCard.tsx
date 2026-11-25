@@ -34,12 +34,12 @@ export function PricingTierCard({ tier, billing }: PricingTierCardProps) {
           {tier.badge}
         </span>
       ) : null}
-      <h3 className="text-lg font-bold text-[#f0f6ff]">{tier.name}</h3>
-      <p className="pricing-tier-card__audience mt-1 text-sm leading-relaxed text-[#8fa4c0]">
+      <h3 className="m-0 text-lg font-bold text-[#f0f6ff]">{tier.name}</h3>
+      <p className="pricing-tier-card__audience m-0 mt-1 text-sm leading-relaxed text-[#8fa4c0]">
         {tier.description}
       </p>
 
-      <p className="pricing-tier__price mt-6 tabular-nums text-3xl font-black tracking-tight text-[#f0f6ff]">
+      <p className="pricing-tier__price m-0 mt-6 tabular-nums text-3xl font-black tracking-tight text-[#f0f6ff]">
         <span className="text-3xl font-black">
           {pricingPricePrefix(tier.price)}
           {monthlyDisplay !== null ? formatPricingAmountEur(monthlyDisplay) : null}
@@ -48,14 +48,14 @@ export function PricingTierCard({ tier, billing }: PricingTierCardProps) {
       </p>
 
       {showYearlyNote && fixedPrice ? (
-        <p className="pricing-tier__price-note mt-2 text-sm tabular-nums text-[#8fa4c0]">
+        <p className="pricing-tier__price-note m-0 mt-2 min-h-5 text-sm tabular-nums text-[#8fa4c0]">
           {formatYearlyTotalNote(fixedPrice.yearlyTotalEur)}
         </p>
       ) : (
-        <p className="pricing-tier__price-note pricing-tier__price-note--spacer mt-2" aria-hidden="true" />
+        <p className="pricing-tier__price-note pricing-tier__price-note--spacer m-0 mt-2 min-h-5" aria-hidden="true" />
       )}
 
-      <ul className="pricing-tier-card__features mt-6 flex flex-1 flex-col gap-2.5 text-sm leading-relaxed text-[#c5d0e2]">
+      <ul className="pricing-tier-card__features m-0 mt-6 flex flex-1 list-none flex-col p-0 gap-2.5 text-sm leading-relaxed text-[#c5d0e2]">
         {tier.features.map((feature) => (
           <li key={feature} className="flex gap-2">
             <span className="shrink-0 text-teal-300" aria-hidden="true">

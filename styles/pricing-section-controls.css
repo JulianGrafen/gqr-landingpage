@@ -209,6 +209,8 @@ html.pricing-url-tab-sifa [data-pricing-section][data-pricing-hydrated] [role='t
 }
 
 .pricing-tier-grid > article {
+  /* Statische Seite ohne Tailwind-Preflight: `border` setzt dort nur die Breite. */
+  border-style: solid;
   min-width: 0;
   width: 100%;
   overflow: visible;

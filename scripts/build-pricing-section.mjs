@@ -12,8 +12,10 @@ await esbuild.build({
   alias: {
     '@': process.cwd(),
   },
+  // Läuft auf statischen Seiten ohne Node-/Next-Runtime: jeden `process.env`-Zugriff abfangen.
   define: {
     'process.env.NODE_ENV': '"production"',
+    'process.env': '{}',
   },
   logLevel: 'info',
 });

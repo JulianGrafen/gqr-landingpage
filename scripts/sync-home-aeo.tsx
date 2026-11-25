@@ -20,6 +20,7 @@ import { HeroSdbLiveMetric } from '@/components/home/HeroSdbLiveMetric';
 import { HeroSdbSupplierHint } from '@/components/home/HeroSdbSupplierHint';
 import { HomeNavigation } from '@/components/home/HomeNavigation';
 import { MultiTenantSifaSection } from '@/components/home/MultiTenantSifaSection';
+import { OutputPreviewSection } from '@/components/home/OutputPreviewSection';
 import { ProductDemoTabsSection } from '@/components/home/ProductDemoTabsSection';
 import { CoreFeaturesSection } from '@/components/home/CoreFeaturesSection';
 import { HomeFaqExpertToggle } from '@/components/home/HomeFaqExpertToggle';
@@ -87,6 +88,7 @@ const updatedHtml = replaceMarkedBlocks(html, {
   EXCEL_COMPARISON: () => renderHtml(<ExcelComparisonSection />),
   MULTI_TENANT_SIFA: () => renderHtml(<MultiTenantSifaSection />),
   PRODUCT_DEMO_TABS: () => renderHtml(<ProductDemoTabsSection />),
+  OUTPUT_PREVIEW: () => renderHtml(<OutputPreviewSection />),
   CORE_FEATURES: () => renderHtml(<CoreFeaturesSection />),
   NAV_DESKTOP: () => renderHtml(<HomeNavigation variant="desktop" />),
   NAV_MOBILE: () => renderHtml(<HomeNavigation variant="mobile" />),
@@ -109,7 +111,7 @@ const updatedHtml = replaceMarkedBlocks(html, {
 
 const PRICING_BOOTSTRAP_TAG =
   '<script src="/scripts/pricing-persona-bootstrap.js?v=1"></script>';
-const PRICING_SCRIPT_TAG = '<script src="/scripts/pricing-section.js?v=4" defer></script>';
+const PRICING_SCRIPT_TAG = '<script src="/scripts/pricing-section.js?v=5" defer></script>';
 const LEGACY_PRICING_SCRIPTS =
   /\s*<script src="\/scripts\/pricing-billing\.js(?:\?v=\d+)?" defer><\/script>\s*<script src="\/scripts\/pricing-tier-features\.js" defer><\/script>/;
 

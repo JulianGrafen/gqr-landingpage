@@ -1,3 +1,5 @@
+@import url('./styles/pricing-section-controls.css');
+
 /* ============================================================
    Gefahrstoff-QR — Landingpage Styles
    Mobile-first, Design-Token-System, keine Framework-Abhängigkeiten
@@ -66,8 +68,6 @@
   /* Fixierter Header (padding-top am body, Scroll-Anker) */
   --site-header-height: 4.5625rem;
 }
-
-@import url('./styles/pricing-section-controls.css');
 
 /* ── Reset ──────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -782,7 +782,7 @@ ul { list-style: none; }
 
   .pricing-tier-grid > article .pricing-tier__price {
     grid-row: 3;
-    margin-top: 0;
+    margin-top: 1rem;
     align-self: end;
   }
 

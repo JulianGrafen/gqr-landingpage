@@ -4,6 +4,19 @@ import { CORE_FEATURES, type CoreFeatureCard } from '@/config/home-sections/core
 function FeatureCard({ card }: { card: CoreFeatureCard }) {
   return (
     <li className={`${styles.card} flex h-full flex-col`}>
+      {card.image ? (
+        <figure className="-mx-2 -mt-2 mb-5 overflow-hidden rounded-xl border border-white/[0.08] bg-[#0a1628]">
+          <img
+            src={card.image.src}
+            alt={card.image.alt}
+            width={card.image.width}
+            height={card.image.height}
+            loading="lazy"
+            decoding="async"
+            className="aspect-[16/10] h-auto w-full object-cover object-top"
+          />
+        </figure>
+      ) : null}
       <p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-teal-400">
         {card.eyebrow}
         {card.badge ? (
@@ -28,7 +41,7 @@ function FeatureCard({ card }: { card: CoreFeatureCard }) {
   );
 }
 
-/** Kernfunktionen (AEO:CORE_FEATURES): 4 Karten + kompakter Batch-Upload-Hinweis. */
+/** Kernfunktionen (AEO:CORE_FEATURES): 4 Karten mit Screenshot + kompakter Batch-Upload-Hinweis. */
 export function CoreFeaturesSection() {
   const { importHint } = CORE_FEATURES;
 

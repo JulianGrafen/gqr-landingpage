@@ -1261,8 +1261,9 @@
     }
   }
 
-  /* Turnkey / statische LP: Primär-CTA & Sekundärlink (Auszug aus style.css) */
+  /* Glas-CTAs (Primär + Outline) & Sekundärlink: 1:1 Auszug aus style.css */
   .btn-cta-orange,
+  .btn-glass-outline,
   .sds-secondary-link {
     display: inline-flex;
     align-items: center;
@@ -1306,19 +1307,22 @@
     transform: none;
   }
 
-  .btn-cta-orange:hover {
+  .btn-cta-orange:hover,
+  .btn-glass-outline:hover {
     border-color: rgba(255, 255, 255, 0.58);
     background: rgba(255, 255, 255, 0.12);
     color: #fff !important;
     transform: translateY(-2px);
   }
 
-  .btn-cta-orange--block {
+  .btn-cta-orange--block,
+  .btn-glass-outline--block {
     width: 100%;
   }
 
   @media (min-width: 640px) {
-    .btn-cta-orange {
+    .btn-cta-orange,
+    .btn-glass-outline {
       font-size: 1rem;
     }
   }

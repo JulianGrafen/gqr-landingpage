@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { HOME_SECTION_STYLES as styles } from '@/components/home/home-section-styles';
 import { CUSTOMER_REFERENCES, type CustomerReference } from '@/config/references';
 
@@ -13,11 +12,13 @@ function ReferenceCard({ reference }: { reference: CustomerReference }) {
     <>
       <div className="flex items-center gap-3">
         {reference.fotoSrc ? (
-          <Image
+          <img
             src={reference.fotoSrc}
             alt=""
             width={DEFAULT_PHOTO_SIZE}
             height={DEFAULT_PHOTO_SIZE}
+            loading="lazy"
+            decoding="async"
             className="h-14 w-14 shrink-0 rounded-full border border-white/15 object-cover"
           />
         ) : (
