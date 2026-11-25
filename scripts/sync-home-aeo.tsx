@@ -36,7 +36,9 @@ import { HOME_SEO, HOME_SPEAKABLE_SELECTORS } from '@/config/site-seo';
 import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
 import { renderStaticHeadMeta } from '@/lib/seo/render-static-head-meta';
 import { buildWebPageSchema } from '@/lib/seo/build-webpage-schema';
+import { buildOrganizationSchema } from '@/lib/seo/build-organization-schema';
 import { buildSoftwareApplicationSchema } from '@/lib/seo/build-software-application-schema';
+import { buildWebSiteSchema } from '@/lib/seo/build-website-schema';
 import { serializeJsonLd, type JsonLdObject } from '@/lib/seo/serialize-json-ld';
 import { replaceMarkedBlocks } from '@/lib/static-html/replace-marked-blocks';
 
@@ -78,6 +80,8 @@ const html = readFileSync(INDEX_HTML_PATH, 'utf8');
 
 const updatedHtml = replaceMarkedBlocks(html, {
   SOFTWARE_APPLICATION_JSONLD: () => renderJsonLdScript(buildSoftwareApplicationSchema()),
+  ORGANIZATION_JSONLD: () => renderJsonLdScript(buildOrganizationSchema()),
+  WEBSITE_JSONLD: () => renderJsonLdScript(buildWebSiteSchema()),
   FAQ_JSONLD: () => renderJsonLdScript(buildFaqPageSchema(LANDING_HOME_SEO_FAQ)),
   FAQ_ITEMS: () => renderHtml(<HomeFaqItems items={LANDING_HOME_SEO_FAQ} />),
   FAQ_FOOTER: () => renderHtml(<HomeFaqContactFooter />),

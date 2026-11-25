@@ -152,8 +152,33 @@ export const KEY_URLS: readonly KeyUrl[] = [
 export const SOCIAL_PROFILES = [
   { label: 'LinkedIn', url: 'https://www.linkedin.com/showcase/gefahrstoff-qr/' },
   { label: 'YouTube', url: 'https://www.youtube.com/@gefahrstoff-qr' },
+  { label: 'OMR Reviews', url: 'https://omr.com/de/reviews/product/gefahrstoff-qr' },
+  { label: 'Handwerkerstack', url: 'https://handwerkerstack.de/tool/gefahrstoff-qr' },
+  { label: 'ProvenExpert', url: 'https://www.provenexpert.com/de-de/gefahrstoff-qr/' },
 ] as const;
+
+/** Themen für schema.org Organization.knowsAbout (Startseite). */
+export const ORGANIZATION_KNOWS_ABOUT = [
+  'Gefahrstoffverordnung (GefStoffV)',
+  'Gefahrstoffverzeichnis',
+  'TRGS 510',
+  'TRGS 555',
+  'TRGS 600',
+  'Sicherheitsdatenblatt',
+  'GHS/CLP-Kennzeichnung',
+] as const;
+
+/** Produktbilder für SoftwareApplication JSON-LD (nur Pfade unter /public). */
+export const SOFTWARE_APPLICATION_SCHEMA_ASSETS = {
+  imagePath: '/logo.png',
+  screenshotPath: '/images/app-screenshot-dashboard.png',
+} as const;
 
 export function toAbsoluteSiteUrl(path: string): string {
   return path.startsWith('http') ? path : `${SITE_URL}${path}`;
+}
+
+/** `sameAs`-URLs der Organization aus der zentralen Profil-Liste. */
+export function organizationSameAsUrls(): readonly string[] {
+  return SOCIAL_PROFILES.map((profile) => profile.url);
 }
