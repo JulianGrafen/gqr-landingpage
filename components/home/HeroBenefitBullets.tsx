@@ -16,7 +16,7 @@ export function HeroBenefitBullets({
 }: HeroBenefitBulletsProps) {
   return (
     <section
-      className={`sds-hero__trust-section ${className}`.trim()}
+      className={`sds-hero__trust-section min-w-0 max-w-full ${className}`.trim()}
       aria-labelledby={headingId}
     >
       <h2 id={headingId} className="sr-only">

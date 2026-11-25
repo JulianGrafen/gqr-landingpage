@@ -24,7 +24,7 @@ export function IndustryPseoSections({ data }: Props) {
               Beispiele aus der Praxis — ergänzen Sie alle Produkte, die Sie tatsächlich beziehen, lagern oder einsetzen.
             </p>
           </div>
-          <div className="mt-8 overflow-x-auto">
+          <div className="-mx-4 mt-8 min-w-0 overflow-x-auto px-4 sm:mx-0 sm:px-0">
             <table className="w-full min-w-[640px] border-collapse text-left text-sm text-slate-800">
               <caption className="sr-only">
                 Typische Produkte, Gebinde, Gefahrenart und betriebliche Pflichten
@@ -85,7 +85,7 @@ export function IndustryPseoSections({ data }: Props) {
               Excel-Ordner vs. Gefahrstoff-QR
             </h2>
           </div>
-          <div className="mt-8 overflow-x-auto">
+          <div className="-mx-4 mt-8 min-w-0 overflow-x-auto px-4 sm:mx-0 sm:px-0">
             <table className="pricing-compare__table w-full min-w-[640px]">
               <caption className="sr-only">Vergleich manueller Dokumentation und Gefahrstoff-QR</caption>
               <thead>
