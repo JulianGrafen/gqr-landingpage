@@ -71,8 +71,10 @@ export function PricingTierCard({ planId }: PricingTierCardProps) {
     }
   });
 
+  const audienceGroup = planId === 'sifa-multi-mandant' ? 'sifa' : 'kmu';
+
   return (
-    <article className={CARD_CLASS} data-pricing-tier={plan.id}>
+    <article className={CARD_CLASS} data-pricing-tier={plan.id} data-pricing-tier-audience={audienceGroup}>
       {badge ? <span className="pricing-badge-recommended">{badge}</span> : null}
       <p className="text-lg font-bold text-[#f0f6ff]">{plan.name}</p>
       <p className="mt-1 text-sm text-[#8fa4c0]">{plan.audience}</p>

@@ -865,6 +865,29 @@ ul { list-style: none; }
 
 /* Spaltenanzahl: Modifier müssen die Basis-.pricing-tier-grid überschreiben (gleiche Spezifität, später im File). */
 
+.pricing-audience {
+  margin: 0 auto 1.25rem;
+  max-width: 22rem;
+}
+
+#preise[data-pricing-audience='sifa'] [data-pricing-tier-audience='kmu'] {
+  display: none;
+}
+
+#preise[data-pricing-audience='sifa'] .pricing-tier-grid--core {
+  grid-template-columns: minmax(0, 22rem);
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#preise[data-pricing-audience='sifa'] .pricing-compare__table th:nth-child(2),
+#preise[data-pricing-audience='sifa'] .pricing-compare__table th:nth-child(3),
+#preise[data-pricing-audience='sifa'] .pricing-compare__table td:nth-child(2),
+#preise[data-pricing-audience='sifa'] .pricing-compare__table td:nth-child(3) {
+  display: none;
+}
+
 .pricing-industry-bar {
   max-width: 42rem;
   margin-left: auto;

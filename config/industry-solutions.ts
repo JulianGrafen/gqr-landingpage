@@ -97,6 +97,8 @@ export interface IndustrySolution {
  heroSecondaryLinks?: readonly { readonly label: string; readonly href: string }[];
  /** Optional: Abschnitt „Häufige Gefahrstoffe“ (Listenblock). */
  stoffeListSection?: { readonly title: string; readonly intro: string };
+ /** SiFa-CRO: Dropzone im ersten Viewport (nur /loesungen/sifa-mehrere-mandanten/). */
+ sifaFunnelDropzoneFirst?: boolean;
 }
 
 export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
@@ -1334,7 +1336,8 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  metaDescription:
  'Externe SiFa und Arbeitsschutzbüros: Gefahrstoffverzeichnisse und Betriebsanweisungen mehrerer Kundenbetriebe pflegen, ohne Excel-Chaos und SDB-Anhänge.',
  heroKicker: 'Lösung für externe SiFa',
- primaryCta: { href: '/#live-demo', label: 'SDB hochladen und Entwurf prüfen' },
+ sifaFunnelDropzoneFirst: true,
+ primaryCta: { href: '#live-demo', label: 'SDB hochladen und Entwurf prüfen' },
  heroSecondaryLinks: [
  { label: 'Startseite', href: '/' },
  { label: 'TRGS-510-Checker', href: '/trgs-510-zusammenlagerungs-check/' },

@@ -66,6 +66,7 @@ function applyHeadlineOverrides(section, { headline, intro }) {
 function replacePricingSection(pageHtml, section) {
   const patterns = [
     /\s*<!-- PRICING -->[\s\S]*?<!--\/AEO:PRICING_SECTION-->/,
+    /\s*<!--AEO:PRICING_SECTION-->[\s\S]*?<!--\/AEO:PRICING_SECTION-->/,
     /\s*<!-- PRICING -->[\s\S]*?<\/section>\s*(?=\n\s*<!-- FAQ -->)/,
   ];
   for (const pattern of patterns) {
@@ -79,12 +80,16 @@ function replacePricingSection(pageHtml, section) {
 function replacePricingScript(pageHtml, script) {
   const inlinePattern =
     /<script>\s*\(function \(\) \{\s*var[\s\S]*?billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/;
-  const externalPattern = /<script src="\/scripts\/pricing-section\.js(?:\?v=\d+)?" defer><\/script>/;
+  const sectionPattern = /<script src="\/scripts\/pricing-section\.js(?:\?v=\d+)?" defer><\/script>/;
+  const billingPattern = /<script src="\/scripts\/pricing-billing\.js(?:\?v=\d+)?" defer><\/script>/;
   if (inlinePattern.test(pageHtml)) {
     return pageHtml.replace(inlinePattern, script);
   }
-  if (externalPattern.test(pageHtml)) {
-    return pageHtml.replace(externalPattern, script);
+  if (sectionPattern.test(pageHtml)) {
+    return pageHtml.replace(sectionPattern, script);
+  }
+  if (billingPattern.test(pageHtml)) {
+    return pageHtml.replace(billingPattern, script);
   }
   throw new Error('Pricing-Script im Ziel nicht gefunden.');
 }

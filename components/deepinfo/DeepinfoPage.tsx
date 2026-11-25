@@ -23,7 +23,7 @@ type DeepinfoPageTemplateProps = {
 
 export function DeepinfoPageTemplate({ page }: DeepinfoPageTemplateProps) {
   const { meta, mdxSource } = page;
-  const stickyCtaHref = meta.showTurnkeyAudit ? TURNKEY_AUDIT.cta.href : APP_REGISTER_URL;
+  const stickyCtaHref = meta.ctaHref ?? (meta.showTurnkeyAudit ? TURNKEY_AUDIT.cta.href : APP_REGISTER_URL);
   const extension = DEEPINFO_PAGE_EXTENSIONS[meta.slug as DeepinfoSlug];
   const faqSchemaItems = [...meta.faq, ...(extension?.extraFaqSchemaItems ?? [])];
   const canonicalPath = getDeepinfoCanonicalPath(meta.slug as DeepinfoSlug);
