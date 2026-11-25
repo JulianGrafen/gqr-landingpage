@@ -111,7 +111,27 @@ const updatedHtml = replaceMarkedBlocks(html, {
   LEAD_MAGNET_TRIAL_LINE: () => `<p>${PRICING_TRIAL_LEAD_MAGNET_LINE}</p>`,
 });
 
-writeFileSync(INDEX_HTML_PATH, updatedHtml, 'utf8');
+const PRICING_SCRIPT_TAG = '<script src="/scripts/pricing-section.js?v=3" defer></script>';
+const LEGACY_PRICING_SCRIPTS =
+  /\s*<script src="\/scripts\/pricing-billing\.js(?:\?v=\d+)?" defer><\/script>\s*<script src="\/scripts\/pricing-tier-features\.js" defer><\/script>/;
+
+let finalHtml = updatedHtml;
+if (LEGACY_PRICING_SCRIPTS.test(finalHtml)) {
+  finalHtml = finalHtml.replace(LEGACY_PRICING_SCRIPTS, `\n ${PRICING_SCRIPT_TAG}`);
+} else {
+  finalHtml = finalHtml.replace(
+    /<script src="\/scripts\/pricing-section\.js\?v=\d+" defer><\/script>/,
+    PRICING_SCRIPT_TAG,
+  );
+  if (!finalHtml.includes('/scripts/pricing-section.js')) {
+    finalHtml = finalHtml.replace(
+      /(\s*<script src="\/scripts\/sdb-preview\.js[^"]*" defer><\/script>)/,
+      `$1\n ${PRICING_SCRIPT_TAG}`,
+    );
+  }
+}
+
+writeFileSync(INDEX_HTML_PATH, finalHtml, 'utf8');
 syncTrustImagesToStaticRoot();
 syncProductVideosToStaticRoot();
 console.log('✓ index.html: AEO-Blöcke aus der zentralen Konfiguration synchronisiert');

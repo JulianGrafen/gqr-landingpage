@@ -35,10 +35,10 @@ if (!pricingSectionMatch) {
 let pricingSection = pricingSectionMatch[0];
 
 const pricingScriptMatch = homeHtml.match(
-  /<script src="\/scripts\/pricing-billing\.js(?:\?v=\d+)?" defer><\/script>/,
+  /<script src="\/scripts\/pricing-section\.js(?:\?v=\d+)?" defer><\/script>/,
 );
 if (!pricingScriptMatch) {
-  console.error('scripts/pricing-billing.js in index.html nicht gefunden.');
+  console.error('scripts/pricing-section.js in index.html nicht gefunden.');
   process.exit(1);
 }
 const pricingScript = pricingScriptMatch[0];
@@ -66,6 +66,7 @@ function applyHeadlineOverrides(section, { headline, intro }) {
 function replacePricingSection(pageHtml, section) {
   const patterns = [
     /\s*<!-- PRICING -->[\s\S]*?<!--\/AEO:PRICING_SECTION-->/,
+    /\s*<!--AEO:PRICING_SECTION-->[\s\S]*?<!--\/AEO:PRICING_SECTION-->/,
     /\s*<!-- PRICING -->[\s\S]*?<\/section>\s*(?=\n\s*<!-- FAQ -->)/,
   ];
   for (const pattern of patterns) {
@@ -79,12 +80,16 @@ function replacePricingSection(pageHtml, section) {
 function replacePricingScript(pageHtml, script) {
   const inlinePattern =
     /<script>\s*\(function \(\) \{\s*var[\s\S]*?billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/;
-  const externalPattern = /<script src="\/scripts\/pricing-billing\.js(?:\?v=\d+)?" defer><\/script>/;
+  const sectionPattern = /<script src="\/scripts\/pricing-section\.js(?:\?v=\d+)?" defer><\/script>/;
+  const billingPattern = /<script src="\/scripts\/pricing-billing\.js(?:\?v=\d+)?" defer><\/script>/;
   if (inlinePattern.test(pageHtml)) {
     return pageHtml.replace(inlinePattern, script);
   }
-  if (externalPattern.test(pageHtml)) {
-    return pageHtml.replace(externalPattern, script);
+  if (sectionPattern.test(pageHtml)) {
+    return pageHtml.replace(sectionPattern, script);
+  }
+  if (billingPattern.test(pageHtml)) {
+    return pageHtml.replace(billingPattern, script);
   }
   throw new Error('Pricing-Script im Ziel nicht gefunden.');
 }
@@ -95,22 +100,8 @@ function replaceOffers(pageHtml) {
   return pageHtml.replace(/"offers": \[[\s\S]*?\]/, `"offers": ${offersArray}`);
 }
 
-const PRICING_FEATURES_SCRIPT =
-  '\n <script src="/scripts/pricing-tier-features.js" defer></script>';
-
-function ensurePricingFeaturesScript(pageHtml) {
-  if (pageHtml.includes('/scripts/pricing-tier-features.js')) return pageHtml;
-  const billingTag = /<script src="\/scripts\/pricing-billing\.js(?:\?v=\d+)?" defer><\/script>/;
-  if (billingTag.test(pageHtml)) {
-    return pageHtml.replace(billingTag, (match) => `${match}${PRICING_FEATURES_SCRIPT}`);
-  }
-  const billingEnd =
-    /billingRoot = document\.querySelector\('\[data-pricing-billing\]'\);[\s\S]*?\}\)\(\);\s*<\/script>/;
-  if (!billingEnd.test(pageHtml)) return pageHtml;
-  return pageHtml.replace(
-    billingEnd,
-    (match) => `${match}${PRICING_FEATURES_SCRIPT}`,
-  );
+function stripLegacyPricingFeatureScript(pageHtml) {
+  return pageHtml.replace(/\s*<script src="\/scripts\/pricing-tier-features\.js" defer><\/script>/g, '');
 }
 
 /** Muss zu KMU Pro `yearlyTotalPriceEur` in config/pricing-plans.ts passen (Schlüsselfertig-Inklusivsoftware). */
@@ -139,7 +130,7 @@ for (const target of TARGETS) {
   const section = applyHeadlineOverrides(pricingSection, target);
   html = replacePricingSection(html, section);
   html = replacePricingScript(html, pricingScript);
-  html = ensurePricingFeaturesScript(html);
+  html = stripLegacyPricingFeatureScript(html);
   html = replaceOffers(html);
   html = patchTurnkeyStalePricingCopy(html);
   fs.writeFileSync(filePath, html, 'utf8');

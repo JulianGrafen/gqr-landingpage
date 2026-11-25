@@ -11,7 +11,7 @@ import {
   type PricingPlan,
   type PricingPlanId,
 } from '@/config/pricing-plans';
-import { PRICING_VAT_FOOTNOTE_BILLING, PRICING_VAT_SUFFIX } from '@/config/pricing-vat';
+import { PRICING_VAT_SUFFIX } from '@/config/pricing-vat';
 
 /** Tarifkarten auf der Startseite (#preise): ohne TarifVorschau-Karte und ohne Industrie-Karte. */
 export const HOME_PRICING_CARD_IDS = ['kmu-basis', 'kmu-pro', 'sifa-multi-mandant'] as const;
@@ -38,7 +38,6 @@ export const HOME_PRICING_SECTION_MARKETING = {
     text: 'Jeden Tarif kostenlos mit 3 eigenen SDBs testen, keine Kreditkarte nötig.',
     href: APP_REGISTER_URL,
   },
-  footnoteRegisterLabel: 'Kostenlos starten',
   industryBar: {
     summary: 'Industrie & Multi-Werk ab 399 €/Monat: unbegrenzte Werke, SSO & individueller AVV',
     ctaLabel: 'Direkt anfragen',
@@ -101,7 +100,5 @@ export function pricingCardAnchorEur(monthlyPriceEur: number): number {
 export function formatYearlyBilledNote(yearlyTotalPriceEur: number): string {
   return `${yearlyTotalPriceEur.toLocaleString('de-DE')} € jährlich abgerechnet`;
 }
-
-export const HOME_PRICING_FOOTNOTE_DEFAULT = `${PRICING_VAT_FOOTNOTE_BILLING.yearly} ·`;
 
 export { PRICING_VAT_SUFFIX };

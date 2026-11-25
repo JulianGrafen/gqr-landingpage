@@ -25,8 +25,10 @@ export function HeroBenefitBullets({
       <ul className="sds-hero__checks sds-hero__checks--stacked" aria-label={title}>
         {bullets.map((bullet) => (
           <li key={bullet}>
-            <span aria-hidden="true">✓</span>
-            {bullet}
+            <span className="sds-hero__checks-mark" aria-hidden="true">
+              ✓
+            </span>
+            <span className="sds-hero__checks-copy">{bullet}</span>
           </li>
         ))}
       </ul>

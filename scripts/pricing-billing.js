@@ -34,19 +34,12 @@
   var billingHint = billingRoot.querySelector('[data-pricing-billing-hint]');
   var priceBlocks = document.querySelectorAll('[data-pricing-price]');
   var compareCells = document.querySelectorAll('[data-pricing-compare-price]');
-  var footnote = document.querySelector('[data-pricing-footnote]');
   var checkoutLinks = document.querySelectorAll('[data-pricing-cta]');
 
   var hints = {
     monthly: 'Monatliche Abrechnung, monatlich kündbar. Kauf auf Rechnung immer möglich.',
     yearly:
       'Jährliche Abrechnung (Standard) — effektiv bis zu 17 % günstiger. Kauf auf Rechnung immer möglich.',
-  };
-
-  /** Keep in sync with config/pricing-plans.ts → PRICING_VAT_FOOTNOTE_BILLING */
-  var footnotes = {
-    monthly: 'Alle Preise zzgl. 19 % MwSt., monatliche Abrechnung',
-    yearly: 'Alle Preise zzgl. 19 % MwSt., jährliche Vorauszahlung (Standard)',
   };
 
   function formatAmount(value, decimals) {
@@ -185,12 +178,6 @@
       cell.textContent = formatComparePrice(cell, monthly, mode, prefix);
     });
 
-    if (footnote) {
-      footnote.innerHTML =
-        footnotes[mode] +
-        ' &middot; <a href="https://app.gefahrstoff-qr.de/register" class="font-semibold text-teal-300 underline-offset-2 hover:underline">Kostenlos starten</a>, ohne Kreditkarte.';
-    }
-
     updateCheckoutLinks(mode);
   }
 
@@ -199,68 +186,6 @@
       setBilling(button.getAttribute('data-billing'));
     });
   });
-
-  var audienceSwitch = document.querySelector('[data-pricing-audience-switch]');
-  var audienceThumb = audienceSwitch && audienceSwitch.querySelector('[data-pricing-audience-thumb]');
-  var audienceButtons = audienceSwitch
-    ? audienceSwitch.querySelectorAll('[data-pricing-audience]')
-    : [];
-
-  function positionAudienceThumb() {
-    if (!audienceSwitch || !audienceThumb) return;
-    var active = audienceSwitch.querySelector('.roi-mode__btn.is-active');
-    if (!active) return;
-    audienceThumb.style.width = active.offsetWidth + 'px';
-    audienceThumb.style.left = active.offsetLeft + 'px';
-  }
-
-  function setPricingAudience(mode) {
-    if (!preiseSection) return;
-    if (mode === 'sifa') {
-      preiseSection.setAttribute('data-pricing-audience', 'sifa');
-    } else {
-      preiseSection.removeAttribute('data-pricing-audience');
-    }
-
-    audienceButtons.forEach(function (button) {
-      var isActive = button.getAttribute('data-pricing-audience') === mode;
-      button.classList.toggle('is-active', isActive);
-      button.setAttribute('aria-selected', isActive ? 'true' : 'false');
-    });
-
-    requestAnimationFrame(positionAudienceThumb);
-  }
-
-  function readInitialAudience() {
-    try {
-      var params = new URLSearchParams(window.location.search);
-      return params.get('tab') === 'sifa' ? 'sifa' : 'kmu';
-    } catch (_err) {
-      return 'kmu';
-    }
-  }
-
-  if (audienceSwitch && audienceButtons.length) {
-    audienceButtons.forEach(function (button) {
-      button.addEventListener('click', function () {
-        setPricingAudience(button.getAttribute('data-pricing-audience') || 'kmu');
-      });
-    });
-
-    window.addEventListener('resize', positionAudienceThumb);
-
-    var initialAudience = readInitialAudience();
-    if (initialAudience === 'sifa') {
-      setPricingAudience('sifa');
-      if (window.location.hash === '#preise') {
-        requestAnimationFrame(function () {
-          preiseSection.scrollIntoView({ block: 'start' });
-        });
-      }
-    } else {
-      positionAudienceThumb();
-    }
-  }
 
   window.addEventListener('resize', positionBillingThumb);
   if (document.fonts && document.fonts.ready) {

@@ -23,6 +23,7 @@ const SYNC_PATHS = [
   'so-funktioniert-die-ki',
   'sicherheit-avv',
   'praxisbeispiele',
+  'pricing',
   '_next',
 ];
 
