@@ -24,7 +24,7 @@ export function MarketingStaticSiteChrome() {
 
         <button
           id="navOpenBtn"
-          className="nav-toggle flex flex-wrap items-center justify-center"
+          className="nav-toggle flex flex-wrap items-center justify-center lg:hidden"
           type="button"
           aria-expanded="false"
           aria-controls="mobileMenu"

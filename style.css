@@ -1387,10 +1387,11 @@ body.nav-open .nav-mobile  { display: flex; justify-content: flex-end; }
 }
 .mobile-links .btn { margin-top: var(--space-sm); justify-content: center; width: 100%; }
 
-/* Breakpoint: show desktop nav from 768 px */
-@media (min-width: 768px) {
+/* Breakpoint: Desktop-Navi ab 1024 px (Tailwind `lg`); Hamburger nur auf Tablet/Mobil.
+   `.site-header`-Präfix schlägt die Utility `.flex` am Toggle (tw.css lädt nach style.css). */
+@media (min-width: 1024px) {
   .nav-desktop { display: flex; }
-  .nav-toggle  { display: none; }
+  .site-header .nav-toggle { display: none; }
 }
 
 /* ── SDS-Engine-inspirierter Hero ────────────────────────────── */
@@ -5155,30 +5156,6 @@ a.roi-card__cta:focus-visible {
   cursor: not-allowed;
 }
 
-.sdb-live-preview-dropzone__example {
-  margin-top: 0.35rem;
-  padding: 0.15rem 0.25rem;
-  border: none;
-  background: none;
-  color: #d6e4f5;
-  font-family: inherit;
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.4;
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
-  cursor: pointer;
-}
-
-.sdb-live-preview-dropzone__example:hover:not(:disabled) {
-  color: #fff;
-}
-
-.sdb-live-preview-dropzone__example:disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
-}
-
 .sdb-live-preview-dropzone__title {
   font-size: 1.125rem;
   font-weight: 700;
@@ -5191,27 +5168,68 @@ a.roi-card__cta:focus-visible {
   color: #8fa4c0;
 }
 
+.sdb-live-preview-examples {
+  margin-top: 1rem;
+}
+
+.sdb-live-preview-examples__label {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #c8d4e6;
+}
+
+/* 1-Klick-Beispiele: 2x2-Raster (Mobil wie Desktop, keine Waisen-Zeile) */
 .sdb-live-preview-examples__row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
 
 .sdb-live-preview-examples__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
+  border-radius: var(--radius-md, 12px);
   background: rgba(255, 255, 255, 0.04);
-  padding: 0.45rem 0.9rem;
+  padding: 0.6rem 0.75rem;
   color: #c8d4e6;
+  font-family: inherit;
   font-size: 0.86rem;
   font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
   cursor: pointer;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.sdb-live-preview-examples__btn:hover:not(:disabled) {
-  border-color: rgba(45, 212, 191, 0.45);
-  background: rgba(45, 212, 191, 0.1);
+.sdb-live-preview-examples__icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  color: #8fa4c0;
+  transition: color 0.2s ease;
+}
+
+.sdb-live-preview-examples__btn:hover:not(:disabled),
+.sdb-live-preview-examples__btn:focus-visible {
+  border-color: rgba(255, 107, 53, 0.6);
+  background: rgba(255, 107, 53, 0.1);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.sdb-live-preview-examples__btn:focus-visible {
+  outline: 2px solid rgba(255, 107, 53, 0.6);
+  outline-offset: 2px;
+}
+
+.sdb-live-preview-examples__btn:hover:not(:disabled) .sdb-live-preview-examples__icon,
+.sdb-live-preview-examples__btn:focus-visible .sdb-live-preview-examples__icon {
+  color: #ff6b35;
 }
 
 .sdb-live-preview-examples__btn:disabled {
@@ -5543,7 +5561,7 @@ a.roi-card__cta:focus-visible {
   letter-spacing: 0.14em;
   line-height: 1.65;
   color: #c5d0e2;
-  opacity: 0.5;
+  opacity: 0.72;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
 }
@@ -6139,6 +6157,71 @@ body.trial-modal-open {
   margin-top: 0;
 }
 
+/* Hero-Linksspalte: kompakte Ergebnis-Bullets (1 Zeile je Punkt ab Tablet) */
+.sds-hero__outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-text);
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.sds-hero__outcomes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.sds-hero__outcomes-mark {
+  flex-shrink: 0;
+  color: var(--color-trust);
+  font-weight: 950;
+}
+
+/* Kaufweg: Sekundär-Button (dezenter als Dropzone-CTA) + Text-Link für externe SiFas */
+.sds-hero__buy-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.sds-hero__buy-primary {
+  white-space: nowrap;
+}
+
+.sds-hero__buy-link {
+  display: inline-flex;
+  align-items: center;
+  color: #5eead4;
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sds-hero__buy-link:hover {
+  color: #99f6e4;
+  transform: translateX(2px);
+}
+
+@media (min-width: 768px) {
+  .sds-hero__buy-row {
+    justify-content: flex-start;
+  }
+}
+
 @media (min-width: 1024px) {
   .sds-hero__top {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -6240,6 +6323,13 @@ body.trial-modal-open {
   -webkit-hyphens: none;
   overflow-wrap: normal;
   word-break: normal;
+}
+
+/* Smartphones: „Gefahrstoffmanagement“ (nowrap) muss in die Spalte passen, ohne rechts abzuschneiden. */
+@media (max-width: 479px) {
+  .sds-hero__top .sds-hero__title {
+    font-size: clamp(1.6rem, 7.6vw, 2.35rem);
+  }
 }
 
 @media (min-width: 1024px) {

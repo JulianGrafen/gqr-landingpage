@@ -37,6 +37,9 @@ export const PRICING_UPDATED_LABEL = 'November 2026';
 export const TARIF_VORSCHAU_PLAN_DISPLAY_NAME = 'Tarif Vorschau' as const;
 
 /** Stoff-Limits der KMU-Pakete (Preiskarten + ROI-Tarifwahl). */
+/** Kostenlose SDB-Uploads im Tarif Vorschau (Hero-CTA, Preiskarte). */
+export const TARIF_VORSCHAU_SDB_UPLOAD_LIMIT = 3;
+
 export const KMU_BASIS_SUBSTANCE_LIMIT = 30;
 export const KMU_PRO_SUBSTANCE_LIMIT = 250;
 
@@ -72,7 +75,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
     monthlyPriceEur: 0,
     yearlyMonthlyPriceEur: 0,
     yearlyTotalPriceEur: 0,
-    limits: 'bis zu 3 SDB-Uploads',
+    limits: `bis zu ${TARIF_VORSCHAU_SDB_UPLOAD_LIMIT} SDB-Uploads`,
     features: [
       PRICING_TRIAL_VALUE_PROPOSITION,
       'KI-Auswertung und BA-Entwürfe im Browser prüfen',

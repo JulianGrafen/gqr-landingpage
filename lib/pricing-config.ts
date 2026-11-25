@@ -89,6 +89,14 @@ const INQUIRY_SIFA_GROSS_CTA = {
 
 const SIFA_EXTENSION_BULLET = `Flexibel erweiterbar: +${SIFA_MANDANT_BLOCK_SIZE} Mandanten für ${SIFA_MANDANT_BLOCK_PRICE_MONTHLY_EUR} EUR/Monat`;
 
+/** SiFa Multi-Mandant: zentral, damit Hero-Copy („ab … EUR/Monat“) und Preiskarte nicht auseinanderlaufen. */
+export const SIFA_MULTI_MANDANT_PRICE: PricingTierPriceFixed = {
+  kind: 'fixed',
+  monthlyEur: 189,
+  yearlyMonthlyEur: 159,
+  yearlyTotalEur: 1908,
+};
+
 export const PRICING_TIERS_BY_PERSONA: Record<PricingPersonaId, readonly PricingTierConfig[]> = {
   betriebe: [
     {
@@ -157,12 +165,7 @@ export const PRICING_TIERS_BY_PERSONA: Record<PricingPersonaId, readonly Pricing
       description: 'Zentrale Verwaltung für selbstständige Fachkräfte für Arbeitssicherheit.',
       badge: 'Für externe SiFas',
       highlighted: true,
-      price: {
-        kind: 'fixed',
-        monthlyEur: 189,
-        yearlyMonthlyEur: 159,
-        yearlyTotalEur: 1908,
-      },
+      price: SIFA_MULTI_MANDANT_PRICE,
       features: [
         `Inklusive ${SIFA_MANDANT_INCLUDED} Mandanten`,
         'Schneller Mandantenwechsel und getrennte Kataster',

@@ -41,6 +41,28 @@ export function HomeHeroCopy({ copy = HOME_HERO }: HomeHeroCopyProps) {
           </p>
         ))}
       </div>
+      {copy.outcomeBullets?.length ? (
+        <ul className="sds-hero__outcomes" aria-label="Ergebnis">
+          {copy.outcomeBullets.map((bullet) => (
+            <li key={bullet}>
+              <span className="sds-hero__outcomes-mark" aria-hidden="true">
+                ✓
+              </span>
+              <span>{bullet}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+      {copy.ctaRow ? (
+        <div className="sds-hero__buy-row">
+          <a className="btn-glass-outline sds-hero__buy-primary" href={copy.ctaRow.primary.href}>
+            {copy.ctaRow.primary.label}
+          </a>
+          <a className="sds-hero__buy-link" href={copy.ctaRow.secondary.href}>
+            {copy.ctaRow.secondary.label}
+          </a>
+        </div>
+      ) : null}
       {copy.secondaryLinks?.length ? (
         <p className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
           {copy.secondaryLinks.map((link) => (

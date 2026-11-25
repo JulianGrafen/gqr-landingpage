@@ -1,4 +1,6 @@
 import { APP_LOGIN_URL, APP_REGISTER_URL } from '@/config/aeo-config';
+import { TARIF_VORSCHAU_SDB_UPLOAD_LIMIT } from '@/config/pricing-plans';
+import { formatPricingAmountEur, SIFA_MULTI_MANDANT_PRICE } from '@/lib/pricing-config';
 
 /**
  * Hero und Kopfnavigation der Startseite (5-Sekunden-Test: Was, für wen, welcher Nutzen).
@@ -33,10 +35,24 @@ export interface HeroCopy {
   subheadlineParagraphs: readonly string[];
   /** Optionale Sekundärlinks unter der Subheadline (Primär-CTA bleibt die SDB-Dropzone darunter). */
   secondaryLinks?: readonly NavLink[];
+  /** Kompakte Ergebnis-Bullets direkt unter der Subheadline (je eine Zeile). */
+  outcomeBullets?: readonly string[];
+  /** Kaufweg neben der Dropzone: Registrierung plus Text-Link für externe SiFas. */
+  ctaRow?: HeroCtaRow;
+}
+
+export interface HeroCtaRow {
+  primary: NavLink;
+  secondary: NavLink;
 }
 
 /** Kompositum in der Hero-H1: darf nicht mit Bindestrich mitten im Wort umbrechen. */
 export const HOME_HERO_H1_UNBROKEN_COMPOUND = 'Gefahrstoffmanagement';
+
+/** Sprungmarke in den SiFa-Tab der Preissektion (ausgewertet in `usePricingUrlState`). */
+const PRICING_SIFA_TAB_HREF = '#preise?tab=sifa';
+
+const SIFA_PRICE_FROM_LABEL = `ab ${formatPricingAmountEur(SIFA_MULTI_MANDANT_PRICE.yearlyMonthlyEur)}/Monat`;
 
 export const HOME_HERO = {
   eyebrow: 'Die Excel-Alternative für SiFas & KMU',
@@ -46,6 +62,15 @@ export const HOME_HERO = {
     'SDB-PDF reinziehen: Gefahrstoffverzeichnis und TRGS-555-Betriebsanweisung entstehen als KI-gestützter Entwurf direkt im Browser.',
     'Sie prüfen und geben frei: im eigenen Betrieb oder für Ihre Mandanten.',
   ],
+  outcomeBullets: [
+    'Kataster & TRGS-555-BA-Entwurf direkt aus dem SDB',
+    'Inkl. TRGS-510-Zusammenlagerung & QR-Code-Etiketten',
+    `Mandantenfähig für externe SiFas (${SIFA_PRICE_FROM_LABEL})`,
+  ],
+  ctaRow: {
+    primary: { label: `Kostenlos mit ${TARIF_VORSCHAU_SDB_UPLOAD_LIMIT} SDBs starten`, href: APP_REGISTER_URL },
+    secondary: { label: 'Externe SiFa? Multi-Mandant ansehen →', href: PRICING_SIFA_TAB_HREF },
+  },
   microcopy: 'Kein Verkaufsgespräch, testen Sie die Software in Ruhe',
   /** Linksspalte unter der Live-Demo: Nutzen (neben ROI-Rechner). */
   benefitBullets: [
@@ -55,9 +80,9 @@ export const HOME_HERO = {
     'KI-gestützter Entwurf für Betriebsanweisungen (gemäß TRGS 555)',
   ],
   trustBadges: [
-    { id: 'hosting', label: 'Hosted in Frankfurt' },
-    { id: 'made-in-germany', label: 'Made in Germany' },
-    { id: 'ssl', label: 'SSL-verschlüsselt' },
-    { id: 'sifa-experts', label: 'Entwickelt mit Sicherheitsfachkräften' },
+    { id: 'hosting', label: 'DSGVO & Hosting in Frankfurt' },
+    { id: 'avv', label: 'AVV inklusive' },
+    { id: 'regelwerk', label: 'TRGS 555, 510 & 400' },
+    { id: 'no-credit-card', label: 'Keine Kreditkarte nötig' },
   ],
 } as const;

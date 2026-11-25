@@ -24,7 +24,7 @@ type Props = {
   /** Beschriftung der kompakten Zeile (nach erstem Upload). */
   compactLabel?: string;
   onFile: (file: File) => void;
-  /** 1-Klick-Beispiel in der Dropzone (Landing; nicht bei exampleSlot / kompakter Zeile). */
+  /** Mobiler 1-Klick-Beispiel-Button über der Dropzone (nicht bei exampleSlot / kompakter Zeile). */
   onQuickExample?: () => void;
 };
 
@@ -140,11 +140,7 @@ export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(functi
         {SDB_DROPZONE_COPY.pdfBadgeLabel}
       </span>
       <strong className="sdb-live-preview-dropzone__title">{SDB_DROPZONE_COPY.title}</strong>
-      <span className="sdb-live-preview-dropzone__hint">
-        {SDB_DROPZONE_COPY.hint}
-        <br />
-        {SDB_DROPZONE_COPY.hintLegal}
-      </span>
+      <span className="sdb-live-preview-dropzone__hint">{SDB_DROPZONE_COPY.hint}</span>
       <button
         type="button"
         className="sdb-live-preview-dropzone__pick"
@@ -156,19 +152,6 @@ export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(functi
       >
         {SDB_DROPZONE_COPY.pickPdfLabel}
       </button>
-      {onQuickExample ? (
-        <button
-          type="button"
-          className="sdb-live-preview-dropzone__example max-md:!hidden"
-          disabled={disabled}
-          onClick={(event) => {
-            stopDropzoneActivation(event);
-            onQuickExample();
-          }}
-        >
-          {SDB_DROPZONE_COPY.quickExampleLink}
-        </button>
-      ) : null}
     </div>
     </>
   );
