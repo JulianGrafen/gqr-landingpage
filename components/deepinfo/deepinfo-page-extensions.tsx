@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { StrikingDistanceMidPageCta } from '@/components/marketing/StrikingDistanceMidPageCta';
+import { PRICING_PAGE_SIFA_TAB_HREF } from '@/config/home-sections/pricing-audience';
 import { SoftwareAeoAnswers, SoftwareLongtailSections } from '@/components/deepinfo/SoftwareAnswerSections';
 import { SoftwareCategoryComparison } from '@/components/deepinfo/SoftwareCategoryComparison';
 import { SOFTWARE_AEO_ANSWERS } from '@/config/wissen/software-category-comparison';
@@ -34,6 +35,8 @@ const SUBSTITUTIONS_MID_CTA = {
   headline: 'Substitutionsprüfung mit belastbaren SDB-Daten vorbereiten',
   body: 'Laden Sie ein Sicherheitsdatenblatt in den Livetest und prüfen Sie den KI-gestützten Entwurf als Grundlage für Ihre dokumentierte Abwägung. Die fachliche Freigabe bleibt beim Arbeitgeber.',
   primaryLabel: 'Zur Dropzone auf der Startseite',
+  secondaryLabel: 'SiFa Multi-Mandant Preise',
+  secondaryHref: PRICING_PAGE_SIFA_TAB_HREF,
 } as const;
 
 export const DEEPINFO_PAGE_EXTENSIONS: Partial<Record<DeepinfoSlug, Partial<DeepinfoPageExtension>>> = {

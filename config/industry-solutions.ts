@@ -1337,7 +1337,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  'Externe SiFa und Arbeitsschutzbüros: Gefahrstoffverzeichnisse und Betriebsanweisungen mehrerer Kundenbetriebe pflegen, ohne Excel-Chaos und SDB-Anhänge.',
  heroKicker: 'Lösung für externe SiFa',
  sifaFunnelDropzoneFirst: true,
- primaryCta: { href: '#live-demo', label: 'SDB hochladen und Entwurf prüfen' },
+ primaryCta: { href: '/#live-demo', label: 'SDB hochladen und Entwurf prüfen' },
  heroSecondaryLinks: [
  { label: 'Startseite', href: '/' },
  { label: 'TRGS-510-Checker', href: '/trgs-510-zusammenlagerungs-check/' },

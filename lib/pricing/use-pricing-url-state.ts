@@ -7,22 +7,11 @@ import {
   type PricingPersonaId,
   PRICING_DEFAULT_BILLING,
 } from '@/lib/pricing-config';
+import { readExplicitPersonaFromUrl } from '@/lib/pricing/read-explicit-persona-from-url';
 
-/** Ausdrücklich per URL gewählte Zielgruppe (`?tab=sifa` oder `#preise?tab=sifa`), sonst `null`. */
 function readExplicitPersonaFromLocation(): PricingPersonaId | null {
   if (typeof window === 'undefined') return null;
-
-  const search = new URLSearchParams(window.location.search);
-  if (search.get('tab') === 'sifa') return 'sifa';
-
-  const hash = window.location.hash;
-  const queryInHash = hash.indexOf('?');
-  if (queryInHash >= 0) {
-    const hashParams = new URLSearchParams(hash.slice(queryInHash + 1));
-    if (hashParams.get('tab') === 'sifa') return 'sifa';
-  }
-
-  return null;
+  return readExplicitPersonaFromUrl(window.location.search, window.location.hash);
 }
 
 /**
@@ -67,11 +56,12 @@ export interface PricingUrlState {
 }
 
 export function usePricingUrlState(initialPersona?: PricingPersonaId): PricingUrlState {
-  const [persona, setPersonaState] = useState<PricingPersonaId>(initialPersona ?? PRICING_DEFAULT_PERSONA);
+  const [persona, setPersonaState] = useState<PricingPersonaId>(
+    () => readExplicitPersonaFromLocation() ?? initialPersona ?? PRICING_DEFAULT_PERSONA,
+  );
   const [billing, setBillingState] = useState<PricingBillingInterval>(PRICING_DEFAULT_BILLING);
 
   useEffect(() => {
-    setPersonaState(readExplicitPersonaFromLocation() ?? PRICING_DEFAULT_PERSONA);
     scrollToHashSectionWithQuery();
 
     /** In-Page-Links wie `#preise?tab=sifa` lösen nur `hashchange` aus, keinen erneuten Mount. */

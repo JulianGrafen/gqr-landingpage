@@ -1,4 +1,5 @@
 import { HOME_HERO, HOME_HERO_H1_UNBROKEN_COMPOUND, type HeroCopy } from '@/config/home-sections/hero';
+import { HeroQuickExampleButton } from '@/components/home/HeroQuickExampleButton';
 
 type HomeHeroCopyProps = {
   /** Standard: Startseite. Statische Branchenseiten übergeben ihre eigene Copy. */
@@ -53,16 +54,19 @@ export function HomeHeroCopy({ copy = HOME_HERO }: HomeHeroCopyProps) {
           ))}
         </ul>
       ) : null}
-      {copy.ctaRow ? (
-        <div className="sds-hero__buy-row">
-          <a className="btn-glass-outline sds-hero__buy-primary" href={copy.ctaRow.primary.href}>
-            {copy.ctaRow.primary.label}
-          </a>
-          <a className="sds-hero__buy-link" href={copy.ctaRow.secondary.href}>
-            {copy.ctaRow.secondary.label}
-          </a>
-        </div>
-      ) : null}
+      <div className="sds-hero__buy-row">
+        {copy.ctaRow ? (
+          <>
+            <a className="btn-glass-outline sds-hero__buy-primary" href={copy.ctaRow.primary.href}>
+              {copy.ctaRow.primary.label}
+            </a>
+            <a className="sds-hero__buy-link" href={copy.ctaRow.secondary.href}>
+              {copy.ctaRow.secondary.label}
+            </a>
+          </>
+        ) : null}
+        <HeroQuickExampleButton />
+      </div>
       {copy.secondaryLinks?.length ? (
         <p className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
           {copy.secondaryLinks.map((link) => (

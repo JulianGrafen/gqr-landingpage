@@ -8,7 +8,7 @@ export const PRICING_PAGE_SEO: SeoMetaInput = {
   path: PRICING_PAGE_PATH,
   title: 'Preise & Tarife | Gefahrstoff-QR',
   description:
-    'Nettopreise für Betriebe und SiFas: KMU Basis ab 49 EUR/Monat (jährlich), SiFa Multi-Mandant 189 EUR, Enterprise ab 399 EUR. 3 SDBs im Browser testen.',
+    'Nettopreise für Betriebe und SiFas: KMU Basis ab 49 EUR/Monat (jährlich), SiFa Multi-Mandant ab 189 EUR. 3 SDBs im Browser testen.',
   ogImageAlt: 'Gefahrstoff-QR Preise für Betriebe und externe SiFas',
   ogType: 'website',
   indexable: true,

@@ -1,6 +1,7 @@
 'use client';
 
 import { LIVE_DEMO_ANCHOR_ID } from '@/config/home-sections/hero';
+import { triggerHeroQuickExample } from '@/lib/sdb-preview/trigger-hero-quick-example';
 
 type Props = {
   /** Container-ID der Dropzone (Default: Startseiten-Anker live-demo). */
@@ -13,12 +14,7 @@ export function LoesungenSifaMobileExampleButton({ anchorId = LIVE_DEMO_ANCHOR_I
     <button
       type="button"
       className="gqr-cta-secondary gqr-cta-secondary--md inline-flex w-full justify-center md:hidden"
-      onClick={() => {
-        const root = document.getElementById(anchorId);
-        root?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        const quickBtn = root?.querySelector<HTMLButtonElement>('[data-sdb-mobile-quick-example]');
-        quickBtn?.click();
-      }}
+      onClick={() => triggerHeroQuickExample(anchorId)}
     >
       Beispiel-SDB testen
     </button>

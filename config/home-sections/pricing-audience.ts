@@ -17,3 +17,6 @@ export const HOME_PRICING_AUDIENCE_TABS = {
 export type HomePricingAudienceId = keyof typeof HOME_PRICING_AUDIENCE_TABS;
 
 export const HOME_PRICING_SIFA_TAB_HREF = `/?${HOME_PRICING_AUDIENCE_QUERY_KEY}=${HOME_PRICING_AUDIENCE_SIFA_VALUE}#preise` as const;
+
+/** Dedizierte Preisseite mit aktivem SiFa-Tab (Deep-Link). */
+export const PRICING_PAGE_SIFA_TAB_HREF = `/pricing/?${HOME_PRICING_AUDIENCE_QUERY_KEY}=${HOME_PRICING_AUDIENCE_SIFA_VALUE}` as const;
