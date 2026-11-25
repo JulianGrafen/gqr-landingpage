@@ -1,5 +1,5 @@
 import type { SdbPreviewExampleId, SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
-import { buildTeaserFromPrefill } from '@/lib/sdb-preview/map-teaser';
+import { buildTeaserFromPrefill, type PrefillLike } from '@/lib/sdb-preview/map-teaser';
 
 export interface SdbPreviewExampleConfig {
   id: SdbPreviewExampleId;
@@ -31,7 +31,7 @@ export const SDB_PREVIEW_EXAMPLES: SdbPreviewExampleConfig[] = [
 ];
 
 /** Demo payloads — field names mirror gqr-backend SdbPrefillData. */
-const MOCK_PREFILLS: Record<SdbPreviewExampleId, Parameters<typeof buildTeaserFromPrefill>[0]> = {
+const MOCK_PREFILLS: Record<SdbPreviewExampleId, PrefillLike> = {
   bremsenreiniger: {
     previewToken: '',
     name: 'Bremsenreiniger Pro Clean',

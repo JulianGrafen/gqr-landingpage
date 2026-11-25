@@ -6,6 +6,7 @@ import type { IndustryPseoContent } from '@/config/loesungen/types';
  */
 import type { HazardousSubstanceSlug } from '@/config/betriebsanweisung/entries';
 import type { HeroCopy } from '@/config/home-sections/hero';
+import type { SdbPreviewExampleId } from '@/lib/sdb-preview/api-contract';
 import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
 
 /** Typischer Branchenstoff mit Link auf die passende TRGS-555-Betriebsanweisung (Themen-Cluster). */
@@ -13,6 +14,8 @@ export interface IndustrySubstanceLink {
   label: string;
   /** Kurzer Praxishinweis (Gefährdung / Einsatzort), eine Zeile. */
   note: string;
+  /** Typische Lagerklasse nach TRGS 510; maßgeblich bleibt Abschnitt 7 des Lieferanten-SDB. */
+  typicalStorageClass?: string;
   baSlug: HazardousSubstanceSlug;
 }
 
@@ -20,6 +23,10 @@ export interface IndustrySubstanceOverview {
   heading: string;
   intro: string;
   items: readonly IndustrySubstanceLink[];
+  /** Hinweis unter der Tabelle (z. B. „typische Werte, maßgeblich ist das SDB“). */
+  tableFootnote?: string;
+  /** 1-Klick-Dropzone unter der Tabelle (statische Seiten, Mount über scripts/sdb-preview.js). */
+  dropzoneCta?: { headline: string; exampleIds: readonly SdbPreviewExampleId[] };
 }
 
 export const INDUSTRY_SLUGS = [
@@ -110,7 +117,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  headlineAccent: 'für die Kfz-Werkstatt.',
  subheadlineParagraphs: [
  'Sicherheitsdatenblatt hochladen: KI-gestützter Entwurf für das Gefahrstoffverzeichnis (§ 6 GefStoffV) und die Betriebsanweisung (gemäß TRGS 555). Sie prüfen und geben frei.',
- 'Bremsenreiniger oder Kupferpaste per Klick testen — oder Ihr eigenes SDB-PDF hochladen, ohne Login.',
+ 'Bremsenreiniger-SDB mit 1 Klick live testen oder eigenes Werkstatt-SDB hochladen, ohne Login.',
  ],
  secondaryLinks: [
  { label: 'Typische Werkstatt-Gefahrstoffe ansehen', href: '#werkstatt-stoffe' },
@@ -122,47 +129,61 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  intro:
  'Diese Produkte stehen in fast jeder Werkstatt im Regal. Zu jedem finden Sie eine Muster-Betriebsanweisung nach TRGS 555, die Sie mit Ihrem eigenen Sicherheitsdatenblatt in einen KI-gestützten Entwurf übernehmen.',
  items: [
- {
- label: 'Bremsenreiniger',
- note: 'Entzündbares Aerosol, Lösemitteldämpfe an Hebebühne und Prüfstand',
- baSlug: 'bremsenreiniger-trgs-555',
- },
- {
- label: 'Kupferpaste',
- note: 'Feiner Metallstaub bei Montagearbeiten, Atemschutz an der Hebebühne',
- baSlug: 'kupferpaste-trgs-555',
- },
- {
- label: 'Motoröl',
- note: 'Hautkontakt beim Ölwechsel, Altöl getrennt sammeln',
- baSlug: 'motoroel-trgs-555',
- },
- {
- label: '2K-Autolack',
- note: 'Lösemittel und Isocyanat-Härter in der Lackierkabine',
- baSlug: 'autolack-trgs-555',
- },
- {
- label: 'Lackverdünner',
- note: 'Leicht entzündbar, Zusammenlagerung nach TRGS 510 prüfen',
- baSlug: 'lackverduenner-trgs-555',
- },
- {
- label: 'Batteriesäure',
- note: 'Schwefelsäure, verursacht schwere Verätzungen',
- baSlug: 'schwefelsaure-trgs-555',
- },
- {
- label: 'Waschbenzin',
- note: 'Teilereinigung, leicht entzündbare Dämpfe',
- baSlug: 'waschbenzin-trgs-555',
- },
- {
- label: 'Felgenreiniger',
- note: 'Saure oder alkalische Reiniger, Augen- und Hautschutz',
- baSlug: 'felgenreiniger-trgs-555',
- },
+   {
+     label: 'Bremsenreiniger',
+     note: 'Entzündbares Aerosol, Lösemitteldämpfe an Hebebühne und Prüfstand',
+     typicalStorageClass: 'LGK 2B (Aerosol)',
+     baSlug: 'bremsenreiniger-trgs-555',
+   },
+   {
+     label: 'Motorenöl',
+     note: 'Hautkontakt beim Ölwechsel, Altöl getrennt sammeln',
+     typicalStorageClass: 'LGK 10',
+     baSlug: 'motoroel-trgs-555',
+   },
+   {
+     label: 'Kühlerfrostschutz',
+     note: 'Glykolhaltig, gesundheitsschädlich beim Verschlucken',
+     typicalStorageClass: 'LGK 10',
+     baSlug: 'kuehlerfrostschutz-trgs-555',
+   },
+   {
+     label: 'Bremsflüssigkeit',
+     note: 'Glykolether, Haut- und Augenkontakt beim Entlüften vermeiden',
+     typicalStorageClass: 'LGK 10',
+     baSlug: 'bremsfluessigkeit-trgs-555',
+   },
+   {
+     label: 'Batteriesäure',
+     note: 'Schwefelsäure, verursacht schwere Verätzungen',
+     typicalStorageClass: 'LGK 8B',
+     baSlug: 'batteriesaeure-trgs-555',
+   },
+   {
+     label: 'Unterbodenschutz',
+     note: 'Lösemittelhaltig, als Spraydose entzündbares Aerosol',
+     typicalStorageClass: 'LGK 2B (Spray) / LGK 3',
+     baSlug: 'unterbodenschutz-trgs-555',
+   },
+   {
+     label: '2K-Klarlack',
+     note: 'Entzündbar, Isocyanat-Härter kann Atemwege sensibilisieren',
+     typicalStorageClass: 'LGK 3',
+     baSlug: 'klarlack-trgs-555',
+   },
+   {
+     label: 'Kupferpaste',
+     note: 'Montagepaste, Hautkontakt vermeiden, je nach Produkt umweltgefährlich',
+     typicalStorageClass: 'LGK 10 / 11',
+     baSlug: 'kupferpaste-trgs-555',
+   },
  ] as const,
+ tableFootnote:
+   'Typische Einstufung als Orientierung. Maßgeblich sind Abschnitt 2 und 7 des jeweiligen Lieferanten-SDB.',
+ dropzoneCta: {
+  headline: 'Bremsenreiniger-SDB mit 1 Klick live testen oder eigenes Werkstatt-SDB hochladen',
+  exampleIds: ['bremsenreiniger'],
+ },
  },
  faq: [
  {

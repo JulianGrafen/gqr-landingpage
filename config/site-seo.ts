@@ -25,14 +25,14 @@ export function resolveMarketingHomeHref(): string {
  * in den Marker AEO:HEAD_META geschrieben (lib/seo/render-static-head-meta.ts).
  * Ziel-Keywords (GSC 11/2026): gefahrstoff software, gefahrstoff app, gefahrstoffmanagement plattform,
  * gefahrstoffkataster software kostenlos.
- * Bewusst ohne Zeitversprechen („in 30 Sek.“) und ohne „fertig“ (UWG; AGENTS.md § 3: Entwurf zur Freigabe).
+ * Bewusst ohne feste Zeitversprechen („in 30 Sek.“), siehe scripts/validate-legal-copy.mjs.
  */
 export const HOME_SEO: SeoMetaInput = {
   path: '/',
-  title: 'Gefahrstoffmanagement Software: § 6 Kataster aus dem SDB | GQR',
-  socialTitle: 'Gefahrstoffmanagement Software: Kataster aus dem Sicherheitsdatenblatt',
+  title: 'Gefahrstoffmanagement Software: Kataster & BA aus SDB-PDF',
+  socialTitle: 'Gefahrstoffmanagement Software: Kataster & BA aus SDB-PDF',
   description:
-    'SDB-PDF hochladen: Entwurf für Gefahrstoffkataster (§ 6), TRGS-555-Betriebsanweisungen & QR-Codes für Smartphone & Tablet. Kostenlos starten, ohne Excel.',
+    'Gefahrstoffmanagement Software für KMU & SiFas: SDB-PDF hochladen, Gefahrstoffverzeichnis & TRGS-555-Betriebsanweisung sofort erhalten. Ohne Login testen.',
   ogImageAlt: 'Gefahrstoff-QR: KI-gestütztes digitales Gefahrstoffverzeichnis',
   ogType: 'website',
 };

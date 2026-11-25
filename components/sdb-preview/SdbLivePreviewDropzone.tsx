@@ -11,7 +11,13 @@ import { shellClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb
 import { SDB_DROPZONE_QUICK_EXAMPLE_ID } from '@/config/sdb-preview/dropzone-copy';
 import type { SdbPreviewExampleId, SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
 import { resolvePreviewSourceLabel } from '@/lib/sdb-preview/resolve-preview-source-label';
-import { useSdbPreview, type SdbPreviewController, type SdbPreviewPhase } from '@/lib/sdb-preview/useSdbPreview';
+import {
+  hasTransferablePreviewToken,
+  useSdbPreview,
+  type SdbPreviewController,
+  type SdbPreviewPhase,
+} from '@/lib/sdb-preview/useSdbPreview';
+import { MobileLeadCapture } from '@/components/sdb-preview/MobileLeadCapture';
 
 const DROPZONE_ANCHOR_ID = 'ba-sdb-dropzone';
 
@@ -132,7 +138,7 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
     const resultBlock =
       phase === 'ready' && teaser ? (
         variant === 'static' ? (
-          <HeroBaLivePreview teaser={teaser} source={controller.source} />
+          <HeroBaLivePreview teaser={teaser} source={controller.source} draftToken={controller.draftToken} />
         ) : (
           <SdbPreviewCompactResult
             variant={variant}
@@ -140,6 +146,7 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
             embedded={embedded}
             omitPublishedHazardData={omitPublishedHazardData}
             sourceLabel={sourceLabel}
+            draftToken={controller.draftToken}
           />
         )
       ) : null;
@@ -168,6 +175,12 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
           <p className={variant === 'static' ? 'sdb-live-preview-file-label' : 'mt-2 truncate text-xs text-[#8fa4c0]'}>
             Datei: {fileLabel}
           </p>
+        ) : null}
+        {!embedded && phase !== 'processing' ? (
+          <MobileLeadCapture
+            draftToken={controller.draftToken}
+            previewToken={teaser && hasTransferablePreviewToken(source) ? teaser.previewToken : null}
+          />
         ) : null}
       </>
     );

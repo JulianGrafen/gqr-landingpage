@@ -1,4 +1,5 @@
 import type { HomePricingCardId } from '@/config/home-sections/pricing';
+import { GBU_MODULE_LABEL } from '@/config/pricing-plans';
 
 export type PricingCompareCell =
   | { kind: 'text'; value: string }
@@ -53,11 +54,19 @@ export const HOME_PRICING_COMPARE_ROWS: readonly PricingCompareRow[] = [
     },
   },
   {
-    label: 'GHS immer inklusive',
+    label: GBU_MODULE_LABEL,
     cells: {
-      'kmu-basis': { kind: 'text', value: 'Ohne Wasserzeichen' },
-      'kmu-pro': { kind: 'text', value: 'Ohne Wasserzeichen' },
-      'sifa-multi-mandant': { kind: 'text', value: 'Inkl. GHS' },
+      'kmu-basis': { kind: 'no' },
+      'kmu-pro': { kind: 'yes' },
+      'sifa-multi-mandant': { kind: 'yes' },
+    },
+  },
+  {
+    label: 'PDF-Export inkl. GHS-Piktogrammen',
+    cells: {
+      'kmu-basis': { kind: 'yes' },
+      'kmu-pro': { kind: 'yes' },
+      'sifa-multi-mandant': { kind: 'yes' },
     },
   },
   {

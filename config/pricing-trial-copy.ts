@@ -4,4 +4,4 @@ export const PRICING_TRIAL_VALUE_PROPOSITION =
 
 /** Kurzzeile unter Planvergleich und in Randtexten. */
 export const PRICING_TRIAL_BROWSER_FOOTNOTE =
-  'Ohne Kreditkarte — Entwürfe und BA-Vorschau direkt im Browser sehen.' as const;
+  'Ohne Kreditkarte: Entwürfe und BA-Vorschau direkt im Browser sehen.' as const;

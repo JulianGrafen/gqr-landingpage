@@ -16,6 +16,7 @@ type Props = {
   /** Öffentliche BA-LPs: Nutzer-SDB-Daten nur geblurrt (kein SEO-Stoffdaten-Bezug). */
   omitPublishedHazardData?: boolean;
   sourceLabel?: string | null;
+  draftToken?: string | null;
 };
 
 /** Filter blur on extracted user PDF data (not backdrop-blur). */
@@ -28,6 +29,7 @@ export function SdbPreviewCompactResult({
   embedded = false,
   omitPublishedHazardData = false,
   sourceLabel = null,
+  draftToken = null,
 }: Props) {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const identification = teaser.sections.find((s) => s.key === 'identification');
@@ -38,7 +40,9 @@ export function SdbPreviewCompactResult({
   }
 
   if (!embedded && !omitPublishedHazardData) {
-    return <Trgs555PreviewDocument variant={variant} teaser={teaser} sourceLabel={sourceLabel} />;
+    return (
+      <Trgs555PreviewDocument variant={variant} teaser={teaser} sourceLabel={sourceLabel} draftToken={draftToken} />
+    );
   }
 
   const ghsBlock = embedded ? (
@@ -163,6 +167,7 @@ export function SdbPreviewCompactResult({
           productName={teaser.tradeName}
           sourceLabel={sourceLabel}
           placement="footer"
+          draftToken={draftToken}
         />
       </div>
     </div>

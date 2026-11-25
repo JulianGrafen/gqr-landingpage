@@ -3,7 +3,7 @@ import {
   HOME_PRICING_CARD_BULLETS,
   formatYearlyBilledNote,
   getHomePricingPlan,
-  isHomePricingRecommended,
+  HOME_PRICING_CARD_BADGES,
   pricingCardAnchorEur,
   type HomePricingCardId,
 } from '@/config/home-sections/pricing';
@@ -55,7 +55,7 @@ function SifaMandantPitch() {
 
 export function PricingTierCard({ planId }: PricingTierCardProps) {
   const plan = getHomePricingPlan(planId);
-  const recommended = isHomePricingRecommended(plan.id);
+  const badge = HOME_PRICING_CARD_BADGES[planId];
   const yearlyMonthly = plan.yearlyMonthlyPriceEur ?? plan.monthlyPriceEur;
   const yearlyTotal = plan.yearlyTotalPriceEur ?? yearlyMonthly * 12;
   const anchor = pricingCardAnchorEur(plan.monthlyPriceEur);
@@ -73,7 +73,7 @@ export function PricingTierCard({ planId }: PricingTierCardProps) {
 
   return (
     <article className={CARD_CLASS} data-pricing-tier={plan.id}>
-      {recommended ? <span className="pricing-badge-recommended">Empfohlen</span> : null}
+      {badge ? <span className="pricing-badge-recommended">{badge}</span> : null}
       <p className="text-lg font-bold text-[#f0f6ff]">{plan.name}</p>
       <p className="mt-1 text-sm text-[#8fa4c0]">{plan.audience}</p>
       <p

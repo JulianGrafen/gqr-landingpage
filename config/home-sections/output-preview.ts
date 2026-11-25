@@ -20,7 +20,7 @@ export const OUTPUT_PREVIEW = {
     kicker: 'TRGS 555',
     title: 'Sparen Sie sich das Abtippen.',
     lead:
-      'KI-gestützter Entwurf nach TRGS 555 zur fachlichen Freigabe durch die SiFa bzw. den Arbeitgeber — als druckfertiges A4-PDF mit Firmenlogo.',
+      'KI-gestützter Entwurf nach TRGS 555 zur fachlichen Freigabe durch die SiFa bzw. den Arbeitgeber, als druckfertiges A4-PDF mit Firmenlogo.',
     points: [
       'Gliederung in die sechs Abschnitte nach TRGS 555',
       'Eigenes Firmenlogo und anpassbare Rahmenfarbe',

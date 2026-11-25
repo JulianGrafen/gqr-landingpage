@@ -8,6 +8,8 @@ import type {
   SdbPreviewTeaser,
 } from '@/lib/sdb-preview/api-contract';
 import type { ExtractionProgressSnapshot } from '@/lib/sdb-preview/extraction-progress';
+import { trackFunnelEvent } from '@/lib/analytics/funnel';
+import { createSdbDraft } from '@/lib/sdb-preview/create-draft';
 import { loadSdbPreviewConfig } from '@/lib/sdb-preview/load-config';
 import { prepareCompactUpload, runExamplePreview, uploadPdfPreview } from '@/lib/sdb-preview/preview-api-client';
 import { persistPreviewToken } from '@/lib/sdb-preview/preview-handoff';
@@ -34,6 +36,8 @@ export interface SdbPreviewController {
   fileLabel: string | null;
   /** Clientseitig erkannter Produktname, während die API noch läuft. */
   earlyTradeName: string | null;
+  /** Draft-Token aus `POST /api/public/drafts` (für `?draft=` an Register-CTAs), sobald verfügbar. */
+  draftToken: string | null;
   uploadFile: (file: File) => Promise<void>;
   runExample: (exampleId: SdbPreviewExampleId) => Promise<void>;
   runDemo: (loadDemo: SdbDemoPreviewLoader) => Promise<void>;
@@ -73,6 +77,7 @@ export function useSdbPreview(): SdbPreviewController {
   const [source, setSource] = useState<SdbPreviewSource | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [earlyTradeName, setEarlyTradeName] = useState<string | null>(null);
+  const [draftToken, setDraftToken] = useState<string | null>(null);
   const extractionProgress = useExtractionProgress();
   const { start: startProgress, complete: completeProgress, stop: stopProgress } = extractionProgress;
 
@@ -94,7 +99,9 @@ export function useSdbPreview(): SdbPreviewController {
       setError(null);
       setTeaser(null);
       setEarlyTradeName(null);
+      setDraftToken(null);
       startProgress(progressOptions);
+      trackFunnelEvent('dropzone_interaction', { isExample: nextSource.kind !== 'upload' });
 
       let result: PreviewRunResult;
       try {
@@ -120,12 +127,22 @@ export function useSdbPreview(): SdbPreviewController {
       await completeProgress();
       if (!isCurrent()) return;
 
-      if (hasTransferablePreviewToken(readySource)) {
+      const transferable = hasTransferablePreviewToken(readySource);
+      if (transferable) {
         persistPreviewToken(readyTeaser.previewToken);
       }
       setSource(readySource);
       setTeaser(readyTeaser);
       setPhase('ready');
+
+      // Hintergrund-Übergabe an die App: Ergebnis zuerst zeigen, Draft-Token nachreichen.
+      void createSdbDraft({
+        previewToken: transferable ? readyTeaser.previewToken : null,
+        source: readySource,
+        teaser: readyTeaser,
+      }).then((token) => {
+        if (token && isCurrent()) setDraftToken(token);
+      });
     },
     [startProgress, stopProgress, completeProgress],
   );
@@ -182,6 +199,7 @@ export function useSdbPreview(): SdbPreviewController {
     setSource(null);
     setError(null);
     setEarlyTradeName(null);
+    setDraftToken(null);
   }, [stopProgress]);
 
   return {
@@ -192,6 +210,7 @@ export function useSdbPreview(): SdbPreviewController {
     error,
     fileLabel: source?.kind === 'upload' ? source.fileName : null,
     earlyTradeName,
+    draftToken,
     uploadFile,
     runExample,
     runDemo,

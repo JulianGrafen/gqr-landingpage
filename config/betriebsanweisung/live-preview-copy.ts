@@ -14,6 +14,7 @@ export const LIVE_PREVIEW_COPY = {
   fields: {
     substance: 'Stoff-/Produktname',
     casNumber: 'CAS-Nr.',
+    storageClass: 'Lagerklasse (TRGS 510)',
     manufacturer: 'Hersteller',
     applicationArea: 'Einsatzbereich',
   },

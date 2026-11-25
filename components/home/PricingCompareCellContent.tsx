@@ -4,7 +4,7 @@ export function PricingCompareCellContent({ cell }: { cell: PricingCompareCell }
   if (cell.kind === 'dash') {
     return (
       <span className="pricing-compare__dash" aria-hidden="true">
-        &ndash;
+        &middot;
       </span>
     );
   }

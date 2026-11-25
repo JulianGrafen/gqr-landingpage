@@ -2,21 +2,23 @@ import { APP_REGISTER_URL } from '@/config/aeo-config';
 import type { HeroCopy } from '@/config/home-sections/hero';
 import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
 import { SIFA_MANDANT_INCLUDED, SIFA_MANDANT_EXTENSION_LABEL } from '@/config/sifa-mandant-pricing';
+import { SIFA_SELBSTSTAENDIG_DIR } from '@/config/static-redirects';
 
-export const SIFA_SELBSTSTAENDIG_PATH = '/gefahrstoff-software-sicherheitsfachkraft-selbstständig/' as const;
+/** ASCII-Slug; die alte Umlaut-URL leitet per Stub weiter (`config/static-redirects.ts`). */
+export const SIFA_SELBSTSTAENDIG_PATH = `/${SIFA_SELBSTSTAENDIG_DIR}/` as const;
 
 export const SIFA_SELBSTSTAENDIG = {
   path: SIFA_SELBSTSTAENDIG_PATH,
-  metaTitle: 'Gefahrstoff Software für selbstständige SiFa: Multi-Mandant',
+  metaTitle: 'Gefahrstoff Software für SiFas: Multi-Mandant & Kataster',
   metaDescription:
-    'Mandanten, Werke und Begehungen in einer App: SDB-Import, Gefahrstoffverzeichnis nach § 6 GefStoffV, TRGS-555-Entwürfe und QR-Codes. SiFa-Tarif ab 189 €/Monat.',
+    'Alle Mandanten in einer App: SDB-Import, Gefahrstoffverzeichnis nach § 6 GefStoffV, TRGS-555-Entwürfe und QR-Codes. SiFa-Tarif ab 189 €/Monat.',
   staticHero: {
     eyebrow: 'Multi-Mandant für externe Sicherheitsfachkräfte',
     headline: 'Gefahrstoffverzeichnis für alle Mandanten',
     headlineAccent: 'ohne Excel-Zettelwirtschaft.',
     subheadlineParagraphs: [
       'Sicherheitsdatenblatt hochladen: KI-gestützter Entwurf für § 6 GefStoffV und Betriebsanweisungen (gemäß TRGS 555). Sie prüfen und geben fachlich frei.',
-      `Bis ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe inklusive, saubere Trennung nach Werk und Tätigkeit — ${SIFA_MANDANT_EXTENSION_LABEL}.`,
+      `Bis ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe inklusive, saubere Trennung nach Werk und Tätigkeit. ${SIFA_MANDANT_EXTENSION_LABEL}.`,
     ],
     secondaryLinks: [
       { label: 'SiFa-Tarif & Preise', href: '#preise' },
@@ -47,7 +49,7 @@ export const SIFA_SELBSTSTAENDIG = {
     },
     {
       question: 'Wie starte ich ohne Verkaufsgespräch?',
-      answer: `Registrieren Sie sich unter ${APP_REGISTER_URL.replace('https://', '')}: Drei eigene Sicherheitsdatenblätter können Sie auslesen und Betriebsanweisungs-Entwürfe direkt im Browser prüfen — ohne Kreditkarte.`,
+      answer: `Registrieren Sie sich unter ${APP_REGISTER_URL.replace('https://', '')}: Drei eigene Sicherheitsdatenblätter können Sie auslesen und Betriebsanweisungs-Entwürfe direkt im Browser prüfen, ohne Kreditkarte.`,
     },
   ] satisfies readonly SeoFaqItem[],
 } as const;

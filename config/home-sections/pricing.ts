@@ -1,9 +1,11 @@
 import { APP_REGISTER_URL } from '@/config/aeo-config';
+import { COMPANY } from '@/config/company';
 import {
   PRICING_TRIAL_BROWSER_FOOTNOTE,
   PRICING_TRIAL_VALUE_PROPOSITION,
 } from '@/config/pricing-trial-copy';
 import {
+  GBU_MODULE_FEATURE,
   PRICING_DISPLAY_ANCHOR_OFFSET_EUR,
   PRICING_PLANS,
   type PricingPlan,
@@ -11,31 +13,36 @@ import {
 } from '@/config/pricing-plans';
 import { PRICING_VAT_FOOTNOTE_BILLING, PRICING_VAT_SUFFIX } from '@/config/pricing-vat';
 
-/** Tarifkarten auf der Startseite (#preise) — ohne TarifVorschau-Karte und ohne Industrie-Karte. */
+/** Tarifkarten auf der Startseite (#preise): ohne TarifVorschau-Karte und ohne Industrie-Karte. */
 export const HOME_PRICING_CARD_IDS = ['kmu-basis', 'kmu-pro', 'sifa-multi-mandant'] as const;
 
 export type HomePricingCardId = (typeof HOME_PRICING_CARD_IDS)[number];
 
 export const HOME_PRICING_RECOMMENDED_ID: HomePricingCardId = 'kmu-pro';
 
+/** Badges über den Tarifkarten (nur Karten mit Eintrag zeigen ein Badge). */
+export const HOME_PRICING_CARD_BADGES: Partial<Record<HomePricingCardId, string>> = {
+  'kmu-pro': 'Beliebt bei Betrieben',
+  'sifa-multi-mandant': 'Für externe SiFas',
+};
+
 export const HOME_PRICING_SECTION_MARKETING = {
   kicker: 'Preise',
   headline: 'Transparente Preise für jedes Unternehmen',
   subheadline:
-    'KMU Basis, KMU Pro oder SiFa Multi-Mandant: wählen Sie den passenden Tarif. Alle Preise sind Nettopreise zzgl. MwSt. Jährliche Abrechnung ist Standard und günstiger — monatlich jederzeit kündbar. QR-Notfallzugriff ist in den bezahlten Plänen inklusive.',
+    'KMU Basis, KMU Pro oder SiFa Multi-Mandant: wählen Sie den passenden Tarif. Alle Preise sind Nettopreise zzgl. MwSt. Jährliche Abrechnung ist Standard und günstiger, monatliche Abrechnung jederzeit kündbar. QR-Notfallzugriff ist in den bezahlten Plänen inklusive.',
   billingHintYearly:
-    'Jährliche Abrechnung (Standard) — effektiv bis zu 17 % günstiger. Kauf auf Rechnung immer möglich.',
+    'Jährliche Abrechnung (Standard): effektiv bis zu 17 % günstiger. Kauf auf Rechnung immer möglich.',
   billingHintMonthly: 'Monatliche Abrechnung, monatlich kündbar. Kauf auf Rechnung immer möglich.',
   trialHeadline: {
-    text: 'Jeden Tarif kostenlos mit 3 SDBs testen',
+    text: 'Jeden Tarif kostenlos mit 3 eigenen SDBs testen, keine Kreditkarte nötig.',
     href: APP_REGISTER_URL,
   },
   footnoteRegisterLabel: 'Kostenlos starten',
   industryBar: {
-    summary:
-      'Industrie: ab 399 €/Monat (339 €/Monat bei Jahreszahlung) · ab 250 Gefahrstoffen, SSO & dedizierter AVV-Support',
-    ctaLabel: 'Industrie-Tarif buchen',
-    ctaPlan: 'industrie' as const,
+    summary: 'Industrie & Multi-Werk ab 399 €/Monat: unbegrenzte Werke, SSO & individueller AVV',
+    ctaLabel: 'Direkt anfragen',
+    href: `mailto:${COMPANY.contactEmail}?subject=${encodeURIComponent('Anfrage Industrie-Tarif (Multi-Werk)')}`,
   },
   compareTrialFootnote: PRICING_TRIAL_BROWSER_FOOTNOTE,
   compareIndustryFootnote:
@@ -51,7 +58,7 @@ export const HOME_PRICING_CARD_BULLETS: Record<
     { text: 'Bis 30 Gefahrstoffe' },
     { text: '1 Werk, unbegrenzt Lagerorte' },
     { text: 'KI-gestützte BA-Entwürfe' },
-    { text: 'PDF- & Excel-Export (ohne Wasserzeichen)' },
+    { text: 'PDF- & Excel-Export' },
     { text: 'Aktive QR-Notfallansicht am Arbeitsplatz' },
     { text: 'Erfassung auch ohne SDB (Begehungs-Modus)' },
     { text: 'Kauf auf Rechnung / SEPA-Überweisung' },
@@ -62,11 +69,13 @@ export const HOME_PRICING_CARD_BULLETS: Record<
     { text: 'Batch-Upload (mehrere SDBs gleichzeitig)' },
     { text: 'Mehrere Nutzer-Logins' },
     { text: 'KI-gestützte BA-Entwürfe & PDF/Excel-Export' },
+    { text: GBU_MODULE_FEATURE },
     { text: 'SDB-Aktualitäts-Alerts' },
     { text: 'Erfassung auch ohne SDB (Begehungs-Modus)' },
     { text: 'Kauf auf Rechnung / SEPA-Überweisung' },
   ],
   'sifa-multi-mandant': [
+    { text: GBU_MODULE_FEATURE },
     { text: 'Unbegrenzte Werke je Mandant (Fair-Use)' },
     { text: 'Saubere Mandanten-, Werks- & Tätigkeitstrennung' },
     { text: 'Erfassung auch ohne SDB (Begehungs-Modus)' },

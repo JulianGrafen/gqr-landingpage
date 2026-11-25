@@ -5,7 +5,6 @@ import {
   getHomePricingPlan,
 } from '@/config/home-sections/pricing';
 import { HOME_PRICING_COMPARE_ROWS } from '@/config/home-sections/pricing-compare';
-import { PRICING_STRIPE_CHECKOUT } from '@/config/pricing-stripe-checkout';
 import { PricingCompareCellContent } from '@/components/home/PricingCompareCellContent';
 
 export function PricingCompareTable() {
@@ -74,7 +73,7 @@ export function PricingCompareTable() {
                   >
                     {HOME_PRICING_SECTION_MARKETING.trialHeadline.text}
                   </a>
-                  {' — '}
+                  {' '}
                   {HOME_PRICING_SECTION_MARKETING.compareTrialFootnote}
                 </td>
               </tr>
@@ -84,10 +83,7 @@ export function PricingCompareTable() {
                   {HOME_PRICING_SECTION_MARKETING.compareIndustryFootnote}{' '}
                   <a
                     className="font-semibold text-teal-300 underline-offset-2 hover:underline"
-                    href={PRICING_STRIPE_CHECKOUT.industrie.yearly}
-                    data-pricing-cta
-                    data-pricing-plan="industrie"
-                    rel="noopener noreferrer"
+                    href={HOME_PRICING_SECTION_MARKETING.industryBar.href}
                   >
                     {HOME_PRICING_SECTION_MARKETING.industryBar.ctaLabel}
                   </a>

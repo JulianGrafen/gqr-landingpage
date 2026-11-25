@@ -28,6 +28,8 @@ await esbuild.build({
   },
   define: {
     'process.env.NODE_ENV': '"production"',
+    // App-Origin für Drafts, Mobile-Lead und Funnel-Events (config/app-endpoints.ts).
+    'process.env.NEXT_PUBLIC_APP_URL': JSON.stringify(process.env.NEXT_PUBLIC_APP_URL ?? ''),
   },
   logLevel: 'info',
 });

@@ -28,12 +28,25 @@ function IndustrySubstanceOverviewSection({ industry }: SectionProps) {
         <IndustryWerkstattKatasterTable
           items={overview.items}
           caption={`${overview.heading}: acht typische Stoffe`}
+          footnote={overview.tableFootnote}
         />
         <p className="mt-6 text-sm text-[#8fa4c0]">
           <a href="/betriebsanweisung/" className="font-semibold text-[#ff6b35] underline-offset-2 hover:underline">
             Alle Muster-Betriebsanweisungen von A bis Z
           </a>
         </p>
+        {overview.dropzoneCta ? (
+          <div className="mx-auto mt-12 max-w-xl text-center">
+            <h3 className="text-xl font-black text-[#f0f6ff] sm:text-2xl">{overview.dropzoneCta.headline}</h3>
+            {/* Mount-Punkt für scripts/sdb-preview.js (gleiche Dropzone wie im Hero). */}
+            <div
+              className="mt-6 text-left"
+              data-sdb-live-preview
+              data-sdb-example-ids={overview.dropzoneCta.exampleIds.join(',')}
+              aria-label={overview.dropzoneCta.headline}
+            />
+          </div>
+        ) : null}
       </div>
     </section>
   );

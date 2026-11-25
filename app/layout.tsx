@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { FunnelLandingViewTracker } from '@/components/analytics/FunnelLandingViewTracker';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
 import { SITE_DEFAULT_SEO, SITE_URL } from '@/config/site-seo';
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="de">
       <body className="flex min-h-screen flex-col">
         <SiteHeader />
+        <FunnelLandingViewTracker />
         <div className="flex-1">{children}</div>
         <SiteFooter />
       </body>

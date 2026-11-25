@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run validate:loesungen && next build",
-    "build:github-pages": "npm run build:sdb-preview && npm run build:roi-calculator && npm run sync:home && npm run sync:silo-pricing && npm run generate:kfz-werkstatt-landing && npm run generate:sifa-selbststaendig-landing && npm run sync:solution-callouts && npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run validate:loesungen && next build && node scripts/sync-github-pages.mjs && npm run validate:export-routes && npm run generate:sitemap && npm run validate:sitemap && npm run validate:legal-copy-export && npm run validate:seo-meta",
+    "build:github-pages": "npm run build:sdb-preview && npm run build:roi-calculator && npm run sync:home && npm run sync:silo-pricing && npm run generate:kfz-werkstatt-landing && npm run generate:sifa-selbststaendig-landing && npm run generate:static-redirects && npm run build:css && npm run sync:solution-callouts && npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run validate:loesungen && next build && node scripts/sync-github-pages.mjs && npm run validate:export-routes && npm run generate:sitemap && npm run validate:sitemap && npm run validate:legal-copy-export && npm run validate:seo-meta",
     "validate:legal-copy": "node scripts/validate-legal-copy.mjs",
     "validate:legal-copy-export": "node scripts/validate-legal-copy.mjs --export",
     "validate:betriebsanweisung": "npx tsx scripts/validate-betriebsanweisung-entries.ts",
@@ -28,7 +28,8 @@
     "sync:silo-pricing": "node scripts/sync-silo-pricing-from-home.mjs",
     "generate:logo-wordmark": "node scripts/trim-logo-wordmark.mjs",
     "watch:css": "tailwindcss -i ./src/tw-input.css -o ./tw.css --watch",
-    "validate:seo-meta": "npx tsx --tsconfig tsconfig.scripts.json scripts/validate-seo-meta.ts"
+    "validate:seo-meta": "npx tsx --tsconfig tsconfig.scripts.json scripts/validate-seo-meta.ts",
+    "generate:static-redirects": "npx tsx --tsconfig tsconfig.scripts.json scripts/generate-static-redirects.ts"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.20",
@@ -40,7 +41,8 @@
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^4.10.38",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/node": "^22.10.1",

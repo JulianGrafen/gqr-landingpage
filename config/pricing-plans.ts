@@ -26,6 +26,9 @@ export const PRICING_FEATURE_BEGEHUNGS_MODUS =
 /** B2B-Zahlungsart auf allen Preiskarten (Startseite #preise). */
 export const PRICING_FEATURE_INVOICE_SEPA =
   'Kauf auf Rechnung / SEPA-Überweisung' as const;
+/** GBU-Modul (Gefährdungsbeurteilung nach § 6 GefStoffV): KMU Pro und SiFa Multi-Mandant. */
+export const GBU_MODULE_LABEL = 'GBU-Modul (§ 6 GefStoffV)' as const;
+export const GBU_MODULE_FEATURE = `Neu: ${GBU_MODULE_LABEL}` as const;
 /** Legacy-Hilfswert; jährliche Preise sind in `yearlyMonthlyPriceEur` fest definiert. */
 export const YEARLY_DISCOUNT_PERCENT = 15;
 export const PRICING_UPDATED_LABEL = 'November 2026';
@@ -70,7 +73,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
     features: [
       PRICING_TRIAL_VALUE_PROPOSITION,
       'KI-Auswertung und BA-Entwürfe im Browser prüfen',
-      'PDF- und Excel-Export ab KMU-Tarif (ohne Testkennzeichnung)',
+      'PDF- und Excel-Export ab KMU-Tarif',
       PRICING_FEATURE_INVOICE_SEPA,
     ],
     ctaLabel: PRICING_CARD_CTA_LABEL,
@@ -86,7 +89,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
     features: [
       PRICING_FEATURE_BEGEHUNGS_MODUS,
       'KI-gestützte BA-Entwürfe',
-      'PDF- & Excel-Export (ohne Wasserzeichen)',
+      'PDF- & Excel-Export',
       'Aktive QR-Notfallansicht am Arbeitsplatz',
       PRICING_FEATURE_INVOICE_SEPA,
     ],
@@ -106,6 +109,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
       'Batch-Upload (mehrere SDBs gleichzeitig)',
       'Mehrere Nutzer-Logins',
       'KI-gestützte BA-Entwürfe & PDF/Excel-Export',
+      GBU_MODULE_FEATURE,
       'SDB-Aktualitäts-Alerts',
       PRICING_FEATURE_INVOICE_SEPA,
     ],
@@ -125,6 +129,7 @@ export const PRICING_PLANS: readonly PricingPlan[] = [
       'Unbegrenzte Werke je Mandant (Fair-Use)',
       'Saubere Mandanten-, Werks- & Tätigkeitstrennung',
       PRICING_FEATURE_BEGEHUNGS_MODUS,
+      GBU_MODULE_FEATURE,
       'Batch-Upload & alle PDF/Excel-Exporte inkl. GHS',
       PRICING_FEATURE_INVOICE_SEPA,
     ],

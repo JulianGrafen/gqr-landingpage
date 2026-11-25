@@ -1,7 +1,7 @@
 /** Zentralisierte Compliance-Texte (UWG, B2B-Hinweis). */
 
 export const FOOTER_TAGLINE =
-  'Gefahrstoffverzeichnis nach Vorgaben von § 6 GefStoffV & TRGS, KI-gestützt aus dem Sicherheitsdatenblatt.';
+  'Gefahrstoffverzeichnis nach § 6 GefStoffV & TRGS 400/510/555, KI-gestützt aus dem Sicherheitsdatenblatt.';
 
 export const FOOTER_COPYRIGHT =
   '© 2026 Gefahrstoff-QR · Das Angebot richtet sich ausschließlich an Unternehmen, Gewerbetreibende, Freiberufler und juristische Personen des öffentlichen Rechts im Sinne des § 14 BGB.';

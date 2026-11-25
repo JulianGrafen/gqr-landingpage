@@ -16,7 +16,7 @@ const SCAN_ROOTS = [
   'gefahrstoffmanagement-reinigungsfirma',
   'gefahrstoffkataster-excel-vorlage',
   'gefahrstoffverzeichnis-excel-vorlage',
-  'gefahrstoff-software-sicherheitsfachkraft-selbstständig',
+  'gefahrstoff-software-sicherheitsfachkraft-selbststaendig',
   'trgs-510-zusammenlagerungs-check',
   'pricing',
 ];

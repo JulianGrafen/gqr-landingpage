@@ -14,7 +14,7 @@ export function HomeFaqSelfServeFooter() {
         </a>
       </p>
       <p className="mx-auto mt-4 max-w-md text-sm text-[#8fa4c0]">
-        {PRICING_TRIAL_VALUE_PROPOSITION} — kein Verkaufsgespräch.
+        {PRICING_TRIAL_VALUE_PROPOSITION}, kein Verkaufsgespräch.
       </p>
     </div>
   );

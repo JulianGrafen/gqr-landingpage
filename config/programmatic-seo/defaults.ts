@@ -12,4 +12,4 @@ export const SDB_DROPZONE_TRUST_FEATURES = [
 ] as const;
 
 /** Microcopy unter Hero-CTAs auf Produkt-Slugs. */
-export const SLUG_HERO_PROOF_LINE = 'Kostenlos für 5 Stoffe · ohne Kreditkarte · Hosting in Deutschland';
+export const SLUG_HERO_PROOF_LINE = '3 eigene SDBs kostenlos testen · ohne Kreditkarte · Hosting in Deutschland';

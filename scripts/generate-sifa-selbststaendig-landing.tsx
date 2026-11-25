@@ -1,5 +1,5 @@
 /**
- * Erzeugt /gefahrstoff-software-sicherheitsfachkraft-selbstständig/ aus index.html (SiFa-Zielgruppenseite).
+ * Erzeugt die SiFa-Zielgruppenseite (ASCII-Slug, siehe `SIFA_SELBSTSTAENDIG_DIR`) aus index.html.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -9,6 +9,7 @@ import { HomeFaqSelfServeFooter } from '@/components/home/HomeFaqSelfServeFooter
 import { HomeHeroCopy } from '@/components/home/HomeHeroCopy';
 import { AEO_CONTENT_UPDATED } from '@/config/aeo-config';
 import { SIFA_SELBSTSTAENDIG } from '@/config/silo-pages/sifa-selbststaendig';
+import { SIFA_SELBSTSTAENDIG_DIR } from '@/config/static-redirects';
 import { buildBreadcrumbSchema } from '@/lib/seo/build-breadcrumb-schema';
 import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
 import { buildSiloBreadcrumbs, buildSiloPageSeoMeta } from '@/lib/seo/build-silo-page-seo';
@@ -19,7 +20,7 @@ import { replaceMarkedBlocks } from '@/lib/static-html/replace-marked-blocks';
 
 const ROOT = process.cwd();
 const SOURCE = path.join(ROOT, 'index.html');
-const OUT_DIR = path.join(ROOT, 'gefahrstoff-software-sicherheitsfachkraft-selbstständig');
+const OUT_DIR = path.join(ROOT, SIFA_SELBSTSTAENDIG_DIR);
 const OUT_FILE = path.join(OUT_DIR, 'index.html');
 
 const silo = SIFA_SELBSTSTAENDIG;
@@ -75,4 +76,4 @@ html = html.replace(
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(OUT_FILE, html, 'utf8');
-console.log('✓ gefahrstoff-software-sicherheitsfachkraft-selbstständig/index.html');
+console.log(`✓ ${SIFA_SELBSTSTAENDIG_DIR}/index.html`);

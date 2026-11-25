@@ -28,7 +28,7 @@ export function BetriebsanweisungClosingCtaCard({ substanceName, registerUrl }: 
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-[#8fa4c0]">
           Laden Sie Ihre eigenen Sicherheitsdatenblätter hoch und strukturieren Sie Betriebsanweisungen sowie Ihr
-          Gefahrstoffverzeichnis an einem Ort. Kostenlos für 5 Stoffe, ohne Kreditkarte und ohne Verkaufsgespräch.
+          Gefahrstoffverzeichnis an einem Ort. 3 eigene SDBs kostenlos testen, ohne Kreditkarte und ohne Verkaufsgespräch.
         </p>
         <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:justify-center">
           <Link href={registerUrl} className="gqr-cta-primary gqr-cta-primary--md inline-flex justify-center">

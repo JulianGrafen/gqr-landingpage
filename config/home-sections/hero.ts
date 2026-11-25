@@ -36,15 +36,15 @@ export interface HeroCopy {
 }
 
 /** Kompositum in der Hero-H1: darf nicht mit Bindestrich mitten im Wort umbrechen. */
-export const HOME_HERO_H1_UNBROKEN_COMPOUND = 'Gefahrstoffkataster';
+export const HOME_HERO_H1_UNBROKEN_COMPOUND = 'Gefahrstoffmanagement';
 
 export const HOME_HERO = {
   eyebrow: 'Die Excel-Alternative für SiFas & KMU',
-  headline: `${HOME_HERO_H1_UNBROKEN_COMPOUND} & BA-Entwurf`,
-  headlineAccent: 'ohne Abtippen.',
+  headline: `${HOME_HERO_H1_UNBROKEN_COMPOUND} Software`,
+  headlineAccent: 'für KMU & SiFas',
   subheadlineParagraphs: [
-    'KI liest aus, Sie geben frei.',
-    'Sparen Sie sich mehrere Stunden Arbeit pro Woche: im eigenen Betrieb oder für Ihre Mandanten.',
+    'SDB-PDF reinziehen: Gefahrstoffverzeichnis und TRGS-555-Betriebsanweisung entstehen als KI-gestützter Entwurf direkt im Browser.',
+    'Sie prüfen und geben frei: im eigenen Betrieb oder für Ihre Mandanten.',
   ],
   microcopy: 'Kein Verkaufsgespräch, testen Sie die Software in Ruhe',
   /** Linksspalte unter der Live-Demo: Nutzen (neben ROI-Rechner). */

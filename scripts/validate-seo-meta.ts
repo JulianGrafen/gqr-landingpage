@@ -24,7 +24,7 @@ const EMOJI_PATTERN = /\p{Extended_Pictographic}/u;
 const LEGACY_LENGTH_EXCEPTIONS = new Set<string>([
   'betriebsanweisung/index.html',
   'etikettensoftware-gefahrstoffe/index.html',
-  'gefahrstoff-software-sicherheitsfachkraft-selbstständig/index.html',
+  'gefahrstoff-software-sicherheitsfachkraft-selbststaendig/index.html',
   'gefahrstoffmanagement-reinigungsfirma/index.html',
   'gefahrstoffverzeichnis-excel-vorlage/index.html',
   'loesungen/laborbetrieb/index.html',

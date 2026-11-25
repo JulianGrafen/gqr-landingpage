@@ -1,7 +1,7 @@
 /** Hinweis unter der Hero-SDB-Dropzone (Text-only, keine Markenlogos). */
 export const HERO_SDB_SUPPLIER_HINT = {
   intro:
-    'Liest Sicherheitsdatenblätter aller gängigen Hersteller & Großhändler zuverlässig aus – u. a. kompatibel mit Formaten von:',
+    'Liest Sicherheitsdatenblätter aller gängigen Hersteller & Großhändler zuverlässig aus, u. a. kompatibel mit Formaten von:',
   brands: [
     'Würth',
     'Liqui Moly',

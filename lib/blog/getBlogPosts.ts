@@ -31,14 +31,6 @@ const BRANCHEN_BLOG_POSTS: BlogPost[] = [
     excerpt: 'Lacke, Lösemittel und Spritzkabine — typische Stoffe und Dokumentationspflichten.',
   },
   {
-    title: 'Gefahrstoffmanagement in der Kfz-Werkstatt',
-    url: '/blog/kfz-werkstatt-gefahrstoff-blog.html',
-    date: '2026-04-04',
-    author: 'Gefahrstoff-QR Redaktion',
-    category: 'KFZ-Werkstatt',
-    excerpt: 'Öle, Reiniger und DME — Gefahrstoffverzeichnis für Werkstätten.',
-  },
-  {
     title: 'Gefahrstoffmanagement in der Gebäudereinigung',
     url: '/blog/reinigungsunternehmen-gefahrstoff-blog.html',
     date: '2026-04-04',

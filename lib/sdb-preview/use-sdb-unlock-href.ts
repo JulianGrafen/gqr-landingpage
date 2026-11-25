@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { buildUnlockRegisterUrl, type UnlockUrlOptions } from '@/lib/sdb-preview/build-unlock-url';
+import { withDraftParam } from '@/lib/sdb-preview/create-draft';
 import { loadSdbPreviewConfig } from '@/lib/sdb-preview/load-config';
 
 export type SdbUnlockHrefOptions = Omit<UnlockUrlOptions, 'previewToken' | 'registerBaseUrl'> & {
@@ -9,11 +10,13 @@ export type SdbUnlockHrefOptions = Omit<UnlockUrlOptions, 'previewToken' | 'regi
   previewToken: string | null;
   /** Link ohne Token, solange die Config lädt oder kein Token existiert. */
   fallbackHref: string;
+  /** Token aus `POST /api/public/drafts`; wird als `?draft=` an jede Register-URL gehängt. */
+  draftToken?: string | null;
 };
 
 function hrefFromToken(
   previewToken: string,
-  extras: Omit<SdbUnlockHrefOptions, 'previewToken' | 'fallbackHref'>,
+  extras: Omit<SdbUnlockHrefOptions, 'previewToken' | 'fallbackHref' | 'draftToken'>,
   registerBaseUrl?: string,
 ): string {
   return buildUnlockRegisterUrl({
@@ -36,6 +39,7 @@ export function useSdbUnlockHref({
   utmMedium,
   utmCampaign,
   utmContent,
+  draftToken = null,
 }: SdbUnlockHrefOptions): string {
   const extras = { returnTo, utmSource, utmMedium, utmCampaign, utmContent };
   const [href, setHref] = useState(() =>
@@ -58,5 +62,5 @@ export function useSdbUnlockHref({
     };
   }, [previewToken, fallbackHref, returnTo, utmSource, utmMedium, utmCampaign, utmContent]);
 
-  return href;
+  return withDraftParam(href, draftToken);
 }

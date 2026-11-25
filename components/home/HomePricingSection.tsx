@@ -6,7 +6,6 @@ import {
   HOME_PRICING_FOOTNOTE_DEFAULT,
   HOME_PRICING_SECTION_MARKETING,
 } from '@/config/home-sections/pricing';
-import { PRICING_STRIPE_CHECKOUT } from '@/config/pricing-stripe-checkout';
 import { PRICING_SECTION_LEGAL_LINE } from '@/config/pricing-vat';
 
 const PRICING_HEADLINE_ID = 'pricingHeadline';
@@ -68,13 +67,7 @@ export function HomePricingSection() {
 
         <p className="pricing-industry-bar mt-8 border-t border-white/[0.08] pt-6 text-center text-sm leading-relaxed text-[#8fa4c0]">
           {marketing.industryBar.summary}{' '}
-          <a
-            className="sds-secondary-link text-sm font-semibold"
-            href={PRICING_STRIPE_CHECKOUT.industrie.yearly}
-            data-pricing-cta
-            data-pricing-plan={marketing.industryBar.ctaPlan}
-            rel="noopener noreferrer"
-          >
+          <a className="sds-secondary-link text-sm font-semibold" href={marketing.industryBar.href}>
             {marketing.industryBar.ctaLabel} →
           </a>
         </p>

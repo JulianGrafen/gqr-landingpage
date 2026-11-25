@@ -1,5 +1,12 @@
 import type { SdbPreviewTeaser, Trgs555PreviewSection } from '@/lib/sdb-preview/api-contract';
 import { deriveProtectiveEquipment } from '@/lib/sdb-preview/derive-protective-equipment';
+import {
+  parseSdbPrefill,
+  parseSdbPreviewTeaser,
+  TEASER_FALLBACK_MANUFACTURER,
+  TEASER_FALLBACK_TRADE_NAME,
+  type SdbPrefill,
+} from '@/lib/sdb-preview/teaser-schema';
 
 export type PrefillLike = {
   previewToken?: string;
@@ -34,13 +41,11 @@ export function splitStatements(raw: string | null | undefined): string[] {
     .filter(Boolean);
 }
 
-function pickStorageClass(p: PrefillLike): string | undefined {
-  const raw = p.lgk ?? p.storage_class ?? p.lagerklasse ?? p.storageClassTrgs510;
-  const trimmed = typeof raw === 'string' ? raw.trim() : '';
-  return trimmed.length > 0 ? trimmed : undefined;
+function pickStorageClass(p: SdbPrefill): string | undefined {
+  return p.lgk ?? p.storage_class ?? p.lagerklasse ?? p.storageClassTrgs510;
 }
 
-function buildSections(p: PrefillLike): Trgs555PreviewSection[] {
+function buildSections(p: SdbPrefill): Trgs555PreviewSection[] {
   const hazards = splitStatements(p.h_statements);
   const hazardBody =
     hazards.length > 0
@@ -57,7 +62,7 @@ function buildSections(p: PrefillLike): Trgs555PreviewSection[] {
       key: 'identification',
       title: '1. Stoff-/Produktbezeichnung',
       unlocked: true,
-      body: `${p.name ?? '—'}\nHersteller/Lieferant: ${p.manufacturer ?? '—'}`,
+      body: `${p.name ?? TEASER_FALLBACK_TRADE_NAME}\nHersteller/Lieferant: ${p.manufacturer ?? TEASER_FALLBACK_MANUFACTURER}`,
     },
     {
       key: 'hazards',
@@ -93,13 +98,18 @@ function buildSections(p: PrefillLike): Trgs555PreviewSection[] {
       key: 'emergency_qr',
       title: 'Notfall-QR-Code (Arbeitsplatz)',
       unlocked: false,
-      body: 'QR-Notfallpass für Ersthelfer am Lagerort — nach Freischaltung verfügbar.',
+      body: 'QR-Notfallpass für Ersthelfer am Lagerort: nach Freischaltung verfügbar.',
     },
   ];
 }
 
-export function buildTeaserFromPrefill(p: PrefillLike, previewToken: string): SdbPreviewTeaser {
-  const ghs = Array.isArray(p.ghs_pictograms) ? p.ghs_pictograms : [];
+/**
+ * Baut den Teaser aus Prefill-Rohdaten. Die Eingabe wird vorab per Zod normalisiert,
+ * damit `null`, Zahlen oder fehlende Felder aus API/Demo-Daten nie zum Render-Crash führen.
+ */
+export function buildTeaserFromPrefill(rawPrefill: PrefillLike | unknown, previewToken: string): SdbPreviewTeaser {
+  const p = parseSdbPrefill(rawPrefill);
+  const ghs = p.ghs_pictograms;
   const hazardStatements = splitStatements(p.h_statements);
   const precautionaryStatements = splitStatements(p.p_statements);
 
@@ -108,11 +118,11 @@ export function buildTeaserFromPrefill(p: PrefillLike, previewToken: string): Sd
 
   return {
     previewToken,
-    tradeName: p.name?.trim() || 'Unbenannter Stoff',
-    manufacturer: p.manufacturer?.trim() || '—',
-    casNumber: p.cas_number?.trim() || undefined,
+    tradeName: p.name ?? TEASER_FALLBACK_TRADE_NAME,
+    manufacturer: p.manufacturer ?? TEASER_FALLBACK_MANUFACTURER,
+    casNumber: p.cas_number,
     storageClass: pickStorageClass(p),
-    signalWord: p.signal_word ?? null,
+    signalWord: p.signal_word,
     ghsPictograms: ghs,
     hazardStatements,
     precautionaryStatements,
@@ -126,21 +136,20 @@ export function buildTeaserFromPrefill(p: PrefillLike, previewToken: string): Sd
   };
 }
 
-/** Maps gqr-backend API JSON to teaser (server returns pre-mapped teaser or prefill). */
+/**
+ * Maps gqr-backend API JSON to teaser (server returns pre-mapped teaser or prefill).
+ * Die Server-Antwort wird nie ungeprüft gecastet: `parseSdbPreviewTeaser` ersetzt fehlende
+ * oder falsch typisierte Felder durch sichere Defaults.
+ */
 export function mapApiJsonToTeaser(json: unknown): SdbPreviewTeaser | null {
   if (!json || typeof json !== 'object') return null;
   const root = json as Record<string, unknown>;
+  const rootPreviewToken = typeof root.previewToken === 'string' ? root.previewToken : undefined;
 
   if (root.teaser && typeof root.teaser === 'object') {
-    const teaser = root.teaser as SdbPreviewTeaser;
-    const previewToken =
-      typeof root.previewToken === 'string'
-        ? root.previewToken
-        : typeof teaser.previewToken === 'string'
-          ? teaser.previewToken
-          : '';
-    if (!previewToken) return null;
-    return { ...teaser, previewToken };
+    const teaser = parseSdbPreviewTeaser(root.teaser, rootPreviewToken);
+    if (!teaser) return null;
+    return rootPreviewToken ? { ...teaser, previewToken: rootPreviewToken } : teaser;
   }
 
   if (root.ok === true && root.data && typeof root.data === 'object') {
@@ -148,7 +157,7 @@ export function mapApiJsonToTeaser(json: unknown): SdbPreviewTeaser | null {
       typeof root.previewToken === 'string'
         ? root.previewToken
         : `preview-${Date.now()}`;
-    return buildTeaserFromPrefill(root.data as PrefillLike, token);
+    return buildTeaserFromPrefill(root.data, token);
   }
 
   return null;

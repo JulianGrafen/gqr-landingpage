@@ -113,16 +113,26 @@ export function BaSheetSection({ title, children }: { title: string; children: R
 }
 
 /** Abschnitt „Gefahrstoffbezeichnung“: Handelsname groß, optional CAS. */
-export function BaSheetIdentification({ tradeName, casNumber }: { tradeName: string; casNumber?: string | null }) {
+export function BaSheetIdentification({
+  tradeName,
+  casNumber,
+  storageClassLabel,
+}: {
+  tradeName: string;
+  casNumber?: string | null;
+  /** Bereits normalisiert, z. B. „LGK 3“ (aus dem SDB erkannt). */
+  storageClassLabel?: string | null;
+}) {
+  const metaParts = [
+    casNumber ? `${copy.fields.casNumber} ${casNumber}` : null,
+    storageClassLabel ? `${copy.fields.storageClass}: ${storageClassLabel}` : null,
+  ].filter((part): part is string => part !== null);
+
   return (
     <BaSheetSection title={copy.sectionTitles.identification}>
       <div className="p-1.5 text-center">
         <p className="m-0 text-[20px] font-bold leading-tight sm:text-[24px]">{tradeName}</p>
-        {casNumber ? (
-          <p className={`m-0 mt-0.5 ${BA_SHEET.meta}`}>
-            {copy.fields.casNumber} {casNumber}
-          </p>
-        ) : null}
+        {metaParts.length > 0 ? <p className={`m-0 mt-0.5 ${BA_SHEET.meta}`}>{metaParts.join(' · ')}</p> : null}
       </div>
     </BaSheetSection>
   );

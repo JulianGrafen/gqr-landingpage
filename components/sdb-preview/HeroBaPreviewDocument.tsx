@@ -6,8 +6,7 @@ import { LIVE_PREVIEW_COPY } from '@/config/betriebsanweisung/live-preview-copy'
 import { SDB_PREVIEW_EXAMPLES } from '@/config/sdb-preview-examples';
 import { formatApplicationAreaField } from '@/lib/betriebsanweisung/format-workplace-context';
 import type { SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
-import { handOffPreviewTokenToRegistration } from '@/lib/sdb-preview/preview-handoff';
-import { useSdbUnlockHref } from '@/lib/sdb-preview/use-sdb-unlock-href';
+import { useRegisterCta } from '@/lib/sdb-preview/use-register-cta';
 import { hasTransferablePreviewToken, type SdbPreviewSource } from '@/lib/sdb-preview/useSdbPreview';
 
 const HERO_REGISTER_FALLBACK = 'https://app.gefahrstoff-qr.de/register';
@@ -16,6 +15,7 @@ const HERO_APPLICATION_AREA = formatApplicationAreaField(['Werkstatt', 'Produkti
 type ReadyProps = {
   teaser: SdbPreviewTeaser;
   source: SdbPreviewSource | null;
+  draftToken: string | null;
 };
 
 function describeSource(source: SdbPreviewSource | null): string {
@@ -30,15 +30,17 @@ function describeSource(source: SdbPreviewSource | null): string {
   }
 }
 
-function HeroBaUnlockCta({ previewToken }: { previewToken: string | null }) {
-  const href = useSdbUnlockHref({
+function HeroBaUnlockCta({ previewToken, draftToken }: { previewToken: string | null; draftToken: string | null }) {
+  const cta = useRegisterCta({
     previewToken,
+    draftToken,
     fallbackHref: HERO_REGISTER_FALLBACK,
     returnTo: '/',
     utmSource: 'landing',
     utmMedium: 'hero',
     utmCampaign: 'sdb-live-preview',
     utmContent: 'hero-ba-vorschau',
+    placement: 'hero-ba-overlay',
   });
 
   return (
@@ -46,8 +48,8 @@ function HeroBaUnlockCta({ previewToken }: { previewToken: string | null }) {
       label={LIVE_PREVIEW_COPY.lockedOverlay.cta}
       tone="light"
       className="mt-3"
-      href={href}
-      onClick={previewToken ? () => handOffPreviewTokenToRegistration(previewToken) : undefined}
+      href={cta.href}
+      onClick={cta.onClick}
     />
   );
 }
@@ -55,7 +57,7 @@ function HeroBaUnlockCta({ previewToken }: { previewToken: string | null }) {
 /**
  * Nach SDB-Scan: Live-BA mit echten GHS-Piktogrammen aus der Extraktion.
  */
-export function HeroBaLivePreview({ teaser, source }: ReadyProps) {
+export function HeroBaLivePreview({ teaser, source, draftToken }: ReadyProps) {
   const previewToken = hasTransferablePreviewToken(source) ? teaser.previewToken : null;
 
   return (
@@ -68,7 +70,7 @@ export function HeroBaLivePreview({ teaser, source }: ReadyProps) {
         teaser={teaser}
         applicationArea={HERO_APPLICATION_AREA}
         isDemo={source?.kind === 'example' || source?.kind === 'demo'}
-        unlockCta={<HeroBaUnlockCta previewToken={previewToken} />}
+        unlockCta={<HeroBaUnlockCta previewToken={previewToken} draftToken={draftToken} />}
       />
     </div>
   );

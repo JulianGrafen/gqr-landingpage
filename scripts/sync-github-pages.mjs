@@ -4,6 +4,7 @@
  */
 import fs from 'fs';
 import path from 'path';
+import { syncNextDirWithRetention } from './lib/retain-next-static-chunks.mjs';
 
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, 'out');
@@ -36,6 +37,12 @@ for (const rel of SYNC_PATHS) {
 
   if (!fs.existsSync(src)) {
     console.warn(`Übersprungen (nicht in out/): ${rel}`);
+    continue;
+  }
+
+  if (rel === '_next') {
+    const stats = syncNextDirWithRetention(src, dest);
+    console.log(`✓ _next/ (${stats.current} aktuell, ${stats.retained} aus Vor-Builds behalten, ${stats.pruned} entfernt)`);
     continue;
   }
 

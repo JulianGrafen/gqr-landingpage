@@ -15,9 +15,10 @@ type Props = {
   variant: SdbPreviewVariant;
   teaser: SdbPreviewTeaser;
   sourceLabel?: string | null;
+  draftToken?: string | null;
 };
 
-export function Trgs555PreviewDocument({ variant, teaser, sourceLabel = null }: Props) {
+export function Trgs555PreviewDocument({ variant, teaser, sourceLabel = null, draftToken = null }: Props) {
   const isStatic = variant === 'static';
   const badges = buildResultInsightBadges(teaser);
   const sharpSections = resolveSharpPreviewSections(teaser);
@@ -132,6 +133,7 @@ export function Trgs555PreviewDocument({ variant, teaser, sourceLabel = null }: 
             previewToken={teaser.previewToken}
             productName={teaser.tradeName}
             sourceLabel={sourceLabel}
+            draftToken={draftToken}
           />
         </div>
       </div>

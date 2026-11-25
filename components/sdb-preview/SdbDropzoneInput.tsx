@@ -11,6 +11,7 @@ import {
 } from 'react';
 import { dropzoneClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
 import { SDB_DROPZONE_COPY } from '@/config/sdb-preview/dropzone-copy';
+import { SDB_MOBILE_FLOW_COPY } from '@/config/sdb-preview/mobile-flow-copy';
 
 export type SdbDropzoneInputHandle = {
   openFilePicker: () => void;
@@ -114,6 +115,17 @@ export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(functi
   }
 
   return (
+    <>
+      {onQuickExample ? (
+        <button
+          type="button"
+          className={`${variant === 'static' ? 'btn-cta-orange' : 'gqr-cta-primary gqr-cta-primary--md'} mb-3 w-full justify-center whitespace-normal text-center md:hidden`}
+          disabled={disabled}
+          onClick={onQuickExample}
+        >
+          {SDB_MOBILE_FLOW_COPY.quickExamplePrimary}
+        </button>
+      ) : null}
     <div className={dropzoneClass(variant, state, false)} {...surfaceInteraction}>
       <input
         ref={inputRef}
@@ -146,7 +158,7 @@ export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(functi
       {onQuickExample ? (
         <button
           type="button"
-          className="sdb-live-preview-dropzone__example"
+          className="sdb-live-preview-dropzone__example max-md:!hidden"
           disabled={disabled}
           onClick={(event) => {
             stopDropzoneActivation(event);
@@ -157,5 +169,6 @@ export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(functi
         </button>
       ) : null}
     </div>
+    </>
   );
 });

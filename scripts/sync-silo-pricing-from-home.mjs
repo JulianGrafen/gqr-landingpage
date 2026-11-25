@@ -9,7 +9,7 @@ const SOURCE = path.join(ROOT, 'index.html');
 
 const TARGETS = [
   {
-    file: 'gefahrstoff-software-sicherheitsfachkraft-selbstständig/index.html',
+    file: 'gefahrstoff-software-sicherheitsfachkraft-selbststaendig/index.html',
     headline: 'Skalieren Sie Ihre Compliance ohne Überraschungen',
     intro:
       'Vom Funktionstest bis zur Mandantenverwaltung für externe SiFas. Standard-Ansicht: Jahreszahlung zum reduzierten Monatspreis. Monatlich kündbar.',
@@ -130,6 +130,11 @@ function patchTurnkeyStalePricingCopy(pageHtml) {
 
 for (const target of TARGETS) {
   const filePath = path.join(ROOT, target.file);
+  if (!fs.existsSync(filePath)) {
+    // Generierte Seiten (z. B. SiFa) entstehen erst in einem späteren Build-Schritt aus index.html.
+    console.warn(`Übersprungen (noch nicht generiert): ${target.file}`);
+    continue;
+  }
   let html = fs.readFileSync(filePath, 'utf8');
   const section = applyHeadlineOverrides(pricingSection, target);
   html = replacePricingSection(html, section);

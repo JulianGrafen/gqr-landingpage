@@ -20,7 +20,6 @@ function toFooterLinks(pages: readonly DecisionPageLink[]): FooterLink[] {
 export const FOOTER_PRODUCT_LINKS: readonly FooterLink[] = [
   { label: 'Live-Test', href: '/#live-demo' },
   { label: 'Preise', href: '/#preise' },
-  { label: 'Schlüsselfertig (2.900 € zzgl. MwSt.)', href: '/wissen/gefahrstoffkataster-erstellen-lassen/' },
   { label: 'Kataster erstellen lassen', href: '/wissen/gefahrstoffkataster-erstellen-lassen/' },
   { label: 'Für SiFas', href: '/#fuer-sifas' },
   ...toFooterLinks(getDecisionPagesForFooterColumn('product')),

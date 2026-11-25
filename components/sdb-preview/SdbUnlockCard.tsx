@@ -3,8 +3,7 @@
 import { SDB_UNLOCK_RESULT_COPY } from '@/config/sdb-preview/unlock-result-copy';
 import type { SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
 import { buildSuccessBadgeLabel, buildUnlockHeadline } from '@/lib/sdb-preview/build-unlock-headline';
-import { handOffPreviewTokenToRegistration } from '@/lib/sdb-preview/preview-handoff';
-import { useSdbUnlockHref } from '@/lib/sdb-preview/use-sdb-unlock-href';
+import { useRegisterCta } from '@/lib/sdb-preview/use-register-cta';
 
 type Props = {
   variant: SdbPreviewVariant;
@@ -13,6 +12,7 @@ type Props = {
   sourceLabel: string | null;
   /** `footer`: CTA unter einer kompakten Vorschau (Sidebar), ohne extra Kartenrahmen. */
   placement?: 'overlay' | 'footer';
+  draftToken?: string | null;
 };
 
 export function SdbUnlockCard({
@@ -21,9 +21,14 @@ export function SdbUnlockCard({
   productName,
   sourceLabel,
   placement = 'overlay',
+  draftToken = null,
 }: Props) {
-  const href = useSdbUnlockHref({ previewToken, fallbackHref: '#' });
-  const handOff = () => handOffPreviewTokenToRegistration(previewToken);
+  const cta = useRegisterCta({
+    previewToken,
+    draftToken,
+    fallbackHref: '#',
+    placement: `unlock-card-${placement}`,
+  });
   const isStatic = variant === 'static';
   const framed = placement === 'overlay';
 
@@ -49,8 +54,8 @@ export function SdbUnlockCard({
             ? 'btn-cta-orange sdb-live-preview-unlock__cta'
             : 'sdb-unlock-cta mt-3 inline-flex w-full justify-center no-underline'
         }
-        href={href}
-        onClick={handOff}
+        href={cta.href}
+        onClick={cta.onClick}
       >
         {SDB_UNLOCK_RESULT_COPY.cta}
       </a>

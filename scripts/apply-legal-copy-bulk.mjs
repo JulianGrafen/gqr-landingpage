@@ -16,7 +16,7 @@ const DIRS = [
   'gefahrstoffkataster-excel-vorlage',
   'gefahrstoffverzeichnis-excel-vorlage',
   'gefahrstoffmanagement-reinigungsfirma',
-  'gefahrstoff-software-sicherheitsfachkraft-selbstständig',
+  'gefahrstoff-software-sicherheitsfachkraft-selbststaendig',
   'trgs-510-zusammenlagerungs-check',
   'pricing',
 ];

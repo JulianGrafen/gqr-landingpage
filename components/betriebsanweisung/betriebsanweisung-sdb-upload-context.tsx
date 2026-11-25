@@ -4,9 +4,8 @@ import { createContext, useCallback, useContext, useMemo, useRef, type ReactNode
 import type { SubstanceClusterId } from '@/config/betriebsanweisung/substance-clusters';
 import { loadDemoPreviewTeaser } from '@/lib/betriebsanweisung/load-demo-preview-teaser';
 import { buildBetriebsanweisungPath } from '@/lib/betriebsanweisung/build-register-url';
-import { handOffPreviewTokenToRegistration } from '@/lib/sdb-preview/preview-handoff';
 import { hasTransferablePreviewToken, useSdbPreview, type SdbPreviewController } from '@/lib/sdb-preview/useSdbPreview';
-import { useSdbUnlockHref } from '@/lib/sdb-preview/use-sdb-unlock-href';
+import { useRegisterCta } from '@/lib/sdb-preview/use-register-cta';
 
 type SdbUploadSurface = {
   openFilePicker: () => void;
@@ -46,11 +45,13 @@ type ProviderProps = {
 export function BetriebsanweisungSdbUploadProvider({ children, slug, cluster, fallbackRegisterUrl }: ProviderProps) {
   const surfaceRef = useRef<SdbUploadSurface | null>(null);
   const preview = useSdbPreview();
-  const { runDemo, teaser, source } = preview;
+  const { runDemo, teaser, source, draftToken } = preview;
 
   const transferableToken = teaser && hasTransferablePreviewToken(source) ? teaser.previewToken : null;
-  const unlockHref = useSdbUnlockHref({
+  const { href: unlockHref, onClick: handOffToRegistration } = useRegisterCta({
     previewToken: transferableToken,
+    draftToken,
+    placement: 'ba-live-preview',
     fallbackHref: fallbackRegisterUrl,
     returnTo: buildBetriebsanweisungPath(slug),
     utmSource: 'landing',
@@ -86,10 +87,6 @@ export function BetriebsanweisungSdbUploadProvider({ children, slug, cluster, fa
   const startDemoExtraction = useCallback(() => {
     void runDemo(() => loadDemoPreviewTeaser(slug, cluster));
   }, [runDemo, slug, cluster]);
-
-  const handOffToRegistration = useCallback(() => {
-    if (transferableToken) handOffPreviewTokenToRegistration(transferableToken);
-  }, [transferableToken]);
 
   const value = useMemo(
     () => ({

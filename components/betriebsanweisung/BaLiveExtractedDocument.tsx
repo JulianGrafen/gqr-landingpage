@@ -16,6 +16,7 @@ import { LIVE_PREVIEW_COPY as copy } from '@/config/betriebsanweisung/live-previ
 import { GHS_ASSETS, normalizeGhsCode } from '@/lib/ghs/ghs-assets';
 import type { GhsPictogramCode } from '@/lib/ghs/ghs-types';
 import type { SdbPreviewTeaser } from '@/lib/sdb-preview/api-contract';
+import { resolveStorageClassLabel } from '@/lib/sdb-preview/build-result-insight-badges';
 
 type Props = {
   teaser: SdbPreviewTeaser;
@@ -66,7 +67,11 @@ export function BaLiveExtractedDocument({ teaser, applicationArea, isDemo, unloc
   return (
     <BaSheetFrame>
       <BaSheetHeader manufacturer={teaser.manufacturer} applicationArea={applicationArea} issuedOn={formatBaIssueDate()} />
-      <BaSheetIdentification tradeName={teaser.tradeName} casNumber={teaser.casNumber} />
+      <BaSheetIdentification
+        tradeName={teaser.tradeName}
+        casNumber={teaser.casNumber}
+        storageClassLabel={resolveStorageClassLabel(teaser)}
+      />
 
       <BaSheetSection title={copy.sectionTitles.hazards}>
         <BaSheetSymbolTextRow symbols={ghsSymbols}>

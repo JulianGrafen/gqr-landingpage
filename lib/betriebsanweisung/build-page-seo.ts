@@ -1,7 +1,9 @@
+import {
+  BA_OG_IMAGE_ALT,
+  BA_SERP_DESCRIPTION_CANDIDATES,
+  BA_SERP_TITLE_CANDIDATES,
+} from '@/config/betriebsanweisung/serp-snippet';
 import type { HazardousSubstanceSeoEntry } from '@/config/betriebsanweisung/types';
-import { GEMINI_CRO_BA_OVERRIDES } from '@/config/seo/gemini-cro-2026-11-24';
-import { BETRIEBSANWEISUNG_STRIKING_OVERRIDES } from '@/config/seo/striking-distance-2026-11-23';
-import type { HazardousSubstanceSlug } from '@/config/betriebsanweisung/entries';
 import { SITE_URL } from '@/config/site-seo';
 import { fitDescription, fitTitle, type SeoMetaInput } from '@/lib/seo/buildMetadata';
 import { buildBreadcrumbSchema, type BreadcrumbItem } from '@/lib/seo/build-breadcrumb-schema';
@@ -21,48 +23,17 @@ export function buildBetriebsanweisungPath(entry: HazardousSubstanceSeoEntry): `
   return `/betriebsanweisung/${entry.slug}/`;
 }
 
-/**
- * SERP-Title (Suchintention „Betriebsanweisung <Stoff>“ = fertige Vorlage).
- * Kaskade: Klammer-Variante → Gedankenstrich-Variante → Kurzform, jeweils ≤ SEO_LIMITS.titleMax.
- */
-function geminiCroOverride(entry: HazardousSubstanceSeoEntry) {
-  return GEMINI_CRO_BA_OVERRIDES[entry.slug as HazardousSubstanceSlug];
-}
-
-function strikingOverride(entry: HazardousSubstanceSeoEntry) {
-  return BETRIEBSANWEISUNG_STRIKING_OVERRIDES[entry.slug as HazardousSubstanceSlug];
-}
-
+/** SERP-Title (≤ 58 Zeichen) aus der gemeinsamen Kandidaten-Kaskade. */
 export function buildBetriebsanweisungTitle(entry: HazardousSubstanceSeoEntry): string {
-  const gemini = geminiCroOverride(entry);
-  if (gemini?.title) return fitTitle([gemini.title]);
-  const override = strikingOverride(entry);
-  if (override?.title) return fitTitle([override.title]);
-  const name = entry.substanceName;
-  return fitTitle([
-    `Betriebsanweisung ${name} (TRGS 555) – Muster & PDF`,
-    `Betriebsanweisung ${name} – TRGS 555 Vorlage & PDF`,
-    `Betriebsanweisung ${name} – TRGS 555 Muster`,
-    `Betriebsanweisung ${name} (TRGS 555)`,
-  ]);
+  return fitTitle(BA_SERP_TITLE_CANDIDATES.map((candidate) => candidate(entry.substanceName)));
 }
 
 /**
- * Meta-Description (Ziel 140–155 Zeichen): Muster sofort sichtbar + eigenes SDB als KI-Entwurf.
- * Bewusst ohne Zeit- oder Automatik-Versprechen (UWG, AGENTS.md § 3: Entwurf zur Freigabe).
+ * Meta- und OG-Description (≤ 155 Zeichen), identisch für alle Stoffseiten.
+ * Der rechtliche Hinweis (KI-gestützter Entwurf, Freigabe nach § 14 GefStoffV) bleibt sichtbar auf der Seite.
  */
 export function buildBetriebsanweisungMetaDescription(entry: HazardousSubstanceSeoEntry): string {
-  const gemini = geminiCroOverride(entry);
-  if (gemini?.description) return fitDescription([gemini.description]);
-  const override = strikingOverride(entry);
-  if (override?.description) return fitDescription([override.description]);
-  const name = entry.substanceName;
-  return fitDescription([
-    `Muster-Betriebsanweisung für ${name} nach TRGS 555 & § 14 GefStoffV. Vorschau direkt prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln.`,
-    `Muster-Betriebsanweisung ${name} nach TRGS 555 & § 14 GefStoffV. Vorschau prüfen oder eigenes SDB-PDF in einen KI-Entwurf umwandeln.`,
-    `Betriebsanweisung ${name} nach TRGS 555: Muster-Vorschau prüfen oder eigenes SDB-PDF in einen KI-Entwurf zur Freigabe umwandeln.`,
-    entry.metaDescription,
-  ]);
+  return fitDescription(BA_SERP_DESCRIPTION_CANDIDATES.map((candidate) => candidate(entry.substanceName)));
 }
 
 /** Eingabe für `buildMetadata` — Title, Description und Canonical aus einer Quelle. */
@@ -71,7 +42,7 @@ export function buildBetriebsanweisungSeoMeta(entry: HazardousSubstanceSeoEntry)
     path: buildBetriebsanweisungPath(entry),
     title: buildBetriebsanweisungTitle(entry),
     description: buildBetriebsanweisungMetaDescription(entry),
-    ogImageAlt: `Muster-Betriebsanweisung ${entry.substanceName} nach TRGS 555`,
+    ogImageAlt: BA_OG_IMAGE_ALT(entry.substanceName),
     ogType: 'article',
   };
 }
