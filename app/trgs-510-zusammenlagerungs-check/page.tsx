@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
 import { ShieldCheck, Smartphone, Table2 } from 'lucide-react';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { Trgs510AudienceCards } from '@/components/trgs510/Trgs510AudienceCards';
 import { Trgs510CheckTool } from '@/components/trgs510/Trgs510CheckTool';
+import { Trgs510FaqItems } from '@/components/trgs510/Trgs510FaqItems';
+import { TRGS510_SEO_FAQ } from '@/config/trgs510/trgs510-seo-faq';
 import { SITE_URL } from '@/config/site-seo';
+import { buildTrgs510PageSchemas } from '@/lib/trgs510/build-trgs510-page-schemas';
 
 const PAGE_PATH = '/trgs-510-zusammenlagerungs-check/';
 const canonical = `${SITE_URL}${PAGE_PATH}`;
@@ -61,6 +65,7 @@ const featureCards = [
 export default function Trgs510ZusammenlagerungsCheckPage() {
   return (
     <main>
+      <JsonLd data={buildTrgs510PageSchemas()} />
       <article>
         <header className="bg-gradient-to-b from-[#0f1e35]/90 to-[#0a1628] px-4 pb-4 pt-8 sm:px-6 lg:px-8 lg:pb-6 lg:pt-10">
           <div className="mx-auto max-w-5xl">
@@ -123,6 +128,18 @@ export default function Trgs510ZusammenlagerungsCheckPage() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        <section
+          className="border-b border-[#e5e7eb] bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
+          aria-labelledby="trgs510-faq-heading"
+        >
+          <div className="mx-auto max-w-3xl">
+            <h2 id="trgs510-faq-heading" className="text-2xl font-black tracking-tight text-slate-900 sm:text-3xl">
+              Häufige Fragen zum Zusammenlagerungs-Check
+            </h2>
+            <Trgs510FaqItems items={TRGS510_SEO_FAQ} />
           </div>
         </section>
 

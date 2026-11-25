@@ -3,6 +3,8 @@ import {
   CORE_FEATURES,
   HUMAN_IN_THE_LOOP_NOTICE,
   PRODUCT_ENTITY,
+  SOFTWARE_APPLICATION_SCHEMA_ASSETS,
+  toAbsoluteSiteUrl,
 } from '@/config/aeo-config';
 import { PRICING_CURRENCY, PRICING_PLANS, type PricingPlan } from '@/config/pricing-plans';
 import { SITE_URL } from '@/config/site-seo';
@@ -66,6 +68,8 @@ export function buildSoftwareApplicationSchema() {
     name: PRODUCT_ENTITY.name,
     alternateName: [...PRODUCT_ENTITY.alternateNames],
     url: PRODUCT_ENTITY.url,
+    image: toAbsoluteSiteUrl(SOFTWARE_APPLICATION_SCHEMA_ASSETS.imagePath),
+    screenshot: toAbsoluteSiteUrl(SOFTWARE_APPLICATION_SCHEMA_ASSETS.screenshotPath),
     inLanguage: 'de-DE',
     applicationCategory: 'BusinessApplication',
     applicationSubCategory: 'Gefahrstoffmanagement Software',
