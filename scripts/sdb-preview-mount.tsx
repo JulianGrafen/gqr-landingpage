@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { SdbLivePreviewDropzone } from '../components/sdb-preview/SdbLivePreviewDropzone';
+import { bootstrapInternalTrafficFlag } from '../lib/analytics/internal-traffic';
 import { trackLandingViewOnce } from '../lib/analytics/funnel';
 import { triggerHeroQuickExample } from '../lib/sdb-preview/trigger-hero-quick-example';
 import type { SdbPreviewExampleId } from '../lib/sdb-preview/api-contract';
@@ -22,6 +23,7 @@ function bindHeroQuickExampleButtons() {
 }
 
 function mountSdbLivePreview() {
+  bootstrapInternalTrafficFlag();
   trackLandingViewOnce();
   bindHeroQuickExampleButtons();
   document.querySelectorAll<HTMLElement>('[data-sdb-live-preview]').forEach((el) => {

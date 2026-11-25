@@ -8,6 +8,7 @@ import type {
   SdbPreviewTeaser,
 } from '@/lib/sdb-preview/api-contract';
 import type { ExtractionProgressSnapshot } from '@/lib/sdb-preview/extraction-progress';
+import { trackDemoCounterEvent } from '@/lib/analytics/demo-counter';
 import { trackFunnelEvent } from '@/lib/analytics/funnel';
 import { createSdbDraft } from '@/lib/sdb-preview/create-draft';
 import { loadSdbPreviewConfig } from '@/lib/sdb-preview/load-config';
@@ -102,6 +103,11 @@ export function useSdbPreview(): SdbPreviewController {
       setDraftToken(null);
       startProgress(progressOptions);
       trackFunnelEvent('dropzone_interaction', { isExample: nextSource.kind !== 'upload' });
+      if (nextSource.kind === 'upload') {
+        trackDemoCounterEvent('dropzone_upload');
+      } else if (nextSource.kind === 'example') {
+        trackDemoCounterEvent('quick_example');
+      }
 
       let result: PreviewRunResult;
       try {
