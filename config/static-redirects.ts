@@ -23,7 +23,7 @@ export const SIFA_SELBSTSTAENDIG_LEGACY_DIR = 'gefahrstoff-software-sicherheitsf
 export const SIFA_SELBSTSTAENDIG_DIR = 'gefahrstoff-software-sicherheitsfachkraft-selbststaendig';
 
 export const STATIC_REDIRECTS: readonly StaticRedirect[] = [
-  { sourceFile: 'pricing/index.html', target: '/#preise', label: 'Preise & Tarife' },
+  // /pricing/ → /#preise erzeugt scripts/sync-pricing-redirect.tsx (config/pricing-redirect-seo.ts).
 
   // Fremdinhalte eines früheren Projekts (Digitaler Produktpass), thematisch ohne Bezug zu Gefahrstoff-QR.
   { sourceFile: 'blog/ratgeber/index.html', target: BLOG_INDEX, label: 'Gefahrstoff-Blog' },

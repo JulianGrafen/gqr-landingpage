@@ -5,10 +5,10 @@ Registrierung ohne Kreditkarte: https://app.gefahrstoff-qr.de/register
 
 Hinweis: KI-Funktionen liefern Entwürfe. Jeder KI-gestützte Entwurf (gemäß TRGS 555) ist eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber (§ 14 GefStoffV).
 
-## TarifVorschau
+## Tarif Vorschau
 - Preis: 0 €
 - Limits: bis zu 3 SDB-Uploads
-- Leistungen: 3 eigene SDBs kostenlos auslesen und fertige BA sofort im Browser prüfen, KI-Auswertung und BA-Entwürfe im Browser prüfen, PDF- und Excel-Export ab KMU-Tarif, Kauf auf Rechnung / SEPA-Überweisung
+- Leistungen: 3 eigene SDBs kostenlos auslesen und KI-gestützte BA-Entwürfe im Browser prüfen, KI-Auswertung und BA-Entwürfe im Browser prüfen, PDF- und Excel-Export ab KMU-Tarif, Kauf auf Rechnung / SEPA-Überweisung
 
 ## KMU Basis
 - Preis: 59 €/Monat (bei Jahreszahlung 49 €/Monat, 588 €/Jahr)
