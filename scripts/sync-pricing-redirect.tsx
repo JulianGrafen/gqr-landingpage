@@ -31,7 +31,16 @@ const html = `<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   ${headMeta}
-  <meta http-equiv="refresh" content="0; url=${PRICING_REDIRECT_TARGET_HREF}" />
+  <script>
+    (function () {
+      var search = window.location.search || '';
+      var target = '/' + search + '#preise';
+      window.location.replace(target);
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=${PRICING_REDIRECT_TARGET_HREF}" />
+  </noscript>
   <link rel="stylesheet" href="/style.css?v=84" />
 </head>
 <body class="min-h-screen bg-[#0a1628] text-[#f0f6ff] antialiased">

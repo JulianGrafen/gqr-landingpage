@@ -13,6 +13,7 @@ export const DEEPINFO_SLUGS = [
   'gefahrstoffverzeichnis-online-erstellen',
   'gefahrstoffkataster-erstellen-lassen',
   'gefahrstoffkataster-software',
+  'substitutionspruefung-vorlage',
 ] as const;
 
 export type DeepinfoSlug = (typeof DEEPINFO_SLUGS)[number];

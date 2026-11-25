@@ -200,6 +200,68 @@
     });
   });
 
+  var audienceSwitch = document.querySelector('[data-pricing-audience-switch]');
+  var audienceThumb = audienceSwitch && audienceSwitch.querySelector('[data-pricing-audience-thumb]');
+  var audienceButtons = audienceSwitch
+    ? audienceSwitch.querySelectorAll('[data-pricing-audience]')
+    : [];
+
+  function positionAudienceThumb() {
+    if (!audienceSwitch || !audienceThumb) return;
+    var active = audienceSwitch.querySelector('.roi-mode__btn.is-active');
+    if (!active) return;
+    audienceThumb.style.width = active.offsetWidth + 'px';
+    audienceThumb.style.left = active.offsetLeft + 'px';
+  }
+
+  function setPricingAudience(mode) {
+    if (!preiseSection) return;
+    if (mode === 'sifa') {
+      preiseSection.setAttribute('data-pricing-audience', 'sifa');
+    } else {
+      preiseSection.removeAttribute('data-pricing-audience');
+    }
+
+    audienceButtons.forEach(function (button) {
+      var isActive = button.getAttribute('data-pricing-audience') === mode;
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    requestAnimationFrame(positionAudienceThumb);
+  }
+
+  function readInitialAudience() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      return params.get('tab') === 'sifa' ? 'sifa' : 'kmu';
+    } catch (_err) {
+      return 'kmu';
+    }
+  }
+
+  if (audienceSwitch && audienceButtons.length) {
+    audienceButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        setPricingAudience(button.getAttribute('data-pricing-audience') || 'kmu');
+      });
+    });
+
+    window.addEventListener('resize', positionAudienceThumb);
+
+    var initialAudience = readInitialAudience();
+    if (initialAudience === 'sifa') {
+      setPricingAudience('sifa');
+      if (window.location.hash === '#preise') {
+        requestAnimationFrame(function () {
+          preiseSection.scrollIntoView({ block: 'start' });
+        });
+      }
+    } else {
+      positionAudienceThumb();
+    }
+  }
+
   window.addEventListener('resize', positionBillingThumb);
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(function () {

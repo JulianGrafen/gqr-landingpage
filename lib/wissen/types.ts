@@ -33,6 +33,8 @@ export interface DeepinfoPageMeta {
   painPoint: string;
   ctaText: string;
   stickyCtaText: string;
+  /** Optional: Ziel des Sticky-CTA (Default App-Registrierung). */
+  ctaHref?: string;
   breadcrumbLabel: string;
   /** Optional: `<title>` ohne Layout-Suffix (z. B. High-Intent SERP). */
   documentTitle?: string;

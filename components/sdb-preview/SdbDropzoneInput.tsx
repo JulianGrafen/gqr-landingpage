@@ -121,6 +121,7 @@ export const SdbDropzoneInput = forwardRef<SdbDropzoneInputHandle, Props>(functi
           type="button"
           className={`${variant === 'static' ? 'btn-cta-orange' : 'gqr-cta-primary gqr-cta-primary--md'} mb-3 w-full justify-center whitespace-normal text-center md:hidden`}
           disabled={disabled}
+          data-sdb-mobile-quick-example
           onClick={onQuickExample}
         >
           {SDB_MOBILE_FLOW_COPY.quickExamplePrimary}

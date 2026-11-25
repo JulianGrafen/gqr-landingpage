@@ -1,4 +1,5 @@
 import { HOME_SECTION_STYLES as styles } from '@/components/home/home-section-styles';
+import { PricingAudienceSwitch } from '@/components/home/PricingAudienceSwitch';
 import { PricingCompareTable } from '@/components/home/PricingCompareTable';
 import { PricingTierCard } from '@/components/home/PricingTierCard';
 import {
@@ -37,6 +38,8 @@ export function HomePricingSection() {
             </a>
           </p>
         </div>
+
+        <PricingAudienceSwitch />
 
         <div className="pricing-billing" data-pricing-billing>
           <div className="pricing-billing__switch" role="group" aria-label="Abrechnungszeitraum wählen">

@@ -30,7 +30,16 @@ const WISSEN_KFZ_MID_CTA = {
   secondaryHref: '/loesungen/kfz-werkstatt/',
 } as const;
 
+const SUBSTITUTIONS_MID_CTA = {
+  headline: 'Substitutionsprüfung mit belastbaren SDB-Daten vorbereiten',
+  body: 'Laden Sie ein Sicherheitsdatenblatt in den Livetest und prüfen Sie den KI-gestützten Entwurf als Grundlage für Ihre dokumentierte Abwägung. Die fachliche Freigabe bleibt beim Arbeitgeber.',
+  primaryLabel: 'Zur Dropzone auf der Startseite',
+} as const;
+
 export const DEEPINFO_PAGE_EXTENSIONS: Partial<Record<DeepinfoSlug, Partial<DeepinfoPageExtension>>> = {
+  'substitutionspruefung-vorlage': {
+    sectionsAfterComparison: <StrikingDistanceMidPageCta copy={SUBSTITUTIONS_MID_CTA} variant="wissen" />,
+  },
   'gefahrstoffverzeichnis-muster-kfz-werkstatt': {
     sectionsBeforeComparison: (
       <StrikingDistanceMidPageCta copy={WISSEN_KFZ_MID_CTA} variant="wissen" />

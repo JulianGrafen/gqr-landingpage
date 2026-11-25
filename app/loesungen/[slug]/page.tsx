@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { IndustryPseoSections } from '@/components/loesungen/IndustryPseoSections';
 import { IndustrySlugHero } from '@/components/loesungen/IndustrySlugHero';
+import { SifaMandantenFunnelHero } from '@/components/loesungen/SifaMandantenFunnelHero';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { PSEO_CONTAINER, PSEO_PAGE_MAIN, PSEO_PROSE, PSEO_SECTION_HERO } from '@/components/programmatic-seo';
 import { SdbTrustFeatureList } from '@/components/programmatic-seo/SdbTrustFeatureList';
@@ -55,20 +56,26 @@ export default function IndustryPage({ params }: PageProps) {
   const data = getIndustry(params.slug);
   if (!data) notFound();
 
+  const funnelDropzoneFirst = data.sifaFunnelDropzoneFirst === true && data.showSdbPreview;
+
   return (
     <main className={PSEO_PAGE_MAIN}>
       <JsonLd data={buildIndustrySchemas(data)} />
-      <section className={`${PSEO_SECTION_HERO} lg:py-24`} aria-labelledby="industry-hero-title">
-        <div className={`${PSEO_CONTAINER} ${PSEO_PROSE}`}>
-          <IndustrySlugHero data={data} />
-        </div>
-        {data.showSdbPreview ? (
-          <div className={`${PSEO_CONTAINER} ${PSEO_PROSE} mt-12`}>
-            <SdbLivePreviewDropzone variant="next" />
-            <SdbTrustFeatureList />
+      {funnelDropzoneFirst ? (
+        <SifaMandantenFunnelHero data={data} />
+      ) : (
+        <section className={`${PSEO_SECTION_HERO} lg:py-24`} aria-labelledby="industry-hero-title">
+          <div className={`${PSEO_CONTAINER} ${PSEO_PROSE}`}>
+            <IndustrySlugHero data={data} />
           </div>
-        ) : null}
-      </section>
+          {data.showSdbPreview ? (
+            <div className={`${PSEO_CONTAINER} ${PSEO_PROSE} mt-12`}>
+              <SdbLivePreviewDropzone variant="next" />
+              <SdbTrustFeatureList />
+            </div>
+          ) : null}
+        </section>
+      )}
 
       <IndustryPseoSections data={data} />
 
