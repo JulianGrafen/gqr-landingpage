@@ -1,4 +1,4 @@
-/** Muster-BA im Abschnitt #ergebnis (<OutputPreviewSection>). */
+/** Muster-BA (TRGS 555): Inhalte für den Startseiten-Tab #produkt-demo und die pSEO-PDF-Vorschau. */
 
 import { SAMPLE_BA_ENTWURF_PDF } from '@/config/sample-downloads';
 

@@ -79,5 +79,4 @@ export const FOOTER_BA_SAMPLE_LINKS = [
 export const FOOTER_TRUST_BADGES = [
   { id: 'hosting' as const, label: 'Hosting in Deutschland (inkl. AVV)' },
   { id: 'made-in-germany' as const, label: 'Made in Germany' },
-  { id: 'ssl' as const, label: 'SSL-verschlüsselt' },
 ];

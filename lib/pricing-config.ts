@@ -114,7 +114,7 @@ export const PRICING_TIERS_BY_PERSONA: Record<PricingPersonaId, readonly Pricing
         `Bis zu ${KMU_BASIS_SUBSTANCE_LIMIT} Gefahrstoffe`,
         'SDB-Extraktion in das Gefahrstoffkataster',
         '§ 6 Gefahrstoffkataster mit Historie',
-        'KI-gestützter Entwurf Betriebsanweisung (gemäß TRGS 555)',
+        'Betriebsanweisungs-Entwurf (gemäß TRGS 555)',
         'QR-Codes und Etiketten inkl. 100x50 mm',
         'TRGS-510-Vorprüfung zur fachlichen Freigabe',
       ],

@@ -1,6 +1,6 @@
 /**
  * Rendert die konfigurationsgetriebenen Startseiten-Blöcke in die statische index.html:
- * Navigation, Hero-Text, Trust-Leiste, Output-Vorschau, Excel-Vergleich, SiFa-Sektion, sichtbare FAQ
+ * Navigation, Hero-Text, Trust-Leiste, Demo-Tabs, Excel-Vergleich, SiFa-Sektion, Kernfunktionen, sichtbare FAQ
  * sowie SoftwareApplication- und FAQPage-JSON-LD.
  *
  * Ausführen: npm run sync:home
@@ -10,27 +10,24 @@ import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync
 import { resolve } from 'node:path';
 import type { ReactElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { DataTrustSection } from '@/components/home/DataTrustSection';
 import { PricingDecisionLinks } from '@/components/home/PricingDecisionLinks';
 import { ExcelComparisonSection } from '@/components/home/ExcelComparisonSection';
 import { HomeFaqContactFooter } from '@/components/home/HomeFaqContact';
 import { HomeFaqItems } from '@/components/home/HomeFaqItems';
-import { HeroInnerTrustSection } from '@/components/home/HeroInnerTrustSection';
-import { HeroRegelwerkStrip } from '@/components/home/HeroRegelwerkStrip';
 import { HeroTrustLogoGrid } from '@/components/home/HeroTrustLogoGrid';
 import { HomeHeroCopy } from '@/components/home/HomeHeroCopy';
 import { HeroSdbLiveMetric } from '@/components/home/HeroSdbLiveMetric';
 import { HeroSdbSupplierHint } from '@/components/home/HeroSdbSupplierHint';
 import { HomeNavigation } from '@/components/home/HomeNavigation';
 import { MultiTenantSifaSection } from '@/components/home/MultiTenantSifaSection';
-import { ProductDemoVideoSection } from '@/components/home/ProductDemoVideoSection';
-import { VideoDemosSection } from '@/components/home/VideoDemosSection';
-import { OutputPreviewSection } from '@/components/home/OutputPreviewSection';
+import { ProductDemoTabsSection } from '@/components/home/ProductDemoTabsSection';
+import { CoreFeaturesSection } from '@/components/home/CoreFeaturesSection';
+import { HomeFaqExpertToggle } from '@/components/home/HomeFaqExpertToggle';
 import { HomeFounderTrustSection } from '@/components/home/HomeFounderTrustSection';
 import { HomePricingSection } from '@/components/home/HomePricingSection';
 import { CustomerReferencesSection } from '@/components/marketing/CustomerReferencesSection';
 import { EnterpriseSiteFooter } from '@/components/site/EnterpriseSiteFooter';
-import { LANDING_HOME_SEO_FAQ } from '@/config/landing-home-seo-faq';
+import { LANDING_HOME_PURCHASE_FAQ, LANDING_HOME_SEO_FAQ } from '@/config/landing-home-seo-faq';
 import { PRICING_TRIAL_LEAD_MAGNET_LINE } from '@/config/pricing-trial-copy';
 import { AEO_CONTENT_UPDATED } from '@/config/aeo-config';
 import { HOME_SEO, HOME_SPEAKABLE_SELECTORS } from '@/config/site-seo';
@@ -84,22 +81,19 @@ const updatedHtml = replaceMarkedBlocks(html, {
   ORGANIZATION_JSONLD: () => renderJsonLdScript(buildOrganizationSchema()),
   WEBSITE_JSONLD: () => renderJsonLdScript(buildWebSiteSchema()),
   FAQ_JSONLD: () => renderJsonLdScript(buildFaqPageSchema(LANDING_HOME_SEO_FAQ)),
-  FAQ_ITEMS: () => renderHtml(<HomeFaqItems items={LANDING_HOME_SEO_FAQ} />),
+  FAQ_ITEMS: () => renderHtml(<HomeFaqItems items={LANDING_HOME_PURCHASE_FAQ} />),
+  FAQ_EXPERT_ITEMS: () => renderHtml(<HomeFaqExpertToggle />),
   FAQ_FOOTER: () => renderHtml(<HomeFaqContactFooter />),
   EXCEL_COMPARISON: () => renderHtml(<ExcelComparisonSection />),
   MULTI_TENANT_SIFA: () => renderHtml(<MultiTenantSifaSection />),
-  PRODUCT_DEMO_VIDEO: () => renderHtml(<ProductDemoVideoSection />),
-  VIDEO_DEMOS: () => renderHtml(<VideoDemosSection />),
+  PRODUCT_DEMO_TABS: () => renderHtml(<ProductDemoTabsSection />),
+  CORE_FEATURES: () => renderHtml(<CoreFeaturesSection />),
   NAV_DESKTOP: () => renderHtml(<HomeNavigation variant="desktop" />),
   NAV_MOBILE: () => renderHtml(<HomeNavigation variant="mobile" />),
   HERO_COPY: () => renderHtml(<HomeHeroCopy />),
   HERO_SDB_METRIC: () => renderHtml(<HeroSdbLiveMetric />),
   HERO_SDB_SUPPLIER_HINT: () => renderHtml(<HeroSdbSupplierHint />),
-  HERO_INNER_TRUST: () => renderHtml(<HeroInnerTrustSection />),
   HERO_TRUST_GRID: () => renderHtml(<HeroTrustLogoGrid />),
-  HERO_REGELWERK: () => renderHtml(<HeroRegelwerkStrip />),
-  OUTPUT_PREVIEW: () => renderHtml(<OutputPreviewSection />),
-  DATA_TRUST: () => renderHtml(<DataTrustSection />),
   HEAD_META: () => renderStaticHeadMeta(HOME_SEO),
   WEBPAGE_JSONLD: () =>
     renderJsonLdScript(

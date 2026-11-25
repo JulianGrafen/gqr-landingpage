@@ -6,16 +6,15 @@ import { formatEuroAmount, SIFA_MANDANT_INCLUDED, SIFA_MANDANT_EXTENSION_LABEL }
  * Homepage FAQPage (AEO): jede Antwort beginnt mit einer direkten, zitierfähigen Kernaussage.
  * Wird per `npm run sync:home` in index.html gerendert (sichtbare #faq und FAQPage JSON-LD aus derselben Quelle).
  * Copy-Regeln: keine Gedankenstriche; Compliance-Begriffe laut AGENTS.md.
+ *
+ * Aufteilung: Kauf-FAQs sind sofort sichtbar, Fachfragen stehen hinter einem Toggle,
+ * bleiben aber im DOM und vollständig im FAQPage-Schema (`LANDING_HOME_SEO_FAQ`).
  */
-export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
+
+/** Die wichtigsten Kauf-Fragen (SiFa & KMU), standardmäßig sichtbar. */
+export const LANDING_HOME_PURCHASE_FAQ: readonly SeoFaqItem[] = [
   {
-    question: 'Wie unterstützt Gefahrstoff-QR beim Gefahrstoffverzeichnis nach § 6 GefStoffV?',
-    answer:
-      'Gefahrstoff-QR ist eine browserbasierte Software, die aus Sicherheitsdatenblättern einen KI-gestützten Entwurf für das Gefahrstoffverzeichnis nach § 6 GefStoffV erstellt. Die Angaben werden mit Verweis auf den jeweiligen SDB-Abschnitt ausgelesen, den Tätigkeiten und Arbeitsbereichen zugeordnet und als PDF oder Excel inklusive GHS-Piktogrammen exportiert. Die SiFa bzw. der Arbeitgeber prüft den Entwurf und gibt ihn fachlich frei.',
-  },
-  {
-    question:
-      'Eignet sich Gefahrstoff-QR für externe Fachkräfte für Arbeitssicherheit (SiFas) mit mehreren Mandanten?',
+    question: 'Eignet sich Gefahrstoff-QR für externe SiFas mit mehreren Mandanten?',
     answer:
       'Ja, Gefahrstoff-QR bietet für externe SiFas und Ingenieurbüros eine Multi-Mandanten-Verwaltung, in der Kundenbetriebe als Mandanten, darunter Werke und Arbeitsbereiche bzw. Tätigkeiten strikt getrennt geführt werden. Bei der Begehung lassen sich Gefahrstoffe auch ohne vorliegendes Sicherheitsdatenblatt oder Mengenangabe vorab erfassen. Fehlende Angaben werden im Export farblich markiert und können später nachgepflegt werden.',
   },
@@ -34,9 +33,27 @@ export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
       'Ja, neben der direkten Online-Buchung können Geschäftskunden und SiFas im Multi-Mandanten-Tarif per monatlicher PDF-Rechnung und Überweisung zahlen. Eine langfristige Vertragsbindung besteht nicht, die Pakete sind monatlich kündbar. Das Angebot richtet sich ausschließlich an Unternehmen, Gewerbetreibende und freiberufliche Sicherheitsfachkräfte (§ 14 BGB).',
   },
   {
+    question: 'Wo werden die Daten gehostet und gibt es einen AVV?',
+    answer:
+      'Die Daten werden in Deutschland (Frankfurt am Main) gehostet, ein Auftragsverarbeitungsvertrag (AVV) nach Art. 28 DSGVO ist inklusive. Die Verbindung ist verschlüsselt, Konten lassen sich mit Zwei-Faktor-Authentifizierung schützen. Details zu Zweckbindung und Löschfristen stehen in der Datenschutzerklärung.',
+  },
+  {
+    question: 'Kann ich Gefahrstoff-QR kostenlos testen und meine Daten exportieren?',
+    answer: `Ja, die Gefahrstoffkataster Software lässt sich kostenlos und ohne Kreditkarte testen: ${PRICING_TRIAL_VALUE_PROPOSITION}. Für Exporte ohne Testkennzeichnung, Excel und dauerhafte QR-Links wählen Sie anschließend einen KMU- oder SiFa-Tarif. In den bezahlten Tarifen exportieren Sie Ihre Katasterdaten jederzeit vollständig als Excel und PDF, ohne Vendor-Lock-in.`,
+  },
+];
+
+/** SEO- und Grundlagenfragen: hinter dem Toggle „Weitere Fachfragen anzeigen“, im DOM und im Schema. */
+export const LANDING_HOME_EXPERT_FAQ: readonly SeoFaqItem[] = [
+  {
+    question: 'Wie unterstützt Gefahrstoff-QR beim Gefahrstoffverzeichnis nach § 6 GefStoffV?',
+    answer:
+      'Gefahrstoff-QR ist eine browserbasierte Software, die aus Sicherheitsdatenblättern einen KI-gestützten Entwurf für das Gefahrstoffverzeichnis nach § 6 GefStoffV erstellt. Die Angaben werden mit Verweis auf den jeweiligen SDB-Abschnitt ausgelesen, den Tätigkeiten und Arbeitsbereichen zugeordnet und als PDF oder Excel inklusive GHS-Piktogrammen exportiert. Die SiFa bzw. der Arbeitgeber prüft den Entwurf und gibt ihn fachlich frei.',
+  },
+  {
     question: 'Was ist eine Gefahrstoffmanagement Software?',
     answer:
-      'Eine Gefahrstoffmanagement Software ist ein digitales System, mit dem Betriebe ihr Gefahrstoffverzeichnis nach § 6 GefStoffV, die zugehörigen Sicherheitsdatenblätter, Betriebsanweisungen und Lagerinformationen an einer Stelle führen. Gegenüber Excel-Listen bietet sie Versionierung, Erinnerungen an SDB-Aktualisierungen und einen Revisionsverlauf. Gefahrstoff-QR läuft im Browser und erstellt aus dem Sicherheitsdatenblatt einen KI-gestützten Entwurf zur fachlichen Freigabe durch die SiFa / den Arbeitgeber.',
+      'Eine Gefahrstoffmanagement Software ist ein digitales System, mit dem Betriebe ihr Gefahrstoffverzeichnis nach § 6 GefStoffV, die zugehörigen Sicherheitsdatenblätter, Betriebsanweisungen und Lagerinformationen an einer Stelle führen. Gegenüber Excel-Listen bietet sie Versionierung, Erinnerungen an SDB-Aktualisierungen und einen Revisionsverlauf. Gefahrstoff-QR läuft im Browser und erstellt aus dem Sicherheitsdatenblatt eine Vorprüfung zur fachlichen Freigabe durch die SiFa / den Arbeitgeber.',
   },
   {
     question:
@@ -70,19 +87,9 @@ export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
       `Kostenloser Einstieg: ${PRICING_TRIAL_VALUE_PROPOSITION}. KMU Basis: 59 € pro Monat (49 €/Monat bei Jahreszahlung, bis 30 Gefahrstoffe). KMU Pro: 119 € pro Monat (99 €/Monat bei Jahreszahlung, bis 250 Gefahrstoffe, Batch-Upload, mehrere Nutzer). SiFa Multi-Mandant: 189 € pro Monat (159 €/Monat bei Jahreszahlung, bis ${SIFA_MANDANT_INCLUDED} Mandantenbetriebe inklusive, ${SIFA_MANDANT_EXTENSION_LABEL}, PDF-Rechnung möglich). Industrie: ab 399 € pro Monat (339 €/Monat bei Jahreszahlung, ab 250 Gefahrstoffen, ab 4 Werken, SSO, dedizierter AVV-Support, Anfrage). Alle Preise zzgl. MwSt., monatlich kündbar.`,
   },
   {
-    question: 'Wo werden die Daten gehostet?',
-    answer:
-      'Die Daten werden in Deutschland gehostet, ein Auftragsverarbeitungsvertrag (AVV) ist inklusive. Die Verbindung ist SSL-verschlüsselt, Konten lassen sich mit Zwei-Faktor-Authentifizierung schützen. Details zu Zweckbindung und Löschfristen stehen in der Datenschutzerklärung.',
-  },
-  {
     question: 'Unterstützt Gefahrstoff-QR auch TRGS 555, TRGS 600 und REACH?',
     answer:
-      'Ja, im Rahmen der Vorprüfung. Die Einstufung erfolgt nach CLP-Verordnung, REACH-relevante Daten wie die UFI können geführt werden. Gefahrstoff-QR unterstützt bei TRGS 510 (Lagerung), TRGS 555 (Betriebsanweisung als KI-gestützter Entwurf) und TRGS 600 (Hinweise zur Substitutionsprüfung bei KMR-Stoffen). Die fachliche Bewertung bleibt bei der SiFa / dem Arbeitgeber.',
-  },
-  {
-    question: 'Kann ich eine Gefahrstoffkataster Software kostenlos testen?',
-    answer:
-      `Ja, Gefahrstoff-QR lässt sich kostenlos und ohne Kreditkarte testen: ${PRICING_TRIAL_VALUE_PROPOSITION}. Für Exporte ohne Testkennzeichnung, Excel und dauerhafte QR-Links wählen Sie anschließend einen KMU- oder SiFa-Tarif.`,
+      'Ja, im Rahmen der Vorprüfung. Die Einstufung erfolgt nach CLP-Verordnung, REACH-relevante Daten wie die UFI können geführt werden. Gefahrstoff-QR unterstützt bei TRGS 510 (Lagerung), TRGS 555 (Betriebsanweisung als Entwurf zur fachlichen Freigabe) und TRGS 600 (Hinweise zur Substitutionsprüfung bei KMR-Stoffen). Die fachliche Bewertung bleibt bei der SiFa / dem Arbeitgeber.',
   },
   {
     question: 'Ist Gefahrstoff-QR auch eine Chemikalienkataster Software?',
@@ -92,6 +99,12 @@ export const LANDING_HOME_SEO_FAQ: SeoFaqItem[] = [
   {
     question: 'Wie aufwendig ist der Umstieg von Excel auf Gefahrstoff-QR?',
     answer:
-      'Der Umstieg braucht kein IT-Projekt, weil Gefahrstoff-QR im Browser läuft. Vorhandene Sicherheitsdatenblätter laden Sie ab KMU Pro per Batch-Upload in einem Rutsch hoch. Alternativ begleitet Sie der Umzugsservice persönlich beim Erstimport.',
+      'Der Umstieg braucht kein IT-Projekt, weil Gefahrstoff-QR im Browser läuft. Vorhandene Sicherheitsdatenblätter laden Sie ab KMU Pro per Batch-Upload in einem Rutsch hoch. Für mehrere Werke oder sehr große Bestände stimmen wir den Erstimport im Tarif Industrie / Beratungshaus individuell ab.',
   },
+];
+
+/** Vollständige Liste für das FAQPage-JSON-LD (sichtbare + eingeklappte Fragen). */
+export const LANDING_HOME_SEO_FAQ: readonly SeoFaqItem[] = [
+  ...LANDING_HOME_PURCHASE_FAQ,
+  ...LANDING_HOME_EXPERT_FAQ,
 ];

@@ -19,7 +19,7 @@ export function HomeFaqContactFooter() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Austausch per Call buchen →
+          Kurze Rückfrage (15 Min.) buchen →
         </a>
       </p>
     </div>

@@ -1,7 +1,7 @@
 import { COMPANY } from '@/config/company';
 
 /**
- * Trust- & Gründer-Block der Startseite (über #preise).
+ * Trust- & Gründer-Block der Startseite (nach #preise), kombiniert mit „Datenhoheit & Datenschutz“.
  *
  * Testimonials/Logos: Nur echte, freigegebene Stimmen eintragen. Ist die Liste leer,
  * wird der Slot nicht gerendert (keine Platzhalter- oder Fake-Logos).
@@ -34,20 +34,31 @@ export const HOME_FOUNDER_TRUST = {
   sectionId: 'wer-steckt-dahinter',
   eyebrow: 'Wer steckt dahinter?',
   headline: 'Gebaut in NRW, Support direkt vom Gründer',
-  facts: [
-    {
-      title: 'Serverstandort Deutschland',
-      description: 'Hosting in Frankfurt (EU), AVV nach Art. 28 DSGVO vorab unterzeichnet.',
-    },
-    {
-      title: 'Direkter Support ohne Callcenter',
-      description: `Fragen landen direkt beim Gründer: ${COMPANY.contactEmail}`,
-    },
-    {
-      title: 'Selbst testen statt Verkaufsgespräch',
-      description: '3 eigene SDBs kostenlos auslesen und fertige BA sofort im Browser prüfen.',
-    },
-  ] satisfies readonly TrustFact[],
+  dataTrust: {
+    anchorId: 'daten-trust',
+    headlineId: 'dataTrustHeadline',
+    title: 'Datenhoheit & Datenschutz',
+    facts: [
+      {
+        title: 'Kein KI-Training mit Kundendaten',
+        description:
+          'Hochgeladene PDFs und Katasterdaten werden ausschließlich zur Extraktion verarbeitet (Zero-Data-Retention bei Subprozessoren).',
+      },
+      {
+        title: 'Serverstandort Frankfurt (AWS/Supabase EU)',
+        description: 'Hosting in Deutschland inkl. vorab unterzeichnetem AVV nach Art. 28 DSGVO.',
+      },
+      {
+        title: 'Jederzeitiger Export',
+        description:
+          'Vollständiger Export aller Katasterdaten als Excel/PDF und SDB-Archiv zu jedem Zeitpunkt, ohne Vendor-Lock-in.',
+      },
+      {
+        title: 'Direkter Support ohne Callcenter',
+        description: `Fragen landen direkt beim Gründer: ${COMPANY.contactEmail}`,
+      },
+    ] satisfies readonly TrustFact[],
+  },
   founder: {
     name: 'Julian Gräfen',
     initials: 'JG',

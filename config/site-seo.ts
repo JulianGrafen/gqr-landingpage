@@ -38,7 +38,7 @@ export const HOME_SEO: SeoMetaInput = {
 };
 
 /** Speakable-Bereiche der statischen Marketing-Seiten (gleiches Hero-/FAQ-Markup wie index.html). */
-export const HOME_SPEAKABLE_SELECTORS = ['#heroHeadline', '#kurzantwort', '#faq summary'] as const;
+export const HOME_SPEAKABLE_SELECTORS = ['#heroHeadline', '.sds-hero__subtitle', '#faq summary'] as const;
 
 /** Lead-Magnet: Gratis Excel-Vorlage Download — siehe config/vorlage-landing.ts */
 export const VORLAGE_DOWNLOAD_SEO = {

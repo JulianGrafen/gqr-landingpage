@@ -27,9 +27,9 @@ function TestimonialCard({ testimonial }: { testimonial: SifaTestimonial }) {
   );
 }
 
-/** Trust-Fakten, Gründer-Karte, Verzeichnis-Listings und (optional) echte SiFa-Testimonials. */
+/** Gründer-Karte, Datenhoheit & Datenschutz, Verzeichnis-Listings und (optional) echte SiFa-Testimonials. */
 export function HomeFounderTrustSection() {
-  const { founder, facts, listings, testimonials } = HOME_FOUNDER_TRUST;
+  const { founder, dataTrust, listings, testimonials } = HOME_FOUNDER_TRUST;
   const visibleTestimonials = testimonials.slice(0, HOME_FOUNDER_TRUST_MAX_TESTIMONIALS);
 
   return (
@@ -78,19 +78,24 @@ export function HomeFounderTrustSection() {
             </a>
           </article>
 
-          <ul className="grid list-none gap-4 p-0 lg:col-span-3">
-            {facts.map((fact) => (
-              <li key={fact.title} className={`${styles.card} flex gap-3`}>
-                <span className={styles.checkmark} aria-hidden="true">
-                  ✓
-                </span>
-                <div>
-                  <h3 className="m-0 text-base font-bold text-[#f0f6ff]">{fact.title}</h3>
-                  <p className="m-0 mt-1 text-sm leading-relaxed text-[#8fa4c0]">{fact.description}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <section id={dataTrust.anchorId} className="scroll-mt-28 lg:col-span-3" aria-labelledby={dataTrust.headlineId}>
+            <h3 id={dataTrust.headlineId} className={`${styles.eyebrow} text-center lg:text-left`}>
+              {dataTrust.title}
+            </h3>
+            <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2">
+              {dataTrust.facts.map((fact) => (
+                <li key={fact.title} className={`${styles.card} flex gap-3`}>
+                  <span className={styles.checkmark} aria-hidden="true">
+                    ✓
+                  </span>
+                  <div>
+                    <h4 className="m-0 text-base font-bold text-[#f0f6ff]">{fact.title}</h4>
+                    <p className="m-0 mt-1 text-sm leading-relaxed text-[#8fa4c0]">{fact.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
 
         {listings.length > 0 ? (

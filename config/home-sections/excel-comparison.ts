@@ -11,10 +11,10 @@ export interface ExcelComparisonRow {
 
 export const EXCEL_COMPARISON = {
   sectionId: 'vergleich-excel',
-  eyebrow: 'Vergleich',
-  headline: 'Vergleich: Klassische Excel-Gefahrstoffliste vs. Gefahrstoff-QR',
+  eyebrow: 'Excel vs. Gefahrstoff-QR',
+  headline: 'Warum scheitern Excel-Listen bei der Gefahrstoffdokumentation?',
   intro:
-    'Die Pflichtangaben nach § 6 GefStoffV lassen sich in Excel abbilden. Der Unterschied liegt im Aufwand für Erfassung, Aktualisierung und Nachweis gegenüber der Betriebsprüfung.',
+    'Die Pflichtangaben nach § 6 GefStoffV lassen sich in Excel abbilden. Im Alltag scheitert es an drei Stellen: SDB-Versionen liegen verstreut in E-Mails und Ordnern, Aktualisierungen bleiben liegen, und im Ernstfall fehlt die Information am Regal.',
   caption: 'Manuelle Pflege in Excel und Word im Vergleich zum digitalen Workflow mit Gefahrstoff-QR',
   columnLabels: {
     criterion: 'Kriterium',
@@ -50,7 +50,7 @@ export const EXCEL_COMPARISON = {
     {
       criterion: 'Fachliche Freigabe',
       manualWorkflow: 'Keine strukturierte Status-Verfolgung',
-      gefahrstoffQrWorkflow: 'Klare Trennung zwischen KI-gestütztem Entwurf und fachlicher Freigabe durch SiFa / Arbeitgeber',
+      gefahrstoffQrWorkflow: 'Klare Trennung zwischen Entwurf und fachlicher Freigabe durch SiFa / Arbeitgeber',
     },
   ] satisfies ExcelComparisonRow[],
 } as const;
