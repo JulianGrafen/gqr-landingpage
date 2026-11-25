@@ -31,6 +31,14 @@ const WISSEN_KFZ_MID_CTA = {
   secondaryHref: '/loesungen/kfz-werkstatt/',
 } as const;
 
+const UNTERWEISUNG_MID_CTA = {
+  headline: 'Betriebsanweisung und Unterweisung aus dem SDB vorbereiten',
+  body: 'Laden Sie ein Sicherheitsdatenblatt in den Livetest und prüfen Sie den KI-gestützten Entwurf (TRGS 555) als Grundlage für Unterweisung und Verzeichnis. Die fachliche Freigabe bleibt beim Arbeitgeber.',
+  primaryLabel: 'Zur Dropzone auf der Startseite',
+  secondaryLabel: 'SiFa Multi-Mandant Preise',
+  secondaryHref: PRICING_PAGE_SIFA_TAB_HREF,
+} as const;
+
 const SUBSTITUTIONS_MID_CTA = {
   headline: 'Substitutionsprüfung mit belastbaren SDB-Daten vorbereiten',
   body: 'Laden Sie ein Sicherheitsdatenblatt in den Livetest und prüfen Sie den KI-gestützten Entwurf als Grundlage für Ihre dokumentierte Abwägung. Die fachliche Freigabe bleibt beim Arbeitgeber.',
@@ -40,6 +48,9 @@ const SUBSTITUTIONS_MID_CTA = {
 } as const;
 
 export const DEEPINFO_PAGE_EXTENSIONS: Partial<Record<DeepinfoSlug, Partial<DeepinfoPageExtension>>> = {
+  'gefahrstoffunterweisung-vorlage': {
+    sectionsAfterComparison: <StrikingDistanceMidPageCta copy={UNTERWEISUNG_MID_CTA} variant="wissen" />,
+  },
   'substitutionspruefung-vorlage': {
     sectionsAfterComparison: <StrikingDistanceMidPageCta copy={SUBSTITUTIONS_MID_CTA} variant="wissen" />,
   },

@@ -10,6 +10,7 @@ import {
   type PricingPersonaId,
 } from '@/lib/pricing-config';
 import { usePricingUrlState } from '@/lib/pricing/use-pricing-url-state';
+import { CustomerReferencesSection } from '@/components/marketing/CustomerReferencesSection';
 
 const PRICING_HEADLINE_ID = 'pricingHeadline';
 
@@ -119,6 +120,8 @@ export function PricingSection({
             <PricingTierCard key={tier.id} tier={tier} billing={billing} />
           ))}
         </div>
+
+        {persona === 'sifa' ? <CustomerReferencesSection layout="pricing-sifa" /> : null}
 
         <p className="mt-8 text-center text-xs leading-relaxed text-[#8fa4c0]">{PRICING_GRID_LEGAL_LINE}</p>
       </div>

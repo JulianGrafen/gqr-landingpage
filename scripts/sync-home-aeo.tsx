@@ -28,6 +28,7 @@ import { VideoDemosSection } from '@/components/home/VideoDemosSection';
 import { OutputPreviewSection } from '@/components/home/OutputPreviewSection';
 import { HomeFounderTrustSection } from '@/components/home/HomeFounderTrustSection';
 import { HomePricingSection } from '@/components/home/HomePricingSection';
+import { CustomerReferencesSection } from '@/components/marketing/CustomerReferencesSection';
 import { EnterpriseSiteFooter } from '@/components/site/EnterpriseSiteFooter';
 import { LANDING_HOME_SEO_FAQ } from '@/config/landing-home-seo-faq';
 import { PRICING_TRIAL_LEAD_MAGNET_LINE } from '@/config/pricing-trial-copy';
@@ -106,6 +107,7 @@ const updatedHtml = replaceMarkedBlocks(html, {
     ),
   SITE_FOOTER: () => renderHtml(<EnterpriseSiteFooter />),
   FOUNDER_TRUST: () => renderHtml(<HomeFounderTrustSection />),
+  REFERENCES: () => renderHtml(<CustomerReferencesSection layout="standalone" />),
   PRICING_SECTION: () => renderHtml(<HomePricingSection />),
   PRICING_DECISION_LINKS: () => renderHtml(<PricingDecisionLinks />),
   LEAD_MAGNET_TRIAL_LINE: () => `<p>${PRICING_TRIAL_LEAD_MAGNET_LINE}</p>`,

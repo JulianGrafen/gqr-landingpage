@@ -121,6 +121,13 @@ export function BetriebsanweisungStrikingProse({ slug, substanceName }: Props) {
       return (
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-[#c8d4e6]">
           <p>
+            Für die mündliche Unterweisung am Lackierplatz nutzen Sie eine eigene Vorlage-Struktur:{' '}
+            <Link href="/wissen/gefahrstoffunterweisung-vorlage/" className={LINK_CLASS}>
+              Gefahrstoffunterweisung Vorlage
+            </Link>{' '}
+            (§ 14 GefStoffV, TRGS 555, dokumentierbar mit Unterschrift).
+          </p>
+          <p>
             Nach TRGS 600 soll der Betrieb prüfen, ob eine weniger belastete Grundierung verfügbar ist. Die
             Substitutionsprüfung dokumentieren Sie sinnvoll im{' '}
             <Link href="/wissen/gefahrstoffkataster-erstellen/" className={LINK_CLASS}>
