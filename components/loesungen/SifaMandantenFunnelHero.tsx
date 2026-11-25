@@ -16,8 +16,11 @@ type Props = {
  */
 export function SifaMandantenFunnelHero({ data }: Props) {
   return (
-    <section className="border-b border-white/[0.07] pb-12 pt-8 lg:pb-16 lg:pt-12" aria-labelledby="industry-hero-title">
-      <div className={`${PSEO_CONTAINER} ${PSEO_PROSE}`}>
+    <section
+      className="overflow-x-clip border-b border-white/[0.07] pb-12 pt-8 lg:pb-16 lg:pt-12"
+      aria-labelledby="industry-hero-title"
+    >
+      <div className={`${PSEO_CONTAINER} ${PSEO_PROSE} min-w-0`}>
         <IndustrySlugHero data={data} />
         <div className="mt-6 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a

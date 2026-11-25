@@ -3,7 +3,7 @@
  * Neue `[slug]`-Routen importieren diese Tokens statt eigene Klassen zu hardcodieren.
  */
 
-export const PSEO_PAGE_MAIN = 'bg-[#0a1628]';
+export const PSEO_PAGE_MAIN = 'overflow-x-clip bg-[#0a1628]';
 
 export const PSEO_SECTION =
   'border-b border-white/[0.07] px-4 py-12 text-left sm:px-6 lg:px-8 lg:py-14';

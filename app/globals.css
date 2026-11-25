@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '../styles/pricing-section-controls.css';
+
 @layer base {
   *,
   *::before,
@@ -98,11 +100,13 @@
   }
 
   .sds-hero__checks--stacked {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.9rem;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 0.65rem;
+    row-gap: 0.9rem;
     margin-top: 0;
-    max-width: none;
+    max-width: 100%;
+    color: var(--color-text);
     font-size: clamp(1.125rem, 2.5vw, 1.45rem);
     font-weight: 600;
     line-height: 1.45;
@@ -112,17 +116,25 @@
   }
 
   .sds-hero__checks--stacked li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.65rem;
-    width: 100%;
+    display: contents;
   }
 
-  .sds-hero__checks--stacked span {
+  .sds-hero__checks--stacked .sds-hero__checks-mark {
     flex-shrink: 0;
+    align-self: start;
     margin-top: 0.12em;
     font-size: 1.15em;
     line-height: 1;
+    color: var(--color-trust);
+    font-weight: 950;
+  }
+
+  .sds-hero__checks--stacked .sds-hero__checks-copy {
+    align-self: start;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    font-weight: 600;
+    color: var(--color-text);
   }
 
   .gqr-section-title {
