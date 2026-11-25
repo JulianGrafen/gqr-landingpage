@@ -1,5 +1,9 @@
 import { APP_REGISTER_URL, INDUSTRIE_INQUIRY_MAILTO, SIFA_GROSS_INQUIRY_MAILTO } from '@/config/aeo-config';
-import { PRICING_CURRENCY } from '@/config/pricing-plans';
+import {
+  KMU_BASIS_SUBSTANCE_LIMIT,
+  KMU_PRO_SUBSTANCE_LIMIT,
+  PRICING_CURRENCY,
+} from '@/config/pricing-plans';
 import { PRICING_SECTION_LEGAL_LINE } from '@/config/pricing-vat';
 import { SIFA_MANDANT_BLOCK_PRICE_MONTHLY_EUR, SIFA_MANDANT_BLOCK_SIZE, SIFA_MANDANT_INCLUDED } from '@/config/sifa-mandant-pricing';
 
@@ -99,6 +103,7 @@ export const PRICING_TIERS_BY_PERSONA: Record<PricingPersonaId, readonly Pricing
         yearlyTotalEur: 588,
       },
       features: [
+        `Bis zu ${KMU_BASIS_SUBSTANCE_LIMIT} Gefahrstoffe`,
         'SDB-Extraktion in das Gefahrstoffkataster',
         '§ 6 Gefahrstoffkataster mit Historie',
         'KI-gestützter Entwurf Betriebsanweisung (gemäß TRGS 555)',
@@ -120,6 +125,7 @@ export const PRICING_TIERS_BY_PERSONA: Record<PricingPersonaId, readonly Pricing
         yearlyTotalEur: 1188,
       },
       features: [
+        `Bis zu ${KMU_PRO_SUBSTANCE_LIMIT} Gefahrstoffe`,
         'Alles aus KMU Basis',
         'GBU-Assistent (Beta) nach § 6 GefStoffV / TRGS 400',
         'Multi-Lagerorte und Teilmengen',
