@@ -619,6 +619,7 @@ ul { list-style: none; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.25rem;
+  max-width: 100%;
   padding: 0.25rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
@@ -658,6 +659,28 @@ ul { list-style: none; }
   background: var(--color-accent);
   color: #fff;
   box-shadow: 0 2px 10px rgba(255, 107, 53, 0.38);
+}
+
+/* SiFa-Tab-URL: keine falsche KMU-Karte vor React-Hydration. */
+html.pricing-url-tab-sifa [data-pricing-section]:not([data-pricing-hydrated]) [role='tabpanel'] {
+  visibility: hidden;
+  min-height: 18rem;
+}
+
+html.pricing-url-tab-sifa [data-pricing-section][data-pricing-hydrated] [role='tabpanel'] {
+  visibility: visible;
+}
+
+.sds-hero__quick-example {
+  width: 100%;
+  max-width: 22rem;
+}
+
+@media (min-width: 640px) {
+  .sds-hero__quick-example {
+    width: auto;
+    max-width: none;
+  }
 }
 
 .pricing-persona-toggle__btn:focus-visible {

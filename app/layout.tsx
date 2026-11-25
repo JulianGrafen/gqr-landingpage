@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import { FunnelLandingViewTracker } from '@/components/analytics/FunnelLandingViewTracker';
 import { SiteFooter } from '@/components/SiteFooter';
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className="flex min-h-screen flex-col">
+        <Script src="/scripts/pricing-persona-bootstrap.js?v=1" strategy="beforeInteractive" />
         <SiteHeader />
         <FunnelLandingViewTracker />
         <div className="flex-1">{children}</div>

@@ -42,7 +42,10 @@ export function PricingSection({
 
   useEffect(() => {
     const el = document.getElementById(sectionId);
-    el?.setAttribute('data-billing-mode', billing);
+    if (!el) return;
+    el.setAttribute('data-billing-mode', billing);
+    el.setAttribute('data-pricing-hydrated', 'true');
+    document.documentElement.classList.remove('pricing-url-tab-sifa');
   }, [billing, sectionId]);
 
   useEffect(() => {

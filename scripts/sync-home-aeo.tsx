@@ -111,11 +111,16 @@ const updatedHtml = replaceMarkedBlocks(html, {
   LEAD_MAGNET_TRIAL_LINE: () => `<p>${PRICING_TRIAL_LEAD_MAGNET_LINE}</p>`,
 });
 
-const PRICING_SCRIPT_TAG = '<script src="/scripts/pricing-section.js?v=3" defer></script>';
+const PRICING_BOOTSTRAP_TAG =
+  '<script src="/scripts/pricing-persona-bootstrap.js?v=1"></script>';
+const PRICING_SCRIPT_TAG = '<script src="/scripts/pricing-section.js?v=4" defer></script>';
 const LEGACY_PRICING_SCRIPTS =
   /\s*<script src="\/scripts\/pricing-billing\.js(?:\?v=\d+)?" defer><\/script>\s*<script src="\/scripts\/pricing-tier-features\.js" defer><\/script>/;
 
 let finalHtml = updatedHtml;
+if (!finalHtml.includes('/scripts/pricing-persona-bootstrap.js')) {
+  finalHtml = finalHtml.replace('</head>', ` ${PRICING_BOOTSTRAP_TAG}\n</head>`);
+}
 if (LEGACY_PRICING_SCRIPTS.test(finalHtml)) {
   finalHtml = finalHtml.replace(LEGACY_PRICING_SCRIPTS, `\n ${PRICING_SCRIPT_TAG}`);
 } else {

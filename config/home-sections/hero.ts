@@ -11,6 +11,12 @@ import { formatPricingAmountEur, SIFA_MULTI_MANDANT_PRICE } from '@/lib/pricing-
 export const LIVE_DEMO_ANCHOR_ID = 'live-demo';
 const LIVE_DEMO_HREF = `#${LIVE_DEMO_ANCHOR_ID}`;
 
+/** Hero-CTA: 1-Klick-Beispiel-SDB in #live-demo. */
+export const HERO_QUICK_EXAMPLE_CTA_LABEL = 'Beispiel-SDB testen' as const;
+
+/** Absoluter Link zur Startseiten-Dropzone (pSEO / SiFa-LP). */
+export const HOME_LIVE_DEMO_HREF = `/#${LIVE_DEMO_ANCHOR_ID}` as const;
+
 export interface NavLink {
   label: string;
   href: string;
