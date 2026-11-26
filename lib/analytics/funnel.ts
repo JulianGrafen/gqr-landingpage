@@ -11,7 +11,8 @@ export type FunnelEventName =
   | 'landing_view'
   | 'dropzone_interaction'
   | 'overlay_cta_click'
-  | 'mobile_lead_submitted';
+  | 'mobile_lead_submitted'
+  | 'ba_draft_lead_submitted';
 
 export type FunnelEventMeta = Record<string, string | number | boolean | null>;
 

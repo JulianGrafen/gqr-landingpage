@@ -4,7 +4,6 @@ import { forwardRef, useEffect, useImperativeHandle, useRef, type ReactNode } fr
 import { SdbDropzoneInput, type SdbDropzoneInputHandle } from '@/components/sdb-preview/SdbDropzoneInput';
 import { SdbExampleChips } from '@/components/sdb-preview/SdbExampleChips';
 import { SdbProcessingProgressBar } from '@/components/sdb-preview/SdbProcessingProgressBar';
-import { SdbProcessingTimeline } from '@/components/sdb-preview/SdbProcessingTimeline';
 import { HeroBaLivePreview } from '@/components/sdb-preview/HeroBaPreviewDocument';
 import { SdbPreviewCompactResult } from '@/components/sdb-preview/SdbPreviewCompactResult';
 import { shellClass, type SdbPreviewVariant } from '@/components/sdb-preview/sdb-preview-tokens';
@@ -18,6 +17,7 @@ import {
   type SdbPreviewPhase,
 } from '@/lib/sdb-preview/useSdbPreview';
 import { MobileLeadCapture } from '@/components/sdb-preview/MobileLeadCapture';
+import { BaDraftLeadMagnet } from '@/components/sdb-preview/BaDraftLeadMagnet';
 
 const DROPZONE_ANCHOR_ID = 'ba-sdb-dropzone';
 
@@ -104,18 +104,11 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
       if (embedded && phase !== 'idle') scrollToDropzoneAnchor();
     }, [embedded, phase]);
 
+    const transferablePreviewToken = teaser && hasTransferablePreviewToken(source) ? teaser.previewToken : null;
+
     const processingBlock =
       phase === 'processing' ? (
-        variant === 'static' ? (
-          <SdbProcessingTimeline variant={variant} progress={progress} />
-        ) : (
-          <SdbProcessingProgressBar
-            variant={variant}
-            progress={progress}
-            compact={embedded}
-            earlyHint={earlyTradeName}
-          />
-        )
+        <SdbProcessingProgressBar variant={variant} progress={progress} compact={embedded} earlyHint={earlyTradeName} />
       ) : null;
 
     const errorBlock =
@@ -137,18 +130,27 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
 
     const resultBlock =
       phase === 'ready' && teaser ? (
-        variant === 'static' ? (
-          <HeroBaLivePreview teaser={teaser} source={controller.source} draftToken={controller.draftToken} />
-        ) : (
-          <SdbPreviewCompactResult
-            variant={variant}
-            teaser={teaser}
-            embedded={embedded}
-            omitPublishedHazardData={omitPublishedHazardData}
-            sourceLabel={sourceLabel}
-            draftToken={controller.draftToken}
-          />
-        )
+        <>
+          {variant === 'static' ? (
+            <HeroBaLivePreview teaser={teaser} source={controller.source} draftToken={controller.draftToken} />
+          ) : (
+            <SdbPreviewCompactResult
+              variant={variant}
+              teaser={teaser}
+              embedded={embedded}
+              omitPublishedHazardData={omitPublishedHazardData}
+              sourceLabel={sourceLabel}
+              draftToken={controller.draftToken}
+            />
+          )}
+          {embedded ? null : (
+            <BaDraftLeadMagnet
+              teaser={teaser}
+              previewToken={transferablePreviewToken}
+              draftToken={controller.draftToken}
+            />
+          )}
+        </>
       ) : null;
 
     const dropzoneInput = (
@@ -176,11 +178,9 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
             Datei: {fileLabel}
           </p>
         ) : null}
-        {!embedded && phase !== 'processing' ? (
-          <MobileLeadCapture
-            draftToken={controller.draftToken}
-            previewToken={teaser && hasTransferablePreviewToken(source) ? teaser.previewToken : null}
-          />
+        {/* Im Ergebnis übernimmt der BA-Entwurf-Lead-Magnet die E-Mail-Erfassung. */}
+        {!embedded && phase !== 'processing' && phase !== 'ready' ? (
+          <MobileLeadCapture draftToken={controller.draftToken} previewToken={transferablePreviewToken} />
         ) : null}
       </>
     );
