@@ -69,7 +69,7 @@ export function PricingSection({
           <p className={styles.lead}>{marketing.subheadline}</p>
         </div>
 
-        <div className="mb-8 flex flex-col items-center gap-4 lg:flex-row lg:justify-center lg:gap-6">
+        <div className="pricing-section-controls">
           <div className="pricing-persona-toggle" role="tablist" aria-label="Zielgruppe wählen">
             {(Object.keys(marketing.personaLabels) as PricingPersonaId[]).map((key) => {
               const active = persona === key;

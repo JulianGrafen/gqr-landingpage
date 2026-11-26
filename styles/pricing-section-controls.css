@@ -29,6 +29,32 @@
   transform: translateY(-50%);
 }
 
+.pricing-section-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .pricing-section-controls {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+.pricing-section-controls .pricing-billing {
+  margin-bottom: 0;
+}
+
+.pricing-section-controls .pricing-persona-toggle,
+.pricing-section-controls .pricing-billing {
+  flex-shrink: 0;
+}
+
 .pricing-billing {
   display: flex;
   flex-direction: column;
@@ -82,7 +108,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  min-height: 2.5rem;
+  min-height: 2.75rem;
   padding: 0.45rem 1.1rem;
   border: 1px solid transparent;
   border-radius: 999px;
