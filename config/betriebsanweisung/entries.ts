@@ -3578,6 +3578,126 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Kommunaltechnik & Werkstatt",
     ],
   },
+  {
+    slug: 'calciumchlorid-trgs-555',
+    substanceName: "Calciumchlorid",
+    metaDescription:
+      "Betriebsanweisung Calciumchlorid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Winterdienst & Kommunaltechnik",
+      "Gebäudereinigung & Facility",
+      "Landwirtschaft & Hof",
+      "Lebensmitteltechnik & Konservierung",
+    ],
+  },
+  {
+    slug: 'natriumpercarbonat-trgs-555',
+    substanceName: "Natriumpercarbonat",
+    metaDescription:
+      "Betriebsanweisung Natriumpercarbonat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Wäscherei & Textilpflege",
+      "Gastronomie & Großküche",
+      "Handwerk & Werkstatt",
+    ],
+  },
+  {
+    slug: 'waschsoda-trgs-555',
+    substanceName: "Waschsoda",
+    metaDescription:
+      "Betriebsanweisung Waschsoda: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Gebäudereinigung & Facility",
+      "Malerbetrieb & Lackierung",
+      "SHK & Sanitär",
+      "Bäckerei & Lebensmittelbetrieb",
+    ],
+  },
+  {
+    slug: 'harnstoff-trgs-555',
+    substanceName: "Harnstoff",
+    metaDescription:
+      "Betriebsanweisung Harnstoff: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Fuhrpark",
+      "Landwirtschaft & Düngemittel",
+      "Labor & Technik",
+      "Chemische Produktion",
+    ],
+  },
+  {
+    slug: 'kompressoroel-trgs-555',
+    substanceName: "Kompressoröl",
+    metaDescription:
+      "Betriebsanweisung Kompressoröl: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Wartung",
+      "Metallbau & Schweißtechnik",
+      "Dachdecker & Spenglerei",
+      "Industrielle Instandhaltung",
+    ],
+  },
+  {
+    slug: 'isooctan-trgs-555',
+    substanceName: "Isooctan",
+    metaDescription:
+      "Betriebsanweisung Isooctan: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Labor & Analytik",
+      "Kfz-Werkstatt & Diagnose",
+      "Chemische Produktion",
+      "Forschung & Entwicklung",
+    ],
+  },
+  {
+    slug: 'natriumchlorit-trgs-555',
+    substanceName: "Natriumchlorit",
+    metaDescription:
+      "Betriebsanweisung Natriumchlorit: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Wasseraufbereitung & Kläranlage",
+      "Textilreinigung & Wäscherei",
+      "Papier- & Zellstoffindustrie",
+      "Desinfektion & Hygiene",
+    ],
+  },
+  {
+    slug: 'reinigungsbenzin-trgs-555',
+    substanceName: "Reinigungsbenzin",
+    metaDescription:
+      "Betriebsanweisung Reinigungsbenzin: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Malerbetrieb & Lackierung",
+      "Kfz-Werkstatt & Karosserie",
+      "Schreinerei & Tischlerei",
+      "Druckerei & Flexodruck",
+    ],
+  },
+  {
+    slug: 'katalysatorreiniger-trgs-555',
+    substanceName: "Katalysatorreiniger",
+    metaDescription:
+      "Betriebsanweisung Katalysatorreiniger: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Kfz-Werkstatt & Abgasdiagnose",
+      "Auspuff & Kfz-Aufbereitung",
+      "TÜV & Prüfstelle",
+      "Tankanlage & Kraftstoffhandel",
+    ],
+  },
+  {
+    slug: 'petrolether-trgs-555',
+    substanceName: "Petrolether",
+    metaDescription:
+      "Betriebsanweisung Petrolether: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.",
+    typicalIndustries: [
+      "Labor & Analytik",
+      "Malerbetrieb & Lackierung",
+      "Kunststoffverarbeitung",
+      "Pharmazeutische Produktion",
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];

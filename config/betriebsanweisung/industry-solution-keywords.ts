@@ -37,4 +37,13 @@ export const INDUSTRY_SOLUTION_KEYWORDS: Record<IndustrySlug, readonly string[]>
   'garten-landschaftsbau': ['galabau', 'landschaftsbau', 'gartenbau', 'grünanlagen', 'gartnerei'],
   pflegeeinrichtung: ['pflegeheim', 'pflegeeinrichtung', 'altenpflege', 'seniorenheim', 'krankenhaus'],
   geruestbau: ['gerüstbau', 'geruestbau', 'gerüst', 'geruest', 'arbeitsbühne'],
+  textilreinigerei: ['textilreinigung', 'textilreinigerei', 'wäscherei', 'chemische reinigung', 'trockenreinigung'],
+  kunststoffverarbeitung: [
+    'kunststoffverarbeitung',
+    'kunststoff',
+    'spritzguss',
+    'spritzgießen',
+    'plastverarbeitung',
+  ],
+  tierarztpraxis: ['tierarzt', 'tierarztpraxis', 'veterinär', 'veterinaer', 'kleintierpraxis'],
 };

@@ -29,7 +29,7 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 | GHS-Piktogramme im Export | Mühsames manuelles Einfügen von Bilddateien | Originalgetreue GHS-Piktogramme direkt im Gefahrstoffverzeichnis-PDF und Excel-Export |
 | Mehrere Kunden / Standorte (für SiFas) | Dutzende getrennte Excel-Dateien und Ordner | Zentrale Multi-Mandanten-Verwaltung mit Unterteilung nach Mandant, Werk und Tätigkeit |
 | Zugriff am Arbeitsplatz (§ 14 GefStoffV) | Statische Papierordner, oft veraltet | Smartphone-Abruf von Erste-Hilfe- und Schutzmaßnahmen per QR-Code am Gebinde |
-| Fachliche Freigabe | Keine strukturierte Status-Verfolgung | Klare Trennung zwischen KI-gestütztem Entwurf und fachlicher Freigabe durch SiFa / Arbeitgeber |
+| Fachliche Freigabe | Keine strukturierte Status-Verfolgung | Klare Trennung zwischen Entwurf und fachlicher Freigabe durch SiFa / Arbeitgeber |
 
 ## Fakten
 
@@ -88,6 +88,9 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 - [Garten- und Landschaftsbau](https://gefahrstoff-qr.de/loesungen/garten-landschaftsbau/)
 - [Pflegeeinrichtung](https://gefahrstoff-qr.de/loesungen/pflegeeinrichtung/)
 - [Gerüstbau](https://gefahrstoff-qr.de/loesungen/geruestbau/)
+- [Textilreinigerei](https://gefahrstoff-qr.de/loesungen/textilreinigerei/)
+- [Kunststoffverarbeitung](https://gefahrstoff-qr.de/loesungen/kunststoffverarbeitung/)
+- [Tierarztpraxis](https://gefahrstoff-qr.de/loesungen/tierarztpraxis/)
 
 ## Optional
 

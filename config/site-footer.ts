@@ -65,6 +65,9 @@ export const FOOTER_INDUSTRY_LINKS = [
   { label: 'Galabau', href: '/loesungen/garten-landschaftsbau/' },
   { label: 'Pflegeeinrichtung', href: '/loesungen/pflegeeinrichtung/' },
   { label: 'Gerüstbau', href: '/loesungen/geruestbau/' },
+  { label: 'Textilreinigerei', href: '/loesungen/textilreinigerei/' },
+  { label: 'Kunststoffverarbeitung', href: '/loesungen/kunststoffverarbeitung/' },
+  { label: 'Tierarztpraxis', href: '/loesungen/tierarztpraxis/' },
 ] as const satisfies readonly FooterLink[];
 
 export const FOOTER_BA_SAMPLE_LINKS = [
