@@ -26,6 +26,7 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 | --- | --- | --- |
 | Datenerfassung aus SDB | Manuelles Suchen und Abtippen aus 16 SDB-Abschnitten | KI-gestütztes Auslesen mit direkter SDB-Abschnittsreferenz (z. B. SDB 1.1, 2.2, 8.2) |
 | Fehlende SDBs / Mengenangaben bei Begehung | Unübersichtliche Lücken in Tabellen | Vorab-Erfassung ohne SDB möglich; fehlende Angaben werden im PDF und Excel rot markiert |
+| Neues SDB per Knopfdruck beim Lieferanten anfordern | Getrennte E-Mails, Anrufe und Nachverfolgung in Listen | Anforderung per Knopfdruck aus dem Stoffdatensatz mit hinterlegtem Lieferanten-Kontakt |
 | GHS-Piktogramme im Export | Mühsames manuelles Einfügen von Bilddateien | Originalgetreue GHS-Piktogramme direkt im Gefahrstoffverzeichnis-PDF und Excel-Export |
 | Mehrere Kunden / Standorte (für SiFas) | Dutzende getrennte Excel-Dateien und Ordner | Zentrale Multi-Mandanten-Verwaltung mit Unterteilung nach Mandant, Werk und Tätigkeit |
 | Zugriff am Arbeitsplatz (§ 14 GefStoffV) | Statische Papierordner, oft veraltet | Smartphone-Abruf von Erste-Hilfe- und Schutzmaßnahmen per QR-Code am Gebinde |

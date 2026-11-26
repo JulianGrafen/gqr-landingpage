@@ -1,4 +1,5 @@
 import { APP_LOGIN_URL, APP_REGISTER_URL } from '@/config/aeo-config';
+import { SITE_NAV_PRICING_LINK } from '@/config/site-nav';
 import { TARIF_VORSCHAU_SDB_UPLOAD_LIMIT } from '@/config/pricing-plans';
 import { formatPricingAmountEur, SIFA_MULTI_MANDANT_PRICE } from '@/lib/pricing-config';
 
@@ -24,7 +25,7 @@ export const HOME_NAVIGATION = {
   anchorLinks: [
     { label: 'Live-Test', href: LIVE_DEMO_HREF },
     { label: 'Für SiFas', href: '#fuer-sifas' },
-    { label: 'Preise', href: '#preise' },
+    { label: SITE_NAV_PRICING_LINK.label, href: SITE_NAV_PRICING_LINK.href },
   ] satisfies NavLink[],
   login: { label: 'Login', href: APP_LOGIN_URL },
   primaryCta: { label: 'Kostenlos testen', href: APP_REGISTER_URL },
