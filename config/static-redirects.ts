@@ -16,7 +16,6 @@ export type StaticRedirect = {
 };
 
 const BLOG_INDEX = '/blog/' as const;
-const KFZ_SOLUTION = '/loesungen/kfz-werkstatt/' as const;
 
 /** Alte Umlaut-URL der SiFa-Landingpage (Ziel: ASCII-Slug). */
 export const SIFA_SELBSTSTAENDIG_LEGACY_DIR = 'gefahrstoff-software-sicherheitsfachkraft-selbstständig';
@@ -59,14 +58,6 @@ export const STATIC_REDIRECTS: readonly StaticRedirect[] = [
     sourceFile: 'blog/2026-01-11-sturm-frost-starkregen-sonderpruefung.html',
     target: BLOG_INDEX,
     label: 'Gefahrstoff-Blog',
-  },
-
-  // Kfz: Blog-Artikel in die Branchen-Landingpage konsolidiert (beide URL-Formen).
-  { sourceFile: 'blog/kfz-werkstatt-gefahrstoff-blog.html', target: KFZ_SOLUTION, label: 'Gefahrstoffe in der Kfz-Werkstatt' },
-  {
-    sourceFile: 'blog/kfz-werkstatt-gefahrstoff-blog/index.html',
-    target: KFZ_SOLUTION,
-    label: 'Gefahrstoffe in der Kfz-Werkstatt',
   },
 
   // SiFa-Landingpage: Umlaut-URL → ASCII-URL.

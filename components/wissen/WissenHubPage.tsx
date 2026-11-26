@@ -2,6 +2,8 @@ import Link from 'next/link';
 import type { BlogPost } from '@/lib/blog/types';
 import type { DeepinfoSummary } from '@/lib/wissen/deepinfo-loader';
 import { WissenCard } from '@/components/wissen/WissenCard';
+import { WissenHubActionPanel } from '@/components/wissen/WissenHubActionPanel';
+import { WISSEN_HUB_GEMINI_CRO } from '@/config/seo/gemini-cro-2026-11-26';
 
 type WissenHubPageProps = {
  deepinfoPages: DeepinfoSummary[];
@@ -24,21 +26,32 @@ export function WissenHubPage({ deepinfoPages, blogPosts }: WissenHubPageProps) 
  <div className="gqr-container">
  <p className="gqr-kicker">Wissen · Blog · Deepinfo</p>
  <h1 id="wissen-hero-title" className="gqr-post-headline gqr-hub-title">
- Gefahrstoff-Wissen für Betrieb, SiFa und Compliance
+ {WISSEN_HUB_GEMINI_CRO.h1}
  </h1>
- <p className="gqr-post-section-sub max-w-2xl">
- Praxisnahe Artikel, SEO-Leitfäden und Deepinfo-Landingpages zu §&nbsp;6 GefStoffV,
- Sicherheitsdatenblatt-Pflege, TRGS&nbsp;510 und digitalem Gefahrstoffmanagement.
- </p>
- <div className="mt-8 flex flex-wrap gap-3">
- <Link
- href="https://app.gefahrstoff-qr.de/register"
- className="gqr-cta-primary gqr-cta-primary--lg no-underline"
- >
- GQR kostenlos testen
+ <WissenHubActionPanel />
+ <p className="gqr-post-section-sub mt-8 max-w-3xl">
+ Themen rund um §&nbsp;6 Kataster, TRGS&nbsp;555, TRGS&nbsp;510 und SDB-Pflege bündeln wir in
+ Leitfäden und Blogartikeln. Wer von der Übersicht zur Umsetzung wechseln will, findet auf der{' '}
+ <Link href="/" className="text-teal-300 underline-offset-2 hover:underline">
+ Startseite
+ </Link>{' '}
+ Anknüpfungspunkte für{' '}
+ <Link href="/" className="text-teal-300 underline-offset-2 hover:underline">
+ Gefahrstoffmanagement Software
  </Link>
- <a href="#wissen-blog" className="gqr-btn-secondary">
- Zum Blog
+ ,{' '}
+ <Link href="/" className="text-teal-300 underline-offset-2 hover:underline">
+ Gefahrstoffverzeichnis Software
+ </Link>{' '}
+ und{' '}
+ <Link href="/" className="text-teal-300 underline-offset-2 hover:underline">
+ Sicherheitsdatenblätter digital verwalten
+ </Link>
+ .
+ </p>
+ <div className="mt-6">
+ <a href="#wissen-deepinfo-heading" className="gqr-btn-secondary">
+ Zu den Leitfäden
  </a>
  </div>
  </div>

@@ -93,6 +93,30 @@
       "optimized": true
     },
     {
+      "url": "/blog/kfz-werkstatt-gefahrstoff-blog.html",
+      "source": "gemini-cro",
+      "campaignDate": "2026-11-26",
+      "gscPeriod": "2026-10-27 bis 2026-11-23",
+      "baseline": { "position": 48.0, "impressions": 84, "ctrPercent": 0 },
+      "previousTitle": "Gefahrstoffe in der Kfz-Werkstatt | Gefahrstoff-QR",
+      "previousDescription": "Weiterleitung zur Branchen-Lösung (Redirect-Stub, noindex).",
+      "newTitle": "Gefahrstoffverzeichnis in der Kfz-Werkstatt: typische Fehler und Praxis",
+      "newDescription": "Bremsenreiniger, Öle, Lacke: häufige Lücken im Gefahrstoffverzeichnis von Kfz-Betrieben und wie Gefahrstoff-QR aus dem SDB-PDF einen Entwurf für das Kataster nach § 6 GefStoffV zur fachlichen Prüfung unterstützt.",
+      "optimized": true
+    },
+    {
+      "url": "/wissen/",
+      "source": "gemini-cro",
+      "campaignDate": "2026-11-26",
+      "gscPeriod": "2026-10-27 bis 2026-11-23",
+      "baseline": { "position": 30.8, "impressions": 92, "ctrPercent": 0 },
+      "previousTitle": "Wissen: Blog & Gefahrstoff-Leitfäden",
+      "previousDescription": "Gefahrstoff-Wissen: Blog-Artikel, Deepinfo-Leitfäden zu GefStoffV, Sicherheitsdatenblatt, TRGS 510 und Gefahrstoffkataster Software — für SiFa und KMU.",
+      "newTitle": "Gefahrstoffmanagement Wissen und Vorlagen: § 6 Kataster, TRGS 555 und 510",
+      "newDescription": "Praxisleitfäden und Arbeitshilfen für KMU und externe SiFas: SDB-Pflichten, TRGS-510-Zusammenlagerung und digitales Gefahrstoffverzeichnis im Überblick.",
+      "optimized": true
+    },
+    {
       "url": "/betriebsanweisung/fassadenreiniger-trgs-555/",
       "source": "gemini-cro",
       "campaignDate": "2026-11-24",

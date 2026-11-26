@@ -506,6 +506,19 @@
   margin: 0;
 }
 
+.post-cta-box--contrast {
+  background: rgba(22, 35, 64, 0.9);
+  border-color: rgba(255, 107, 53, 0.25);
+  text-align: center;
+  padding: var(--space-lg);
+}
+
+.post-cta-box--contrast p {
+  color: #8fa4c0;
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
 .takeaway-box {
   background: rgba(45, 212, 191, 0.06);
   border: 1px solid rgba(45, 212, 191, 0.22);

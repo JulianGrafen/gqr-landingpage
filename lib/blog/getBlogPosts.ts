@@ -38,6 +38,15 @@ const BRANCHEN_BLOG_POSTS: BlogPost[] = [
     category: 'Gebäudereinigung',
     excerpt: 'Säuren, Laugen und Industriereiniger — sicher dokumentieren und lagern.',
   },
+  {
+    title: 'Gefahrstoffverzeichnis in der Kfz-Werkstatt: typische Fehler und Praxis',
+    url: '/blog/kfz-werkstatt-gefahrstoff-blog.html',
+    date: '2026-04-04',
+    author: 'Gefahrstoff-QR Redaktion',
+    category: 'KFZ-Werkstätten',
+    excerpt:
+      'Bremsenreiniger, Öle, Lacke: häufige Lücken im Verzeichnis und wie Sie sie schließen.',
+  },
 ];
 
 export function getBlogPosts(): BlogPost[] {

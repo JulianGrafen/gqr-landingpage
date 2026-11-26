@@ -1,32 +1,21 @@
 import type { Metadata } from 'next';
 import { WissenHubPage } from '@/components/wissen/WissenHubPage';
+import { WISSEN_HUB_GEMINI_CRO } from '@/config/seo/gemini-cro-2026-11-26';
 import { getBlogPosts } from '@/lib/blog/getBlogPosts';
 import { getAllDeepinfoSummaries } from '@/lib/wissen/deepinfo-loader';
-import { SITE_URL } from '@/config/site-seo';
+import { buildMetadata } from '@/lib/seo/buildMetadata';
 
-const canonical = `${SITE_URL}/wissen/`;
-
-export const metadata: Metadata = {
- title: 'Wissen: Blog & Gefahrstoff-Leitfäden',
- description:
- 'Gefahrstoff-Wissen: Blog-Artikel, Deepinfo-Leitfäden zu GefStoffV, Sicherheitsdatenblatt, TRGS 510 und Gefahrstoffkataster Software — für SiFa und KMU.',
- alternates: { canonical },
- openGraph: {
- title: 'Wissen: Blog & Gefahrstoff-Leitfäden',
- description:
- 'Gefahrstoff-Wissen: Blog-Artikel, Deepinfo-Leitfäden zu GefStoffV, Sicherheitsdatenblatt und digitalem Verzeichnis.',
- url: canonical,
- siteName: 'Gefahrstoff-QR',
- locale: 'de_DE',
- type: 'website',
- images: [{ url: '/og-image.png', width: 1200, height: 630 }],
- },
- robots: { index: true, follow: true },
-};
+export const metadata: Metadata = buildMetadata({
+  path: '/wissen/',
+  title: WISSEN_HUB_GEMINI_CRO.title,
+  description: WISSEN_HUB_GEMINI_CRO.description,
+  ogImageAlt: 'Gefahrstoff-Wissen, Leitfäden und Blog für KMU und SiFa',
+  ogType: 'website',
+});
 
 export default function WissenIndexPage() {
- const deepinfoPages = getAllDeepinfoSummaries();
- const blogPosts = getBlogPosts();
+  const deepinfoPages = getAllDeepinfoSummaries();
+  const blogPosts = getBlogPosts();
 
- return <WissenHubPage deepinfoPages={deepinfoPages} blogPosts={blogPosts} />;
+  return <WissenHubPage deepinfoPages={deepinfoPages} blogPosts={blogPosts} />;
 }
