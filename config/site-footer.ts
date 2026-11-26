@@ -1,5 +1,6 @@
 /** Footer-Navigation und SEO-Silos (Startseite & statisches HTML). */
 import { getDecisionPagesForFooterColumn } from '@/config/trust/decision-pages';
+import { SITE_NAV_PRICING_LINK } from '@/config/site-nav';
 import type { DecisionPageLink } from '@/config/trust/types';
 
 export interface FooterLink {
@@ -19,7 +20,7 @@ function toFooterLinks(pages: readonly DecisionPageLink[]): FooterLink[] {
 
 export const FOOTER_PRODUCT_LINKS: readonly FooterLink[] = [
   { label: 'Live-Test', href: '/#live-demo' },
-  { label: 'Preise', href: '/#preise' },
+  { label: SITE_NAV_PRICING_LINK.label, href: SITE_NAV_PRICING_LINK.href },
   { label: 'Kataster erstellen lassen', href: '/wissen/gefahrstoffkataster-erstellen-lassen/' },
   { label: 'Für SiFas', href: '/#fuer-sifas' },
   ...toFooterLinks(getDecisionPagesForFooterColumn('product')),

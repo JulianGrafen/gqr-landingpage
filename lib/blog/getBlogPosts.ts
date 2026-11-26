@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { ORPHAN_HUB_BLOG_SPOTLIGHTS } from '@/config/internal-links/hub-spotlights';
 import type { BlogPost } from './types';
 
 const POSTS_PATH = path.join(process.cwd(), 'blog/posts.json');
@@ -56,6 +57,9 @@ export function getBlogPosts(): BlogPost[] {
 
   const merged = [...fromJson];
   for (const post of BRANCHEN_BLOG_POSTS) {
+    if (!urls.has(post.url)) merged.push(post);
+  }
+  for (const post of ORPHAN_HUB_BLOG_SPOTLIGHTS) {
     if (!urls.has(post.url)) merged.push(post);
   }
 

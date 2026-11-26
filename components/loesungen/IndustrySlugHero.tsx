@@ -6,6 +6,7 @@ import {
   SLUG_HERO_PROOF_LINE,
 } from '@/config/programmatic-seo/defaults';
 import type { IndustrySolution } from '@/config/industry-solutions';
+import { getOrphanHubIndustryLink } from '@/config/internal-links/hub-spotlights';
 import { resolveMarketingHomeHref } from '@/config/site-seo';
 
 type Props = {
@@ -19,6 +20,12 @@ function industryHeroLeadParagraphs(data: IndustrySolution): readonly string[] {
 /** Hero aller `loesungen/[slug]`-Seiten (außer statischer Kfz-Werkstatt-Export). */
 export function IndustrySlugHero({ data }: Props) {
   const marketingHome = resolveMarketingHomeHref();
+  const orphanHubLink = getOrphanHubIndustryLink(data.slug);
+  const heroSecondaryLinks = data.heroSecondaryLinks?.length
+    ? [...data.heroSecondaryLinks, ...(orphanHubLink ? [orphanHubLink] : [])]
+    : orphanHubLink
+      ? [orphanHubLink]
+      : undefined;
 
   return (
     <>
@@ -45,8 +52,8 @@ export function IndustrySlugHero({ data }: Props) {
             Jetzt kostenlos testen
           </Link>
         )}
-        {data.heroSecondaryLinks?.length ? (
-          data.heroSecondaryLinks.map((link) => (
+        {heroSecondaryLinks?.length ? (
+          heroSecondaryLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}

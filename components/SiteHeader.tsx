@@ -4,13 +4,14 @@ import Link from 'next/link';
 import { GqrBrandLogo } from '@/components/GqrBrandLogo';
 import { APP_LOGIN_URL } from '@/config/aeo-config';
 import { HOME_HERO, HOME_NAVIGATION } from '@/config/home-sections/hero';
+import { SITE_NAV_PRICING_LINK } from '@/config/site-nav';
 import { useHeaderStickyCta } from '@/hooks/useHeaderStickyCta';
 import { SITE_HEADER_ELEMENT_ID } from '@/lib/marketing/sticky-header-cta';
 
 const nav = [
   { href: '/#funktionen', label: 'Produkt' },
   { href: '/#funktionen', label: 'Funktionen' },
-  { href: '/#preise', label: 'Preise' },
+  { href: SITE_NAV_PRICING_LINK.href, label: SITE_NAV_PRICING_LINK.label },
   { href: '/#faq', label: 'FAQ' },
   { href: '/blog/', label: 'Blog' },
 ] as const;
