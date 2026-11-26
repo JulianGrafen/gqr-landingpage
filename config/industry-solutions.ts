@@ -54,6 +54,9 @@ export const INDUSTRY_SLUGS = [
   'garten-landschaftsbau',
   'pflegeeinrichtung',
   'geruestbau',
+  'textilreinigerei',
+  'kunststoffverarbeitung',
+  'tierarztpraxis',
 ] as const;
 
 export type IndustrySlug = (typeof INDUSTRY_SLUGS)[number];
@@ -2461,6 +2464,339 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  question: 'Welche BG ist für Gerüstbau zuständig?',
  answer:
  'Die Berufsgenossenschaft der Bauwirtschaft (BG BAU) prüft Gefahrstoffdokumentation in Lager, Werkstatt und auf Montage. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen gehören zum Standardprogramm. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR unterstützen den Nachweis ohne Zettelwirtschaft zwischen den Gerüsten.',
+ },
+ ],
+ },
+ },
+ 'textilreinigerei': {
+ slug: 'textilreinigerei',
+ label: 'Textilreinigerei',
+ title: 'Gefahrstoffmanagement in der Textilreinigerei: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Textilreinigerei',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Textilreinigerei: Lösemittel, Fleckenmittel, Hilfschemie. § 6 GefStoffV, TRGS 555 und TRGS 201 für Wäscherei in Gefahrstoff-QR.',
+ heroText:
+ 'Lösemittel in Waschmaschinen, Fleckenmittel am Bügelplatz und Hilfschemie im Lager müssen im Verzeichnis stehen. Betriebsanweisungen und Umfüll-Kennzeichnung gelten für jede Produktlinie.',
+ typischeStoffe: [
+ 'Perchlorethylen und Kohlenwasserstoff-Lösemittel',
+ 'Vorbehandlungs- und Fleckenentferner',
+ 'Weichspüler und Finishmittel',
+ 'Säure- und alkalische Hilfsbäder',
+ 'Textilreiniger für Nassreinigung',
+ ],
+ spezifischerVorteil:
+ 'Filialen und Waschstraßen wechseln Lieferanten oft. Digitales Verzeichnis mit SDB-Bezug hilft, Betriebsanweisungen je Standort freizugeben und Umfüllen nach TRGS 201 in der Vorbehandlung nachzuhalten.',
+ handwerkAbsatz:
+ 'In Textilreinigereien liegen Kanister in Waschraum, Lager und Filiale. Wenn Vorbehandlungsflaschen ohne Verzeichniseintrag stehen oder SDB-Updates fehlen, wird die BG-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe verkürzen die Pflege bei neuen Fleckenlinien.',
+ brancheGenitiv: 'Textilreinigerei',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Textilreinigereien führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Lösungsmittel, Fleckenmittel und Hilfschemie. Betriebsanweisungen nach TRGS 555 gelten für Wasch- und Bügelbereiche. Umfüllen in Dosierbehältern erfordert Kennzeichnung nach TRGS 201. Excel-Listen mit Filialen und Wechselprodukten veralten rasch. Gefahrstoff-QR verbindet SDB, Entwürfe und Nachweise für SiFa und BG ETEM.',
+ typicalProducts: [
+ {
+ product: 'Perchlorethylen (Trockenreinigung)',
+ gebinde: 'Kanister, Tanksystem',
+ hazardKind: 'reizend, gesundheitsschädlich',
+ workplaceDuty: 'Verzeichniseintrag Waschmaschine, Betriebsanweisung, Emissionsnachweise archivieren',
+ },
+ {
+ product: 'Fleckenentferner Vorbehandlung',
+ gebinde: 'Sprühflasche, Flasche',
+ hazardKind: 'entzündbar oder ätzend',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Unterweisung Vorbehandlung',
+ },
+ {
+ product: 'Textilreiniger Nasswäsche',
+ gebinde: 'Kanister 20 Liter',
+ hazardKind: 'reizend, alkalisch',
+ workplaceDuty: 'SDB archivieren, Eintrag Verzeichnis, Betriebsanweisung Wäscherei',
+ },
+ {
+ product: 'Weichspüler Konzentrat',
+ gebinde: 'Kanister, Bag-in-Box',
+ hazardKind: 'reizend',
+ workplaceDuty: 'Lagerort dokumentieren, Dosierstation im Verzeichnis führen',
+ },
+ {
+ product: 'Bügelwasser-Zusatz',
+ gebinde: 'Flasche 1 Liter',
+ hazardKind: 'reizend',
+ workplaceDuty: 'Betriebsanweisung Bügelplatz, Unterweisung Saisonpersonal',
+ },
+ {
+ product: 'Geruchsneutralisierer',
+ gebinde: 'Sprühflasche',
+ hazardKind: 'reizend, sensibilisierend',
+ workplaceDuty: 'Eintrag Filiale, Kennzeichnung bei Umfüllen, BA am Bügelbrett',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Lösungsmittel und Fleckenmittel in der Vorbehandlung fehlen im Gefahrstoffverzeichnis trotz täglicher Nutzung.',
+ 'Betriebsanweisungen für Waschstraßen sind veraltet oder ohne aktuelles Sicherheitsdatenblatt des Lieferanten.',
+ 'Beschriftete Sprühflaschen am Bügelplatz sind nicht dem Verzeichnis und keiner freigegebenen Betriebsanweisung zugeordnet.',
+ ],
+ berufsgenossenschaft: 'BG ETEM',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Filialleitung tippt Stoffe je Standort in Excel ein',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unmarkierte Flaschen an der Fleckentheke',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA am Regal',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Zentrale oder Filialbüro',
+ gqrWorkflow: 'QR am Vorbehandlungsregal oder an der Waschmaschine',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'SDBs aus Filialen und Waschhalle manuell sammeln',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Braucht eine Textilreinigerei ein Gefahrstoffverzeichnis?',
+ answer:
+ 'Ja, sobald Gefahrstoffe eingesetzt oder gelagert werden. Lösungsmittel, Fleckenmittel und Reinigerchemie fallen unter § 2 GefStoffV. Das Verzeichnis nach § 6 GefStoffV muss Waschhalle, Lager und Vorbehandlung abdecken. Auch kleine Filialen nutzen Hilfschemie. Gefahrstoff-QR unterstützt Pflege und Vorprüfung durch SiFa oder Betriebsleitung vor der BG-Begehung.',
+ },
+ {
+ question: 'Wie dokumentiere ich Umfüllen von Fleckenmittel?',
+ answer:
+ 'Beim Umfüllen entsteht ein Arbeitsmittel nach TRGS 201. Es braucht Kennzeichnung mit Stoff- und Gefahrenhinweisen aus dem SDB. Das Gebinde gehört ins Gefahrstoffverzeichnis mit Bereich Vorbehandlung. Eine Betriebsanweisung nach TRGS 555 wird für die Fleckarbeit benötigt. Gefahrstoff-QR unterstützt Entwürfe zur fachlichen Freigabe durch SiFa oder Filialleitung.',
+ },
+ {
+ question: 'Welche BG prüft Textilreinigereien?',
+ answer:
+ 'Die Berufsgenossenschaft Energie Textil Elektro Medienerzeugnisse (BG ETEM) begutachtet chemische Arbeitsstoffe in Textilreinigung und Wäscherei. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR erleichtern den Nachweis bei mehreren Standorten.',
+ },
+ ],
+ },
+ },
+ 'kunststoffverarbeitung': {
+ slug: 'kunststoffverarbeitung',
+ label: 'Kunststoffverarbeitung',
+ title: 'Gefahrstoffmanagement in der Kunststoffverarbeitung: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Kunststoffverarbeitung',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Kunststoff: Harze, Lösemittel, PU-Schäume. § 6 GefStoffV, TRGS 555 und TRGS 201 für Spritzguss und Verbund in Gefahrstoff-QR.',
+ heroText:
+ 'Harze, Härter, Lösemittel und PU-Systeme stehen in Spritzguss, Lager und Werkstatt. Verzeichnis, Betriebsanweisungen und Kennzeichnung müssen zu Chargen und Werkzeugwechsel passen.',
+ typischeStoffe: [
+ 'Epoxid- und Polyesterharze mit Härtern',
+ 'PU-Kleber und Montageschäume',
+ 'Lösemittel für Formenreinigung',
+ 'Trennmittel und Gleitmittel',
+ 'Kühl- und Schmierstoffe an Maschinen',
+ ],
+ spezifischerVorteil:
+ 'Neue Werkstoffchargen und Lieferantenwechsel erzeugen viele SDB-Updates. Digitales Verzeichnis mit Historie hilft, Betriebsanweisungen an Presse und Mischstation freizugeben und Umfüllen nach TRGS 201 zu dokumentieren.',
+ handwerkAbsatz:
+ 'In Kunststoffbetrieben liegen Harz und Härter oft in mehreren Gebinden parallel. Wenn Formenreiniger nicht im Verzeichnis stehen oder 2K-Systeme ohne SDB-Bezug genutzt werden, wird die BGHM-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe verkürzen die Pflege bei neuen Rezepturen.',
+ brancheGenitiv: 'Kunststoffverarbeitung',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Betriebe der Kunststoffverarbeitung führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Harze, Härter und Hilfschemie. Betriebsanweisungen nach TRGS 555 gelten an Presse, Mischstation und Formenpflege. Umfüllen in Handgebinden erfordert Kennzeichnung nach TRGS 201. Excel-Listen veralten bei jedem Werkstoffwechsel. Gefahrstoff-QR verbindet SDB, Entwürfe und Nachweise für SiFa und BGHM.',
+ typicalProducts: [
+ {
+ product: 'Epoxidharz mit Amidhärter',
+ gebinde: 'Kanister, Kartusche',
+ hazardKind: 'reizend, sensibilisierend',
+ workplaceDuty: 'Verzeichnis Mischstation, Betriebsanweisung, Unterweisung vor 2K-Arbeit',
+ },
+ {
+ product: 'PU-Montageschaum',
+ gebinde: 'Pistole, Kartusche',
+ hazardKind: 'entzündbar, sensibilisierend',
+ workplaceDuty: 'SDB archivieren, Lagerort, Unterweisung Montage',
+ },
+ {
+ product: 'Formenreiniger lösemittelhaltig',
+ gebinde: 'Spray, Kanister',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Verzeichnis Werkzeugbau',
+ },
+ {
+ product: 'Trennmittel für Formen',
+ gebinde: 'Spraydose, Flasche',
+ hazardKind: 'entzündbar, reizend',
+ workplaceDuty: 'Eintrag Presse, Betriebsanweisung, Lager dokumentieren',
+ },
+ {
+ product: 'Kühlmittel für CNC und Fräsen',
+ gebinde: 'Kanister 20 Liter',
+ hazardKind: 'reizend, gesundheitsschädlich',
+ workplaceDuty: 'Verzeichnis Maschinenhalle, BA, Unterweisung Schichtführer',
+ },
+ {
+ product: 'Schweißnahtgrundierung vor Kunststoffkleben',
+ gebinde: 'Tube, Stift',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'SDB-Bezug, Betriebsanweisung Klebestelle, Unterweisung',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Formenreiniger und Trennmittel an der Spritzgussmaschine fehlen im Gefahrstoffverzeichnis.',
+ 'Betriebsanweisungen für 2K-Systeme sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Abgefüllte Harz- und Härterbehälter in der Mischstation sind nicht nach TRGS 201 im Verzeichnis erfasst.',
+ ],
+ berufsgenossenschaft: 'BGHM',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Werkstoffverantwortlicher tippt Rezepturen in Excel',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unbeschriftete Becher an der Mischwaage',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA an der Station',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner im QS-Büro oder Maschinenraum',
+ gqrWorkflow: 'QR am Harzregal, Presse oder Formenlager',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'SDBs aus Produktion und Lager manuell zusammenstellen',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Welche Stoffe gehören im Kunststoffbetrieb ins Verzeichnis?',
+ answer:
+ 'Harze, Härter, Lösemittel, Kleber und Kühlmittel zählen dazu, sobald sie eingesetzt oder gelagert werden. Auch Formenpflegeprodukte fallen unter § 2 GefStoffV. Das Verzeichnis nach § 6 GefStoffV listet Stoff, Menge und Lagerort. Betriebsanweisungen nach TRGS 555 beschreiben den Umgang an Presse und Mischstation. Gefahrstoff-QR unterstützt Pflege und Vorprüfung durch SiFa.',
+ },
+ {
+ question: 'Wie erfasse ich 2K-Systeme mit getrennten Komponenten?',
+ answer:
+ 'Harz und Härter werden als Gefahrstoffe mit eigenem SDB geführt. Beide Komponenten gehören ins Verzeichnis. Beim Umfüllen in Mischbehälter gilt TRGS 201. Die Betriebsanweisung nach TRGS 555 deckt Mischung und Entsorgung ab. Freigabe liegt bei SiFa oder Arbeitgeber. Digitale Pflege hält Chargenwechsel und SDB-Stand nachvollziehbar.',
+ },
+ {
+ question: 'Welche BG ist für Kunststoffverarbeitung zuständig?',
+ answer:
+ 'Die Berufsgenossenschaft Holz und Metall (BGHM) prüft Gefahrstoffdokumentation in Werkstatt und Produktion. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen gehören zum Standardprogramm. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR unterstützen den Nachweis ohne Papierstapel zwischen Lager und Maschinenhalle.',
+ },
+ ],
+ },
+ },
+ 'tierarztpraxis': {
+ slug: 'tierarztpraxis',
+ label: 'Tierarztpraxis',
+ title: 'Gefahrstoffmanagement in der Tierarztpraxis: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Tierarztpraxis',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Tierarzt: Desinfektion, Reiniger, Pflegemittel. § 6 GefStoffV, TRGS 555 und TRGS 201 für Behandlung und Labor in Gefahrstoff-QR.',
+ heroText:
+ 'Desinfektionsmittel, Reiniger und Pflegeprodukte stehen in Behandlung, Labor und Lager. Verzeichnis, Betriebsanweisungen und Umfüll-Kennzeichnung müssen zu Hygieneplänen und Notdienst passen.',
+ typischeStoffe: [
+ 'Flächen- und Instrumentendesinfektion',
+ 'Reiniger für Boden und Behandlungsliege',
+ 'Pflege- und Hautschutzmittel',
+ 'Narkose- und Medi-Gasüberwachung (Dokumentation)',
+ 'Chemie für Röntgen- und Laborhilfsmittel',
+ ],
+ spezifischerVorteil:
+ 'Wechsel der Desinfektionslinie und Saisonbetrieb erzeugen SDB-Updates. Digitales Verzeichnis hilft, Betriebsanweisungen je Raum freizugeben und Umfüllen nach TRGS 201 in Spülküchen nachzuhalten.',
+ handwerkAbsatz:
+ 'Tierarztpraxen nutzen täglich Desinfektion und Reiniger in mehreren Räumen. Wenn Sprühflaschen ohne Verzeichniseintrag stehen oder SDB-Updates fehlen, wird die BGW-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe verkürzen die Pflege bei neuen Hygieneprodukten.',
+ brancheGenitiv: 'Tierarztpraxis',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Tierarztpraxen führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Desinfektion, Reiniger und Hilfschemie. Betriebsanweisungen nach TRGS 555 gelten für Behandlungsräume und Labor. Umfüllen in Dosier- und Sprühflaschen erfordert Kennzeichnung nach TRGS 201. Excel-Listen mit Notdienst und Saisonpersonal veralten rasch. Gefahrstoff-QR verbindet SDB, Entwürfe und Nachweise für SiFa und BGW.',
+ typicalProducts: [
+ {
+ product: 'Flächendesinfektion Behandlungsraum',
+ gebinde: 'Kanister, Dosierflasche',
+ hazardKind: 'ätzend oder reizend',
+ workplaceDuty: 'Verzeichnis je Raum, Betriebsanweisung, Unterweisung Team',
+ },
+ {
+ product: 'Instrumentendesinfektion',
+ gebinde: 'Bade, Kanister',
+ hazardKind: 'reizend, biozidwirksam',
+ workplaceDuty: 'SDB archivieren, BA Labor, biozidbezogene Unterweisung',
+ },
+ {
+ product: 'Bodenreiniger OP-Bereich',
+ gebinde: 'Sprühflasche, Kanister',
+ hazardKind: 'ätzend, reizend',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Eintrag Lager',
+ },
+ {
+ product: 'Handreiniger mit Desinfektionsanspruch',
+ gebinde: 'Spender, Flasche',
+ hazardKind: 'reizend',
+ workplaceDuty: 'Verzeichnis Spülküche, Unterweisung dokumentieren',
+ },
+ {
+ product: 'Pflegemittel für Tiere (topisch)',
+ gebinde: 'Tube, Flasche',
+ hazardKind: 'reizend',
+ workplaceDuty: 'Lagerort Apotheke, Betriebsanweisung Behandlung',
+ },
+ {
+ product: 'Laborhilfsmittel (Fixierer, Farben)',
+ gebinde: 'Flasche, Kanister',
+ hazardKind: 'reizend, gesundheitsschädlich',
+ workplaceDuty: 'Eintrag Labor, BA, Unterweisung vor Probenarbeit',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Desinfektions- und Reinigungsmittel in Behandlungsräumen fehlen im Gefahrstoffverzeichnis.',
+ 'Betriebsanweisungen für Instrumentenaufbereitung sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Beschriftete Sprühflaschen im Behandlungsbereich sind nicht dem Verzeichnis und keiner freigegebenen Betriebsanweisung zugeordnet.',
+ ],
+ berufsgenossenschaft: 'BGW',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Praxismanager tippt Produkte manuell in Excel',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unmarkierte Flaschen am Waschbecken',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA im Medikamentenschrank',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner im Büro oder Lager',
+ gqrWorkflow: 'QR am Desinfektionsregal oder in der Spülküche',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'SDBs aus Behandlung und Labor sammeln',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Braucht eine Tierarztpraxis ein Gefahrstoffverzeichnis?',
+ answer:
+ 'Ja, sobald Gefahrstoffe eingesetzt oder gelagert werden. Desinfektionsmittel, Reiniger und Laborhilfsmittel fallen unter § 2 GefStoffV. Das Verzeichnis nach § 6 GefStoffV muss Behandlung, Labor und Lager abdecken. Auch kleine Praxen nutzen täglich Flächendesinfektion. Gefahrstoff-QR unterstützt Pflege und Vorprüfung durch SiFa oder Praxisleitung.',
+ },
+ {
+ question: 'Wie dokumentiere ich Umfüllen von Desinfektionsmittel?',
+ answer:
+ 'Beim Umfüllen entsteht ein Arbeitsmittel nach TRGS 201. Es braucht Kennzeichnung mit Stoff- und Gefahrenhinweisen aus dem SDB. Das Gebinde gehört ins Gefahrstoffverzeichnis mit Raumbezug. Eine Betriebsanweisung nach TRGS 555 wird für Reinigungsarbeiten benötigt. Gefahrstoff-QR unterstützt Entwürfe zur fachlichen Freigabe durch SiFa oder Tierarzt.',
+ },
+ {
+ question: 'Welche BG prüft Tierarztpraxen?',
+ answer:
+ 'Die Berufsgenossenschaft für Gesundheitsdienst und Wohlfahrtspflege (BGW) begutachtet chemische Arbeitsstoffe in Tierarztpraxen. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR erleichtern den Nachweis bei Notdienst und Aushilfen.',
  },
  ],
  },

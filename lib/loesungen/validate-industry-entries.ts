@@ -21,6 +21,9 @@ const PSEO_REQUIRED_SLUGS = [
   'garten-landschaftsbau',
   'pflegeeinrichtung',
   'geruestbau',
+  'textilreinigerei',
+  'kunststoffverarbeitung',
+  'tierarztpraxis',
 ] as const;
 
 const BANNED_LOESUNGEN_COPY = [

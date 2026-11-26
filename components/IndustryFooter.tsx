@@ -25,6 +25,9 @@ import {
   TreePine,
   HeartHandshake,
   HardHat,
+  Shirt,
+  Cylinder,
+  PawPrint,
 } from 'lucide-react';
 import { getAllIndustries, type IndustrySlug } from '@/config/industry-solutions';
 
@@ -53,6 +56,9 @@ const ICONS: Record<IndustrySlug, LucideIcon> = {
   'garten-landschaftsbau': TreePine,
   pflegeeinrichtung: HeartHandshake,
   geruestbau: HardHat,
+  textilreinigerei: Shirt,
+  kunststoffverarbeitung: Cylinder,
+  tierarztpraxis: PawPrint,
 };
 
 /**
