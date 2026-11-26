@@ -33,6 +33,11 @@ export const EXCEL_COMPARISON = {
       gefahrstoffQrWorkflow: 'Vorab-Erfassung ohne SDB möglich; fehlende Angaben werden im PDF und Excel rot markiert',
     },
     {
+      criterion: 'Neues SDB per Knopfdruck beim Lieferanten anfordern',
+      manualWorkflow: 'Getrennte E-Mails, Anrufe und Nachverfolgung in Listen',
+      gefahrstoffQrWorkflow: 'Anforderung per Knopfdruck aus dem Stoffdatensatz mit hinterlegtem Lieferanten-Kontakt',
+    },
+    {
       criterion: 'GHS-Piktogramme im Export',
       manualWorkflow: 'Mühsames manuelles Einfügen von Bilddateien',
       gefahrstoffQrWorkflow: 'Originalgetreue GHS-Piktogramme direkt im Gefahrstoffverzeichnis-PDF und Excel-Export',
