@@ -1,7 +1,5 @@
-import { APP_REGISTER_URL } from '@/config/aeo-config';
 import { LIVE_DEMO_ANCHOR_ID } from '@/config/home-sections/hero';
-import { MULTI_TENANT_SIFA } from '@/config/home-sections/multi-tenant-sifa';
-import { caseStudyPath, getPublishedCaseStudies } from '@/data/caseStudies';
+import { PRICING_PAGE_SIFA_TAB_HREF } from '@/config/home-sections/pricing-audience';
 import type { StorageClass, Trgs510Status } from '@/lib/trgs510/types';
 
 /**
@@ -25,12 +23,6 @@ export function countPairwiseCombinations(substanceCount: number): number {
 }
 
 const LIVE_DEMO_HREF = `/#${LIVE_DEMO_ANCHOR_ID}`;
-const SIFA_SECTION_HREF = `/#${MULTI_TENANT_SIFA.sectionId}`;
-
-function resolveCaseStudyHref(): string {
-  const [featuredCaseStudy] = getPublishedCaseStudies();
-  return featuredCaseStudy ? caseStudyPath(featuredCaseStudy.slug) : '/';
-}
 
 /** Hilfszeile unter den LGK-Dropdowns (Brücke zum SDB-Live-Test). */
 export const TRGS510_UNKNOWN_CLASS_HINT = {
@@ -61,9 +53,9 @@ export function buildTrgs510ResultCta(
 ): Trgs510ResultCta {
   const classPair = describeClassPair(firstClass, secondClass);
   const shared = {
-    eyebrow: 'Gefahrstoff-QR automatisiert diesen Check',
-    primary: { label: 'Eigene SDBs kostenlos prüfen', href: APP_REGISTER_URL },
-    secondary: { label: 'Praxisbeispiel ansehen', href: resolveCaseStudyHref() },
+    eyebrow: 'Nächster Schritt mit Gefahrstoff-QR',
+    primary: { label: 'Eigenes SDB-PDF im Live-Test prüfen', href: LIVE_DEMO_HREF },
+    secondary: { label: 'Externe SiFa? Mandanten-Tarif ansehen', href: PRICING_PAGE_SIFA_TAB_HREF },
   };
 
   if (status === 'allowed') {
@@ -106,7 +98,7 @@ export const TRGS510_AUDIENCE_SECTION = {
       text:
         'Schick uns 5 bis 10 Sicherheitsdatenblätter. Innerhalb von 48 Stunden steht dein ' +
         'Gefahrstoffverzeichnis inklusive TRGS-510-Prüfung und fertiger QR-Codes für den Schrank.',
-      cta: { label: 'Kostenlosen 48h-Import starten', href: APP_REGISTER_URL },
+      cta: { label: 'SDB-Live-Test auf der Startseite', href: LIVE_DEMO_HREF },
     },
     {
       id: 'sifas',
@@ -115,7 +107,7 @@ export const TRGS510_AUDIENCE_SECTION = {
       text:
         'Getrennte Kataster pro Mandant und Werk, KI-gestützte Betriebsanweisungs-Entwürfe ' +
         '(gemäß TRGS 555) direkt aus den Lieferanten-PDFs, zur fachlichen Freigabe durch dich.',
-      cta: { label: 'Lösung für SiFas ansehen', href: SIFA_SECTION_HREF },
+      cta: { label: 'SiFa-Tarife ansehen', href: PRICING_PAGE_SIFA_TAB_HREF },
     },
   ] satisfies Trgs510AudienceCard[],
 } as const;

@@ -1,5 +1,5 @@
-import type { IndustrySolution } from '@/config/industry-solutions';
 import { IndustryWerkstattKatasterTable } from '@/components/loesungen/IndustryWerkstattKatasterTable';
+import type { IndustrySolution } from '@/config/industry-solutions';
 
 const SECTION_CLASS = 'border-t border-white/[0.07] py-14 lg:py-24';
 const CONTAINER_CLASS = 'mx-auto max-w-[1160px] px-4 sm:px-6 lg:px-10';

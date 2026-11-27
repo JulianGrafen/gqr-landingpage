@@ -7,6 +7,8 @@ export type StrikingDistanceMidPageCtaCopy = {
   headline: string;
   body: string;
   primaryLabel: string;
+  /** Default: absolute Link zur Startseiten-Dropzone. */
+  primaryHref?: string;
   secondaryLabel?: string;
   secondaryHref?: string;
 };
@@ -30,6 +32,7 @@ export function StrikingDistanceMidPageCta({
 }: StrikingDistanceMidPageCtaProps) {
   const sectionClass = variant === 'betriebsanweisung' ? BA_SECTION : 'border-b border-white/[0.07] py-10 lg:py-14';
   const wrapperClass = variant === 'betriebsanweisung' ? BA_CONTAINER : 'gqr-container';
+  const primaryHref = copy.primaryHref ?? LIVE_DEMO_HREF;
 
   return (
     <section className={sectionClass} aria-labelledby="striking-mid-cta-title">
@@ -41,7 +44,7 @@ export function StrikingDistanceMidPageCta({
           <p className="mt-3 text-sm leading-relaxed text-[#8fa4c0]">{copy.body}</p>
           <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:justify-center">
             <a
-              href={LIVE_DEMO_HREF}
+              href={primaryHref}
               className="gqr-cta-primary gqr-cta-primary--md inline-flex justify-center no-underline"
             >
               {copy.primaryLabel}

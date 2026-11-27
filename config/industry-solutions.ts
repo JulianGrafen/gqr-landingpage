@@ -6,6 +6,7 @@ import type { IndustryPseoContent } from '@/config/loesungen/types';
  */
 import type { HazardousSubstanceSlug } from '@/config/betriebsanweisung/entries';
 import type { HeroCopy } from '@/config/home-sections/hero';
+import { CEO_GEMINI_KFZ_HERO_CTA_ROW } from '@/config/seo/ceo-gemini-cta-2026-11-27';
 import type { SdbPreviewExampleId } from '@/lib/sdb-preview/api-contract';
 import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
 
@@ -131,6 +132,7 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  { label: 'Typische Werkstatt-Gefahrstoffe ansehen', href: '#werkstatt-stoffe' },
  { label: 'Kataster in 48 Stunden erstellen lassen', href: '/wissen/gefahrstoffkataster-erstellen-lassen/' },
  ],
+ ctaRow: CEO_GEMINI_KFZ_HERO_CTA_ROW,
  },
  substanceOverview: {
  heading: 'Typische Gefahrstoffe in der Kfz-Werkstatt auf einen Blick',
