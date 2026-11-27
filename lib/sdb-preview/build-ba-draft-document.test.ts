@@ -24,25 +24,27 @@ function teaser(overrides: Partial<SdbPreviewTeaser> = {}): SdbPreviewTeaser {
   };
 }
 
-test('BA-Entwurf: Abschnitte 1–3 gefüllt, 4–6 gesperrt ohne Paywall-Inhalte', () => {
+test('BA-Entwurf: Abschnitte 2–3 gefüllt, 4–6 gesperrt ohne Paywall-Inhalte', () => {
   const draft = buildBaDraftDocument(teaser());
 
-  assert.equal(draft.sections.length, 6);
+  assert.equal(draft.productName, 'Bremsenreiniger Pro Clean');
+  assert.deepEqual(draft.identificationDetails.slice(0, 1), ['Hersteller/Lieferant: AutoChem GmbH']);
+  assert.equal(draft.sections.length, 5);
   assert.deepEqual(
     draft.sections.map((section) => section.locked),
-    [false, false, false, true, true, true],
+    [false, false, true, true, true],
   );
   assert.ok(!JSON.stringify(draft).includes('geheim'), 'gesperrte Teaser-Inhalte dürfen nicht im PDF landen');
 });
 
 test('BA-Entwurf: GHS-Symbole normalisiert und dedupliziert, Rest-H-Sätze als Hinweis', () => {
-  const hazards = buildBaDraftDocument(teaser()).sections[1];
+  const hazards = buildBaDraftDocument(teaser()).sections[0];
 
   assert.deepEqual(
     hazards.symbols.map((symbol) => symbol.label.slice(0, 5)),
     ['GHS02', 'GHS07'],
   );
-  assert.equal(hazards.emphasis, 'Signalwort: Gefahr');
+  assert.equal(hazards.emphasis, 'Gefahr');
   assert.equal(hazards.lines.at(-1), BA_DRAFT_PDF_COPY.moreStatements(3, 'H'));
 });
 
@@ -51,7 +53,7 @@ test('BA-Entwurf: ohne PSA/P-Sätze bleibt Abschnitt 3 gesperrt; Dateiname ist A
     teaser({ tradeName: 'Spülmittel „Größe“ 5 l', precautionaryStatements: [], protectiveEquipment: [], statementCounts: undefined }),
   );
 
-  assert.equal(draft.sections[2].locked, true);
+  assert.equal(draft.sections[1].locked, true);
   assert.equal(draft.fileName, 'BA-Entwurf-Spulmittel-Grosse-5-l.pdf');
 });
 
@@ -62,4 +64,14 @@ test('BA-Entwurf-PDF: rendert auch mit Sonderzeichen außerhalb von WinAnsi', as
   const bytes = await renderBaDraftPdf({ document: draft, accountUrl: 'https://app.gefahrstoff-qr.de/register?x=1' });
 
   assert.equal(new TextDecoder().decode(bytes.slice(0, 5)), '%PDF-');
+});
+
+test('BA-Entwurf-PDF: viele H-Sätze laufen auf eine Folgeseite um statt abzuschneiden', async () => {
+  const { PDFDocument } = await import('pdf-lib');
+  const draft = buildBaDraftDocument(
+    teaser({ hazardStatements: Array.from({ length: 60 }, (_, index) => `H3${index} Gefahrenhinweis mit etwas längerem Text Nr. ${index}.`) }),
+  );
+  const bytes = await renderBaDraftPdf({ document: draft, accountUrl: 'https://app.gefahrstoff-qr.de/register' });
+
+  assert.ok((await PDFDocument.load(bytes)).getPageCount() >= 2);
 });

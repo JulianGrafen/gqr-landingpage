@@ -128,9 +128,18 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
         </div>
       ) : null;
 
+    // E-Mail-Erfassung steht direkt über dem Ergebnis (erster Blickkontakt nach der Analyse),
+    // nicht darunter – dort ging sie zwischen Vorschau und Dropzone unter.
     const resultBlock =
       phase === 'ready' && teaser ? (
         <>
+          {embedded ? null : (
+            <BaDraftLeadMagnet
+              teaser={teaser}
+              previewToken={transferablePreviewToken}
+              draftToken={controller.draftToken}
+            />
+          )}
           {variant === 'static' ? (
             <HeroBaLivePreview teaser={teaser} source={controller.source} draftToken={controller.draftToken} />
           ) : (
@@ -140,13 +149,6 @@ export const SdbLivePreviewDropzoneView = forwardRef<SdbLivePreviewDropzoneHandl
               embedded={embedded}
               omitPublishedHazardData={omitPublishedHazardData}
               sourceLabel={sourceLabel}
-              draftToken={controller.draftToken}
-            />
-          )}
-          {embedded ? null : (
-            <BaDraftLeadMagnet
-              teaser={teaser}
-              previewToken={transferablePreviewToken}
               draftToken={controller.draftToken}
             />
           )}

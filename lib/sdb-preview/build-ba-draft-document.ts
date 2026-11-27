@@ -8,15 +8,18 @@ import { resolveStorageClassLabel } from '@/lib/sdb-preview/build-result-insight
 /**
  * Reines Datenmodell des BA-Entwurfs (Download-PDF), unabhängig vom Rendering.
  * Enthält nur, was die öffentliche Vorschau ohnehin liefert; Abschnitte 4–6 bleiben dem Gratis-Konto vorbehalten.
+ * Gliederung wie das BA-PDF der App: „Gefahrstoffbezeichnung“ (eigenes Layout) + fünf Raster-Abschnitte.
  */
 
 export type BaDraftSymbol = { src: string; label: string };
 
 export type BaDraftSection = {
   title: string;
+  /** Aufzählungspunkte im Textfeld rechts. */
   lines: string[];
-  /** Hervorgehobene Zeile (z. B. Signalwort). */
+  /** Hervorgehobene Zeile vor den Aufzählungspunkten (Signalwort, wie in der App). */
   emphasis?: string;
+  /** Symbolspalte links (GHS-Piktogramme, Gebotszeichen). */
   symbols: BaDraftSymbol[];
   /** `true` = Platzhalter, Inhalt erst im Gratis-Konto. */
   locked: boolean;
@@ -25,6 +28,9 @@ export type BaDraftSection = {
 export type BaDraftDocument = {
   productName: string;
   manufacturer: string;
+  /** Kleingedruckte Angaben unter dem Stoffnamen (Hersteller, CAS, Lagerklasse). */
+  identificationDetails: string[];
+  /** Abschnitte 2–6 im Symbol/Text-Raster. */
   sections: BaDraftSection[];
   fileName: string;
 };
@@ -62,8 +68,7 @@ export function buildBaDraftDocument(teaser: SdbPreviewTeaser): BaDraftDocument 
   const productName = teaser.tradeName.trim() || 'Gefahrstoff';
   const manufacturer = teaser.manufacturer.trim();
 
-  const identificationLines = [
-    productName,
+  const identificationDetails = [
     manufacturer ? `${copy.manufacturerPrefix}${manufacturer}` : null,
     teaser.casNumber ? `${copy.casPrefix}${teaser.casNumber}` : null,
     resolveStorageClassLabel(teaser),
@@ -85,12 +90,12 @@ export function buildBaDraftDocument(teaser: SdbPreviewTeaser): BaDraftDocument 
   return {
     productName,
     manufacturer,
+    identificationDetails,
     fileName: copy.fileName(slugifyFileName(productName)),
     sections: [
-      { title: copy.sectionTitles.identification, lines: identificationLines, symbols: [], locked: false },
       {
         title: copy.sectionTitles.hazards,
-        emphasis: teaser.signalWord ? `${copy.signalWordPrefix}${teaser.signalWord}` : undefined,
+        emphasis: teaser.signalWord?.trim() || undefined,
         lines: hazardLines,
         symbols: ghsSymbols(teaser.ghsPictograms),
         locked: false,

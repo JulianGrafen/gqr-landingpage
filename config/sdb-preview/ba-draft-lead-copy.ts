@@ -29,31 +29,41 @@ export const BA_DRAFT_LEAD_COPY = {
   privacyHref: '/datenschutz/',
 } as const;
 
-/** Texte im generierten PDF (Aufbau nach TRGS 555, Abschnitte 1–6). */
+/**
+ * Texte im generierten PDF. Aufbau und Beschriftung entsprechen 1:1 dem BA-PDF der App
+ * (Kopf 25/50/25, Abschnitte ohne Nummern, Freigabe-Zeile, TRGS-555-Fußzeile).
+ */
 export const BA_DRAFT_PDF_COPY = {
-  documentTitle: 'BETRIEBSANWEISUNG',
-  documentSubtitle: 'gemäß § 14 GefStoffV · KI-gestützter Entwurf (gemäß TRGS 555)',
+  documentTitle: 'Betriebsanweisung',
+  legalBasis: 'gem. § 14 GefStoffV',
+  draftLabel: 'KI-gestützter Entwurf (gemäß TRGS 555)',
   watermark: 'ENTWURF',
+  qrPlaceholder: ['Notfall-QR-Code', 'im Gratis-Konto'],
+  meta: { responsible: 'Verantwortlich', area: 'Bereich', revision: 'Stand' },
+  release: {
+    date: 'Datum der Freigabe',
+    nextReview: 'Nächste Überprüfung',
+    signature: 'Unterschrift',
+    signatory: 'Unternehmer/Geschäftsleitung',
+    line: 'Freigegeben durch: _______________________ am: ______________',
+  },
+  emptyValue: '–',
   manufacturerPrefix: 'Hersteller/Lieferant: ',
   casPrefix: 'CAS-Nr.: ',
-  signalWordPrefix: 'Signalwort: ',
   sectionTitles: {
-    identification: '1. Gefahrstoffbezeichnung',
-    hazards: '2. Gefahren für Mensch und Umwelt',
-    protectiveMeasures: '3. Schutzmaßnahmen und Verhaltensregeln',
-    emergency: '4. Verhalten im Gefahrfall',
-    firstAid: '5. Erste Hilfe',
-    disposal: '6. Sachgerechte Entsorgung',
+    identification: 'Gefahrstoffbezeichnung',
+    hazards: 'Gefahren für Mensch und Umwelt',
+    protectiveMeasures: 'Schutzmaßnahmen und Verhaltensregeln',
+    emergency: 'Verhalten im Gefahrfall',
+    firstAid: 'Erste Hilfe',
+    disposal: 'Sachgerechte Entsorgung',
   },
   noHazardStatements: 'Keine H-Sätze im Sicherheitsdatenblatt erkannt – bitte fachlich prüfen.',
   moreStatements: (count: number, kind: 'H' | 'P') =>
     `+ ${count} weitere ${kind}-Sätze im Gratis-Konto`,
   lockedSection: 'Wird im Gratis-Konto aus Ihrem Sicherheitsdatenblatt ergänzt.',
-  lockedSectionBadge: 'Im Gratis-Konto aus Ihrem SDB ergänzt',
-  accountBoxTitle: 'BA vervollständigen – im Gratis-Konto',
-  accountBoxBody:
-    'Abschnitte 4–6, Notfall-QR-Code für den Arbeitsplatz und Freigabe-Workflow: kostenlos, ohne Kreditkarte, ohne Verkaufsgespräch.',
-  accountBoxLinkLabel: 'Gratis-Konto erstellen: ',
+  lockedSectionCta: '» Jetzt kostenlos im Gratis-Konto vervollständigen',
   createdOn: (date: string) => `Erstellt am ${date} mit gefahrstoff-qr.de`,
+  pageLabel: (page: number, total: number) => `Seite ${page}/${total}`,
   fileName: (productSlug: string) => `BA-Entwurf-${productSlug || 'Gefahrstoff'}.pdf`,
 } as const;

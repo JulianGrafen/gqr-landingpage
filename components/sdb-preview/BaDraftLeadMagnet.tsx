@@ -95,7 +95,7 @@ export function BaDraftLeadMagnet({ teaser, previewToken, draftToken, className 
 
   return (
     <div
-      className={`mt-4 rounded-2xl border border-solid border-[#2dd4bf]/28 bg-gradient-to-br from-[#2dd4bf]/10 via-[#0f1e35]/80 to-[#0a1628]/90 p-4 text-left shadow-lg shadow-black/25 sm:p-5 ${className}`}
+      className={`mt-4 rounded-2xl border border-solid border-[#ff6b35]/45 bg-gradient-to-br from-[#2dd4bf]/10 via-[#0f1e35]/80 to-[#0a1628]/90 p-4 text-left shadow-lg shadow-black/25 sm:p-5 ${className}`}
       data-ba-draft-lead-magnet
     >
       <p className="m-0 text-[11px] font-semibold uppercase tracking-wider text-teal-300">{copy.eyebrow}</p>
