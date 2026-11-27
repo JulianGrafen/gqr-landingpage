@@ -37,9 +37,14 @@ import { getBetriebsanweisungSolutionCallout } from '@/lib/seo/internalLinks';
 import { InternalSolutionBanner } from '@/components/seo/InternalSolutionBanner';
 import { stickyCtaObstructProps } from '@/lib/marketing/sticky-header-cta';
 import { BetriebsanweisungGeminiInternalLink } from '@/components/betriebsanweisung/BetriebsanweisungGeminiInternalLink';
+import {
+  BetriebsanweisungGeminiCroDualMidCta,
+  BetriebsanweisungGeminiCroHomeContextLink,
+  BetriebsanweisungGeminiCroProseLinks,
+} from '@/components/betriebsanweisung/BetriebsanweisungGeminiCroBlocks';
 import { BetriebsanweisungStrikingMidPageCta } from '@/components/betriebsanweisung/BetriebsanweisungStrikingMidPageCta';
-import { GEMINI_CRO_BA_OVERRIDES } from '@/config/seo/gemini-cro-2026-11-24';
 import { BETRIEBSANWEISUNG_STRIKING_OVERRIDES } from '@/config/seo/striking-distance-2026-11-23';
+import { getBetriebsanweisungGeminiCroOverride } from '@/lib/betriebsanweisung/resolve-gemini-cro-ba-override';
 
 type PageProps = {
   params: { slug: string };
@@ -72,7 +77,7 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
   const demoRegisterUrl = buildBetriebsanweisungRegisterUrl(entry.slug, {
     utmContent: LIVE_PREVIEW_COPY.demoRegisterUtmContent,
   });
-  const geminiOverride = GEMINI_CRO_BA_OVERRIDES[entry.slug as HazardousSubstanceSlug];
+  const geminiOverride = getBetriebsanweisungGeminiCroOverride(entry.slug as HazardousSubstanceSlug);
   const strikingOverride = BETRIEBSANWEISUNG_STRIKING_OVERRIDES[entry.slug as HazardousSubstanceSlug];
 
   return (
@@ -85,6 +90,9 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
             entry={entry}
             breadcrumbs={buildBetriebsanweisungBreadcrumbs(entry)}
             registerUrl={registerUrl}
+            h1={geminiOverride?.h1}
+            heroPrimaryCta={geminiOverride?.heroPrimaryCta}
+            complianceNotice={geminiOverride?.complianceNotice}
           />
         </div>
       </section>
@@ -111,7 +119,20 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
 
         <BetriebsanweisungQuickFacts entry={entry} />
 
-        {geminiOverride ? <BetriebsanweisungGeminiInternalLink link={geminiOverride.internalLink} /> : null}
+        {geminiOverride?.earlyProseLinks ? (
+          <BetriebsanweisungGeminiCroProseLinks
+            links={geminiOverride.earlyProseLinks}
+            ariaLabel="Branchen- und SiFa-Links"
+          />
+        ) : null}
+
+        {geminiOverride?.homeContextLink ? (
+          <BetriebsanweisungGeminiCroHomeContextLink link={geminiOverride.homeContextLink} />
+        ) : null}
+
+        {geminiOverride?.dualMidCta ? <BetriebsanweisungGeminiCroDualMidCta copy={geminiOverride.dualMidCta} /> : null}
+
+        {geminiOverride?.internalLink ? <BetriebsanweisungGeminiInternalLink link={geminiOverride.internalLink} /> : null}
 
         {strikingOverride ? <BetriebsanweisungStrikingMidPageCta override={strikingOverride} /> : null}
 
@@ -132,6 +153,13 @@ export default function BetriebsanweisungSlugPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+
+        {geminiOverride?.lowerThirdProseLinks ? (
+          <BetriebsanweisungGeminiCroProseLinks
+            links={geminiOverride.lowerThirdProseLinks}
+            ariaLabel="Lagerung, Branche und Software"
+          />
+        ) : null}
 
         <BetriebsanweisungRelatedLinks
           substanceName={entry.substanceName}
