@@ -19,7 +19,7 @@ export function Trgs510AudienceCards() {
             <p className="mt-2 flex-1 text-sm leading-relaxed text-[#8fa4c0]">{card.text}</p>
             <Link
               href={card.cta.href}
-              className="gqr-link mt-4 text-sm"
+              className="gqr-cta-primary gqr-cta-primary--md mt-5 inline-flex justify-center no-underline sm:w-auto"
             >
               {card.cta.label}
             </Link>

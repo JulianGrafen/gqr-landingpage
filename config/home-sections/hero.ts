@@ -1,6 +1,6 @@
 import { APP_LOGIN_URL, APP_REGISTER_URL } from '@/config/aeo-config';
+import { CEO_GEMINI_HOME_HERO_CTA_ROW } from '@/config/seo/ceo-gemini-cta-2026-11-27';
 import { SITE_NAV_PRICING_LINK } from '@/config/site-nav';
-import { TARIF_VORSCHAU_SDB_UPLOAD_LIMIT } from '@/config/pricing-plans';
 import { formatPricingAmountEur, SIFA_MULTI_MANDANT_PRICE } from '@/lib/pricing-config';
 
 /**
@@ -53,9 +53,6 @@ export interface HeroCtaRow {
 /** Kompositum in der Hero-H1: darf nicht mit Bindestrich mitten im Wort umbrechen. */
 export const HOME_HERO_H1_UNBROKEN_COMPOUND = 'Gefahrstoffmanagement';
 
-/** Sprungmarke in den SiFa-Tab der Preissektion (ausgewertet in `usePricingUrlState`). */
-const PRICING_SIFA_TAB_HREF = '#preise?tab=sifa';
-
 const SIFA_PRICE_FROM_LABEL = `ab ${formatPricingAmountEur(SIFA_MULTI_MANDANT_PRICE.yearlyMonthlyEur)}/Monat`;
 
 export const HOME_HERO = {
@@ -71,10 +68,7 @@ export const HOME_HERO = {
     'Inkl. TRGS-510-Zusammenlagerung & QR-Code-Etiketten',
     `Mandantenfähig für externe SiFas (${SIFA_PRICE_FROM_LABEL})`,
   ],
-  ctaRow: {
-    primary: { label: `Kostenlos mit ${TARIF_VORSCHAU_SDB_UPLOAD_LIMIT} SDBs starten`, href: APP_REGISTER_URL },
-    secondary: { label: 'Externe SiFa? Multi-Mandant ansehen →', href: PRICING_SIFA_TAB_HREF },
-  },
+  ctaRow: CEO_GEMINI_HOME_HERO_CTA_ROW,
   microcopy: 'Kein Verkaufsgespräch, testen Sie die Software in Ruhe',
   /** Linksspalte unter der Live-Demo: Nutzen (neben ROI-Rechner). */
   benefitBullets: [

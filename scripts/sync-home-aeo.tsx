@@ -26,7 +26,9 @@ import { CoreFeaturesSection } from '@/components/home/CoreFeaturesSection';
 import { HomeFaqExpertToggle } from '@/components/home/HomeFaqExpertToggle';
 import { HomeFounderTrustSection } from '@/components/home/HomeFounderTrustSection';
 import { HomePricingSection } from '@/components/home/HomePricingSection';
+import { CeoGeminiClickPageMidCta } from '@/components/marketing/CeoGeminiClickPageMidCta';
 import { CustomerReferencesSection } from '@/components/marketing/CustomerReferencesSection';
+import { CEO_GEMINI_HOME_POST_HERO_CTA } from '@/config/seo/ceo-gemini-cta-2026-11-27';
 import { EnterpriseSiteFooter } from '@/components/site/EnterpriseSiteFooter';
 import { LANDING_HOME_PURCHASE_FAQ, LANDING_HOME_SEO_FAQ } from '@/config/landing-home-seo-faq';
 import { PRICING_TRIAL_LEAD_MAGNET_LINE } from '@/config/pricing-trial-copy';
@@ -96,6 +98,7 @@ const updatedHtml = replaceMarkedBlocks(html, {
   HERO_SDB_METRIC: () => renderHtml(<HeroSdbLiveMetric />),
   HERO_SDB_SUPPLIER_HINT: () => renderHtml(<HeroSdbSupplierHint />),
   HERO_TRUST_GRID: () => renderHtml(<HeroTrustLogoGrid />),
+  CEO_GEMINI_POST_HERO_CTA: () => renderHtml(<CeoGeminiClickPageMidCta copy={CEO_GEMINI_HOME_POST_HERO_CTA} />),
   HEAD_META: () => renderStaticHeadMeta(HOME_SEO),
   WEBPAGE_JSONLD: () =>
     renderJsonLdScript(

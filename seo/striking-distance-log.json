@@ -177,6 +177,38 @@
       "previousTitle": "Betriebsanweisung Dispersionsfarbe (TRGS 555): Muster",
       "newTitle": "Betriebsanweisung Dispersionsfarbe TRGS 555: Vorlage SDB",
       "optimized": true
+    },
+    {
+      "url": "/",
+      "source": "ceo-gemini-cta",
+      "campaignDate": "2026-11-27",
+      "gscPeriod": "2026-10-28 bis 2026-11-24",
+      "optimized": true,
+      "notes": "Hero-CTA und Mid-Band: SDB-Dropzone #live-demo und SiFa /pricing/?tab=sifa"
+    },
+    {
+      "url": "/loesungen/kfz-werkstatt/",
+      "source": "ceo-gemini-cta",
+      "campaignDate": "2026-11-27",
+      "gscPeriod": "2026-10-28 bis 2026-11-24",
+      "optimized": true,
+      "notes": "Hero-CTA und Post-Hero-Band Richtung Dropzone und SiFa-Preise"
+    },
+    {
+      "url": "/pricing/",
+      "source": "ceo-gemini-cta",
+      "campaignDate": "2026-11-27",
+      "gscPeriod": "2026-10-28 bis 2026-11-24",
+      "optimized": true,
+      "notes": "Pre-Purchase-Band: SDB-Live-Test /#live-demo und SiFa-Tab"
+    },
+    {
+      "url": "/trgs-510-zusammenlagerungs-check/",
+      "source": "ceo-gemini-cta",
+      "campaignDate": "2026-11-27",
+      "gscPeriod": "2026-10-28 bis 2026-11-24",
+      "optimized": true,
+      "notes": "Pre-Tool- und Ergebnis-CTAs Richtung Live-Test und /pricing/?tab=sifa"
     }
   ],
   "skipped": [

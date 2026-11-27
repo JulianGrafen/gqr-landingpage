@@ -15,7 +15,12 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { HomeFaqItems } from '@/components/home/HomeFaqItems';
 import { HomeFaqSelfServeFooter } from '@/components/home/HomeFaqSelfServeFooter';
 import { HomeHeroCopy } from '@/components/home/HomeHeroCopy';
+import { CeoGeminiClickPageMidCta } from '@/components/marketing/CeoGeminiClickPageMidCta';
 import { IndustryStaticLandingSections } from '@/components/loesungen/IndustryStaticLandingSections';
+import {
+  CEO_GEMINI_HOME_POST_HERO_CTA,
+  CEO_GEMINI_KFZ_POST_HERO_CTA,
+} from '@/config/seo/ceo-gemini-cta-2026-11-27';
 import { AEO_CONTENT_UPDATED } from '@/config/aeo-config';
 import { getIndustry } from '@/config/industry-solutions';
 import { buildBreadcrumbSchema } from '@/lib/seo/build-breadcrumb-schema';
@@ -67,6 +72,12 @@ let html = replaceMarkedBlocks(fs.readFileSync(SOURCE, 'utf8'), {
   FAQ_FOOTER: () => renderToStaticMarkup(<HomeFaqSelfServeFooter />),
   HERO_COPY: () => renderToStaticMarkup(<HomeHeroCopy copy={industry.staticHero} />),
 });
+
+html = insertBeforeAnchor(
+  html,
+  ' <!-- PRODUKT- & VIDEO-DEMO',
+  renderToStaticMarkup(<CeoGeminiClickPageMidCta copy={CEO_GEMINI_KFZ_POST_HERO_CTA} />),
+);
 
 html = insertBeforeAnchor(
   html,
@@ -135,6 +146,17 @@ function trimPricingToProfessional(pageHtml: string): string {
 }
 
 /** Weniger Startseiten-Duplikat: kein Scroll-Story-Block, kein Umzugsservice, kein Lead-Magnet. */
+/** Startseiten-Mid-CTA aus index.html entfernen (Branche bekommt eigenes Band). */
+function stripHomePostHeroCta(pageHtml: string): string {
+  const headline = CEO_GEMINI_HOME_POST_HERO_CTA.headline.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return pageHtml.replace(
+    new RegExp(
+      `<section class="border-b border-white/\\[0\\.07\\] py-10 lg:py-14" aria-labelledby="striking-mid-cta-title">[\\s\\S]*?${headline}[\\s\\S]*?</section>\\s*`,
+    ),
+    '',
+  );
+}
+
 function trimKfzLandingBloat(pageHtml: string): string {
   let out = pageHtml.replace(/ <!-- EINSTIEGE -->[\s\S]*?<section id="funktionen"/, ' <!-- EINSTIEGE (Werkstatt: kompakt) -->\n <section id="funktionen"');
   out = out.replace(
@@ -147,6 +169,8 @@ function trimKfzLandingBloat(pageHtml: string): string {
   out = out.replaceAll('<a class="nav-link" href="#fuer-sifas">Für SiFas</a>', '');
   return out;
 }
+
+html = stripHomePostHeroCta(html);
 
 html = trimPricingToProfessional(html);
 

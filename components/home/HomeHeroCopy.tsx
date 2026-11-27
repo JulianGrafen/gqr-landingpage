@@ -56,7 +56,7 @@ export function HomeHeroCopy({ copy = HOME_HERO }: HomeHeroCopyProps) {
       <div className="sds-hero__buy-row">
         {copy.ctaRow ? (
           <>
-            <a className="btn-glass-outline sds-hero__buy-primary" href={copy.ctaRow.primary.href}>
+            <a className="btn-cta-orange sds-hero__buy-primary inline-flex min-h-[52px] items-center justify-center whitespace-nowrap px-8 text-base no-underline" href={copy.ctaRow.primary.href}>
               {copy.ctaRow.primary.label}
             </a>
             <a className="sds-hero__buy-link" href={copy.ctaRow.secondary.href}>

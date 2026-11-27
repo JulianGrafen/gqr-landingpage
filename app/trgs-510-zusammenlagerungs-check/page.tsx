@@ -3,7 +3,9 @@ import { ShieldCheck, Smartphone, Table2 } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Trgs510AudienceCards } from '@/components/trgs510/Trgs510AudienceCards';
 import { Trgs510CheckTool } from '@/components/trgs510/Trgs510CheckTool';
+import { CeoGeminiClickPageMidCta } from '@/components/marketing/CeoGeminiClickPageMidCta';
 import { Trgs510FaqItems } from '@/components/trgs510/Trgs510FaqItems';
+import { CEO_GEMINI_TRGS510_PRE_TOOL_CTA } from '@/config/seo/ceo-gemini-cta-2026-11-27';
 import { TRGS510_SEO_FAQ } from '@/config/trgs510/trgs510-seo-faq';
 import { SITE_URL } from '@/config/site-seo';
 import { buildTrgs510PageSchemas } from '@/lib/trgs510/build-trgs510-page-schemas';
@@ -82,6 +84,8 @@ export default function Trgs510ZusammenlagerungsCheckPage() {
             </p>
           </div>
         </header>
+
+        <CeoGeminiClickPageMidCta copy={CEO_GEMINI_TRGS510_PRE_TOOL_CTA} />
 
         <section
           id="trgs510-check"
