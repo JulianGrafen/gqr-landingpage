@@ -46,4 +46,7 @@ export const INDUSTRY_SOLUTION_KEYWORDS: Record<IndustrySlug, readonly string[]>
     'plastverarbeitung',
   ],
   tierarztpraxis: ['tierarzt', 'tierarztpraxis', 'veterinär', 'veterinaer', 'kleintierpraxis'],
+  schlosserei: ['schlosser', 'schlosserei', 'schließanlage', 'toranlage'],
+  glaserei: ['glaser', 'glaserei', 'verglasung', 'glasbau'],
+  orthopaedietechnik: ['orthopädie', 'orthopaedie', 'orthopädietechnik', 'sanitätshaus', 'prothetik'],
 };

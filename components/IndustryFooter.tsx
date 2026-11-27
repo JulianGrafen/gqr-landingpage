@@ -28,6 +28,9 @@ import {
   Shirt,
   Cylinder,
   PawPrint,
+  Key,
+  PanelTop,
+  Accessibility,
 } from 'lucide-react';
 import { getAllIndustries, type IndustrySlug } from '@/config/industry-solutions';
 
@@ -59,6 +62,9 @@ const ICONS: Record<IndustrySlug, LucideIcon> = {
   textilreinigerei: Shirt,
   kunststoffverarbeitung: Cylinder,
   tierarztpraxis: PawPrint,
+  schlosserei: Key,
+  glaserei: PanelTop,
+  orthopaedietechnik: Accessibility,
 };
 
 /**

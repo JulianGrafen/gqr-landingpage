@@ -92,6 +92,9 @@ Stand: 2026-11-10. Das Angebot richtet sich ausschließlich an Unternehmen, Gewe
 - [Textilreinigerei](https://gefahrstoff-qr.de/loesungen/textilreinigerei/)
 - [Kunststoffverarbeitung](https://gefahrstoff-qr.de/loesungen/kunststoffverarbeitung/)
 - [Tierarztpraxis](https://gefahrstoff-qr.de/loesungen/tierarztpraxis/)
+- [Schlosserei](https://gefahrstoff-qr.de/loesungen/schlosserei/)
+- [Glaserei](https://gefahrstoff-qr.de/loesungen/glaserei/)
+- [Orthopädietechnik](https://gefahrstoff-qr.de/loesungen/orthopaedietechnik/)
 
 ## Optional
 
