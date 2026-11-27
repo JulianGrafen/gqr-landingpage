@@ -24,6 +24,9 @@ const PSEO_REQUIRED_SLUGS = [
   'textilreinigerei',
   'kunststoffverarbeitung',
   'tierarztpraxis',
+  'schlosserei',
+  'glaserei',
+  'orthopaedietechnik',
 ] as const;
 
 const BANNED_LOESUNGEN_COPY = [

@@ -57,6 +57,9 @@ export const INDUSTRY_SLUGS = [
   'textilreinigerei',
   'kunststoffverarbeitung',
   'tierarztpraxis',
+  'schlosserei',
+  'glaserei',
+  'orthopaedietechnik',
 ] as const;
 
 export type IndustrySlug = (typeof INDUSTRY_SLUGS)[number];
@@ -2797,6 +2800,339 @@ export const industrySolutions: Record<IndustrySlug, IndustrySolution> = {
  question: 'Welche BG prüft Tierarztpraxen?',
  answer:
  'Die Berufsgenossenschaft für Gesundheitsdienst und Wohlfahrtspflege (BGW) begutachtet chemische Arbeitsstoffe in Tierarztpraxen. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen im Fokus. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR erleichtern den Nachweis bei Notdienst und Aushilfen.',
+ },
+ ],
+ },
+ },
+ schlosserei: {
+ slug: 'schlosserei',
+ label: 'Schlosserei',
+ title: 'Gefahrstoffmanagement in der Schlosserei: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Schlosserei & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Schlosserei: Öle, Schmierstoffe, Lösemittel. § 6 GefStoffV, TRGS 555 und TRGS 201 für Werkstatt und Montage in Gefahrstoff-QR.',
+ heroText:
+ 'Schmierstoffe, Korrosionsschutz und Reiniger liegen in der Werkstatt, im Servicefahrzeug und auf der Montage. Verzeichnis, Betriebsanweisungen und Umfüll-Kennzeichnung müssen Türanlagen und Objektarbeit abbilden.',
+ typischeStoffe: [
+ 'Schmier- und Montagefette',
+ 'Rostschutz- und Korrosionsschutzmittel',
+ 'Öle für Bohr- und Schneidwerkzeuge',
+ 'Lösemittelhaltige Reiniger',
+ 'Zweikomponenten-Kleber für Anker',
+ ],
+ spezifischerVorteil:
+ 'Wechselnde Objekte und Lieferanten erzeugen viele SDB-Updates. Ein digitales Verzeichnis mit Revision unterstützt Betriebsanweisungen am Montagefahrzeug und die Pflege von Umfüllen nach TRGS 201.',
+ handwerkAbsatz:
+ 'Schlosser arbeiten zwischen Werkstatt und Baustelle. Fehlen Sprays oder Kanister im Verzeichnis, entstehen Lücken bei der BGHM. KI-gestützte TRGS-555-Entwürfe aus dem Sicherheitsdatenblatt unterstützen die Vorprüfung durch SiFa zwischen Türmontagen.',
+ brancheGenitiv: 'Schlosserei',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Schlossereien führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Schmierstoffe, Korrosionsschutz und Reiniger in Werkstatt und Montage. Betriebsanweisungen nach TRGS 555 gelten für Bohren, Schweißen und Oberflächenbehandlung. Umfüllen in Handflaschen löst TRGS 201 aus. Excel-Listen mit Objekten und Altprodukten veralten rasch. Gefahrstoff-QR verbindet SDB, Entwürfe und Export für SiFa und BGHM.',
+ typicalProducts: [
+ {
+ product: 'Montage- und Schmierfett',
+ gebinde: 'Tube, Kartusche',
+ hazardKind: 'reizend',
+ workplaceDuty: 'Verzeichniseintrag Werkstatt, Betriebsanweisung, Unterweisung Monteur',
+ },
+ {
+ product: 'Korrosionsschutzspray',
+ gebinde: 'Spraydose, Kanister',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'SDB archivieren, BA im Servicefahrzeug, Lagerort dokumentieren',
+ },
+ {
+ product: 'Bohr- und Schneidöl',
+ gebinde: 'Flasche 1 Liter, Kanister',
+ hazardKind: 'reizend, entzündbar',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Eintrag Verzeichnis',
+ },
+ {
+ product: 'Ankerkleber (2K)',
+ gebinde: 'Kartusche, Doppelkartusche',
+ hazardKind: 'sensibilisierend',
+ workplaceDuty: 'Beide Komponenten im Verzeichnis, BA vor Türmontage freigeben',
+ },
+ {
+ product: 'Rostumwandler',
+ gebinde: 'Spray, Flasche',
+ hazardKind: 'ätzend oder reizend',
+ workplaceDuty: 'Objektbezug im Verzeichnis, Unterweisung Monteur dokumentieren',
+ },
+ {
+ product: 'Reinigungsmittel für Werkzeuge',
+ gebinde: 'Kanister, Sprühflasche',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Lager Schlosserei, BA am Werkbankregal bereitstellen',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Schmier- und Korrosionsschutzmittel im Servicefahrzeug fehlen im Gefahrstoffverzeichnis.',
+ 'Betriebsanweisungen für 2K-Kleber und Öle sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Umfüllte Handflaschen in der Montagekiste sind weder nach TRGS 201 gekennzeichnet noch im Verzeichnis erfasst.',
+ ],
+ berufsgenossenschaft: 'BGHM',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Meister trägt Stoffe je Objekt in Excel ein',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unbeschriftete Ölflaschen im Transporter',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA am Montagekoffer',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Werkstatt oder im Büro',
+ gqrWorkflow: 'QR am Werkzeugschrank oder im Servicefahrzeug',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'Listen aus Werkstatt und Montage manuell zusammenführen',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Gehören Schmierstoffe ins Gefahrstoffverzeichnis der Schlosserei?',
+ answer:
+ 'Ja, wenn sie als Gefahrstoff eingestuft sind und im Betrieb vorkommen. Fette, Öle und Sprays werden nach § 6 GefStoffV mit Gebinde, Bereich und SDB-Bezug geführt. Eine Betriebsanweisung nach TRGS 555 beschreibt Umgang in Werkstatt und Montage. Umfüllen in kleinere Behälter löst TRGS 201 aus. Gefahrstoff-QR unterstützt Entwürfe zur Vorprüfung durch SiFa oder Meister.',
+ },
+ {
+ question: 'Wie dokumentiere ich Chemie im Montagewagen?',
+ answer:
+ 'Mobile Gebinde werden im Verzeichnis mit Fahrzeug oder Bauauftrag verknüpft. Bei Objektwechsel muss der Eintrag aktuell bleiben. Papierlisten verlieren nach der Montage den Bezug. Digitale Pflege hält SDB und Betriebsanweisungen am QR im Kofferraum. Umfüllen löst TRGS 201 aus und wird mitkennzeichnet. Die SiFa prüft Entwürfe vor Freigabe.',
+ },
+ {
+ question: 'Welche BG prüft Schlossereien?',
+ answer:
+ 'Die Berufsgenossenschaft Holz und Metall (BGHM) begutachtet Gefahrstoffdokumentation in Werkstatt und Montage. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen gehören zum Standardprogramm. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR unterstützen den Nachweis ohne getrennte Listen pro Türauftrag.',
+ },
+ ],
+ },
+ },
+ glaserei: {
+ slug: 'glaserei',
+ label: 'Glaserei',
+ title: 'Gefahrstoffmanagement in der Glaserei: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Glaserei & TRGS 555',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Glaserei: Kitt, Silikon, Reiniger. § 6 GefStoffV, TRGS 555 und TRGS 201 für Werkstatt und Verglasung in Gefahrstoff-QR.',
+ heroText:
+ 'Fensterkitt, Silikon und Reiniger stehen in Werkstatt, Lager und auf der Baustelle. Verzeichnis, Betriebsanweisungen und Kennzeichnung müssen Verglasung, Fassade und Reparatureinsatz abbilden.',
+ typischeStoffe: [
+ 'Fensterkitt und Glasmastik',
+ 'Silikon und Dichtstoffe',
+ 'Reiniger für Glas und Rahmen',
+ 'Trenn- und Gleitmittel',
+ 'Entschäumer und Hilfschemie',
+ ],
+ spezifischerVorteil:
+ 'Wechselnde Fassaden und Reparaturaufträge erzeugen viele Gebinde in Kleinmengen. Ein digitales Verzeichnis mit SDB-Bezug unterstützt Betriebsanweisungen je Baustelle und die Nachverfolgung von Umfüllen nach TRGS 201.',
+ handwerkAbsatz:
+ 'Glasbetriebe arbeiten mobil zwischen Lager und Objekt. Fehlen Kittkartuschen oder Reiniger im Verzeichnis, entstehen Lücken bei der BG BAU. KI-gestützte TRGS-555-Entwürfe aus dem Sicherheitsdatenblatt erleichtern die Vorprüfung durch SiFa zwischen den Verglasungen.',
+ brancheGenitiv: 'Glaserei',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Glasereien führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Kitt, Silikon und Reiniger in Werkstatt und auf dem Objekt. Betriebsanweisungen nach TRGS 555 gelten für Verglasung, Abdichtung und Nacharbeit. Umfüllen in Handflaschen löst TRGS 201 aus. Excel-Listen je Baustelle veralten in der Saison. Gefahrstoff-QR verbindet SDB, Entwürfe und Export für SiFa und BG BAU.',
+ typicalProducts: [
+ {
+ product: 'Fensterkitt (lösemittelhaltig)',
+ gebinde: 'Tube, Kartusche',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Verzeichniseintrag Werkstatt, Betriebsanweisung, Unterweisung Glaser',
+ },
+ {
+ product: 'Silikon Sanitär und Fassade',
+ gebinde: 'Kartusche, Sauspack',
+ hazardKind: 'sensibilisierend',
+ workplaceDuty: 'Gebinde im Verzeichnis, BA am Baukoffer bereitstellen',
+ },
+ {
+ product: 'Glasreiniger konzentriert',
+ gebinde: 'Kanister, Sprühflasche',
+ hazardKind: 'ätzend oder reizend',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Eintrag Objekt',
+ },
+ {
+ product: 'Trennmittel für Kitt',
+ gebinde: 'Spraydose, Flasche',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Lagerort dokumentieren, SDB archivieren, BA im Transporter',
+ },
+ {
+ product: 'Rahmenreiniger',
+ gebinde: 'Flasche 1 Liter',
+ hazardKind: 'reizend',
+ workplaceDuty: 'Eintrag Verzeichnis, Unterweisung vor Fassadeneinsatz',
+ },
+ {
+ product: 'Zementschleierentferner (Nacharbeit)',
+ gebinde: 'Kanister, Sprühflasche',
+ hazardKind: 'ätzend',
+ workplaceDuty: 'Objektbezug, BA auf Baustelle, Freigabe durch SiFa',
+ },
+ ],
+ inspectionDeficiencies: [
+ 'Kitt- und Silikonprodukte auf der Baustelle fehlen im Gefahrstoffverzeichnis oder ohne Bauauftragsbezug.',
+ 'Betriebsanweisungen für Reiniger sind veraltet oder ohne aktuelles Sicherheitsdatenblatt des Lieferanten.',
+ 'Umfüllte Sprühflaschen in der Reparaturkiste sind weder nach TRGS 201 gekennzeichnet noch im Verzeichnis erfasst.',
+ ],
+ berufsgenossenschaft: 'BG BAU',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Polier trägt Stoffe je Fassade in Excel ein',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unbeschriftete Reinigerflaschen im Transporter',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA am Gerüstcontainer',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner in der Glaswerkstatt oder Zentrale',
+ gqrWorkflow: 'QR am Kittregal oder am Werkzeugkoffer auf dem Objekt',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'Listen aus Werkstatt und Baustellen manuell zusammenführen',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Gehört Fensterkitt ins Gefahrstoffverzeichnis?',
+ answer:
+ 'Ja, wenn Kitt als Gefahrstoff eingestuft ist und im Betrieb vorkommt. Kitt und Silikon werden nach § 6 GefStoffV mit Gebinde, Bereich und SDB-Bezug geführt. Eine Betriebsanweisung nach TRGS 555 beschreibt Verglasung und Nacharbeit. Umfüllen in Handkartuschen kann TRGS 201 auslösen. Gefahrstoff-QR unterstützt Entwürfe zur Vorprüfung durch SiFa oder Werkstattleitung.',
+ },
+ {
+ question: 'Wie erfasse ich Reiniger im Montagewagen?',
+ answer:
+ 'Mobile Gebinde gehören ins Verzeichnis mit Fahrzeug oder Bauauftrag. Beim Umfüllen entsteht ein Arbeitsmittel nach TRGS 201 mit Kennzeichnung aus dem SDB. Parallel wird das Kanisteroriginal geführt. Eine Betriebsanweisung nach TRGS 555 deckt Glas- und Rahmenreinigung ab. Gefahrstoff-QR unterstützt Entwürfe zur fachlichen Freigabe.',
+ },
+ {
+ question: 'Welche BG prüft Glaserbetriebe?',
+ answer:
+ 'Die Berufsgenossenschaft der Bauwirtschaft (BG BAU) begutachtet Glaserarbeiten im Hochbau und Verglasung. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen stehen bei Begehungen im Fokus. Fenstermontage ohne Verputzarbeiten kann nach Vereinbarung BGHM betreffen. Die SiFa klärt Grenzfälle vorab.',
+ },
+ ],
+ },
+ },
+ orthopaedietechnik: {
+ slug: 'orthopaedietechnik',
+ label: 'Orthopädietechnik',
+ title: 'Gefahrstoffmanagement in der Orthopädietechnik: Kataster, TRGS 555 & Lagerung',
+ metaTitle: 'Gefahrstoffverzeichnis Orthopädietechnik',
+ metaDescription:
+ 'Gefahrstoffverzeichnis Orthopädietechnik: Kleber, Lösemittel, Harze. § 6 GefStoffV, TRGS 555 und TRGS 201 für Werkstatt und Maßanfertigung.',
+ heroText:
+ 'Kleber, Lösemittel und Harze stehen in Werkstatt, Schleifbereich und Lager. Verzeichnis, Betriebsanweisungen und Umfüll-Kennzeichnung müssen Anpassungen und Reparaturen an Prothesen und Orthesen abbilden.',
+ typischeStoffe: [
+ 'Zweikomponenten-Kleber und Harze',
+ 'Lösemittel für Reinigung und Entfettung',
+ 'Misch- und Trennmittel',
+ 'Politur- und Pflegemittel',
+ 'Schleifpasten und Hilfschemie',
+ ],
+ spezifischerVorteil:
+ 'Kleine Chargen und viele Produktwechsel erzeugen SDB-Updates. Ein digitales Verzeichnis hilft, Betriebsanweisungen je Arbeitsplatz freizugeben und Umfüllen nach TRGS 201 in der Werkstatt zu dokumentieren.',
+ handwerkAbsatz:
+ 'Orthopädietechniker arbeiten eng am Patienten. Wenn Harz und Reiniger ohne Verzeichniseintrag stehen oder SDB-Updates fehlen, wird die BGHM-Begehung kritisch. KI-gestützte TRGS-555-Entwürfe verkürzen die Pflege bei neuen Materialchargen.',
+ brancheGenitiv: 'Orthopädietechnik',
+ blogPostHref: '/wissen/',
+ showSdbPreview: true,
+ pseo: {
+ aeoAnswer:
+ 'Orthopädietechnik-Werkstätten führen ein Gefahrstoffverzeichnis nach § 6 GefStoffV für Kleber, Harze und Reiniger. Betriebsanweisungen nach TRGS 555 gelten für Maßanfertigung, Schleifen und Montage. Umfüllen in Dosierflaschen löst TRGS 201 aus. Excel-Listen mit Chargenwechseln veralten schnell. Gefahrstoff-QR verbindet SDB, Entwürfe und Export für SiFa und BGHM.',
+ typicalProducts: [
+ {
+ product: 'Zweikomponenten-Kleber (Harz/Härter)',
+ gebinde: 'Kartusche, Doppelkartusche',
+ hazardKind: 'sensibilisierend',
+ workplaceDuty: 'Beide Komponenten im Verzeichnis, BA vor Anpassung freigeben',
+ },
+ {
+ product: 'Lösemittel für Entfettung',
+ gebinde: 'Kanister, Sprühflasche',
+ hazardKind: 'entzündbar',
+ workplaceDuty: 'Umfüllen nach TRGS 201 kennzeichnen, Unterweisung Werkstatt',
+ },
+ {
+ product: 'Politurmittel für Orthopädieschuhe',
+ gebinde: 'Flasche, Tube',
+ hazardKind: 'reizend',
+ workplaceDuty: 'Lagerort dokumentieren, Betriebsanweisung Schleifplatz',
+ },
+ {
+ product: 'Trennwachs und Gleitmittel',
+ gebinde: 'Dose, Spray',
+ hazardKind: 'reizend',
+ workplaceDuty: 'Verzeichniseintrag, SDB archivieren, QR am Lagerregal',
+ },
+ {
+ product: 'Harz für Prothesenanpassung',
+ gebinde: 'Flasche, Kanister',
+ hazardKind: 'sensibilisierend',
+ workplaceDuty: 'Eintrag Werkstatt, Unterweisung vor Patientenkontakt',
+ },
+ {
+ product: 'Reiniger für Werkzeuge',
+ gebinde: 'Kanister 5 Liter',
+ hazardKind: 'ätzend oder reizend',
+ workplaceDuty: 'BA am Reinigungsbecken, Freigabe durch SiFa dokumentieren',
+ },
+ ],
+ inspectionDeficiencies: [
+ '2K-Kleber und Harze in der Anpasswerkstatt fehlen im Gefahrstoffverzeichnis.',
+ 'Betriebsanweisungen für Lösemittel und Politur sind veraltet oder ohne aktuelles Sicherheitsdatenblatt.',
+ 'Beschriftete Entfettungsflaschen am Werktisch sind nicht dem Verzeichnis und keiner freigegebenen Betriebsanweisung zugeordnet.',
+ ],
+ berufsgenossenschaft: 'BGHM',
+ excelComparison: [
+ {
+ topic: 'Neue Lieferanten-SDBs',
+ excelWorkflow: 'Werkstattleitung tippt Chargen manuell in Excel',
+ gqrWorkflow: 'KI-gestützter Vorschlag aus dem SDB mit Freigabe durch SiFa',
+ },
+ {
+ topic: 'Umfüllen (TRGS 201)',
+ excelWorkflow: 'Unmarkierte Entfetterflaschen am Tisch',
+ gqrWorkflow: 'Druckbares Etikett mit QR-Zugriff auf BA am Klebstoffregal',
+ },
+ {
+ topic: 'Zugriff am Arbeitsplatz',
+ excelWorkflow: 'Ordner im Büro des Sanitätshauses',
+ gqrWorkflow: 'QR an der Harzstation oder am Schleifplatz',
+ },
+ {
+ topic: 'Nachweis bei BG-Begehung',
+ excelWorkflow: 'SDBs aus Werkstatt und Filiale sammeln',
+ gqrWorkflow: 'Export des Gefahrstoffverzeichnisses mit Revisionsstand',
+ },
+ ],
+ faqItems: [
+ {
+ question: 'Braucht ein Orthopädietechnik-Betrieb ein Gefahrstoffverzeichnis?',
+ answer:
+ 'Ja, sobald Gefahrstoffe eingesetzt oder gelagert werden. Kleber, Harze und Reiniger fallen unter § 2 GefStoffV. Das Verzeichnis nach § 6 GefStoffV muss Werkstatt und Lager abdecken. Auch kleine Mengen in der Anpassung sind relevant. Gefahrstoff-QR unterstützt Pflege und Vorprüfung durch SiFa oder Werkstattleitung vor der BGHM-Begehung.',
+ },
+ {
+ question: 'Wie dokumentiere ich 2K-Harz bei Maßanfertigung?',
+ answer:
+ 'Harz und Härter werden als Gefahrstoffe mit eigenem SDB geführt. Beide Komponenten gehören ins Verzeichnis. Beim Umfüllen in Mischbehältern gilt TRGS 201. Die Betriebsanweisung nach TRGS 555 deckt Mischung und Verarbeitung ab. Freigabe liegt bei SiFa oder Arbeitgeber. Digitale Pflege hält Chargenwechsel nachvollziehbar.',
+ },
+ {
+ question: 'Welche BG prüft Orthopädietechnik-Werkstätten?',
+ answer:
+ 'Die Berufsgenossenschaft Holz und Metall (BGHM) prüft Gefahrstoffdokumentation in Werkstätten mit Metall- und Kunststoffbearbeitung. Ein aktuelles Verzeichnis nach § 6 GefStoffV und freigegebene Betriebsanweisungen gehören zum Standardprogramm. Die SiFa bereitet Begehungen vor. Exporte aus Gefahrstoff-QR unterstützen den Nachweis ohne Papierstapel.',
  },
  ],
  },

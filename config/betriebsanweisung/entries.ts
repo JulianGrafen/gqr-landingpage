@@ -3698,6 +3698,126 @@ export const HAZARDOUS_SUBSTANCE_SEO_ENTRIES = [
       "Pharmazeutische Produktion",
     ],
   },
+  {
+    slug: 'chlorhexidin-trgs-555',
+    substanceName: 'Chlorhexidin',
+    metaDescription:
+      'Betriebsanweisung Chlorhexidin: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.',
+    typicalIndustries: [
+      'Zahnarztpraxis & Dental',
+      'Pflegeeinrichtung & Klinik',
+      'Tierarztpraxis',
+      'Gebäudereinigung & Facility',
+    ],
+  },
+  {
+    slug: 'dimethylsulfoxid-trgs-555',
+    substanceName: 'Dimethylsulfoxid',
+    metaDescription:
+      'Betriebsanweisung Dimethylsulfoxid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.',
+    typicalIndustries: [
+      'Labor & Analytik',
+      'Pharmazeutische Produktion',
+      'Veterinärmedizin',
+      'Chemische Industrie',
+    ],
+  },
+  {
+    slug: 'kolophonium-trgs-555',
+    substanceName: 'Kolophonium',
+    metaDescription:
+      'Betriebsanweisung Kolophonium: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.',
+    typicalIndustries: [
+      'Elektrobetrieb & Löttechnik',
+      'SHK-Betrieb & Installation',
+      'Metallbau & Schweißtechnik',
+      'Orthopädietechnik',
+    ],
+  },
+  {
+    slug: 'natriumdisulfit-trgs-555',
+    substanceName: 'Natriumdisulfit',
+    metaDescription:
+      'Betriebsanweisung Natriumdisulfit: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.',
+    typicalIndustries: [
+      'Lebensmittelbetrieb & Großküche',
+      'Textilreinigerei',
+      'Wasseraufbereitung',
+      'Getränkeherstellung',
+    ],
+  },
+  {
+    slug: 'natriumthiosulfat-trgs-555',
+    substanceName: 'Natriumthiosulfat',
+    metaDescription:
+      'Betriebsanweisung Natriumthiosulfat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.',
+    typicalIndustries: [
+      'Fotostudio & Bildlabor',
+      'Schwimmbad & Wasseraufbereitung',
+      'Goldschmied & Galvanik',
+      'Labor & Analytik',
+    ],
+  },
+  {
+    slug: 'ameisensaeure-trgs-555',
+    substanceName: 'Ameisensäure',
+    metaDescription:
+      'Betriebsanweisung Ameisensäure: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.',
+    typicalIndustries: [
+      'Textilindustrie & Färberei',
+      'Gerberei & Leder',
+      'Druckerei & Papier',
+      'Landwirtschaft & Stall',
+    ],
+  },
+  {
+    slug: 'essigester-trgs-555',
+    substanceName: 'Essigester',
+    metaDescription:
+      'Betriebsanweisung Essigester: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.',
+    typicalIndustries: [
+      'Malerbetrieb & Lackierung',
+      'Druckerei & Siebdruck',
+      'Lebensmittel & Aromen',
+      'Labor & Analytik',
+    ],
+  },
+  {
+    slug: 'propionsaeure-trgs-555',
+    substanceName: 'Propionsäure',
+    metaDescription:
+      'Betriebsanweisung Propionsäure: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.',
+    typicalIndustries: [
+      'Bäckerei & Konditorei',
+      'Lebensmittelverarbeitung',
+      'Landwirtschaft & Futtermittel',
+      'Getränkeherstellung',
+    ],
+  },
+  {
+    slug: 'zinnchlorid-trgs-555',
+    substanceName: 'Zinnchlorid',
+    metaDescription:
+      'Betriebsanweisung Zinnchlorid: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.',
+    typicalIndustries: [
+      'Galvanik & Oberflächentechnik',
+      'Textil & Imprägnierung',
+      'Labor & Analytik',
+      'Metallveredelung',
+    ],
+  },
+  {
+    slug: 'natriumsulfat-trgs-555',
+    substanceName: 'Natriumsulfat',
+    metaDescription:
+      'Betriebsanweisung Natriumsulfat: KI-gestützter TRGS-555-Entwurf aus Ihrem Sicherheitsdatenblatt in Gefahrstoff-QR.',
+    typicalIndustries: [
+      'Waschmittel & Reinigung',
+      'Glaserei & Verglasung',
+      'Papier & Zellstoff',
+      'Textilreinigerei',
+    ],
+  },
 ] as const satisfies readonly HazardousSubstanceSeoEntry[];
 
 export type HazardousSubstanceSlug = (typeof HAZARDOUS_SUBSTANCE_SEO_ENTRIES)[number]['slug'];
