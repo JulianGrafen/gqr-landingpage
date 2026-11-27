@@ -11,6 +11,7 @@ import { buildFaqPageSchema } from '@/lib/seo/build-faq-page-schema';
 import type { SeoFaqItem } from '@/lib/seo/seo-faq-types';
 import type { JsonLdObject } from '@/lib/seo/serialize-json-ld';
 import { marketingHomeBreadcrumbItem } from '@/lib/seo/marketing-home-breadcrumb';
+import { resolveBetriebsanweisungGeminiCroTitle } from '@/lib/betriebsanweisung/resolve-gemini-cro-ba-override';
 
 /** Stand der Template-Inhalte (für dateModified); bei inhaltlichen Template-Änderungen anpassen. */
 export const BETRIEBSANWEISUNG_CONTENT_UPDATED = '2026-11-19';
@@ -25,6 +26,8 @@ export function buildBetriebsanweisungPath(entry: HazardousSubstanceSeoEntry): `
 
 /** SERP-Title (≤ 58 Zeichen) aus der gemeinsamen Kandidaten-Kaskade. */
 export function buildBetriebsanweisungTitle(entry: HazardousSubstanceSeoEntry): string {
+  const geminiTitle = resolveBetriebsanweisungGeminiCroTitle(entry.slug);
+  if (geminiTitle) return geminiTitle;
   return fitTitle(BA_SERP_TITLE_CANDIDATES.map((candidate) => candidate(entry.substanceName)));
 }
 

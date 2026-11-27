@@ -127,6 +127,56 @@
       "newTitle": "Betriebsanweisung Fassadenreiniger TRGS 555: Muster & PDF",
       "newDescription": "TRGS-555-Muster für Fassadenreiniger. Eigenes SDB hochladen, Entwurf zur fachlichen Prüfung. Ohne Login testen.",
       "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/kaeltemittel-trgs-555/",
+      "source": "gemini-cro",
+      "campaignDate": "2026-11-27",
+      "gscPeriod": "2026-10-28 bis 2026-11-24",
+      "baseline": { "position": 20.9, "impressions": 107, "ctrPercent": 0 },
+      "previousTitle": "Betriebsanweisung Kältemittel (TRGS 555): Muster & PDF",
+      "newTitle": "Betriebsanweisung Kältemittel (TRGS 555) | PDF-Vorlage SDB",
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/felgenreiniger-trgs-555/",
+      "source": "gemini-cro",
+      "campaignDate": "2026-11-27",
+      "gscPeriod": "2026-10-28 bis 2026-11-24",
+      "baseline": { "position": 20.6, "impressions": 75, "ctrPercent": 0 },
+      "previousTitle": "Betriebsanweisung Felgenreiniger (TRGS 555): Muster & PDF",
+      "newTitle": "Betriebsanweisung Felgenreiniger TRGS 555: Kfz-Vorlage SDB",
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/chloroform-trgs-555/",
+      "source": "gemini-cro",
+      "campaignDate": "2026-11-27",
+      "gscPeriod": "2026-10-28 bis 2026-11-24",
+      "baseline": { "position": 21.7, "impressions": 78, "ctrPercent": 0 },
+      "previousTitle": "Betriebsanweisung Chloroform (TRGS 555): Muster & PDF",
+      "newTitle": "Betriebsanweisung Chloroform (TRGS 555) | Vorlage SDB",
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/furfurylalkohol-trgs-555/",
+      "source": "gemini-cro",
+      "campaignDate": "2026-11-27",
+      "gscPeriod": "2026-10-28 bis 2026-11-24",
+      "baseline": { "position": 26.4, "impressions": 78, "ctrPercent": 0 },
+      "previousTitle": "Betriebsanweisung Furfurylalkohol (TRGS 555): Muster & PDF",
+      "newTitle": "Betriebsanweisung Furfurylalkohol (TRGS 555) | Vorlage SDB",
+      "optimized": true
+    },
+    {
+      "url": "/betriebsanweisung/dispersionsfarbe-trgs-555/",
+      "source": "gemini-cro",
+      "campaignDate": "2026-11-27",
+      "gscPeriod": "2026-10-28 bis 2026-11-24",
+      "baseline": { "position": 27.5, "impressions": 90, "ctrPercent": 0 },
+      "previousTitle": "Betriebsanweisung Dispersionsfarbe (TRGS 555): Muster",
+      "newTitle": "Betriebsanweisung Dispersionsfarbe TRGS 555: Vorlage SDB",
+      "optimized": true
     }
   ],
   "skipped": [

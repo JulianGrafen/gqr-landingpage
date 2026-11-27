@@ -5,7 +5,7 @@ export const GEMINI_CRO_GSC_PERIOD = '2025-10-25 bis 2026-11-21' as const;
 export const GEMINI_CRO_SOURCE = 'gemini-cro' as const;
 
 export type GeminiCroInternalLink = {
-  href: `/${string}/`;
+  href: `/${string}` | `/${string}/`;
   label: string;
 };
 
