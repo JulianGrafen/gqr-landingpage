@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run validate:loesungen && next build",
     "build:pricing-section": "node scripts/build-pricing-section.mjs",
-    "build:github-pages": "npm run build:sdb-preview && npm run build:roi-calculator && npm run build:pricing-section && npm run sync:home && npm run sync:blog-hub && npm run sync:silo-pricing && npm run generate:kfz-werkstatt-landing && npm run generate:sifa-selbststaendig-landing && npm run generate:static-redirects && npm run sync:pricing-redirect && npm run build:css && npm run sync:solution-callouts && npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run validate:loesungen && next build && node scripts/sync-github-pages.mjs && npm run validate:export-routes && npm run generate:sitemap && npm run validate:sitemap && npm run validate:legal-copy-export && npm run validate:seo-meta",
+    "build:github-pages": "npm run build:sdb-preview && npm run build:roi-calculator && npm run build:article-cta-tracking && npm run build:pricing-section && npm run sync:home && npm run sync:blog-hub && npm run sync:silo-pricing && npm run generate:kfz-werkstatt-landing && npm run generate:sifa-selbststaendig-landing && npm run generate:static-redirects && npm run sync:pricing-redirect && npm run build:css && npm run sync:solution-callouts && npm run sync:blog-article-cro && npm run validate:legal-copy && npm run validate:betriebsanweisung && npm run validate:loesungen && next build && node scripts/sync-github-pages.mjs && npm run validate:export-routes && npm run generate:sitemap && npm run validate:sitemap && npm run validate:legal-copy-export && npm run validate:seo-meta",
     "validate:legal-copy": "node scripts/validate-legal-copy.mjs",
     "validate:legal-copy-export": "node scripts/validate-legal-copy.mjs --export",
     "validate:betriebsanweisung": "npx tsx scripts/validate-betriebsanweisung-entries.ts",
@@ -32,7 +32,9 @@
     "generate:logo-wordmark": "node scripts/trim-logo-wordmark.mjs",
     "watch:css": "tailwindcss -i ./src/tw-input.css -o ./tw.css --watch",
     "validate:seo-meta": "npx tsx --tsconfig tsconfig.scripts.json scripts/validate-seo-meta.ts",
-    "generate:static-redirects": "npx tsx --tsconfig tsconfig.scripts.json scripts/generate-static-redirects.ts"
+    "generate:static-redirects": "npx tsx --tsconfig tsconfig.scripts.json scripts/generate-static-redirects.ts",
+    "build:article-cta-tracking": "node scripts/build-article-cta-tracking.mjs",
+    "sync:blog-article-cro": "npx tsx --tsconfig tsconfig.scripts.json scripts/sync-blog-article-cro.tsx"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.20",

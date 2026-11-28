@@ -12,7 +12,9 @@ export type FunnelEventName =
   | 'dropzone_interaction'
   | 'overlay_cta_click'
   | 'mobile_lead_submitted'
-  | 'ba_draft_lead_submitted';
+  | 'ba_draft_lead_submitted'
+  /** CTA-Klick in statischen Blog-Artikeln; `meta.cta_location` / `meta.cta_target`. */
+  | 'article_cta_click';
 
 export type FunnelEventMeta = Record<string, string | number | boolean | null>;
 
